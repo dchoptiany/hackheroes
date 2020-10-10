@@ -74,5 +74,42 @@ namespace app
         {
             changePanel(0, false);
         }
+
+        private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
+        {
+            uint val = Convert.ToUInt16(numericUpDownAge.Value);
+            if(val == 1)
+            {
+                label15.Text = "rok";
+            }
+            else if (val >= 2 && val <= 4)
+            {
+                label15.Text = "lata";
+            }
+            else if (val >= 5 && val <= 21)
+            {
+                label15.Text = "lat";
+            }
+            else
+            {
+                uint lastDigit = val % 10;
+                switch (lastDigit)
+                {
+                    case 2:
+                    case 3:
+                    case 4:
+                        label15.Text = "lata";
+                        break;
+                    default:
+                        label15.Text = "lat";
+                        break;
+                }
+            }
+        }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+            Program.users.Add(new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToByte(numericUpDownHeight.Value), Convert.ToBoolean(radioButtonFemale.Checked);
+        }
     }
 }
