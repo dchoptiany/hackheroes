@@ -37,40 +37,40 @@ namespace app
         private void changePanel(int index, bool visibility)
         {
             panels[index].BringToFront();
-            button9.Visible = visibility;
+            buttonReturn.Visible = visibility;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonBMI_Click(object sender, EventArgs e)
         {
             changePanel(1, true);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonActivity_Click(object sender, EventArgs e)
         {
             changePanel(2, true);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonQuiz_Click(object sender, EventArgs e)
         {
             changePanel(3, true);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonCalculator_Click(object sender, EventArgs e)
         {
             changePanel(4, true);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonSurvey_Click(object sender, EventArgs e)
         {
             changePanel(5, true);
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void buttonProfile_Click(object sender, EventArgs e)
         {
             changePanel(6, true);
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void buttonReturn_Click(object sender, EventArgs e)
         {
             changePanel(0, false);
         }
