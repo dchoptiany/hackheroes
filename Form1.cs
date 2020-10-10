@@ -6,7 +6,7 @@ namespace app
 {
     public partial class Hackheroes : Form
     {
-        List<Panel> panels = new List<Panel>();
+        private readonly List<Panel> panels = new List<Panel>();
 
         public Hackheroes()
         {
