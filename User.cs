@@ -14,8 +14,6 @@ namespace app
 
 	public class User
 	{
-		
-
 		public string name { get; set; }
 		public byte age { get; set; }
 		public float weight { get; set; }

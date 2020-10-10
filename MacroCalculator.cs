@@ -11,7 +11,7 @@ namespace app
         public int carbohydrates;
         public int fat;
 
-        public void CalculateMacro(User user)
+        public void CalculateMacro(ref User user)
         {
             float rmr;
             if (user.gender == Gender.Male)
