@@ -15,15 +15,8 @@ namespace app
 
         public void CalculateMacro(User user)
         {
-            float rmr;
-            if (user.gender == Gender.Male)
-            {
-                rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f) + 5f;
-            }
-            else
-            {
-                rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f) - 161f;
-            }
+            float rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f);
+            rmr += user.gender == Gender.Male ? 5f : -161f;
 
             calories = (int)(rmr * activityLevel);
             float caloriesLeft = calories;
