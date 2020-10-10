@@ -39,17 +39,17 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -212,6 +212,16 @@
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 14;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(458, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 65);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "BMI";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label5);
@@ -219,6 +229,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 500);
             this.panel2.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(391, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(226, 65);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Aktywność";
             // 
             // panel3
             // 
@@ -228,6 +248,16 @@
             this.panel3.Size = new System.Drawing.Size(1000, 500);
             this.panel3.TabIndex = 16;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(443, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 65);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Quiz";
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label3);
@@ -236,6 +266,16 @@
             this.panel4.Size = new System.Drawing.Size(1000, 500);
             this.panel4.TabIndex = 17;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(418, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 65);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Makro";
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label2);
@@ -243,6 +283,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1000, 500);
             this.panel5.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(418, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 65);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Ankiety";
             // 
             // panel6
             // 
@@ -262,56 +312,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Profile";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(418, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 65);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ankiety";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(418, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 65);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Makro";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(443, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 65);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Quiz";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(391, 121);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(226, 65);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Aktywność";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(458, 121);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 65);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "BMI";
-            // 
             // button9
             // 
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -323,6 +323,7 @@
             this.button9.TabIndex = 20;
             this.button9.Text = "Powrót";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Visible = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Hackheroes

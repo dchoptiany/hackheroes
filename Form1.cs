@@ -32,8 +32,6 @@ namespace app
             panels.Add(panel4);
             panels.Add(panel5);
             panels.Add(panel6);
-            panels[0].BringToFront();
-            button9.Visible = false;
         }
 
         private void changePanel(int index, bool visibility)
