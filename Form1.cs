@@ -25,13 +25,13 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            panels.Add(panel0);
-            panels.Add(panel1);
-            panels.Add(panel2);
-            panels.Add(panel3);
-            panels.Add(panel4);
-            panels.Add(panel5);
-            panels.Add(panel6);
+            panels.Add(panel0); //buttons
+            panels.Add(panel1); //BMI
+            panels.Add(panel2); //sport activity
+            panels.Add(panel3); //quiz
+            panels.Add(panel4); //calculator
+            panels.Add(panel5); //surveys
+            panels.Add(panel6); //profiles
         }
 
         private void changePanel(int index, bool visibility)
