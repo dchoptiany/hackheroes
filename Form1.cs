@@ -36,46 +36,45 @@ namespace app
             button9.Visible = false;
         }
 
+        private void changePanel(int index, bool visibility)
+        {
+            panels[index].BringToFront();
+            button9.Visible = visibility;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            panels[1].BringToFront();
-            button9.Visible = true;
+            changePanel(1, true);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            panels[2].BringToFront();
-            button9.Visible = true;
+            changePanel(2, true);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            panels[3].BringToFront();
-            button9.Visible = true;
+            changePanel(3, true);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            panels[4].BringToFront();
-            button9.Visible = true;
+            changePanel(4, true);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            panels[5].BringToFront();
-            button9.Visible = true;
+            changePanel(5, true);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            panels[6].BringToFront();
-            button9.Visible = true;
+            changePanel(6, true);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            panels[0].BringToFront();
-            button9.Visible = false;
+            changePanel(0, false);
         }
     }
 }
