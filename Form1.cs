@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace app
 {
-    public partial class Form1 : Form
+    public partial class Hackheroes : Form
     {
-        public Form1()
+        public Hackheroes()
         {
             InitializeComponent();
         }
