@@ -22,10 +22,10 @@ namespace app
 
 		User(string _name, byte _age, float _weight, float _height, Gender _gender)
 		{
-            name = _name;
-            age = _age;
-            weight = _weight;
-            height = _height;
+			name = _name;
+			age = _age;
+			weight = _weight;
+			height = _height;
 			gender = _gender;
 		}
 	}
