@@ -1,4 +1,7 @@
-﻿namespace app
+﻿using System;
+using System.Diagnostics;
+
+namespace app
 {
     class MacroCalculator
     {
@@ -16,36 +19,26 @@
 
         public void CalculateMacro(float weight, float height, int age, Gender gender)
         {
+            float rmr;
             if (gender == Gender.Male)
             {
-                var rmr = height * 6.25f + weight * 10f - (age * 5f) + 5f;
-
-                calories = (int)rmr;
-                float caloriesLeft = calories;
-
-                protein = (int)weight * 2;
-                caloriesLeft -= protein * 4;
-
-                fat = (int)(caloriesLeft * 0.25f);
-                caloriesLeft -= fat * 9;
-
-                carbohydrates = (int)(caloriesLeft / 4f);
+                rmr = height * 6.25f + weight * 10f - (age * 5f) + 5f;
             }
             else
             {
-                var rmr = height * 6.25f + weight * 10f - (age * 5f) - 161f;
-
-                calories = (int)rmr;
-                float caloriesLeft = calories;
-
-                protein = (int)weight * 2;
-                caloriesLeft -= protein * 4;
-
-                fat = (int)(caloriesLeft * 0.25f);
-                caloriesLeft -= fat * 9;
-
-                carbohydrates = (int)(caloriesLeft / 4f);
+                rmr = height * 6.25f + weight * 10f - (age * 5f) - 161f;
             }
+
+            calories = (int)(rmr * 1.45f);
+            float caloriesLeft = calories;
+
+            protein = (int)weight * 2;
+            caloriesLeft -= protein * 4;
+
+            fat = (int)(caloriesLeft * (0.35f / 9f));
+            caloriesLeft -= fat * 9;
+
+            carbohydrates = (int)(caloriesLeft / 4f);
         }
     }
 }
