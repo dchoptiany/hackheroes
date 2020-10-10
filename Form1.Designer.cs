@@ -180,6 +180,7 @@
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hackheroes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hackheroes";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
