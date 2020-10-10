@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace app
 {
-    public partial class Form1 : Form
+    public partial class Hackheroes : Form
     {
-        public Form1()
+        public Hackheroes()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
