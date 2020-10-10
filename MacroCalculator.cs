@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace app
+﻿namespace app
 {
     class MacroCalculator
     {
@@ -20,16 +14,16 @@ namespace app
             Female
         }
 
-        public void CalculateMacro(float _weight, float _height, int _age, Gender _gender)
+        public void CalculateMacro(float weight, float height, int age, Gender gender)
         {
-            if (_gender == Gender.Male)
+            if (gender == Gender.Male)
             {
-                var rmr = _height * 6.25f + _weight * 10f - (_age * 5f) + 5f;
+                var rmr = height * 6.25f + weight * 10f - (age * 5f) + 5f;
 
                 calories = (int)rmr;
                 float caloriesLeft = calories;
 
-                protein = (int)_weight * 2;
+                protein = (int)weight * 2;
                 caloriesLeft -= protein * 4;
 
                 fat = (int)(caloriesLeft * 0.25f);
@@ -39,12 +33,12 @@ namespace app
             }
             else
             {
-                var rmr = _height * 6.25f + _weight * 10f - (_age * 5f) - 161f;
+                var rmr = height * 6.25f + weight * 10f - (age * 5f) - 161f;
 
                 calories = (int)rmr;
                 float caloriesLeft = calories;
 
-                protein = (int)_weight * 2;
+                protein = (int)weight * 2;
                 caloriesLeft -= protein * 4;
 
                 fat = (int)(caloriesLeft * 0.25f);
