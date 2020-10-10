@@ -6,7 +6,7 @@ namespace app
 {
     public partial class Hackheroes : Form
     {
-        List<Panel> panels = new List<Panel>();
+        private readonly List<Panel> panels = new List<Panel>();
 
         public Hackheroes()
         {
@@ -25,57 +25,54 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            panels.Add(panel0);
-            panels.Add(panel1);
-            panels.Add(panel2);
-            panels.Add(panel3);
-            panels.Add(panel4);
-            panels.Add(panel5);
-            panels.Add(panel6);
-            panels[0].BringToFront();
-            button9.Visible = false;
+            panels.Add(panel0); //buttons
+            panels.Add(panel1); //BMI
+            panels.Add(panel2); //sport activity
+            panels.Add(panel3); //quiz
+            panels.Add(panel4); //calculator
+            panels.Add(panel5); //surveys
+            panels.Add(panel6); //profiles
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void changePanel(int index, bool visibility)
         {
-            panels[1].BringToFront();
-            button9.Visible = true;
+            panels[index].BringToFront();
+            buttonReturn.Visible = visibility;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonBMI_Click(object sender, EventArgs e)
         {
-            panels[2].BringToFront();
-            button9.Visible = true;
+            changePanel(1, true);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonActivity_Click(object sender, EventArgs e)
         {
-            panels[3].BringToFront();
-            button9.Visible = true;
+            changePanel(2, true);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonQuiz_Click(object sender, EventArgs e)
         {
-            panels[4].BringToFront();
-            button9.Visible = true;
+            changePanel(3, true);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonCalculator_Click(object sender, EventArgs e)
         {
-            panels[5].BringToFront();
-            button9.Visible = true;
+            changePanel(4, true);
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void buttonSurvey_Click(object sender, EventArgs e)
         {
-            panels[6].BringToFront();
-            button9.Visible = true;
+            changePanel(5, true);
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void buttonProfile_Click(object sender, EventArgs e)
         {
-            panels[0].BringToFront();
-            button9.Visible = false;
+            changePanel(6, true);
+        }
+
+        private void buttonReturn_Click(object sender, EventArgs e)
+        {
+            changePanel(0, false);
         }
     }
 }
