@@ -11,7 +11,9 @@ namespace app
         public int carbohydrates;
         public int fat;
 
-        public void CalculateMacro(ref User user)
+        private float activityLevel = 1.35f;
+
+        public void CalculateMacro(User user)
         {
             float rmr;
             if (user.gender == Gender.Male)
@@ -23,7 +25,7 @@ namespace app
                 rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f) - 161f;
             }
 
-            calories = (int)(rmr * 1.45f);
+            calories = (int)(rmr * activityLevel);
             float caloriesLeft = calories;
 
             protein = (int)user.weight * 2;

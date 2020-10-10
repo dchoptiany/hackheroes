@@ -12,9 +12,14 @@ namespace app
         static void Main()
         {
             MacroCalculator macroCalculator = new MacroCalculator();
-            User user = new User("User", 18, 80f, 180f, Gender.Male);
+            List<User> users = new List<User>();
+            int currentUserIndex = 0;
 
-            macroCalculator.CalculateMacro(ref user);
+            var basicUser = new User("User", 18, 80f, 180f, Gender.Male);
+            users.Add(basicUser);
+
+            macroCalculator.CalculateMacro(users[currentUserIndex]);
+            Console.WriteLine(users[currentUserIndex].age);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
