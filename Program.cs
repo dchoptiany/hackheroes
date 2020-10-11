@@ -7,19 +7,22 @@ using System.Windows.Forms;
 namespace app
 {
     static class Program
-    {   
+    {
+        static public List<User> users;
+        static public int currentUserIndex;
+
         [STAThread]
         static void Main()
         {
-            MacroCalculator macroCalculator = new MacroCalculator();
-            List<User> users = new List<User>();
-            int currentUserIndex = 0;
+            currentUserIndex = 0;
 
-            var basicUser = new User("User", 18, 80f, 180f, Gender.Male);
+            users = new List<User>();
+            MacroCalculator macroCalculator = new MacroCalculator();
+
+            var basicUser = new User("User", 18, 80f, 180, Gender.Male);
             users.Add(basicUser);
 
             macroCalculator.CalculateMacro(users[currentUserIndex]);
-            Console.WriteLine(users[currentUserIndex].age);
 
             BMI.CalculateBmi(basicUser);
 
