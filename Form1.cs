@@ -134,7 +134,7 @@ namespace app
                 result = MessageBox.Show(message, caption, buttons);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    this.Close();
+                    Close();
                 }
             }
             else
@@ -148,7 +148,7 @@ namespace app
                 {
                     gend = Gender.Male;
                 }
-                User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToByte(numericUpDownHeight.Value), gend);
+                User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gend);
                 Program.users.Add(newUser);
                 listBoxUsers.Items.Add(newUser);
             }
@@ -163,7 +163,7 @@ namespace app
                 textBoxCurrentName.Text = Program.users[Program.currentUserIndex].name;
                 numericUpDownCurrentAge.Value = Program.users[Program.currentUserIndex].age;
                 numericUpDownCurrentWeight.Value = Convert.ToDecimal(Program.users[Program.currentUserIndex].weight);
-                numericUpDownCurrentHeight.Value = Convert.ToDecimal(Program.users[Program.currentUserIndex].height);
+                numericUpDownCurrentHeight.Value = Convert.ToUInt16(Program.users[Program.currentUserIndex].height);
                 if (Program.users[Program.currentUserIndex].gender == Gender.Male)
                 {
                     radioButtonCurrentMale.Checked = true;
@@ -188,7 +188,7 @@ namespace app
                 result = MessageBox.Show(message, caption, buttons);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    this.Close();
+                    Close();
                 }
             }
             else
@@ -213,7 +213,7 @@ namespace app
                 Program.users[listBoxUsers.SelectedIndex].name = textBoxCurrentName.Text;
                 Program.users[listBoxUsers.SelectedIndex].age = Convert.ToByte(numericUpDownCurrentAge.Value);
                 Program.users[listBoxUsers.SelectedIndex].weight = Convert.ToSingle(numericUpDownCurrentWeight.Value);
-                Program.users[listBoxUsers.SelectedIndex].height = Convert.ToSingle(numericUpDownCurrentHeight.Value);
+                Program.users[listBoxUsers.SelectedIndex].height = Convert.ToUInt16(numericUpDownCurrentHeight.Value);
 
                 if (radioButtonCurrentMale.Checked)
                 {
@@ -235,7 +235,7 @@ namespace app
                 result = MessageBox.Show(message, caption, buttons);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    this.Close();
+                    Close();
                 }
             }
         }

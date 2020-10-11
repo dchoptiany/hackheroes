@@ -19,7 +19,7 @@ namespace app
             users = new List<User>();
             MacroCalculator macroCalculator = new MacroCalculator();
 
-            var basicUser = new User("User", 18, 80f, 180f, Gender.Male);
+            var basicUser = new User("User", 18, 80f, 180, Gender.Male);
             users.Add(basicUser);
 
             macroCalculator.CalculateMacro(users[currentUserIndex]);
