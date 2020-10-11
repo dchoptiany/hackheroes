@@ -8,7 +8,6 @@ namespace app
 {
     static class Program
     {
-        private static readonly MacroCalculator macroCalculator = new MacroCalculator();
         static public List<User> users;
         static public int currentUserIndex;
 
@@ -22,7 +21,7 @@ namespace app
             var basicUser = new User("User", 18, 80f, 180, Gender.Male);
             users.Add(basicUser);
 
-            macroCalculator.CalculateMacro(users[currentUserIndex]);
+            MacroCalculator.CalculateMacro(users[currentUserIndex]);
 
             BMI.CalculateBmi(basicUser);
 
