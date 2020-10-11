@@ -21,7 +21,7 @@ namespace app
             macroCalculator.CalculateMacro(users[currentUserIndex]);
             Console.WriteLine(users[currentUserIndex].age);
 
-            bmi.CalculateBmi(basicUser);
+            BMI.CalculateBmi(basicUser);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

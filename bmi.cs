@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace app
 {
-    class bmi
+    class BMI
     {
         public static void CalculateBmi (User user)
         {
