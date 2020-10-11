@@ -9,11 +9,15 @@ namespace app
     static class Program
     {
         static public List<User> users;
+        static public int currentUserIndex;
+
         [STAThread]
         static void Main()
         {
+            currentUserIndex = 0;
+
+            users = new List<User>();
             MacroCalculator macroCalculator = new MacroCalculator();
-            int currentUserIndex = 0;
 
             var basicUser = new User("User", 18, 80f, 180f, Gender.Male);
             users.Add(basicUser);

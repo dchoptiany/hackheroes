@@ -109,7 +109,134 @@ namespace app
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            Program.users.Add(new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToByte(numericUpDownHeight.Value), Convert.ToBoolean(radioButtonFemale.Checked);
+            if (textBoxName.Text == "" || (radioButtonFemale.Checked == false && radioButtonMale.Checked == false))
+            {
+                Console.WriteLine("Nie mozna utowrzyc profilu bez podania wszystkich danych!");
+            }
+            else
+            {
+                Gender gend;
+                if (radioButtonFemale.Checked)
+                {
+                    gend = Gender.Female;
+                }
+                else
+                {
+                    gend = Gender.Male;
+                }
+                User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToByte(numericUpDownHeight.Value), gend);
+                Program.users.Add(newUser);
+                listBoxUsers.Items.Add(newUser);
+            }
+            // DEBUG ONLY //////////////////
+            foreach (User aUser in Program.users)
+            {
+                Console.WriteLine(aUser.name);
+            }
+            ////////////////////////////////
+        }
+
+        private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listBoxUsers.SelectedIndex != -1)
+            {
+                Program.currentUserIndex = listBoxUsers.SelectedIndex;
+
+                Console.WriteLine("listBoxUsers.SelectedIndex: " + listBoxUsers.SelectedIndex);
+                Console.WriteLine("Program.currentUserIndex: " + Program.currentUserIndex);
+
+                Console.WriteLine("Current user: " + Program.users[Program.currentUserIndex].name);
+
+                textBoxCurrentName.Text = Program.users[Program.currentUserIndex].name;
+                numericUpDownCurrentAge.Value = Program.users[Program.currentUserIndex].age;
+                numericUpDownCurrentWeight.Value = Convert.ToDecimal(Program.users[Program.currentUserIndex].weight);
+                numericUpDownCurrentHeight.Value = Convert.ToDecimal(Program.users[Program.currentUserIndex].height);
+                if (Program.users[Program.currentUserIndex].gender == Gender.Male)
+                {
+                    radioButtonCurrentMale.Checked = true;
+                }
+                else
+                {
+                    radioButtonCurrentFemale.Checked = true;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Brak wartosci dla SelectedIndex! (indexChanged)");
+            }
+            
+
+            // DEBUG ONLY //////////////////
+            foreach (User aUser in Program.users)
+            {
+                Console.WriteLine(aUser.name);
+            }
+            ////////////////////////////////
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            Program.users.RemoveAt(listBoxUsers.SelectedIndex);
+            listBoxUsers.Items.RemoveAt(listBoxUsers.SelectedIndex);
+            // DEBUG ONLY //////////////////
+            foreach (User aUser in Program.users)
+            {
+                Console.WriteLine(aUser.name);
+            }
+            ////////////////////////////////
+        }
+
+        private void buttonDelete_Click_1(object sender, EventArgs e)
+        {
+            int indexToRemove = listBoxUsers.SelectedIndex;
+            if (listBoxUsers.Items.Count <= 1)
+            {
+                Console.WriteLine("Nie mozna usunac jedynego profilu! Utworz nowy i nastepnie usun poprzedni.");
+            }
+            else
+            {
+                if (indexToRemove > 0)
+                {
+                    --listBoxUsers.SelectedIndex;
+                }
+                else
+                {
+                    ++listBoxUsers.SelectedIndex;
+                }
+                Program.users.RemoveAt(indexToRemove);
+                listBoxUsers.Items.RemoveAt(indexToRemove);
+            }
+            // DEBUG ONLY //////////////////
+            foreach (User aUser in Program.users)
+            {
+                Console.WriteLine(aUser.name);
+            }
+            ////////////////////////////////
+        }
+
+        private void buttonSaveChanges_Click(object sender, EventArgs e)
+        {
+            if (listBoxUsers.SelectedIndex != -1)
+            {
+                Program.users[listBoxUsers.SelectedIndex].name = textBoxCurrentName.Text;
+                Program.users[listBoxUsers.SelectedIndex].age = Convert.ToByte(numericUpDownCurrentAge.Value);
+                Program.users[listBoxUsers.SelectedIndex].weight = Convert.ToSingle(numericUpDownCurrentWeight.Value);
+                Program.users[listBoxUsers.SelectedIndex].height = Convert.ToSingle(numericUpDownCurrentHeight.Value);
+
+                if (radioButtonCurrentMale.Checked)
+                {
+                    Program.users[listBoxUsers.SelectedIndex].gender = Gender.Male;
+                }
+                else
+                {
+                    Program.users[listBoxUsers.SelectedIndex].gender = Gender.Female;
+                }
+                listBoxUsers.Items[listBoxUsers.SelectedIndex] = Program.users[listBoxUsers.SelectedIndex];
+            }
+            else
+            {
+                Console.WriteLine("Brak wartosci dla SelectedIndex!");
+            }
         }
     }
 }
