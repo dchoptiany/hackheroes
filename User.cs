@@ -19,6 +19,7 @@ namespace app
 		public float weight { get; set; }
 		public uint height { get; set; }
 		public Gender gender { get; set; }
+		public float BMI { get; set; }
 
 		public User(string _name, byte _age, float _weight, uint _height, Gender _gender)
 		{
