@@ -75,9 +75,9 @@ namespace app
             changePanel(0, false);
         }
 
-        private void updateAgeForm(Label lbl)
+        private void updateAgeForm(Label lbl, NumericUpDown numericUD)
         {
-            uint val = Convert.ToUInt16(numericUpDownAge.Value);
+            uint val = Convert.ToUInt16(numericUD.Value);
             if (val == 1)
             {
                 lbl.Text = "rok";
@@ -109,66 +109,12 @@ namespace app
 
         private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
         {
-            uint val = Convert.ToUInt16(numericUpDownAge.Value);
-            if (val == 1)
-            {
-                label15.Text = "rok";
-            }
-            else if (val >= 2 && val <= 4)
-            {
-                label15.Text = "lata";
-            }
-            else if (val >= 5 && val <= 21)
-            {
-                label15.Text = "lat";
-            }
-            else
-            {
-                uint lastDigit = val % 10;
-                switch (lastDigit)
-                {
-                    case 2:
-                    case 3:
-                    case 4:
-                        label15.Text = "lata";
-                        break;
-                    default:
-                        label15.Text = "lat";
-                        break;
-                }
-            }
+            updateAgeForm(label15, numericUpDownAge);
         }
 
         private void numericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
         {
-            uint val = Convert.ToUInt16(numericUpDownCurrentAge.Value);
-            if (val == 1)
-            {
-                label17.Text = "rok";
-            }
-            else if (val >= 2 && val <= 4)
-            {
-                label17.Text = "lata";
-            }
-            else if (val >= 5 && val <= 21)
-            {
-                label17.Text = "lat";
-            }
-            else
-            {
-                uint lastDigit = val % 10;
-                switch (lastDigit)
-                {
-                    case 2:
-                    case 3:
-                    case 4:
-                        label17.Text = "lata";
-                        break;
-                    default:
-                        label17.Text = "lat";
-                        break;
-                }
-            }
+            updateAgeForm(label17, numericUpDownCurrentAge);
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
