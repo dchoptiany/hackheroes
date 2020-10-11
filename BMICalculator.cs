@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace app
+﻿namespace app
 {
-    static class BMI
+    static class BMICalculator
     {
         public static void CalculateBmi (ref User user)
         {
