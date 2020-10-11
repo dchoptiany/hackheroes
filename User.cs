@@ -21,6 +21,8 @@ namespace app
 		public uint height;
 		public Gender gender;
 
+		public float BMI;
+
 		///  Macro Section
 		public int calories;
 		public int protein;
