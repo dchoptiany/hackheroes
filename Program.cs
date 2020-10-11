@@ -18,7 +18,7 @@ namespace app
             var basicUser = new User("Bartek", 18, 80f, 180f, Gender.Male); //tworzenie przykladowego uzytkownika
             users.Add(basicUser);
 
-            macroCalculator.CalculateMacro(users[currentUserIndex]); //obliczanie makro dla aktulanego uzytkownika
+            macroCalculator.CalculateMacro(users[currentUserIndex]); //obliczanie makro dla aktualnego uzytkownika
             Console.WriteLine(users[currentUserIndex].age);
 
             Application.EnableVisualStyles();
