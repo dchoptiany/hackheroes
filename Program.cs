@@ -23,7 +23,6 @@ namespace app
             users.Add(basicUser);
 
             macroCalculator.CalculateMacro(users[currentUserIndex]);
-            Console.WriteLine(users[currentUserIndex].age);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

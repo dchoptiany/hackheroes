@@ -813,6 +813,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.ControlBox = false;
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -822,7 +823,6 @@
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hackheroes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -109,9 +109,34 @@ namespace app
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
+
             if (textBoxName.Text == "" || (radioButtonFemale.Checked == false && radioButtonMale.Checked == false))
             {
-                Console.WriteLine("Nie mozna utowrzyc profilu bez podania wszystkich danych!");
+                string missingInfo = "";
+                
+                if (textBoxName.Text == "" && radioButtonFemale.Checked == false && radioButtonMale.Checked == false)
+                {
+                    missingInfo = "imię, płeć";
+                }
+                else if (radioButtonFemale.Checked == false && radioButtonMale.Checked == false)
+                {
+                    missingInfo = "płeć";
+                }
+                else if(textBoxName.Text == "")
+                {
+                    missingInfo = "imię";
+                }
+
+                string message = "Aby utworzyć profil musisz podać wszystkie dane!\nBrakujące dane: " + missingInfo + ".";
+                string caption = "Niepoprawnie wypełniony formularz";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.Close();
+                }
             }
             else
             {
@@ -128,12 +153,6 @@ namespace app
                 Program.users.Add(newUser);
                 listBoxUsers.Items.Add(newUser);
             }
-            // DEBUG ONLY //////////////////
-            foreach (User aUser in Program.users)
-            {
-                Console.WriteLine(aUser.name);
-            }
-            ////////////////////////////////
         }
 
         private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,11 +160,6 @@ namespace app
             if(listBoxUsers.SelectedIndex != -1)
             {
                 Program.currentUserIndex = listBoxUsers.SelectedIndex;
-
-                Console.WriteLine("listBoxUsers.SelectedIndex: " + listBoxUsers.SelectedIndex);
-                Console.WriteLine("Program.currentUserIndex: " + Program.currentUserIndex);
-
-                Console.WriteLine("Current user: " + Program.users[Program.currentUserIndex].name);
 
                 textBoxCurrentName.Text = Program.users[Program.currentUserIndex].name;
                 numericUpDownCurrentAge.Value = Program.users[Program.currentUserIndex].age;
@@ -160,30 +174,6 @@ namespace app
                     radioButtonCurrentFemale.Checked = true;
                 }
             }
-            else
-            {
-                Console.WriteLine("Brak wartosci dla SelectedIndex! (indexChanged)");
-            }
-            
-
-            // DEBUG ONLY //////////////////
-            foreach (User aUser in Program.users)
-            {
-                Console.WriteLine(aUser.name);
-            }
-            ////////////////////////////////
-        }
-
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            Program.users.RemoveAt(listBoxUsers.SelectedIndex);
-            listBoxUsers.Items.RemoveAt(listBoxUsers.SelectedIndex);
-            // DEBUG ONLY //////////////////
-            foreach (User aUser in Program.users)
-            {
-                Console.WriteLine(aUser.name);
-            }
-            ////////////////////////////////
         }
 
         private void buttonDelete_Click_1(object sender, EventArgs e)
@@ -191,7 +181,16 @@ namespace app
             int indexToRemove = listBoxUsers.SelectedIndex;
             if (listBoxUsers.Items.Count <= 1)
             {
-                Console.WriteLine("Nie mozna usunac jedynego profilu! Utworz nowy i nastepnie usun poprzedni.");
+                string message = "Nie można usunąć jedynego istniejącego profilu!\nUtwórz nowy profil lub edytuj już istniejący.";
+                string caption = "Nie można usunąć profilu";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.Close();
+                }
             }
             else
             {
@@ -206,12 +205,6 @@ namespace app
                 Program.users.RemoveAt(indexToRemove);
                 listBoxUsers.Items.RemoveAt(indexToRemove);
             }
-            // DEBUG ONLY //////////////////
-            foreach (User aUser in Program.users)
-            {
-                Console.WriteLine(aUser.name);
-            }
-            ////////////////////////////////
         }
 
         private void buttonSaveChanges_Click(object sender, EventArgs e)
@@ -235,7 +228,16 @@ namespace app
             }
             else
             {
-                Console.WriteLine("Brak wartosci dla SelectedIndex!");
+                string message = "Aby edytować dane, musisz najpierw zaznaczyć profil!";
+                string caption = "Nie zaznaczono profilu";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.Close();
+                }
             }
         }
     }
