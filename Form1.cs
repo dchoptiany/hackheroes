@@ -75,10 +75,42 @@ namespace app
             changePanel(0, false);
         }
 
+        private void updateAgeForm(Label lbl)
+        {
+            uint val = Convert.ToUInt16(numericUpDownAge.Value);
+            if (val == 1)
+            {
+                lbl.Text = "rok";
+            }
+            else if (val >= 2 && val <= 4)
+            {
+                lbl.Text = "lata";
+            }
+            else if (val >= 5 && val <= 21)
+            {
+                lbl.Text = "lat";
+            }
+            else
+            {
+                uint lastDigit = val % 10;
+                switch (lastDigit)
+                {
+                    case 2:
+                    case 3:
+                    case 4:
+                        lbl.Text = "lata";
+                        break;
+                    default:
+                        lbl.Text = "lat";
+                        break;
+                }
+            }
+        }
+
         private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
         {
             uint val = Convert.ToUInt16(numericUpDownAge.Value);
-            if(val == 1)
+            if (val == 1)
             {
                 label15.Text = "rok";
             }
@@ -102,6 +134,38 @@ namespace app
                         break;
                     default:
                         label15.Text = "lat";
+                        break;
+                }
+            }
+        }
+
+        private void numericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
+        {
+            uint val = Convert.ToUInt16(numericUpDownCurrentAge.Value);
+            if (val == 1)
+            {
+                label17.Text = "rok";
+            }
+            else if (val >= 2 && val <= 4)
+            {
+                label17.Text = "lata";
+            }
+            else if (val >= 5 && val <= 21)
+            {
+                label17.Text = "lat";
+            }
+            else
+            {
+                uint lastDigit = val % 10;
+                switch (lastDigit)
+                {
+                    case 2:
+                    case 3:
+                    case 4:
+                        label17.Text = "lata";
+                        break;
+                    default:
+                        label17.Text = "lat";
                         break;
                 }
             }
@@ -150,7 +214,7 @@ namespace app
                 }
                 User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gend);
                 Program.users.Add(newUser);
-                listBoxUsers.Items.Add(newUser);
+                listBoxUsers.Items.Add(newUser.name);
             }
         }
 
@@ -223,7 +287,7 @@ namespace app
                 {
                     Program.users[listBoxUsers.SelectedIndex].gender = Gender.Female;
                 }
-                listBoxUsers.Items[listBoxUsers.SelectedIndex] = Program.users[listBoxUsers.SelectedIndex];
+                listBoxUsers.Items[listBoxUsers.SelectedIndex] = Program.users[listBoxUsers.SelectedIndex].name;
             }
             else
             {

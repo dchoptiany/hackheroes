@@ -426,6 +426,7 @@
             0,
             0,
             0});
+            this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.numericUpDownCurrentAge_ValueChanged);
             // 
             // numericUpDownCurrentHeight
             // 
@@ -570,7 +571,6 @@
             // listBoxUsers
             // 
             this.listBoxUsers.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.listBoxUsers.DisplayMember = "name";
             this.listBoxUsers.FormattingEnabled = true;
             this.listBoxUsers.Items.AddRange(new object[] {
             "User"});
@@ -578,7 +578,6 @@
             this.listBoxUsers.Name = "listBoxUsers";
             this.listBoxUsers.Size = new System.Drawing.Size(120, 95);
             this.listBoxUsers.TabIndex = 18;
-            this.listBoxUsers.ValueMember = "name";
             this.listBoxUsers.SelectedIndexChanged += new System.EventHandler(this.listBoxUsers_SelectedIndexChanged);
             // 
             // label16
@@ -813,6 +812,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.ControlBox = false;
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -822,7 +822,6 @@
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hackheroes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
