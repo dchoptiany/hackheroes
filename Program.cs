@@ -17,12 +17,11 @@ namespace app
             currentUserIndex = 0;
 
             users = new List<User>();
-            MacroCalculator macroCalculator = new MacroCalculator();
 
             var basicUser = new User("User", 18, 80f, 180, Gender.Male);
             users.Add(basicUser);
 
-            macroCalculator.CalculateMacro(users[currentUserIndex]);
+            MacroCalculator.CalculateMacro(users[currentUserIndex]);
 
             BMICalculator.CalculateBmi(ref basicUser);
 

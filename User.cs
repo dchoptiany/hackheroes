@@ -14,12 +14,18 @@ namespace app
 
 	public class User
 	{
-		public string name { get; set; }
-		public byte age { get; set; }
-		public float weight { get; set; }
-		public uint height { get; set; }
-		public Gender gender { get; set; }
-		public float BMI { get; set; }
+  		///  Body section
+		public string name;
+		public byte age;
+		public float weight;
+		public uint height;
+		public Gender gender;
+
+		///  Macro Section
+		public int calories;
+		public int protein;
+		public int carbohydrates;
+		public int fat;
 
 		public User(string _name, byte _age, float _weight, uint _height, Gender _gender)
 		{
