@@ -21,9 +21,8 @@ namespace app
             var basicUser = new User("User", 18, 80f, 180, Gender.Male);
             users.Add(basicUser);
 
-            MacroCalculator.CalculateMacro(users[currentUserIndex]);
-
-            BMICalculator.CalculateBmi(ref basicUser);
+            Calculator.CalculateMacro(users[currentUserIndex]);
+            Calculator.CalculateBMI(users[currentUserIndex]);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
