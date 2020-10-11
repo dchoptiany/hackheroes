@@ -1,16 +1,18 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace app
+﻿namespace app
 {
-    static class MacroCalculator
+    static class Calculator
     {
+        public static void CalculateBMI(User user)
+        {
+            user.BMI = user.weight / (user.height / 100 * user.height / 100);
+        }
+
         public static void CalculateMacro(User user)
         {
             float rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f);
             rmr += user.gender == Gender.Male ? 5f : -161f;
 
-            float activityLevel = 1.35f; // TO DO !!!
+            float activityLevel = 1.35f; //to be passed from control
             user.calories = (int)(rmr * activityLevel);
             float caloriesLeft = user.calories;
 
