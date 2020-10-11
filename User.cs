@@ -14,15 +14,14 @@ namespace app
 
 	public class User
 	{
+    // Body section
 		public string name;
 		public byte age;
 		public float weight;
 		public uint height;
 		public Gender gender;
 
-		/// <summary>
 		///  Macro Section
-		/// </summary>
 		public int calories;
 		public int protein;
 		public int carbohydrates;
