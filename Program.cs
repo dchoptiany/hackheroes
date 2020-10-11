@@ -21,6 +21,8 @@ namespace app
             macroCalculator.CalculateMacro(users[currentUserIndex]);
             Console.WriteLine(users[currentUserIndex].age);
 
+            BMI.CalculateBmi(basicUser);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Hackheroes());
