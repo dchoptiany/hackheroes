@@ -109,7 +109,6 @@ namespace app
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-
             if (textBoxName.Text == "" || (radioButtonFemale.Checked == false && radioButtonMale.Checked == false))
             {
                 string missingInfo = "";
