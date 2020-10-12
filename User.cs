@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace app
+﻿namespace app
 {
 	public enum Gender
 	{
@@ -40,7 +34,7 @@ namespace app
 
 		public string getData()
         {
-			return age + " " + weight + " " + height + " " + gender + " " + calories + " " + protein + " " + carbohydrates + " " + fat;
+			return age + " " + weight + " " + height + " " + (gender == Gender.Female ? "1" : "0") + " " + calories + " " + protein + " " + carbohydrates + " " + fat;
 		}
 	}
 }

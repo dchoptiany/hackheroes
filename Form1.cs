@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace app
 {
@@ -12,6 +14,16 @@ namespace app
         public Hackheroes()
         {
             InitializeComponent();
+        }
+
+        public static class ModifyProgressBarColor
+        {
+            [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+            static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
+            public static void SetState(ProgressBar bar, int state)
+            {
+                SendMessage(bar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -66,6 +78,8 @@ namespace app
             panels.Add(panel4); //calculator
             panels.Add(panel5); //surveys
             panels.Add(panel6); //profiles
+
+            center(label6, 30); //BMI
         }
 
         private void changePanel(int index, bool visibility)
@@ -73,9 +87,61 @@ namespace app
             panels[index].BringToFront();
             buttonReturn.Visible = visibility;
         }
+        
+        private void updateArrow()
+        {
+            float BMI = Program.users[Program.currentUserIndex].BMI;
+            float value = BMI * 2.5f - 10f;
+
+            if (value < 0f)
+            {
+                value = 0f;
+            }
+            else if(value > 100f)
+            {
+                value = 100f;
+            }
+
+            pictureBoxArrow.Location = new Point(75 + (int)value * 8, 147);
+        }
+
+        private string getInterpretation(float BMI)
+        {
+            if(BMI < 18.5f)
+            {
+                return "Niedowaga";
+            }
+            else if(BMI < 25f)
+            {
+                return "Norma";
+            }
+            else if(BMI < 30f)
+            {
+                return "Nadwaga";
+            }
+            else
+            {
+                return "Otyłość";
+            }
+        }
+
+        private void center(Control control, int h)
+        {
+            control.Location = new Point(1000 / 2 - control.Size.Width / 2, h);
+        }
 
         private void buttonBMI_Click(object sender, EventArgs e)
         {
+            Calculator.CalculateBMI(Program.users[Program.currentUserIndex]);
+
+            updateArrow();
+
+            labelBMI.Text = "Twoje BMI wynosi: " + Program.users[Program.currentUserIndex].BMI.ToString("0.##");
+            labelBMIInterpretation.Text = getInterpretation(Program.users[Program.currentUserIndex].BMI);
+
+            center(labelBMI, 300);
+            center(labelBMIInterpretation, 360);
+
             changePanel(1, true);
         }
 
