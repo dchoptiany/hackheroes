@@ -37,7 +37,8 @@
             this.buttonSurvey = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.progressBarBMI = new System.Windows.Forms.ProgressBar();
+            this.labelBMIInterpretation = new System.Windows.Forms.Label();
+            this.labelBMI = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +49,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonArrowDown = new System.Windows.Forms.Button();
+            this.buttonArrowUp = new System.Windows.Forms.Button();
             this.buttonSaveChanges = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -87,11 +91,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.labelBMI = new System.Windows.Forms.Label();
-            this.labelBMIInterpretation = new System.Windows.Forms.Label();
-            this.buttonArrowUp = new System.Windows.Forms.Button();
-            this.buttonArrowDown = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
+            this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,6 +107,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // panel0
@@ -222,22 +223,37 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBoxArrow);
             this.panel1.Controls.Add(this.labelBMIInterpretation);
             this.panel1.Controls.Add(this.labelBMI);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.progressBarBMI);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(100, 100);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 14;
             // 
-            // progressBarBMI
+            // labelBMIInterpretation
             // 
-            this.progressBarBMI.Location = new System.Drawing.Point(100, 150);
-            this.progressBarBMI.Name = "progressBarBMI";
-            this.progressBarBMI.Size = new System.Drawing.Size(800, 50);
-            this.progressBarBMI.TabIndex = 2;
+            this.labelBMIInterpretation.AutoSize = true;
+            this.labelBMIInterpretation.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMIInterpretation.Location = new System.Drawing.Point(347, 360);
+            this.labelBMIInterpretation.Name = "labelBMIInterpretation";
+            this.labelBMIInterpretation.Size = new System.Drawing.Size(316, 65);
+            this.labelBMIInterpretation.TabIndex = 5;
+            this.labelBMIInterpretation.Text = "<interpretation>";
+            this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelBMI
+            // 
+            this.labelBMI.AutoSize = true;
+            this.labelBMI.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMI.Location = new System.Drawing.Point(273, 300);
+            this.labelBMI.Name = "labelBMI";
+            this.labelBMI.Size = new System.Drawing.Size(454, 65);
+            this.labelBMI.TabIndex = 4;
+            this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
+            this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -366,6 +382,38 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1000, 500);
             this.panel6.TabIndex = 19;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Location = new System.Drawing.Point(270, 277);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(63, 23);
+            this.buttonEdit.TabIndex = 38;
+            this.buttonEdit.Text = "Edytuj";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // buttonArrowDown
+            // 
+            this.buttonArrowDown.Enabled = false;
+            this.buttonArrowDown.Location = new System.Drawing.Point(267, 240);
+            this.buttonArrowDown.Name = "buttonArrowDown";
+            this.buttonArrowDown.Size = new System.Drawing.Size(23, 23);
+            this.buttonArrowDown.TabIndex = 37;
+            this.buttonArrowDown.Text = "▼";
+            this.buttonArrowDown.UseVisualStyleBackColor = true;
+            this.buttonArrowDown.Click += new System.EventHandler(this.buttonArrowDown_Click);
+            // 
+            // buttonArrowUp
+            // 
+            this.buttonArrowUp.Enabled = false;
+            this.buttonArrowUp.Location = new System.Drawing.Point(267, 212);
+            this.buttonArrowUp.Name = "buttonArrowUp";
+            this.buttonArrowUp.Size = new System.Drawing.Size(23, 23);
+            this.buttonArrowUp.TabIndex = 36;
+            this.buttonArrowUp.Text = "▲";
+            this.buttonArrowUp.UseVisualStyleBackColor = true;
+            this.buttonArrowUp.Click += new System.EventHandler(this.buttonArrowUp_Click);
             // 
             // buttonSaveChanges
             // 
@@ -831,6 +879,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::app.Properties.Resources.BMIScale;
             this.pictureBox1.Location = new System.Drawing.Point(100, 200);
             this.pictureBox1.Name = "pictureBox1";
@@ -870,58 +919,17 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.button2_Click);
             // 
-            // labelBMI
+            // pictureBoxArrow
             // 
-            this.labelBMI.AutoSize = true;
-            this.labelBMI.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelBMI.Location = new System.Drawing.Point(273, 300);
-            this.labelBMI.Name = "labelBMI";
-            this.labelBMI.Size = new System.Drawing.Size(454, 65);
-            this.labelBMI.TabIndex = 4;
-            this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
-            this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelBMIInterpretation
-            // 
-            this.labelBMIInterpretation.AutoSize = true;
-            this.labelBMIInterpretation.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelBMIInterpretation.Location = new System.Drawing.Point(347, 360);
-            this.labelBMIInterpretation.Name = "labelBMIInterpretation";
-            this.labelBMIInterpretation.Size = new System.Drawing.Size(316, 65);
-            this.labelBMIInterpretation.TabIndex = 5;
-            this.labelBMIInterpretation.Text = "<interpretation>";
-            this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // buttonArrowUp
-            // 
-            this.buttonArrowUp.Enabled = false;
-            this.buttonArrowUp.Location = new System.Drawing.Point(267, 212);
-            this.buttonArrowUp.Name = "buttonArrowUp";
-            this.buttonArrowUp.Size = new System.Drawing.Size(23, 23);
-            this.buttonArrowUp.TabIndex = 36;
-            this.buttonArrowUp.Text = "▲";
-            this.buttonArrowUp.UseVisualStyleBackColor = true;
-            this.buttonArrowUp.Click += new System.EventHandler(this.buttonArrowUp_Click);
-            // 
-            // buttonArrowDown
-            // 
-            this.buttonArrowDown.Enabled = false;
-            this.buttonArrowDown.Location = new System.Drawing.Point(267, 240);
-            this.buttonArrowDown.Name = "buttonArrowDown";
-            this.buttonArrowDown.Size = new System.Drawing.Size(23, 23);
-            this.buttonArrowDown.TabIndex = 37;
-            this.buttonArrowDown.Text = "▼";
-            this.buttonArrowDown.UseVisualStyleBackColor = true;
-            this.buttonArrowDown.Click += new System.EventHandler(this.buttonArrowDown_Click);
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(270, 277);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(63, 23);
-            this.buttonEdit.TabIndex = 38;
-            this.buttonEdit.Text = "Edytuj";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
+            this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 147);
+            this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxArrow.Name = "pictureBoxArrow";
+            this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrow.TabIndex = 6;
+            this.pictureBoxArrow.TabStop = false;
             // 
             // Hackheroes
             // 
@@ -965,6 +973,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1028,13 +1037,13 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSaveChanges;
-        private System.Windows.Forms.ProgressBar progressBarBMI;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelBMI;
         private System.Windows.Forms.Label labelBMIInterpretation;
         private System.Windows.Forms.Button buttonArrowDown;
         private System.Windows.Forms.Button buttonArrowUp;
         private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.PictureBox pictureBoxArrow;
     }
 }
 

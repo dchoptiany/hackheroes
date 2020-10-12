@@ -54,7 +54,7 @@ namespace app
             buttonReturn.Visible = visibility;
         }
         
-        private void updateProgressBar()
+        private void updateArrow()
         {
             float BMI = Program.users[Program.currentUserIndex].BMI;
             float value = BMI * 2.5f - 10f;
@@ -68,16 +68,7 @@ namespace app
                 value = 100f;
             }
 
-            progressBarBMI.Value = (int)value;
-
-            if (BMI >= 18.5f && BMI <= 25f)
-            {
-                ModifyProgressBarColor.SetState(progressBarBMI, 1);
-            }
-            else
-            {
-                ModifyProgressBarColor.SetState(progressBarBMI, 2);
-            }
+            pictureBoxArrow.Location = new Point(75 + (int)value * 8, 147);
         }
 
         private string getInterpretation(float BMI)
@@ -108,7 +99,7 @@ namespace app
         private void buttonBMI_Click(object sender, EventArgs e)
         {
             Calculator.CalculateBMI(Program.users[Program.currentUserIndex]);
-            updateProgressBar();
+            updateArrow();
             labelBMI.Text = "Twoje BMI wynosi: " + Program.users[Program.currentUserIndex].BMI.ToString("0.##");
             labelBMIInterpretation.Text = getInterpretation(Program.users[Program.currentUserIndex].BMI);
             center(labelBMI, 300);
