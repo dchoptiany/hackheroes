@@ -68,11 +68,30 @@ namespace app
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             changePanel(6, true);
+            listBoxUsers.SelectedIndex = Program.currentUserIndex;
+            textBoxCurrentName.Text = Program.users[Program.currentUserIndex].name;
+            numericUpDownCurrentAge.Value = Program.users[Program.currentUserIndex].age;
+            numericUpDownCurrentHeight.Value = Program.users[Program.currentUserIndex].height;
+            numericUpDownCurrentWeight.Value = Convert.ToDecimal(Program.users[Program.currentUserIndex].weight);
+            if(Program.users[Program.currentUserIndex].gender == Gender.Male)
+            {
+                radioButtonCurrentMale.Checked = true;
+            }
+            else
+            {
+                radioButtonCurrentFemale.Checked = true;
+            }
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
             changePanel(0, false);
+        }
+
+        private void updateArrowButtons()
+        {
+            buttonArrowUp.Enabled = (listBoxUsers.SelectedIndex > 0);
+            buttonArrowDown.Enabled = (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1);
         }
 
         private void updateAgeForm(Label lbl, NumericUpDown numericUD)
@@ -146,6 +165,9 @@ namespace app
                 {
                     Close();
                 }
+
+                Program.currentUserIndex = listBoxUsers.Items.Count - 1;
+                listBoxUsers.SelectedIndex = listBoxUsers.Items.Count - 1;
             }
             else
             {
@@ -162,10 +184,14 @@ namespace app
                 Program.users.Add(newUser);
                 listBoxUsers.Items.Add(newUser.name);
             }
+
+            updateArrowButtons();
         }
 
         private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            updateArrowButtons();
+
             if(listBoxUsers.SelectedIndex != -1)
             {
                 Program.currentUserIndex = listBoxUsers.SelectedIndex;
@@ -247,6 +273,22 @@ namespace app
                 {
                     Close();
                 }
+            }
+        }
+
+        private void buttonArrowUp_Click(object sender, EventArgs e)
+        {
+            if (listBoxUsers.SelectedIndex > 0)
+            {
+                --listBoxUsers.SelectedIndex;
+            }
+        }
+
+        private void buttonArrowDown_Click(object sender, EventArgs e)
+        {
+            if (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1)
+            {
+                ++listBoxUsers.SelectedIndex;
             }
         }
     }

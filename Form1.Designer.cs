@@ -85,6 +85,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonReturn = new System.Windows.Forms.Button();
+            this.buttonArrowUp = new System.Windows.Forms.Button();
+            this.buttonArrowDown = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -336,6 +338,8 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.buttonArrowDown);
+            this.panel6.Controls.Add(this.buttonArrowUp);
             this.panel6.Controls.Add(this.buttonSaveChanges);
             this.panel6.Controls.Add(this.label17);
             this.panel6.Controls.Add(this.label18);
@@ -806,13 +810,34 @@
             this.buttonReturn.Visible = false;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
+            // buttonArrowUp
+            // 
+            this.buttonArrowUp.Enabled = false;
+            this.buttonArrowUp.Location = new System.Drawing.Point(267, 212);
+            this.buttonArrowUp.Name = "buttonArrowUp";
+            this.buttonArrowUp.Size = new System.Drawing.Size(23, 23);
+            this.buttonArrowUp.TabIndex = 36;
+            this.buttonArrowUp.Text = "▲";
+            this.buttonArrowUp.UseVisualStyleBackColor = true;
+            this.buttonArrowUp.Click += new System.EventHandler(this.buttonArrowUp_Click);
+            // 
+            // buttonArrowDown
+            // 
+            this.buttonArrowDown.Enabled = false;
+            this.buttonArrowDown.Location = new System.Drawing.Point(267, 240);
+            this.buttonArrowDown.Name = "buttonArrowDown";
+            this.buttonArrowDown.Size = new System.Drawing.Size(23, 23);
+            this.buttonArrowDown.TabIndex = 37;
+            this.buttonArrowDown.Text = "▼";
+            this.buttonArrowDown.UseVisualStyleBackColor = true;
+            this.buttonArrowDown.Click += new System.EventHandler(this.buttonArrowDown_Click);
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.ControlBox = false;
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -822,6 +847,7 @@
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hackheroes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -910,6 +936,8 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSaveChanges;
+        private System.Windows.Forms.Button buttonArrowDown;
+        private System.Windows.Forms.Button buttonArrowUp;
     }
 }
 
