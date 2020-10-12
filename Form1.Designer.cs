@@ -89,6 +89,9 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.labelBMI = new System.Windows.Forms.Label();
             this.labelBMIInterpretation = new System.Windows.Forms.Label();
+            this.buttonArrowUp = new System.Windows.Forms.Button();
+            this.buttonArrowDown = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -321,6 +324,9 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.buttonEdit);
+            this.panel6.Controls.Add(this.buttonArrowDown);
+            this.panel6.Controls.Add(this.buttonArrowUp);
             this.panel6.Controls.Add(this.buttonSaveChanges);
             this.panel6.Controls.Add(this.label17);
             this.panel6.Controls.Add(this.label18);
@@ -367,8 +373,10 @@
             this.buttonSaveChanges.Name = "buttonSaveChanges";
             this.buttonSaveChanges.Size = new System.Drawing.Size(124, 23);
             this.buttonSaveChanges.TabIndex = 35;
+            this.buttonSaveChanges.Tag = "";
             this.buttonSaveChanges.Text = "Zapisz zmiany";
             this.buttonSaveChanges.UseVisualStyleBackColor = true;
+            this.buttonSaveChanges.Visible = false;
             this.buttonSaveChanges.Click += new System.EventHandler(this.buttonSaveChanges_Click);
             // 
             // label17
@@ -378,7 +386,9 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(18, 13);
             this.label17.TabIndex = 34;
+            this.label17.Tag = "";
             this.label17.Text = "lat";
+            this.label17.Visible = false;
             // 
             // label18
             // 
@@ -387,7 +397,9 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(26, 13);
             this.label18.TabIndex = 33;
+            this.label18.Tag = "";
             this.label18.Text = "Imię";
+            this.label18.Visible = false;
             // 
             // numericUpDownCurrentAge
             // 
@@ -405,12 +417,15 @@
             this.numericUpDownCurrentAge.Name = "numericUpDownCurrentAge";
             this.numericUpDownCurrentAge.Size = new System.Drawing.Size(49, 20);
             this.numericUpDownCurrentAge.TabIndex = 32;
+            this.numericUpDownCurrentAge.Tag = "";
             this.numericUpDownCurrentAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentAge.Value = new decimal(new int[] {
             35,
             0,
             0,
             0});
+            this.numericUpDownCurrentAge.Visible = false;
+            this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.numericUpDownCurrentAge_ValueChanged);
             // 
             // numericUpDownCurrentHeight
             // 
@@ -428,12 +443,14 @@
             this.numericUpDownCurrentHeight.Name = "numericUpDownCurrentHeight";
             this.numericUpDownCurrentHeight.Size = new System.Drawing.Size(49, 20);
             this.numericUpDownCurrentHeight.TabIndex = 31;
+            this.numericUpDownCurrentHeight.Tag = "";
             this.numericUpDownCurrentHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentHeight.Value = new decimal(new int[] {
             170,
             0,
             0,
             0});
+            this.numericUpDownCurrentHeight.Visible = false;
             // 
             // numericUpDownCurrentWeight
             // 
@@ -452,12 +469,14 @@
             this.numericUpDownCurrentWeight.Name = "numericUpDownCurrentWeight";
             this.numericUpDownCurrentWeight.Size = new System.Drawing.Size(49, 20);
             this.numericUpDownCurrentWeight.TabIndex = 30;
+            this.numericUpDownCurrentWeight.Tag = "";
             this.numericUpDownCurrentWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentWeight.Value = new decimal(new int[] {
             60,
             0,
             0,
             0});
+            this.numericUpDownCurrentWeight.Visible = false;
             // 
             // textBoxCurrentName
             // 
@@ -465,6 +484,8 @@
             this.textBoxCurrentName.Name = "textBoxCurrentName";
             this.textBoxCurrentName.Size = new System.Drawing.Size(100, 20);
             this.textBoxCurrentName.TabIndex = 29;
+            this.textBoxCurrentName.Tag = "";
+            this.textBoxCurrentName.Visible = false;
             // 
             // radioButtonCurrentMale
             // 
@@ -474,8 +495,10 @@
             this.radioButtonCurrentMale.Size = new System.Drawing.Size(78, 17);
             this.radioButtonCurrentMale.TabIndex = 28;
             this.radioButtonCurrentMale.TabStop = true;
+            this.radioButtonCurrentMale.Tag = "";
             this.radioButtonCurrentMale.Text = "Mężczyzna";
             this.radioButtonCurrentMale.UseVisualStyleBackColor = true;
+            this.radioButtonCurrentMale.Visible = false;
             // 
             // radioButtonCurrentFemale
             // 
@@ -485,8 +508,10 @@
             this.radioButtonCurrentFemale.Size = new System.Drawing.Size(61, 17);
             this.radioButtonCurrentFemale.TabIndex = 27;
             this.radioButtonCurrentFemale.TabStop = true;
+            this.radioButtonCurrentFemale.Tag = "";
             this.radioButtonCurrentFemale.Text = "Kobieta";
             this.radioButtonCurrentFemale.UseVisualStyleBackColor = true;
+            this.radioButtonCurrentFemale.Visible = false;
             // 
             // label19
             // 
@@ -495,7 +520,9 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(30, 13);
             this.label19.TabIndex = 26;
+            this.label19.Tag = "";
             this.label19.Text = "Płeć";
+            this.label19.Visible = false;
             // 
             // label20
             // 
@@ -504,7 +531,9 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(32, 13);
             this.label20.TabIndex = 25;
+            this.label20.Tag = "";
             this.label20.Text = "Wiek";
+            this.label20.Visible = false;
             // 
             // label21
             // 
@@ -513,7 +542,9 @@
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(19, 13);
             this.label21.TabIndex = 24;
+            this.label21.Tag = "";
             this.label21.Text = "kg";
+            this.label21.Visible = false;
             // 
             // label22
             // 
@@ -522,7 +553,9 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(36, 13);
             this.label22.TabIndex = 23;
+            this.label22.Tag = "";
             this.label22.Text = "Waga";
+            this.label22.Visible = false;
             // 
             // label23
             // 
@@ -531,7 +564,9 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(40, 13);
             this.label23.TabIndex = 22;
+            this.label23.Tag = "";
             this.label23.Text = "Wzrost";
+            this.label23.Visible = false;
             // 
             // label24
             // 
@@ -540,7 +575,9 @@
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(21, 13);
             this.label24.TabIndex = 21;
+            this.label24.Tag = "";
             this.label24.Text = "cm";
+            this.label24.Visible = false;
             // 
             // buttonDelete
             // 
@@ -548,14 +585,15 @@
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonDelete.TabIndex = 19;
+            this.buttonDelete.Tag = "";
             this.buttonDelete.Text = "Usuń";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Visible = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click_1);
             // 
             // listBoxUsers
             // 
             this.listBoxUsers.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.listBoxUsers.DisplayMember = "name";
             this.listBoxUsers.FormattingEnabled = true;
             this.listBoxUsers.Items.AddRange(new object[] {
             "User"});
@@ -563,7 +601,6 @@
             this.listBoxUsers.Name = "listBoxUsers";
             this.listBoxUsers.Size = new System.Drawing.Size(120, 95);
             this.listBoxUsers.TabIndex = 18;
-            this.listBoxUsers.ValueMember = "name";
             this.listBoxUsers.SelectedIndexChanged += new System.EventHandler(this.listBoxUsers_SelectedIndexChanged);
             // 
             // label16
@@ -854,6 +891,37 @@
             this.labelBMIInterpretation.TabIndex = 5;
             this.labelBMIInterpretation.Text = "<interpretation>";
             this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // buttonArrowUp
+            // 
+            this.buttonArrowUp.Enabled = false;
+            this.buttonArrowUp.Location = new System.Drawing.Point(267, 212);
+            this.buttonArrowUp.Name = "buttonArrowUp";
+            this.buttonArrowUp.Size = new System.Drawing.Size(23, 23);
+            this.buttonArrowUp.TabIndex = 36;
+            this.buttonArrowUp.Text = "▲";
+            this.buttonArrowUp.UseVisualStyleBackColor = true;
+            this.buttonArrowUp.Click += new System.EventHandler(this.buttonArrowUp_Click);
+            // 
+            // buttonArrowDown
+            // 
+            this.buttonArrowDown.Enabled = false;
+            this.buttonArrowDown.Location = new System.Drawing.Point(267, 240);
+            this.buttonArrowDown.Name = "buttonArrowDown";
+            this.buttonArrowDown.Size = new System.Drawing.Size(23, 23);
+            this.buttonArrowDown.TabIndex = 37;
+            this.buttonArrowDown.Text = "▼";
+            this.buttonArrowDown.UseVisualStyleBackColor = true;
+            this.buttonArrowDown.Click += new System.EventHandler(this.buttonArrowDown_Click);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Location = new System.Drawing.Point(270, 277);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(63, 23);
+            this.buttonEdit.TabIndex = 38;
+            this.buttonEdit.Text = "Edytuj";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // Hackheroes
             // 
@@ -964,6 +1032,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelBMI;
         private System.Windows.Forms.Label labelBMIInterpretation;
+        private System.Windows.Forms.Button buttonArrowDown;
+        private System.Windows.Forms.Button buttonArrowUp;
+        private System.Windows.Forms.Button buttonEdit;
     }
 }
 
