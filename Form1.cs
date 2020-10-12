@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace app
 {
@@ -11,6 +12,16 @@ namespace app
         public Hackheroes()
         {
             InitializeComponent();
+        }
+
+        public static class ModifyProgressBarColor
+        {
+            [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+            static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
+            public static void SetState(ProgressBar bar, int state)
+            {
+                SendMessage(bar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -42,18 +53,30 @@ namespace app
         
         private void updateProgressBar()
         {
-            float value = Program.users[Program.currentUserIndex].BMI * 2.5f - 10f;
+            float BMI = Program.users[Program.currentUserIndex].BMI;
+            Console.WriteLine("BMI = " + BMI);
+            float value = BMI * 2.5f - 10f;
+            Console.WriteLine("value = " + value);
 
-            if(value < 0)
+            if (value < 0f)
             {
-                value = 0;
+                value = 0f;
             }
-            else if(value > 100)
+            else if(value > 100f)
             {
-                value = 100;
+                value = 100f;
             }
 
             progressBarBMI.Value = (int)value;
+
+            if (BMI >= 18.5f && BMI <= 25f)
+            {
+                ModifyProgressBarColor.SetState(progressBarBMI, 1);
+            }
+            else
+            {
+                ModifyProgressBarColor.SetState(progressBarBMI, 2);
+            }
         }
 
         private void buttonBMI_Click(object sender, EventArgs e)
