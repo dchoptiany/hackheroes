@@ -85,6 +85,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonReturn = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -246,6 +247,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(100, 100);
             this.panel1.Name = "panel1";
@@ -807,6 +809,13 @@
             this.buttonReturn.Visible = false;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(100, 150);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(800, 50);
+            this.progressBar1.TabIndex = 2;
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -911,6 +920,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSaveChanges;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
