@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace app
@@ -8,9 +9,27 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
 
+        private readonly Color blue1 = Color.FromArgb(0, 168, 255);
+        private readonly Color purple1 = Color.FromArgb(156, 136, 255);
+        private readonly Color darkblue1 = Color.FromArgb(72, 126, 176);
+        private readonly Color red1 = Color.FromArgb(232, 65, 24);
+        private readonly Color green1 = Color.FromArgb(76, 209, 55);
+        private readonly Color yellow1 = Color.FromArgb(251, 197, 49);
+
         public Hackheroes()
         {
             InitializeComponent();
+            InitializeColors();
+        }
+
+        private void InitializeColors()
+        {
+            buttonBMI.BackColor = blue1;
+            buttonActivity.BackColor = yellow1;
+            buttonQuiz.BackColor = green1;
+            buttonCalculator.BackColor = purple1;
+            buttonSurvey.BackColor = red1;
+            buttonProfile.BackColor = darkblue1;
         }
 
         private void button2_Click(object sender, EventArgs e)
