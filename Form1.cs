@@ -83,6 +83,7 @@ namespace app
         {
             Calculator.CalculateBMI(Program.users[Program.currentUserIndex]);
             updateProgressBar();
+            labelBMI.Text = "Twoje BMI wynosi: " + Program.users[Program.currentUserIndex].BMI.ToString("0.##");
             changePanel(1, true);
         }
 
