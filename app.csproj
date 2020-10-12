@@ -90,5 +90,8 @@
   <ItemGroup>
     <None Include="Resources\Images\closeIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\BMIScale.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

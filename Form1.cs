@@ -39,10 +39,27 @@ namespace app
             panels[index].BringToFront();
             buttonReturn.Visible = visibility;
         }
+        
+        private void updateProgressBar()
+        {
+            float value = Program.users[Program.currentUserIndex].BMI;
+
+            if(value < 0)
+            {
+                value = 0;
+            }
+            else if(value > 100)
+            {
+                value = 100;
+            }
+
+            progressBarBMI.Value = (int)value;
+        }
 
         private void buttonBMI_Click(object sender, EventArgs e)
         {
             Calculator.CalculateBMI(Program.users[Program.currentUserIndex]);
+            updateProgressBar();
             changePanel(1, true);
         }
 
