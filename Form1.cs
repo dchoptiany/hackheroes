@@ -330,7 +330,7 @@ namespace app
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using(StreamWriter saving = new StreamWriter("users.dat"))
+            using(StreamWriter saving = new StreamWriter("..\\..\\users.dat"))
             {
                 foreach (User user in Program.users)
                 {
