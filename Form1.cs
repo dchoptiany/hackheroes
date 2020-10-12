@@ -99,11 +99,15 @@ namespace app
         private void buttonBMI_Click(object sender, EventArgs e)
         {
             Calculator.CalculateBMI(Program.users[Program.currentUserIndex]);
+
             updateArrow();
+
             labelBMI.Text = "Twoje BMI wynosi: " + Program.users[Program.currentUserIndex].BMI.ToString("0.##");
             labelBMIInterpretation.Text = getInterpretation(Program.users[Program.currentUserIndex].BMI);
+
             center(labelBMI, 300);
             center(labelBMIInterpretation, 360);
+
             changePanel(1, true);
         }
 
