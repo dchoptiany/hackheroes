@@ -4,7 +4,7 @@
     {
         public static void CalculateBMI(User user)
         {
-            user.BMI = user.weight / (user.height / 100 * user.height / 100);
+            user.BMI = user.weight / (user.height / 100f * user.height / 100f);
         }
 
         public static void CalculateMacro(User user)
