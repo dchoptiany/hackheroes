@@ -68,6 +68,34 @@ namespace app
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             changePanel(6, true);
+
+            listBoxUsers.SelectedIndex = Program.currentUserIndex;
+            textBoxCurrentName.Text = Program.users[Program.currentUserIndex].name;
+            numericUpDownCurrentAge.Value = Program.users[Program.currentUserIndex].age;
+            numericUpDownCurrentHeight.Value = Program.users[Program.currentUserIndex].height;
+            numericUpDownCurrentWeight.Value = Convert.ToDecimal(Program.users[Program.currentUserIndex].weight);
+            if(Program.users[Program.currentUserIndex].gender == Gender.Male)
+            {
+                radioButtonCurrentMale.Checked = true;
+            }
+            else
+            {
+                radioButtonCurrentFemale.Checked = true;
+            }
+
+            textBoxCurrentName.Visible = false;
+            numericUpDownCurrentAge.Visible = false;
+            numericUpDownCurrentHeight.Visible = false;
+            numericUpDownCurrentWeight.Visible = false;
+            radioButtonCurrentFemale.Visible = false;
+            radioButtonCurrentMale.Visible = false;
+            label18.Visible = false;
+            label19.Visible = false;
+            label20.Visible = false;
+            label22.Visible = false;
+            label23.Visible = false;
+            buttonDelete.Visible = false;
+            buttonSaveChanges.Visible = false;
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)
@@ -75,20 +103,26 @@ namespace app
             changePanel(0, false);
         }
 
-        private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
+        private void updateArrowButtons()
         {
-            uint val = Convert.ToUInt16(numericUpDownAge.Value);
-            if(val == 1)
+            buttonArrowUp.Enabled = (listBoxUsers.SelectedIndex > 0);
+            buttonArrowDown.Enabled = (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1);
+        }
+
+        private void updateAgeForm(Label lbl, NumericUpDown numericUD)
+        {
+            uint val = Convert.ToUInt16(numericUD.Value);
+            if (val == 1)
             {
-                label15.Text = "rok";
+                lbl.Text = "rok";
             }
             else if (val >= 2 && val <= 4)
             {
-                label15.Text = "lata";
+                lbl.Text = "lata";
             }
             else if (val >= 5 && val <= 21)
             {
-                label15.Text = "lat";
+                lbl.Text = "lat";
             }
             else
             {
@@ -98,13 +132,23 @@ namespace app
                     case 2:
                     case 3:
                     case 4:
-                        label15.Text = "lata";
+                        lbl.Text = "lata";
                         break;
                     default:
-                        label15.Text = "lat";
+                        lbl.Text = "lat";
                         break;
                 }
             }
+        }
+
+        private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
+        {
+            updateAgeForm(label15, numericUpDownAge);
+        }
+
+        private void numericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
+        {
+            updateAgeForm(label17, numericUpDownCurrentAge);
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
@@ -136,6 +180,9 @@ namespace app
                 {
                     Close();
                 }
+
+                Program.currentUserIndex = listBoxUsers.Items.Count - 1;
+                listBoxUsers.SelectedIndex = listBoxUsers.Items.Count - 1;
             }
             else
             {
@@ -150,12 +197,19 @@ namespace app
                 }
                 User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gend);
                 Program.users.Add(newUser);
-                listBoxUsers.Items.Add(newUser);
+                listBoxUsers.Items.Add(newUser.name);
+
+                Program.currentUserIndex = Program.users.Count - 1; 
+                listBoxUsers.SelectedIndex = Program.currentUserIndex;
             }
+
+            updateArrowButtons();
         }
 
         private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            updateArrowButtons();
+
             if(listBoxUsers.SelectedIndex != -1)
             {
                 Program.currentUserIndex = listBoxUsers.SelectedIndex;
@@ -223,7 +277,7 @@ namespace app
                 {
                     Program.users[listBoxUsers.SelectedIndex].gender = Gender.Female;
                 }
-                listBoxUsers.Items[listBoxUsers.SelectedIndex] = Program.users[listBoxUsers.SelectedIndex];
+                listBoxUsers.Items[listBoxUsers.SelectedIndex] = Program.users[listBoxUsers.SelectedIndex].name;
             }
             else
             {
@@ -238,6 +292,39 @@ namespace app
                     Close();
                 }
             }
+        }
+
+        private void buttonArrowUp_Click(object sender, EventArgs e)
+        {
+            if (listBoxUsers.SelectedIndex > 0)
+            {
+                --listBoxUsers.SelectedIndex;
+            }
+        }
+
+        private void buttonArrowDown_Click(object sender, EventArgs e)
+        {
+            if (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1)
+            {
+                ++listBoxUsers.SelectedIndex;
+            }
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            textBoxCurrentName.Visible = true;
+            numericUpDownCurrentAge.Visible = true;
+            numericUpDownCurrentHeight.Visible = true;
+            numericUpDownCurrentWeight.Visible = true;
+            radioButtonCurrentFemale.Visible = true;
+            radioButtonCurrentMale.Visible = true;
+            label18.Visible = true;
+            label19.Visible = true;
+            label20.Visible = true;
+            label22.Visible = true;
+            label23.Visible = true;
+            buttonDelete.Visible = true;
+            buttonSaveChanges.Visible = true;
         }
     }
 }
