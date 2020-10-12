@@ -642,8 +642,6 @@
             // 
             this.listBoxUsers.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.listBoxUsers.FormattingEnabled = true;
-            this.listBoxUsers.Items.AddRange(new object[] {
-            "User"});
             this.listBoxUsers.Location = new System.Drawing.Point(141, 212);
             this.listBoxUsers.Name = "listBoxUsers";
             this.listBoxUsers.Size = new System.Drawing.Size(120, 95);

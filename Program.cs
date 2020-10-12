@@ -15,14 +15,7 @@ namespace app
         static void Main()
         {
             currentUserIndex = 0;
-
             users = new List<User>();
-
-            var basicUser = new User("User", 18, 80f, 180, Gender.Male);
-            users.Add(basicUser);
-
-            Calculator.CalculateMacro(users[currentUserIndex]);
-            Calculator.CalculateBMI(users[currentUserIndex]);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

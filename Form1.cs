@@ -26,6 +26,39 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
+            using(StreamReader loading = new StreamReader("..\\..\\users.dat"))
+            {
+                string name;
+                byte age;
+                float weight;
+                uint height;
+                Gender gender;
+
+                string line;
+                string[] arr = new string[4];
+
+                while(!loading.EndOfStream)
+                {
+                    name = loading.ReadLine();
+
+                    line = loading.ReadLine();
+                    arr = line.Split(' ');
+
+                    age = Convert.ToByte(arr[0]);
+                    weight = Convert.ToSingle(arr[1]);
+                    height = Convert.ToUInt32(arr[2]);
+                    gender = arr[3] == "1" ? Gender.Female : Gender.Male;
+
+                    Program.users.Add(new User(name, age, weight, height, gender));
+                    listBoxUsers.Items.Add(name);
+                }
+            }
+
+            if(Program.users.Count == 0)
+            {
+                Program.users.Add(new User("User", 18, 80f, 180, Gender.Male));
+            }
+
             panels.Add(panel0); //buttons
             panels.Add(panel1); //BMI
             panels.Add(panel2); //sport activity
