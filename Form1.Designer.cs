@@ -643,8 +643,6 @@
             // 
             this.listBoxUsers.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.listBoxUsers.FormattingEnabled = true;
-            this.listBoxUsers.Items.AddRange(new object[] {
-            "User"});
             this.listBoxUsers.Location = new System.Drawing.Point(141, 212);
             this.listBoxUsers.Name = "listBoxUsers";
             this.listBoxUsers.Size = new System.Drawing.Size(120, 95);
@@ -951,6 +949,7 @@
             this.Name = "Hackheroes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hackheroes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hackheroes_FormClosing);
             this.Load += new System.EventHandler(this.Hackheroes_Load);
             this.panel0.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
