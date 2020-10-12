@@ -74,7 +74,7 @@ namespace app
             numericUpDownCurrentAge.Value = Program.users[Program.currentUserIndex].age;
             numericUpDownCurrentHeight.Value = Program.users[Program.currentUserIndex].height;
             numericUpDownCurrentWeight.Value = Convert.ToDecimal(Program.users[Program.currentUserIndex].weight);
-            if(Program.users[Program.currentUserIndex].gender == Gender.Male)
+            if (Program.users[Program.currentUserIndex].gender == Gender.Male)
             {
                 radioButtonCurrentMale.Checked = true;
             }
@@ -83,24 +83,29 @@ namespace app
                 radioButtonCurrentFemale.Checked = true;
             }
 
-            textBoxCurrentName.Visible = false;
-            numericUpDownCurrentAge.Visible = false;
-            numericUpDownCurrentHeight.Visible = false;
-            numericUpDownCurrentWeight.Visible = false;
-            radioButtonCurrentFemale.Visible = false;
-            radioButtonCurrentMale.Visible = false;
-            label18.Visible = false;
-            label19.Visible = false;
-            label20.Visible = false;
-            label22.Visible = false;
-            label23.Visible = false;
-            buttonDelete.Visible = false;
-            buttonSaveChanges.Visible = false;
+            setEditInfoVisibility(false);
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
             changePanel(0, false);
+        }
+
+        private void setEditInfoVisibility(bool visibility)
+        {
+            textBoxCurrentName.Visible = visibility;
+            numericUpDownCurrentAge.Visible = visibility;
+            numericUpDownCurrentHeight.Visible = visibility;
+            numericUpDownCurrentWeight.Visible = visibility;
+            radioButtonCurrentFemale.Visible = visibility;
+            radioButtonCurrentMale.Visible = visibility;
+            label18.Visible = visibility;
+            label19.Visible = visibility;
+            label20.Visible = visibility;
+            label22.Visible = visibility;
+            label23.Visible = visibility;
+            buttonDelete.Visible = visibility;
+            buttonSaveChanges.Visible = visibility;
         }
 
         private void updateArrowButtons()
@@ -257,6 +262,7 @@ namespace app
                 }
                 Program.users.RemoveAt(indexToRemove);
                 listBoxUsers.Items.RemoveAt(indexToRemove);
+                setEditInfoVisibility(false);
             }
         }
 
@@ -278,6 +284,7 @@ namespace app
                     Program.users[listBoxUsers.SelectedIndex].gender = Gender.Female;
                 }
                 listBoxUsers.Items[listBoxUsers.SelectedIndex] = Program.users[listBoxUsers.SelectedIndex].name;
+                setEditInfoVisibility(false);
             }
             else
             {
@@ -312,19 +319,7 @@ namespace app
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            textBoxCurrentName.Visible = true;
-            numericUpDownCurrentAge.Visible = true;
-            numericUpDownCurrentHeight.Visible = true;
-            numericUpDownCurrentWeight.Visible = true;
-            radioButtonCurrentFemale.Visible = true;
-            radioButtonCurrentMale.Visible = true;
-            label18.Visible = true;
-            label19.Visible = true;
-            label20.Visible = true;
-            label22.Visible = true;
-            label23.Visible = true;
-            buttonDelete.Visible = true;
-            buttonSaveChanges.Visible = true;
+            setEditInfoVisibility(true);
         }
     }
 }
