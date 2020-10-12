@@ -42,7 +42,7 @@ namespace app
         
         private void updateProgressBar()
         {
-            float value = Program.users[Program.currentUserIndex].BMI;
+            float value = Program.users[Program.currentUserIndex].BMI * 2.5f - 10f;
 
             if(value < 0)
             {

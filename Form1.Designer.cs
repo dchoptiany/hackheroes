@@ -37,6 +37,7 @@
             this.buttonSurvey = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressBarBMI = new System.Windows.Forms.ProgressBar();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonReturn = new System.Windows.Forms.Button();
-            this.progressBarBMI = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
@@ -224,6 +224,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 14;
+            // 
+            // progressBarBMI
+            // 
+            this.progressBarBMI.Location = new System.Drawing.Point(100, 150);
+            this.progressBarBMI.Name = "progressBarBMI";
+            this.progressBarBMI.Size = new System.Drawing.Size(800, 50);
+            this.progressBarBMI.TabIndex = 2;
             // 
             // label6
             // 
@@ -780,13 +787,6 @@
             this.buttonReturn.Visible = false;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
-            // progressBarBMI
-            // 
-            this.progressBarBMI.Location = new System.Drawing.Point(100, 150);
-            this.progressBarBMI.Name = "progressBarBMI";
-            this.progressBarBMI.Size = new System.Drawing.Size(800, 50);
-            this.progressBarBMI.TabIndex = 2;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::app.Properties.Resources.BMIScale;
@@ -834,8 +834,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.ControlBox = false;
-            this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonReturn);
