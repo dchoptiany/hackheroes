@@ -82,7 +82,7 @@ namespace app
             {
                 radioButtonCurrentFemale.Checked = true;
             }
-
+            updateArrowButtons();
             setEditInfoVisibility(false);
         }
 
@@ -262,6 +262,11 @@ namespace app
                 }
                 Program.users.RemoveAt(indexToRemove);
                 listBoxUsers.Items.RemoveAt(indexToRemove);
+
+                listBoxUsers.SelectedIndex = 0;
+                Program.currentUserIndex = 0;
+
+                updateArrowButtons();
                 setEditInfoVisibility(false);
             }
         }
