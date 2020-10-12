@@ -37,5 +37,10 @@ namespace app
 			height = _height;
 			gender = _gender;
 		}
+
+		public string getData()
+        {
+			return age + " " + weight + " " + height + " " + gender + " " + calories + " " + protein + " " + carbohydrates + " " + fat;
+		}
 	}
 }

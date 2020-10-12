@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace app
@@ -25,6 +26,39 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
+            using(StreamReader loading = new StreamReader("..\\..\\users.dat"))
+            {
+                string name;
+                byte age;
+                float weight;
+                uint height;
+                Gender gender;
+
+                string line;
+                string[] arr = new string[4];
+
+                while(!loading.EndOfStream)
+                {
+                    name = loading.ReadLine();
+
+                    line = loading.ReadLine();
+                    arr = line.Split(' ');
+
+                    age = Convert.ToByte(arr[0]);
+                    weight = Convert.ToSingle(arr[1]);
+                    height = Convert.ToUInt32(arr[2]);
+                    gender = arr[3] == "1" ? Gender.Female : Gender.Male;
+
+                    Program.users.Add(new User(name, age, weight, height, gender));
+                    listBoxUsers.Items.Add(name);
+                }
+            }
+
+            if(Program.users.Count == 0)
+            {
+                Program.users.Add(new User("User", 18, 80f, 180, Gender.Male));
+            }
+
             panels.Add(panel0); //buttons
             panels.Add(panel1); //BMI
             panels.Add(panel2); //sport activity
@@ -327,6 +361,18 @@ namespace app
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             setEditInfoVisibility(true);
+        }
+
+        private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            using(StreamWriter saving = new StreamWriter("..\\..\\users.dat"))
+            {
+                foreach (User user in Program.users)
+                {
+                    saving.WriteLine(user.name);
+                    saving.WriteLine(user.getData());
+                }
+            }          
         }
     }
 }
