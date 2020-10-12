@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace app
 {
@@ -43,6 +44,8 @@ namespace app
             panels.Add(panel4); //calculator
             panels.Add(panel5); //surveys
             panels.Add(panel6); //profiles
+
+            center(label6, 30); //BMI
         }
 
         private void changePanel(int index, bool visibility)
@@ -97,12 +100,19 @@ namespace app
             }
         }
 
+        private void center(Control control, int h)
+        {
+            control.Location = new Point(1000 / 2 - control.Size.Width / 2, h);
+        }
+
         private void buttonBMI_Click(object sender, EventArgs e)
         {
             Calculator.CalculateBMI(Program.users[Program.currentUserIndex]);
             updateProgressBar();
             labelBMI.Text = "Twoje BMI wynosi: " + Program.users[Program.currentUserIndex].BMI.ToString("0.##");
             labelBMIInterpretation.Text = getInterpretation(Program.users[Program.currentUserIndex].BMI);
+            center(labelBMI, 300);
+            center(labelBMIInterpretation, 360);
             changePanel(1, true);
         }
 

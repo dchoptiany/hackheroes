@@ -245,6 +245,7 @@
             this.label6.Size = new System.Drawing.Size(109, 55);
             this.label6.TabIndex = 1;
             this.label6.Text = "BMI";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -841,12 +842,13 @@
             this.labelBMI.Size = new System.Drawing.Size(454, 65);
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
+            this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelBMIInterpretation
             // 
             this.labelBMIInterpretation.AutoSize = true;
             this.labelBMIInterpretation.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelBMIInterpretation.Location = new System.Drawing.Point(347, 356);
+            this.labelBMIInterpretation.Location = new System.Drawing.Point(347, 360);
             this.labelBMIInterpretation.Name = "labelBMIInterpretation";
             this.labelBMIInterpretation.Size = new System.Drawing.Size(316, 65);
             this.labelBMIInterpretation.TabIndex = 5;
