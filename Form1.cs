@@ -312,6 +312,7 @@ namespace app
             {
                 --listBoxUsers.SelectedIndex;
             }
+            setEditInfoVisibility(false);
         }
 
         private void buttonArrowDown_Click(object sender, EventArgs e)
@@ -320,6 +321,7 @@ namespace app
             {
                 ++listBoxUsers.SelectedIndex;
             }
+            setEditInfoVisibility(false);
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
