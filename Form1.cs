@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace app
@@ -325,6 +326,18 @@ namespace app
             label23.Visible = true;
             buttonDelete.Visible = true;
             buttonSaveChanges.Visible = true;
+        }
+
+        private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            using(StreamWriter saving = new StreamWriter("users.dat"))
+            {
+                foreach (User user in Program.users)
+                {
+                    saving.WriteLine(user.name);
+                    saving.WriteLine(user.getData());
+                }
+            }          
         }
     }
 }
