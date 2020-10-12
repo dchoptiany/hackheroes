@@ -88,6 +88,7 @@
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.labelBMI = new System.Windows.Forms.Label();
+            this.labelBMIInterpretation = new System.Windows.Forms.Label();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -218,6 +219,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelBMIInterpretation);
             this.panel1.Controls.Add(this.labelBMI);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.progressBarBMI);
@@ -840,6 +842,17 @@
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             // 
+            // labelBMIInterpretation
+            // 
+            this.labelBMIInterpretation.AutoSize = true;
+            this.labelBMIInterpretation.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMIInterpretation.Location = new System.Drawing.Point(347, 356);
+            this.labelBMIInterpretation.Name = "labelBMIInterpretation";
+            this.labelBMIInterpretation.Size = new System.Drawing.Size(316, 65);
+            this.labelBMIInterpretation.TabIndex = 5;
+            this.labelBMIInterpretation.Text = "<interpretation>";
+            this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -948,6 +961,7 @@
         private System.Windows.Forms.ProgressBar progressBarBMI;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelBMI;
+        private System.Windows.Forms.Label labelBMIInterpretation;
     }
 }
 

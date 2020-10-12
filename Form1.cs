@@ -54,9 +54,7 @@ namespace app
         private void updateProgressBar()
         {
             float BMI = Program.users[Program.currentUserIndex].BMI;
-            Console.WriteLine("BMI = " + BMI);
             float value = BMI * 2.5f - 10f;
-            Console.WriteLine("value = " + value);
 
             if (value < 0f)
             {
@@ -79,11 +77,32 @@ namespace app
             }
         }
 
+        private string getInterpretation(float BMI)
+        {
+            if(BMI < 18.5f)
+            {
+                return "Niedowaga";
+            }
+            else if(BMI < 25f)
+            {
+                return "Norma";
+            }
+            else if(BMI < 30f)
+            {
+                return "Nadwaga";
+            }
+            else
+            {
+                return "Otyłość";
+            }
+        }
+
         private void buttonBMI_Click(object sender, EventArgs e)
         {
             Calculator.CalculateBMI(Program.users[Program.currentUserIndex]);
             updateProgressBar();
             labelBMI.Text = "Twoje BMI wynosi: " + Program.users[Program.currentUserIndex].BMI.ToString("0.##");
+            labelBMIInterpretation.Text = getInterpretation(Program.users[Program.currentUserIndex].BMI);
             changePanel(1, true);
         }
 
