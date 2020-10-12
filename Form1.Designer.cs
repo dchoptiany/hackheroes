@@ -255,10 +255,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(458, 121);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(445, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 42);
+            this.label6.Size = new System.Drawing.Size(109, 55);
             this.label6.TabIndex = 1;
             this.label6.Text = "BMI";
             // 
@@ -813,8 +813,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.ControlBox = false;
-            this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonReturn);
