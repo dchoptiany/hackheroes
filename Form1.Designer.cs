@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonMinimize = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.panel0 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonBMI = new System.Windows.Forms.Button();
@@ -87,6 +85,8 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -103,38 +103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonMinimize
-            // 
-            this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.buttonMinimize.BackgroundImage = global::app.Properties.Resources.minimizeIcon;
-            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMinimize.FlatAppearance.BorderSize = 0;
-            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Location = new System.Drawing.Point(1122, -1);
-            this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonMinimize.Name = "buttonMinimize";
-            this.buttonMinimize.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonMinimize.Size = new System.Drawing.Size(31, 30);
-            this.buttonMinimize.TabIndex = 11;
-            this.buttonMinimize.UseVisualStyleBackColor = false;
-            this.buttonMinimize.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
-            this.buttonClose.BackgroundImage = global::app.Properties.Resources.closeIcon;
-            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonClose.FlatAppearance.BorderSize = 0;
-            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Location = new System.Drawing.Point(1153, -1);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonClose.Size = new System.Drawing.Size(31, 30);
-            this.buttonClose.TabIndex = 10;
-            this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel0
             // 
@@ -827,6 +795,38 @@
             this.pictureBox1.Size = new System.Drawing.Size(800, 50);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.buttonMinimize.BackgroundImage = global::app.Properties.Resources.minimizeIcon;
+            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.Location = new System.Drawing.Point(1122, -1);
+            this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonMinimize.Size = new System.Drawing.Size(31, 30);
+            this.buttonMinimize.TabIndex = 11;
+            this.buttonMinimize.UseVisualStyleBackColor = false;
+            this.buttonMinimize.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.BackgroundImage = global::app.Properties.Resources.closeIcon;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Location = new System.Drawing.Point(1153, -1);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonClose.Size = new System.Drawing.Size(31, 30);
+            this.buttonClose.TabIndex = 10;
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.button2_Click);
             // 
             // Hackheroes
             // 

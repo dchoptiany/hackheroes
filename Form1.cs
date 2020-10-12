@@ -42,6 +42,7 @@ namespace app
 
         private void buttonBMI_Click(object sender, EventArgs e)
         {
+            Calculator.CalculateBMI(Program.users[Program.currentUserIndex]);
             changePanel(1, true);
         }
 
