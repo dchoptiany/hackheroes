@@ -37,8 +37,10 @@
             this.buttonSurvey = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.labelBMIInterpretation = new System.Windows.Forms.Label();
             this.labelBMI = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -88,13 +90,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonReturn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -106,8 +108,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // panel0
@@ -233,13 +233,25 @@
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 14;
             // 
+            // pictureBoxArrow
+            // 
+            this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
+            this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 147);
+            this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxArrow.Name = "pictureBoxArrow";
+            this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrow.TabIndex = 6;
+            this.pictureBoxArrow.TabStop = false;
+            // 
             // labelBMIInterpretation
             // 
             this.labelBMIInterpretation.AutoSize = true;
-            this.labelBMIInterpretation.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMIInterpretation.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMIInterpretation.Location = new System.Drawing.Point(347, 360);
             this.labelBMIInterpretation.Name = "labelBMIInterpretation";
-            this.labelBMIInterpretation.Size = new System.Drawing.Size(316, 65);
+            this.labelBMIInterpretation.Size = new System.Drawing.Size(279, 42);
             this.labelBMIInterpretation.TabIndex = 5;
             this.labelBMIInterpretation.Text = "<interpretation>";
             this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,13 +259,23 @@
             // labelBMI
             // 
             this.labelBMI.AutoSize = true;
-            this.labelBMI.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMI.Location = new System.Drawing.Point(273, 300);
             this.labelBMI.Name = "labelBMI";
-            this.labelBMI.Size = new System.Drawing.Size(454, 65);
+            this.labelBMI.Size = new System.Drawing.Size(447, 42);
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::app.Properties.Resources.BMIScale;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 200);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -499,6 +521,7 @@
             0,
             0});
             this.numericUpDownCurrentHeight.Visible = false;
+            this.numericUpDownCurrentHeight.ValueChanged += new System.EventHandler(this.numericUpDownCurrentHeight_ValueChanged);
             // 
             // numericUpDownCurrentWeight
             // 
@@ -525,6 +548,7 @@
             0,
             0});
             this.numericUpDownCurrentWeight.Visible = false;
+            this.numericUpDownCurrentWeight.ValueChanged += new System.EventHandler(this.numericUpDownCurrentWeight_ValueChanged);
             // 
             // textBoxCurrentName
             // 
@@ -534,6 +558,7 @@
             this.textBoxCurrentName.TabIndex = 29;
             this.textBoxCurrentName.Tag = "";
             this.textBoxCurrentName.Visible = false;
+            this.textBoxCurrentName.TextChanged += new System.EventHandler(this.textBoxCurrentName_TextChanged);
             // 
             // radioButtonCurrentMale
             // 
@@ -547,6 +572,7 @@
             this.radioButtonCurrentMale.Text = "Mężczyzna";
             this.radioButtonCurrentMale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentMale.Visible = false;
+            this.radioButtonCurrentMale.CheckedChanged += new System.EventHandler(this.radioButtonCurrentMale_CheckedChanged);
             // 
             // radioButtonCurrentFemale
             // 
@@ -560,6 +586,7 @@
             this.radioButtonCurrentFemale.Text = "Kobieta";
             this.radioButtonCurrentFemale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentFemale.Visible = false;
+            this.radioButtonCurrentFemale.CheckedChanged += new System.EventHandler(this.radioButtonCurrentFemale_CheckedChanged);
             // 
             // label19
             // 
@@ -875,16 +902,6 @@
             this.buttonReturn.Visible = false;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::app.Properties.Resources.BMIScale;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 200);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // buttonMinimize
             // 
             this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
@@ -917,18 +934,6 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBoxArrow
-            // 
-            this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
-            this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 147);
-            this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrow.Name = "pictureBoxArrow";
-            this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxArrow.TabIndex = 6;
-            this.pictureBoxArrow.TabStop = false;
-            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -955,6 +960,8 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -971,8 +978,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
             this.ResumeLayout(false);
 
         }

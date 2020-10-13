@@ -87,6 +87,7 @@ namespace app
             panels[index].BringToFront();
             buttonReturn.Visible = visibility;
         }
+
         private void UpdateButtonDeleteEnability()
         {
             if (listBoxUsers.Items.Count > 1)
@@ -181,6 +182,9 @@ namespace app
         {
             changePanel(6, true);
 
+            UpdateButtonDeleteEnability();
+            buttonSaveChanges.Enabled = false;
+
             int userIndex = listBoxUsers.SelectedIndex = Program.currentUserIndex;
 
             textBoxCurrentName.Text = Program.users[userIndex].name;
@@ -197,7 +201,6 @@ namespace app
                 radioButtonCurrentFemale.Checked = true;
             }
 
-            UpdateButtonDeleteEnability();
             updateArrowButtons();
             setEditInfoVisibility(false);
         }
@@ -270,6 +273,11 @@ namespace app
         private void numericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
         {
             updateAgeForm(label17, numericUpDownCurrentAge);
+
+            if(numericUpDownCurrentAge.Value != Program.users[Program.currentUserIndex].age)
+            {
+                buttonSaveChanges.Enabled = true;
+            }
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
@@ -372,6 +380,7 @@ namespace app
                 UpdateButtonDeleteEnability();
                 updateArrowButtons();
                 setEditInfoVisibility(false);
+                buttonSaveChanges.Enabled = false;
             }
         }
 
@@ -396,6 +405,7 @@ namespace app
                 }
                 listBoxUsers.Items[userIndex] = Program.users[userIndex].name;
                 setEditInfoVisibility(false);
+                buttonSaveChanges.Enabled = false;
             }
             else
             {
@@ -445,6 +455,46 @@ namespace app
                     saving.WriteLine(user.getData());
                 }
             }          
+        }
+
+        private void textBoxCurrentName_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxCurrentName.Text != Program.users[Program.currentUserIndex].name)
+            {
+                buttonSaveChanges.Enabled = true;
+            }
+        }
+
+        private void numericUpDownCurrentWeight_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDownCurrentWeight.Value != Convert.ToDecimal(Program.users[Program.currentUserIndex].weight))
+            {
+                buttonSaveChanges.Enabled = true;
+            }
+        }
+
+        private void numericUpDownCurrentHeight_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDownCurrentHeight.Value != Program.users[Program.currentUserIndex].height)
+            {
+                buttonSaveChanges.Enabled = true;
+            }
+        }
+
+        private void radioButtonCurrentMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonCurrentMale.Checked && Program.users[Program.currentUserIndex].gender != Gender.Male)
+            {
+                buttonSaveChanges.Enabled = true;
+            }
+        }
+
+        private void radioButtonCurrentFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonCurrentFemale.Checked && Program.users[Program.currentUserIndex].gender != Gender.Female)
+            {
+                buttonSaveChanges.Enabled = true;
+            }
         }
     }
 }
