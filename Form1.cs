@@ -87,7 +87,18 @@ namespace app
             panels[index].BringToFront();
             buttonReturn.Visible = visibility;
         }
-        
+        private void UpdateButtonDeleteEnability()
+        {
+            if (listBoxUsers.Items.Count > 1)
+            {
+                buttonDelete.Enabled = true;
+            }
+            else
+            {
+                buttonDelete.Enabled = false;
+            }
+        }
+
         private void updateArrow()
         {
             float BMI = Program.users[Program.currentUserIndex].BMI;
@@ -186,6 +197,7 @@ namespace app
                 radioButtonCurrentFemale.Checked = true;
             }
 
+            UpdateButtonDeleteEnability();
             updateArrowButtons();
             setEditInfoVisibility(false);
         }
@@ -304,6 +316,8 @@ namespace app
                 Program.currentUserIndex = listBoxUsers.SelectedIndex = Program.users.Count - 1; 
             }
 
+            UpdateButtonDeleteEnability();
+            setEditInfoVisibility(false);
             updateArrowButtons();
         }
 
@@ -355,6 +369,7 @@ namespace app
 
                 listBoxUsers.SelectedIndex = Program.currentUserIndex = 0;
 
+                UpdateButtonDeleteEnability();
                 updateArrowButtons();
                 setEditInfoVisibility(false);
             }
