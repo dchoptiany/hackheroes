@@ -34,12 +34,12 @@ namespace app
             buttonProfile.BackColor = darkblue1;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
@@ -55,40 +55,40 @@ namespace app
             panels.Add(panel6); //profiles
         }
 
-        private void changePanel(int index, bool visibility)
+        private void ChangePanel(int index, bool visibility)
         {
             panels[index].BringToFront();
             buttonReturn.Visible = visibility;
         }
 
-        private void buttonBMI_Click(object sender, EventArgs e)
+        private void ButtonBMI_Click(object sender, EventArgs e)
         {
-            changePanel(1, true);
+            ChangePanel(1, true);
         }
 
-        private void buttonActivity_Click(object sender, EventArgs e)
+        private void ButtonActivity_Click(object sender, EventArgs e)
         {
-            changePanel(2, true);
+            ChangePanel(2, true);
         }
 
-        private void buttonQuiz_Click(object sender, EventArgs e)
+        private void ButtonQuiz_Click(object sender, EventArgs e)
         {
-            changePanel(3, true);
+            ChangePanel(3, true);
         }
 
-        private void buttonCalculator_Click(object sender, EventArgs e)
+        private void ButtonCalculator_Click(object sender, EventArgs e)
         {
-            changePanel(4, true);
+            ChangePanel(4, true);
         }
 
-        private void buttonSurvey_Click(object sender, EventArgs e)
+        private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            changePanel(5, true);
+            ChangePanel(5, true);
         }
 
-        private void buttonProfile_Click(object sender, EventArgs e)
+        private void ButtonProfile_Click(object sender, EventArgs e)
         {
-            changePanel(6, true);
+            ChangePanel(6, true);
 
             listBoxUsers.SelectedIndex = Program.currentUserIndex;
             textBoxCurrentName.Text = Program.users[Program.currentUserIndex].name;
@@ -119,18 +119,18 @@ namespace app
             buttonSaveChanges.Visible = false;
         }
 
-        private void buttonReturn_Click(object sender, EventArgs e)
+        private void ButtonReturn_Click(object sender, EventArgs e)
         {
-            changePanel(0, false);
+            ChangePanel(0, false);
         }
 
-        private void updateArrowButtons()
+        private void UpdateArrowButtons()
         {
             buttonArrowUp.Enabled = (listBoxUsers.SelectedIndex > 0);
             buttonArrowDown.Enabled = (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1);
         }
 
-        private void updateAgeForm(Label lbl, NumericUpDown numericUD)
+        private void UpdateAgeForm(Label lbl, NumericUpDown numericUD)
         {
             uint val = Convert.ToUInt16(numericUD.Value);
             if (val == 1)
@@ -162,17 +162,17 @@ namespace app
             }
         }
 
-        private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownAge_ValueChanged(object sender, EventArgs e)
         {
-            updateAgeForm(label15, numericUpDownAge);
+            UpdateAgeForm(label15, numericUpDownAge);
         }
 
-        private void numericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
         {
-            updateAgeForm(label17, numericUpDownCurrentAge);
+            UpdateAgeForm(label17, numericUpDownCurrentAge);
         }
 
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void ButtonCreate_Click(object sender, EventArgs e)
         {
             if (textBoxName.Text == "" || (radioButtonFemale.Checked == false && radioButtonMale.Checked == false))
             {
@@ -224,12 +224,12 @@ namespace app
                 listBoxUsers.SelectedIndex = Program.currentUserIndex;
             }
 
-            updateArrowButtons();
+            UpdateArrowButtons();
         }
 
-        private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            updateArrowButtons();
+            UpdateArrowButtons();
 
             if(listBoxUsers.SelectedIndex != -1)
             {
@@ -250,7 +250,7 @@ namespace app
             }
         }
 
-        private void buttonDelete_Click_1(object sender, EventArgs e)
+        private void ButtonDelete_Click_1(object sender, EventArgs e)
         {
             int indexToRemove = listBoxUsers.SelectedIndex;
             if (listBoxUsers.Items.Count <= 1)
@@ -281,7 +281,7 @@ namespace app
             }
         }
 
-        private void buttonSaveChanges_Click(object sender, EventArgs e)
+        private void ButtonSaveChanges_Click(object sender, EventArgs e)
         {
             if (listBoxUsers.SelectedIndex != -1)
             {
@@ -315,7 +315,7 @@ namespace app
             }
         }
 
-        private void buttonArrowUp_Click(object sender, EventArgs e)
+        private void ButtonArrowUp_Click(object sender, EventArgs e)
         {
             if (listBoxUsers.SelectedIndex > 0)
             {
@@ -323,7 +323,7 @@ namespace app
             }
         }
 
-        private void buttonArrowDown_Click(object sender, EventArgs e)
+        private void ButtonArrowDown_Click(object sender, EventArgs e)
         {
             if (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1)
             {
@@ -331,7 +331,7 @@ namespace app
             }
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
+        private void ButtonEdit_Click(object sender, EventArgs e)
         {
             textBoxCurrentName.Visible = true;
             numericUpDownCurrentAge.Visible = true;

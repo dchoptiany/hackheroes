@@ -118,7 +118,7 @@
             this.buttonMinimize.Size = new System.Drawing.Size(31, 30);
             this.buttonMinimize.TabIndex = 11;
             this.buttonMinimize.UseVisualStyleBackColor = false;
-            this.buttonMinimize.Click += new System.EventHandler(this.button4_Click);
+            this.buttonMinimize.Click += new System.EventHandler(this.Button4_Click);
             // 
             // buttonClose
             // 
@@ -134,7 +134,7 @@
             this.buttonClose.Size = new System.Drawing.Size(31, 30);
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.button2_Click);
+            this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
             // 
             // panel0
             // 
@@ -170,7 +170,7 @@
             this.buttonBMI.TabIndex = 0;
             this.buttonBMI.Text = "BMI";
             this.buttonBMI.UseVisualStyleBackColor = false;
-            this.buttonBMI.Click += new System.EventHandler(this.buttonBMI_Click);
+            this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
             // 
             // buttonActivity
             // 
@@ -185,7 +185,7 @@
             this.buttonActivity.TabIndex = 1;
             this.buttonActivity.Text = "Aktywność na dzisiaj";
             this.buttonActivity.UseVisualStyleBackColor = false;
-            this.buttonActivity.Click += new System.EventHandler(this.buttonActivity_Click);
+            this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
             // 
             // buttonQuiz
             // 
@@ -200,7 +200,7 @@
             this.buttonQuiz.TabIndex = 2;
             this.buttonQuiz.Text = "Quizy";
             this.buttonQuiz.UseVisualStyleBackColor = false;
-            this.buttonQuiz.Click += new System.EventHandler(this.buttonQuiz_Click);
+            this.buttonQuiz.Click += new System.EventHandler(this.ButtonQuiz_Click);
             // 
             // buttonCalculator
             // 
@@ -215,7 +215,7 @@
             this.buttonCalculator.TabIndex = 3;
             this.buttonCalculator.Text = "Kalkulator kalorii";
             this.buttonCalculator.UseVisualStyleBackColor = false;
-            this.buttonCalculator.Click += new System.EventHandler(this.buttonCalculator_Click);
+            this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
             // 
             // buttonSurvey
             // 
@@ -230,7 +230,7 @@
             this.buttonSurvey.TabIndex = 4;
             this.buttonSurvey.Text = "Ankiety diagnostyczne";
             this.buttonSurvey.UseVisualStyleBackColor = false;
-            this.buttonSurvey.Click += new System.EventHandler(this.buttonSurvey_Click);
+            this.buttonSurvey.Click += new System.EventHandler(this.ButtonSurvey_Click);
             // 
             // buttonProfile
             // 
@@ -245,7 +245,7 @@
             this.buttonProfile.TabIndex = 5;
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.UseVisualStyleBackColor = false;
-            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
             // 
             // panel1
             // 
@@ -390,7 +390,7 @@
             this.buttonEdit.TabIndex = 38;
             this.buttonEdit.Text = "Edytuj";
             this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
             // buttonArrowDown
             // 
@@ -401,7 +401,7 @@
             this.buttonArrowDown.TabIndex = 37;
             this.buttonArrowDown.Text = "▼";
             this.buttonArrowDown.UseVisualStyleBackColor = true;
-            this.buttonArrowDown.Click += new System.EventHandler(this.buttonArrowDown_Click);
+            this.buttonArrowDown.Click += new System.EventHandler(this.ButtonArrowDown_Click);
             // 
             // buttonArrowUp
             // 
@@ -412,7 +412,7 @@
             this.buttonArrowUp.TabIndex = 36;
             this.buttonArrowUp.Text = "▲";
             this.buttonArrowUp.UseVisualStyleBackColor = true;
-            this.buttonArrowUp.Click += new System.EventHandler(this.buttonArrowUp_Click);
+            this.buttonArrowUp.Click += new System.EventHandler(this.ButtonArrowUp_Click);
             // 
             // buttonSaveChanges
             // 
@@ -424,7 +424,7 @@
             this.buttonSaveChanges.Text = "Zapisz zmiany";
             this.buttonSaveChanges.UseVisualStyleBackColor = true;
             this.buttonSaveChanges.Visible = false;
-            this.buttonSaveChanges.Click += new System.EventHandler(this.buttonSaveChanges_Click);
+            this.buttonSaveChanges.Click += new System.EventHandler(this.ButtonSaveChanges_Click);
             // 
             // label17
             // 
@@ -472,7 +472,7 @@
             0,
             0});
             this.numericUpDownCurrentAge.Visible = false;
-            this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.numericUpDownCurrentAge_ValueChanged);
+            this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentAge_ValueChanged);
             // 
             // numericUpDownCurrentHeight
             // 
@@ -636,7 +636,7 @@
             this.buttonDelete.Text = "Usuń";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Visible = false;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click_1);
+            this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click_1);
             // 
             // listBoxUsers
             // 
@@ -648,7 +648,7 @@
             this.listBoxUsers.Name = "listBoxUsers";
             this.listBoxUsers.Size = new System.Drawing.Size(120, 95);
             this.listBoxUsers.TabIndex = 18;
-            this.listBoxUsers.SelectedIndexChanged += new System.EventHandler(this.listBoxUsers_SelectedIndexChanged);
+            this.listBoxUsers.SelectedIndexChanged += new System.EventHandler(this.ListBoxUsers_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -700,7 +700,7 @@
             0,
             0,
             0});
-            this.numericUpDownAge.ValueChanged += new System.EventHandler(this.numericUpDownAge_ValueChanged);
+            this.numericUpDownAge.ValueChanged += new System.EventHandler(this.NumericUpDownAge_ValueChanged);
             // 
             // numericUpDownHeight
             // 
@@ -804,7 +804,7 @@
             this.buttonCreate.TabIndex = 6;
             this.buttonCreate.Text = "Utwórz";
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
             // 
             // label11
             // 
@@ -874,7 +874,7 @@
             this.buttonReturn.Text = "Powrót";
             this.buttonReturn.UseVisualStyleBackColor = true;
             this.buttonReturn.Visible = false;
-            this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
+            this.buttonReturn.Click += new System.EventHandler(this.ButtonReturn_Click);
             // 
             // Hackheroes
             // 
