@@ -13,7 +13,7 @@ namespace app
 
         public Hackheroes()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         public static class ModifyProgressBarColor
@@ -80,6 +80,8 @@ namespace app
             panels.Add(panel6); //profiles
 
             center(label6, 30); //BMI
+
+            changePanel(0, true);
         }
 
         private void changePanel(int index, bool visibility)
@@ -439,6 +441,11 @@ namespace app
                     saving.WriteLine(user.getData());
                 }
             }          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

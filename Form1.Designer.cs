@@ -37,8 +37,10 @@
             this.buttonSurvey = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.labelBMIInterpretation = new System.Windows.Forms.Label();
             this.labelBMI = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +49,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -88,17 +94,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonReturn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentHeight)).BeginInit();
@@ -106,8 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // panel0
@@ -233,13 +238,25 @@
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 14;
             // 
+            // pictureBoxArrow
+            // 
+            this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
+            this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 147);
+            this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxArrow.Name = "pictureBoxArrow";
+            this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrow.TabIndex = 6;
+            this.pictureBoxArrow.TabStop = false;
+            // 
             // labelBMIInterpretation
             // 
             this.labelBMIInterpretation.AutoSize = true;
-            this.labelBMIInterpretation.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMIInterpretation.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMIInterpretation.Location = new System.Drawing.Point(347, 360);
             this.labelBMIInterpretation.Name = "labelBMIInterpretation";
-            this.labelBMIInterpretation.Size = new System.Drawing.Size(316, 65);
+            this.labelBMIInterpretation.Size = new System.Drawing.Size(279, 42);
             this.labelBMIInterpretation.TabIndex = 5;
             this.labelBMIInterpretation.Text = "<interpretation>";
             this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,13 +264,23 @@
             // labelBMI
             // 
             this.labelBMI.AutoSize = true;
-            this.labelBMI.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMI.Location = new System.Drawing.Point(273, 300);
             this.labelBMI.Name = "labelBMI";
-            this.labelBMI.Size = new System.Drawing.Size(454, 65);
+            this.labelBMI.Size = new System.Drawing.Size(447, 42);
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::app.Properties.Resources.BMIScale;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 200);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -322,17 +349,57 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.flowLayoutPanel2);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Location = new System.Drawing.Point(100, 100);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1000, 500);
             this.panel5.TabIndex = 18;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.button1);
+            this.flowLayoutPanel2.Controls.Add(this.button2);
+            this.flowLayoutPanel2.Controls.Add(this.button3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(75, 101);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(800, 375);
+            this.flowLayoutPanel2.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(794, 50);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Poziom aktywności fizycznej";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 59);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(794, 50);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(3, 115);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(794, 50);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(418, 74);
+            this.label2.Location = new System.Drawing.Point(413, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 42);
             this.label2.TabIndex = 1;
@@ -875,16 +942,6 @@
             this.buttonReturn.Visible = false;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::app.Properties.Resources.BMIScale;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 200);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // buttonMinimize
             // 
             this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
@@ -917,24 +974,13 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBoxArrow
-            // 
-            this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
-            this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 147);
-            this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrow.Name = "pictureBoxArrow";
-            this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxArrow.TabIndex = 6;
-            this.pictureBoxArrow.TabStop = false;
-            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.ControlBox = false;
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -943,7 +989,6 @@
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hackheroes";
@@ -955,6 +1000,8 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -963,6 +1010,7 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).EndInit();
@@ -971,8 +1019,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1043,6 +1089,10 @@
         private System.Windows.Forms.Button buttonArrowUp;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.PictureBox pictureBoxArrow;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 
