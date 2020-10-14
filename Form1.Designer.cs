@@ -99,6 +99,7 @@
             this.ButtonAnswerC = new System.Windows.Forms.Button();
             this.ButtonAnswerD = new System.Windows.Forms.Button();
             this.labelQuestion = new System.Windows.Forms.Label();
+            this.labelQuizResult = new System.Windows.Forms.Label();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -316,6 +317,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.labelQuizResult);
             this.panel3.Controls.Add(this.labelQuestion);
             this.panel3.Controls.Add(this.tableLayoutPanelAnswers);
             this.panel3.Controls.Add(this.ButtonStartQuiz);
@@ -989,6 +991,7 @@
             this.ButtonAnswerA.Text = "A";
             this.ButtonAnswerA.UseVisualStyleBackColor = false;
             this.ButtonAnswerA.Visible = false;
+            this.ButtonAnswerA.Click += new System.EventHandler(this.ButtonAnswerA_Click);
             // 
             // ButtonAnswerB
             // 
@@ -1045,6 +1048,17 @@
             this.labelQuestion.TabIndex = 4;
             this.labelQuestion.Text = "Treść pytania";
             this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelQuizResult
+            // 
+            this.labelQuizResult.AutoSize = true;
+            this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuizResult.Location = new System.Drawing.Point(424, 250);
+            this.labelQuizResult.Name = "labelQuizResult";
+            this.labelQuizResult.Size = new System.Drawing.Size(153, 48);
+            this.labelQuizResult.TabIndex = 5;
+            this.labelQuizResult.Text = "Wynik: 5/5";
+            this.labelQuizResult.Visible = false;
             // 
             // Hackheroes
             // 
@@ -1168,6 +1182,7 @@
         private System.Windows.Forms.Button ButtonAnswerB;
         private System.Windows.Forms.Button ButtonAnswerA;
         private System.Windows.Forms.Label labelQuestion;
+        private System.Windows.Forms.Label labelQuizResult;
     }
 }
 

@@ -508,6 +508,16 @@ namespace app
             center(labelQuestion, 130);
         }
 
+        private void FinishQuiz()
+        {
+            tableLayoutPanelAnswers.Visible = false;
+            ButtonAnswerA.Visible = false;
+            ButtonAnswerB.Visible = false;
+            ButtonAnswerC.Visible = false;
+            ButtonAnswerD.Visible = false;
+            labelQuizResult.Visible = true;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             SetupQuiz();
