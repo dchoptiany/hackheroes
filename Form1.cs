@@ -496,5 +496,21 @@ namespace app
                 buttonSaveChanges.Enabled = true;
             }
         }
+
+        private void SetupQuiz()
+        {
+            ButtonStartQuiz.Visible = false;
+            tableLayoutPanelAnswers.Visible = true;
+            ButtonAnswerA.Visible = true;
+            ButtonAnswerB.Visible = true;
+            ButtonAnswerC.Visible = true;
+            ButtonAnswerD.Visible = true;
+            center(labelQuestion, 130);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SetupQuiz();
+        }
     }
 }
