@@ -91,6 +91,13 @@
     <None Include="Resources\Images\closeIcon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PhysicalActivity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calculator.png" />
     <None Include="Resources\Images\BMIScale.jpg" />
   </ItemGroup>
   <ItemGroup>

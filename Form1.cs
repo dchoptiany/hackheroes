@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -11,11 +12,30 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
 
+        private readonly Color blue1 = Color.FromArgb(0, 168, 255);
+        private readonly Color purple1 = Color.FromArgb(156, 136, 255);
+        private readonly Color darkblue1 = Color.FromArgb(72, 126, 176);
+        private readonly Color red1 = Color.FromArgb(232, 65, 24);
+        private readonly Color green1 = Color.FromArgb(76, 209, 55);
+        private readonly Color yellow1 = Color.FromArgb(251, 197, 49);
+        private readonly Color white1 = Color.FromArgb(220, 221, 225);
+
         public Hackheroes()
         {
             InitializeComponent();
+            InitializeColors();
         }
 
+        private void InitializeColors()
+        {
+            this.BackColor = white1;
+            buttonBMI.BackColor = blue1;
+            buttonActivity.BackColor = yellow1;
+            buttonQuiz.BackColor = green1;
+            buttonCalculator.BackColor = purple1;
+            buttonSurvey.BackColor = red1;
+            buttonProfile.BackColor = darkblue1;
+        }
         public static class ModifyProgressBarColor
         {
             [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
@@ -31,7 +51,7 @@ namespace app
             Application.Exit();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
@@ -82,7 +102,7 @@ namespace app
             center(label6, 30); //BMI
         }
 
-        private void changePanel(int index, bool visibility)
+        private void ChangePanel(int index, bool visibility)
         {
             panels[index].BringToFront();
             buttonReturn.Visible = visibility;
@@ -158,30 +178,30 @@ namespace app
             changePanel(1, true);
         }
 
-        private void buttonActivity_Click(object sender, EventArgs e)
+        private void ButtonActivity_Click(object sender, EventArgs e)
         {
-            changePanel(2, true);
+            ChangePanel(2, true);
         }
 
-        private void buttonQuiz_Click(object sender, EventArgs e)
+        private void ButtonQuiz_Click(object sender, EventArgs e)
         {
-            changePanel(3, true);
+            ChangePanel(3, true);
         }
 
-        private void buttonCalculator_Click(object sender, EventArgs e)
+        private void ButtonCalculator_Click(object sender, EventArgs e)
         {
+            ChangePanel(4, true);
             Calculator.CalculateMacro(Program.users[Program.currentUserIndex]);
-            changePanel(4, true);
         }
 
-        private void buttonSurvey_Click(object sender, EventArgs e)
+        private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            changePanel(5, true);
+            ChangePanel(5, true);
         }
 
-        private void buttonProfile_Click(object sender, EventArgs e)
+        private void ButtonProfile_Click(object sender, EventArgs e)
         {
-            changePanel(6, true);
+            ChangePanel(6, true);
 
             UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
@@ -206,11 +226,12 @@ namespace app
             setEditInfoVisibility(false);
         }
 
-        private void buttonReturn_Click(object sender, EventArgs e)
+        private void ButtonReturn_Click(object sender, EventArgs e)
         {
-            changePanel(0, false);
+            ChangePanel(0, false);
         }
-
+        
+        
         private void setEditInfoVisibility(bool visibility)
         {
             textBoxCurrentName.Visible = visibility;
@@ -227,14 +248,13 @@ namespace app
             buttonDelete.Visible = visibility;
             buttonSaveChanges.Visible = visibility;
         }
-
-        private void updateArrowButtons()
+        private void UpdateArrowButtons()
         {
             buttonArrowUp.Enabled = (listBoxUsers.SelectedIndex > 0);
             buttonArrowDown.Enabled = (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1);
         }
 
-        private void updateAgeForm(Label lbl, NumericUpDown numericUD)
+        private void UpdateAgeForm(Label lbl, NumericUpDown numericUD)
         {
             uint val = Convert.ToUInt16(numericUD.Value);
             if (val == 1)
@@ -266,22 +286,21 @@ namespace app
             }
         }
 
-        private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownAge_ValueChanged(object sender, EventArgs e)
         {
-            updateAgeForm(label15, numericUpDownAge);
+            UpdateAgeForm(label15, numericUpDownAge);
         }
 
-        private void numericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
         {
-            updateAgeForm(label17, numericUpDownCurrentAge);
-
+            UpdateAgeForm(label17, numericUpDownCurrentAge);
             if(numericUpDownCurrentAge.Value != Program.users[Program.currentUserIndex].age)
             {
                 buttonSaveChanges.Enabled = true;
             }
         }
 
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void ButtonCreate_Click(object sender, EventArgs e)
         {
             if (textBoxName.Text == "" || (radioButtonFemale.Checked == false && radioButtonMale.Checked == false))
             {
@@ -325,14 +344,14 @@ namespace app
                 Program.currentUserIndex = listBoxUsers.SelectedIndex = Program.users.Count - 1; 
             }
 
+            UpdateArrowButtons();
             UpdateButtonDeleteEnabledStatus();
             setEditInfoVisibility(false);
-            updateArrowButtons();
         }
 
-        private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            updateArrowButtons();
+            UpdateArrowButtons();
             setEditInfoVisibility(false);
 
             if (listBoxUsers.SelectedIndex != -1)
@@ -348,7 +367,7 @@ namespace app
             }
         }
 
-        private void buttonDelete_Click_1(object sender, EventArgs e)
+        private void ButtonDelete_Click_1(object sender, EventArgs e)
         {
             int indexToRemove = listBoxUsers.SelectedIndex;
             if (listBoxUsers.Items.Count <= 1)
@@ -386,7 +405,7 @@ namespace app
             }
         }
 
-        private void buttonSaveChanges_Click(object sender, EventArgs e)
+        private void ButtonSaveChanges_Click(object sender, EventArgs e)
         {
             if (listBoxUsers.SelectedIndex != -1)
             {
@@ -424,7 +443,7 @@ namespace app
             }
         }
 
-        private void buttonArrowUp_Click(object sender, EventArgs e)
+        private void ButtonArrowUp_Click(object sender, EventArgs e)
         {
             if (listBoxUsers.SelectedIndex > 0)
             {
@@ -432,7 +451,7 @@ namespace app
             }
         }
 
-        private void buttonArrowDown_Click(object sender, EventArgs e)
+        private void ButtonArrowDown_Click(object sender, EventArgs e)
         {
             if (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1)
             {
@@ -440,7 +459,7 @@ namespace app
             }
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
+        private void ButtonEdit_Click(object sender, EventArgs e)
         {
             setEditInfoVisibility(true);
         }

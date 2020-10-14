@@ -17,7 +17,13 @@
 
 		public float BMI;
 
+		public float activityLevel;
+		public bool physicalJob;
+		public int trainingsInWeek;
+		public int dailyMovementLevel;
+
 		///  Macro Section
+
 		public int calories;
 		public int protein;
 		public int carbohydrates;

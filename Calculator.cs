@@ -11,9 +11,8 @@
         {
             float rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f);
             rmr += user.gender == Gender.Male ? 5f : -161f;
-
-            float activityLevel = 1.35f; //to be passed from control
-            user.calories = (int)(rmr * activityLevel);
+ 
+            user.calories = (int)(rmr * user.activityLevel);
             float caloriesLeft = user.calories;
 
             user.protein = (int)user.weight * 2;
@@ -23,6 +22,18 @@
             caloriesLeft -= user.fat * 9;
 
             user.carbohydrates = (int)(caloriesLeft / 4f);
+        }
+
+        public static void CalculateActivityLevel(User user)
+        {
+            user.activityLevel = 1.1f;
+            if(user.physicalJob)
+            {
+                user.activityLevel += 0.1f;
+            }
+            user.activityLevel += user.trainingsInWeek * 0.5f;
+            user.activityLevel += user.dailyMovementLevel * 0.2f;
+            
         }
     }
 }
