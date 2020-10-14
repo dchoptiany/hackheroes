@@ -991,7 +991,6 @@
             this.ButtonAnswerA.Text = "A";
             this.ButtonAnswerA.UseVisualStyleBackColor = false;
             this.ButtonAnswerA.Visible = false;
-            this.ButtonAnswerA.Click += new System.EventHandler(this.ButtonAnswerA_Click);
             // 
             // ButtonAnswerB
             // 
