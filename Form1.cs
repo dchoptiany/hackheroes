@@ -59,7 +59,7 @@ namespace app
                     age = Convert.ToByte(arr[0]);
                     weight = Convert.ToSingle(arr[1]);
                     height = Convert.ToUInt32(arr[2]);
-                    gender = arr[3] == "1" ? Gender.Female : Gender.Male;
+                    gender = arr[3] == "Female" ? Gender.Female : Gender.Male;
 
                     Program.users.Add(new User(name, age, weight, height, gender));
                     listBoxUsers.Items.Add(name);
@@ -157,6 +157,7 @@ namespace app
 
         private void buttonCalculator_Click(object sender, EventArgs e)
         {
+            Calculator.CalculateMacro(Program.users[Program.currentUserIndex]);
             changePanel(4, true);
         }
 
