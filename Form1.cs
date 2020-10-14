@@ -88,7 +88,7 @@ namespace app
             buttonReturn.Visible = visibility;
         }
 
-        private void UpdateButtonDeleteEnability()
+        private void UpdateButtonDeleteEnabledStatus()
         {
             if (listBoxUsers.Items.Count > 1)
             {
@@ -182,7 +182,7 @@ namespace app
         {
             changePanel(6, true);
 
-            UpdateButtonDeleteEnability();
+            UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
 
             int userIndex = listBoxUsers.SelectedIndex = Program.currentUserIndex;
@@ -314,9 +314,9 @@ namespace app
             }
             else
             {
-                Gender gend = radioButtonMale.Checked == true ? Gender.Male : Gender.Female;
+                Gender gender = radioButtonMale.Checked == true ? Gender.Male : Gender.Female;
 
-                User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gend);
+                User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gender);
 
                 Program.users.Add(newUser);
                 listBoxUsers.Items.Add(newUser.name);
@@ -324,7 +324,7 @@ namespace app
                 Program.currentUserIndex = listBoxUsers.SelectedIndex = Program.users.Count - 1; 
             }
 
-            UpdateButtonDeleteEnability();
+            UpdateButtonDeleteEnabledStatus();
             setEditInfoVisibility(false);
             updateArrowButtons();
         }
@@ -332,8 +332,9 @@ namespace app
         private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateArrowButtons();
+            setEditInfoVisibility(false);
 
-            if(listBoxUsers.SelectedIndex != -1)
+            if (listBoxUsers.SelectedIndex != -1)
             {
                 int userIndex = Program.currentUserIndex = listBoxUsers.SelectedIndex;
 
@@ -377,7 +378,7 @@ namespace app
 
                 listBoxUsers.SelectedIndex = Program.currentUserIndex = 0;
 
-                UpdateButtonDeleteEnability();
+                UpdateButtonDeleteEnabledStatus();
                 updateArrowButtons();
                 setEditInfoVisibility(false);
                 buttonSaveChanges.Enabled = false;
@@ -428,7 +429,6 @@ namespace app
             {
                 --listBoxUsers.SelectedIndex;
             }
-            setEditInfoVisibility(false);
         }
 
         private void buttonArrowDown_Click(object sender, EventArgs e)
@@ -437,7 +437,6 @@ namespace app
             {
                 ++listBoxUsers.SelectedIndex;
             }
-            setEditInfoVisibility(false);
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
