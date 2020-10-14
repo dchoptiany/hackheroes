@@ -66,6 +66,19 @@ namespace app.Properties {
         internal static System.Drawing.Bitmap Calculator {
             get {
                 object obj = ResourceManager.GetObject("Calculator", resourceCulture);
+        internal static System.Drawing.Bitmap arrow {
+            get {
+                object obj = ResourceManager.GetObject("arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BMIScale {
+            get {
+                object obj = ResourceManager.GetObject("BMIScale", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

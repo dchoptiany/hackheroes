@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace app
+﻿namespace app
 {
 	public enum Gender
 	{
@@ -42,6 +36,11 @@ namespace app
 			weight = _weight;
 			height = _height;
 			gender = _gender;
+		}
+
+		public string getData()
+        {
+			return age + " " + weight + " " + height + " " + (gender == Gender.Female ? "Female" : "Male");
 		}
 	}
 }

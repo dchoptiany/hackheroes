@@ -34,6 +34,10 @@
             this.buttonQuiz = new System.Windows.Forms.Button();
             this.buttonSurvey = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
+            this.labelBMIInterpretation = new System.Windows.Forms.Label();
+            this.labelBMI = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -91,6 +95,8 @@
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -172,21 +178,70 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBoxArrow);
+            this.panel1.Controls.Add(this.labelBMIInterpretation);
+            this.panel1.Controls.Add(this.labelBMI);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(100, 100);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 14;
             // 
+            // pictureBoxArrow
+            // 
+            this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
+            this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 147);
+            this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxArrow.Name = "pictureBoxArrow";
+            this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrow.TabIndex = 6;
+            this.pictureBoxArrow.TabStop = false;
+            // 
+            // labelBMIInterpretation
+            // 
+            this.labelBMIInterpretation.AutoSize = true;
+            this.labelBMIInterpretation.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMIInterpretation.Location = new System.Drawing.Point(347, 360);
+            this.labelBMIInterpretation.Name = "labelBMIInterpretation";
+            this.labelBMIInterpretation.Size = new System.Drawing.Size(279, 42);
+            this.labelBMIInterpretation.TabIndex = 5;
+            this.labelBMIInterpretation.Text = "<interpretation>";
+            this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelBMI
+            // 
+            this.labelBMI.AutoSize = true;
+            this.labelBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMI.Location = new System.Drawing.Point(273, 300);
+            this.labelBMI.Name = "labelBMI";
+            this.labelBMI.Size = new System.Drawing.Size(447, 42);
+            this.labelBMI.TabIndex = 4;
+            this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
+            this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::app.Properties.Resources.BMIScale;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 200);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(458, 121);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(445, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 42);
+            this.label6.Size = new System.Drawing.Size(109, 55);
             this.label6.TabIndex = 1;
             this.label6.Text = "BMI";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -313,7 +368,7 @@
             this.buttonEdit.TabIndex = 38;
             this.buttonEdit.Text = "Edytuj";
             this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonArrowDown
             // 
@@ -324,7 +379,7 @@
             this.buttonArrowDown.TabIndex = 37;
             this.buttonArrowDown.Text = "▼";
             this.buttonArrowDown.UseVisualStyleBackColor = true;
-            this.buttonArrowDown.Click += new System.EventHandler(this.ButtonArrowDown_Click);
+            this.buttonArrowDown.Click += new System.EventHandler(this.buttonArrowDown_Click);
             // 
             // buttonArrowUp
             // 
@@ -335,7 +390,7 @@
             this.buttonArrowUp.TabIndex = 36;
             this.buttonArrowUp.Text = "▲";
             this.buttonArrowUp.UseVisualStyleBackColor = true;
-            this.buttonArrowUp.Click += new System.EventHandler(this.ButtonArrowUp_Click);
+            this.buttonArrowUp.Click += new System.EventHandler(this.buttonArrowUp_Click);
             // 
             // buttonSaveChanges
             // 
@@ -421,6 +476,7 @@
             0,
             0});
             this.numericUpDownCurrentHeight.Visible = false;
+            this.numericUpDownCurrentHeight.ValueChanged += new System.EventHandler(this.numericUpDownCurrentHeight_ValueChanged);
             // 
             // numericUpDownCurrentWeight
             // 
@@ -447,6 +503,7 @@
             0,
             0});
             this.numericUpDownCurrentWeight.Visible = false;
+            this.numericUpDownCurrentWeight.ValueChanged += new System.EventHandler(this.numericUpDownCurrentWeight_ValueChanged);
             // 
             // textBoxCurrentName
             // 
@@ -456,6 +513,7 @@
             this.textBoxCurrentName.TabIndex = 29;
             this.textBoxCurrentName.Tag = "";
             this.textBoxCurrentName.Visible = false;
+            this.textBoxCurrentName.TextChanged += new System.EventHandler(this.textBoxCurrentName_TextChanged);
             // 
             // radioButtonCurrentMale
             // 
@@ -469,6 +527,7 @@
             this.radioButtonCurrentMale.Text = "Mężczyzna";
             this.radioButtonCurrentMale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentMale.Visible = false;
+            this.radioButtonCurrentMale.CheckedChanged += new System.EventHandler(this.radioButtonCurrentMale_CheckedChanged);
             // 
             // radioButtonCurrentFemale
             // 
@@ -482,6 +541,7 @@
             this.radioButtonCurrentFemale.Text = "Kobieta";
             this.radioButtonCurrentFemale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentFemale.Visible = false;
+            this.radioButtonCurrentFemale.CheckedChanged += new System.EventHandler(this.radioButtonCurrentFemale_CheckedChanged);
             // 
             // label19
             // 
@@ -565,8 +625,6 @@
             // 
             this.listBoxUsers.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.listBoxUsers.FormattingEnabled = true;
-            this.listBoxUsers.Items.AddRange(new object[] {
-            "User"});
             this.listBoxUsers.Location = new System.Drawing.Point(141, 212);
             this.listBoxUsers.Name = "listBoxUsers";
             this.listBoxUsers.Size = new System.Drawing.Size(120, 95);
@@ -905,11 +963,14 @@
             this.Name = "Hackheroes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hackheroes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hackheroes_FormClosing);
             this.Load += new System.EventHandler(this.Hackheroes_Load);
             this.panel0.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -989,9 +1050,13 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSaveChanges;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelBMI;
+        private System.Windows.Forms.Label labelBMIInterpretation;
         private System.Windows.Forms.Button buttonArrowDown;
         private System.Windows.Forms.Button buttonArrowUp;
         private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.PictureBox pictureBoxArrow;
     }
 }
 
