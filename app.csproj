@@ -91,13 +91,13 @@
     <None Include="Resources\Images\closeIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Kalkulator.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Aktywnosc fizyczna.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PhysicalActivity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calculator.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
