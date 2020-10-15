@@ -179,7 +179,7 @@ namespace app
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
-            trackBar1_Scroll(sender, e);
+            TrackBar1_Scroll(sender, e);
             ChangePanel(4, true);
         }
 
@@ -275,12 +275,12 @@ namespace app
             }
         }
 
-        private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownAge_ValueChanged(object sender, EventArgs e)
         {
             UpdateAgeForm(label15, numericUpDownAge);
         }
 
-        private void numericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
         {
             UpdateAgeForm(label17, numericUpDownCurrentAge);
 
@@ -290,7 +290,7 @@ namespace app
             }
         }
 
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void ButtonCreate_Click(object sender, EventArgs e)
         {
             if (textBoxName.Text == "" || (radioButtonFemale.Checked == false && radioButtonMale.Checked == false))
             {
@@ -339,7 +339,7 @@ namespace app
             UpdateArrowButtons();
         }
 
-        private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateArrowButtons();
             SetEditInfoVisibility(false);
@@ -466,7 +466,7 @@ namespace app
             }          
         }
 
-        private void textBoxCurrentName_TextChanged(object sender, EventArgs e)
+        private void TextBoxCurrentName_TextChanged(object sender, EventArgs e)
         {
             if (textBoxCurrentName.Text != Program.users[Program.currentUserIndex].name)
             {
@@ -474,7 +474,7 @@ namespace app
             }
         }
 
-        private void numericUpDownCurrentWeight_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownCurrentWeight_ValueChanged(object sender, EventArgs e)
         {
             if (numericUpDownCurrentWeight.Value != Convert.ToDecimal(Program.users[Program.currentUserIndex].weight))
             {
@@ -482,7 +482,7 @@ namespace app
             }
         }
 
-        private void numericUpDownCurrentHeight_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDownCurrentHeight_ValueChanged(object sender, EventArgs e)
         {
             if (numericUpDownCurrentHeight.Value != Program.users[Program.currentUserIndex].height)
             {
@@ -490,7 +490,7 @@ namespace app
             }
         }
 
-        private void radioButtonCurrentMale_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonCurrentMale_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButtonCurrentMale.Checked && Program.users[Program.currentUserIndex].gender != Gender.Male)
             {
@@ -498,7 +498,7 @@ namespace app
             }
         }
 
-        private void radioButtonCurrentFemale_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonCurrentFemale_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButtonCurrentFemale.Checked && Program.users[Program.currentUserIndex].gender != Gender.Female)
             {
@@ -506,7 +506,7 @@ namespace app
             }
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
+        private void TrackBar1_Scroll(object sender, EventArgs e)
         {
             Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * (float)trackBarActivityLevel.Value;
             UpdateMacro();
