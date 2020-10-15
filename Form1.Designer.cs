@@ -567,7 +567,7 @@
             this.trackBarActivityLevel.Size = new System.Drawing.Size(442, 45);
             this.trackBarActivityLevel.TabIndex = 2;
             this.trackBarActivityLevel.Value = 2;
-            this.trackBarActivityLevel.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.trackBarActivityLevel.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
             // 
             // label3
             // 
@@ -732,7 +732,7 @@
             0,
             0});
             this.numericUpDownCurrentAge.Visible = false;
-            this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.numericUpDownCurrentAge_ValueChanged);
+            this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentAge_ValueChanged);
             // 
             // numericUpDownCurrentHeight
             // 
@@ -758,7 +758,7 @@
             0,
             0});
             this.numericUpDownCurrentHeight.Visible = false;
-            this.numericUpDownCurrentHeight.ValueChanged += new System.EventHandler(this.numericUpDownCurrentHeight_ValueChanged);
+            this.numericUpDownCurrentHeight.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentHeight_ValueChanged);
             // 
             // numericUpDownCurrentWeight
             // 
@@ -785,7 +785,7 @@
             0,
             0});
             this.numericUpDownCurrentWeight.Visible = false;
-            this.numericUpDownCurrentWeight.ValueChanged += new System.EventHandler(this.numericUpDownCurrentWeight_ValueChanged);
+            this.numericUpDownCurrentWeight.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentWeight_ValueChanged);
             // 
             // textBoxCurrentName
             // 
@@ -795,7 +795,7 @@
             this.textBoxCurrentName.TabIndex = 29;
             this.textBoxCurrentName.Tag = "";
             this.textBoxCurrentName.Visible = false;
-            this.textBoxCurrentName.TextChanged += new System.EventHandler(this.textBoxCurrentName_TextChanged);
+            this.textBoxCurrentName.TextChanged += new System.EventHandler(this.TextBoxCurrentName_TextChanged);
             // 
             // radioButtonCurrentMale
             // 
@@ -809,7 +809,7 @@
             this.radioButtonCurrentMale.Text = "Mężczyzna";
             this.radioButtonCurrentMale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentMale.Visible = false;
-            this.radioButtonCurrentMale.CheckedChanged += new System.EventHandler(this.radioButtonCurrentMale_CheckedChanged);
+            this.radioButtonCurrentMale.CheckedChanged += new System.EventHandler(this.RadioButtonCurrentMale_CheckedChanged);
             // 
             // radioButtonCurrentFemale
             // 
@@ -823,7 +823,7 @@
             this.radioButtonCurrentFemale.Text = "Kobieta";
             this.radioButtonCurrentFemale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentFemale.Visible = false;
-            this.radioButtonCurrentFemale.CheckedChanged += new System.EventHandler(this.radioButtonCurrentFemale_CheckedChanged);
+            this.radioButtonCurrentFemale.CheckedChanged += new System.EventHandler(this.RadioButtonCurrentFemale_CheckedChanged);
             // 
             // label19
             // 
@@ -911,7 +911,7 @@
             this.listBoxUsers.Name = "listBoxUsers";
             this.listBoxUsers.Size = new System.Drawing.Size(120, 95);
             this.listBoxUsers.TabIndex = 18;
-            this.listBoxUsers.SelectedIndexChanged += new System.EventHandler(this.listBoxUsers_SelectedIndexChanged);
+            this.listBoxUsers.SelectedIndexChanged += new System.EventHandler(this.ListBoxUsers_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -963,7 +963,7 @@
             0,
             0,
             0});
-            this.numericUpDownAge.ValueChanged += new System.EventHandler(this.numericUpDownAge_ValueChanged);
+            this.numericUpDownAge.ValueChanged += new System.EventHandler(this.NumericUpDownAge_ValueChanged);
             // 
             // numericUpDownHeight
             // 
@@ -1067,7 +1067,7 @@
             this.buttonCreate.TabIndex = 6;
             this.buttonCreate.Text = "Utwórz";
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
             // 
             // label11
             // 
