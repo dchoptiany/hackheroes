@@ -1038,10 +1038,10 @@
             // 
             this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonReturn.Location = new System.Drawing.Point(492, 606);
+            this.buttonReturn.Location = new System.Drawing.Point(485, 625);
             this.buttonReturn.Margin = new System.Windows.Forms.Padding(0);
             this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(225, 46);
+            this.buttonReturn.Size = new System.Drawing.Size(230, 50);
             this.buttonReturn.TabIndex = 20;
             this.buttonReturn.Text = "Powrót";
             this.buttonReturn.UseVisualStyleBackColor = true;
@@ -1084,7 +1084,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.ControlBox = false;
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
