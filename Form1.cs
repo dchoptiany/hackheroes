@@ -549,24 +549,18 @@ namespace app
             answerButtons[correctIndex].Text = Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer;
             answerButtons[correctIndex].Enabled = true;
 
-            bool ready = false;
-            int index;
+            int buttonIndex;
             int answerIndex = 0;
-            while(!ready)
+            do
             {
-                index = Program.rnd.Next(4);
+                buttonIndex = Program.rnd.Next(4);
 
-                if(!answerButtons[index].Enabled)
+                if(!answerButtons[buttonIndex].Enabled)
                 {
-                    answerButtons[index].Text = Quiz.drawnQuestions[Quiz.questionNumber].incorrectAnswers[answerIndex++];
-                    answerButtons[index].Enabled = true;
+                    answerButtons[buttonIndex].Text = Quiz.drawnQuestions[Quiz.questionNumber].incorrectAnswers[answerIndex++];
+                    answerButtons[buttonIndex].Enabled = true;
                 }
-
-                if(ButtonAnswerA.Enabled && ButtonAnswerB.Enabled && ButtonAnswerC.Enabled && ButtonAnswerD.Enabled)
-                {
-                    ready = true;
-                }
-            }
+            } while(!(ButtonAnswerA.Enabled && ButtonAnswerB.Enabled && ButtonAnswerC.Enabled && ButtonAnswerD.Enabled));
         }
 
         private void FinishQuiz()
