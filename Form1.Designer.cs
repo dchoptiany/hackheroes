@@ -30,7 +30,7 @@
         {
             this.panel0 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.ButtonBMI = new System.Windows.Forms.Button();
+            this.buttonBMI = new System.Windows.Forms.Button();
             this.buttonQuiz = new System.Windows.Forms.Button();
             this.buttonCalculator = new System.Windows.Forms.Button();
             this.buttonSurvey = new System.Windows.Forms.Button();
@@ -120,7 +120,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.ButtonBMI);
+            this.flowLayoutPanel1.Controls.Add(this.buttonBMI);
             this.flowLayoutPanel1.Controls.Add(this.buttonActivity);
             this.flowLayoutPanel1.Controls.Add(this.buttonQuiz);
             this.flowLayoutPanel1.Controls.Add(this.buttonCalculator);
@@ -133,18 +133,18 @@
             // 
             // ButtonBMI
             // 
-            this.ButtonBMI.BackColor = System.Drawing.Color.Red;
-            this.ButtonBMI.FlatAppearance.BorderSize = 0;
-            this.ButtonBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonBMI.Location = new System.Drawing.Point(0, 0);
-            this.ButtonBMI.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonBMI.Name = "ButtonBMI";
-            this.ButtonBMI.Size = new System.Drawing.Size(333, 250);
-            this.ButtonBMI.TabIndex = 0;
-            this.ButtonBMI.Text = "BMI";
-            this.ButtonBMI.UseVisualStyleBackColor = false;
-            this.ButtonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
+            this.buttonBMI.BackColor = System.Drawing.Color.Red;
+            this.buttonBMI.FlatAppearance.BorderSize = 0;
+            this.buttonBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBMI.Location = new System.Drawing.Point(0, 0);
+            this.buttonBMI.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonBMI.Name = "ButtonBMI";
+            this.buttonBMI.Size = new System.Drawing.Size(333, 250);
+            this.buttonBMI.TabIndex = 0;
+            this.buttonBMI.Text = "BMI";
+            this.buttonBMI.UseVisualStyleBackColor = false;
+            this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
             // 
             // buttonQuiz
             // 
@@ -995,7 +995,7 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Panel panel0;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button ButtonBMI;
+        private System.Windows.Forms.Button buttonBMI;
         private System.Windows.Forms.Button buttonActivity;
         private System.Windows.Forms.Button buttonQuiz;
         private System.Windows.Forms.Button buttonCalculator;

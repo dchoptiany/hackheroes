@@ -28,7 +28,7 @@ namespace app
         private void InitializeColors()
         {
             this.BackColor = white1;
-            ButtonBMI.BackColor = blue1;
+            buttonBMI.BackColor = blue1;
             buttonActivity.BackColor = yellow1;
             buttonQuiz.BackColor = green1;
             buttonCalculator.BackColor = purple1;
