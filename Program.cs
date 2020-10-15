@@ -15,6 +15,8 @@ namespace app
             currentUserIndex = 0;
             users = new List<User>();
 
+            Quiz.LoadQuestions();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Hackheroes());
