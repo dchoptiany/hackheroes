@@ -88,6 +88,15 @@ namespace app
             buttonReturn.Visible = visibility;
         }
 
+        private void UpdateMacro()
+        {
+            Calculator.CalculateMacro(Program.users[Program.currentUserIndex]);
+            labelKcal.Text = (Program.users[Program.currentUserIndex].calories).ToString();
+            labelFats.Text = (Program.users[Program.currentUserIndex].fat).ToString();
+            labelCarbohydrates.Text = (Program.users[Program.currentUserIndex].carbohydrates).ToString();
+            labelProtein.Text = (Program.users[Program.currentUserIndex].protein).ToString();
+        }
+
         private void UpdateButtonDeleteEnabledStatus()
         {
             if (listBoxUsers.Items.Count > 1)
@@ -170,7 +179,7 @@ namespace app
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
-            Calculator.CalculateMacro(Program.users[Program.currentUserIndex]);
+            trackBar1_Scroll(sender, e);
             ChangePanel(4, true);
         }
 
@@ -495,6 +504,12 @@ namespace app
             {
                 buttonSaveChanges.Enabled = true;
             }
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * (float)trackBarActivityLevel.Value;
+            UpdateMacro();
         }
     }
 }
