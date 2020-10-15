@@ -21,6 +21,7 @@ namespace app
     static class Quiz
     {
         public static List<Question> questions;
+        public static List<Question> drawnQuestions;
         public static int score;
 
         public static void LoadQuestions()
@@ -57,6 +58,16 @@ namespace app
             }
 
             return questions[index];
+        }
+
+        public static void GetQuestions()
+        {
+            drawnQuestions = new List<Question>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                drawnQuestions.Add(DrawQuestion(drawnQuestions));
+            }
         }
     }
 }
