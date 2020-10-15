@@ -12,8 +12,7 @@
             float rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f);
             rmr += user.gender == Gender.Male ? 5f : -161f;
 
-            float activityLevel = user.activityLevel;
-            user.calories = (int)(rmr * activityLevel);
+            user.calories = (int)(rmr * user.activityLevel);
             float caloriesLeft = user.calories;
 
             user.protein = (int)user.weight * 2;

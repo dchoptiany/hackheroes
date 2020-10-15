@@ -477,7 +477,6 @@
             this.label30.TabIndex = 13;
             this.label30.Text = "Węglowodany";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label30.Click += new System.EventHandler(this.label30_Click);
             // 
             // labelProtein
             // 
@@ -503,7 +502,6 @@
             this.label32.TabIndex = 11;
             this.label32.Text = "Białko ";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // labelFats
             // 
@@ -528,7 +526,6 @@
             this.label28.TabIndex = 9;
             this.label28.Text = "Tłuszcze";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // labelKcal
             // 
