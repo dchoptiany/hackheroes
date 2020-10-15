@@ -16,6 +16,7 @@
 		public Gender gender;
 
 		public float BMI;
+		public float activityLevel;
 
 		///  Macro Section
 		public int calories;
