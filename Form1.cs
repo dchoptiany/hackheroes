@@ -82,10 +82,10 @@ namespace app
             center(label6, 30); //BMI
         }
 
-        private void changePanel(int index, bool visibility)
+        private void changePanel(int index)
         {
             panels[index].BringToFront();
-            buttonReturn.Visible = visibility;
+            buttonReturn.Visible = index != 0;
         }
 
         private void UpdateButtonDeleteEnabledStatus()
@@ -155,33 +155,33 @@ namespace app
             center(labelBMI, 300);
             center(labelBMIInterpretation, 360);
 
-            changePanel(1, true);
+            changePanel(1);
         }
 
         private void buttonActivity_Click(object sender, EventArgs e)
         {
-            changePanel(2, true);
+            changePanel(2);
         }
 
         private void buttonQuiz_Click(object sender, EventArgs e)
         {
-            changePanel(3, true);
+            changePanel(3);
         }
 
         private void buttonCalculator_Click(object sender, EventArgs e)
         {
             Calculator.CalculateMacro(Program.users[Program.currentUserIndex]);
-            changePanel(4, true);
+            changePanel(4);
         }
 
         private void buttonSurvey_Click(object sender, EventArgs e)
         {
-            changePanel(5, true);
+            changePanel(5);
         }
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            changePanel(6, true);
+            changePanel(6);
 
             UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
@@ -208,7 +208,7 @@ namespace app
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
-            changePanel(0, false);
+            changePanel(0);
         }
 
         private void setEditInfoVisibility(bool visibility)
