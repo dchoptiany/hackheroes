@@ -518,7 +518,7 @@ namespace app
             labelQuizResult.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonStartQuiz_Click(object sender, EventArgs e)
         {
             SetupQuiz();
         }
