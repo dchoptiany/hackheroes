@@ -1,10 +1,10 @@
-﻿
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace app
 {
-     class Question
+    class Question
     {
        public string ask;
        public string correctAnswer;
@@ -22,6 +22,7 @@ namespace app
     {
         public static List<Question> questions;
         public static int score;
+
         public static void LoadQuestions()
         {
             questions = new List<Question>();
@@ -43,6 +44,19 @@ namespace app
                     string empty = loading.ReadLine();
                 }
             }
+        }
+
+        public static Question DrawQuestion(List<Question> alreadyDrawn)
+        {
+            Random rnd = new Random();
+            int index = rnd.Next(questions.Count);
+
+            if(alreadyDrawn.Contains(questions[index]))
+            {
+                return DrawQuestion(alreadyDrawn);
+            }
+
+            return questions[index];
         }
     }
 }
