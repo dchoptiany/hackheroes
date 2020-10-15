@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using System.Drawing;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace app
 {
@@ -26,12 +26,12 @@ namespace app
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
@@ -79,10 +79,10 @@ namespace app
             panels.Add(panel5); //surveys
             panels.Add(panel6); //profiles
 
-            center(label6, 30); //BMI
+            Center(label6, 30); //BMI
         }
 
-        private void changePanel(int index, bool visibility)
+        private void ChangePanel(int index, bool visibility)
         {
             panels[index].BringToFront();
             buttonReturn.Visible = visibility;
@@ -100,7 +100,7 @@ namespace app
             }
         }
 
-        private void updateArrow()
+        private void UpdateArrow()
         {
             float BMI = Program.users[Program.currentUserIndex].BMI;
             float value = BMI * 2.5f - 10f;
@@ -117,7 +117,7 @@ namespace app
             pictureBoxArrow.Location = new Point(75 + (int)value * 8, 147);
         }
 
-        private string getInterpretation(float BMI)
+        private string GetInterpretation(float BMI)
         {
             if(BMI < 18.5f)
             {
@@ -137,51 +137,51 @@ namespace app
             }
         }
 
-        private void center(Control control, int h)
+        private void Center(Control control, int h)
         {
             control.Location = new Point(1000 / 2 - control.Size.Width / 2, h);
         }
 
-        private void buttonBMI_Click(object sender, EventArgs e)
+        private void ButtonBMI_Click(object sender, EventArgs e)
         {
             int userIndex = Program.currentUserIndex;
             Calculator.CalculateBMI(Program.users[userIndex]);
 
-            updateArrow();
+            UpdateArrow();
 
             labelBMI.Text = "Twoje BMI wynosi: " + Program.users[userIndex].BMI.ToString("0.##");
-            labelBMIInterpretation.Text = getInterpretation(Program.users[userIndex].BMI);
+            labelBMIInterpretation.Text = GetInterpretation(Program.users[userIndex].BMI);
 
-            center(labelBMI, 300);
-            center(labelBMIInterpretation, 360);
+            Center(labelBMI, 300);
+            Center(labelBMIInterpretation, 360);
 
-            changePanel(1, true);
+            ChangePanel(1, true);
         }
 
-        private void buttonActivity_Click(object sender, EventArgs e)
+        private void ButtonActivity_Click(object sender, EventArgs e)
         {
-            changePanel(2, true);
+            ChangePanel(2, true);
         }
 
-        private void buttonQuiz_Click(object sender, EventArgs e)
+        private void ButtonQuiz_Click(object sender, EventArgs e)
         {
-            changePanel(3, true);
+            ChangePanel(3, true);
         }
 
-        private void buttonCalculator_Click(object sender, EventArgs e)
+        private void ButtonCalculator_Click(object sender, EventArgs e)
         {
             Calculator.CalculateMacro(Program.users[Program.currentUserIndex]);
-            changePanel(4, true);
+            ChangePanel(4, true);
         }
 
-        private void buttonSurvey_Click(object sender, EventArgs e)
+        private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            changePanel(5, true);
+            ChangePanel(5, true);
         }
 
-        private void buttonProfile_Click(object sender, EventArgs e)
+        private void ButtonProfile_Click(object sender, EventArgs e)
         {
-            changePanel(6, true);
+            ChangePanel(6, true);
 
             UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
@@ -202,16 +202,16 @@ namespace app
                 radioButtonCurrentFemale.Checked = true;
             }
 
-            updateArrowButtons();
-            setEditInfoVisibility(false);
+            UpdateArrowButtons();
+            SetEditInfoVisibility(false);
         }
 
-        private void buttonReturn_Click(object sender, EventArgs e)
+        private void ButtonReturn_Click(object sender, EventArgs e)
         {
-            changePanel(0, false);
+            ChangePanel(0, false);
         }
 
-        private void setEditInfoVisibility(bool visibility)
+        private void SetEditInfoVisibility(bool visibility)
         {
             textBoxCurrentName.Visible = visibility;
             numericUpDownCurrentAge.Visible = visibility;
@@ -228,13 +228,13 @@ namespace app
             buttonSaveChanges.Visible = visibility;
         }
 
-        private void updateArrowButtons()
+        private void UpdateArrowButtons()
         {
             buttonArrowUp.Enabled = (listBoxUsers.SelectedIndex > 0);
             buttonArrowDown.Enabled = (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1);
         }
 
-        private void updateAgeForm(Label lbl, NumericUpDown numericUD)
+        private void UpdateAgeForm(Label lbl, NumericUpDown numericUD)
         {
             uint val = Convert.ToUInt16(numericUD.Value);
             if (val == 1)
@@ -268,12 +268,12 @@ namespace app
 
         private void numericUpDownAge_ValueChanged(object sender, EventArgs e)
         {
-            updateAgeForm(label15, numericUpDownAge);
+            UpdateAgeForm(label15, numericUpDownAge);
         }
 
         private void numericUpDownCurrentAge_ValueChanged(object sender, EventArgs e)
         {
-            updateAgeForm(label17, numericUpDownCurrentAge);
+            UpdateAgeForm(label17, numericUpDownCurrentAge);
 
             if(numericUpDownCurrentAge.Value != Program.users[Program.currentUserIndex].age)
             {
@@ -326,14 +326,14 @@ namespace app
             }
 
             UpdateButtonDeleteEnabledStatus();
-            setEditInfoVisibility(false);
-            updateArrowButtons();
+            SetEditInfoVisibility(false);
+            UpdateArrowButtons();
         }
 
         private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            updateArrowButtons();
-            setEditInfoVisibility(false);
+            UpdateArrowButtons();
+            SetEditInfoVisibility(false);
 
             if (listBoxUsers.SelectedIndex != -1)
             {
@@ -348,7 +348,7 @@ namespace app
             }
         }
 
-        private void buttonDelete_Click_1(object sender, EventArgs e)
+        private void ButtonDelete_Click_1(object sender, EventArgs e)
         {
             int indexToRemove = listBoxUsers.SelectedIndex;
             if (listBoxUsers.Items.Count <= 1)
@@ -380,13 +380,13 @@ namespace app
                 listBoxUsers.SelectedIndex = Program.currentUserIndex = 0;
 
                 UpdateButtonDeleteEnabledStatus();
-                updateArrowButtons();
-                setEditInfoVisibility(false);
+                UpdateArrowButtons();
+                SetEditInfoVisibility(false);
                 buttonSaveChanges.Enabled = false;
             }
         }
 
-        private void buttonSaveChanges_Click(object sender, EventArgs e)
+        private void ButtonSaveChanges_Click(object sender, EventArgs e)
         {
             if (listBoxUsers.SelectedIndex != -1)
             {
@@ -406,7 +406,7 @@ namespace app
                     Program.users[userIndex].gender = Gender.Female;
                 }
                 listBoxUsers.Items[userIndex] = Program.users[userIndex].name;
-                setEditInfoVisibility(false);
+                SetEditInfoVisibility(false);
                 buttonSaveChanges.Enabled = false;
             }
             else
@@ -424,7 +424,7 @@ namespace app
             }
         }
 
-        private void buttonArrowUp_Click(object sender, EventArgs e)
+        private void ButtonArrowUp_Click(object sender, EventArgs e)
         {
             if (listBoxUsers.SelectedIndex > 0)
             {
@@ -432,7 +432,7 @@ namespace app
             }
         }
 
-        private void buttonArrowDown_Click(object sender, EventArgs e)
+        private void ButtonArrowDown_Click(object sender, EventArgs e)
         {
             if (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1)
             {
@@ -440,9 +440,9 @@ namespace app
             }
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
+        private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            setEditInfoVisibility(true);
+            SetEditInfoVisibility(true);
         }
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
