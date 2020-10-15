@@ -331,6 +331,7 @@
             // 
             // ButtonFinishQuiz
             // 
+            this.ButtonFinishQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonFinishQuiz.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonFinishQuiz.Location = new System.Drawing.Point(410, 350);
             this.ButtonFinishQuiz.Name = "ButtonFinishQuiz";
@@ -339,12 +340,13 @@
             this.ButtonFinishQuiz.Text = "Zakończ";
             this.ButtonFinishQuiz.UseVisualStyleBackColor = true;
             this.ButtonFinishQuiz.Visible = false;
+            this.ButtonFinishQuiz.Click += new System.EventHandler(this.ButtonFinishQuiz_Click);
             // 
             // labelQuizResult
             // 
             this.labelQuizResult.AutoSize = true;
             this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuizResult.Location = new System.Drawing.Point(424, 250);
+            this.labelQuizResult.Location = new System.Drawing.Point(424, 200);
             this.labelQuizResult.Name = "labelQuizResult";
             this.labelQuizResult.Size = new System.Drawing.Size(153, 48);
             this.labelQuizResult.TabIndex = 5;
@@ -353,14 +355,14 @@
             // 
             // labelQuestion
             // 
-            this.labelQuestion.AutoSize = true;
             this.labelQuestion.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuestion.Location = new System.Drawing.Point(410, 130);
+            this.labelQuestion.Location = new System.Drawing.Point(100, 110);
             this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(180, 42);
+            this.labelQuestion.Size = new System.Drawing.Size(800, 150);
             this.labelQuestion.TabIndex = 4;
             this.labelQuestion.Text = "Treść pytania";
             this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelQuestion.Visible = false;
             // 
             // tableLayoutPanelAnswers
             // 
@@ -396,6 +398,7 @@
             this.ButtonAnswerA.Text = "A";
             this.ButtonAnswerA.UseVisualStyleBackColor = false;
             this.ButtonAnswerA.Visible = false;
+            this.ButtonAnswerA.Click += new System.EventHandler(this.AnswerClicked);
             // 
             // ButtonAnswerB
             // 
@@ -413,6 +416,7 @@
             this.ButtonAnswerB.Text = "B";
             this.ButtonAnswerB.UseVisualStyleBackColor = false;
             this.ButtonAnswerB.Visible = false;
+            this.ButtonAnswerB.Click += new System.EventHandler(this.AnswerClicked);
             // 
             // ButtonAnswerD
             // 
@@ -430,6 +434,7 @@
             this.ButtonAnswerD.Text = "D";
             this.ButtonAnswerD.UseVisualStyleBackColor = false;
             this.ButtonAnswerD.Visible = false;
+            this.ButtonAnswerD.Click += new System.EventHandler(this.AnswerClicked);
             // 
             // ButtonAnswerC
             // 
@@ -447,9 +452,11 @@
             this.ButtonAnswerC.Text = "C";
             this.ButtonAnswerC.UseVisualStyleBackColor = false;
             this.ButtonAnswerC.Visible = false;
+            this.ButtonAnswerC.Click += new System.EventHandler(this.AnswerClicked);
             // 
             // ButtonStartQuiz
             // 
+            this.ButtonStartQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonStartQuiz.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonStartQuiz.Location = new System.Drawing.Point(410, 250);
             this.ButtonStartQuiz.Name = "ButtonStartQuiz";
@@ -1086,10 +1093,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
             this.ControlBox = false;
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);

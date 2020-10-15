@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace app
@@ -10,19 +9,23 @@ namespace app
        public string correctAnswer;
        public string[] incorrectAnswers;
 
-        public Question(string _ask, string _correctAnswer, string[] _incorrectAnswers)
-        {
+       public Question(string _ask, string _correctAnswer, string[] _incorrectAnswers)
+       {
             ask = _ask;
             correctAnswer = _correctAnswer;
-            incorrectAnswers = _incorrectAnswers;
-        }
+            incorrectAnswers = new string[3];
+            incorrectAnswers[0] = _incorrectAnswers[0];
+            incorrectAnswers[1] = _incorrectAnswers[1];
+            incorrectAnswers[2] = _incorrectAnswers[2];
+       }
     }
 
     static class Quiz
     {
         public static List<Question> questions;
-        public static List<Question> drawnQuestions;
+        public static List<Question> drawnQuestions = new List<Question>();
         public static int score;
+        public static int questionNumber;
 
         public static void LoadQuestions()
         {
@@ -37,36 +40,35 @@ namespace app
                 {
                     ask = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1];
                     correctanswer = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1]; 
-                    for(int i=0; i<3; i++)
+                    for(int i = 0; i < 3; i++)
                     {
-                        incorrectanswer[i] = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1]; 
+                        incorrectanswer[i] = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1];
                     }
-                    questions.Add(new Question(ask, correctanswer, incorrectanswer));
+                    Question newQuestion = new Question(ask, correctanswer, incorrectanswer);
+                    questions.Add(newQuestion);
                     string empty = loading.ReadLine();
                 }
             }
         }
 
-        public static Question DrawQuestion(List<Question> alreadyDrawn)
+        public static void DrawQuestion()
         {
-            Random rnd = new Random();
-            int index = rnd.Next(questions.Count);
-
-            if(alreadyDrawn.Contains(questions[index]))
+            int index;
+            do
             {
-                return DrawQuestion(alreadyDrawn);
-            }
+                index = Program.rnd.Next(questions.Count);
+            } while(drawnQuestions.Contains(questions[index]));
 
-            return questions[index];
+            drawnQuestions.Add(questions[index]);
         }
 
         public static void GetQuestions()
         {
-            drawnQuestions = new List<Question>();
+            drawnQuestions.Clear();
 
             for (int i = 0; i < 5; i++)
             {
-                drawnQuestions.Add(DrawQuestion(drawnQuestions));
+                DrawQuestion();
             }
         }
     }

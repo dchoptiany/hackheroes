@@ -8,12 +8,13 @@ namespace app
     {
         static public List<User> users;
         static public int currentUserIndex;
-
+        static public Random rnd;
         [STAThread]
         static void Main()
         {
             currentUserIndex = 0;
             users = new List<User>();
+            rnd = new Random();
 
             Quiz.LoadQuestions();
 

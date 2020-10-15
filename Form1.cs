@@ -10,6 +10,7 @@ namespace app
     public partial class Hackheroes : Form
     {
         private readonly List<Panel> panels = new List<Panel>();
+        private List<Button> answerButtons = new List<Button>();
 
         public Hackheroes()
         {
@@ -79,7 +80,12 @@ namespace app
             panels.Add(panel5); //surveys
             panels.Add(panel6); //profiles
 
-            center(label6, 30); //BMI
+            answerButtons.Add(ButtonAnswerA);
+            answerButtons.Add(ButtonAnswerB);
+            answerButtons.Add(ButtonAnswerC);
+            answerButtons.Add(ButtonAnswerD);
+
+            changePanel(0);
         }
 
         private void changePanel(int index)
@@ -500,27 +506,100 @@ namespace app
         private void SetupQuiz()
         {
             ButtonStartQuiz.Visible = false;
+            labelQuestion.Visible = true;
             tableLayoutPanelAnswers.Visible = true;
             ButtonAnswerA.Visible = true;
             ButtonAnswerB.Visible = true;
             ButtonAnswerC.Visible = true;
             ButtonAnswerD.Visible = true;
-            center(labelQuestion, 130);
+
+            Quiz.GetQuestions();
+            Quiz.score = 0;
+            Quiz.questionNumber = 0;
+
+            NextQuestion();
+        }
+
+        private void NextQuestion()
+        {
+            if(Quiz.questionNumber == 5)
+            {
+                FinishQuiz();
+                return;
+            }
+
+            labelQuestion.Text = Quiz.drawnQuestions[Quiz.questionNumber].ask;
+            center(labelQuestion, 110);
+
+            foreach(Button btn in answerButtons)
+            {
+                btn.Enabled = false;
+            }
+
+            int correctIndex = Program.rnd.Next(4);
+            answerButtons[correctIndex].Text = Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer;
+            answerButtons[correctIndex].Enabled = true;
+
+            bool ready = false;
+            int index;
+            int answerIndex = 0;
+            while(!ready)
+            {
+                index = Program.rnd.Next(4);
+
+                if(!answerButtons[index].Enabled)
+                {
+                    answerButtons[index].Text = Quiz.drawnQuestions[Quiz.questionNumber].incorrectAnswers[answerIndex++];
+                    answerButtons[index].Enabled = true;
+                }
+
+                if(ButtonAnswerA.Enabled && ButtonAnswerB.Enabled && ButtonAnswerC.Enabled && ButtonAnswerD.Enabled)
+                {
+                    ready = true;
+                }
+            }
         }
 
         private void FinishQuiz()
         {
+            labelQuizResult.Text = "Wynik: " + Quiz.score + "/5";
+            center(labelQuizResult, 200);
+            labelQuestion.Visible = false;
             tableLayoutPanelAnswers.Visible = false;
             ButtonAnswerA.Visible = false;
             ButtonAnswerB.Visible = false;
             ButtonAnswerC.Visible = false;
             ButtonAnswerD.Visible = false;
             labelQuizResult.Visible = true;
+            ButtonFinishQuiz.Visible = true;
         }
 
         private void ButtonStartQuiz_Click(object sender, EventArgs e)
         {
             SetupQuiz();
+        }
+
+        private void AnswerClicked(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            if(clickedButton.Text == Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
+            {
+                ++Quiz.score;
+            }
+            ++Quiz.questionNumber;
+            NextQuestion();
+        }
+
+        private void Reset()
+        {
+            labelQuizResult.Visible = false;
+            ButtonFinishQuiz.Visible = false;
+            ButtonStartQuiz.Visible = true;
+        }
+
+        private void ButtonFinishQuiz_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }
