@@ -27,6 +27,12 @@ namespace app
             }
         }
 
+        private void ChangePanel(int index)
+        {
+            panels[index].BringToFront();
+            buttonReturn.Visible = index != 0;
+        }
+
         private void Button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -85,13 +91,7 @@ namespace app
             answerButtons.Add(ButtonAnswerC);
             answerButtons.Add(ButtonAnswerD);
 
-            changePanel(0);
-        }
-
-        private void ChangePanel(int index, bool visibility)
-        {
-            panels[index].BringToFront();
-            buttonReturn.Visible = index != 0;
+            ChangePanel(0);
         }
 
         private void UpdateMacro()
@@ -170,33 +170,33 @@ namespace app
             Center(labelBMI, 300);
             Center(labelBMIInterpretation, 360);
 
-            changePanel(1);
+            ChangePanel(1);
         }
 
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
-            changePanel(2);
+            ChangePanel(2);
         }
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
-            changePanel(3);
+            ChangePanel(3);
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
-            changePanel(4);
+            ChangePanel(4);
             TrackBar1_Scroll(sender, e);
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            changePanel(5);
+            ChangePanel(5);
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
-            changePanel(6);
+            ChangePanel(6);
 
             UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
@@ -223,7 +223,7 @@ namespace app
 
         private void ButtonReturn_Click(object sender, EventArgs e)
         {
-            changePanel(0);
+            ChangePanel(0);
         }
 
         private void SetEditInfoVisibility(bool visibility)
@@ -538,7 +538,7 @@ namespace app
             }
 
             labelQuestion.Text = Quiz.drawnQuestions[Quiz.questionNumber].ask;
-            center(labelQuestion, 110);
+            Center(labelQuestion, 110);
 
             foreach(Button btn in answerButtons)
             {
@@ -572,7 +572,7 @@ namespace app
         private void FinishQuiz()
         {
             labelQuizResult.Text = "Wynik: " + Quiz.score + "/5";
-            center(labelQuizResult, 200);
+            Center(labelQuizResult, 200);
             labelQuestion.Visible = false;
             tableLayoutPanelAnswers.Visible = false;
             ButtonAnswerA.Visible = false;
@@ -609,7 +609,8 @@ namespace app
         private void ButtonFinishQuiz_Click(object sender, EventArgs e)
         {
             Reset();
-            
+        }
+
         private void TrackBar1_Scroll(object sender, EventArgs e)
         {
             Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * (float)trackBarActivityLevel.Value;

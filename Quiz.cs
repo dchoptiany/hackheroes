@@ -24,8 +24,8 @@ namespace app
     {
         public static List<Question> questions;
         public static List<Question> drawnQuestions = new List<Question>();
-        public static uint score;
-        public static uint questionNumber;
+        public static int score;
+        public static int questionNumber;
 
         public static void LoadQuestions()
         {
