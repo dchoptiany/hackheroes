@@ -45,6 +45,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.labelQuizResult = new System.Windows.Forms.Label();
+            this.labelQuestion = new System.Windows.Forms.Label();
+            this.tableLayoutPanelAnswers = new System.Windows.Forms.TableLayoutPanel();
+            this.ButtonAnswerA = new System.Windows.Forms.Button();
+            this.ButtonAnswerB = new System.Windows.Forms.Button();
+            this.ButtonAnswerD = new System.Windows.Forms.Button();
+            this.ButtonAnswerC = new System.Windows.Forms.Button();
+            this.ButtonStartQuiz = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -92,14 +100,7 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.ButtonStartQuiz = new System.Windows.Forms.Button();
-            this.tableLayoutPanelAnswers = new System.Windows.Forms.TableLayoutPanel();
-            this.ButtonAnswerA = new System.Windows.Forms.Button();
-            this.ButtonAnswerB = new System.Windows.Forms.Button();
-            this.ButtonAnswerC = new System.Windows.Forms.Button();
-            this.ButtonAnswerD = new System.Windows.Forms.Button();
-            this.labelQuestion = new System.Windows.Forms.Label();
-            this.labelQuizResult = new System.Windows.Forms.Label();
+            this.ButtonFinishQuiz = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tableLayoutPanelAnswers.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -116,7 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
-            this.tableLayoutPanelAnswers.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel0
@@ -317,6 +318,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.ButtonFinishQuiz);
             this.panel3.Controls.Add(this.labelQuizResult);
             this.panel3.Controls.Add(this.labelQuestion);
             this.panel3.Controls.Add(this.tableLayoutPanelAnswers);
@@ -326,6 +328,117 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 500);
             this.panel3.TabIndex = 16;
+            // 
+            // labelQuizResult
+            // 
+            this.labelQuizResult.AutoSize = true;
+            this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuizResult.Location = new System.Drawing.Point(424, 250);
+            this.labelQuizResult.Name = "labelQuizResult";
+            this.labelQuizResult.Size = new System.Drawing.Size(153, 48);
+            this.labelQuizResult.TabIndex = 5;
+            this.labelQuizResult.Text = "Wynik: 5/5";
+            this.labelQuizResult.Visible = false;
+            // 
+            // labelQuestion
+            // 
+            this.labelQuestion.AutoSize = true;
+            this.labelQuestion.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuestion.Location = new System.Drawing.Point(410, 130);
+            this.labelQuestion.Name = "labelQuestion";
+            this.labelQuestion.Size = new System.Drawing.Size(180, 42);
+            this.labelQuestion.TabIndex = 4;
+            this.labelQuestion.Text = "Treść pytania";
+            this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanelAnswers
+            // 
+            this.tableLayoutPanelAnswers.ColumnCount = 2;
+            this.tableLayoutPanelAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerA, 0, 0);
+            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerB, 1, 0);
+            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerD, 1, 1);
+            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerC, 0, 1);
+            this.tableLayoutPanelAnswers.Location = new System.Drawing.Point(0, 275);
+            this.tableLayoutPanelAnswers.Name = "tableLayoutPanelAnswers";
+            this.tableLayoutPanelAnswers.RowCount = 2;
+            this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(1000, 225);
+            this.tableLayoutPanelAnswers.TabIndex = 3;
+            this.tableLayoutPanelAnswers.Visible = false;
+            // 
+            // ButtonAnswerA
+            // 
+            this.ButtonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.ButtonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAnswerA.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerA.ForeColor = System.Drawing.Color.Black;
+            this.ButtonAnswerA.Location = new System.Drawing.Point(0, 0);
+            this.ButtonAnswerA.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonAnswerA.Name = "ButtonAnswerA";
+            this.ButtonAnswerA.Size = new System.Drawing.Size(499, 111);
+            this.ButtonAnswerA.TabIndex = 0;
+            this.ButtonAnswerA.Text = "A";
+            this.ButtonAnswerA.UseVisualStyleBackColor = false;
+            this.ButtonAnswerA.Visible = false;
+            // 
+            // ButtonAnswerB
+            // 
+            this.ButtonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
+            this.ButtonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAnswerB.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerB.ForeColor = System.Drawing.Color.Black;
+            this.ButtonAnswerB.Location = new System.Drawing.Point(500, 0);
+            this.ButtonAnswerB.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonAnswerB.Name = "ButtonAnswerB";
+            this.ButtonAnswerB.Size = new System.Drawing.Size(500, 111);
+            this.ButtonAnswerB.TabIndex = 1;
+            this.ButtonAnswerB.Text = "B";
+            this.ButtonAnswerB.UseVisualStyleBackColor = false;
+            this.ButtonAnswerB.Visible = false;
+            // 
+            // ButtonAnswerD
+            // 
+            this.ButtonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(197)))), ((int)(((byte)(49)))));
+            this.ButtonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAnswerD.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerD.ForeColor = System.Drawing.Color.Black;
+            this.ButtonAnswerD.Location = new System.Drawing.Point(500, 112);
+            this.ButtonAnswerD.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonAnswerD.Name = "ButtonAnswerD";
+            this.ButtonAnswerD.Size = new System.Drawing.Size(500, 112);
+            this.ButtonAnswerD.TabIndex = 3;
+            this.ButtonAnswerD.Text = "D";
+            this.ButtonAnswerD.UseVisualStyleBackColor = false;
+            this.ButtonAnswerD.Visible = false;
+            // 
+            // ButtonAnswerC
+            // 
+            this.ButtonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.ButtonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAnswerC.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerC.ForeColor = System.Drawing.Color.Black;
+            this.ButtonAnswerC.Location = new System.Drawing.Point(0, 112);
+            this.ButtonAnswerC.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonAnswerC.Name = "ButtonAnswerC";
+            this.ButtonAnswerC.Size = new System.Drawing.Size(499, 112);
+            this.ButtonAnswerC.TabIndex = 2;
+            this.ButtonAnswerC.Text = "C";
+            this.ButtonAnswerC.UseVisualStyleBackColor = false;
+            this.ButtonAnswerC.Visible = false;
+            // 
+            // ButtonStartQuiz
+            // 
+            this.ButtonStartQuiz.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonStartQuiz.Location = new System.Drawing.Point(410, 250);
+            this.ButtonStartQuiz.Name = "ButtonStartQuiz";
+            this.ButtonStartQuiz.Size = new System.Drawing.Size(180, 60);
+            this.ButtonStartQuiz.TabIndex = 2;
+            this.ButtonStartQuiz.Text = "Start";
+            this.ButtonStartQuiz.UseVisualStyleBackColor = true;
+            this.ButtonStartQuiz.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -948,116 +1061,16 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.button2_Click);
             // 
-            // ButtonStartQuiz
+            // ButtonFinishQuiz
             // 
-            this.ButtonStartQuiz.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonStartQuiz.Location = new System.Drawing.Point(410, 250);
-            this.ButtonStartQuiz.Name = "ButtonStartQuiz";
-            this.ButtonStartQuiz.Size = new System.Drawing.Size(180, 60);
-            this.ButtonStartQuiz.TabIndex = 2;
-            this.ButtonStartQuiz.Text = "Start";
-            this.ButtonStartQuiz.UseVisualStyleBackColor = true;
-            this.ButtonStartQuiz.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tableLayoutPanelAnswers
-            // 
-            this.tableLayoutPanelAnswers.ColumnCount = 2;
-            this.tableLayoutPanelAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerA, 0, 0);
-            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerB, 1, 0);
-            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerD, 1, 1);
-            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerC, 0, 1);
-            this.tableLayoutPanelAnswers.Location = new System.Drawing.Point(0, 275);
-            this.tableLayoutPanelAnswers.Name = "tableLayoutPanelAnswers";
-            this.tableLayoutPanelAnswers.RowCount = 2;
-            this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(1000, 225);
-            this.tableLayoutPanelAnswers.TabIndex = 3;
-            this.tableLayoutPanelAnswers.Visible = false;
-            // 
-            // ButtonAnswerA
-            // 
-            this.ButtonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
-            this.ButtonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAnswerA.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonAnswerA.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAnswerA.Location = new System.Drawing.Point(0, 0);
-            this.ButtonAnswerA.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonAnswerA.Name = "ButtonAnswerA";
-            this.ButtonAnswerA.Size = new System.Drawing.Size(499, 111);
-            this.ButtonAnswerA.TabIndex = 0;
-            this.ButtonAnswerA.Text = "A";
-            this.ButtonAnswerA.UseVisualStyleBackColor = false;
-            this.ButtonAnswerA.Visible = false;
-            // 
-            // ButtonAnswerB
-            // 
-            this.ButtonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
-            this.ButtonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAnswerB.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonAnswerB.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAnswerB.Location = new System.Drawing.Point(500, 0);
-            this.ButtonAnswerB.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonAnswerB.Name = "ButtonAnswerB";
-            this.ButtonAnswerB.Size = new System.Drawing.Size(500, 111);
-            this.ButtonAnswerB.TabIndex = 1;
-            this.ButtonAnswerB.Text = "B";
-            this.ButtonAnswerB.UseVisualStyleBackColor = false;
-            this.ButtonAnswerB.Visible = false;
-            // 
-            // ButtonAnswerC
-            // 
-            this.ButtonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.ButtonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAnswerC.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonAnswerC.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAnswerC.Location = new System.Drawing.Point(0, 112);
-            this.ButtonAnswerC.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonAnswerC.Name = "ButtonAnswerC";
-            this.ButtonAnswerC.Size = new System.Drawing.Size(499, 112);
-            this.ButtonAnswerC.TabIndex = 2;
-            this.ButtonAnswerC.Text = "C";
-            this.ButtonAnswerC.UseVisualStyleBackColor = false;
-            this.ButtonAnswerC.Visible = false;
-            // 
-            // ButtonAnswerD
-            // 
-            this.ButtonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(197)))), ((int)(((byte)(49)))));
-            this.ButtonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAnswerD.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonAnswerD.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAnswerD.Location = new System.Drawing.Point(500, 112);
-            this.ButtonAnswerD.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonAnswerD.Name = "ButtonAnswerD";
-            this.ButtonAnswerD.Size = new System.Drawing.Size(500, 112);
-            this.ButtonAnswerD.TabIndex = 3;
-            this.ButtonAnswerD.Text = "D";
-            this.ButtonAnswerD.UseVisualStyleBackColor = false;
-            this.ButtonAnswerD.Visible = false;
-            // 
-            // labelQuestion
-            // 
-            this.labelQuestion.AutoSize = true;
-            this.labelQuestion.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuestion.Location = new System.Drawing.Point(410, 130);
-            this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(180, 42);
-            this.labelQuestion.TabIndex = 4;
-            this.labelQuestion.Text = "Treść pytania";
-            this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelQuizResult
-            // 
-            this.labelQuizResult.AutoSize = true;
-            this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuizResult.Location = new System.Drawing.Point(424, 250);
-            this.labelQuizResult.Name = "labelQuizResult";
-            this.labelQuizResult.Size = new System.Drawing.Size(153, 48);
-            this.labelQuizResult.TabIndex = 5;
-            this.labelQuizResult.Text = "Wynik: 5/5";
-            this.labelQuizResult.Visible = false;
+            this.ButtonFinishQuiz.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonFinishQuiz.Location = new System.Drawing.Point(410, 350);
+            this.ButtonFinishQuiz.Name = "ButtonFinishQuiz";
+            this.ButtonFinishQuiz.Size = new System.Drawing.Size(180, 60);
+            this.ButtonFinishQuiz.TabIndex = 6;
+            this.ButtonFinishQuiz.Text = "Zakończ";
+            this.ButtonFinishQuiz.UseVisualStyleBackColor = true;
+            this.ButtonFinishQuiz.Visible = false;
             // 
             // Hackheroes
             // 
@@ -1091,6 +1104,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tableLayoutPanelAnswers.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -1103,7 +1117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
-            this.tableLayoutPanelAnswers.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1182,6 +1195,7 @@
         private System.Windows.Forms.Button ButtonAnswerA;
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Label labelQuizResult;
+        private System.Windows.Forms.Button ButtonFinishQuiz;
     }
 }
 
