@@ -12,7 +12,7 @@
             float rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f);
             rmr += user.gender == Gender.Male ? 5f : -161f;
 
-            float activityLevel = 1.35f; //to be passed from control
+            float activityLevel = user.activityLevel;
             user.calories = (int)(rmr * activityLevel);
             float caloriesLeft = user.calories;
 
