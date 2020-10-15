@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using System.Drawing;
+using System.Windows.Forms;
 
 namespace app
 {
@@ -29,7 +28,7 @@ namespace app
         private void InitializeColors()
         {
             this.BackColor = white1;
-            buttonBMI.BackColor = blue1;
+            ButtonBMI.BackColor = blue1;
             buttonActivity.BackColor = yellow1;
             buttonQuiz.BackColor = green1;
             buttonCalculator.BackColor = purple1;
@@ -46,7 +45,7 @@ namespace app
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -99,7 +98,7 @@ namespace app
             panels.Add(panel5); //surveys
             panels.Add(panel6); //profiles
 
-            center(label6, 30); //BMI
+            Center(label6, 30); //BMI
         }
 
         private void ChangePanel(int index, bool visibility)
@@ -120,7 +119,7 @@ namespace app
             }
         }
 
-        private void updateArrow()
+        private void UpdateArrow()
         {
             float BMI = Program.users[Program.currentUserIndex].BMI;
             float value = BMI * 2.5f - 10f;
@@ -137,7 +136,7 @@ namespace app
             pictureBoxArrow.Location = new Point(75 + (int)value * 8, 147);
         }
 
-        private string getInterpretation(float BMI)
+        private string GetInterpretation(float BMI)
         {
             if(BMI < 18.5f)
             {
@@ -157,25 +156,25 @@ namespace app
             }
         }
 
-        private void center(Control control, int h)
+        private void Center(Control control, int h)
         {
             control.Location = new Point(1000 / 2 - control.Size.Width / 2, h);
         }
 
-        private void buttonBMI_Click(object sender, EventArgs e)
+        private void ButtonBMI_Click(object sender, EventArgs e)
         {
             int userIndex = Program.currentUserIndex;
             Calculator.CalculateBMI(Program.users[userIndex]);
 
-            updateArrow();
+            UpdateArrow();
 
             labelBMI.Text = "Twoje BMI wynosi: " + Program.users[userIndex].BMI.ToString("0.##");
-            labelBMIInterpretation.Text = getInterpretation(Program.users[userIndex].BMI);
+            labelBMIInterpretation.Text = GetInterpretation(Program.users[userIndex].BMI);
 
-            center(labelBMI, 300);
-            center(labelBMIInterpretation, 360);
+            Center(labelBMI, 300);
+            Center(labelBMIInterpretation, 360);
 
-            changePanel(1, true);
+            ChangePanel(1, true);
         }
 
         private void ButtonActivity_Click(object sender, EventArgs e)
@@ -222,7 +221,7 @@ namespace app
                 radioButtonCurrentFemale.Checked = true;
             }
 
-            updateArrowButtons();
+            UpdateArrowButtons();
             setEditInfoVisibility(false);
         }
 
@@ -399,7 +398,7 @@ namespace app
                 listBoxUsers.SelectedIndex = Program.currentUserIndex = 0;
 
                 UpdateButtonDeleteEnabledStatus();
-                updateArrowButtons();
+                UpdateArrowButtons();
                 setEditInfoVisibility(false);
                 buttonSaveChanges.Enabled = false;
             }
