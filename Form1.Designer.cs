@@ -47,6 +47,22 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.labelCarbohydrates = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.labelProtein = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.labelFats = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.labelKcal = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -94,6 +110,10 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -102,6 +122,8 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).BeginInit();
             this.panel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -147,11 +169,13 @@
             this.buttonBMI.TabIndex = 0;
             this.buttonBMI.Text = "BMI";
             this.buttonBMI.UseVisualStyleBackColor = false;
-            this.buttonBMI.Click += new System.EventHandler(this.buttonBMI_Click);
+            this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
             // 
             // buttonActivity
             // 
             this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonActivity.BackgroundImage = global::app.Properties.Resources.PhysicalActivity;
+            this.buttonActivity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonActivity.FlatAppearance.BorderSize = 0;
             this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -160,9 +184,10 @@
             this.buttonActivity.Name = "buttonActivity";
             this.buttonActivity.Size = new System.Drawing.Size(333, 250);
             this.buttonActivity.TabIndex = 1;
-            this.buttonActivity.Text = "Aktywność na dzisiaj";
+            this.buttonActivity.Text = "Aktywność";
+            this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonActivity.UseVisualStyleBackColor = false;
-            this.buttonActivity.Click += new System.EventHandler(this.buttonActivity_Click);
+            this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
             // 
             // buttonQuiz
             // 
@@ -177,11 +202,13 @@
             this.buttonQuiz.TabIndex = 2;
             this.buttonQuiz.Text = "Quizy";
             this.buttonQuiz.UseVisualStyleBackColor = false;
-            this.buttonQuiz.Click += new System.EventHandler(this.buttonQuiz_Click);
+            this.buttonQuiz.Click += new System.EventHandler(this.ButtonQuiz_Click);
             // 
             // buttonCalculator
             // 
             this.buttonCalculator.BackColor = System.Drawing.Color.Lime;
+            this.buttonCalculator.BackgroundImage = global::app.Properties.Resources.Calculator;
+            this.buttonCalculator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonCalculator.FlatAppearance.BorderSize = 0;
             this.buttonCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -191,8 +218,9 @@
             this.buttonCalculator.Size = new System.Drawing.Size(333, 250);
             this.buttonCalculator.TabIndex = 3;
             this.buttonCalculator.Text = "Kalkulator kalorii";
+            this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonCalculator.UseVisualStyleBackColor = false;
-            this.buttonCalculator.Click += new System.EventHandler(this.buttonCalculator_Click);
+            this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
             // 
             // buttonSurvey
             // 
@@ -207,22 +235,25 @@
             this.buttonSurvey.TabIndex = 4;
             this.buttonSurvey.Text = "Ankiety diagnostyczne";
             this.buttonSurvey.UseVisualStyleBackColor = false;
-            this.buttonSurvey.Click += new System.EventHandler(this.buttonSurvey_Click);
+            this.buttonSurvey.Click += new System.EventHandler(this.ButtonSurvey_Click);
             // 
             // buttonProfile
             // 
             this.buttonProfile.BackColor = System.Drawing.Color.Blue;
+            this.buttonProfile.BackgroundImage = global::app.Properties.Resources.Profile;
+            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonProfile.FlatAppearance.BorderSize = 0;
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F);
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.buttonProfile.Location = new System.Drawing.Point(666, 250);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(0);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Size = new System.Drawing.Size(333, 250);
             this.buttonProfile.TabIndex = 5;
             this.buttonProfile.Text = "Profile";
+            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonProfile.UseVisualStyleBackColor = false;
-            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
             // 
             // panel1
             // 
@@ -272,8 +303,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::app.Properties.Resources.BMIScale;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::app.Properties.Resources.BMIScale;
             this.pictureBox1.Location = new System.Drawing.Point(100, 200);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(800, 50);
@@ -329,17 +360,223 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.tableLayoutPanel1);
+            this.panel4.Controls.Add(this.label38);
+            this.panel4.Controls.Add(this.label37);
+            this.panel4.Controls.Add(this.label36);
+            this.panel4.Controls.Add(this.label35);
+            this.panel4.Controls.Add(this.label34);
+            this.panel4.Controls.Add(this.label25);
+            this.panel4.Controls.Add(this.trackBarActivityLevel);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(100, 100);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1000, 500);
             this.panel4.TabIndex = 17;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.labelKcal, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelFats, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelProtein, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.labelCarbohydrates, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label28, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label30, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label32, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label27, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label29, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label31, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label33, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label26, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(353, 280);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(294, 180);
+            this.tableLayoutPanel1.TabIndex = 20;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label26.Location = new System.Drawing.Point(6, 3);
+            this.label26.Name = "label26";
+            this.label26.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label26.Size = new System.Drawing.Size(147, 41);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "Energia";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(244, 202);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(64, 13);
+            this.label38.TabIndex = 19;
+            this.label38.Text = "Bardzo niski";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(367, 202);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(30, 13);
+            this.label37.TabIndex = 18;
+            this.label37.Text = "Niski";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(461, 202);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(56, 13);
+            this.label36.TabIndex = 17;
+            this.label36.Text = "Przeciętny";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(575, 202);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(42, 13);
+            this.label35.TabIndex = 16;
+            this.label35.Text = "Wysoki";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(663, 202);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(75, 13);
+            this.label34.TabIndex = 15;
+            this.label34.Text = "Bardzo wysoki";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelCarbohydrates
+            // 
+            this.labelCarbohydrates.AutoSize = true;
+            this.labelCarbohydrates.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelCarbohydrates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCarbohydrates.Location = new System.Drawing.Point(162, 135);
+            this.labelCarbohydrates.Name = "labelCarbohydrates";
+            this.labelCarbohydrates.Size = new System.Drawing.Size(64, 42);
+            this.labelCarbohydrates.TabIndex = 14;
+            this.labelCarbohydrates.Text = "0";
+            this.labelCarbohydrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label30.Location = new System.Drawing.Point(6, 135);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(147, 42);
+            this.label30.TabIndex = 13;
+            this.label30.Text = "Węglowodany";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelProtein
+            // 
+            this.labelProtein.AutoSize = true;
+            this.labelProtein.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelProtein.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelProtein.Location = new System.Drawing.Point(162, 91);
+            this.labelProtein.Name = "labelProtein";
+            this.labelProtein.Size = new System.Drawing.Size(64, 41);
+            this.labelProtein.TabIndex = 12;
+            this.labelProtein.Text = "0";
+            this.labelProtein.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label32.Location = new System.Drawing.Point(6, 91);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(147, 41);
+            this.label32.TabIndex = 11;
+            this.label32.Text = "Białko ";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFats
+            // 
+            this.labelFats.AutoSize = true;
+            this.labelFats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFats.Location = new System.Drawing.Point(162, 47);
+            this.labelFats.Name = "labelFats";
+            this.labelFats.Size = new System.Drawing.Size(64, 41);
+            this.labelFats.TabIndex = 10;
+            this.labelFats.Text = "0";
+            this.labelFats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label28.Location = new System.Drawing.Point(6, 47);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(147, 41);
+            this.label28.TabIndex = 9;
+            this.label28.Text = "Tłuszcze";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelKcal
+            // 
+            this.labelKcal.AutoSize = true;
+            this.labelKcal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKcal.Location = new System.Drawing.Point(162, 3);
+            this.labelKcal.Name = "labelKcal";
+            this.labelKcal.Size = new System.Drawing.Size(64, 41);
+            this.labelKcal.TabIndex = 8;
+            this.labelKcal.Text = "0";
+            this.labelKcal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label25.Location = new System.Drawing.Point(403, 98);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(186, 24);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "Poziom aktywności";
+            // 
+            // trackBarActivityLevel
+            // 
+            this.trackBarActivityLevel.LargeChange = 1;
+            this.trackBarActivityLevel.Location = new System.Drawing.Point(267, 166);
+            this.trackBarActivityLevel.Maximum = 4;
+            this.trackBarActivityLevel.Name = "trackBarActivityLevel";
+            this.trackBarActivityLevel.Size = new System.Drawing.Size(442, 45);
+            this.trackBarActivityLevel.TabIndex = 2;
+            this.trackBarActivityLevel.Value = 2;
+            this.trackBarActivityLevel.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(418, 83);
+            this.label3.Location = new System.Drawing.Point(432, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 42);
             this.label3.TabIndex = 1;
@@ -436,7 +673,7 @@
             this.buttonEdit.TabIndex = 38;
             this.buttonEdit.Text = "Edytuj";
             this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
             // buttonArrowDown
             // 
@@ -447,7 +684,7 @@
             this.buttonArrowDown.TabIndex = 37;
             this.buttonArrowDown.Text = "▼";
             this.buttonArrowDown.UseVisualStyleBackColor = true;
-            this.buttonArrowDown.Click += new System.EventHandler(this.buttonArrowDown_Click);
+            this.buttonArrowDown.Click += new System.EventHandler(this.ButtonArrowDown_Click);
             // 
             // buttonArrowUp
             // 
@@ -458,7 +695,7 @@
             this.buttonArrowUp.TabIndex = 36;
             this.buttonArrowUp.Text = "▲";
             this.buttonArrowUp.UseVisualStyleBackColor = true;
-            this.buttonArrowUp.Click += new System.EventHandler(this.buttonArrowUp_Click);
+            this.buttonArrowUp.Click += new System.EventHandler(this.ButtonArrowUp_Click);
             // 
             // buttonSaveChanges
             // 
@@ -470,7 +707,7 @@
             this.buttonSaveChanges.Text = "Zapisz zmiany";
             this.buttonSaveChanges.UseVisualStyleBackColor = true;
             this.buttonSaveChanges.Visible = false;
-            this.buttonSaveChanges.Click += new System.EventHandler(this.buttonSaveChanges_Click);
+            this.buttonSaveChanges.Click += new System.EventHandler(this.ButtonSaveChanges_Click);
             // 
             // label17
             // 
@@ -518,7 +755,7 @@
             0,
             0});
             this.numericUpDownCurrentAge.Visible = false;
-            this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.numericUpDownCurrentAge_ValueChanged);
+            this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentAge_ValueChanged);
             // 
             // numericUpDownCurrentHeight
             // 
@@ -544,6 +781,7 @@
             0,
             0});
             this.numericUpDownCurrentHeight.Visible = false;
+            this.numericUpDownCurrentHeight.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentHeight_ValueChanged);
             // 
             // numericUpDownCurrentWeight
             // 
@@ -570,6 +808,7 @@
             0,
             0});
             this.numericUpDownCurrentWeight.Visible = false;
+            this.numericUpDownCurrentWeight.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentWeight_ValueChanged);
             // 
             // textBoxCurrentName
             // 
@@ -579,6 +818,7 @@
             this.textBoxCurrentName.TabIndex = 29;
             this.textBoxCurrentName.Tag = "";
             this.textBoxCurrentName.Visible = false;
+            this.textBoxCurrentName.TextChanged += new System.EventHandler(this.TextBoxCurrentName_TextChanged);
             // 
             // radioButtonCurrentMale
             // 
@@ -592,6 +832,7 @@
             this.radioButtonCurrentMale.Text = "Mężczyzna";
             this.radioButtonCurrentMale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentMale.Visible = false;
+            this.radioButtonCurrentMale.CheckedChanged += new System.EventHandler(this.RadioButtonCurrentMale_CheckedChanged);
             // 
             // radioButtonCurrentFemale
             // 
@@ -605,6 +846,7 @@
             this.radioButtonCurrentFemale.Text = "Kobieta";
             this.radioButtonCurrentFemale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentFemale.Visible = false;
+            this.radioButtonCurrentFemale.CheckedChanged += new System.EventHandler(this.RadioButtonCurrentFemale_CheckedChanged);
             // 
             // label19
             // 
@@ -682,7 +924,7 @@
             this.buttonDelete.Text = "Usuń";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Visible = false;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click_1);
+            this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click_1);
             // 
             // listBoxUsers
             // 
@@ -692,7 +934,7 @@
             this.listBoxUsers.Name = "listBoxUsers";
             this.listBoxUsers.Size = new System.Drawing.Size(120, 95);
             this.listBoxUsers.TabIndex = 18;
-            this.listBoxUsers.SelectedIndexChanged += new System.EventHandler(this.listBoxUsers_SelectedIndexChanged);
+            this.listBoxUsers.SelectedIndexChanged += new System.EventHandler(this.ListBoxUsers_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -744,7 +986,7 @@
             0,
             0,
             0});
-            this.numericUpDownAge.ValueChanged += new System.EventHandler(this.numericUpDownAge_ValueChanged);
+            this.numericUpDownAge.ValueChanged += new System.EventHandler(this.NumericUpDownAge_ValueChanged);
             // 
             // numericUpDownHeight
             // 
@@ -848,7 +1090,7 @@
             this.buttonCreate.TabIndex = 6;
             this.buttonCreate.Text = "Utwórz";
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
             // 
             // label11
             // 
@@ -918,7 +1160,7 @@
             this.buttonReturn.Text = "Powrót";
             this.buttonReturn.UseVisualStyleBackColor = true;
             this.buttonReturn.Visible = false;
-            this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
+            this.buttonReturn.Click += new System.EventHandler(this.ButtonReturn_Click);
             // 
             // buttonMinimize
             // 
@@ -934,7 +1176,7 @@
             this.buttonMinimize.Size = new System.Drawing.Size(31, 30);
             this.buttonMinimize.TabIndex = 11;
             this.buttonMinimize.UseVisualStyleBackColor = false;
-            this.buttonMinimize.Click += new System.EventHandler(this.button4_Click);
+            this.buttonMinimize.Click += new System.EventHandler(this.Button4_Click);
             // 
             // buttonClose
             // 
@@ -950,7 +1192,55 @@
             this.buttonClose.Size = new System.Drawing.Size(31, 30);
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.button2_Click);
+            this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label27.Location = new System.Drawing.Point(235, 3);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(53, 41);
+            this.label27.TabIndex = 15;
+            this.label27.Text = "kcal";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label29.Location = new System.Drawing.Point(235, 47);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(53, 41);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "g";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label31.Location = new System.Drawing.Point(235, 91);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(53, 41);
+            this.label31.TabIndex = 17;
+            this.label31.Text = "g";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label33.Location = new System.Drawing.Point(235, 135);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(53, 42);
+            this.label33.TabIndex = 18;
+            this.label33.Text = "g";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Hackheroes
             // 
@@ -963,10 +1253,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hackheroes";
@@ -986,6 +1276,9 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -1069,6 +1362,26 @@
         private System.Windows.Forms.PictureBox pictureBoxArrow;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelCarbohydrates;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label labelProtein;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label labelFats;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label labelKcal;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TrackBar trackBarActivityLevel;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label33;
     }
 }
 

@@ -16,6 +16,7 @@
 		public Gender gender;
 
 		public float BMI;
+		public float activityLevel;
 
 		public float activityLevel;
 		public bool physicalJob;
@@ -39,7 +40,7 @@
 
 		public string getData()
         {
-			return age + " " + weight + " " + height + " " + (gender == Gender.Female ? "1" : "0") + " " + calories + " " + protein + " " + carbohydrates + " " + fat;
+			return age + " " + weight + " " + height + " " + (gender == Gender.Female ? "Female" : "Male");
 		}
 	}
 }
