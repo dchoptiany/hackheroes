@@ -78,9 +78,9 @@
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.TopTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.ButtonActivityLevelSurvey = new System.Windows.Forms.Button();
-            this.TopTitle = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
@@ -123,6 +123,8 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.SurveyTitle = new System.Windows.Forms.Label();
+            this.SurveyQuestion = new System.Windows.Forms.Label();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -785,12 +787,24 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.SurveyQuestion);
+            this.panel5.Controls.Add(this.SurveyTitle);
             this.panel5.Controls.Add(this.TopTitle);
             this.panel5.Controls.Add(this.flowLayoutPanel2);
             this.panel5.Location = new System.Drawing.Point(100, 100);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1000, 500);
             this.panel5.TabIndex = 18;
+            // 
+            // TopTitle
+            // 
+            this.TopTitle.AutoSize = true;
+            this.TopTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TopTitle.Location = new System.Drawing.Point(403, 39);
+            this.TopTitle.Name = "TopTitle";
+            this.TopTitle.Size = new System.Drawing.Size(141, 42);
+            this.TopTitle.TabIndex = 1;
+            this.TopTitle.Text = "Ankiety";
             // 
             // flowLayoutPanel2
             // 
@@ -810,16 +824,6 @@
             this.ButtonActivityLevelSurvey.Text = "Poziom aktywności fizycznej";
             this.ButtonActivityLevelSurvey.UseVisualStyleBackColor = true;
             this.ButtonActivityLevelSurvey.Click += new System.EventHandler(this.ButtonActivityLevelSurvey_Click);
-            // 
-            // TopTitle
-            // 
-            this.TopTitle.AutoSize = true;
-            this.TopTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.TopTitle.Location = new System.Drawing.Point(403, 39);
-            this.TopTitle.Name = "TopTitle";
-            this.TopTitle.Size = new System.Drawing.Size(141, 42);
-            this.TopTitle.TabIndex = 1;
-            this.TopTitle.Text = "Ankiety";
             // 
             // panel6
             // 
@@ -1395,6 +1399,30 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // SurveyTitle
+            // 
+            this.SurveyTitle.AutoSize = true;
+            this.SurveyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SurveyTitle.Location = new System.Drawing.Point(215, 0);
+            this.SurveyTitle.Name = "SurveyTitle";
+            this.SurveyTitle.Size = new System.Drawing.Size(523, 63);
+            this.SurveyTitle.TabIndex = 3;
+            this.SurveyTitle.Text = "Przykładowa ankieta";
+            this.SurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SurveyTitle.Visible = false;
+            // 
+            // SurveyQuestion
+            // 
+            this.SurveyQuestion.AutoSize = true;
+            this.SurveyQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.SurveyQuestion.Location = new System.Drawing.Point(341, 72);
+            this.SurveyQuestion.Name = "SurveyQuestion";
+            this.SurveyQuestion.Size = new System.Drawing.Size(300, 39);
+            this.SurveyQuestion.TabIndex = 4;
+            this.SurveyQuestion.Text = "Pytanie w ankiecie";
+            this.SurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SurveyQuestion.Visible = false;
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1545,5 +1573,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label SurveyTitle;
+        private System.Windows.Forms.Label SurveyQuestion;
     }
 }

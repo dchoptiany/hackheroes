@@ -616,6 +616,14 @@ namespace app
         {
             TopTitle.Visible = false;
             flowLayoutPanel2.Visible = false;
+
+            Survey survey = new Survey("Testowa Ankieta");
+            SurveyTitle.Visible = true;
+            SurveyTitle.Text = survey.title;
+
+            survey.AddQuestion("Test question", Survey.QuestionType.YES_OR_NO);
+            SurveyQuestion.Visible = true;
+            SurveyQuestion.Text = survey.questions[0].questionTitle;
         }
 
         private void ButtonActivityLevelSurvey_Click(object sender, EventArgs e)

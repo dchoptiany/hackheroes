@@ -9,6 +9,9 @@ namespace app
 {
     class Survey
     {
+        public string title;
+        public List<Question> questions;
+
         public enum QuestionType
         {
             YES_OR_NO,
@@ -16,22 +19,32 @@ namespace app
             ABCD
         }
 
-        struct Question
+        public struct Question
         {
+            public string questionTitle;
+            public QuestionType questionType;
+
             public Question(string _questionTitle, QuestionType _questionType)
             {
                 questionTitle = _questionTitle;
                 questionType = _questionType;
             }
 
-            string questionTitle;
-            QuestionType questionType;
-        }
+            public struct Answers
+            {
+                public List<KeyValuePair<string, uint>> answersValues;
 
-        private List<Question> questions;
+                public Answers(List<KeyValuePair<string, uint>> _answersValues)
+                {
+                    answersValues = _answersValues;
+                }
+            }
 
-        public Survey()
+        }      
+
+        public Survey(string _title)
         {
+            title = _title;
             questions = new List<Question>();
         }
 
