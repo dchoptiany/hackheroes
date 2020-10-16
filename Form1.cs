@@ -94,6 +94,12 @@ namespace app
             ChangePanel(0);
         }
 
+        private void UpdateActivityLevel()
+        {
+            Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * (float)trackBarActivityLevel.Value;
+            UpdateMacro();
+        }
+
         private void UpdateMacro()
         {
             Calculator.CalculateMacro(Program.users[Program.currentUserIndex]);
@@ -186,7 +192,7 @@ namespace app
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
             ChangePanel(4);
-            TrackBar1_Scroll(sender, e);
+            UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
@@ -607,8 +613,7 @@ namespace app
 
         private void TrackBar1_Scroll(object sender, EventArgs e)
         {
-            Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * (float)trackBarActivityLevel.Value;
-            UpdateMacro();
+            UpdateActivityLevel();
         }
     }
 }
