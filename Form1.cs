@@ -10,6 +10,7 @@ namespace app
     public partial class Hackheroes : Form
     {
         private readonly List<Panel> panels = new List<Panel>();
+        private List<Button> answerButtons = new List<Button>();
 
         public Hackheroes()
         {
@@ -24,6 +25,12 @@ namespace app
             {
                 SendMessage(bar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
             }
+        }
+
+        private void ChangePanel(int index)
+        {
+            panels[index].BringToFront();
+            buttonReturn.Visible = index != 0;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -79,12 +86,13 @@ namespace app
             panels.Add(panel5); //surveys
             panels.Add(panel6); //profiles
             Center(label6, 30); //BMI
-        }
 
-        private void ChangePanel(int index, bool visibility)
-        {
-            panels[index].BringToFront();
-            buttonReturn.Visible = visibility;
+            answerButtons.Add(ButtonAnswerA);
+            answerButtons.Add(ButtonAnswerB);
+            answerButtons.Add(ButtonAnswerC);
+            answerButtons.Add(ButtonAnswerD);
+
+            ChangePanel(0);
         }
 
         private void UpdateMacro()
@@ -163,33 +171,33 @@ namespace app
             Center(labelBMI, 300);
             Center(labelBMIInterpretation, 360);
 
-            ChangePanel(1, true);
+            ChangePanel(1);
         }
 
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
-            ChangePanel(2, true);
+            ChangePanel(2);
         }
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
-            ChangePanel(3, true);
+            ChangePanel(3);
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
+            ChangePanel(4);
             TrackBar1_Scroll(sender, e);
-            ChangePanel(4, true);
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            ChangePanel(5, true);
+            ChangePanel(5);
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
-            ChangePanel(6, true);
+            ChangePanel(6);
 
             UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
@@ -216,7 +224,7 @@ namespace app
 
         private void ButtonReturn_Click(object sender, EventArgs e)
         {
-            ChangePanel(0, false);
+            ChangePanel(0);
         }
 
         private void SetEditInfoVisibility(bool visibility)
@@ -503,6 +511,99 @@ namespace app
             {
                 buttonSaveChanges.Enabled = true;
             }
+        }
+
+        private void SetupQuiz()
+        {
+            ButtonStartQuiz.Visible = false;
+            labelQuestion.Visible = true;
+            tableLayoutPanelAnswers.Visible = true;
+            ButtonAnswerA.Visible = true;
+            ButtonAnswerB.Visible = true;
+            ButtonAnswerC.Visible = true;
+            ButtonAnswerD.Visible = true;
+
+            Quiz.GetQuestions();
+            Quiz.score = 0;
+            Quiz.questionNumber = 0;
+
+            NextQuestion();
+        }
+
+        private void NextQuestion()
+        {
+            if(Quiz.questionNumber == 5)
+            {
+                FinishQuiz();
+                return;
+            }
+
+            labelQuestion.Text = Quiz.drawnQuestions[Quiz.questionNumber].ask;
+            Center(labelQuestion, 110);
+
+            foreach(Button btn in answerButtons)
+            {
+                btn.Enabled = false;
+            }
+
+            int correctIndex = Program.rnd.Next(4);
+            answerButtons[correctIndex].Text = Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer;
+            answerButtons[correctIndex].Enabled = true;
+
+            int buttonIndex;
+            int answerIndex = 0;
+            do
+            {
+                buttonIndex = Program.rnd.Next(4);
+
+                if(!answerButtons[buttonIndex].Enabled)
+                {
+                    answerButtons[buttonIndex].Text = Quiz.drawnQuestions[Quiz.questionNumber].incorrectAnswers[answerIndex++];
+                    answerButtons[buttonIndex].Enabled = true;
+                }
+            } while(!(ButtonAnswerA.Enabled && ButtonAnswerB.Enabled && ButtonAnswerC.Enabled && ButtonAnswerD.Enabled));
+        }
+
+        private void FinishQuiz()
+        {
+            labelQuizResult.Text = "Wynik: " + Quiz.score + "/5";
+            Center(labelQuizResult, 200);
+            labelQuestion.Visible = false;
+            tableLayoutPanelAnswers.Visible = false;
+            ButtonAnswerA.Visible = false;
+            ButtonAnswerB.Visible = false;
+            ButtonAnswerC.Visible = false;
+            ButtonAnswerD.Visible = false;
+            labelQuizResult.Visible = true;
+            ButtonFinishQuiz.Visible = true;
+        }
+
+        private void ButtonStartQuiz_Click(object sender, EventArgs e)
+        {
+            SetupQuiz();
+        }
+
+        private void AnswerClicked(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            if(clickedButton.Text == Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
+            {
+                ++Quiz.score;
+            }
+            ++Quiz.questionNumber;
+            NextQuestion();
+        }
+
+        private void Reset()
+        {
+            labelQuizResult.Visible = false;
+            ButtonFinishQuiz.Visible = false;
+            ButtonStartQuiz.Visible = true;
+        }
+
+        private void ButtonFinishQuiz_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
 
         private void TrackBar1_Scroll(object sender, EventArgs e)

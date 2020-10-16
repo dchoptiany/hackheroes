@@ -45,6 +45,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ButtonFinishQuiz = new System.Windows.Forms.Button();
+            this.labelQuizResult = new System.Windows.Forms.Label();
+            this.labelQuestion = new System.Windows.Forms.Label();
+            this.tableLayoutPanelAnswers = new System.Windows.Forms.TableLayoutPanel();
+            this.ButtonAnswerA = new System.Windows.Forms.Button();
+            this.ButtonAnswerB = new System.Windows.Forms.Button();
+            this.ButtonAnswerD = new System.Windows.Forms.Button();
+            this.ButtonAnswerC = new System.Windows.Forms.Button();
+            this.ButtonStartQuiz = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -121,6 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tableLayoutPanelAnswers.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).BeginInit();
@@ -342,21 +352,164 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.ButtonFinishQuiz);
+            this.panel3.Controls.Add(this.labelQuizResult);
+            this.panel3.Controls.Add(this.labelQuestion);
+            this.panel3.Controls.Add(this.tableLayoutPanelAnswers);
+            this.panel3.Controls.Add(this.ButtonStartQuiz);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(100, 100);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 500);
             this.panel3.TabIndex = 16;
             // 
+            // ButtonFinishQuiz
+            // 
+            this.ButtonFinishQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonFinishQuiz.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonFinishQuiz.Location = new System.Drawing.Point(410, 350);
+            this.ButtonFinishQuiz.Name = "ButtonFinishQuiz";
+            this.ButtonFinishQuiz.Size = new System.Drawing.Size(180, 60);
+            this.ButtonFinishQuiz.TabIndex = 6;
+            this.ButtonFinishQuiz.Text = "Zakończ";
+            this.ButtonFinishQuiz.UseVisualStyleBackColor = true;
+            this.ButtonFinishQuiz.Visible = false;
+            this.ButtonFinishQuiz.Click += new System.EventHandler(this.ButtonFinishQuiz_Click);
+            // 
+            // labelQuizResult
+            // 
+            this.labelQuizResult.AutoSize = true;
+            this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuizResult.Location = new System.Drawing.Point(424, 200);
+            this.labelQuizResult.Name = "labelQuizResult";
+            this.labelQuizResult.Size = new System.Drawing.Size(153, 48);
+            this.labelQuizResult.TabIndex = 5;
+            this.labelQuizResult.Text = "Wynik: 5/5";
+            this.labelQuizResult.Visible = false;
+            // 
+            // labelQuestion
+            // 
+            this.labelQuestion.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuestion.Location = new System.Drawing.Point(100, 110);
+            this.labelQuestion.Name = "labelQuestion";
+            this.labelQuestion.Size = new System.Drawing.Size(800, 150);
+            this.labelQuestion.TabIndex = 4;
+            this.labelQuestion.Text = "Treść pytania";
+            this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelQuestion.Visible = false;
+            // 
+            // tableLayoutPanelAnswers
+            // 
+            this.tableLayoutPanelAnswers.ColumnCount = 2;
+            this.tableLayoutPanelAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerA, 0, 0);
+            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerB, 1, 0);
+            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerD, 1, 1);
+            this.tableLayoutPanelAnswers.Controls.Add(this.ButtonAnswerC, 0, 1);
+            this.tableLayoutPanelAnswers.Location = new System.Drawing.Point(0, 272);
+            this.tableLayoutPanelAnswers.Name = "tableLayoutPanelAnswers";
+            this.tableLayoutPanelAnswers.RowCount = 2;
+            this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(1000, 226);
+            this.tableLayoutPanelAnswers.TabIndex = 3;
+            this.tableLayoutPanelAnswers.Visible = false;
+            // 
+            // ButtonAnswerA
+            // 
+            this.ButtonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.ButtonAnswerA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ButtonAnswerA.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAnswerA.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerA.ForeColor = System.Drawing.Color.Black;
+            this.ButtonAnswerA.Location = new System.Drawing.Point(0, 0);
+            this.ButtonAnswerA.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonAnswerA.Name = "ButtonAnswerA";
+            this.ButtonAnswerA.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerA.TabIndex = 0;
+            this.ButtonAnswerA.Text = "A";
+            this.ButtonAnswerA.UseVisualStyleBackColor = false;
+            this.ButtonAnswerA.Visible = false;
+            this.ButtonAnswerA.Click += new System.EventHandler(this.AnswerClicked);
+            // 
+            // ButtonAnswerB
+            // 
+            this.ButtonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
+            this.ButtonAnswerB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ButtonAnswerB.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAnswerB.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerB.ForeColor = System.Drawing.Color.Black;
+            this.ButtonAnswerB.Location = new System.Drawing.Point(500, 0);
+            this.ButtonAnswerB.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonAnswerB.Name = "ButtonAnswerB";
+            this.ButtonAnswerB.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerB.TabIndex = 1;
+            this.ButtonAnswerB.Text = "B";
+            this.ButtonAnswerB.UseVisualStyleBackColor = false;
+            this.ButtonAnswerB.Visible = false;
+            this.ButtonAnswerB.Click += new System.EventHandler(this.AnswerClicked);
+            // 
+            // ButtonAnswerD
+            // 
+            this.ButtonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(197)))), ((int)(((byte)(49)))));
+            this.ButtonAnswerD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ButtonAnswerD.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAnswerD.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerD.ForeColor = System.Drawing.Color.Black;
+            this.ButtonAnswerD.Location = new System.Drawing.Point(500, 113);
+            this.ButtonAnswerD.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonAnswerD.Name = "ButtonAnswerD";
+            this.ButtonAnswerD.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerD.TabIndex = 3;
+            this.ButtonAnswerD.Text = "D";
+            this.ButtonAnswerD.UseVisualStyleBackColor = false;
+            this.ButtonAnswerD.Visible = false;
+            this.ButtonAnswerD.Click += new System.EventHandler(this.AnswerClicked);
+            // 
+            // ButtonAnswerC
+            // 
+            this.ButtonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.ButtonAnswerC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ButtonAnswerC.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAnswerC.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerC.ForeColor = System.Drawing.Color.Black;
+            this.ButtonAnswerC.Location = new System.Drawing.Point(0, 113);
+            this.ButtonAnswerC.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonAnswerC.Name = "ButtonAnswerC";
+            this.ButtonAnswerC.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerC.TabIndex = 2;
+            this.ButtonAnswerC.Text = "C";
+            this.ButtonAnswerC.UseVisualStyleBackColor = false;
+            this.ButtonAnswerC.Visible = false;
+            this.ButtonAnswerC.Click += new System.EventHandler(this.AnswerClicked);
+            // 
+            // ButtonStartQuiz
+            // 
+            this.ButtonStartQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonStartQuiz.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonStartQuiz.Location = new System.Drawing.Point(410, 250);
+            this.ButtonStartQuiz.Name = "ButtonStartQuiz";
+            this.ButtonStartQuiz.Size = new System.Drawing.Size(180, 60);
+            this.ButtonStartQuiz.TabIndex = 2;
+            this.ButtonStartQuiz.Text = "Start";
+            this.ButtonStartQuiz.UseVisualStyleBackColor = true;
+            this.ButtonStartQuiz.Click += new System.EventHandler(this.ButtonStartQuiz_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(443, 83);
+            this.label4.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(432, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 42);
+            this.label4.Size = new System.Drawing.Size(135, 84);
             this.label4.TabIndex = 1;
             this.label4.Text = "Quiz";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -1200,10 +1353,10 @@
             // 
             this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonReturn.Location = new System.Drawing.Point(492, 606);
+            this.buttonReturn.Location = new System.Drawing.Point(485, 625);
             this.buttonReturn.Margin = new System.Windows.Forms.Padding(0);
             this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(225, 46);
+            this.buttonReturn.Size = new System.Drawing.Size(230, 50);
             this.buttonReturn.TabIndex = 20;
             this.buttonReturn.Text = "Powrót";
             this.buttonReturn.UseVisualStyleBackColor = true;
@@ -1217,11 +1370,11 @@
             this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMinimize.FlatAppearance.BorderSize = 0;
             this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Location = new System.Drawing.Point(1122, -1);
+            this.buttonMinimize.Location = new System.Drawing.Point(1120, 0);
             this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMinimize.Name = "buttonMinimize";
             this.buttonMinimize.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonMinimize.Size = new System.Drawing.Size(31, 30);
+            this.buttonMinimize.Size = new System.Drawing.Size(40, 40);
             this.buttonMinimize.TabIndex = 11;
             this.buttonMinimize.UseVisualStyleBackColor = false;
             this.buttonMinimize.Click += new System.EventHandler(this.Button4_Click);
@@ -1233,11 +1386,11 @@
             this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClose.FlatAppearance.BorderSize = 0;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Location = new System.Drawing.Point(1153, -1);
+            this.buttonClose.Location = new System.Drawing.Point(1160, 0);
             this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonClose.Size = new System.Drawing.Size(31, 30);
+            this.buttonClose.Size = new System.Drawing.Size(40, 40);
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
@@ -1246,7 +1399,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.ControlBox = false;
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel0);
@@ -1254,10 +1407,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hackheroes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1274,6 +1428,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tableLayoutPanelAnswers.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1362,6 +1517,15 @@
         private System.Windows.Forms.PictureBox pictureBoxArrow;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ButtonStartQuiz;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAnswers;
+        private System.Windows.Forms.Button ButtonAnswerD;
+        private System.Windows.Forms.Button ButtonAnswerC;
+        private System.Windows.Forms.Button ButtonAnswerB;
+        private System.Windows.Forms.Button ButtonAnswerA;
+        private System.Windows.Forms.Label labelQuestion;
+        private System.Windows.Forms.Label labelQuizResult;
+        private System.Windows.Forms.Button ButtonFinishQuiz;
         private System.Windows.Forms.Label labelCarbohydrates;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label labelProtein;
@@ -1384,4 +1548,3 @@
         private System.Windows.Forms.Label label33;
     }
 }
-
