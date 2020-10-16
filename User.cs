@@ -16,7 +16,6 @@
 		public Gender gender;
 
 		public float BMI;
-		public float activityLevel;
 
 		public float activityLevel;
 		public bool physicalJob;

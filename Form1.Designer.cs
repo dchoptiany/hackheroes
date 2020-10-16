@@ -48,19 +48,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelKcal = new System.Windows.Forms.Label();
+            this.labelFats = new System.Windows.Forms.Label();
+            this.labelProtein = new System.Windows.Forms.Label();
+            this.labelCarbohydrates = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.labelCarbohydrates = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.labelProtein = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.labelFats = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.labelKcal = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
@@ -110,10 +114,6 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -403,6 +403,139 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(294, 180);
             this.tableLayoutPanel1.TabIndex = 20;
             // 
+            // labelKcal
+            // 
+            this.labelKcal.AutoSize = true;
+            this.labelKcal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKcal.Location = new System.Drawing.Point(162, 3);
+            this.labelKcal.Name = "labelKcal";
+            this.labelKcal.Size = new System.Drawing.Size(64, 41);
+            this.labelKcal.TabIndex = 8;
+            this.labelKcal.Text = "0";
+            this.labelKcal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFats
+            // 
+            this.labelFats.AutoSize = true;
+            this.labelFats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFats.Location = new System.Drawing.Point(162, 47);
+            this.labelFats.Name = "labelFats";
+            this.labelFats.Size = new System.Drawing.Size(64, 41);
+            this.labelFats.TabIndex = 10;
+            this.labelFats.Text = "0";
+            this.labelFats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelProtein
+            // 
+            this.labelProtein.AutoSize = true;
+            this.labelProtein.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelProtein.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelProtein.Location = new System.Drawing.Point(162, 91);
+            this.labelProtein.Name = "labelProtein";
+            this.labelProtein.Size = new System.Drawing.Size(64, 41);
+            this.labelProtein.TabIndex = 12;
+            this.labelProtein.Text = "0";
+            this.labelProtein.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelCarbohydrates
+            // 
+            this.labelCarbohydrates.AutoSize = true;
+            this.labelCarbohydrates.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelCarbohydrates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCarbohydrates.Location = new System.Drawing.Point(162, 135);
+            this.labelCarbohydrates.Name = "labelCarbohydrates";
+            this.labelCarbohydrates.Size = new System.Drawing.Size(64, 42);
+            this.labelCarbohydrates.TabIndex = 14;
+            this.labelCarbohydrates.Text = "0";
+            this.labelCarbohydrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label28.Location = new System.Drawing.Point(6, 47);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(147, 41);
+            this.label28.TabIndex = 9;
+            this.label28.Text = "Tłuszcze";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label30.Location = new System.Drawing.Point(6, 135);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(147, 42);
+            this.label30.TabIndex = 13;
+            this.label30.Text = "Węglowodany";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label32.Location = new System.Drawing.Point(6, 91);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(147, 41);
+            this.label32.TabIndex = 11;
+            this.label32.Text = "Białko ";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label27.Location = new System.Drawing.Point(235, 3);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(53, 41);
+            this.label27.TabIndex = 15;
+            this.label27.Text = "kcal";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label29.Location = new System.Drawing.Point(235, 47);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(53, 41);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "g";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label31.Location = new System.Drawing.Point(235, 91);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(53, 41);
+            this.label31.TabIndex = 17;
+            this.label31.Text = "g";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label33.Location = new System.Drawing.Point(235, 135);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(53, 42);
+            this.label33.TabIndex = 18;
+            this.label33.Text = "g";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -465,91 +598,6 @@
             this.label34.TabIndex = 15;
             this.label34.Text = "Bardzo wysoki";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelCarbohydrates
-            // 
-            this.labelCarbohydrates.AutoSize = true;
-            this.labelCarbohydrates.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCarbohydrates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCarbohydrates.Location = new System.Drawing.Point(162, 135);
-            this.labelCarbohydrates.Name = "labelCarbohydrates";
-            this.labelCarbohydrates.Size = new System.Drawing.Size(64, 42);
-            this.labelCarbohydrates.TabIndex = 14;
-            this.labelCarbohydrates.Text = "0";
-            this.labelCarbohydrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label30.Location = new System.Drawing.Point(6, 135);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(147, 42);
-            this.label30.TabIndex = 13;
-            this.label30.Text = "Węglowodany";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelProtein
-            // 
-            this.labelProtein.AutoSize = true;
-            this.labelProtein.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelProtein.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelProtein.Location = new System.Drawing.Point(162, 91);
-            this.labelProtein.Name = "labelProtein";
-            this.labelProtein.Size = new System.Drawing.Size(64, 41);
-            this.labelProtein.TabIndex = 12;
-            this.labelProtein.Text = "0";
-            this.labelProtein.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label32.Location = new System.Drawing.Point(6, 91);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(147, 41);
-            this.label32.TabIndex = 11;
-            this.label32.Text = "Białko ";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelFats
-            // 
-            this.labelFats.AutoSize = true;
-            this.labelFats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFats.Location = new System.Drawing.Point(162, 47);
-            this.labelFats.Name = "labelFats";
-            this.labelFats.Size = new System.Drawing.Size(64, 41);
-            this.labelFats.TabIndex = 10;
-            this.labelFats.Text = "0";
-            this.labelFats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label28.Location = new System.Drawing.Point(6, 47);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(147, 41);
-            this.label28.TabIndex = 9;
-            this.label28.Text = "Tłuszcze";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelKcal
-            // 
-            this.labelKcal.AutoSize = true;
-            this.labelKcal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelKcal.Location = new System.Drawing.Point(162, 3);
-            this.labelKcal.Name = "labelKcal";
-            this.labelKcal.Size = new System.Drawing.Size(64, 41);
-            this.labelKcal.TabIndex = 8;
-            this.labelKcal.Text = "0";
-            this.labelKcal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label25
             // 
@@ -1193,54 +1241,6 @@
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label27.Location = new System.Drawing.Point(235, 3);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(53, 41);
-            this.label27.TabIndex = 15;
-            this.label27.Text = "kcal";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label29.Location = new System.Drawing.Point(235, 47);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(53, 41);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "g";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label31.Location = new System.Drawing.Point(235, 91);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(53, 41);
-            this.label31.TabIndex = 17;
-            this.label31.Text = "g";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label33.Location = new System.Drawing.Point(235, 135);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(53, 42);
-            this.label33.TabIndex = 18;
-            this.label33.Text = "g";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Hackheroes
             // 

@@ -510,5 +510,10 @@ namespace app
             Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * (float)trackBarActivityLevel.Value;
             UpdateMacro();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
