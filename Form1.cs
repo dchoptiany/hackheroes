@@ -583,17 +583,17 @@ namespace app
             SetupQuiz();
         }
 
-        private void MarkCorrectAnswer()
+        private void MarkCorrectAnswer(Button clickedButton)
         {
-            foreach(Button button in answerButtons)
+            foreach (Button button in answerButtons)
             {
                 if(button.Text == Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
                 {
                     button.BackColor = Color.FromArgb(76, 209, 55);
                 }
-                else
+                else if(button == clickedButton && clickedButton.Text != Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
                 {
-                    button.BackColor = Color.FromArgb(232, 65, 24);
+                    clickedButton.BackColor = Color.FromArgb(232, 65, 24);
                 }
                 button.Enabled = false;
             }
@@ -608,7 +608,7 @@ namespace app
             {
                 ++Quiz.score;
             }
-            MarkCorrectAnswer();
+            MarkCorrectAnswer(clickedButton);
             ++Quiz.questionNumber;
             NextQuestion();
         }
