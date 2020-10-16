@@ -612,9 +612,15 @@ namespace app
             UpdateMacro();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SetupSurvey()
         {
+            TopTitle.Visible = false;
+            flowLayoutPanel2.Visible = false;
+        }
 
+        private void ButtonActivityLevelSurvey_Click(object sender, EventArgs e)
+        {
+            SetupSurvey();
         }
     }
 }

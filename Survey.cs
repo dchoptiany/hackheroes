@@ -12,7 +12,8 @@ namespace app
         public enum QuestionType
         {
             YES_OR_NO,
-            INPUT_VALUE
+            INPUT_VALUE,
+            ABCD
         }
 
         struct Question
