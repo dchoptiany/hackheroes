@@ -416,6 +416,7 @@
             // ButtonAnswerA
             // 
             this.ButtonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerA.Enabled = false;
             this.ButtonAnswerA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ButtonAnswerA.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -434,6 +435,7 @@
             // ButtonAnswerB
             // 
             this.ButtonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerB.Enabled = false;
             this.ButtonAnswerB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ButtonAnswerB.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -452,6 +454,7 @@
             // ButtonAnswerD
             // 
             this.ButtonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerD.Enabled = false;
             this.ButtonAnswerD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ButtonAnswerD.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -470,6 +473,7 @@
             // ButtonAnswerC
             // 
             this.ButtonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerC.Enabled = false;
             this.ButtonAnswerC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ButtonAnswerC.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

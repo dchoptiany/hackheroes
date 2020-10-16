@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace app
@@ -540,9 +541,9 @@ namespace app
             labelQuestion.Text = Quiz.drawnQuestions[Quiz.questionNumber].ask;
             Center(labelQuestion, 110);
 
-            foreach(Button btn in answerButtons)
+            foreach(Button button in answerButtons)
             {
-                btn.Enabled = false;
+                button.BackColor = Color.FromArgb(127, 143, 166);
             }
 
             int correctIndex = Program.rnd.Next(4);
@@ -586,7 +587,6 @@ namespace app
         {
             foreach(Button button in answerButtons)
             {
-                button.Enabled = false;
                 if(button.Text == Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
                 {
                     button.BackColor = Color.FromArgb(76, 209, 55);
@@ -595,7 +595,10 @@ namespace app
                 {
                     button.BackColor = Color.FromArgb(232, 65, 24);
                 }
+                button.Enabled = false;
             }
+
+            Thread.Sleep(2000);
         }
 
         private void AnswerClicked(object sender, EventArgs e)
@@ -607,6 +610,7 @@ namespace app
             }
             MarkCorrectAnswer();
             ++Quiz.questionNumber;
+            NextQuestion();
         }
 
         private void Reset()
