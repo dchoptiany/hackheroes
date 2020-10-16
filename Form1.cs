@@ -327,7 +327,7 @@ namespace app
                 DialogResult result;
                 
                 result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     Close();
                 }
@@ -438,7 +438,7 @@ namespace app
                 DialogResult result;
 
                 result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     Close();
                 }
