@@ -582,6 +582,22 @@ namespace app
             SetupQuiz();
         }
 
+        private void MarkCorrectAnswer()
+        {
+            foreach(Button button in answerButtons)
+            {
+                button.Enabled = false;
+                if(button.Text == Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
+                {
+                    button.BackColor = Color.FromArgb(76, 209, 55);
+                }
+                else
+                {
+                    button.BackColor = Color.FromArgb(232, 65, 24);
+                }
+            }
+        }
+
         private void AnswerClicked(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
@@ -589,8 +605,8 @@ namespace app
             {
                 ++Quiz.score;
             }
+            MarkCorrectAnswer();
             ++Quiz.questionNumber;
-            NextQuestion();
         }
 
         private void Reset()
