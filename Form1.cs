@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace app
 {
@@ -533,7 +534,7 @@ namespace app
             NextQuestion();
         }
 
-        private void NextQuestion()
+        private async void NextQuestion()
         {
             if(Quiz.questionNumber == 5)
             {
@@ -565,6 +566,18 @@ namespace app
                     answerButtons[buttonIndex].Enabled = true;
                 }
             } while(!(ButtonAnswerA.Enabled && ButtonAnswerB.Enabled && ButtonAnswerC.Enabled && ButtonAnswerD.Enabled));
+
+            Quiz.isAnswerchosen = false;
+
+            Stopwatch timecounter = new Stopwatch();
+            timecounter.Start();
+            TimeSpan limit = new TimeSpan(0,0,10);
+            while(true)
+            {
+                if (timecounter.Elapsed < limit) break;
+                if (Quiz.isAnswerchosen == false) break;
+            }
+            NextQuestion();
         }
 
         private void FinishQuiz()
@@ -615,7 +628,7 @@ namespace app
             }
             MarkCorrectAnswer(clickedButton);
             ++Quiz.questionNumber;
-            NextQuestion();
+            Quiz.isAnswerchosen = true;
         }
 
         private void Reset()
