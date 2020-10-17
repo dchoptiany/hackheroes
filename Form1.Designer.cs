@@ -1385,7 +1385,7 @@
             this.buttonMinimize.Size = new System.Drawing.Size(40, 40);
             this.buttonMinimize.TabIndex = 11;
             this.buttonMinimize.UseVisualStyleBackColor = false;
-            this.buttonMinimize.Click += new System.EventHandler(this.Button4_Click);
+            this.buttonMinimize.Click += new System.EventHandler(this.ButtonMinimizeClick);
             // 
             // buttonClose
             // 
@@ -1401,7 +1401,7 @@
             this.buttonClose.Size = new System.Drawing.Size(40, 40);
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // Hackheroes
             // 

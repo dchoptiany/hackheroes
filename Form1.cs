@@ -25,12 +25,12 @@ namespace app
             buttonReturn.Visible = index != 0;
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void ButtonMinimizeClick(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
