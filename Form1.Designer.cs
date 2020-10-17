@@ -31,16 +31,11 @@
             this.panel0 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonBMI = new System.Windows.Forms.Button();
-            this.buttonActivity = new System.Windows.Forms.Button();
             this.buttonQuiz = new System.Windows.Forms.Button();
-            this.buttonCalculator = new System.Windows.Forms.Button();
             this.buttonSurvey = new System.Windows.Forms.Button();
-            this.buttonProfile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.labelBMIInterpretation = new System.Windows.Forms.Label();
             this.labelBMI = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -120,13 +115,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonReturn = new System.Windows.Forms.Button();
+            this.pictureBoxTime = new System.Windows.Forms.PictureBox();
+            this.buttonActivity = new System.Windows.Forms.Button();
+            this.buttonCalculator = new System.Windows.Forms.Button();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanelAnswers.SuspendLayout();
@@ -141,6 +140,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel0
@@ -179,24 +181,6 @@
             this.buttonBMI.UseVisualStyleBackColor = false;
             this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
             // 
-            // buttonActivity
-            // 
-            this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonActivity.BackgroundImage = global::app.Properties.Resources.PhysicalActivity;
-            this.buttonActivity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonActivity.FlatAppearance.BorderSize = 0;
-            this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonActivity.Location = new System.Drawing.Point(333, 0);
-            this.buttonActivity.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonActivity.Name = "buttonActivity";
-            this.buttonActivity.Size = new System.Drawing.Size(333, 250);
-            this.buttonActivity.TabIndex = 1;
-            this.buttonActivity.Text = "Aktywność";
-            this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonActivity.UseVisualStyleBackColor = false;
-            this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
-            // 
             // buttonQuiz
             // 
             this.buttonQuiz.BackColor = System.Drawing.Color.Yellow;
@@ -211,24 +195,6 @@
             this.buttonQuiz.Text = "Quizy";
             this.buttonQuiz.UseVisualStyleBackColor = false;
             this.buttonQuiz.Click += new System.EventHandler(this.ButtonQuiz_Click);
-            // 
-            // buttonCalculator
-            // 
-            this.buttonCalculator.BackColor = System.Drawing.Color.Lime;
-            this.buttonCalculator.BackgroundImage = global::app.Properties.Resources.Calculator;
-            this.buttonCalculator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCalculator.FlatAppearance.BorderSize = 0;
-            this.buttonCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonCalculator.Location = new System.Drawing.Point(0, 250);
-            this.buttonCalculator.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonCalculator.Name = "buttonCalculator";
-            this.buttonCalculator.Size = new System.Drawing.Size(333, 250);
-            this.buttonCalculator.TabIndex = 3;
-            this.buttonCalculator.Text = "Kalkulator kalorii";
-            this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonCalculator.UseVisualStyleBackColor = false;
-            this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
             // 
             // buttonSurvey
             // 
@@ -245,24 +211,6 @@
             this.buttonSurvey.UseVisualStyleBackColor = false;
             this.buttonSurvey.Click += new System.EventHandler(this.ButtonSurvey_Click);
             // 
-            // buttonProfile
-            // 
-            this.buttonProfile.BackColor = System.Drawing.Color.Blue;
-            this.buttonProfile.BackgroundImage = global::app.Properties.Resources.Profile;
-            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonProfile.FlatAppearance.BorderSize = 0;
-            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.buttonProfile.Location = new System.Drawing.Point(666, 250);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(333, 250);
-            this.buttonProfile.TabIndex = 5;
-            this.buttonProfile.Text = "Profile";
-            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonProfile.UseVisualStyleBackColor = false;
-            this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBoxArrow);
@@ -274,18 +222,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 500);
             this.panel1.TabIndex = 14;
-            // 
-            // pictureBoxArrow
-            // 
-            this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
-            this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 147);
-            this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrow.Name = "pictureBoxArrow";
-            this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxArrow.TabIndex = 6;
-            this.pictureBoxArrow.TabStop = false;
             // 
             // labelBMIInterpretation
             // 
@@ -308,16 +244,6 @@
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::app.Properties.Resources.BMIScale;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 200);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -350,6 +276,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.pictureBoxTime);
             this.panel3.Controls.Add(this.labelNumber);
             this.panel3.Controls.Add(this.ButtonFinishQuiz);
             this.panel3.Controls.Add(this.labelQuizResult);
@@ -365,10 +292,10 @@
             // labelNumber
             // 
             this.labelNumber.AutoSize = true;
-            this.labelNumber.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNumber.Location = new System.Drawing.Point(65, 98);
             this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(55, 48);
+            this.labelNumber.Size = new System.Drawing.Size(52, 31);
             this.labelNumber.TabIndex = 7;
             this.labelNumber.Text = "1/5\r\n";
             this.labelNumber.Visible = false;
@@ -1358,6 +1285,92 @@
             this.buttonReturn.Visible = false;
             this.buttonReturn.Click += new System.EventHandler(this.ButtonReturn_Click);
             // 
+            // pictureBoxTime
+            // 
+            this.pictureBoxTime.Image = global::app.Properties.Resources.timeScale;
+            this.pictureBoxTime.Location = new System.Drawing.Point(250, 100);
+            this.pictureBoxTime.Name = "pictureBoxTime";
+            this.pictureBoxTime.Size = new System.Drawing.Size(498, 30);
+            this.pictureBoxTime.TabIndex = 8;
+            this.pictureBoxTime.TabStop = false;
+            this.pictureBoxTime.Visible = false;
+            // 
+            // buttonActivity
+            // 
+            this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonActivity.BackgroundImage = global::app.Properties.Resources.PhysicalActivity;
+            this.buttonActivity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonActivity.FlatAppearance.BorderSize = 0;
+            this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonActivity.Location = new System.Drawing.Point(333, 0);
+            this.buttonActivity.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonActivity.Name = "buttonActivity";
+            this.buttonActivity.Size = new System.Drawing.Size(333, 250);
+            this.buttonActivity.TabIndex = 1;
+            this.buttonActivity.Text = "Aktywność";
+            this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonActivity.UseVisualStyleBackColor = false;
+            this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
+            // 
+            // buttonCalculator
+            // 
+            this.buttonCalculator.BackColor = System.Drawing.Color.Lime;
+            this.buttonCalculator.BackgroundImage = global::app.Properties.Resources.Calculator;
+            this.buttonCalculator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCalculator.FlatAppearance.BorderSize = 0;
+            this.buttonCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCalculator.Location = new System.Drawing.Point(0, 250);
+            this.buttonCalculator.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonCalculator.Name = "buttonCalculator";
+            this.buttonCalculator.Size = new System.Drawing.Size(333, 250);
+            this.buttonCalculator.TabIndex = 3;
+            this.buttonCalculator.Text = "Kalkulator kalorii";
+            this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonCalculator.UseVisualStyleBackColor = false;
+            this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.BackColor = System.Drawing.Color.Blue;
+            this.buttonProfile.BackgroundImage = global::app.Properties.Resources.Profile;
+            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonProfile.FlatAppearance.BorderSize = 0;
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.buttonProfile.Location = new System.Drawing.Point(666, 250);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(333, 250);
+            this.buttonProfile.TabIndex = 5;
+            this.buttonProfile.Text = "Profile";
+            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonProfile.UseVisualStyleBackColor = false;
+            this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
+            // 
+            // pictureBoxArrow
+            // 
+            this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
+            this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 147);
+            this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxArrow.Name = "pictureBoxArrow";
+            this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrow.TabIndex = 6;
+            this.pictureBoxArrow.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::app.Properties.Resources.BMIScale;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 200);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // buttonMinimize
             // 
             this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
@@ -1416,8 +1429,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1438,6 +1449,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1538,5 +1552,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label labelNumber;
+        private System.Windows.Forms.PictureBox pictureBoxTime;
     }
 }

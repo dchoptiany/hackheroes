@@ -517,6 +517,7 @@ namespace app
         {
             labelNumber.Visible = true;
             ButtonStartQuiz.Visible = false;
+            pictureBoxTime.Visible = true;
             labelQuestion.Visible = true;
             tableLayoutPanelAnswers.Visible = true;
             ButtonAnswerA.Visible = true;
@@ -579,6 +580,7 @@ namespace app
             labelQuizResult.Visible = true;
             ButtonFinishQuiz.Visible = true;
             labelNumber.Visible = false;
+            pictureBoxTime.Visible = false;
         }
 
         private void ButtonStartQuiz_Click(object sender, EventArgs e)
