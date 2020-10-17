@@ -56,7 +56,7 @@
             this.ButtonAnswerD = new System.Windows.Forms.Button();
             this.ButtonAnswerC = new System.Windows.Forms.Button();
             this.ButtonStartQuiz = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelQuiz = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelKcal = new System.Windows.Forms.Label();
@@ -362,7 +362,7 @@
             this.panel3.Controls.Add(this.labelQuestion);
             this.panel3.Controls.Add(this.tableLayoutPanelAnswers);
             this.panel3.Controls.Add(this.ButtonStartQuiz);
-            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.labelQuiz);
             this.panel3.Location = new System.Drawing.Point(100, 100);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 500);
@@ -531,16 +531,16 @@
             this.ButtonStartQuiz.UseVisualStyleBackColor = true;
             this.ButtonStartQuiz.Click += new System.EventHandler(this.ButtonStartQuiz_Click);
             // 
-            // label4
+            // labelQuiz
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(432, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 55);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Quiz";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelQuiz.AutoSize = true;
+            this.labelQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuiz.Location = new System.Drawing.Point(439, 30);
+            this.labelQuiz.Name = "labelQuiz";
+            this.labelQuiz.Size = new System.Drawing.Size(122, 55);
+            this.labelQuiz.TabIndex = 1;
+            this.labelQuiz.Text = "Quiz";
+            this.labelQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -1490,7 +1490,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelQuiz;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
