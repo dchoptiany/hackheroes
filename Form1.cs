@@ -522,6 +522,7 @@ namespace app
             ButtonAnswerB.Visible = true;
             ButtonAnswerC.Visible = true;
             ButtonAnswerD.Visible = true;
+            labelNumber.Visible = true;
 
             Quiz.GetQuestions();
             Quiz.score = 0;
@@ -576,6 +577,7 @@ namespace app
             ButtonAnswerD.Visible = false;
             labelQuizResult.Visible = true;
             ButtonFinishQuiz.Visible = true;
+            labelNumber.Visible = false;
         }
 
         private void ButtonStartQuiz_Click(object sender, EventArgs e)

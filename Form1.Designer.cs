@@ -399,6 +399,7 @@
             // 
             // labelQuestion
             // 
+            this.labelQuestion.BackColor = System.Drawing.Color.Transparent;
             this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuestion.Location = new System.Drawing.Point(100, 110);
             this.labelQuestion.Name = "labelQuestion";
