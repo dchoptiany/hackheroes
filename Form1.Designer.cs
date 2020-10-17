@@ -45,6 +45,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBoxTime = new System.Windows.Forms.PictureBox();
+            this.labelNumber = new System.Windows.Forms.Label();
             this.ButtonFinishQuiz = new System.Windows.Forms.Button();
             this.labelQuizResult = new System.Windows.Forms.Label();
             this.labelQuestion = new System.Windows.Forms.Label();
@@ -54,22 +56,26 @@
             this.ButtonAnswerD = new System.Windows.Forms.Button();
             this.ButtonAnswerC = new System.Windows.Forms.Button();
             this.ButtonStartQuiz = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelQuiz = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelKcal = new System.Windows.Forms.Label();
+            this.labelFats = new System.Windows.Forms.Label();
+            this.labelProtein = new System.Windows.Forms.Label();
+            this.labelCarbohydrates = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.labelCarbohydrates = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.labelProtein = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.labelFats = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.labelKcal = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
@@ -117,10 +123,7 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.pictureBoxTimeBorder = new System.Windows.Forms.PictureBox();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -128,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
             this.tableLayoutPanelAnswers.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -140,6 +144,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel0
@@ -349,21 +354,45 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.pictureBoxTime);
+            this.panel3.Controls.Add(this.pictureBoxTimeBorder);
+            this.panel3.Controls.Add(this.labelNumber);
             this.panel3.Controls.Add(this.ButtonFinishQuiz);
             this.panel3.Controls.Add(this.labelQuizResult);
             this.panel3.Controls.Add(this.labelQuestion);
             this.panel3.Controls.Add(this.tableLayoutPanelAnswers);
             this.panel3.Controls.Add(this.ButtonStartQuiz);
-            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.labelQuiz);
             this.panel3.Location = new System.Drawing.Point(100, 100);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 500);
             this.panel3.TabIndex = 16;
             // 
+            // pictureBoxTime
+            // 
+            this.pictureBoxTime.Image = global::app.Properties.Resources.timeScale;
+            this.pictureBoxTime.Location = new System.Drawing.Point(250, 100);
+            this.pictureBoxTime.Name = "pictureBoxTime";
+            this.pictureBoxTime.Size = new System.Drawing.Size(498, 30);
+            this.pictureBoxTime.TabIndex = 8;
+            this.pictureBoxTime.TabStop = false;
+            this.pictureBoxTime.Visible = false;
+            // 
+            // labelNumber
+            // 
+            this.labelNumber.AutoSize = true;
+            this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumber.Location = new System.Drawing.Point(65, 100);
+            this.labelNumber.Name = "labelNumber";
+            this.labelNumber.Size = new System.Drawing.Size(52, 31);
+            this.labelNumber.TabIndex = 7;
+            this.labelNumber.Text = "1/5\r\n";
+            this.labelNumber.Visible = false;
+            // 
             // ButtonFinishQuiz
             // 
             this.ButtonFinishQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonFinishQuiz.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonFinishQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonFinishQuiz.Location = new System.Drawing.Point(410, 350);
             this.ButtonFinishQuiz.Name = "ButtonFinishQuiz";
             this.ButtonFinishQuiz.Size = new System.Drawing.Size(180, 60);
@@ -376,17 +405,18 @@
             // labelQuizResult
             // 
             this.labelQuizResult.AutoSize = true;
-            this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuizResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuizResult.Location = new System.Drawing.Point(424, 200);
             this.labelQuizResult.Name = "labelQuizResult";
-            this.labelQuizResult.Size = new System.Drawing.Size(153, 48);
+            this.labelQuizResult.Size = new System.Drawing.Size(141, 31);
             this.labelQuizResult.TabIndex = 5;
             this.labelQuizResult.Text = "Wynik: 5/5";
             this.labelQuizResult.Visible = false;
             // 
             // labelQuestion
             // 
-            this.labelQuestion.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuestion.Location = new System.Drawing.Point(100, 110);
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(800, 150);
@@ -409,22 +439,23 @@
             this.tableLayoutPanelAnswers.RowCount = 2;
             this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(1000, 226);
+            this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(1000, 228);
             this.tableLayoutPanelAnswers.TabIndex = 3;
             this.tableLayoutPanelAnswers.Visible = false;
             // 
             // ButtonAnswerA
             // 
-            this.ButtonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.ButtonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerA.Enabled = false;
             this.ButtonAnswerA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ButtonAnswerA.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerA.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAnswerA.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonAnswerA.ForeColor = System.Drawing.Color.Black;
             this.ButtonAnswerA.Location = new System.Drawing.Point(0, 0);
             this.ButtonAnswerA.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAnswerA.Name = "ButtonAnswerA";
-            this.ButtonAnswerA.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerA.Size = new System.Drawing.Size(499, 113);
             this.ButtonAnswerA.TabIndex = 0;
             this.ButtonAnswerA.Text = "A";
             this.ButtonAnswerA.UseVisualStyleBackColor = false;
@@ -433,16 +464,17 @@
             // 
             // ButtonAnswerB
             // 
-            this.ButtonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
+            this.ButtonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerB.Enabled = false;
             this.ButtonAnswerB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ButtonAnswerB.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerB.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAnswerB.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonAnswerB.ForeColor = System.Drawing.Color.Black;
             this.ButtonAnswerB.Location = new System.Drawing.Point(500, 0);
             this.ButtonAnswerB.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAnswerB.Name = "ButtonAnswerB";
-            this.ButtonAnswerB.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerB.Size = new System.Drawing.Size(499, 113);
             this.ButtonAnswerB.TabIndex = 1;
             this.ButtonAnswerB.Text = "B";
             this.ButtonAnswerB.UseVisualStyleBackColor = false;
@@ -451,16 +483,17 @@
             // 
             // ButtonAnswerD
             // 
-            this.ButtonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(197)))), ((int)(((byte)(49)))));
+            this.ButtonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerD.Enabled = false;
             this.ButtonAnswerD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ButtonAnswerD.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerD.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAnswerD.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonAnswerD.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAnswerD.Location = new System.Drawing.Point(500, 113);
+            this.ButtonAnswerD.Location = new System.Drawing.Point(500, 114);
             this.ButtonAnswerD.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAnswerD.Name = "ButtonAnswerD";
-            this.ButtonAnswerD.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerD.Size = new System.Drawing.Size(499, 113);
             this.ButtonAnswerD.TabIndex = 3;
             this.ButtonAnswerD.Text = "D";
             this.ButtonAnswerD.UseVisualStyleBackColor = false;
@@ -469,16 +502,17 @@
             // 
             // ButtonAnswerC
             // 
-            this.ButtonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.ButtonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerC.Enabled = false;
             this.ButtonAnswerC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ButtonAnswerC.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerC.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAnswerC.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAnswerC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonAnswerC.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAnswerC.Location = new System.Drawing.Point(0, 113);
+            this.ButtonAnswerC.Location = new System.Drawing.Point(0, 114);
             this.ButtonAnswerC.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAnswerC.Name = "ButtonAnswerC";
-            this.ButtonAnswerC.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerC.Size = new System.Drawing.Size(499, 113);
             this.ButtonAnswerC.TabIndex = 2;
             this.ButtonAnswerC.Text = "C";
             this.ButtonAnswerC.UseVisualStyleBackColor = false;
@@ -488,7 +522,7 @@
             // ButtonStartQuiz
             // 
             this.ButtonStartQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonStartQuiz.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonStartQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonStartQuiz.Location = new System.Drawing.Point(410, 250);
             this.ButtonStartQuiz.Name = "ButtonStartQuiz";
             this.ButtonStartQuiz.Size = new System.Drawing.Size(180, 60);
@@ -497,16 +531,16 @@
             this.ButtonStartQuiz.UseVisualStyleBackColor = true;
             this.ButtonStartQuiz.Click += new System.EventHandler(this.ButtonStartQuiz_Click);
             // 
-            // label4
+            // labelQuiz
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(432, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 84);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Quiz";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelQuiz.AutoSize = true;
+            this.labelQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuiz.Location = new System.Drawing.Point(439, 30);
+            this.labelQuiz.Name = "labelQuiz";
+            this.labelQuiz.Size = new System.Drawing.Size(122, 55);
+            this.labelQuiz.TabIndex = 1;
+            this.labelQuiz.Text = "Quiz";
+            this.labelQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -552,6 +586,139 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(294, 180);
             this.tableLayoutPanel1.TabIndex = 20;
+            // 
+            // labelKcal
+            // 
+            this.labelKcal.AutoSize = true;
+            this.labelKcal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKcal.Location = new System.Drawing.Point(162, 3);
+            this.labelKcal.Name = "labelKcal";
+            this.labelKcal.Size = new System.Drawing.Size(64, 41);
+            this.labelKcal.TabIndex = 8;
+            this.labelKcal.Text = "0";
+            this.labelKcal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFats
+            // 
+            this.labelFats.AutoSize = true;
+            this.labelFats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelFats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFats.Location = new System.Drawing.Point(162, 47);
+            this.labelFats.Name = "labelFats";
+            this.labelFats.Size = new System.Drawing.Size(64, 41);
+            this.labelFats.TabIndex = 10;
+            this.labelFats.Text = "0";
+            this.labelFats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelProtein
+            // 
+            this.labelProtein.AutoSize = true;
+            this.labelProtein.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelProtein.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelProtein.Location = new System.Drawing.Point(162, 91);
+            this.labelProtein.Name = "labelProtein";
+            this.labelProtein.Size = new System.Drawing.Size(64, 41);
+            this.labelProtein.TabIndex = 12;
+            this.labelProtein.Text = "0";
+            this.labelProtein.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelCarbohydrates
+            // 
+            this.labelCarbohydrates.AutoSize = true;
+            this.labelCarbohydrates.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelCarbohydrates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCarbohydrates.Location = new System.Drawing.Point(162, 135);
+            this.labelCarbohydrates.Name = "labelCarbohydrates";
+            this.labelCarbohydrates.Size = new System.Drawing.Size(64, 42);
+            this.labelCarbohydrates.TabIndex = 14;
+            this.labelCarbohydrates.Text = "0";
+            this.labelCarbohydrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label28.Location = new System.Drawing.Point(6, 47);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(147, 41);
+            this.label28.TabIndex = 9;
+            this.label28.Text = "Tłuszcze";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label30.Location = new System.Drawing.Point(6, 135);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(147, 42);
+            this.label30.TabIndex = 13;
+            this.label30.Text = "Węglowodany";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label32.Location = new System.Drawing.Point(6, 91);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(147, 41);
+            this.label32.TabIndex = 11;
+            this.label32.Text = "Białko ";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label27.Location = new System.Drawing.Point(235, 3);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(53, 41);
+            this.label27.TabIndex = 15;
+            this.label27.Text = "kcal";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label29.Location = new System.Drawing.Point(235, 47);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(53, 41);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "g";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label31.Location = new System.Drawing.Point(235, 91);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(53, 41);
+            this.label31.TabIndex = 17;
+            this.label31.Text = "g";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label33.Location = new System.Drawing.Point(235, 135);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(53, 42);
+            this.label33.TabIndex = 18;
+            this.label33.Text = "g";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label26
             // 
@@ -615,91 +782,6 @@
             this.label34.TabIndex = 15;
             this.label34.Text = "Bardzo wysoki";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelCarbohydrates
-            // 
-            this.labelCarbohydrates.AutoSize = true;
-            this.labelCarbohydrates.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCarbohydrates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCarbohydrates.Location = new System.Drawing.Point(162, 135);
-            this.labelCarbohydrates.Name = "labelCarbohydrates";
-            this.labelCarbohydrates.Size = new System.Drawing.Size(64, 42);
-            this.labelCarbohydrates.TabIndex = 14;
-            this.labelCarbohydrates.Text = "0";
-            this.labelCarbohydrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label30.Location = new System.Drawing.Point(6, 135);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(147, 42);
-            this.label30.TabIndex = 13;
-            this.label30.Text = "Węglowodany";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelProtein
-            // 
-            this.labelProtein.AutoSize = true;
-            this.labelProtein.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelProtein.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelProtein.Location = new System.Drawing.Point(162, 91);
-            this.labelProtein.Name = "labelProtein";
-            this.labelProtein.Size = new System.Drawing.Size(64, 41);
-            this.labelProtein.TabIndex = 12;
-            this.labelProtein.Text = "0";
-            this.labelProtein.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label32.Location = new System.Drawing.Point(6, 91);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(147, 41);
-            this.label32.TabIndex = 11;
-            this.label32.Text = "Białko ";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelFats
-            // 
-            this.labelFats.AutoSize = true;
-            this.labelFats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFats.Location = new System.Drawing.Point(162, 47);
-            this.labelFats.Name = "labelFats";
-            this.labelFats.Size = new System.Drawing.Size(64, 41);
-            this.labelFats.TabIndex = 10;
-            this.labelFats.Text = "0";
-            this.labelFats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label28.Location = new System.Drawing.Point(6, 47);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(147, 41);
-            this.label28.TabIndex = 9;
-            this.label28.Text = "Tłuszcze";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelKcal
-            // 
-            this.labelKcal.AutoSize = true;
-            this.labelKcal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelKcal.Location = new System.Drawing.Point(162, 3);
-            this.labelKcal.Name = "labelKcal";
-            this.labelKcal.Size = new System.Drawing.Size(64, 41);
-            this.labelKcal.TabIndex = 8;
-            this.labelKcal.Text = "0";
-            this.labelKcal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label25
             // 
@@ -1306,7 +1388,7 @@
             this.buttonMinimize.Size = new System.Drawing.Size(40, 40);
             this.buttonMinimize.TabIndex = 11;
             this.buttonMinimize.UseVisualStyleBackColor = false;
-            this.buttonMinimize.Click += new System.EventHandler(this.Button4_Click);
+            this.buttonMinimize.Click += new System.EventHandler(this.ButtonMinimizeClick);
             // 
             // buttonClose
             // 
@@ -1322,55 +1404,17 @@
             this.buttonClose.Size = new System.Drawing.Size(40, 40);
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // label27
+            // pictureBoxTimeBorder
             // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label27.Location = new System.Drawing.Point(235, 3);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(53, 41);
-            this.label27.TabIndex = 15;
-            this.label27.Text = "kcal";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label29.Location = new System.Drawing.Point(235, 47);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(53, 41);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "g";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label31.Location = new System.Drawing.Point(235, 91);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(53, 41);
-            this.label31.TabIndex = 17;
-            this.label31.Text = "g";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label33.Location = new System.Drawing.Point(235, 135);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(53, 42);
-            this.label33.TabIndex = 18;
-            this.label33.Text = "g";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBoxTimeBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.pictureBoxTimeBorder.Location = new System.Drawing.Point(248, 98);
+            this.pictureBoxTimeBorder.Name = "pictureBoxTimeBorder";
+            this.pictureBoxTimeBorder.Size = new System.Drawing.Size(502, 34);
+            this.pictureBoxTimeBorder.TabIndex = 9;
+            this.pictureBoxTimeBorder.TabStop = false;
+            this.pictureBoxTimeBorder.Visible = false;
             // 
             // Hackheroes
             // 
@@ -1404,6 +1448,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
             this.tableLayoutPanelAnswers.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1420,6 +1465,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1444,7 +1490,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelQuiz;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1519,5 +1565,8 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label labelNumber;
+        private System.Windows.Forms.PictureBox pictureBoxTime;
+        private System.Windows.Forms.PictureBox pictureBoxTimeBorder;
     }
 }
