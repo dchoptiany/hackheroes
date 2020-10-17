@@ -1,13 +1,27 @@
-﻿namespace app
+﻿using System;
+using System.Windows.Forms;
+
+namespace app
 {
     static class Calculator
     {
         public static void CalculateBMI(User user)
         {
-            user.BMI = user.weight / (user.height / 100f * user.height / 100f);
+            try
+            {
+                if(user.height == 0)
+                {
+                    throw(new DivideByZeroException("Wzrost użytkownika jest równy zero."));
+                }
+                user.BMI = user.weight / (user.height / 100f * user.height / 100f);
+            }
+            catch(DivideByZeroException e)
+            {
+                MessageBox.Show("Wystąpił błąd podczas obliczania BMI. Uzupełnij dane profilu i spróbuj ponownie.\n", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        public static void CalculateMacro(User user)
+    public static void CalculateMacro(User user)
         {
             float rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f);
             rmr += user.gender == Gender.Male ? 5f : -161f;
