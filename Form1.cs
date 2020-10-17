@@ -539,7 +539,7 @@ namespace app
                 FinishQuiz();
                 return;
             }
-
+            labelNumber.Text=Quiz.questionNumber+1+"/5";
             labelQuestion.Text = Quiz.drawnQuestions[Quiz.questionNumber].ask;
             Center(labelQuestion, 110);
 
