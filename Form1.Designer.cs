@@ -365,10 +365,10 @@
             // labelNumber
             // 
             this.labelNumber.AutoSize = true;
-            this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNumber.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNumber.Location = new System.Drawing.Point(65, 98);
             this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(52, 31);
+            this.labelNumber.Size = new System.Drawing.Size(55, 48);
             this.labelNumber.TabIndex = 7;
             this.labelNumber.Text = "1/5\r\n";
             this.labelNumber.Visible = false;
