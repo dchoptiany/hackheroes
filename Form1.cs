@@ -452,18 +452,6 @@ namespace app
             SetEditInfoVisibility(true);
         }
 
-        private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            using(StreamWriter saving = new StreamWriter("..\\..\\users.dat"))
-            {
-                foreach (User user in Program.users)
-                {
-                    saving.WriteLine(user.name);
-                    saving.WriteLine(user.getData());
-                }
-            }          
-        }
-
         private void TextBoxCurrentName_TextChanged(object sender, EventArgs e)
         {
             if (textBoxCurrentName.Text != Program.users[Program.currentUserIndex].name)
@@ -637,6 +625,18 @@ namespace app
         {
             Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * (float)trackBarActivityLevel.Value;
             UpdateMacro();
+        }
+
+        private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            using (StreamWriter saving = new StreamWriter("..\\..\\users.dat"))
+            {
+                foreach (User user in Program.users)
+                {
+                    saving.WriteLine(user.name);
+                    saving.WriteLine(user.getData());
+                }
+            }
         }
     }
 }
