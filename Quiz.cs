@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace app
 {
@@ -28,28 +29,35 @@ namespace app
         public static int questionNumber;
         public static bool isAnswerChosen;
 
-
         public static void LoadQuestions()
         {
             questions = new List<Question>();
-            using (StreamReader loading = new StreamReader("..\\..\\Resources\\Questions"))
+            try
             {
-                string ask;
-                string correctanswer;
-                string[] incorrectanswer = new string[3];
-
-                while (!loading.EndOfStream)
+                using (StreamReader loading = new StreamReader("..\\..\\Resources\\Questions"))
                 {
-                    ask = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1];
-                    correctanswer = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1]; 
-                    for(int i = 0; i < 3; i++)
+                    string ask;
+                    string correctanswer;
+                    string[] incorrectanswer = new string[3];
+
+                    while (!loading.EndOfStream)
                     {
-                        incorrectanswer[i] = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1];
+                        ask = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1];
+                        correctanswer = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1];
+                        for (int i = 0; i < 3; i++)
+                        {
+                            incorrectanswer[i] = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1];
+                        }
+                        Question newQuestion = new Question(ask, correctanswer, incorrectanswer);
+                        questions.Add(newQuestion);
+                        string empty = loading.ReadLine();
                     }
-                    Question newQuestion = new Question(ask, correctanswer, incorrectanswer);
-                    questions.Add(newQuestion);
-                    string empty = loading.ReadLine();
                 }
+            }
+            catch(FileNotFoundException e)
+            {
+                MessageBox.Show("Wystąpił błąd podczas wczytywania pytań. Quizy nie będą dostępne.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Program.disableQuiz = true;
             }
         }
 

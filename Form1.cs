@@ -19,6 +19,11 @@ namespace app
             InitializeComponent();
         }
 
+        public void DisableQuiz()
+        {
+            buttonQuiz.Enabled = false;
+        }
+
         private void ChangePanel(int index)
         {
             panels[index].BringToFront();
@@ -37,6 +42,11 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
+            if(Program.disableQuiz)
+            {
+                DisableQuiz();
+            }
+            
             using(StreamReader loading = new StreamReader("..\\..\\users.dat"))
             {
                 string name;
