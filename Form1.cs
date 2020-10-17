@@ -515,6 +515,7 @@ namespace app
 
         private void SetupQuiz()
         {
+            labelNumber.Visible = true;
             ButtonStartQuiz.Visible = false;
             labelQuestion.Visible = true;
             tableLayoutPanelAnswers.Visible = true;
@@ -522,7 +523,7 @@ namespace app
             ButtonAnswerB.Visible = true;
             ButtonAnswerC.Visible = true;
             ButtonAnswerD.Visible = true;
-            labelNumber.Visible = true;
+            
 
             Quiz.GetQuestions();
             Quiz.score = 0;
