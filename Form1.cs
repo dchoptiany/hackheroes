@@ -567,7 +567,7 @@ namespace app
                 }
             } while(!(ButtonAnswerA.Enabled && ButtonAnswerB.Enabled && ButtonAnswerC.Enabled && ButtonAnswerD.Enabled));
 
-            Quiz.isAnswerchosen = false;
+            Quiz.isAnswerChosen = false;
 
             Stopwatch timecounter = new Stopwatch();
             timecounter.Start();
@@ -575,7 +575,7 @@ namespace app
             while(true)
             {
                 if (timecounter.Elapsed < limit) break;
-                if (Quiz.isAnswerchosen == false) break;
+                if (Quiz.isAnswerChosen == false) break;
             }
             NextQuestion();
         }
@@ -628,7 +628,7 @@ namespace app
             }
             MarkCorrectAnswer(clickedButton);
             ++Quiz.questionNumber;
-            Quiz.isAnswerchosen = true;
+            Quiz.isAnswerChosen = true;
         }
 
         private void Reset()
