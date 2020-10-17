@@ -495,9 +495,10 @@ namespace app
 
         private void SetupQuiz()
         {
-            labelNumber.Visible = true;
             ButtonStartQuiz.Visible = false;
+            labelNumber.Visible = true;
             pictureBoxTime.Visible = true;
+            pictureBoxTimeBorder.Visible = true;
             labelQuestion.Visible = true;
             tableLayoutPanelAnswers.Visible = true;
             ButtonAnswerA.Visible = true;
@@ -516,7 +517,7 @@ namespace app
 
         private void UpdateTimeLeft(Stopwatch timeCounter)
         {
-            pictureBoxTime.Size = new Size(500 * timeCounter.Elapsed.Seconds / 10, 30);
+            pictureBoxTime.Size = new Size(48 + 500 * timeCounter.Elapsed.Seconds / 10, 30);
         }
 
         private async void NextQuestion()
@@ -561,9 +562,9 @@ namespace app
 
             while(true)
             {
-                if(timeCounter.Elapsed >= limit) break;
-                if(Quiz.isAnswerChosen == true) break;
                 await Task.Delay(1);
+                if (timeCounter.Elapsed >= limit) break;
+                if(Quiz.isAnswerChosen == true) break;
                 UpdateTimeLeft(timeCounter);
             }
             
@@ -592,6 +593,7 @@ namespace app
             ButtonFinishQuiz.Visible = true;
             labelNumber.Visible = false;
             pictureBoxTime.Visible = false;
+            pictureBoxTimeBorder.Visible = false;
         }
 
         private void ButtonStartQuiz_Click(object sender, EventArgs e)
@@ -601,7 +603,7 @@ namespace app
 
         private void MarkCorrectAnswer()
         {
-            foreach (Button button in answerButtons)
+            foreach(Button button in answerButtons)
             {
                 if(button.Text == Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
                 {
