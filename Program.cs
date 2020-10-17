@@ -9,6 +9,7 @@ namespace app
         static public List<User> users;
         static public int currentUserIndex;
         static public Random rnd;
+
         [STAThread]
         static void Main()
         {

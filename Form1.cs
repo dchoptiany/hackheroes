@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace app
 {
@@ -17,28 +20,18 @@ namespace app
             InitializeComponent();
         }
 
-        public static class ModifyProgressBarColor
-        {
-            [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
-            static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
-            public static void SetState(ProgressBar bar, int state)
-            {
-                SendMessage(bar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
-            }
-        }
-
         private void ChangePanel(int index)
         {
             panels[index].BringToFront();
             buttonReturn.Visible = index != 0;
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void ButtonMinimizeClick(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
@@ -468,18 +461,6 @@ namespace app
             SetEditInfoVisibility(true);
         }
 
-        private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            using(StreamWriter saving = new StreamWriter("..\\..\\users.dat"))
-            {
-                foreach (User user in Program.users)
-                {
-                    saving.WriteLine(user.name);
-                    saving.WriteLine(user.getData());
-                }
-            }          
-        }
-
         private void TextBoxCurrentName_TextChanged(object sender, EventArgs e)
         {
             if (textBoxCurrentName.Text != Program.users[Program.currentUserIndex].name)
@@ -523,12 +504,17 @@ namespace app
         private void SetupQuiz()
         {
             ButtonStartQuiz.Visible = false;
+            labelNumber.Visible = true;
+            pictureBoxTime.Visible = true;
+            pictureBoxTimeBorder.Visible = true;
             labelQuestion.Visible = true;
             tableLayoutPanelAnswers.Visible = true;
             ButtonAnswerA.Visible = true;
             ButtonAnswerB.Visible = true;
             ButtonAnswerC.Visible = true;
             ButtonAnswerD.Visible = true;
+
+            pictureBoxTime.Size = new Size(0, 30);
 
             Quiz.GetQuestions();
             Quiz.score = 0;
@@ -537,7 +523,17 @@ namespace app
             NextQuestion();
         }
 
-        private void NextQuestion()
+        private void UpdateTimeLeft(Stopwatch timeCounter)
+        {
+            int length = 500 * (int)timeCounter.Elapsed.TotalMilliseconds / 10000;
+            if(length > 498)
+            {
+                length = 498;
+            }
+            pictureBoxTime.Size = new Size(length, 30);
+        }
+
+        private async void NextQuestion()
         {
             if(Quiz.questionNumber == 5)
             {
@@ -545,12 +541,13 @@ namespace app
                 return;
             }
 
+            labelNumber.Text = (Quiz.questionNumber + 1) + "/5";
             labelQuestion.Text = Quiz.drawnQuestions[Quiz.questionNumber].ask;
             Center(labelQuestion, 110);
 
-            foreach(Button btn in answerButtons)
+            foreach(Button button in answerButtons)
             {
-                btn.Enabled = false;
+                button.BackColor = Color.FromArgb(127, 143, 166);
             }
 
             int correctIndex = Program.rnd.Next(4);
@@ -569,6 +566,30 @@ namespace app
                     answerButtons[buttonIndex].Enabled = true;
                 }
             } while(!(ButtonAnswerA.Enabled && ButtonAnswerB.Enabled && ButtonAnswerC.Enabled && ButtonAnswerD.Enabled));
+
+            Quiz.isAnswerChosen = false;
+
+            Stopwatch timeCounter = new Stopwatch();
+            timeCounter.Start();
+            TimeSpan limit = new TimeSpan(0, 0, 10);
+
+            while(true)
+            {
+                await Task.Delay(1);
+                if (timeCounter.Elapsed >= limit) break;
+                if(Quiz.isAnswerChosen == true) break;
+                UpdateTimeLeft(timeCounter);
+            }
+            
+            timeCounter.Stop();
+
+            if(Quiz.isAnswerChosen == false)
+            {
+                MarkCorrectAnswer();
+            }
+
+            Quiz.questionNumber++;
+            NextQuestion();
         }
 
         private void FinishQuiz()
@@ -583,11 +604,50 @@ namespace app
             ButtonAnswerD.Visible = false;
             labelQuizResult.Visible = true;
             ButtonFinishQuiz.Visible = true;
+            labelNumber.Visible = false;
+            pictureBoxTime.Visible = false;
+            pictureBoxTimeBorder.Visible = false;
         }
 
         private void ButtonStartQuiz_Click(object sender, EventArgs e)
         {
             SetupQuiz();
+        }
+
+        private void MarkCorrectAnswer()
+        {
+            foreach(Button button in answerButtons)
+            {
+                if(button.Text == Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
+                {
+                    button.BackColor = Color.FromArgb(76, 209, 55);
+                }
+                else
+                {
+                    button.BackColor = Color.FromArgb(232, 65, 24);
+                }
+                button.Enabled = false;
+            }
+
+            Thread.Sleep(2000);
+        }
+
+        private void MarkCorrectAnswer(Button clickedButton)
+        {
+            foreach (Button button in answerButtons)
+            {
+                if(button.Text == Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
+                {
+                    button.BackColor = Color.FromArgb(76, 209, 55);
+                }
+                else if(button == clickedButton && clickedButton.Text != Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
+                {
+                    clickedButton.BackColor = Color.FromArgb(232, 65, 24);
+                }
+                button.Enabled = false;
+            }
+
+            Thread.Sleep(2000);
         }
 
         private void AnswerClicked(object sender, EventArgs e)
@@ -597,8 +657,8 @@ namespace app
             {
                 ++Quiz.score;
             }
-            ++Quiz.questionNumber;
-            NextQuestion();
+            Quiz.isAnswerChosen = true; 
+            MarkCorrectAnswer(clickedButton);
         }
 
         private void Reset()
@@ -616,6 +676,18 @@ namespace app
         private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
         {
             UpdateActivityLevel();
+        }
+
+        private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            using (StreamWriter saving = new StreamWriter("..\\..\\users.dat"))
+            {
+                foreach (User user in Program.users)
+                {
+                    saving.WriteLine(user.name);
+                    saving.WriteLine(user.getData());
+                }
+            }
         }
     }
 }
