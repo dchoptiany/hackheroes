@@ -133,5 +133,8 @@
   <ItemGroup>
     <None Include="Resources\Images\Calculator.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\timeScale.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

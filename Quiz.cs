@@ -26,6 +26,8 @@ namespace app
         public static List<Question> drawnQuestions = new List<Question>();
         public static int score;
         public static int questionNumber;
+        public static bool isAnswerChosen;
+
 
         public static void LoadQuestions()
         {
