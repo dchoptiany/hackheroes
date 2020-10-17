@@ -22,6 +22,7 @@ namespace app
         public void DisableQuiz()
         {
             buttonQuiz.Enabled = false;
+            buttonQuiz.BackColor = Color.FromArgb(127, 143, 166);
         }
 
         private void ChangePanel(int index)
