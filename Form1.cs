@@ -517,7 +517,12 @@ namespace app
 
         private void UpdateTimeLeft(Stopwatch timeCounter)
         {
-            pictureBoxTime.Size = new Size(48 + 500 * timeCounter.Elapsed.Seconds / 10, 30);
+            int length = 500 * (int)timeCounter.Elapsed.TotalMilliseconds / 10000;
+            if(length > 498)
+            {
+                length = 498;
+            }
+            pictureBoxTime.Size = new Size(length, 30);
         }
 
         private async void NextQuestion()
