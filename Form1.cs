@@ -343,6 +343,8 @@ namespace app
                 Program.users.Add(newUser);
                 listBoxUsers.Items.Add(newUser.name);
 
+                textBoxName.Text = "";
+
                 Program.currentUserIndex = listBoxUsers.SelectedIndex = Program.users.Count - 1; 
             }
 
@@ -611,7 +613,7 @@ namespace app
             Reset();
         }
 
-        private void TrackBar1_Scroll(object sender, EventArgs e)
+        private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
         {
             UpdateActivityLevel();
         }
