@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace app
 {
@@ -503,13 +504,19 @@ namespace app
             ButtonAnswerB.Visible = true;
             ButtonAnswerC.Visible = true;
             ButtonAnswerD.Visible = true;
-            
+
+            pictureBoxTime.Size = new Size(0, 30);
 
             Quiz.GetQuestions();
             Quiz.score = 0;
             Quiz.questionNumber = 0;
 
             NextQuestion();
+        }
+
+        private void UpdateTimeLeft(Stopwatch timeCounter)
+        {
+            pictureBoxTime.Size = new Size(500 * timeCounter.Elapsed.Seconds / 10, 30);
         }
 
         private async void NextQuestion()
@@ -519,7 +526,8 @@ namespace app
                 FinishQuiz();
                 return;
             }
-            labelNumber.Text=Quiz.questionNumber+1+"/5";
+
+            labelNumber.Text = (Quiz.questionNumber + 1) + "/5";
             labelQuestion.Text = Quiz.drawnQuestions[Quiz.questionNumber].ask;
             Center(labelQuestion, 110);
 
@@ -547,14 +555,26 @@ namespace app
 
             Quiz.isAnswerChosen = false;
 
-            Stopwatch timecounter = new Stopwatch();
-            timecounter.Start();
-            TimeSpan limit = new TimeSpan(0,0,10);
+            Stopwatch timeCounter = new Stopwatch();
+            timeCounter.Start();
+            TimeSpan limit = new TimeSpan(0, 0, 10);
+
             while(true)
             {
-                if (timecounter.Elapsed < limit) break;
-                if (Quiz.isAnswerChosen == false) break;
+                if(timeCounter.Elapsed >= limit) break;
+                if(Quiz.isAnswerChosen == true) break;
+                await Task.Delay(1);
+                UpdateTimeLeft(timeCounter);
             }
+            
+            timeCounter.Stop();
+
+            if(Quiz.isAnswerChosen == false)
+            {
+                MarkCorrectAnswer();
+            }
+
+            Quiz.questionNumber++;
             NextQuestion();
         }
 
@@ -577,6 +597,24 @@ namespace app
         private void ButtonStartQuiz_Click(object sender, EventArgs e)
         {
             SetupQuiz();
+        }
+
+        private void MarkCorrectAnswer()
+        {
+            foreach (Button button in answerButtons)
+            {
+                if(button.Text == Quiz.drawnQuestions[Quiz.questionNumber].correctAnswer)
+                {
+                    button.BackColor = Color.FromArgb(76, 209, 55);
+                }
+                else
+                {
+                    button.BackColor = Color.FromArgb(232, 65, 24);
+                }
+                button.Enabled = false;
+            }
+
+            Thread.Sleep(2000);
         }
 
         private void MarkCorrectAnswer(Button clickedButton)
@@ -604,9 +642,8 @@ namespace app
             {
                 ++Quiz.score;
             }
+            Quiz.isAnswerChosen = true; 
             MarkCorrectAnswer(clickedButton);
-            ++Quiz.questionNumber;
-            Quiz.isAnswerChosen = true;
         }
 
         private void Reset()
