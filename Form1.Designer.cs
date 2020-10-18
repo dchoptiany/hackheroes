@@ -43,18 +43,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBoxChooseAutomatically = new System.Windows.Forms.CheckBox();
+            this.groupBoxEffortLevel = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.trackBarEffortLevel = new System.Windows.Forms.TrackBar();
             this.radioButtonAllEffortLevels = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxWeather = new System.Windows.Forms.GroupBox();
             this.radioButtonGoodWeather = new System.Windows.Forms.RadioButton();
             this.radioButtonBadWeather = new System.Windows.Forms.RadioButton();
-            this.radioButtonGoodAndBadWeather = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonAllWeatherConditions = new System.Windows.Forms.RadioButton();
+            this.groupBoxParticipants = new System.Windows.Forms.GroupBox();
+            this.radioButtonPair = new System.Windows.Forms.RadioButton();
             this.radioButtonIndividual = new System.Windows.Forms.RadioButton();
             this.radioButtonTeam = new System.Windows.Forms.RadioButton();
-            this.radioButtonTeamAndIndividual = new System.Windows.Forms.RadioButton();
+            this.radioButtonAllParticipants = new System.Windows.Forms.RadioButton();
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -144,10 +146,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBoxEffortLevel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxWeather.SuspendLayout();
+            this.groupBoxParticipants.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
@@ -354,9 +356,10 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.groupBox3);
-            this.panel2.Controls.Add(this.groupBox2);
-            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Controls.Add(this.checkBoxChooseAutomatically);
+            this.panel2.Controls.Add(this.groupBoxEffortLevel);
+            this.panel2.Controls.Add(this.groupBoxWeather);
+            this.panel2.Controls.Add(this.groupBoxParticipants);
             this.panel2.Controls.Add(this.labelActivityResult);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label5);
@@ -365,17 +368,28 @@
             this.panel2.Size = new System.Drawing.Size(1000, 500);
             this.panel2.TabIndex = 15;
             // 
-            // groupBox3
+            // checkBoxChooseAutomatically
             // 
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.trackBarEffortLevel);
-            this.groupBox3.Controls.Add(this.radioButtonAllEffortLevels);
-            this.groupBox3.Location = new System.Drawing.Point(385, 207);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(262, 70);
-            this.groupBox3.TabIndex = 19;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Stopień wysiłku";
+            this.checkBoxChooseAutomatically.AutoSize = true;
+            this.checkBoxChooseAutomatically.Location = new System.Drawing.Point(653, 168);
+            this.checkBoxChooseAutomatically.Name = "checkBoxChooseAutomatically";
+            this.checkBoxChooseAutomatically.Size = new System.Drawing.Size(135, 17);
+            this.checkBoxChooseAutomatically.TabIndex = 20;
+            this.checkBoxChooseAutomatically.Text = "Wybierz automatycznie";
+            this.checkBoxChooseAutomatically.UseVisualStyleBackColor = true;
+            this.checkBoxChooseAutomatically.CheckedChanged += new System.EventHandler(this.CheckBoxChooseAutomatically_CheckedChanged);
+            // 
+            // groupBoxEffortLevel
+            // 
+            this.groupBoxEffortLevel.Controls.Add(this.label4);
+            this.groupBoxEffortLevel.Controls.Add(this.trackBarEffortLevel);
+            this.groupBoxEffortLevel.Controls.Add(this.radioButtonAllEffortLevels);
+            this.groupBoxEffortLevel.Location = new System.Drawing.Point(385, 207);
+            this.groupBoxEffortLevel.Name = "groupBoxEffortLevel";
+            this.groupBoxEffortLevel.Size = new System.Drawing.Size(262, 70);
+            this.groupBoxEffortLevel.TabIndex = 19;
+            this.groupBoxEffortLevel.TabStop = false;
+            this.groupBoxEffortLevel.Text = "Stopień wysiłku";
             // 
             // label4
             // 
@@ -395,8 +409,8 @@
             this.trackBarEffortLevel.Size = new System.Drawing.Size(104, 45);
             this.trackBarEffortLevel.TabIndex = 8;
             this.trackBarEffortLevel.Value = 1;
-            this.trackBarEffortLevel.Click += new System.EventHandler(this.trackBarEffortLevel_Click);
-            this.trackBarEffortLevel.Scroll += new System.EventHandler(this.trackBarEffortLevel_Scroll);
+            this.trackBarEffortLevel.Click += new System.EventHandler(this.TrackBarEffortLevel_Click);
+            this.trackBarEffortLevel.Scroll += new System.EventHandler(this.TrackBarEffortLevel_Scroll);
             // 
             // radioButtonAllEffortLevels
             // 
@@ -409,118 +423,131 @@
             this.radioButtonAllEffortLevels.TabStop = true;
             this.radioButtonAllEffortLevels.Text = "dowolny";
             this.radioButtonAllEffortLevels.UseVisualStyleBackColor = true;
-            this.radioButtonAllEffortLevels.CheckedChanged += new System.EventHandler(this.radioButtonAllEffortLevels_CheckedChanged);
+            this.radioButtonAllEffortLevels.CheckedChanged += new System.EventHandler(this.RadioButtonAllEffortLevels_CheckedChanged);
             // 
-            // groupBox2
+            // groupBoxWeather
             // 
-            this.groupBox2.Controls.Add(this.radioButtonGoodWeather);
-            this.groupBox2.Controls.Add(this.radioButtonBadWeather);
-            this.groupBox2.Controls.Add(this.radioButtonGoodAndBadWeather);
-            this.groupBox2.Location = new System.Drawing.Point(385, 149);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(262, 45);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Pogoda";
+            this.groupBoxWeather.Controls.Add(this.radioButtonGoodWeather);
+            this.groupBoxWeather.Controls.Add(this.radioButtonBadWeather);
+            this.groupBoxWeather.Controls.Add(this.radioButtonAllWeatherConditions);
+            this.groupBoxWeather.Location = new System.Drawing.Point(385, 149);
+            this.groupBoxWeather.Name = "groupBoxWeather";
+            this.groupBoxWeather.Size = new System.Drawing.Size(262, 45);
+            this.groupBoxWeather.TabIndex = 18;
+            this.groupBoxWeather.TabStop = false;
+            this.groupBoxWeather.Text = "Pogoda";
             // 
             // radioButtonGoodWeather
             // 
             this.radioButtonGoodWeather.AutoSize = true;
-            this.radioButtonGoodWeather.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonGoodWeather.Location = new System.Drawing.Point(17, 19);
             this.radioButtonGoodWeather.Name = "radioButtonGoodWeather";
-            this.radioButtonGoodWeather.Size = new System.Drawing.Size(91, 17);
+            this.radioButtonGoodWeather.Size = new System.Drawing.Size(52, 17);
             this.radioButtonGoodWeather.TabIndex = 13;
-            this.radioButtonGoodWeather.Text = "dobra pogoda";
+            this.radioButtonGoodWeather.Text = "dobra";
             this.radioButtonGoodWeather.UseVisualStyleBackColor = true;
-            this.radioButtonGoodWeather.CheckedChanged += new System.EventHandler(this.radioButtonGoodWeather_CheckedChanged);
+            this.radioButtonGoodWeather.CheckedChanged += new System.EventHandler(this.RadioButtonGoodWeather_CheckedChanged);
             // 
             // radioButtonBadWeather
             // 
             this.radioButtonBadWeather.AutoSize = true;
-            this.radioButtonBadWeather.Location = new System.Drawing.Point(100, 19);
+            this.radioButtonBadWeather.Location = new System.Drawing.Point(96, 19);
             this.radioButtonBadWeather.Name = "radioButtonBadWeather";
-            this.radioButtonBadWeather.Size = new System.Drawing.Size(79, 17);
+            this.radioButtonBadWeather.Size = new System.Drawing.Size(40, 17);
             this.radioButtonBadWeather.TabIndex = 15;
-            this.radioButtonBadWeather.Text = "zła pogoda";
+            this.radioButtonBadWeather.Text = "zła";
             this.radioButtonBadWeather.UseVisualStyleBackColor = true;
-            this.radioButtonBadWeather.CheckedChanged += new System.EventHandler(this.radioButtonBadWeather_CheckedChanged);
+            this.radioButtonBadWeather.CheckedChanged += new System.EventHandler(this.RadioButtonBadWeather_CheckedChanged);
             // 
-            // radioButtonGoodAndBadWeather
+            // radioButtonAllWeatherConditions
             // 
-            this.radioButtonGoodAndBadWeather.AutoSize = true;
-            this.radioButtonGoodAndBadWeather.Checked = true;
-            this.radioButtonGoodAndBadWeather.Location = new System.Drawing.Point(185, 19);
-            this.radioButtonGoodAndBadWeather.Name = "radioButtonGoodAndBadWeather";
-            this.radioButtonGoodAndBadWeather.Size = new System.Drawing.Size(64, 17);
-            this.radioButtonGoodAndBadWeather.TabIndex = 14;
-            this.radioButtonGoodAndBadWeather.TabStop = true;
-            this.radioButtonGoodAndBadWeather.Text = "dowolny";
-            this.radioButtonGoodAndBadWeather.UseVisualStyleBackColor = true;
-            this.radioButtonGoodAndBadWeather.CheckedChanged += new System.EventHandler(this.radioButtonGoodAndBadWeather_CheckedChanged);
+            this.radioButtonAllWeatherConditions.AutoSize = true;
+            this.radioButtonAllWeatherConditions.Checked = true;
+            this.radioButtonAllWeatherConditions.Location = new System.Drawing.Point(185, 19);
+            this.radioButtonAllWeatherConditions.Name = "radioButtonAllWeatherConditions";
+            this.radioButtonAllWeatherConditions.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonAllWeatherConditions.TabIndex = 14;
+            this.radioButtonAllWeatherConditions.TabStop = true;
+            this.radioButtonAllWeatherConditions.Text = "dowolna";
+            this.radioButtonAllWeatherConditions.UseVisualStyleBackColor = true;
+            this.radioButtonAllWeatherConditions.CheckedChanged += new System.EventHandler(this.RadioButtonGoodAndBadWeather_CheckedChanged);
             // 
-            // groupBox1
+            // groupBoxParticipants
             // 
-            this.groupBox1.Controls.Add(this.radioButtonIndividual);
-            this.groupBox1.Controls.Add(this.radioButtonTeam);
-            this.groupBox1.Controls.Add(this.radioButtonTeamAndIndividual);
-            this.groupBox1.Location = new System.Drawing.Point(385, 101);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(246, 42);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Typ sportu";
+            this.groupBoxParticipants.Controls.Add(this.radioButtonPair);
+            this.groupBoxParticipants.Controls.Add(this.radioButtonIndividual);
+            this.groupBoxParticipants.Controls.Add(this.radioButtonTeam);
+            this.groupBoxParticipants.Controls.Add(this.radioButtonAllParticipants);
+            this.groupBoxParticipants.Location = new System.Drawing.Point(385, 101);
+            this.groupBoxParticipants.Name = "groupBoxParticipants";
+            this.groupBoxParticipants.Size = new System.Drawing.Size(262, 42);
+            this.groupBoxParticipants.TabIndex = 17;
+            this.groupBoxParticipants.TabStop = false;
+            this.groupBoxParticipants.Text = "Liczba uczestników";
+            // 
+            // radioButtonPair
+            // 
+            this.radioButtonPair.AutoSize = true;
+            this.radioButtonPair.Location = new System.Drawing.Point(54, 19);
+            this.radioButtonPair.Name = "radioButtonPair";
+            this.radioButtonPair.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonPair.TabIndex = 20;
+            this.radioButtonPair.TabStop = true;
+            this.radioButtonPair.Text = "2";
+            this.radioButtonPair.UseVisualStyleBackColor = true;
             // 
             // radioButtonIndividual
             // 
             this.radioButtonIndividual.AutoSize = true;
-            this.radioButtonIndividual.Location = new System.Drawing.Point(6, 17);
+            this.radioButtonIndividual.Location = new System.Drawing.Point(17, 19);
             this.radioButtonIndividual.Name = "radioButtonIndividual";
-            this.radioButtonIndividual.Size = new System.Drawing.Size(85, 17);
+            this.radioButtonIndividual.Size = new System.Drawing.Size(31, 17);
             this.radioButtonIndividual.TabIndex = 10;
-            this.radioButtonIndividual.Text = "indywidualny";
+            this.radioButtonIndividual.Text = "1";
             this.radioButtonIndividual.UseVisualStyleBackColor = true;
-            this.radioButtonIndividual.CheckedChanged += new System.EventHandler(this.radioButtonIndividual_CheckedChanged);
+            this.radioButtonIndividual.CheckedChanged += new System.EventHandler(this.RadioButtonIndividual_CheckedChanged);
             // 
             // radioButtonTeam
             // 
             this.radioButtonTeam.AutoSize = true;
-            this.radioButtonTeam.Location = new System.Drawing.Point(97, 19);
+            this.radioButtonTeam.Location = new System.Drawing.Point(96, 19);
             this.radioButtonTeam.Name = "radioButtonTeam";
-            this.radioButtonTeam.Size = new System.Drawing.Size(74, 17);
+            this.radioButtonTeam.Size = new System.Drawing.Size(58, 17);
             this.radioButtonTeam.TabIndex = 12;
-            this.radioButtonTeam.Text = "zespolowy";
+            this.radioButtonTeam.Text = "Więcej";
             this.radioButtonTeam.UseVisualStyleBackColor = true;
-            this.radioButtonTeam.CheckedChanged += new System.EventHandler(this.radioButtonTeam_CheckedChanged);
+            this.radioButtonTeam.CheckedChanged += new System.EventHandler(this.RadioButtonTeam_CheckedChanged);
             // 
-            // radioButtonTeamAndIndividual
+            // radioButtonAllParticipants
             // 
-            this.radioButtonTeamAndIndividual.AutoSize = true;
-            this.radioButtonTeamAndIndividual.Checked = true;
-            this.radioButtonTeamAndIndividual.Location = new System.Drawing.Point(172, 19);
-            this.radioButtonTeamAndIndividual.Name = "radioButtonTeamAndIndividual";
-            this.radioButtonTeamAndIndividual.Size = new System.Drawing.Size(64, 17);
-            this.radioButtonTeamAndIndividual.TabIndex = 11;
-            this.radioButtonTeamAndIndividual.TabStop = true;
-            this.radioButtonTeamAndIndividual.Text = "dowolny";
-            this.radioButtonTeamAndIndividual.UseVisualStyleBackColor = true;
-            this.radioButtonTeamAndIndividual.CheckedChanged += new System.EventHandler(this.radioButtonTeamAndIndividual_CheckedChanged);
+            this.radioButtonAllParticipants.AutoSize = true;
+            this.radioButtonAllParticipants.Checked = true;
+            this.radioButtonAllParticipants.Location = new System.Drawing.Point(185, 19);
+            this.radioButtonAllParticipants.Name = "radioButtonAllParticipants";
+            this.radioButtonAllParticipants.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonAllParticipants.TabIndex = 11;
+            this.radioButtonAllParticipants.TabStop = true;
+            this.radioButtonAllParticipants.Text = "dowolna";
+            this.radioButtonAllParticipants.UseVisualStyleBackColor = true;
+            this.radioButtonAllParticipants.CheckedChanged += new System.EventHandler(this.RadioButtonTeamAndIndividual_CheckedChanged);
             // 
             // labelActivityResult
             // 
             this.labelActivityResult.AutoSize = true;
-            this.labelActivityResult.Location = new System.Drawing.Point(482, 399);
+            this.labelActivityResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelActivityResult.Location = new System.Drawing.Point(444, 376);
             this.labelActivityResult.Name = "labelActivityResult";
-            this.labelActivityResult.Size = new System.Drawing.Size(34, 13);
+            this.labelActivityResult.Size = new System.Drawing.Size(108, 29);
             this.labelActivityResult.TabIndex = 7;
-            this.labelActivityResult.Text = "wynik";
+            this.labelActivityResult.Text = "<result>";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(463, 358);
+            this.button1.Location = new System.Drawing.Point(418, 474);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(171, 23);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Szukaj";
+            this.button1.Text = "Następna propozycja";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
@@ -1628,13 +1655,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBoxEffortLevel.ResumeLayout(false);
+            this.groupBoxEffortLevel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxWeather.ResumeLayout(false);
+            this.groupBoxWeather.PerformLayout();
+            this.groupBoxParticipants.ResumeLayout(false);
+            this.groupBoxParticipants.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
@@ -1763,13 +1790,15 @@
         private System.Windows.Forms.TrackBar trackBarEffortLevel;
         private System.Windows.Forms.RadioButton radioButtonAllEffortLevels;
         private System.Windows.Forms.RadioButton radioButtonBadWeather;
-        private System.Windows.Forms.RadioButton radioButtonGoodAndBadWeather;
         private System.Windows.Forms.RadioButton radioButtonGoodWeather;
         private System.Windows.Forms.RadioButton radioButtonTeam;
-        private System.Windows.Forms.RadioButton radioButtonTeamAndIndividual;
+        private System.Windows.Forms.RadioButton radioButtonAllParticipants;
         private System.Windows.Forms.RadioButton radioButtonIndividual;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxParticipants;
+        private System.Windows.Forms.GroupBox groupBoxEffortLevel;
+        private System.Windows.Forms.GroupBox groupBoxWeather;
+        private System.Windows.Forms.CheckBox checkBoxChooseAutomatically;
+        private System.Windows.Forms.RadioButton radioButtonPair;
+        private System.Windows.Forms.RadioButton radioButtonAllWeatherConditions;
     }
 }

@@ -1,42 +1,44 @@
 Piłka nożna
-true true 1
+3 1 1
 Piłka nożna halowa
-true false 1
+3 0 1
 Piłka ręczna
-true false 1
+3 0 1
 Siatkówka
-true false 1
+3 0 1
 Spacer
-false true 0
+0 1 0
 Bieganie
-false true 1
+0 1 1
 Trening siłowy
-false false 2
-Kalistenika
-false true 2
+0 0 2
+Street workout
+0 1 2
 Koszykówka
-true false 1
+3 0 1
 Pływanie
-false false 1
+0 0 1
 Szachy
-false false 0
+2 0 0
 Warcaby
-false false 0
+2 0 0
+Brydż
+2 0 0
 Jazda na rowerze
-false true 1
+0 1 1
 Strzelectwo sportowe
-false false 0
+2 0 0
 Jazda na rolkach
-false true 1
+2 1 1
 Lekkoatletyka
-false true 2
+0 1 1
 Lekkoatletyka halowa
-false false 2
+0 0 1
 Sporty walki
-false true 2
+2 0 2
 Trening w domu bez sprzętu
-false false 2
+0 0 2
 Jazda na deskorolce
-false true 1
+0 1 1
 Jazda na hulajnodze
-false true 1
+0 1 1

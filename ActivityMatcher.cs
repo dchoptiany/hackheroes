@@ -1,21 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Forms;
-
 
 namespace app
 {
-    public enum Condition
+    public enum Participants
     {
-        Yes,
-        No,
-        Both
-}
+        Any,
+        One,
+        Two,
+        More
+    }
+
+    public enum Weather
+    {
+        Any,
+        Good,
+        Bad
+    }
 
     public enum EffortLevel
     {
-        Undefined,
+        Any,
         Low,
         Medium,
         High
@@ -24,15 +30,15 @@ namespace app
     public class Sport
     {
         public string name;
-        public bool teamSport;
-        public bool weatherDependent;
+        public Participants participants;
+        public Weather weather;
         public EffortLevel effortLevel;
 
-        public Sport(string _name, bool _teamSport, bool _weatherDependent, EffortLevel _effortLevel)
+        public Sport(string _name, Participants _participants, Weather _weather, EffortLevel _effortLevel)
         {
             name = _name;
-            teamSport = _teamSport;
-            weatherDependent = _weatherDependent;
+            participants = _participants;
+            weather = _weather;
             effortLevel = _effortLevel;
         }
     }
@@ -41,15 +47,6 @@ namespace app
     {
         public readonly static List<Sport> sports = LoadSports();
         public static List<Sport> approvedSports;
-
-        private static bool Compare(Condition lhs, bool rhs)
-        {
-            if (lhs == Condition.No && rhs || (lhs == Condition.Yes && !rhs))
-            {
-                return false;
-            }
-            return true;
-        }
 
         public static List<Sport> LoadSports()
         {
@@ -60,8 +57,8 @@ namespace app
                 approvedSports = new List<Sport>();
 
                 string name;
-                bool teamSport;
-                bool weatherDependent;
+                Participants participants = 0;
+                Weather weather = 0;
                 EffortLevel effortLevel = 0;
 
                 string line;
@@ -74,8 +71,32 @@ namespace app
                     line = loading.ReadLine();
                     arr = line.Split(' ');
 
-                    teamSport = Convert.ToBoolean(arr[0]);
-                    weatherDependent = Convert.ToBoolean(arr[1]);
+                    switch(arr[0])
+                    {
+                        case "0":
+                            participants = Participants.Any;
+                            break;
+                        case "1":
+                            participants = Participants.One;
+                            break;
+                        case "2":
+                            participants = Participants.Two;
+                            break;
+                        case "3":
+                            participants = Participants.More;
+                            break;
+                    }
+                 
+                    switch(arr[1])
+                    {
+                        case "0":
+                            weather = Weather.Any;
+                            break;
+                        case "1":
+                            weather = Weather.Good;
+                            break;
+                    }
+
                     switch(arr[2])
                     {
                         case "0":
@@ -89,23 +110,25 @@ namespace app
                             break;
                     }
 
-                    sportsList.Add(new Sport(name, teamSport, weatherDependent, effortLevel));
+                    sportsList.Add(new Sport(name, participants, weather, effortLevel));
                     
-                    ///// DEBUG ONLY //////////
-                    Console.WriteLine("nowy sport: " + name + " " + teamSport + " " + weatherDependent + " " + effortLevel);
-                    /////////////////////////////
+                    ///// DEBUG ONLY //////////////////////////////////////////////////////////////////////////////////
+                    Console.WriteLine("nowy sport: " + name + " " + participants + " " + weather + " " + effortLevel);
+                    ///////////////////////////////////////////////////////////////////////////////////////////////////
                 }
             }
             return sportsList;
         }
 
-        public static string Search(Condition teamSport, Condition weatherConditions, EffortLevel effortLevel)
+        public static string Search(Participants participants, Weather weather, EffortLevel effortLevel)
         {
             if (approvedSports.Count < 1)
             {
                 foreach (Sport sport in sports)
                 {
-                    if (Compare(teamSport, sport.teamSport) && Compare(weatherConditions, sport.weatherDependent) && (effortLevel == EffortLevel.Undefined || effortLevel == sport.effortLevel)) 
+                    if ((sport.participants == Participants.Any || participants == Participants.Any || participants == sport.participants)
+                        && (sport.weather == Weather.Any || weather == Weather.Any || weather == sport.weather) 
+                        && (sport.effortLevel == EffortLevel.Any || effortLevel == EffortLevel.Any || effortLevel == sport.effortLevel))
                     {
                         approvedSports.Add(sport);
                     }
