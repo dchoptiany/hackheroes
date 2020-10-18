@@ -681,9 +681,25 @@ namespace app
         {
             Button clickedButton = (Button)sender;
             surveyAnswers.Add(clickedButton.Text);
+            if(survey.currentQuestionIndex + 1 < survey.questions.Count)
+            {
+                ++survey.currentQuestionIndex;
+                NextSurveyQuestion();
+            }   
+            else
+            {
+                FinishSurvey();
+            }
+        }
 
-            ++survey.currentQuestionIndex;
-            NextSurveyQuestion();
+        private void FinishSurvey()
+        {
+            FinishLabel.Visible = true;
+            FlowSurveysPanel.Visible = false;
+            AnswerTablePanel.Visible = false;
+            
+            FinishLabel.Text = "Wynik ankiety!";
+            Center(FinishLabel);
         }
     }
 }
