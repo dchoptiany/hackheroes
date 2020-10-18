@@ -612,25 +612,34 @@ namespace app
             UpdateMacro();
         }
 
-        private void SetupSurvey()
+        private void SetupSurvey(ref Survey survey)
         {
             TopTitle.Visible = false;
             flowLayoutPanel2.Visible = false;
-
-            Survey survey = new Survey("Testowa Ankieta");
+            
             SurveyTitle.Visible = true;
             SurveyTitle.Text = survey.title;
+            Center(SurveyTitle);
 
-            survey.AddQuestion("Test question", Survey.QuestionType.YES_OR_NO);
+        }
+
+        private void AddSurveyQuestion(ref Survey survey, string questionTitle, Survey.QuestionType questionType)
+        {
+            survey.AddQuestion(questionTitle, questionType);
+        }
+
+        private void SetupSurveyQuestion(ref Survey survey)
+        {
             SurveyQuestion.Visible = true;
             SurveyQuestion.Text = survey.questions[0].questionTitle;
-
             Center(SurveyQuestion);
         }
 
         private void ButtonActivityLevelSurvey_Click(object sender, EventArgs e)
         {
-            SetupSurvey();
+            Survey survey = new Survey("Poziom aktywności fizycznej");
+            SetupSurvey(ref survey);
+            AddSurveyQuestion(ref survey, "Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
         }
     }
 }
