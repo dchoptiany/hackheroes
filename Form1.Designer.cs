@@ -470,7 +470,7 @@
             this.radioButtonAllWeatherConditions.TabStop = true;
             this.radioButtonAllWeatherConditions.Text = "dowolna";
             this.radioButtonAllWeatherConditions.UseVisualStyleBackColor = true;
-            this.radioButtonAllWeatherConditions.CheckedChanged += new System.EventHandler(this.RadioButtonGoodAndBadWeather_CheckedChanged);
+            this.radioButtonAllWeatherConditions.CheckedChanged += new System.EventHandler(this.RadioButtonAllWeatherConditions_CheckedChanged);
             // 
             // groupBoxParticipants
             // 
@@ -529,7 +529,7 @@
             this.radioButtonAllParticipants.TabStop = true;
             this.radioButtonAllParticipants.Text = "dowolna";
             this.radioButtonAllParticipants.UseVisualStyleBackColor = true;
-            this.radioButtonAllParticipants.CheckedChanged += new System.EventHandler(this.RadioButtonTeamAndIndividual_CheckedChanged);
+            this.radioButtonAllParticipants.CheckedChanged += new System.EventHandler(this.RadioButtonAllParticipants_CheckedChanged);
             // 
             // labelActivityResult
             // 

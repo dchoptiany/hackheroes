@@ -794,7 +794,7 @@ namespace app
             UpdateResultOfMatching();
         }
 
-        private void RadioButtonTeamAndIndividual_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonAllParticipants_CheckedChanged(object sender, EventArgs e)
         {
             ActivityMatcher.approvedSports.Clear();
             UpdateResultOfMatching();
@@ -812,7 +812,7 @@ namespace app
             UpdateResultOfMatching();
         }
 
-        private void RadioButtonGoodAndBadWeather_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonAllWeatherConditions_CheckedChanged(object sender, EventArgs e)
         {
             ActivityMatcher.approvedSports.Clear();
             UpdateResultOfMatching();
