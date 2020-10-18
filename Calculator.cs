@@ -17,11 +17,11 @@ namespace app
             }
             catch(DivideByZeroException e)
             {
-                MessageBox.Show("Wystąpił błąd podczas obliczania BMI. Uzupełnij dane profilu i spróbuj ponownie.\n", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wystąpił błąd podczas obliczania BMI.\nSprawdź poprawność danch w zakładce Profile i spróbuj ponownie.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-    public static void CalculateMacro(User user)
+        public static void CalculateMacro(User user)
         {
             float rmr = user.height * 6.25f + user.weight * 10f - (user.age * 5f);
             rmr += user.gender == Gender.Male ? 5f : -161f;
