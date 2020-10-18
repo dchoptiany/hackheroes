@@ -10,8 +10,6 @@ namespace app
         static public int currentUserIndex;
         static public Random rnd;
 
-        static public bool disableQuiz;
-
         [STAThread]
         static void Main()
         {
