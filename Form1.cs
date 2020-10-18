@@ -192,6 +192,8 @@ namespace app
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
+            AnswerTablePanel.Visible = false;
+            FlowSurveysPanel.Visible = true;
             ChangePanel(5);
         }
 
@@ -615,12 +617,12 @@ namespace app
         private void SetupSurvey(ref Survey survey)
         {
             TopTitle.Visible = false;
-            flowLayoutPanel2.Visible = false;
+            FlowSurveysPanel.Visible = false;
+            AnswerTablePanel.Visible = true;
             
             SurveyTitle.Visible = true;
             SurveyTitle.Text = survey.title;
             Center(SurveyTitle);
-
         }
 
         private void AddSurveyQuestion(ref Survey survey, string questionTitle, Survey.QuestionType questionType)
@@ -628,11 +630,16 @@ namespace app
             survey.AddQuestion(questionTitle, questionType);
         }
 
-        private void SetupSurveyQuestion(ref Survey survey)
+        private void SetupSurveyQuestion(Survey survey)
         {
             SurveyQuestion.Visible = true;
             SurveyQuestion.Text = survey.questions[0].questionTitle;
             Center(SurveyQuestion);
+        }
+
+        private void NextSurveyQuestion(Survey survey)
+        {
+
         }
 
         private void ButtonActivityLevelSurvey_Click(object sender, EventArgs e)
@@ -640,6 +647,12 @@ namespace app
             Survey survey = new Survey("Poziom aktywności fizycznej");
             SetupSurvey(ref survey);
             AddSurveyQuestion(ref survey, "Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
+            SetupSurveyQuestion(survey);
+        }
+
+        private void SurveyAnswerButtonClicked(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
         }
     }
 }

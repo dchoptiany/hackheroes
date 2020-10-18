@@ -24,6 +24,11 @@ namespace app
             ABCD
         }
 
+        public void AddQuestion(string title, QuestionType type)
+        {
+            questions.Add(new Question(title, type));
+        }
+
         public class Question
         {
             public string questionTitle;
@@ -38,8 +43,8 @@ namespace app
                 answersValues = new List<KeyValuePair<string, uint>>();
                 if (questionType == QuestionType.YES_OR_NO)
                 {
-                    AddAnswer("No", 0);
-                    AddAnswer("Yes", 1);
+                    AddAnswer("Nie", 0);
+                    AddAnswer("Tak", 1);
                 }
             }
 
@@ -49,10 +54,5 @@ namespace app
                 answersValues.Add(newPair);
             }
         }      
-
-        public void AddQuestion(string title, QuestionType type)
-        {
-            questions.Add(new Question(title, type));
-        }
     }
 }
