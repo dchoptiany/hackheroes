@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Runtime.InteropServices;
-using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -19,6 +17,12 @@ namespace app
         public Hackheroes()
         {
             InitializeComponent();
+        }
+
+        public void DisableQuiz()
+        {
+            buttonQuiz.Enabled = false;
+            buttonQuiz.BackColor = Color.FromArgb(127, 143, 166);
         }
 
         private void ChangePanel(int index)
@@ -39,34 +43,121 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            string[] usersJSON = File.ReadAllLines("..\\..\\users.json");
-
-            foreach(string line in usersJSON)
+            if(!Quiz.LoadQuestions())
             {
-                User newUser = JsonSerializer.Deserialize<User>(line);
-                Program.users.Add(newUser);
-                listBoxUsers.Items.Add(newUser.name);
+                DisableQuiz();
             }
 
-            if (Program.users.Count == 0)
+            try
             {
+                string[] usersJSON = File.ReadAllLines("..\\..\\users.json");
+
+	            foreach(string line in usersJSON)
+	            {
+	                User newUser = JsonSerializer.Deserialize<User>(line);
+	                Program.users.Add(newUser);
+	                listBoxUsers.Items.Add(newUser.name);
+	            }
+            }
+            catch(FileNotFoundException exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Program.users.Add(new User("User", 18, 80f, 180, Gender.Male));
+                listBoxUsers.Items.Add("User");
+            }
+            finally
+            {
+                panels.Add(panel0); //buttons
+                panels.Add(panel1); //BMI
+                panels.Add(panel2); //sport activity
+                panels.Add(panel3); //quiz
+                panels.Add(panel4); //calculator
+                panels.Add(panel5); //surveys
+                panels.Add(panel6); //profiles
+
+                answerButtons.Add(ButtonAnswerA);
+                answerButtons.Add(ButtonAnswerB);
+                answerButtons.Add(ButtonAnswerC);
+                answerButtons.Add(ButtonAnswerD);
+
+                ChangePanel(0);
+            }
+        }
+
+        private void UpdateResultOfMatching()
+        {
+            Participants participants = Participants.Any;
+            if (radioButtonIndividual.Checked)
+            {
+                participants = Participants.One;
+            }
+            else if (radioButtonPair.Checked)
+            {
+                participants = Participants.Two;
+            }
+            else if (radioButtonTeam.Checked)
+            {
+                participants = Participants.More;
             }
 
-            panels.Add(panel0); //buttons
-            panels.Add(panel1); //BMI
-            panels.Add(panel2); //sport activity
-            panels.Add(panel3); //quiz
-            panels.Add(panel4); //calculator
-            panels.Add(panel5); //surveys
-            panels.Add(panel6); //profiles
+            // TO DO: getting weather from API and decide if good or bad
+            /*
+             * if(checkBoxChooseAutomatically.Checked)
+             * {
+             *      if(weather == rainy || weather == snowy || weather == windy || temperature < 15)
+             *      {
+             *          goodWeather = Weather.Bad;
+             *      }
+             *      else
+             *      {
+             *          goodWeather = Weather.Good;
+             *      }
+             * }
+             */
 
-            answerButtons.Add(ButtonAnswerA);
-            answerButtons.Add(ButtonAnswerB);
-            answerButtons.Add(ButtonAnswerC);
-            answerButtons.Add(ButtonAnswerD);
+            Weather weather = Weather.Any;
+            if (radioButtonGoodWeather.Checked)
+            {
+                weather = Weather.Good;
+            }
+            else if (radioButtonBadWeather.Checked)
+            {
+                weather = Weather.Bad;
+            }
 
-            ChangePanel(0);
+            EffortLevel effortLevel = EffortLevel.Any;
+            if (!radioButtonAllEffortLevels.Checked)
+            {
+                switch (trackBarEffortLevel.Value)
+                {
+                    case 0:
+                        effortLevel = EffortLevel.Low;
+                        break;
+                    case 1:
+                        effortLevel = EffortLevel.Medium;
+                        break;
+                    case 2:
+                        effortLevel = EffortLevel.High;
+                        break;
+                }
+            }
+            
+            labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
+            Center(labelActivityResult, 370);
+
+            if (labelActivityResult.Text == "")
+            {
+                string message = "Nie udało się znaleźć aktywności o takich kryteriach. Wprowadź inne dane i spróbuj ponownie.";
+                string caption = "Nie znaleziono aktywności";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
         }
 
         private void UpdateMacro()
@@ -135,7 +226,12 @@ namespace app
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
             int userIndex = Program.currentUserIndex;
-            Calculator.CalculateBMI(Program.users[userIndex]);
+
+            if(!Calculator.CalculateBMI(Program.users[userIndex]))
+            {
+                ChangePanel(6);
+                return;
+            }
 
             UpdateArrow();
 
@@ -151,6 +247,13 @@ namespace app
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
             ChangePanel(2);
+            ActivityMatcher.LoadSports();
+
+            radioButtonAllParticipants.Checked = true;
+            radioButtonAllWeatherConditions.Checked = true;
+            radioButtonAllEffortLevels.Checked = true;
+            groupBoxWeather.Enabled = !checkBoxChooseAutomatically.Checked;
+            UpdateResultOfMatching();
         }
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
@@ -161,7 +264,7 @@ namespace app
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
             ChangePanel(4);
-            TrackBar1_Scroll(sender, e);
+            UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
@@ -296,7 +399,7 @@ namespace app
                 DialogResult result;
                 
                 result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     Close();
                 }
@@ -311,6 +414,8 @@ namespace app
 
                 Program.users.Add(newUser);
                 listBoxUsers.Items.Add(newUser.name);
+
+                textBoxName.Text = "";
 
                 Program.currentUserIndex = listBoxUsers.SelectedIndex = Program.users.Count - 1; 
             }
@@ -349,7 +454,7 @@ namespace app
                 DialogResult result;
 
                 result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     Close();
                 }
@@ -407,7 +512,7 @@ namespace app
                 DialogResult result;
 
                 result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     Close();
                 }
@@ -562,6 +667,8 @@ namespace app
                 MarkCorrectAnswer();
             }
 
+            await Task.Delay(2000);
+
             Quiz.questionNumber++;
             NextQuestion();
         }
@@ -602,8 +709,6 @@ namespace app
                 }
                 button.Enabled = false;
             }
-
-            Thread.Sleep(2000);
         }
 
         private void MarkCorrectAnswer(Button clickedButton)
@@ -620,8 +725,6 @@ namespace app
                 }
                 button.Enabled = false;
             }
-
-            Thread.Sleep(2000);
         }
 
         private void AnswerClicked(object sender, EventArgs e)
@@ -647,10 +750,15 @@ namespace app
             Reset();
         }
 
-        private void TrackBar1_Scroll(object sender, EventArgs e)
+        private void UpdateActivityLevel()
         {
-            Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * (float)trackBarActivityLevel.Value;
+            Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * trackBarActivityLevel.Value;
             UpdateMacro();
+        }
+
+        private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
+        {
+            UpdateActivityLevel();
         }
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
@@ -663,6 +771,72 @@ namespace app
             }
 
             File.WriteAllLines("..\\..\\users.json", usersJSON);
+        }
+
+        private void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            UpdateResultOfMatching();
+        }
+
+        private void TrackBarEffortLevel_Scroll(object sender, EventArgs e)
+        {
+            radioButtonAllEffortLevels.Checked = false;
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+        private void TrackBarEffortLevel_Click(object sender, EventArgs e)
+        {
+            radioButtonAllEffortLevels.Checked = false;
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonTeam_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonAllParticipants_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonGoodWeather_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonBadWeather_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonAllWeatherConditions_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonAllEffortLevels_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonIndividual_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void CheckBoxChooseAutomatically_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBoxWeather.Enabled = !checkBoxChooseAutomatically.Checked;
+            UpdateResultOfMatching();
         }
     }
 }
