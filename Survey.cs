@@ -9,11 +9,13 @@ namespace app
 {
     class Survey
     {
+        public int currentQuestionIndex;
         public string title;
         public List<Question> questions;
 
         public Survey(string _title)
         {
+            currentQuestionIndex = 0;
             title = _title;
             questions = new List<Question>();
         }

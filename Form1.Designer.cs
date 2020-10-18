@@ -78,11 +78,11 @@
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.AnswerTablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.SurveyYesButton = new System.Windows.Forms.Button();
             this.SurveyNoButton = new System.Windows.Forms.Button();
             this.SurveyQuestion = new System.Windows.Forms.Label();
             this.SurveyTitle = new System.Windows.Forms.Label();
-            this.TopTitle = new System.Windows.Forms.Label();
             this.FlowSurveysPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ButtonActivityLevelSurvey = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -127,7 +127,8 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.AnswerTablePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.SurveyBButton = new System.Windows.Forms.Button();
+            this.SurveyAButton = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -140,6 +141,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).BeginInit();
             this.panel5.SuspendLayout();
+            this.AnswerTablePanel.SuspendLayout();
             this.FlowSurveysPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).BeginInit();
@@ -148,7 +150,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
-            this.AnswerTablePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel0
@@ -794,12 +795,29 @@
             this.panel5.Controls.Add(this.AnswerTablePanel);
             this.panel5.Controls.Add(this.SurveyQuestion);
             this.panel5.Controls.Add(this.SurveyTitle);
-            this.panel5.Controls.Add(this.TopTitle);
             this.panel5.Controls.Add(this.FlowSurveysPanel);
             this.panel5.Location = new System.Drawing.Point(100, 100);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1000, 500);
             this.panel5.TabIndex = 18;
+            // 
+            // AnswerTablePanel
+            // 
+            this.AnswerTablePanel.ColumnCount = 2;
+            this.AnswerTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.5F));
+            this.AnswerTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.5F));
+            this.AnswerTablePanel.Controls.Add(this.SurveyAButton, 1, 0);
+            this.AnswerTablePanel.Controls.Add(this.SurveyYesButton, 0, 1);
+            this.AnswerTablePanel.Controls.Add(this.SurveyNoButton, 1, 1);
+            this.AnswerTablePanel.Controls.Add(this.SurveyBButton, 0, 0);
+            this.AnswerTablePanel.Location = new System.Drawing.Point(75, 121);
+            this.AnswerTablePanel.Name = "AnswerTablePanel";
+            this.AnswerTablePanel.RowCount = 2;
+            this.AnswerTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.AnswerTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.AnswerTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.AnswerTablePanel.Size = new System.Drawing.Size(800, 355);
+            this.AnswerTablePanel.TabIndex = 7;
             // 
             // SurveyYesButton
             // 
@@ -838,23 +856,12 @@
             // 
             this.SurveyTitle.AutoSize = true;
             this.SurveyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SurveyTitle.Location = new System.Drawing.Point(215, 0);
+            this.SurveyTitle.Location = new System.Drawing.Point(374, -7);
             this.SurveyTitle.Name = "SurveyTitle";
-            this.SurveyTitle.Size = new System.Drawing.Size(523, 63);
+            this.SurveyTitle.Size = new System.Drawing.Size(205, 63);
             this.SurveyTitle.TabIndex = 3;
-            this.SurveyTitle.Text = "Przykładowa ankieta";
+            this.SurveyTitle.Text = "Ankiety";
             this.SurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SurveyTitle.Visible = false;
-            // 
-            // TopTitle
-            // 
-            this.TopTitle.AutoSize = true;
-            this.TopTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.TopTitle.Location = new System.Drawing.Point(403, 39);
-            this.TopTitle.Name = "TopTitle";
-            this.TopTitle.Size = new System.Drawing.Size(141, 42);
-            this.TopTitle.TabIndex = 1;
-            this.TopTitle.Text = "Ankiety";
             // 
             // FlowSurveysPanel
             // 
@@ -1450,20 +1457,25 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // AnswerTablePanel
+            // SurveyBButton
             // 
-            this.AnswerTablePanel.ColumnCount = 2;
-            this.AnswerTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.5F));
-            this.AnswerTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.5F));
-            this.AnswerTablePanel.Controls.Add(this.SurveyYesButton, 0, 1);
-            this.AnswerTablePanel.Controls.Add(this.SurveyNoButton, 1, 1);
-            this.AnswerTablePanel.Location = new System.Drawing.Point(75, 121);
-            this.AnswerTablePanel.Name = "AnswerTablePanel";
-            this.AnswerTablePanel.RowCount = 2;
-            this.AnswerTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AnswerTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AnswerTablePanel.Size = new System.Drawing.Size(800, 355);
-            this.AnswerTablePanel.TabIndex = 7;
+            this.SurveyBButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SurveyBButton.Location = new System.Drawing.Point(3, 3);
+            this.SurveyBButton.Name = "SurveyBButton";
+            this.SurveyBButton.Size = new System.Drawing.Size(390, 171);
+            this.SurveyBButton.TabIndex = 7;
+            this.SurveyBButton.Text = "A";
+            this.SurveyBButton.UseVisualStyleBackColor = true;
+            // 
+            // SurveyAButton
+            // 
+            this.SurveyAButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SurveyAButton.Location = new System.Drawing.Point(399, 3);
+            this.SurveyAButton.Name = "SurveyAButton";
+            this.SurveyAButton.Size = new System.Drawing.Size(390, 171);
+            this.SurveyAButton.TabIndex = 8;
+            this.SurveyAButton.Text = "B";
+            this.SurveyAButton.UseVisualStyleBackColor = true;
             // 
             // Hackheroes
             // 
@@ -1505,6 +1517,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.AnswerTablePanel.ResumeLayout(false);
             this.FlowSurveysPanel.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -1514,7 +1527,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
-            this.AnswerTablePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1541,7 +1553,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label TopTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonReturn;
         private System.Windows.Forms.Label label15;
@@ -1621,5 +1632,7 @@
         private System.Windows.Forms.Button SurveyYesButton;
         private System.Windows.Forms.Button SurveyNoButton;
         private System.Windows.Forms.TableLayoutPanel AnswerTablePanel;
+        private System.Windows.Forms.Button SurveyAButton;
+        private System.Windows.Forms.Button SurveyBButton;
     }
 }

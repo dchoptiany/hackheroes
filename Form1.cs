@@ -11,6 +11,8 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
+        private List<string> surveyAnswers = new List<string>();
+        Survey survey;
 
         public Hackheroes()
         {
@@ -614,45 +616,69 @@ namespace app
             UpdateMacro();
         }
 
-        private void SetupSurvey(ref Survey survey)
+        private void SetupSurvey()
         {
-            TopTitle.Visible = false;
             FlowSurveysPanel.Visible = false;
             AnswerTablePanel.Visible = true;
-            
-            SurveyTitle.Visible = true;
             SurveyTitle.Text = survey.title;
+
             Center(SurveyTitle);
         }
 
-        private void AddSurveyQuestion(ref Survey survey, string questionTitle, Survey.QuestionType questionType)
+        private void AddSurveyQuestion(string questionTitle, Survey.QuestionType questionType)
         {
             survey.AddQuestion(questionTitle, questionType);
         }
 
-        private void SetupSurveyQuestion(Survey survey)
+        private void SetupSurveyQuestion()
         {
             SurveyQuestion.Visible = true;
-            SurveyQuestion.Text = survey.questions[0].questionTitle;
-            Center(SurveyQuestion);
+            NextSurveyQuestion();
         }
 
-        private void NextSurveyQuestion(Survey survey)
+        private void NextSurveyQuestion()
         {
+            if(survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.YES_OR_NO)
+            {
+                SurveyAButton.Visible = false;
+                SurveyBButton.Visible = false;
+                SurveyYesButton.Visible = true;
+                SurveyNoButton.Visible = true;
 
+                SurveyYesButton.Text = "Yes";
+                SurveyNoButton.Text = "No";
+            }
+            else if (survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.ABCD)
+            {
+                SurveyAButton.Visible = true;
+                SurveyBButton.Visible = true;
+                SurveyYesButton.Visible = true;
+                SurveyNoButton.Visible = true;
+
+                SurveyYesButton.Text = "C";
+                SurveyNoButton.Text = "D";
+            }
+            SurveyQuestion.Text = survey.questions[survey.currentQuestionIndex].questionTitle;
+            Center(SurveyQuestion);
         }
 
         private void ButtonActivityLevelSurvey_Click(object sender, EventArgs e)
         {
-            Survey survey = new Survey("Poziom aktywności fizycznej");
-            SetupSurvey(ref survey);
-            AddSurveyQuestion(ref survey, "Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
-            SetupSurveyQuestion(survey);
+            survey = new Survey("Poziom aktywności fizycznej");
+            SetupSurvey();
+            AddSurveyQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
+            AddSurveyQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.ABCD);
+            AddSurveyQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
+            SetupSurveyQuestion();
         }
 
         private void SurveyAnswerButtonClicked(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
+            surveyAnswers.Add(clickedButton.Text);
+
+            ++survey.currentQuestionIndex;
+            NextSurveyQuestion();
         }
     }
 }
