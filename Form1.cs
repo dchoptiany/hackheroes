@@ -19,10 +19,16 @@ namespace app
             InitializeComponent();
         }
 
-        public void DisableQuiz()
+        private void DisableQuiz()
         {
             buttonQuiz.Enabled = false;
             buttonQuiz.BackColor = Color.FromArgb(127, 143, 166);
+        }
+
+        private void DisableActivityMatcher()
+        {
+            buttonActivity.Enabled = false;
+            buttonActivity.BackColor = Color.FromArgb(127, 143, 166);
         }
 
         private void ChangePanel(int index)
@@ -46,6 +52,11 @@ namespace app
             if(!Quiz.LoadQuestions())
             {
                 DisableQuiz();
+            }
+
+            if(!ActivityMatcher.LoadSports())
+            {
+                DisableActivityMatcher();
             }
 
             try
