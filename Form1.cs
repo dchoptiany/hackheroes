@@ -102,6 +102,82 @@ namespace app
             }
         }
 
+        private void UpdateResultOfMatching()
+        {
+            Participants participants = Participants.Any;
+            if (radioButtonIndividual.Checked)
+            {
+                participants = Participants.One;
+            }
+            else if (radioButtonPair.Checked)
+            {
+                participants = Participants.Two;
+            }
+            else if (radioButtonTeam.Checked)
+            {
+                participants = Participants.More;
+            }
+
+            // TO DO: getting weather from API and decide if good or bad
+            /*
+             * if(checkBoxChooseAutomatically.Checked)
+             * {
+             *      if(weather == rainy || weather == snowy || weather == windy || temperature < 15)
+             *      {
+             *          goodWeather = Weather.Bad;
+             *      }
+             *      else
+             *      {
+             *          goodWeather = Weather.Good;
+             *      }
+             * }
+             */
+
+            Weather weather = Weather.Any;
+            if (radioButtonGoodWeather.Checked)
+            {
+                weather = Weather.Good;
+            }
+            else if (radioButtonBadWeather.Checked)
+            {
+                weather = Weather.Bad;
+            }
+
+            EffortLevel effortLevel = EffortLevel.Any;
+            if (!radioButtonAllEffortLevels.Checked)
+            {
+                switch (trackBarEffortLevel.Value)
+                {
+                    case 0:
+                        effortLevel = EffortLevel.Low;
+                        break;
+                    case 1:
+                        effortLevel = EffortLevel.Medium;
+                        break;
+                    case 2:
+                        effortLevel = EffortLevel.High;
+                        break;
+                }
+            }
+            
+            labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
+            Center(labelActivityResult, 370);
+
+            if (labelActivityResult.Text == "")
+            {
+                string message = "Nie udało się znaleźć aktywności o takich kryteriach. Wprowadź inne dane i spróbuj ponownie.";
+                string caption = "Nie znaleziono aktywności";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
+        }
+
         private void UpdateMacro()
         {
             Calculator.CalculateMacro(Program.users[Program.currentUserIndex]);
@@ -189,6 +265,13 @@ namespace app
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
             ChangePanel(2);
+            ActivityMatcher.LoadSports();
+
+            radioButtonAllParticipants.Checked = true;
+            radioButtonAllWeatherConditions.Checked = true;
+            radioButtonAllEffortLevels.Checked = true;
+            groupBoxWeather.Enabled = !checkBoxChooseAutomatically.Checked;
+            UpdateResultOfMatching();
         }
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
@@ -706,6 +789,72 @@ namespace app
                     saving.WriteLine(user.getData());
                 }
             }
+        }
+
+        private void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            UpdateResultOfMatching();
+        }
+
+        private void TrackBarEffortLevel_Scroll(object sender, EventArgs e)
+        {
+            radioButtonAllEffortLevels.Checked = false;
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+        private void TrackBarEffortLevel_Click(object sender, EventArgs e)
+        {
+            radioButtonAllEffortLevels.Checked = false;
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonTeam_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonAllParticipants_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonGoodWeather_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonBadWeather_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonAllWeatherConditions_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonAllEffortLevels_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void RadioButtonIndividual_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+            UpdateResultOfMatching();
+        }
+
+        private void CheckBoxChooseAutomatically_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBoxWeather.Enabled = !checkBoxChooseAutomatically.Checked;
+            UpdateResultOfMatching();
         }
     }
 }
