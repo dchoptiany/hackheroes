@@ -645,8 +645,8 @@ namespace app
                 SurveyYesButton.Visible = true;
                 SurveyNoButton.Visible = true;
 
-                SurveyYesButton.Text = "Yes";
-                SurveyNoButton.Text = "No";
+                SurveyYesButton.Text = "Tak";
+                SurveyNoButton.Text = "Nie";
             }
             else if (survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.ABCD)
             {
@@ -655,8 +655,10 @@ namespace app
                 SurveyYesButton.Visible = true;
                 SurveyNoButton.Visible = true;
 
-                SurveyYesButton.Text = "C";
-                SurveyNoButton.Text = "D";
+                SurveyAButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[0].Key;
+                SurveyBButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[1].Key;
+                SurveyYesButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[2].Key;
+                SurveyNoButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[3].Key;
             }
             SurveyQuestion.Text = survey.questions[survey.currentQuestionIndex].questionTitle;
             Center(SurveyQuestion);
@@ -667,8 +669,11 @@ namespace app
             survey = new Survey("Poziom aktywności fizycznej");
             SetupSurvey();
             AddSurveyQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
-            AddSurveyQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.ABCD);
-            AddSurveyQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
+            AddSurveyQuestion("Ile razy trenujesz w tygodniu?", Survey.QuestionType.ABCD);
+            survey.questions[1].AddAnswer("0", 0);
+            survey.questions[1].AddAnswer("3", 3);
+            survey.questions[1].AddAnswer("5", 5);
+            survey.questions[1].AddAnswer("7", 7);
             SetupSurveyQuestion();
         }
 

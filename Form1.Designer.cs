@@ -127,8 +127,8 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.SurveyBButton = new System.Windows.Forms.Button();
             this.SurveyAButton = new System.Windows.Forms.Button();
+            this.SurveyBButton = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -806,10 +806,10 @@
             this.AnswerTablePanel.ColumnCount = 2;
             this.AnswerTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.5F));
             this.AnswerTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.5F));
-            this.AnswerTablePanel.Controls.Add(this.SurveyAButton, 1, 0);
             this.AnswerTablePanel.Controls.Add(this.SurveyYesButton, 0, 1);
             this.AnswerTablePanel.Controls.Add(this.SurveyNoButton, 1, 1);
-            this.AnswerTablePanel.Controls.Add(this.SurveyBButton, 0, 0);
+            this.AnswerTablePanel.Controls.Add(this.SurveyAButton, 0, 0);
+            this.AnswerTablePanel.Controls.Add(this.SurveyBButton, 1, 0);
             this.AnswerTablePanel.Location = new System.Drawing.Point(75, 121);
             this.AnswerTablePanel.Name = "AnswerTablePanel";
             this.AnswerTablePanel.RowCount = 2;
@@ -1457,25 +1457,25 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // SurveyBButton
-            // 
-            this.SurveyBButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SurveyBButton.Location = new System.Drawing.Point(3, 3);
-            this.SurveyBButton.Name = "SurveyBButton";
-            this.SurveyBButton.Size = new System.Drawing.Size(390, 171);
-            this.SurveyBButton.TabIndex = 7;
-            this.SurveyBButton.Text = "A";
-            this.SurveyBButton.UseVisualStyleBackColor = true;
-            // 
             // SurveyAButton
             // 
             this.SurveyAButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SurveyAButton.Location = new System.Drawing.Point(399, 3);
+            this.SurveyAButton.Location = new System.Drawing.Point(3, 3);
             this.SurveyAButton.Name = "SurveyAButton";
             this.SurveyAButton.Size = new System.Drawing.Size(390, 171);
-            this.SurveyAButton.TabIndex = 8;
-            this.SurveyAButton.Text = "B";
+            this.SurveyAButton.TabIndex = 7;
+            this.SurveyAButton.Text = "A";
             this.SurveyAButton.UseVisualStyleBackColor = true;
+            // 
+            // SurveyBButton
+            // 
+            this.SurveyBButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SurveyBButton.Location = new System.Drawing.Point(399, 3);
+            this.SurveyBButton.Name = "SurveyBButton";
+            this.SurveyBButton.Size = new System.Drawing.Size(397, 171);
+            this.SurveyBButton.TabIndex = 8;
+            this.SurveyBButton.Text = "B";
+            this.SurveyBButton.UseVisualStyleBackColor = true;
             // 
             // Hackheroes
             // 
@@ -1632,7 +1632,7 @@
         private System.Windows.Forms.Button SurveyYesButton;
         private System.Windows.Forms.Button SurveyNoButton;
         private System.Windows.Forms.TableLayoutPanel AnswerTablePanel;
-        private System.Windows.Forms.Button SurveyAButton;
         private System.Windows.Forms.Button SurveyBButton;
+        private System.Windows.Forms.Button SurveyAButton;
     }
 }
