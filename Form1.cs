@@ -163,7 +163,12 @@ namespace app
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
             int userIndex = Program.currentUserIndex;
-            Calculator.CalculateBMI(Program.users[userIndex]);
+
+            if(!Calculator.CalculateBMI(Program.users[userIndex]))
+            {
+                ChangePanel(6);
+                return;
+            }
 
             UpdateArrow();
 

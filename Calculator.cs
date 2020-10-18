@@ -5,7 +5,7 @@ namespace app
 {
     static class Calculator
     {
-        public static void CalculateBMI(User user)
+        public static bool CalculateBMI(User user)
         {
             try
             {
@@ -14,10 +14,12 @@ namespace app
                     throw(new DivideByZeroException("Wzrost użytkownika jest równy zero."));
                 }
                 user.BMI = user.weight / (user.height / 100f * user.height / 100f);
+                return true;
             }
             catch(DivideByZeroException e)
             {
                 MessageBox.Show("Wystąpił błąd podczas obliczania BMI.\nSprawdź poprawność danch w zakładce Profile i spróbuj ponownie.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
         }
 
