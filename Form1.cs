@@ -47,54 +47,60 @@ namespace app
             {
                 DisableQuiz();
             }
-            
-            using (StreamReader loading = new StreamReader("..\\..\\users.dat"))
+
+            try
             {
-                string name;
-                byte age;
-                float weight;
-                uint height;
-                Gender gender;
-
-                string line;
-                string[] arr = new string[4];
-
-                while(!loading.EndOfStream)
+                using(StreamReader loading = new StreamReader("..\\..\\users.dat"))
                 {
-                    name = loading.ReadLine();
+                    string name;
+                    byte age;
+                    float weight;
+                    uint height;
+                    Gender gender;
 
-                    line = loading.ReadLine();
-                    arr = line.Split(' ');
+                    string line;
+                    string[] arr = new string[4];
 
-                    age = Convert.ToByte(arr[0]);
-                    weight = Convert.ToSingle(arr[1]);
-                    height = Convert.ToUInt32(arr[2]);
-                    gender = arr[3] == "Female" ? Gender.Female : Gender.Male;
+                    while (!loading.EndOfStream)
+                    {
+                        name = loading.ReadLine();
 
-                    Program.users.Add(new User(name, age, weight, height, gender));
-                    listBoxUsers.Items.Add(name);
+                        line = loading.ReadLine();
+                        arr = line.Split(' ');
+
+                        age = Convert.ToByte(arr[0]);
+                        weight = Convert.ToSingle(arr[1]);
+                        height = Convert.ToUInt32(arr[2]);
+                        gender = arr[3] == "Female" ? Gender.Female : Gender.Male;
+
+                        Program.users.Add(new User(name, age, weight, height, gender));
+                        listBoxUsers.Items.Add(name);
+                    }
                 }
             }
-
-            if(Program.users.Count == 0)
+            catch(FileNotFoundException exception)
             {
+                MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Program.users.Add(new User("User", 18, 80f, 180, Gender.Male));
+                listBoxUsers.Items.Add("User");
             }
+            finally
+            {
+                panels.Add(panel0); //buttons
+                panels.Add(panel1); //BMI
+                panels.Add(panel2); //sport activity
+                panels.Add(panel3); //quiz
+                panels.Add(panel4); //calculator
+                panels.Add(panel5); //surveys
+                panels.Add(panel6); //profiles
 
-            panels.Add(panel0); //buttons
-            panels.Add(panel1); //BMI
-            panels.Add(panel2); //sport activity
-            panels.Add(panel3); //quiz
-            panels.Add(panel4); //calculator
-            panels.Add(panel5); //surveys
-            panels.Add(panel6); //profiles
+                answerButtons.Add(ButtonAnswerA);
+                answerButtons.Add(ButtonAnswerB);
+                answerButtons.Add(ButtonAnswerC);
+                answerButtons.Add(ButtonAnswerD);
 
-            answerButtons.Add(ButtonAnswerA);
-            answerButtons.Add(ButtonAnswerB);
-            answerButtons.Add(ButtonAnswerC);
-            answerButtons.Add(ButtonAnswerD);
-
-            ChangePanel(0);
+                ChangePanel(0);
+            }
         }
 
         private void UpdateMacro()
