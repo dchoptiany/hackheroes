@@ -16,9 +16,9 @@ namespace app
                 user.BMI = user.weight / (user.height / 100f * user.height / 100f);
                 return true;
             }
-            catch(DivideByZeroException e)
+            catch(DivideByZeroException exception)
             {
-                MessageBox.Show("Wystąpił błąd podczas obliczania BMI.\nSprawdź poprawność danch w zakładce Profile i spróbuj ponownie.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Wystąpił błąd podczas obliczania BMI.\nSprawdź poprawność danch w zakładce Profile i spróbuj ponownie.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }

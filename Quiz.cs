@@ -56,9 +56,9 @@ namespace app
 
                 return true;
             }
-            catch(FileNotFoundException e)
+            catch(FileNotFoundException exception)
             {
-                MessageBox.Show("Wystąpił błąd podczas wczytywania pytań. Quizy nie będą dostępne.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Wystąpił błąd podczas wczytywania pytań. Quizy nie będą dostępne.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }
