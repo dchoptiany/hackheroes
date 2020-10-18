@@ -19,8 +19,6 @@ namespace app
             users = new List<User>();
             rnd = new Random();
 
-            Quiz.LoadQuestions();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Hackheroes());

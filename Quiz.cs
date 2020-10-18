@@ -29,18 +29,18 @@ namespace app
         public static int questionNumber;
         public static bool isAnswerChosen;
 
-        public static void LoadQuestions()
+        public static bool LoadQuestions()
         {
             questions = new List<Question>();
             try
             {
-                using (StreamReader loading = new StreamReader("..\\..\\Resources\\Questions"))
+                using(StreamReader loading = new StreamReader("..\\..\\Resources\\Questions"))
                 {
                     string ask;
                     string correctanswer;
                     string[] incorrectanswer = new string[3];
 
-                    while (!loading.EndOfStream)
+                    while(!loading.EndOfStream)
                     {
                         ask = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1];
                         correctanswer = loading.ReadLine().Split(new string[] { ". " }, System.StringSplitOptions.None)[1];
@@ -53,11 +53,13 @@ namespace app
                         string empty = loading.ReadLine();
                     }
                 }
+
+                return true;
             }
             catch(FileNotFoundException e)
             {
                 MessageBox.Show("Wystąpił błąd podczas wczytywania pytań. Quizy nie będą dostępne.", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Program.disableQuiz = true;
+                return false;
             }
         }
 

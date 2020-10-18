@@ -43,12 +43,12 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            if(Program.disableQuiz)
+            if(!Quiz.LoadQuestions())
             {
                 DisableQuiz();
             }
             
-            using(StreamReader loading = new StreamReader("..\\..\\users.dat"))
+            using (StreamReader loading = new StreamReader("..\\..\\users.dat"))
             {
                 string name;
                 byte age;
