@@ -110,11 +110,7 @@ namespace app
                             break;
                     }
 
-                    sportsList.Add(new Sport(name, participants, weather, effortLevel));
-                    
-                    ///// DEBUG ONLY //////////////////////////////////////////////////////////////////////////////////
-                    Console.WriteLine("nowy sport: " + name + " " + participants + " " + weather + " " + effortLevel);
-                    ///////////////////////////////////////////////////////////////////////////////////////////////////
+                    sportsList.Add(new Sport(name, participants, weather, effortLevel));      
                 }
             }
             return sportsList;

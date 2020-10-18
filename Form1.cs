@@ -144,10 +144,6 @@ namespace app
                         break;
                 }
             }
-
-            //// DEBUG ONLY! ////////////////////////////////////////////////////////////////////////
-            Console.WriteLine("Wyszukiwanie: " + participants + " " + weather + " " + effortLevel);
-            /////////////////////////////////////////////////////////////////////////////////////////
             
             labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
             Center(labelActivityResult, 370);
