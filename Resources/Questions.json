@@ -1,0 +1,126 @@
+{
+  "ask": "Kt\u00F3re z podanych produkt\u00F3w jest najlepszym \u017Ar\u00F3d\u0142em bia\u0142ka?",
+  "correctAnswer": "Wo\u0142owina",
+  "incorrectAnswers": [
+    "Banany",
+    "Jajka",
+    "Mleko"
+  ]
+}
+{
+  "ask": "Kt\u00F3ra z podanych dolegliwo\u015Bci nie wskazuje na niedob\u00F3r witaminy C?",
+  "correctAnswer": "Obni\u017Cenie ci\u015Bnienia krwi t\u0119tniczego",
+  "incorrectAnswers": [
+    "Senno\u015B\u0107",
+    "Spadek odporno\u015Bci",
+    "Krwawienie dzi\u0105se\u0142"
+  ]
+}
+{
+  "ask": "W kt\u00F3rym z tych produkt\u00F3w nie wyst\u0119puje witamina D?",
+  "correctAnswer": "Marchew",
+  "incorrectAnswers": [
+    "Ryby",
+    "W\u0105tr\u00F3bka",
+    "Mleko"
+  ]
+}
+{
+  "ask": "Kt\u00F3ra z podanych aktywno\u015Bci najkorzystniej wp\u0142ywa na kr\u0119gos\u0142up?",
+  "correctAnswer": "P\u0142ywanie",
+  "incorrectAnswers": [
+    "Bieganie",
+    "Podnoszenie ci\u0119\u017Car\u00F3w",
+    "Wykonywanie przysiad\u00F3w"
+  ]
+}
+{
+  "ask": "Kt\u00F3ra witamina jest wytwarzana przez sk\u00F3r\u0119 w czasie wystawienia jej na dzia\u0142anie promieni s\u0142onecznych?",
+  "correctAnswer": "D",
+  "incorrectAnswers": [
+    "K",
+    "C",
+    "B"
+  ]
+}
+{
+  "ask": "Jaki pierwiastek jest podstawowym budulcem ko\u015Bci?",
+  "correctAnswer": "Wap\u0144",
+  "incorrectAnswers": [
+    "Potas",
+    "Magnez",
+    "Siarka"
+  ]
+}
+{
+  "ask": "Anemia to choroba wywo\u0142ana niedobrem:",
+  "correctAnswer": "\u017Belaza",
+  "incorrectAnswers": [
+    "Cynku",
+    "Witaminy B6",
+    "Chromu"
+  ]
+}
+{
+  "ask": "Kt\u00F3re z poni\u017Cszych nie wchodzi w sk\u0142ad uk\u0142adu oddechowego?",
+  "correctAnswer": "Okr\u0119\u017Cnica",
+  "incorrectAnswers": [
+    "P\u0142uca",
+    "Gard\u0142o",
+    "Tchawica"
+  ]
+}
+{
+  "ask": "Kt\u00F3re z podanych produkt\u00F3w powinny stanowi\u0107 podstaw\u0119 diety?",
+  "correctAnswer": "Produkty pe\u0142noziarniste",
+  "incorrectAnswers": [
+    "Nabia\u0142",
+    "Warzywa i owoce",
+    "Mi\u0119so"
+  ]
+}
+{
+  "ask": "Kt\u00F3ra z podanych witamin nie rozpuszcza si\u0119 w t\u0142uszczach?",
+  "correctAnswer": "Witamina B",
+  "incorrectAnswers": [
+    "Witamina A",
+    "Witamina D",
+    "Witamina K"
+  ]
+}
+{
+  "ask": "Jakie t\u0119tno jest prawid\u0142owe?",
+  "correctAnswer": "60-80 uderze\u0144 na minut\u0119",
+  "incorrectAnswers": [
+    "Poni\u017Cej 40 uderze\u0144 na minut\u0119",
+    "Powy\u017Cej 100 uderze\u0144 na minut\u0119",
+    "80-100 uderze\u0144 na minut\u0119"
+  ]
+}
+{
+  "ask": "Prawid\u0142owe ci\u015Bnienie krwi wynosi:",
+  "correctAnswer": "120/80",
+  "incorrectAnswers": [
+    "165/95",
+    "100/55",
+    "135/90"
+  ]
+}
+{
+  "ask": "W kt\u00F3rym z podanych produkt\u00F3w nie wyst\u0119puje b\u0142onnik?",
+  "correctAnswer": "W drobiu",
+  "incorrectAnswers": [
+    "W p\u0142atkach owsianych",
+    "W warzywach str\u0105czkowych",
+    "W suszonych morelach"
+  ]
+}
+{
+  "ask": "Do chor\u00F3b wirusowych zaliczamy:",
+  "correctAnswer": "Osp\u0119",
+  "incorrectAnswers": [
+    "Angin\u0119",
+    "Zakrzepic\u0119",
+    "Chorob\u0119 wie\u0144cow\u0105"
+  ]
+}
