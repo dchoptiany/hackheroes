@@ -78,6 +78,8 @@
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.SurveyQuestion = new System.Windows.Forms.Label();
+            this.SurveyTitle = new System.Windows.Forms.Label();
             this.TopTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.ButtonActivityLevelSurvey = new System.Windows.Forms.Button();
@@ -123,8 +125,6 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.SurveyTitle = new System.Windows.Forms.Label();
-            this.SurveyQuestion = new System.Windows.Forms.Label();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -796,6 +796,30 @@
             this.panel5.Size = new System.Drawing.Size(1000, 500);
             this.panel5.TabIndex = 18;
             // 
+            // SurveyQuestion
+            // 
+            this.SurveyQuestion.AutoSize = true;
+            this.SurveyQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.SurveyQuestion.Location = new System.Drawing.Point(341, 72);
+            this.SurveyQuestion.Name = "SurveyQuestion";
+            this.SurveyQuestion.Size = new System.Drawing.Size(300, 39);
+            this.SurveyQuestion.TabIndex = 4;
+            this.SurveyQuestion.Text = "Pytanie w ankiecie";
+            this.SurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SurveyQuestion.Visible = false;
+            // 
+            // SurveyTitle
+            // 
+            this.SurveyTitle.AutoSize = true;
+            this.SurveyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SurveyTitle.Location = new System.Drawing.Point(215, 0);
+            this.SurveyTitle.Name = "SurveyTitle";
+            this.SurveyTitle.Size = new System.Drawing.Size(523, 63);
+            this.SurveyTitle.TabIndex = 3;
+            this.SurveyTitle.Text = "Przykładowa ankieta";
+            this.SurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SurveyTitle.Visible = false;
+            // 
             // TopTitle
             // 
             this.TopTitle.AutoSize = true;
@@ -1398,30 +1422,6 @@
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // SurveyTitle
-            // 
-            this.SurveyTitle.AutoSize = true;
-            this.SurveyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SurveyTitle.Location = new System.Drawing.Point(215, 0);
-            this.SurveyTitle.Name = "SurveyTitle";
-            this.SurveyTitle.Size = new System.Drawing.Size(523, 63);
-            this.SurveyTitle.TabIndex = 3;
-            this.SurveyTitle.Text = "Przykładowa ankieta";
-            this.SurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SurveyTitle.Visible = false;
-            // 
-            // SurveyQuestion
-            // 
-            this.SurveyQuestion.AutoSize = true;
-            this.SurveyQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.SurveyQuestion.Location = new System.Drawing.Point(341, 72);
-            this.SurveyQuestion.Name = "SurveyQuestion";
-            this.SurveyQuestion.Size = new System.Drawing.Size(300, 39);
-            this.SurveyQuestion.TabIndex = 4;
-            this.SurveyQuestion.Text = "Pytanie w ankiecie";
-            this.SurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SurveyQuestion.Visible = false;
             // 
             // Hackheroes
             // 

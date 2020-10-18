@@ -85,7 +85,7 @@ namespace app
             panels.Add(panel4); //calculator
             panels.Add(panel5); //surveys
             panels.Add(panel6); //profiles
-            Center(label6, 30); //BMI
+            Center(label6); //BMI
 
             answerButtons.Add(ButtonAnswerA);
             answerButtons.Add(ButtonAnswerB);
@@ -153,9 +153,9 @@ namespace app
             }
         }
 
-        private void Center(Control control, int h)
+        private void Center(Control control)
         {
-            control.Location = new Point(1000 / 2 - control.Size.Width / 2, h);
+            control.Location = new Point(1000 / 2 - control.Size.Width / 2, control.Location.Y);
         }
 
         private void ButtonBMI_Click(object sender, EventArgs e)
@@ -168,8 +168,8 @@ namespace app
             labelBMI.Text = "Twoje BMI wynosi: " + Program.users[userIndex].BMI.ToString("0.##");
             labelBMIInterpretation.Text = GetInterpretation(Program.users[userIndex].BMI);
 
-            Center(labelBMI, 300);
-            Center(labelBMIInterpretation, 360);
+            Center(labelBMI);
+            Center(labelBMIInterpretation);
 
             ChangePanel(1);
         }
@@ -539,7 +539,7 @@ namespace app
             }
 
             labelQuestion.Text = Quiz.drawnQuestions[Quiz.questionNumber].ask;
-            Center(labelQuestion, 110);
+            Center(labelQuestion);
 
             foreach(Button btn in answerButtons)
             {
@@ -567,7 +567,7 @@ namespace app
         private void FinishQuiz()
         {
             labelQuizResult.Text = "Wynik: " + Quiz.score + "/5";
-            Center(labelQuizResult, 200);
+            Center(labelQuizResult);
             labelQuestion.Visible = false;
             tableLayoutPanelAnswers.Visible = false;
             ButtonAnswerA.Visible = false;
@@ -624,6 +624,8 @@ namespace app
             survey.AddQuestion("Test question", Survey.QuestionType.YES_OR_NO);
             SurveyQuestion.Visible = true;
             SurveyQuestion.Text = survey.questions[0].questionTitle;
+
+            Center(SurveyQuestion);
         }
 
         private void ButtonActivityLevelSurvey_Click(object sender, EventArgs e)
