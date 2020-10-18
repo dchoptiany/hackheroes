@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -601,6 +600,8 @@ namespace app
                 MarkCorrectAnswer();
             }
 
+            await Task.Delay(2000);
+
             Quiz.questionNumber++;
             NextQuestion();
         }
@@ -641,8 +642,6 @@ namespace app
                 }
                 button.Enabled = false;
             }
-
-            Thread.Sleep(2000);
         }
 
         private void MarkCorrectAnswer(Button clickedButton)
@@ -659,8 +658,6 @@ namespace app
                 }
                 button.Enabled = false;
             }
-
-            Thread.Sleep(2000);
         }
 
         private void AnswerClicked(object sender, EventArgs e)
