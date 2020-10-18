@@ -7,6 +7,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace app
 {
@@ -38,35 +39,16 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            using(StreamReader loading = new StreamReader("..\\..\\users.dat"))
+            string[] usersJSON = File.ReadAllLines("..\\..\\users.json");
+
+            foreach(string line in usersJSON)
             {
-                string name;
-                byte age;
-                float weight;
-                uint height;
-                Gender gender;
-
-                string line;
-                string[] arr = new string[4];
-
-                while(!loading.EndOfStream)
-                {
-                    name = loading.ReadLine();
-
-                    line = loading.ReadLine();
-                    arr = line.Split(' ');
-
-                    age = Convert.ToByte(arr[0]);
-                    weight = Convert.ToSingle(arr[1]);
-                    height = Convert.ToUInt32(arr[2]);
-                    gender = arr[3] == "Female" ? Gender.Female : Gender.Male;
-
-                    Program.users.Add(new User(name, age, weight, height, gender));
-                    listBoxUsers.Items.Add(name);
-                }
+                User newUser = JsonSerializer.Deserialize<User>(line);
+                Program.users.Add(newUser);
+                listBoxUsers.Items.Add(newUser.name);
             }
 
-            if(Program.users.Count == 0)
+            if (Program.users.Count == 0)
             {
                 Program.users.Add(new User("User", 18, 80f, 180, Gender.Male));
             }
@@ -673,14 +655,14 @@ namespace app
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using (StreamWriter saving = new StreamWriter("..\\..\\users.dat"))
+            List<string> usersJSON = new List<string>();
+
+            foreach(User user in Program.users)
             {
-                foreach (User user in Program.users)
-                {
-                    saving.WriteLine(user.name);
-                    saving.WriteLine(user.getData());
-                }
+                usersJSON.Add(JsonSerializer.Serialize(user));
             }
+
+            File.WriteAllLines("..\\..\\users.json", usersJSON);
         }
     }
 }
