@@ -50,7 +50,13 @@ namespace app
 
             try
             {
-                string[] usersJSON = File.ReadAllLines("..\\..\\users.json");
+                string[] JSON = File.ReadAllLines("..\\..\\users.json");
+                List<string> usersJSON = new List<string>();
+
+                for(int i = 0; i < JSON.Length; i += 7)
+                {
+                    usersJSON.Add(JSON[i] + JSON[i + 1] + JSON[i + 2] + JSON[i + 3] + JSON[i + 4] + JSON[i + 5] + JSON[i + 6]);
+                }
 
 	            foreach(string line in usersJSON)
 	            {
@@ -763,14 +769,19 @@ namespace app
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            List<string> usersJSON = new List<string>();
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            List<string> JSON = new List<string>();
 
             foreach(User user in Program.users)
             {
-                usersJSON.Add(JsonSerializer.Serialize(user));
+                JSON.Add(JsonSerializer.Serialize(user, options));
             }
 
-            File.WriteAllLines("..\\..\\users.json", usersJSON);
+            File.WriteAllLines("..\\..\\users.json", JSON);
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
