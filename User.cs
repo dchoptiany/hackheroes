@@ -8,12 +8,12 @@
 
 	public class User
 	{
-  		///  Body section
-		public string name;
-		public byte age;
-		public float weight;
-		public uint height;
-		public Gender gender;
+		///  Body section
+		public string name { get; set; }
+		public byte age { get; set; }
+		public float weight { get; set; }
+		public uint height { get; set; }
+		public Gender gender { get; set; }
 
 		public float BMI;
 		public float activityLevel;
@@ -33,9 +33,8 @@
 			gender = _gender;
 		}
 
-		public string getData()
-        {
-			return age + " " + weight + " " + height + " " + (gender == Gender.Female ? "Female" : "Male");
+		public User()
+		{
 		}
 	}
 }

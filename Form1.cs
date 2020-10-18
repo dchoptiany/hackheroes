@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace app
 {
@@ -49,33 +50,20 @@ namespace app
 
             try
             {
-                using(StreamReader loading = new StreamReader("..\\..\\users.dat"))
+                string[] JSON = File.ReadAllLines("..\\..\\users.json");
+                List<string> usersJSON = new List<string>();
+
+                for(int i = 0; i < JSON.Length; i += 7)
                 {
-                    string name;
-                    byte age;
-                    float weight;
-                    uint height;
-                    Gender gender;
-
-                    string line;
-                    string[] arr = new string[4];
-
-                    while (!loading.EndOfStream)
-                    {
-                        name = loading.ReadLine();
-
-                        line = loading.ReadLine();
-                        arr = line.Split(' ');
-
-                        age = Convert.ToByte(arr[0]);
-                        weight = Convert.ToSingle(arr[1]);
-                        height = Convert.ToUInt32(arr[2]);
-                        gender = arr[3] == "Female" ? Gender.Female : Gender.Male;
-
-                        Program.users.Add(new User(name, age, weight, height, gender));
-                        listBoxUsers.Items.Add(name);
-                    }
+                    usersJSON.Add(JSON[i] + JSON[i + 1] + JSON[i + 2] + JSON[i + 3] + JSON[i + 4] + JSON[i + 5] + JSON[i + 6]);
                 }
+
+	            foreach(string line in usersJSON)
+	            {
+	                User newUser = JsonSerializer.Deserialize<User>(line);
+	                Program.users.Add(newUser);
+	                listBoxUsers.Items.Add(newUser.name);
+	            }
             }
             catch(FileNotFoundException exception)
             {
@@ -781,14 +769,19 @@ namespace app
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using (StreamWriter saving = new StreamWriter("..\\..\\users.dat"))
+            var options = new JsonSerializerOptions
             {
-                foreach (User user in Program.users)
-                {
-                    saving.WriteLine(user.name);
-                    saving.WriteLine(user.getData());
-                }
+                WriteIndented = true
+            };
+
+            List<string> JSON = new List<string>();
+
+            foreach(User user in Program.users)
+            {
+                JSON.Add(JsonSerializer.Serialize(user, options));
             }
+
+            File.WriteAllLines("..\\..\\users.json", JSON);
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
