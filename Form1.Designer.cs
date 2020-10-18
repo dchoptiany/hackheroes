@@ -802,7 +802,7 @@
             this.trackBarActivityLevel.Size = new System.Drawing.Size(442, 45);
             this.trackBarActivityLevel.TabIndex = 2;
             this.trackBarActivityLevel.Value = 2;
-            this.trackBarActivityLevel.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
+            this.trackBarActivityLevel.Scroll += new System.EventHandler(this.TrackBarActivityLevel_Scroll);
             // 
             // label3
             // 
