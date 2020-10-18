@@ -169,6 +169,7 @@ namespace app
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
             ChangePanel(2);
+            ActivityMatcher.LoadSports();
         }
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
@@ -681,6 +682,107 @@ namespace app
                     saving.WriteLine(user.getData());
                 }
             }
+        }
+
+        private void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            Condition teamSport = Condition.Both;
+            if (radioButtonTeam.Checked)
+            {
+                teamSport = Condition.Yes;
+            }
+            else if (radioButtonIndividual.Checked)
+            {
+                teamSport = Condition.No;
+            }
+
+            Condition goodWeather = Condition.Both;
+            if (radioButtonGoodWeather.Checked)
+            {
+                goodWeather = Condition.Yes;
+            }
+            else if (radioButtonBadWeather.Checked)
+            {
+                goodWeather = Condition.No;
+            }
+
+            EffortLevel effortLevel = EffortLevel.Undefined;
+            if(!radioButtonAllEffortLevels.Checked)
+            {
+                switch(trackBarEffortLevel.Value)
+                {
+                    case 0:
+                        effortLevel = EffortLevel.Low;
+                        break;
+                    case 1:
+                        effortLevel = EffortLevel.Medium;
+                        break;
+                    case 2:
+                        effortLevel = EffortLevel.High;
+                        break;
+                }
+            }
+            
+            labelActivityResult.Text = ActivityMatcher.Search(teamSport, goodWeather, effortLevel);
+            if(labelActivityResult.Text == "")
+            {
+                string message = "Nie udało się znaleźć aktywności o takich kryteriach. Wprowadź inne dane i spróbuj ponownie.";
+                string caption = "Nie znaleziono aktywności";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
+        }
+
+        private void trackBarEffortLevel_Scroll(object sender, EventArgs e)
+        {
+            radioButtonAllEffortLevels.Checked = false;
+            ActivityMatcher.approvedSports.Clear();
+        }
+        private void trackBarEffortLevel_Click(object sender, EventArgs e)
+        {
+            radioButtonAllEffortLevels.Checked = false;
+            ActivityMatcher.approvedSports.Clear();
+        }
+
+        private void radioButtonTeam_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+        }
+
+        private void radioButtonTeamAndIndividual_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+        }
+
+        private void radioButtonGoodWeather_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+        }
+
+        private void radioButtonBadWeather_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+        }
+
+        private void radioButtonGoodAndBadWeather_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+        }
+
+        private void radioButtonAllEffortLevels_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
+        }
+
+        private void radioButtonIndividual_CheckedChanged(object sender, EventArgs e)
+        {
+            ActivityMatcher.approvedSports.Clear();
         }
     }
 }

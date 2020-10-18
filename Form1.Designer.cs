@@ -43,9 +43,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.trackBarEffortLevel = new System.Windows.Forms.TrackBar();
+            this.radioButtonAllEffortLevels = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButtonGoodWeather = new System.Windows.Forms.RadioButton();
+            this.radioButtonBadWeather = new System.Windows.Forms.RadioButton();
+            this.radioButtonGoodAndBadWeather = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonIndividual = new System.Windows.Forms.RadioButton();
+            this.radioButtonTeam = new System.Windows.Forms.RadioButton();
+            this.radioButtonTeamAndIndividual = new System.Windows.Forms.RadioButton();
+            this.labelActivityResult = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBoxTime = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTimeBorder = new System.Windows.Forms.PictureBox();
             this.labelNumber = new System.Windows.Forms.Label();
             this.ButtonFinishQuiz = new System.Windows.Forms.Button();
             this.labelQuizResult = new System.Windows.Forms.Label();
@@ -123,15 +138,19 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.pictureBoxTimeBorder = new System.Windows.Forms.PictureBox();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
             this.tableLayoutPanelAnswers.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -144,7 +163,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel0
@@ -336,21 +354,185 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.groupBox3);
+            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Controls.Add(this.labelActivityResult);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(100, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 500);
             this.panel2.TabIndex = 15;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.trackBarEffortLevel);
+            this.groupBox3.Controls.Add(this.radioButtonAllEffortLevels);
+            this.groupBox3.Location = new System.Drawing.Point(385, 207);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(262, 70);
+            this.groupBox3.TabIndex = 19;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Stopień wysiłku";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "niski    średni  wysoki";
+            // 
+            // trackBarEffortLevel
+            // 
+            this.trackBarEffortLevel.LargeChange = 1;
+            this.trackBarEffortLevel.Location = new System.Drawing.Point(17, 19);
+            this.trackBarEffortLevel.Maximum = 2;
+            this.trackBarEffortLevel.Name = "trackBarEffortLevel";
+            this.trackBarEffortLevel.Size = new System.Drawing.Size(104, 45);
+            this.trackBarEffortLevel.TabIndex = 8;
+            this.trackBarEffortLevel.Value = 1;
+            this.trackBarEffortLevel.Click += new System.EventHandler(this.trackBarEffortLevel_Click);
+            this.trackBarEffortLevel.Scroll += new System.EventHandler(this.trackBarEffortLevel_Scroll);
+            // 
+            // radioButtonAllEffortLevels
+            // 
+            this.radioButtonAllEffortLevels.AutoSize = true;
+            this.radioButtonAllEffortLevels.Checked = true;
+            this.radioButtonAllEffortLevels.Location = new System.Drawing.Point(172, 33);
+            this.radioButtonAllEffortLevels.Name = "radioButtonAllEffortLevels";
+            this.radioButtonAllEffortLevels.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonAllEffortLevels.TabIndex = 16;
+            this.radioButtonAllEffortLevels.TabStop = true;
+            this.radioButtonAllEffortLevels.Text = "dowolny";
+            this.radioButtonAllEffortLevels.UseVisualStyleBackColor = true;
+            this.radioButtonAllEffortLevels.CheckedChanged += new System.EventHandler(this.radioButtonAllEffortLevels_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButtonGoodWeather);
+            this.groupBox2.Controls.Add(this.radioButtonBadWeather);
+            this.groupBox2.Controls.Add(this.radioButtonGoodAndBadWeather);
+            this.groupBox2.Location = new System.Drawing.Point(385, 149);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(262, 45);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Pogoda";
+            // 
+            // radioButtonGoodWeather
+            // 
+            this.radioButtonGoodWeather.AutoSize = true;
+            this.radioButtonGoodWeather.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonGoodWeather.Name = "radioButtonGoodWeather";
+            this.radioButtonGoodWeather.Size = new System.Drawing.Size(91, 17);
+            this.radioButtonGoodWeather.TabIndex = 13;
+            this.radioButtonGoodWeather.Text = "dobra pogoda";
+            this.radioButtonGoodWeather.UseVisualStyleBackColor = true;
+            this.radioButtonGoodWeather.CheckedChanged += new System.EventHandler(this.radioButtonGoodWeather_CheckedChanged);
+            // 
+            // radioButtonBadWeather
+            // 
+            this.radioButtonBadWeather.AutoSize = true;
+            this.radioButtonBadWeather.Location = new System.Drawing.Point(100, 19);
+            this.radioButtonBadWeather.Name = "radioButtonBadWeather";
+            this.radioButtonBadWeather.Size = new System.Drawing.Size(79, 17);
+            this.radioButtonBadWeather.TabIndex = 15;
+            this.radioButtonBadWeather.Text = "zła pogoda";
+            this.radioButtonBadWeather.UseVisualStyleBackColor = true;
+            this.radioButtonBadWeather.CheckedChanged += new System.EventHandler(this.radioButtonBadWeather_CheckedChanged);
+            // 
+            // radioButtonGoodAndBadWeather
+            // 
+            this.radioButtonGoodAndBadWeather.AutoSize = true;
+            this.radioButtonGoodAndBadWeather.Checked = true;
+            this.radioButtonGoodAndBadWeather.Location = new System.Drawing.Point(185, 19);
+            this.radioButtonGoodAndBadWeather.Name = "radioButtonGoodAndBadWeather";
+            this.radioButtonGoodAndBadWeather.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonGoodAndBadWeather.TabIndex = 14;
+            this.radioButtonGoodAndBadWeather.TabStop = true;
+            this.radioButtonGoodAndBadWeather.Text = "dowolny";
+            this.radioButtonGoodAndBadWeather.UseVisualStyleBackColor = true;
+            this.radioButtonGoodAndBadWeather.CheckedChanged += new System.EventHandler(this.radioButtonGoodAndBadWeather_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButtonIndividual);
+            this.groupBox1.Controls.Add(this.radioButtonTeam);
+            this.groupBox1.Controls.Add(this.radioButtonTeamAndIndividual);
+            this.groupBox1.Location = new System.Drawing.Point(385, 101);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(246, 42);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Typ sportu";
+            // 
+            // radioButtonIndividual
+            // 
+            this.radioButtonIndividual.AutoSize = true;
+            this.radioButtonIndividual.Location = new System.Drawing.Point(6, 17);
+            this.radioButtonIndividual.Name = "radioButtonIndividual";
+            this.radioButtonIndividual.Size = new System.Drawing.Size(85, 17);
+            this.radioButtonIndividual.TabIndex = 10;
+            this.radioButtonIndividual.Text = "indywidualny";
+            this.radioButtonIndividual.UseVisualStyleBackColor = true;
+            this.radioButtonIndividual.CheckedChanged += new System.EventHandler(this.radioButtonIndividual_CheckedChanged);
+            // 
+            // radioButtonTeam
+            // 
+            this.radioButtonTeam.AutoSize = true;
+            this.radioButtonTeam.Location = new System.Drawing.Point(97, 19);
+            this.radioButtonTeam.Name = "radioButtonTeam";
+            this.radioButtonTeam.Size = new System.Drawing.Size(74, 17);
+            this.radioButtonTeam.TabIndex = 12;
+            this.radioButtonTeam.Text = "zespolowy";
+            this.radioButtonTeam.UseVisualStyleBackColor = true;
+            this.radioButtonTeam.CheckedChanged += new System.EventHandler(this.radioButtonTeam_CheckedChanged);
+            // 
+            // radioButtonTeamAndIndividual
+            // 
+            this.radioButtonTeamAndIndividual.AutoSize = true;
+            this.radioButtonTeamAndIndividual.Checked = true;
+            this.radioButtonTeamAndIndividual.Location = new System.Drawing.Point(172, 19);
+            this.radioButtonTeamAndIndividual.Name = "radioButtonTeamAndIndividual";
+            this.radioButtonTeamAndIndividual.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonTeamAndIndividual.TabIndex = 11;
+            this.radioButtonTeamAndIndividual.TabStop = true;
+            this.radioButtonTeamAndIndividual.Text = "dowolny";
+            this.radioButtonTeamAndIndividual.UseVisualStyleBackColor = true;
+            this.radioButtonTeamAndIndividual.CheckedChanged += new System.EventHandler(this.radioButtonTeamAndIndividual_CheckedChanged);
+            // 
+            // labelActivityResult
+            // 
+            this.labelActivityResult.AutoSize = true;
+            this.labelActivityResult.Location = new System.Drawing.Point(482, 399);
+            this.labelActivityResult.Name = "labelActivityResult";
+            this.labelActivityResult.Size = new System.Drawing.Size(34, 13);
+            this.labelActivityResult.TabIndex = 7;
+            this.labelActivityResult.Text = "wynik";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(463, 358);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Szukaj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(391, 121);
+            this.label5.Location = new System.Drawing.Point(336, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 42);
+            this.label5.Size = new System.Drawing.Size(327, 42);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Aktywność";
+            this.label5.Text = "Aktywność na dziś";
             // 
             // panel3
             // 
@@ -377,6 +559,16 @@
             this.pictureBoxTime.TabIndex = 8;
             this.pictureBoxTime.TabStop = false;
             this.pictureBoxTime.Visible = false;
+            // 
+            // pictureBoxTimeBorder
+            // 
+            this.pictureBoxTimeBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.pictureBoxTimeBorder.Location = new System.Drawing.Point(248, 98);
+            this.pictureBoxTimeBorder.Name = "pictureBoxTimeBorder";
+            this.pictureBoxTimeBorder.Size = new System.Drawing.Size(502, 34);
+            this.pictureBoxTimeBorder.TabIndex = 9;
+            this.pictureBoxTimeBorder.TabStop = false;
+            this.pictureBoxTimeBorder.Visible = false;
             // 
             // labelNumber
             // 
@@ -1406,25 +1598,15 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // pictureBoxTimeBorder
-            // 
-            this.pictureBoxTimeBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.pictureBoxTimeBorder.Location = new System.Drawing.Point(248, 98);
-            this.pictureBoxTimeBorder.Name = "pictureBoxTimeBorder";
-            this.pictureBoxTimeBorder.Size = new System.Drawing.Size(502, 34);
-            this.pictureBoxTimeBorder.TabIndex = 9;
-            this.pictureBoxTimeBorder.TabStop = false;
-            this.pictureBoxTimeBorder.Visible = false;
-            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
             this.ControlBox = false;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
@@ -1446,9 +1628,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).EndInit();
             this.tableLayoutPanelAnswers.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1465,7 +1655,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1568,5 +1757,19 @@
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.PictureBox pictureBoxTime;
         private System.Windows.Forms.PictureBox pictureBoxTimeBorder;
+        private System.Windows.Forms.Label labelActivityResult;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TrackBar trackBarEffortLevel;
+        private System.Windows.Forms.RadioButton radioButtonAllEffortLevels;
+        private System.Windows.Forms.RadioButton radioButtonBadWeather;
+        private System.Windows.Forms.RadioButton radioButtonGoodAndBadWeather;
+        private System.Windows.Forms.RadioButton radioButtonGoodWeather;
+        private System.Windows.Forms.RadioButton radioButtonTeam;
+        private System.Windows.Forms.RadioButton radioButtonTeamAndIndividual;
+        private System.Windows.Forms.RadioButton radioButtonIndividual;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

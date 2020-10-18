@@ -1,0 +1,42 @@
+Piłka nożna
+true true 1
+Piłka nożna halowa
+true false 1
+Piłka ręczna
+true false 1
+Siatkówka
+true false 1
+Spacer
+false true 0
+Bieganie
+false true 1
+Trening siłowy
+false false 2
+Kalistenika
+false true 2
+Koszykówka
+true false 1
+Pływanie
+false false 1
+Szachy
+false false 0
+Warcaby
+false false 0
+Jazda na rowerze
+false true 1
+Strzelectwo sportowe
+false false 0
+Jazda na rolkach
+false true 1
+Lekkoatletyka
+false true 2
+Lekkoatletyka halowa
+false false 2
+Sporty walki
+false true 2
+Trening w domu bez sprzętu
+false false 2
+Jazda na deskorolce
+false true 1
+Jazda na hulajnodze
+false true 1
