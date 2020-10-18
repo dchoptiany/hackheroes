@@ -179,7 +179,7 @@ namespace app
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
             ChangePanel(4);
-            TrackBar1_Scroll(sender, e);
+            UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
@@ -314,7 +314,7 @@ namespace app
                 DialogResult result;
                 
                 result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     Close();
                 }
@@ -329,6 +329,8 @@ namespace app
 
                 Program.users.Add(newUser);
                 listBoxUsers.Items.Add(newUser.name);
+
+                textBoxName.Text = "";
 
                 Program.currentUserIndex = listBoxUsers.SelectedIndex = Program.users.Count - 1; 
             }
@@ -367,7 +369,7 @@ namespace app
                 DialogResult result;
 
                 result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     Close();
                 }
@@ -425,7 +427,7 @@ namespace app
                 DialogResult result;
 
                 result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     Close();
                 }
@@ -665,10 +667,15 @@ namespace app
             Reset();
         }
 
-        private void TrackBar1_Scroll(object sender, EventArgs e)
+        private void UpdateActivityLevel()
         {
             Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * (float)trackBarActivityLevel.Value;
             UpdateMacro();
+        }
+
+        private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
+        {
+            UpdateActivityLevel();
         }
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
