@@ -1,0 +1,132 @@
+{
+  "name": "Pi\u0142ka no\u017Cna",
+  "participants": 3,
+  "weather": 1,
+  "effortLevel": 2
+}
+{
+  "name": "Pi\u0142ka no\u017Cna halowa",
+  "participants": 3,
+  "weather": 0,
+  "effortLevel": 2
+}
+{
+  "name": "Pi\u0142ka r\u0119czna",
+  "participants": 3,
+  "weather": 0,
+  "effortLevel": 2
+}
+{
+  "name": "Siatk\u00F3wka",
+  "participants": 3,
+  "weather": 0,
+  "effortLevel": 2
+}
+{
+  "name": "Spacer",
+  "participants": 0,
+  "weather": 1,
+  "effortLevel": 1
+}
+{
+  "name": "Bieganie",
+  "participants": 0,
+  "weather": 1,
+  "effortLevel": 2
+}
+{
+  "name": "Trening si\u0142owy",
+  "participants": 0,
+  "weather": 0,
+  "effortLevel": 3
+}
+{
+  "name": "Street workout",
+  "participants": 0,
+  "weather": 1,
+  "effortLevel": 3
+}
+{
+  "name": "Koszyk\u00F3wka",
+  "participants": 3,
+  "weather": 0,
+  "effortLevel": 2
+}
+{
+  "name": "P\u0142ywanie",
+  "participants": 0,
+  "weather": 0,
+  "effortLevel": 2
+}
+{
+  "name": "Szachy",
+  "participants": 2,
+  "weather": 0,
+  "effortLevel": 1
+}
+{
+  "name": "Warcaby",
+  "participants": 2,
+  "weather": 0,
+  "effortLevel": 1
+}
+{
+  "name": "Bryd\u017C",
+  "participants": 2,
+  "weather": 0,
+  "effortLevel": 1
+}
+{
+  "name": "Jazda na rowerze",
+  "participants": 0,
+  "weather": 1,
+  "effortLevel": 2
+}
+{
+  "name": "Strzelectwo sportowe",
+  "participants": 2,
+  "weather": 0,
+  "effortLevel": 1
+}
+{
+  "name": "Jazda na rolkach",
+  "participants": 2,
+  "weather": 1,
+  "effortLevel": 2
+}
+{
+  "name": "Lekkoatletyka",
+  "participants": 0,
+  "weather": 1,
+  "effortLevel": 2
+}
+{
+  "name": "Lekkoatletyka halowa",
+  "participants": 0,
+  "weather": 0,
+  "effortLevel": 2
+}
+{
+  "name": "Sporty walki",
+  "participants": 2,
+  "weather": 0,
+  "effortLevel": 3
+}
+{
+  "name": "Trening w domu bez sprz\u0119tu",
+  "participants": 0,
+  "weather": 0,
+  "effortLevel": 3
+}
+{
+  "name": "Jazda na deskorolce",
+  "participants": 0,
+  "weather": 1,
+  "effortLevel": 2
+}
+{
+  "name": "Jazda na hulajnodze",
+  "participants": 0,
+  "weather": 1,
+  "effortLevel": 2
+}

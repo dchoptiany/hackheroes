@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.Json;
+using System.Windows.Forms;
 
 namespace app
 {
@@ -29,10 +31,10 @@ namespace app
 
     public class Sport
     {
-        public string name;
-        public Participants participants;
-        public Weather weather;
-        public EffortLevel effortLevel;
+        public string name { get; set; }
+        public Participants participants { get; set; }
+        public Weather weather { get; set; }
+        public EffortLevel effortLevel { get; set; }
 
         public Sport(string _name, Participants _participants, Weather _weather, EffortLevel _effortLevel)
         {
@@ -41,79 +43,44 @@ namespace app
             weather = _weather;
             effortLevel = _effortLevel;
         }
+
+        public Sport()
+        {
+        }
     }
 
     static class ActivityMatcher
     {
-        public readonly static List<Sport> sports = LoadSports();
+        public static List<Sport> sports;
         public static List<Sport> approvedSports;
 
-        public static List<Sport> LoadSports()
+        public static bool LoadSports()
         {
-            List<Sport> sportsList = new List<Sport>();
-
-            using (StreamReader loading = new StreamReader("..\\..\\Resources\\Sports"))
+            try
             {
+                sports = new List<Sport>();
                 approvedSports = new List<Sport>();
 
-                string name;
-                Participants participants = 0;
-                Weather weather = 0;
-                EffortLevel effortLevel = 0;
+                string[] JSON = File.ReadAllLines("..\\..\\Resources\\Sports.json");
+                List<string> sportsJSON = new List<string>();
 
-                string line;
-                string[] arr = new string[4];
-
-                while (!loading.EndOfStream)
+                for (int i = 0; i < JSON.Length; i += 6)
                 {
-                    name = loading.ReadLine();
-
-                    line = loading.ReadLine();
-                    arr = line.Split(' ');
-
-                    switch(arr[0])
-                    {
-                        case "0":
-                            participants = Participants.Any;
-                            break;
-                        case "1":
-                            participants = Participants.One;
-                            break;
-                        case "2":
-                            participants = Participants.Two;
-                            break;
-                        case "3":
-                            participants = Participants.More;
-                            break;
-                    }
-                 
-                    switch(arr[1])
-                    {
-                        case "0":
-                            weather = Weather.Any;
-                            break;
-                        case "1":
-                            weather = Weather.Good;
-                            break;
-                    }
-
-                    switch(arr[2])
-                    {
-                        case "0":
-                            effortLevel = EffortLevel.Low;
-                            break;
-                        case "1":
-                            effortLevel = EffortLevel.Medium;
-                            break;
-                        case "2":
-                            effortLevel = EffortLevel.High;
-                            break;
-                    }
-
-                    sportsList.Add(new Sport(name, participants, weather, effortLevel));      
+                    sportsJSON.Add(JSON[i] + JSON[i + 1] + JSON[i + 2] + JSON[i + 3] + JSON[i + 4] + JSON[i + 5]);
                 }
+
+                foreach (string line in sportsJSON)
+                {
+                    sports.Add(JsonSerializer.Deserialize<Sport>(line));
+                }
+
+                return true;
             }
-            return sportsList;
+            catch(FileNotFoundException exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas wczytywania aktywności. Wyszukiwarka aktywności nie będzie dostępna.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
         }
 
         public static string Search(Participants participants, Weather weather, EffortLevel effortLevel)
