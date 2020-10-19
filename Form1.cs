@@ -929,14 +929,8 @@ namespace app
             labelSurveyQuestionNumber.Visible = false;
             if (survey.title == "Poziom aktywności fizycznej")
             {
-                if (survey.surveyAnswersInt[0] == 0)
-                {
-                    Program.users[Program.currentUserIndex].physicalJob = false;
-                }
-                else
-                {
-                    Program.users[Program.currentUserIndex].physicalJob = true;
-                }
+                Program.users[Program.currentUserIndex].physicalJob = survey.surveyAnswersInt[0] == 1;
+
                 Program.users[Program.currentUserIndex].trainingsInWeek = survey.surveyAnswersInt[1];
                 Program.users[Program.currentUserIndex].dailyMovementLevel = survey.surveyAnswersInt[2];
 
