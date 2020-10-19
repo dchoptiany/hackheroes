@@ -11,7 +11,6 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
-        private List<string> surveyAnswers = new List<string>();
         Survey survey;
 
         public Hackheroes()
@@ -196,6 +195,10 @@ namespace app
         {
             AnswerTablePanel.Visible = false;
             FlowSurveysPanel.Visible = true;
+            FinishLabel.Visible = false;
+            SurveyTitle.Text = "Ankiety diagnostyczne";
+            Center(SurveyTitle);
+            SurveyQuestion.Visible = false;
             ChangePanel(5);
         }
 
@@ -680,7 +683,13 @@ namespace app
         private void SurveyAnswerButtonClicked(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
-            surveyAnswers.Add(clickedButton.Text);
+            foreach(KeyValuePair<string, uint> answer in survey.questions[survey.currentQuestionIndex].answersValues)
+            {
+                if(clickedButton.Text == answer.Key)
+                {
+                    survey.surveyAnswersInt.Add(answer.Value);
+                }
+            }
             if(survey.currentQuestionIndex + 1 < survey.questions.Count)
             {
                 ++survey.currentQuestionIndex;
@@ -697,8 +706,23 @@ namespace app
             FinishLabel.Visible = true;
             FlowSurveysPanel.Visible = false;
             AnswerTablePanel.Visible = false;
+            if (survey.title == "Poziom aktywności fizycznej")
+            {
+                if (survey.surveyAnswersInt[0] == 0)
+                {
+                    Program.users[Program.currentUserIndex].physicalJob = false;
+                }
+                else
+                {
+                    Program.users[Program.currentUserIndex].physicalJob = true;
+                }
+                Program.users[Program.currentUserIndex].trainingsInWeek = survey.surveyAnswersInt[1];
+
+                Calculator.CalculateActivityLevel(Program.users[Program.currentUserIndex]);
+                FinishLabel.Text = "Poziom aktywności wynosi " + Program.users[Program.currentUserIndex].activityLevel.ToString();
+            }
             
-            FinishLabel.Text = "Wynik ankiety!";
+            
             Center(FinishLabel);
         }
     }

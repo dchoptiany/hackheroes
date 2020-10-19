@@ -31,8 +31,8 @@
             {
                 user.activityLevel += 0.1f;
             }
-            user.activityLevel += user.trainingsInWeek * 0.5f;
-            user.activityLevel += user.dailyMovementLevel * 0.2f;
+            user.activityLevel += user.trainingsInWeek * 0.05f;
+            user.activityLevel += user.dailyMovementLevel * 0.025f;
 
         }
     }

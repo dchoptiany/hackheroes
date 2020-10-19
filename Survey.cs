@@ -12,12 +12,17 @@ namespace app
         public int currentQuestionIndex;
         public string title;
         public List<Question> questions;
+        public List<string> surveyAnswersString;
+        public List<uint> surveyAnswersInt;
+        
 
         public Survey(string _title)
         {
             currentQuestionIndex = 0;
             title = _title;
             questions = new List<Question>();
+            surveyAnswersInt = new List<uint>();
+            surveyAnswersString = new List<string>();
         }
 
         public enum QuestionType
@@ -36,6 +41,7 @@ namespace app
             public string questionTitle;
             public QuestionType questionType;
             public List<KeyValuePair<string, uint>> answersValues;
+            public Dictionary<string, uint> testAnswersValues;
 
             public Question(string _questionTitle, QuestionType _questionType)
             {     

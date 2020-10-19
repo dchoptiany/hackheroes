@@ -806,12 +806,12 @@
             // FinishLabel
             // 
             this.FinishLabel.AutoSize = true;
-            this.FinishLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FinishLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FinishLabel.Location = new System.Drawing.Point(250, 200);
             this.FinishLabel.Name = "FinishLabel";
-            this.FinishLabel.Size = new System.Drawing.Size(425, 153);
+            this.FinishLabel.Size = new System.Drawing.Size(251, 46);
             this.FinishLabel.TabIndex = 8;
-            this.FinishLabel.Text = "label2";
+            this.FinishLabel.Text = "testowy tekst";
             this.FinishLabel.Visible = false;
             // 
             // AnswerTablePanel
