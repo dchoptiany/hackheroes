@@ -1,0 +1,14 @@
+{
+  "name": "Testowy m\u0119\u017Cczyzna",
+  "age": 18,
+  "weight": 60,
+  "height": 170,
+  "gender": 0
+}
+{
+  "name": "Testowa kobieta",
+  "age": 21,
+  "weight": 60,
+  "height": 150,
+  "gender": 1
+}

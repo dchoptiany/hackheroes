@@ -43,8 +43,27 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBoxChooseAutomatically = new System.Windows.Forms.CheckBox();
+            this.groupBoxEffortLevel = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.trackBarEffortLevel = new System.Windows.Forms.TrackBar();
+            this.radioButtonAllEffortLevels = new System.Windows.Forms.RadioButton();
+            this.groupBoxWeather = new System.Windows.Forms.GroupBox();
+            this.radioButtonGoodWeather = new System.Windows.Forms.RadioButton();
+            this.radioButtonBadWeather = new System.Windows.Forms.RadioButton();
+            this.radioButtonAllWeatherConditions = new System.Windows.Forms.RadioButton();
+            this.groupBoxParticipants = new System.Windows.Forms.GroupBox();
+            this.radioButtonPair = new System.Windows.Forms.RadioButton();
+            this.radioButtonIndividual = new System.Windows.Forms.RadioButton();
+            this.radioButtonTeam = new System.Windows.Forms.RadioButton();
+            this.radioButtonAllParticipants = new System.Windows.Forms.RadioButton();
+            this.labelActivityResult = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBoxTime = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTimeBorder = new System.Windows.Forms.PictureBox();
+            this.labelNumber = new System.Windows.Forms.Label();
             this.ButtonFinishQuiz = new System.Windows.Forms.Button();
             this.labelQuizResult = new System.Windows.Forms.Label();
             this.labelQuestion = new System.Windows.Forms.Label();
@@ -54,7 +73,7 @@
             this.ButtonAnswerD = new System.Windows.Forms.Button();
             this.ButtonAnswerC = new System.Windows.Forms.Button();
             this.ButtonStartQuiz = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelQuiz = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelKcal = new System.Windows.Forms.Label();
@@ -138,7 +157,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.groupBoxEffortLevel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).BeginInit();
+            this.groupBoxWeather.SuspendLayout();
+            this.groupBoxParticipants.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
             this.tableLayoutPanelAnswers.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -344,34 +369,257 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.checkBoxChooseAutomatically);
+            this.panel2.Controls.Add(this.groupBoxEffortLevel);
+            this.panel2.Controls.Add(this.groupBoxWeather);
+            this.panel2.Controls.Add(this.groupBoxParticipants);
+            this.panel2.Controls.Add(this.labelActivityResult);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(100, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 500);
             this.panel2.TabIndex = 15;
             // 
+            // checkBoxChooseAutomatically
+            // 
+            this.checkBoxChooseAutomatically.AutoSize = true;
+            this.checkBoxChooseAutomatically.Location = new System.Drawing.Point(653, 168);
+            this.checkBoxChooseAutomatically.Name = "checkBoxChooseAutomatically";
+            this.checkBoxChooseAutomatically.Size = new System.Drawing.Size(135, 17);
+            this.checkBoxChooseAutomatically.TabIndex = 20;
+            this.checkBoxChooseAutomatically.Text = "Wybierz automatycznie";
+            this.checkBoxChooseAutomatically.UseVisualStyleBackColor = true;
+            this.checkBoxChooseAutomatically.CheckedChanged += new System.EventHandler(this.CheckBoxChooseAutomatically_CheckedChanged);
+            // 
+            // groupBoxEffortLevel
+            // 
+            this.groupBoxEffortLevel.Controls.Add(this.label4);
+            this.groupBoxEffortLevel.Controls.Add(this.trackBarEffortLevel);
+            this.groupBoxEffortLevel.Controls.Add(this.radioButtonAllEffortLevels);
+            this.groupBoxEffortLevel.Location = new System.Drawing.Point(385, 207);
+            this.groupBoxEffortLevel.Name = "groupBoxEffortLevel";
+            this.groupBoxEffortLevel.Size = new System.Drawing.Size(262, 70);
+            this.groupBoxEffortLevel.TabIndex = 19;
+            this.groupBoxEffortLevel.TabStop = false;
+            this.groupBoxEffortLevel.Text = "Stopień wysiłku";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "niski    średni  wysoki";
+            // 
+            // trackBarEffortLevel
+            // 
+            this.trackBarEffortLevel.LargeChange = 1;
+            this.trackBarEffortLevel.Location = new System.Drawing.Point(17, 19);
+            this.trackBarEffortLevel.Maximum = 2;
+            this.trackBarEffortLevel.Name = "trackBarEffortLevel";
+            this.trackBarEffortLevel.Size = new System.Drawing.Size(104, 45);
+            this.trackBarEffortLevel.TabIndex = 8;
+            this.trackBarEffortLevel.Value = 1;
+            this.trackBarEffortLevel.Click += new System.EventHandler(this.TrackBarEffortLevel_Click);
+            this.trackBarEffortLevel.Scroll += new System.EventHandler(this.TrackBarEffortLevel_Scroll);
+            // 
+            // radioButtonAllEffortLevels
+            // 
+            this.radioButtonAllEffortLevels.AutoSize = true;
+            this.radioButtonAllEffortLevels.Checked = true;
+            this.radioButtonAllEffortLevels.Location = new System.Drawing.Point(172, 33);
+            this.radioButtonAllEffortLevels.Name = "radioButtonAllEffortLevels";
+            this.radioButtonAllEffortLevels.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonAllEffortLevels.TabIndex = 16;
+            this.radioButtonAllEffortLevels.TabStop = true;
+            this.radioButtonAllEffortLevels.Text = "dowolny";
+            this.radioButtonAllEffortLevels.UseVisualStyleBackColor = true;
+            this.radioButtonAllEffortLevels.CheckedChanged += new System.EventHandler(this.RadioButtonAllEffortLevels_CheckedChanged);
+            // 
+            // groupBoxWeather
+            // 
+            this.groupBoxWeather.Controls.Add(this.radioButtonGoodWeather);
+            this.groupBoxWeather.Controls.Add(this.radioButtonBadWeather);
+            this.groupBoxWeather.Controls.Add(this.radioButtonAllWeatherConditions);
+            this.groupBoxWeather.Location = new System.Drawing.Point(385, 149);
+            this.groupBoxWeather.Name = "groupBoxWeather";
+            this.groupBoxWeather.Size = new System.Drawing.Size(262, 45);
+            this.groupBoxWeather.TabIndex = 18;
+            this.groupBoxWeather.TabStop = false;
+            this.groupBoxWeather.Text = "Pogoda";
+            // 
+            // radioButtonGoodWeather
+            // 
+            this.radioButtonGoodWeather.AutoSize = true;
+            this.radioButtonGoodWeather.Location = new System.Drawing.Point(17, 19);
+            this.radioButtonGoodWeather.Name = "radioButtonGoodWeather";
+            this.radioButtonGoodWeather.Size = new System.Drawing.Size(52, 17);
+            this.radioButtonGoodWeather.TabIndex = 13;
+            this.radioButtonGoodWeather.Text = "dobra";
+            this.radioButtonGoodWeather.UseVisualStyleBackColor = true;
+            this.radioButtonGoodWeather.CheckedChanged += new System.EventHandler(this.RadioButtonGoodWeather_CheckedChanged);
+            // 
+            // radioButtonBadWeather
+            // 
+            this.radioButtonBadWeather.AutoSize = true;
+            this.radioButtonBadWeather.Location = new System.Drawing.Point(96, 19);
+            this.radioButtonBadWeather.Name = "radioButtonBadWeather";
+            this.radioButtonBadWeather.Size = new System.Drawing.Size(40, 17);
+            this.radioButtonBadWeather.TabIndex = 15;
+            this.radioButtonBadWeather.Text = "zła";
+            this.radioButtonBadWeather.UseVisualStyleBackColor = true;
+            this.radioButtonBadWeather.CheckedChanged += new System.EventHandler(this.RadioButtonBadWeather_CheckedChanged);
+            // 
+            // radioButtonAllWeatherConditions
+            // 
+            this.radioButtonAllWeatherConditions.AutoSize = true;
+            this.radioButtonAllWeatherConditions.Checked = true;
+            this.radioButtonAllWeatherConditions.Location = new System.Drawing.Point(185, 19);
+            this.radioButtonAllWeatherConditions.Name = "radioButtonAllWeatherConditions";
+            this.radioButtonAllWeatherConditions.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonAllWeatherConditions.TabIndex = 14;
+            this.radioButtonAllWeatherConditions.TabStop = true;
+            this.radioButtonAllWeatherConditions.Text = "dowolna";
+            this.radioButtonAllWeatherConditions.UseVisualStyleBackColor = true;
+            this.radioButtonAllWeatherConditions.CheckedChanged += new System.EventHandler(this.RadioButtonAllWeatherConditions_CheckedChanged);
+            // 
+            // groupBoxParticipants
+            // 
+            this.groupBoxParticipants.Controls.Add(this.radioButtonPair);
+            this.groupBoxParticipants.Controls.Add(this.radioButtonIndividual);
+            this.groupBoxParticipants.Controls.Add(this.radioButtonTeam);
+            this.groupBoxParticipants.Controls.Add(this.radioButtonAllParticipants);
+            this.groupBoxParticipants.Location = new System.Drawing.Point(385, 101);
+            this.groupBoxParticipants.Name = "groupBoxParticipants";
+            this.groupBoxParticipants.Size = new System.Drawing.Size(262, 42);
+            this.groupBoxParticipants.TabIndex = 17;
+            this.groupBoxParticipants.TabStop = false;
+            this.groupBoxParticipants.Text = "Liczba uczestników";
+            // 
+            // radioButtonPair
+            // 
+            this.radioButtonPair.AutoSize = true;
+            this.radioButtonPair.Location = new System.Drawing.Point(54, 19);
+            this.radioButtonPair.Name = "radioButtonPair";
+            this.radioButtonPair.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonPair.TabIndex = 20;
+            this.radioButtonPair.TabStop = true;
+            this.radioButtonPair.Text = "2";
+            this.radioButtonPair.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonIndividual
+            // 
+            this.radioButtonIndividual.AutoSize = true;
+            this.radioButtonIndividual.Location = new System.Drawing.Point(17, 19);
+            this.radioButtonIndividual.Name = "radioButtonIndividual";
+            this.radioButtonIndividual.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonIndividual.TabIndex = 10;
+            this.radioButtonIndividual.Text = "1";
+            this.radioButtonIndividual.UseVisualStyleBackColor = true;
+            this.radioButtonIndividual.CheckedChanged += new System.EventHandler(this.RadioButtonIndividual_CheckedChanged);
+            // 
+            // radioButtonTeam
+            // 
+            this.radioButtonTeam.AutoSize = true;
+            this.radioButtonTeam.Location = new System.Drawing.Point(96, 19);
+            this.radioButtonTeam.Name = "radioButtonTeam";
+            this.radioButtonTeam.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonTeam.TabIndex = 12;
+            this.radioButtonTeam.Text = "Więcej";
+            this.radioButtonTeam.UseVisualStyleBackColor = true;
+            this.radioButtonTeam.CheckedChanged += new System.EventHandler(this.RadioButtonTeam_CheckedChanged);
+            // 
+            // radioButtonAllParticipants
+            // 
+            this.radioButtonAllParticipants.AutoSize = true;
+            this.radioButtonAllParticipants.Checked = true;
+            this.radioButtonAllParticipants.Location = new System.Drawing.Point(185, 19);
+            this.radioButtonAllParticipants.Name = "radioButtonAllParticipants";
+            this.radioButtonAllParticipants.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonAllParticipants.TabIndex = 11;
+            this.radioButtonAllParticipants.TabStop = true;
+            this.radioButtonAllParticipants.Text = "dowolna";
+            this.radioButtonAllParticipants.UseVisualStyleBackColor = true;
+            this.radioButtonAllParticipants.CheckedChanged += new System.EventHandler(this.RadioButtonAllParticipants_CheckedChanged);
+            // 
+            // labelActivityResult
+            // 
+            this.labelActivityResult.AutoSize = true;
+            this.labelActivityResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelActivityResult.Location = new System.Drawing.Point(444, 376);
+            this.labelActivityResult.Name = "labelActivityResult";
+            this.labelActivityResult.Size = new System.Drawing.Size(108, 29);
+            this.labelActivityResult.TabIndex = 7;
+            this.labelActivityResult.Text = "<result>";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(418, 474);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Następna propozycja";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(391, 121);
+            this.label5.Location = new System.Drawing.Point(336, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 42);
+            this.label5.Size = new System.Drawing.Size(327, 42);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Aktywność";
+            this.label5.Text = "Aktywność na dziś";
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.pictureBoxTime);
+            this.panel3.Controls.Add(this.pictureBoxTimeBorder);
+            this.panel3.Controls.Add(this.labelNumber);
             this.panel3.Controls.Add(this.ButtonFinishQuiz);
             this.panel3.Controls.Add(this.labelQuizResult);
             this.panel3.Controls.Add(this.labelQuestion);
             this.panel3.Controls.Add(this.tableLayoutPanelAnswers);
             this.panel3.Controls.Add(this.ButtonStartQuiz);
-            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.labelQuiz);
             this.panel3.Location = new System.Drawing.Point(100, 100);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 500);
             this.panel3.TabIndex = 16;
+            // 
+            // pictureBoxTime
+            // 
+            this.pictureBoxTime.Image = global::app.Properties.Resources.timeScale;
+            this.pictureBoxTime.Location = new System.Drawing.Point(250, 100);
+            this.pictureBoxTime.Name = "pictureBoxTime";
+            this.pictureBoxTime.Size = new System.Drawing.Size(498, 30);
+            this.pictureBoxTime.TabIndex = 8;
+            this.pictureBoxTime.TabStop = false;
+            this.pictureBoxTime.Visible = false;
+            // 
+            // pictureBoxTimeBorder
+            // 
+            this.pictureBoxTimeBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.pictureBoxTimeBorder.Location = new System.Drawing.Point(248, 98);
+            this.pictureBoxTimeBorder.Name = "pictureBoxTimeBorder";
+            this.pictureBoxTimeBorder.Size = new System.Drawing.Size(502, 34);
+            this.pictureBoxTimeBorder.TabIndex = 9;
+            this.pictureBoxTimeBorder.TabStop = false;
+            this.pictureBoxTimeBorder.Visible = false;
+            // 
+            // labelNumber
+            // 
+            this.labelNumber.AutoSize = true;
+            this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumber.Location = new System.Drawing.Point(65, 100);
+            this.labelNumber.Name = "labelNumber";
+            this.labelNumber.Size = new System.Drawing.Size(52, 31);
+            this.labelNumber.TabIndex = 7;
+            this.labelNumber.Text = "1/5\r\n";
+            this.labelNumber.Visible = false;
             // 
             // ButtonFinishQuiz
             // 
@@ -399,6 +647,7 @@
             // 
             // labelQuestion
             // 
+            this.labelQuestion.BackColor = System.Drawing.Color.Transparent;
             this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuestion.Location = new System.Drawing.Point(100, 110);
             this.labelQuestion.Name = "labelQuestion";
@@ -422,22 +671,23 @@
             this.tableLayoutPanelAnswers.RowCount = 2;
             this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(1000, 226);
+            this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(1000, 228);
             this.tableLayoutPanelAnswers.TabIndex = 3;
             this.tableLayoutPanelAnswers.Visible = false;
             // 
             // ButtonAnswerA
             // 
-            this.ButtonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
+            this.ButtonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerA.Enabled = false;
             this.ButtonAnswerA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ButtonAnswerA.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerA.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonAnswerA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonAnswerA.ForeColor = System.Drawing.Color.Black;
             this.ButtonAnswerA.Location = new System.Drawing.Point(0, 0);
             this.ButtonAnswerA.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAnswerA.Name = "ButtonAnswerA";
-            this.ButtonAnswerA.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerA.Size = new System.Drawing.Size(499, 113);
             this.ButtonAnswerA.TabIndex = 0;
             this.ButtonAnswerA.Text = "A";
             this.ButtonAnswerA.UseVisualStyleBackColor = false;
@@ -446,16 +696,17 @@
             // 
             // ButtonAnswerB
             // 
-            this.ButtonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
+            this.ButtonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerB.Enabled = false;
             this.ButtonAnswerB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ButtonAnswerB.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerB.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonAnswerB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonAnswerB.ForeColor = System.Drawing.Color.Black;
             this.ButtonAnswerB.Location = new System.Drawing.Point(500, 0);
             this.ButtonAnswerB.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAnswerB.Name = "ButtonAnswerB";
-            this.ButtonAnswerB.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerB.Size = new System.Drawing.Size(499, 113);
             this.ButtonAnswerB.TabIndex = 1;
             this.ButtonAnswerB.Text = "B";
             this.ButtonAnswerB.UseVisualStyleBackColor = false;
@@ -464,16 +715,17 @@
             // 
             // ButtonAnswerD
             // 
-            this.ButtonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(197)))), ((int)(((byte)(49)))));
+            this.ButtonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerD.Enabled = false;
             this.ButtonAnswerD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ButtonAnswerD.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerD.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonAnswerD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonAnswerD.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAnswerD.Location = new System.Drawing.Point(500, 113);
+            this.ButtonAnswerD.Location = new System.Drawing.Point(500, 114);
             this.ButtonAnswerD.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAnswerD.Name = "ButtonAnswerD";
-            this.ButtonAnswerD.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerD.Size = new System.Drawing.Size(499, 113);
             this.ButtonAnswerD.TabIndex = 3;
             this.ButtonAnswerD.Text = "D";
             this.ButtonAnswerD.UseVisualStyleBackColor = false;
@@ -482,16 +734,17 @@
             // 
             // ButtonAnswerC
             // 
-            this.ButtonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.ButtonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.ButtonAnswerC.Enabled = false;
             this.ButtonAnswerC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ButtonAnswerC.FlatAppearance.BorderSize = 0;
+            this.ButtonAnswerC.FlatAppearance.BorderSize = 2;
             this.ButtonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonAnswerC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonAnswerC.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAnswerC.Location = new System.Drawing.Point(0, 113);
+            this.ButtonAnswerC.Location = new System.Drawing.Point(0, 114);
             this.ButtonAnswerC.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonAnswerC.Name = "ButtonAnswerC";
-            this.ButtonAnswerC.Size = new System.Drawing.Size(500, 113);
+            this.ButtonAnswerC.Size = new System.Drawing.Size(499, 113);
             this.ButtonAnswerC.TabIndex = 2;
             this.ButtonAnswerC.Text = "C";
             this.ButtonAnswerC.UseVisualStyleBackColor = false;
@@ -510,16 +763,16 @@
             this.ButtonStartQuiz.UseVisualStyleBackColor = true;
             this.ButtonStartQuiz.Click += new System.EventHandler(this.ButtonStartQuiz_Click);
             // 
-            // label4
+            // labelQuiz
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(432, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 55);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Quiz";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelQuiz.AutoSize = true;
+            this.labelQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuiz.Location = new System.Drawing.Point(439, 30);
+            this.labelQuiz.Name = "labelQuiz";
+            this.labelQuiz.Size = new System.Drawing.Size(122, 55);
+            this.labelQuiz.TabIndex = 1;
+            this.labelQuiz.Text = "Quiz";
+            this.labelQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -781,7 +1034,7 @@
             this.trackBarActivityLevel.Size = new System.Drawing.Size(442, 45);
             this.trackBarActivityLevel.TabIndex = 2;
             this.trackBarActivityLevel.Value = 2;
-            this.trackBarActivityLevel.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
+            this.trackBarActivityLevel.Scroll += new System.EventHandler(this.TrackBarActivityLevel_Scroll);
             // 
             // label3
             // 
@@ -1349,7 +1602,7 @@
             this.buttonMinimize.Size = new System.Drawing.Size(40, 40);
             this.buttonMinimize.TabIndex = 11;
             this.buttonMinimize.UseVisualStyleBackColor = false;
-            this.buttonMinimize.Click += new System.EventHandler(this.Button4_Click);
+            this.buttonMinimize.Click += new System.EventHandler(this.ButtonMinimizeClick);
             // 
             // buttonClose
             // 
@@ -1519,6 +1772,7 @@
             this.SurveyConfirmButton.UseVisualStyleBackColor = true;
             this.SurveyConfirmButton.Visible = false;
             this.SurveyConfirmButton.Click += new System.EventHandler(this.SurveyAnswerButtonClicked);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // Hackheroes
             // 
@@ -1550,8 +1804,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBoxEffortLevel.ResumeLayout(false);
+            this.groupBoxEffortLevel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).EndInit();
+            this.groupBoxWeather.ResumeLayout(false);
+            this.groupBoxWeather.PerformLayout();
+            this.groupBoxParticipants.ResumeLayout(false);
+            this.groupBoxParticipants.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).EndInit();
             this.tableLayoutPanelAnswers.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1593,7 +1856,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelQuiz;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonReturn;
@@ -1680,5 +1943,24 @@
         private System.Windows.Forms.TextBox SurveyTextInputField;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button SurveyConfirmButton;
+        private System.Windows.Forms.Label labelNumber;
+        private System.Windows.Forms.PictureBox pictureBoxTime;
+        private System.Windows.Forms.PictureBox pictureBoxTimeBorder;
+        private System.Windows.Forms.Label labelActivityResult;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TrackBar trackBarEffortLevel;
+        private System.Windows.Forms.RadioButton radioButtonAllEffortLevels;
+        private System.Windows.Forms.RadioButton radioButtonBadWeather;
+        private System.Windows.Forms.RadioButton radioButtonGoodWeather;
+        private System.Windows.Forms.RadioButton radioButtonTeam;
+        private System.Windows.Forms.RadioButton radioButtonAllParticipants;
+        private System.Windows.Forms.RadioButton radioButtonIndividual;
+        private System.Windows.Forms.GroupBox groupBoxParticipants;
+        private System.Windows.Forms.GroupBox groupBoxEffortLevel;
+        private System.Windows.Forms.GroupBox groupBoxWeather;
+        private System.Windows.Forms.CheckBox checkBoxChooseAutomatically;
+        private System.Windows.Forms.RadioButton radioButtonPair;
+        private System.Windows.Forms.RadioButton radioButtonAllWeatherConditions;
     }
 }
