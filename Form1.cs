@@ -269,7 +269,6 @@ namespace app
             radioButtonAllParticipants.Checked = true;
             radioButtonAllWeatherConditions.Checked = true;
             radioButtonAllEffortLevels.Checked = true;
-            groupBoxWeather.Enabled = !checkBoxChooseAutomatically.Checked;
             UpdateResultOfMatching();
         }
 
@@ -980,51 +979,9 @@ namespace app
             UpdateResultOfMatching();
         }
 
-        private void RadioButtonTeam_CheckedChanged(object sender, EventArgs e)
+        private void AllRadioButtonsInActivitySuggest_Click(object sender, EventArgs e)
         {
             ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void RadioButtonAllParticipants_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void RadioButtonGoodWeather_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void RadioButtonBadWeather_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void RadioButtonAllWeatherConditions_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void RadioButtonAllEffortLevels_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void RadioButtonIndividual_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void CheckBoxChooseAutomatically_CheckedChanged(object sender, EventArgs e)
-        {
-            groupBoxWeather.Enabled = !checkBoxChooseAutomatically.Checked;
             UpdateResultOfMatching();
         }
     }

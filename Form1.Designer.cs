@@ -43,12 +43,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBoxChooseAutomatically = new System.Windows.Forms.CheckBox();
             this.groupBoxEffortLevel = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.trackBarEffortLevel = new System.Windows.Forms.TrackBar();
             this.radioButtonAllEffortLevels = new System.Windows.Forms.RadioButton();
             this.groupBoxWeather = new System.Windows.Forms.GroupBox();
+            this.radioButtonAutoWeather = new System.Windows.Forms.RadioButton();
             this.radioButtonGoodWeather = new System.Windows.Forms.RadioButton();
             this.radioButtonBadWeather = new System.Windows.Forms.RadioButton();
             this.radioButtonAllWeatherConditions = new System.Windows.Forms.RadioButton();
@@ -370,7 +370,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.checkBoxChooseAutomatically);
             this.panel2.Controls.Add(this.groupBoxEffortLevel);
             this.panel2.Controls.Add(this.groupBoxWeather);
             this.panel2.Controls.Add(this.groupBoxParticipants);
@@ -381,17 +380,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 500);
             this.panel2.TabIndex = 15;
-            // 
-            // checkBoxChooseAutomatically
-            // 
-            this.checkBoxChooseAutomatically.AutoSize = true;
-            this.checkBoxChooseAutomatically.Location = new System.Drawing.Point(653, 168);
-            this.checkBoxChooseAutomatically.Name = "checkBoxChooseAutomatically";
-            this.checkBoxChooseAutomatically.Size = new System.Drawing.Size(135, 17);
-            this.checkBoxChooseAutomatically.TabIndex = 20;
-            this.checkBoxChooseAutomatically.Text = "Wybierz automatycznie";
-            this.checkBoxChooseAutomatically.UseVisualStyleBackColor = true;
-            this.checkBoxChooseAutomatically.CheckedChanged += new System.EventHandler(this.CheckBoxChooseAutomatically_CheckedChanged);
             // 
             // groupBoxEffortLevel
             // 
@@ -437,10 +425,11 @@
             this.radioButtonAllEffortLevels.TabStop = true;
             this.radioButtonAllEffortLevels.Text = "dowolny";
             this.radioButtonAllEffortLevels.UseVisualStyleBackColor = true;
-            this.radioButtonAllEffortLevels.CheckedChanged += new System.EventHandler(this.RadioButtonAllEffortLevels_CheckedChanged);
+            this.radioButtonAllEffortLevels.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
             // 
             // groupBoxWeather
             // 
+            this.groupBoxWeather.Controls.Add(this.radioButtonAutoWeather);
             this.groupBoxWeather.Controls.Add(this.radioButtonGoodWeather);
             this.groupBoxWeather.Controls.Add(this.radioButtonBadWeather);
             this.groupBoxWeather.Controls.Add(this.radioButtonAllWeatherConditions);
@@ -451,6 +440,18 @@
             this.groupBoxWeather.TabStop = false;
             this.groupBoxWeather.Text = "Pogoda";
             // 
+            // radioButtonAutoWeather
+            // 
+            this.radioButtonAutoWeather.AutoSize = true;
+            this.radioButtonAutoWeather.Location = new System.Drawing.Point(115, 19);
+            this.radioButtonAutoWeather.Name = "radioButtonAutoWeather";
+            this.radioButtonAutoWeather.Size = new System.Drawing.Size(66, 17);
+            this.radioButtonAutoWeather.TabIndex = 20;
+            this.radioButtonAutoWeather.TabStop = true;
+            this.radioButtonAutoWeather.Text = "aktualna";
+            this.radioButtonAutoWeather.UseVisualStyleBackColor = true;
+            this.radioButtonAutoWeather.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            // 
             // radioButtonGoodWeather
             // 
             this.radioButtonGoodWeather.AutoSize = true;
@@ -460,18 +461,18 @@
             this.radioButtonGoodWeather.TabIndex = 13;
             this.radioButtonGoodWeather.Text = "dobra";
             this.radioButtonGoodWeather.UseVisualStyleBackColor = true;
-            this.radioButtonGoodWeather.CheckedChanged += new System.EventHandler(this.RadioButtonGoodWeather_CheckedChanged);
+            this.radioButtonGoodWeather.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
             // 
             // radioButtonBadWeather
             // 
             this.radioButtonBadWeather.AutoSize = true;
-            this.radioButtonBadWeather.Location = new System.Drawing.Point(96, 19);
+            this.radioButtonBadWeather.Location = new System.Drawing.Point(69, 19);
             this.radioButtonBadWeather.Name = "radioButtonBadWeather";
             this.radioButtonBadWeather.Size = new System.Drawing.Size(40, 17);
             this.radioButtonBadWeather.TabIndex = 15;
             this.radioButtonBadWeather.Text = "zła";
             this.radioButtonBadWeather.UseVisualStyleBackColor = true;
-            this.radioButtonBadWeather.CheckedChanged += new System.EventHandler(this.RadioButtonBadWeather_CheckedChanged);
+            this.radioButtonBadWeather.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
             // 
             // radioButtonAllWeatherConditions
             // 
@@ -484,7 +485,7 @@
             this.radioButtonAllWeatherConditions.TabStop = true;
             this.radioButtonAllWeatherConditions.Text = "dowolna";
             this.radioButtonAllWeatherConditions.UseVisualStyleBackColor = true;
-            this.radioButtonAllWeatherConditions.CheckedChanged += new System.EventHandler(this.RadioButtonAllWeatherConditions_CheckedChanged);
+            this.radioButtonAllWeatherConditions.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
             // 
             // groupBoxParticipants
             // 
@@ -509,6 +510,7 @@
             this.radioButtonPair.TabStop = true;
             this.radioButtonPair.Text = "2";
             this.radioButtonPair.UseVisualStyleBackColor = true;
+            this.radioButtonPair.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
             // 
             // radioButtonIndividual
             // 
@@ -519,7 +521,7 @@
             this.radioButtonIndividual.TabIndex = 10;
             this.radioButtonIndividual.Text = "1";
             this.radioButtonIndividual.UseVisualStyleBackColor = true;
-            this.radioButtonIndividual.CheckedChanged += new System.EventHandler(this.RadioButtonIndividual_CheckedChanged);
+            this.radioButtonIndividual.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
             // 
             // radioButtonTeam
             // 
@@ -530,7 +532,7 @@
             this.radioButtonTeam.TabIndex = 12;
             this.radioButtonTeam.Text = "Więcej";
             this.radioButtonTeam.UseVisualStyleBackColor = true;
-            this.radioButtonTeam.CheckedChanged += new System.EventHandler(this.RadioButtonTeam_CheckedChanged);
+            this.radioButtonTeam.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
             // 
             // radioButtonAllParticipants
             // 
@@ -543,7 +545,7 @@
             this.radioButtonAllParticipants.TabStop = true;
             this.radioButtonAllParticipants.Text = "dowolna";
             this.radioButtonAllParticipants.UseVisualStyleBackColor = true;
-            this.radioButtonAllParticipants.CheckedChanged += new System.EventHandler(this.RadioButtonAllParticipants_CheckedChanged);
+            this.radioButtonAllParticipants.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
             // 
             // labelActivityResult
             // 
@@ -1792,12 +1794,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
             this.ControlBox = false;
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.buttonMinimize);
@@ -1971,9 +1973,9 @@
         private System.Windows.Forms.GroupBox groupBoxParticipants;
         private System.Windows.Forms.GroupBox groupBoxEffortLevel;
         private System.Windows.Forms.GroupBox groupBoxWeather;
-        private System.Windows.Forms.CheckBox checkBoxChooseAutomatically;
         private System.Windows.Forms.RadioButton radioButtonPair;
         private System.Windows.Forms.RadioButton radioButtonAllWeatherConditions;
         private System.Windows.Forms.Label labelSurveyQuestionNumber;
+        private System.Windows.Forms.RadioButton radioButtonAutoWeather;
     }
 }
