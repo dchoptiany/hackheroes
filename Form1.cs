@@ -14,9 +14,33 @@ namespace app
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
 
+        private readonly Color blue1 = Color.FromArgb(0, 168, 255);
+        private readonly Color purple1 = Color.FromArgb(156, 136, 255);
+        private readonly Color darkblue1 = Color.FromArgb(72, 126, 176);
+        private readonly Color red1 = Color.FromArgb(232, 65, 24);
+        private readonly Color green1 = Color.FromArgb(76, 209, 55);
+        private readonly Color yellow1 = Color.FromArgb(251, 197, 49);
+        private readonly Color white1 = Color.FromArgb(220, 221, 225);
+
+
+
         public Hackheroes()
         {
             InitializeComponent();
+            InitializeColors();
+        }
+
+        private void InitializeColors()
+        {
+            BackColor = white1;
+            panel0.BackColor = white1;
+
+            buttonBMI.BackColor = red1;
+            buttonActivity.BackColor = blue1;
+            buttonQuiz.BackColor = yellow1;
+            buttonCalculator.BackColor = purple1;
+            buttonSurvey.BackColor = green1;
+            buttonProfile.BackColor = darkblue1;
         }
 
         private void DisableQuiz()
