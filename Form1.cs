@@ -13,7 +13,7 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
-        Survey survey;
+        private Survey survey;
 
         public Hackheroes()
         {
@@ -286,13 +286,13 @@ namespace app
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            AnswerTablePanel.Visible = false;
-            FlowSurveysPanel.Visible = true;
-            FinishLabel.Visible = false;
-            SurveyTitle.Text = "Ankiety diagnostyczne";
-            Center(SurveyTitle);
-            SurveyQuestion.Visible = false;
-            SurveyQuestionNumberLabel.Visible = false;
+            tablePanelAnswer.Visible = false;
+            flowPanelSurveys.Visible = true;
+            labelFinish.Visible = false;
+            labelSurveyTitle.Text = "Ankiety diagnostyczne";
+            Center(labelSurveyTitle);
+            labelSurveyQuestion.Visible = false;
+            labelSurveyQuestionNumber.Visible = false;
             ChangePanel(5);
         }
 
@@ -781,11 +781,11 @@ namespace app
         }
         private void SetupSurvey()
         {
-            FlowSurveysPanel.Visible = false;
-            AnswerTablePanel.Visible = true;
-            SurveyTitle.Text = survey.title;
+            flowPanelSurveys.Visible = false;
+            tablePanelAnswer.Visible = true;
+            labelSurveyTitle.Text = survey.title;
 
-            Center(SurveyTitle);
+            Center(labelSurveyTitle);
         }
 
         private void AddSurveyQuestion(string questionTitle, Survey.QuestionType questionType)
@@ -795,53 +795,53 @@ namespace app
 
         private void SetupSurveyQuestion()
         {
-            SurveyQuestion.Visible = true;
-            SurveyQuestionNumberLabel.Visible = true;
+            labelSurveyQuestion.Visible = true;
+            labelSurveyQuestionNumber.Visible = true;
             NextSurveyQuestion();
         }
 
         private void NextSurveyQuestion()
         {
             int currentSurverQuestionCount = survey.currentQuestionIndex + 1;
-            SurveyQuestionNumberLabel.Text = "Pytanie " + currentSurverQuestionCount.ToString() + "/" + survey.questions.Count.ToString();
+            labelSurveyQuestionNumber.Text = "Pytanie " + currentSurverQuestionCount.ToString() + "/" + survey.questions.Count.ToString();
             if(survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.YES_OR_NO)
             {
-                SurveyAButton.Visible = false;
-                SurveyBButton.Visible = false;
-                SurveyYesButton.Visible = true;
-                SurveyNoButton.Visible = true;
-                SurveyTextInputField.Visible = false;
-                SurveyConfirmButton.Visible = false;
+                buttonSurveyA.Visible = false;
+                buttonSurveyB.Visible = false;
+                buttonSurveyYes.Visible = true;
+                buttonSurveyNo.Visible = true;
+                textBoxSurveyText.Visible = false;
+                buttonSurveyConfirm.Visible = false;
 
-                SurveyYesButton.Text = "Tak";
-                SurveyNoButton.Text = "Nie";
+                buttonSurveyYes.Text = "Tak";
+                buttonSurveyNo.Text = "Nie";
             }
             else if (survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.ABCD)
             {
-                SurveyAButton.Visible = true;
-                SurveyBButton.Visible = true;
-                SurveyYesButton.Visible = true;
-                SurveyNoButton.Visible = true;
-                SurveyTextInputField.Visible = false;
-                SurveyConfirmButton.Visible = false;
+                buttonSurveyA.Visible = true;
+                buttonSurveyB.Visible = true;
+                buttonSurveyYes.Visible = true;
+                buttonSurveyNo.Visible = true;
+                textBoxSurveyText.Visible = false;
+                buttonSurveyConfirm.Visible = false;
 
-                SurveyAButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[0].Key;
-                SurveyBButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[1].Key;
-                SurveyYesButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[2].Key;
-                SurveyNoButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[3].Key;
+                buttonSurveyA.Text = survey.questions[survey.currentQuestionIndex].answersValues[0].Key;
+                buttonSurveyB.Text = survey.questions[survey.currentQuestionIndex].answersValues[1].Key;
+                buttonSurveyYes.Text = survey.questions[survey.currentQuestionIndex].answersValues[2].Key;
+                buttonSurveyNo.Text = survey.questions[survey.currentQuestionIndex].answersValues[3].Key;
             }
             else if(survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.INPUT)
             {
-                SurveyAButton.Visible = false;
-                SurveyBButton.Visible = false;
-                SurveyYesButton.Visible = false;
-                SurveyNoButton.Visible = false;
-                SurveyTextInputField.Visible = true;
-                SurveyConfirmButton.Visible = true;
+                buttonSurveyA.Visible = false;
+                buttonSurveyB.Visible = false;
+                buttonSurveyYes.Visible = false;
+                buttonSurveyNo.Visible = false;
+                textBoxSurveyText.Visible = true;
+                buttonSurveyConfirm.Visible = true;
             }
-            SurveyQuestion.Text = survey.questions[survey.currentQuestionIndex].questionTitle;
-            Center(SurveyQuestionNumberLabel);
-            Center(SurveyQuestion);
+            labelSurveyQuestion.Text = survey.questions[survey.currentQuestionIndex].questionTitle;
+            Center(labelSurveyQuestionNumber);
+            Center(labelSurveyQuestion);
         }
 
         private void ButtonActivityLevelSurvey_Click(object sender, EventArgs e)
@@ -864,9 +864,9 @@ namespace app
             {
                 try
                 {          
-                    if (Convert.ToInt32(SurveyTextInputField.Text) >= 0 && Convert.ToInt32(SurveyTextInputField.Text) <= survey.questions[survey.currentQuestionIndex].maxInputValue)
+                    if (Convert.ToInt32(textBoxSurveyText.Text) >= 0 && Convert.ToInt32(textBoxSurveyText.Text) <= survey.questions[survey.currentQuestionIndex].maxInputValue)
                     {
-                        survey.surveyAnswersInt.Add(Convert.ToUInt32(SurveyTextInputField.Text));
+                        survey.surveyAnswersInt.Add(Convert.ToUInt32(textBoxSurveyText.Text));
                         correctValue = true;
                     }
                     else
@@ -905,13 +905,13 @@ namespace app
 
         private void FinishSurvey()
         {
-            FinishLabel.Visible = true;
-            FlowSurveysPanel.Visible = false;
-            AnswerTablePanel.Visible = false;
-            SurveyConfirmButton.Visible = false;
-            SurveyTextInputField.Visible = false;
-            SurveyQuestion.Visible = false;
-            SurveyQuestionNumberLabel.Visible = false;
+            labelFinish.Visible = true;
+            flowPanelSurveys.Visible = false;
+            tablePanelAnswer.Visible = false;
+            buttonSurveyConfirm.Visible = false;
+            textBoxSurveyText.Visible = false;
+            labelSurveyQuestion.Visible = false;
+            labelSurveyQuestionNumber.Visible = false;
             if (survey.title == "Poziom aktywności fizycznej")
             {
                 if (survey.surveyAnswersInt[0] == 0)
@@ -926,10 +926,10 @@ namespace app
                 Program.users[Program.currentUserIndex].dailyMovementLevel = survey.surveyAnswersInt[2];
 
                 Calculator.CalculateActivityLevel(Program.users[Program.currentUserIndex]);
-                FinishLabel.Text = "Poziom aktywności wynosi " + Program.users[Program.currentUserIndex].activityLevel.ToString();
+                labelFinish.Text = "Poziom aktywności wynosi " + Program.users[Program.currentUserIndex].activityLevel.ToString();
             }       
             
-            Center(FinishLabel);
+            Center(labelFinish);
         }
         private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
         {

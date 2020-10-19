@@ -42,14 +42,14 @@ namespace app
 
         public static void CalculateActivityLevel(User user)
         {
-            user.activityLevel = 1.1f;
+            float activityLevel = 1.1f;
             if (user.physicalJob)
             {
-                user.activityLevel += 0.1f;
+                activityLevel += 0.1f;
             }
-            user.activityLevel += user.trainingsInWeek * 0.05f;
-            user.activityLevel += user.dailyMovementLevel * 0.025f;
-
+            activityLevel += user.trainingsInWeek * 0.05f;
+            activityLevel += user.dailyMovementLevel * 0.025f;
+            user.activityLevel = activityLevel;
         }
     }
 }
