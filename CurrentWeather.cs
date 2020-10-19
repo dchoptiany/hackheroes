@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace app
 {
-    public class CurrentWeatherInfo
+    public class CurrentWeather
     {
         public class Coord
         {
@@ -70,18 +70,19 @@ namespace app
             public string name { get; set; }
             public int cod { get; set; }
         }
+    
+        public float GetTemperature(string city)
+        {
+            float temp = 0f;
 
-    public int GetTemperature(string city)
-            {
             using (WebClient web = new WebClient())
             {
                 string url = string.Format("http://api.openweathermap.org/data/2.5/weather?q={0}&units=metric&appid=aa768c8b184a85a2e18c5b8fa9736598", city);
                 string json = web.DownloadString(url);
                 var w = JsonSerializer.Deserialize<Root>(json);
-                Console.WriteLine(w.main.temp - 273.15);
+                temp = Convert.ToSingle(w.main.temp);
             }
-                int temp = -9999;
-                return temp; 
-            }
+            return temp;
+        }
     }
 }

@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="ActivityMatcher.cs" />
+    <Compile Include="CurrentWeather.cs" />
     <Compile Include="Quiz.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

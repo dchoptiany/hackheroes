@@ -14,6 +14,7 @@ namespace app
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
         private Survey survey;
+        private CurrentWeather currentWeather = new CurrentWeather();
 
         public Hackheroes()
         {
@@ -102,6 +103,11 @@ namespace app
             }
         }
 
+        private void UpdateLabelAutoWeatherVisibility()
+        {
+            labelAutoWeather.Visible = radioButtonAutoWeather.Checked;
+        }
+
         private void UpdateResultOfMatching()
         {
             Participants participants = Participants.Any;
@@ -117,23 +123,35 @@ namespace app
             {
                 participants = Participants.More;
             }
-            // TO DO: getting weather from API and decide if good or bad
-            /*
-             * if(checkBoxChooseAutomatically.Checked)
-             * {
-             *      if(weather == rainy || weather == snowy || weather == windy || temperature < 15)
-             *      {
-             *          goodWeather = Weather.Bad;
-             *      }
-             *      else
-             *      {
-             *          goodWeather = Weather.Good;
-             *      }
-             * }
-             */
+
 
             Weather weather = Weather.Any;
-            if (radioButtonGoodWeather.Checked)
+            if (radioButtonAutoWeather.Checked)
+            {
+                string city = textBoxCity.Text;
+                float temperature = currentWeather.GetTemperature(city);
+                if (temperature > 15f && temperature < 30f)
+                {
+                    weather = Weather.Good;
+                }
+                else
+                {
+                    weather = Weather.Bad;
+                }
+                string weatherType = "złą";
+                if(weather == Weather.Good)
+                {
+                    weatherType = "dobrą";
+                }
+
+                string weatherInfo = string.Format("Temperatura powietrza w {0} wynosi {1}, więc uznano ją za {2}.", city, temperature, weatherType);
+
+                labelAutoWeather.Text = weatherInfo;
+                Center(labelAutoWeather);
+                UpdateLabelAutoWeatherVisibility();
+
+            }
+            else if (radioButtonGoodWeather.Checked)
             {
                 weather = Weather.Good;
             }
@@ -983,6 +1001,7 @@ namespace app
         {
             ActivityMatcher.approvedSports.Clear();
             UpdateResultOfMatching();
+            UpdateLabelAutoWeatherVisibility();
         }
     }
 }

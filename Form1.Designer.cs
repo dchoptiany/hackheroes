@@ -43,6 +43,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.labelAutoWeather = new System.Windows.Forms.Label();
             this.groupBoxEffortLevel = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.trackBarEffortLevel = new System.Windows.Forms.TrackBar();
@@ -370,6 +372,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxCity);
+            this.panel2.Controls.Add(this.labelAutoWeather);
             this.panel2.Controls.Add(this.groupBoxEffortLevel);
             this.panel2.Controls.Add(this.groupBoxWeather);
             this.panel2.Controls.Add(this.groupBoxParticipants);
@@ -381,12 +385,30 @@
             this.panel2.Size = new System.Drawing.Size(1000, 500);
             this.panel2.TabIndex = 15;
             // 
+            // textBoxCity
+            // 
+            this.textBoxCity.Location = new System.Drawing.Point(653, 166);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCity.TabIndex = 21;
+            this.textBoxCity.Text = "Oława";
+            // 
+            // labelAutoWeather
+            // 
+            this.labelAutoWeather.AutoSize = true;
+            this.labelAutoWeather.Location = new System.Drawing.Point(318, 202);
+            this.labelAutoWeather.Name = "labelAutoWeather";
+            this.labelAutoWeather.Size = new System.Drawing.Size(420, 13);
+            this.labelAutoWeather.TabIndex = 20;
+            this.labelAutoWeather.Text = "Temperatura powietrza w MIASTO wynosi TEMPERATURA, więc uznano ją za WYNIK";
+            this.labelAutoWeather.Visible = false;
+            // 
             // groupBoxEffortLevel
             // 
             this.groupBoxEffortLevel.Controls.Add(this.label4);
             this.groupBoxEffortLevel.Controls.Add(this.trackBarEffortLevel);
             this.groupBoxEffortLevel.Controls.Add(this.radioButtonAllEffortLevels);
-            this.groupBoxEffortLevel.Location = new System.Drawing.Point(385, 207);
+            this.groupBoxEffortLevel.Location = new System.Drawing.Point(385, 222);
             this.groupBoxEffortLevel.Name = "groupBoxEffortLevel";
             this.groupBoxEffortLevel.Size = new System.Drawing.Size(262, 70);
             this.groupBoxEffortLevel.TabIndex = 19;
@@ -1977,5 +1999,7 @@
         private System.Windows.Forms.RadioButton radioButtonAllWeatherConditions;
         private System.Windows.Forms.Label labelSurveyQuestionNumber;
         private System.Windows.Forms.RadioButton radioButtonAutoWeather;
+        private System.Windows.Forms.Label labelAutoWeather;
+        private System.Windows.Forms.TextBox textBoxCity;
     }
 }
