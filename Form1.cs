@@ -779,6 +779,7 @@ namespace app
             Program.users[Program.currentUserIndex].activityLevel = 1.1f + 0.1625f * trackBarActivityLevel.Value;
             UpdateMacro();
         }
+
         private void SetupSurvey()
         {
             flowPanelSurveys.Visible = false;
@@ -786,11 +787,6 @@ namespace app
             labelSurveyTitle.Text = survey.title;
 
             Center(labelSurveyTitle);
-        }
-
-        private void AddSurveyQuestion(string questionTitle, Survey.QuestionType questionType)
-        {
-            survey.AddQuestion(questionTitle, questionType);
         }
 
         private void SetupSurveyQuestion()
@@ -804,40 +800,59 @@ namespace app
         {
             int currentSurverQuestionCount = survey.currentQuestionIndex + 1;
             labelSurveyQuestionNumber.Text = "Pytanie " + currentSurverQuestionCount.ToString() + "/" + survey.questions.Count.ToString();
-            if(survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.YES_OR_NO)
+            switch(survey.questions[survey.currentQuestionIndex].questionType)
             {
-                buttonSurveyA.Visible = false;
-                buttonSurveyB.Visible = false;
-                buttonSurveyYes.Visible = true;
-                buttonSurveyNo.Visible = true;
-                textBoxSurveyText.Visible = false;
-                buttonSurveyConfirm.Visible = false;
+                case Survey.QuestionType.YES_OR_NO:
+                    {
+                        buttonSurveyA.Visible = false;
+                        buttonSurveyB.Visible = false;
+                        buttonSurveyYes.Visible = true;
+                        buttonSurveyNo.Visible = true;
+                        textBoxSurveyText.Visible = false;
+                        buttonSurveyConfirm.Visible = false;
 
-                buttonSurveyYes.Text = "Tak";
-                buttonSurveyNo.Text = "Nie";
-            }
-            else if (survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.ABCD)
-            {
-                buttonSurveyA.Visible = true;
-                buttonSurveyB.Visible = true;
-                buttonSurveyYes.Visible = true;
-                buttonSurveyNo.Visible = true;
-                textBoxSurveyText.Visible = false;
-                buttonSurveyConfirm.Visible = false;
+                        buttonSurveyYes.Text = "Tak";
+                        buttonSurveyNo.Text = "Nie";
+                        break;
+                    }
+                case Survey.QuestionType.ABCD:
+                    {
+                        buttonSurveyA.Visible = true;
+                        buttonSurveyB.Visible = true;
+                        buttonSurveyYes.Visible = true;
+                        buttonSurveyNo.Visible = true;
+                        textBoxSurveyText.Visible = false;
+                        buttonSurveyConfirm.Visible = false;
 
-                buttonSurveyA.Text = survey.questions[survey.currentQuestionIndex].answersValues[0].Key;
-                buttonSurveyB.Text = survey.questions[survey.currentQuestionIndex].answersValues[1].Key;
-                buttonSurveyYes.Text = survey.questions[survey.currentQuestionIndex].answersValues[2].Key;
-                buttonSurveyNo.Text = survey.questions[survey.currentQuestionIndex].answersValues[3].Key;
-            }
-            else if(survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.INPUT)
-            {
-                buttonSurveyA.Visible = false;
-                buttonSurveyB.Visible = false;
-                buttonSurveyYes.Visible = false;
-                buttonSurveyNo.Visible = false;
-                textBoxSurveyText.Visible = true;
-                buttonSurveyConfirm.Visible = true;
+                        buttonSurveyA.Text = survey.questions[survey.currentQuestionIndex].answersValues[0].Key;
+                        buttonSurveyB.Text = survey.questions[survey.currentQuestionIndex].answersValues[1].Key;
+                        buttonSurveyYes.Text = survey.questions[survey.currentQuestionIndex].answersValues[2].Key;
+                        buttonSurveyNo.Text = survey.questions[survey.currentQuestionIndex].answersValues[3].Key;
+                        break;
+                    } 
+                case Survey.QuestionType.INPUT:
+                    {
+                        buttonSurveyA.Visible = false;
+                        buttonSurveyB.Visible = false;
+                        buttonSurveyYes.Visible = false;
+                        buttonSurveyNo.Visible = false;
+                        textBoxSurveyText.Visible = true;
+                        buttonSurveyConfirm.Visible = true;
+                        break;
+                    }
+                default:
+                    {
+                        buttonSurveyA.Visible = false;
+                        buttonSurveyB.Visible = false;
+                        buttonSurveyYes.Visible = true;
+                        buttonSurveyNo.Visible = true;
+                        textBoxSurveyText.Visible = false;
+                        buttonSurveyConfirm.Visible = false;
+
+                        buttonSurveyYes.Text = "Tak";
+                        buttonSurveyNo.Text = "Nie";
+                        break;
+                    }   
             }
             labelSurveyQuestion.Text = survey.questions[survey.currentQuestionIndex].questionTitle;
             Center(labelSurveyQuestionNumber);
@@ -848,10 +863,10 @@ namespace app
         {
             survey = new Survey("Poziom aktywności fizycznej");
             SetupSurvey();
-            AddSurveyQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
-            AddSurveyQuestion("Ile razy trenujesz w tygodniu?", Survey.QuestionType.INPUT);
+            survey.AddQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
+            survey.AddQuestion("Ile razy trenujesz w tygodniu?", Survey.QuestionType.INPUT);
             survey.questions[1].maxInputValue = 7;
-            AddSurveyQuestion("Oceń swoją aktynowść fizyczną? (0 - 10)", Survey.QuestionType.INPUT);
+            survey.AddQuestion("Oceń swoją aktynowść fizyczną? (0 - 10)", Survey.QuestionType.INPUT);
             survey.questions[2].maxInputValue = 10;
             SetupSurveyQuestion();
         }
