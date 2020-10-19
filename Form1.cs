@@ -292,6 +292,7 @@ namespace app
             SurveyTitle.Text = "Ankiety diagnostyczne";
             Center(SurveyTitle);
             SurveyQuestion.Visible = false;
+            SurveyQuestionNumberLabel.Visible = false;
             ChangePanel(5);
         }
 
@@ -863,15 +864,19 @@ namespace app
             bool correctValue = true;
             if(clickedButton.Text == "Potwierdź")
             {
-                if(Convert.ToInt32(SurveyTextInputField.Text) >= 0 && Convert.ToInt32(SurveyTextInputField.Text) < 100)
-                {
-                    correctValue = true;
+                try
+                {          
+                    if (Convert.ToInt32(SurveyTextInputField.Text) >= 0)
+                    {
+                        correctValue = true;
+                    }
+                    Program.users[Program.currentUserIndex].dailyMovementLevel = Convert.ToInt32(SurveyTextInputField.Text);
                 }
-                else
+                catch(System.FormatException)
                 {
                     correctValue = false;
                 }
-                Program.users[Program.currentUserIndex].dailyMovementLevel = Convert.ToInt32(SurveyTextInputField.Text);
+                
             }
             else
             {
