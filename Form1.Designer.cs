@@ -1618,7 +1618,7 @@
             this.buttonClose.Size = new System.Drawing.Size(40, 40);
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.Button2_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // FlowSurveysPanel
             // 

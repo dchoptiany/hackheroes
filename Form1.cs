@@ -160,7 +160,7 @@ namespace app
             }
             
             labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
-            Center(labelActivityResult, 370);
+            Center(labelActivityResult);
 
             if (labelActivityResult.Text == "")
             {
@@ -561,18 +561,6 @@ namespace app
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             SetEditInfoVisibility(true);
-        }
-
-        private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            using(StreamWriter saving = new StreamWriter("..\\..\\users.dat"))
-            {
-                foreach (User user in Program.users)
-                {
-                    saving.WriteLine(user.name);
-                    saving.WriteLine(user.getData());
-                }
-            }          
         }
         
         private void TextBoxCurrentName_TextChanged(object sender, EventArgs e)
