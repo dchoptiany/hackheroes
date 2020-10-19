@@ -151,6 +151,7 @@
             this.SurveyTextInputField = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.SurveyConfirmButton = new System.Windows.Forms.Button();
+            this.SurveyQuestionNumberLabel = new System.Windows.Forms.Label();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1644,7 +1645,7 @@
             // 
             this.SurveyTitle.AutoSize = true;
             this.SurveyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SurveyTitle.Location = new System.Drawing.Point(374, -7);
+            this.SurveyTitle.Location = new System.Drawing.Point(374, 0);
             this.SurveyTitle.Name = "SurveyTitle";
             this.SurveyTitle.Size = new System.Drawing.Size(205, 63);
             this.SurveyTitle.TabIndex = 3;
@@ -1655,7 +1656,7 @@
             // 
             this.SurveyQuestion.AutoSize = true;
             this.SurveyQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.SurveyQuestion.Location = new System.Drawing.Point(341, 72);
+            this.SurveyQuestion.Location = new System.Drawing.Point(341, 65);
             this.SurveyQuestion.Name = "SurveyQuestion";
             this.SurveyQuestion.Size = new System.Drawing.Size(300, 39);
             this.SurveyQuestion.TabIndex = 4;
@@ -1672,7 +1673,7 @@
             this.AnswerTablePanel.Controls.Add(this.SurveyNoButton, 1, 1);
             this.AnswerTablePanel.Controls.Add(this.SurveyAButton, 0, 0);
             this.AnswerTablePanel.Controls.Add(this.SurveyBButton, 1, 0);
-            this.AnswerTablePanel.Location = new System.Drawing.Point(75, 121);
+            this.AnswerTablePanel.Location = new System.Drawing.Point(75, 150);
             this.AnswerTablePanel.Name = "AnswerTablePanel";
             this.AnswerTablePanel.RowCount = 3;
             this.AnswerTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1749,6 +1750,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.SurveyQuestionNumberLabel);
             this.panel5.Controls.Add(this.SurveyConfirmButton);
             this.panel5.Controls.Add(this.SurveyTextInputField);
             this.panel5.Controls.Add(this.FinishLabel);
@@ -1772,7 +1774,17 @@
             this.SurveyConfirmButton.UseVisualStyleBackColor = true;
             this.SurveyConfirmButton.Visible = false;
             this.SurveyConfirmButton.Click += new System.EventHandler(this.SurveyAnswerButtonClicked);
-            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
+            // SurveyQuestionNumberLabel
+            // 
+            this.SurveyQuestionNumberLabel.AutoSize = true;
+            this.SurveyQuestionNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SurveyQuestionNumberLabel.Location = new System.Drawing.Point(412, 110);
+            this.SurveyQuestionNumberLabel.Name = "SurveyQuestionNumberLabel";
+            this.SurveyQuestionNumberLabel.Size = new System.Drawing.Size(127, 26);
+            this.SurveyQuestionNumberLabel.TabIndex = 10;
+            this.SurveyQuestionNumberLabel.Text = "Pytanie: 4/5";
+            this.SurveyQuestionNumberLabel.Visible = false;
             // 
             // Hackheroes
             // 
@@ -1962,5 +1974,6 @@
         private System.Windows.Forms.CheckBox checkBoxChooseAutomatically;
         private System.Windows.Forms.RadioButton radioButtonPair;
         private System.Windows.Forms.RadioButton radioButtonAllWeatherConditions;
+        private System.Windows.Forms.Label SurveyQuestionNumberLabel;
     }
 }

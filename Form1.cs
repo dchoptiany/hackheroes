@@ -795,11 +795,14 @@ namespace app
         private void SetupSurveyQuestion()
         {
             SurveyQuestion.Visible = true;
+            SurveyQuestionNumberLabel.Visible = true;
             NextSurveyQuestion();
         }
 
         private void NextSurveyQuestion()
         {
+            int currentSurverQuestionCount = survey.currentQuestionIndex + 1;
+            SurveyQuestionNumberLabel.Text = "Pytanie " + currentSurverQuestionCount.ToString() + "/" + survey.questions.Count.ToString();
             if(survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.YES_OR_NO)
             {
                 SurveyAButton.Visible = false;
@@ -836,6 +839,7 @@ namespace app
                 SurveyConfirmButton.Visible = true;
             }
             SurveyQuestion.Text = survey.questions[survey.currentQuestionIndex].questionTitle;
+            Center(SurveyQuestionNumberLabel);
             Center(SurveyQuestion);
         }
 
@@ -856,8 +860,17 @@ namespace app
         private void SurveyAnswerButtonClicked(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
+            bool correctValue = true;
             if(clickedButton.Text == "Potwierdź")
             {
+                if(Convert.ToInt32(SurveyTextInputField.Text) >= 0 && Convert.ToInt32(SurveyTextInputField.Text) < 100)
+                {
+                    correctValue = true;
+                }
+                else
+                {
+                    correctValue = false;
+                }
                 Program.users[Program.currentUserIndex].dailyMovementLevel = Convert.ToInt32(SurveyTextInputField.Text);
             }
             else
@@ -870,15 +883,18 @@ namespace app
                     }
                 }
             }
-            if (survey.currentQuestionIndex + 1 < survey.questions.Count)
+            if(correctValue)
             {
-                ++survey.currentQuestionIndex;
-                NextSurveyQuestion();
-            }
-            else
-            {
-                FinishSurvey();
-            }
+                if (survey.currentQuestionIndex + 1 < survey.questions.Count)
+                {
+                    ++survey.currentQuestionIndex;
+                    NextSurveyQuestion();
+                }
+                else
+                {
+                    FinishSurvey();
+                }
+            }  
         }
 
         private void FinishSurvey()
@@ -888,6 +904,8 @@ namespace app
             AnswerTablePanel.Visible = false;
             SurveyConfirmButton.Visible = false;
             SurveyTextInputField.Visible = false;
+            SurveyQuestion.Visible = false;
+            SurveyQuestionNumberLabel.Visible = false;
             if (survey.title == "Poziom aktywności fizycznej")
             {
                 if (survey.surveyAnswersInt[0] == 0)
@@ -902,8 +920,7 @@ namespace app
 
                 Calculator.CalculateActivityLevel(Program.users[Program.currentUserIndex]);
                 FinishLabel.Text = "Poziom aktywności wynosi " + Program.users[Program.currentUserIndex].activityLevel.ToString();
-            }
-            
+            }       
             
             Center(FinishLabel);
         }
