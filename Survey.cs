@@ -12,9 +12,7 @@ namespace app
         public int currentQuestionIndex;
         public string title;
         public List<Question> questions;
-        public List<string> surveyAnswersString;
-        public List<uint> surveyAnswersInt;
-        
+        public List<uint> surveyAnswersInt;     
 
         public Survey(string _title)
         {
@@ -22,7 +20,6 @@ namespace app
             title = _title;
             questions = new List<Question>();
             surveyAnswersInt = new List<uint>();
-            surveyAnswersString = new List<string>();
         }
 
         public enum QuestionType
@@ -42,6 +39,7 @@ namespace app
             public string questionTitle;
             public QuestionType questionType;
             public List<KeyValuePair<string, uint>> answersValues;
+            public int maxInputValue = 0;
 
             public Question(string _questionTitle, QuestionType _questionType)
             {     
@@ -54,6 +52,7 @@ namespace app
                     AddAnswer("Nie", 0);
                     AddAnswer("Tak", 1);
                 }
+                maxInputValue = 0;
             }
 
             public void AddAnswer(string answerText, uint answerValue)

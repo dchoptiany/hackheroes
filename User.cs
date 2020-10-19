@@ -20,7 +20,7 @@
 		public float activityLevel;
 		public bool physicalJob;
 		public uint trainingsInWeek;
-		public int dailyMovementLevel;
+		public uint dailyMovementLevel;
 
 		///  Macro Section
 		public int calories;

@@ -849,12 +849,10 @@ namespace app
             survey = new Survey("Poziom aktywności fizycznej");
             SetupSurvey();
             AddSurveyQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
-            AddSurveyQuestion("Ile razy trenujesz w tygodniu?", Survey.QuestionType.ABCD);
-            survey.questions[1].AddAnswer("0", 0);
-            survey.questions[1].AddAnswer("3", 3);
-            survey.questions[1].AddAnswer("5", 5);
-            survey.questions[1].AddAnswer("7", 7);
+            AddSurveyQuestion("Ile razy trenujesz w tygodniu?", Survey.QuestionType.INPUT);
+            survey.questions[1].maxInputValue = 7;
             AddSurveyQuestion("Oceń swoją aktynowść fizyczną? (0 - 10)", Survey.QuestionType.INPUT);
+            survey.questions[2].maxInputValue = 10;
             SetupSurveyQuestion();
         }
 
@@ -866,17 +864,20 @@ namespace app
             {
                 try
                 {          
-                    if (Convert.ToInt32(SurveyTextInputField.Text) >= 0)
+                    if (Convert.ToInt32(SurveyTextInputField.Text) >= 0 && Convert.ToInt32(SurveyTextInputField.Text) <= survey.questions[survey.currentQuestionIndex].maxInputValue)
                     {
+                        survey.surveyAnswersInt.Add(Convert.ToUInt32(SurveyTextInputField.Text));
                         correctValue = true;
                     }
-                    Program.users[Program.currentUserIndex].dailyMovementLevel = Convert.ToInt32(SurveyTextInputField.Text);
+                    else
+                    {
+                        correctValue = false;
+                    }
                 }
-                catch(System.FormatException)
+                catch(FormatException)
                 {
                     correctValue = false;
-                }
-                
+                }   
             }
             else
             {
@@ -922,6 +923,7 @@ namespace app
                     Program.users[Program.currentUserIndex].physicalJob = true;
                 }
                 Program.users[Program.currentUserIndex].trainingsInWeek = survey.surveyAnswersInt[1];
+                Program.users[Program.currentUserIndex].dailyMovementLevel = survey.surveyAnswersInt[2];
 
                 Calculator.CalculateActivityLevel(Program.users[Program.currentUserIndex]);
                 FinishLabel.Text = "Poziom aktywności wynosi " + Program.users[Program.currentUserIndex].activityLevel.ToString();
