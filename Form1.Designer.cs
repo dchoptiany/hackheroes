@@ -96,8 +96,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
@@ -140,6 +138,20 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.flowPanelSurveys = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonActivityLevelSurvey = new System.Windows.Forms.Button();
+            this.labelSurveyTitle = new System.Windows.Forms.Label();
+            this.labelSurveyQuestion = new System.Windows.Forms.Label();
+            this.tablePanelAnswer = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSurveyYes = new System.Windows.Forms.Button();
+            this.buttonSurveyNo = new System.Windows.Forms.Button();
+            this.buttonSurveyA = new System.Windows.Forms.Button();
+            this.buttonSurveyB = new System.Windows.Forms.Button();
+            this.labelFinish = new System.Windows.Forms.Label();
+            this.textBoxSurveyText = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.labelSurveyQuestionNumber = new System.Windows.Forms.Label();
+            this.buttonSurveyConfirm = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -157,7 +169,6 @@
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).BeginInit();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentHeight)).BeginInit();
@@ -165,6 +176,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
+            this.flowPanelSurveys.SuspendLayout();
+            this.tablePanelAnswer.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel0
@@ -1033,24 +1047,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Makro";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Location = new System.Drawing.Point(100, 100);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1000, 500);
-            this.panel5.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(418, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 42);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ankiety";
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.buttonEdit);
@@ -1625,18 +1621,183 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
+            // flowPanelSurveys
+            // 
+            this.flowPanelSurveys.Controls.Add(this.buttonActivityLevelSurvey);
+            this.flowPanelSurveys.Location = new System.Drawing.Point(75, 101);
+            this.flowPanelSurveys.Name = "flowPanelSurveys";
+            this.flowPanelSurveys.Size = new System.Drawing.Size(800, 375);
+            this.flowPanelSurveys.TabIndex = 2;
+            this.flowPanelSurveys.Visible = false;
+            // 
+            // buttonActivityLevelSurvey
+            // 
+            this.buttonActivityLevelSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.buttonActivityLevelSurvey.Location = new System.Drawing.Point(3, 3);
+            this.buttonActivityLevelSurvey.Name = "buttonActivityLevelSurvey";
+            this.buttonActivityLevelSurvey.Size = new System.Drawing.Size(794, 50);
+            this.buttonActivityLevelSurvey.TabIndex = 0;
+            this.buttonActivityLevelSurvey.Text = "Poziom aktywności fizycznej";
+            this.buttonActivityLevelSurvey.UseVisualStyleBackColor = true;
+            this.buttonActivityLevelSurvey.Click += new System.EventHandler(this.ButtonActivityLevelSurvey_Click);
+            // 
+            // labelSurveyTitle
+            // 
+            this.labelSurveyTitle.AutoSize = true;
+            this.labelSurveyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSurveyTitle.Location = new System.Drawing.Point(374, 0);
+            this.labelSurveyTitle.Name = "labelSurveyTitle";
+            this.labelSurveyTitle.Size = new System.Drawing.Size(205, 63);
+            this.labelSurveyTitle.TabIndex = 3;
+            this.labelSurveyTitle.Text = "Ankiety";
+            this.labelSurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSurveyQuestion
+            // 
+            this.labelSurveyQuestion.AutoSize = true;
+            this.labelSurveyQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.labelSurveyQuestion.Location = new System.Drawing.Point(341, 65);
+            this.labelSurveyQuestion.Name = "labelSurveyQuestion";
+            this.labelSurveyQuestion.Size = new System.Drawing.Size(300, 39);
+            this.labelSurveyQuestion.TabIndex = 4;
+            this.labelSurveyQuestion.Text = "Pytanie w ankiecie";
+            this.labelSurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSurveyQuestion.Visible = false;
+            // 
+            // tablePanelAnswer
+            // 
+            this.tablePanelAnswer.ColumnCount = 2;
+            this.tablePanelAnswer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.5F));
+            this.tablePanelAnswer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.5F));
+            this.tablePanelAnswer.Controls.Add(this.buttonSurveyYes, 0, 1);
+            this.tablePanelAnswer.Controls.Add(this.buttonSurveyNo, 1, 1);
+            this.tablePanelAnswer.Controls.Add(this.buttonSurveyA, 0, 0);
+            this.tablePanelAnswer.Controls.Add(this.buttonSurveyB, 1, 0);
+            this.tablePanelAnswer.Location = new System.Drawing.Point(75, 150);
+            this.tablePanelAnswer.Name = "tablePanelAnswer";
+            this.tablePanelAnswer.RowCount = 3;
+            this.tablePanelAnswer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tablePanelAnswer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tablePanelAnswer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablePanelAnswer.Size = new System.Drawing.Size(800, 355);
+            this.tablePanelAnswer.TabIndex = 7;
+            // 
+            // buttonSurveyYes
+            // 
+            this.buttonSurveyYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyYes.Location = new System.Drawing.Point(3, 170);
+            this.buttonSurveyYes.Name = "buttonSurveyYes";
+            this.buttonSurveyYes.Size = new System.Drawing.Size(390, 161);
+            this.buttonSurveyYes.TabIndex = 5;
+            this.buttonSurveyYes.Text = "Tak";
+            this.buttonSurveyYes.UseVisualStyleBackColor = true;
+            this.buttonSurveyYes.Click += new System.EventHandler(this.SurveyAnswerButtonClicked);
+            // 
+            // buttonSurveyNo
+            // 
+            this.buttonSurveyNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyNo.Location = new System.Drawing.Point(399, 170);
+            this.buttonSurveyNo.Name = "buttonSurveyNo";
+            this.buttonSurveyNo.Size = new System.Drawing.Size(397, 161);
+            this.buttonSurveyNo.TabIndex = 6;
+            this.buttonSurveyNo.Text = "Nie";
+            this.buttonSurveyNo.UseVisualStyleBackColor = true;
+            this.buttonSurveyNo.Click += new System.EventHandler(this.SurveyAnswerButtonClicked);
+            // 
+            // buttonSurveyA
+            // 
+            this.buttonSurveyA.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyA.Location = new System.Drawing.Point(3, 3);
+            this.buttonSurveyA.Name = "buttonSurveyA";
+            this.buttonSurveyA.Size = new System.Drawing.Size(390, 161);
+            this.buttonSurveyA.TabIndex = 7;
+            this.buttonSurveyA.Text = "A";
+            this.buttonSurveyA.UseVisualStyleBackColor = true;
+            this.buttonSurveyA.Click += new System.EventHandler(this.SurveyAnswerButtonClicked);
+            // 
+            // buttonSurveyB
+            // 
+            this.buttonSurveyB.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyB.Location = new System.Drawing.Point(399, 3);
+            this.buttonSurveyB.Name = "buttonSurveyB";
+            this.buttonSurveyB.Size = new System.Drawing.Size(397, 161);
+            this.buttonSurveyB.TabIndex = 8;
+            this.buttonSurveyB.Text = "B";
+            this.buttonSurveyB.UseVisualStyleBackColor = true;
+            this.buttonSurveyB.Click += new System.EventHandler(this.SurveyAnswerButtonClicked);
+            // 
+            // labelFinish
+            // 
+            this.labelFinish.AutoSize = true;
+            this.labelFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFinish.Location = new System.Drawing.Point(330, 200);
+            this.labelFinish.Name = "labelFinish";
+            this.labelFinish.Size = new System.Drawing.Size(251, 46);
+            this.labelFinish.TabIndex = 8;
+            this.labelFinish.Text = "testowy tekst";
+            this.labelFinish.Visible = false;
+            // 
+            // textBoxSurveyText
+            // 
+            this.textBoxSurveyText.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F);
+            this.textBoxSurveyText.Location = new System.Drawing.Point(375, 200);
+            this.textBoxSurveyText.Name = "textBoxSurveyText";
+            this.textBoxSurveyText.Size = new System.Drawing.Size(200, 98);
+            this.textBoxSurveyText.TabIndex = 9;
+            this.textBoxSurveyText.Text = "0";
+            this.textBoxSurveyText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSurveyText.Visible = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.labelSurveyQuestionNumber);
+            this.panel5.Controls.Add(this.buttonSurveyConfirm);
+            this.panel5.Controls.Add(this.textBoxSurveyText);
+            this.panel5.Controls.Add(this.labelFinish);
+            this.panel5.Controls.Add(this.tablePanelAnswer);
+            this.panel5.Controls.Add(this.labelSurveyQuestion);
+            this.panel5.Controls.Add(this.labelSurveyTitle);
+            this.panel5.Controls.Add(this.flowPanelSurveys);
+            this.panel5.Location = new System.Drawing.Point(100, 100);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1000, 500);
+            this.panel5.TabIndex = 18;
+            // 
+            // labelSurveyQuestionNumber
+            // 
+            this.labelSurveyQuestionNumber.AutoSize = true;
+            this.labelSurveyQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSurveyQuestionNumber.Location = new System.Drawing.Point(412, 110);
+            this.labelSurveyQuestionNumber.Name = "labelSurveyQuestionNumber";
+            this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(127, 26);
+            this.labelSurveyQuestionNumber.TabIndex = 10;
+            this.labelSurveyQuestionNumber.Text = "Pytanie: 4/5";
+            this.labelSurveyQuestionNumber.Visible = false;
+            // 
+            // buttonSurveyConfirm
+            // 
+            this.buttonSurveyConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
+            this.buttonSurveyConfirm.Location = new System.Drawing.Point(280, 400);
+            this.buttonSurveyConfirm.Name = "buttonSurveyConfirm";
+            this.buttonSurveyConfirm.Size = new System.Drawing.Size(390, 80);
+            this.buttonSurveyConfirm.TabIndex = 9;
+            this.buttonSurveyConfirm.Text = "Potwierdź";
+            this.buttonSurveyConfirm.UseVisualStyleBackColor = true;
+            this.buttonSurveyConfirm.Visible = false;
+            this.buttonSurveyConfirm.Click += new System.EventHandler(this.SurveyAnswerButtonClicked);
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
             this.ControlBox = false;
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.buttonMinimize);
@@ -1672,8 +1833,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).EndInit();
@@ -1682,6 +1841,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
+            this.flowPanelSurveys.ResumeLayout(false);
+            this.tablePanelAnswer.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1702,13 +1865,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelQuiz;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonReturn;
         private System.Windows.Forms.Label label15;
@@ -1781,6 +1942,19 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.FlowLayoutPanel flowPanelSurveys;
+        private System.Windows.Forms.Button buttonActivityLevelSurvey;
+        private System.Windows.Forms.Label labelSurveyTitle;
+        private System.Windows.Forms.Label labelSurveyQuestion;
+        private System.Windows.Forms.TableLayoutPanel tablePanelAnswer;
+        private System.Windows.Forms.Button buttonSurveyYes;
+        private System.Windows.Forms.Button buttonSurveyNo;
+        private System.Windows.Forms.Button buttonSurveyA;
+        private System.Windows.Forms.Button buttonSurveyB;
+        private System.Windows.Forms.Label labelFinish;
+        private System.Windows.Forms.TextBox textBoxSurveyText;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button buttonSurveyConfirm;
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.PictureBox pictureBoxTime;
         private System.Windows.Forms.PictureBox pictureBoxTimeBorder;
@@ -1800,5 +1974,6 @@
         private System.Windows.Forms.CheckBox checkBoxChooseAutomatically;
         private System.Windows.Forms.RadioButton radioButtonPair;
         private System.Windows.Forms.RadioButton radioButtonAllWeatherConditions;
+        private System.Windows.Forms.Label labelSurveyQuestionNumber;
     }
 }

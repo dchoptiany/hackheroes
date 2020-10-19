@@ -13,10 +13,11 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
+        private Survey survey;
 
         public Hackheroes()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void DisableQuiz()
@@ -116,7 +117,6 @@ namespace app
             {
                 participants = Participants.More;
             }
-
             // TO DO: getting weather from API and decide if good or bad
             /*
              * if(checkBoxChooseAutomatically.Checked)
@@ -160,7 +160,7 @@ namespace app
             }
             
             labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
-            Center(labelActivityResult, 370);
+            Center(labelActivityResult);
 
             if (labelActivityResult.Text == "")
             {
@@ -235,9 +235,9 @@ namespace app
             }
         }
 
-        private void Center(Control control, int h)
+        private void Center(Control control)
         {
-            control.Location = new Point(1000 / 2 - control.Size.Width / 2, h);
+            control.Location = new Point(1000 / 2 - control.Size.Width / 2, control.Location.Y);
         }
 
         private void ButtonBMI_Click(object sender, EventArgs e)
@@ -255,8 +255,8 @@ namespace app
             labelBMI.Text = "Twoje BMI wynosi: " + Program.users[userIndex].BMI.ToString("0.##");
             labelBMIInterpretation.Text = GetInterpretation(Program.users[userIndex].BMI);
 
-            Center(labelBMI, 300);
-            Center(labelBMIInterpretation, 360);
+            Center(labelBMI);
+            Center(labelBMIInterpretation);
 
             ChangePanel(1);
         }
@@ -286,6 +286,13 @@ namespace app
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
+            tablePanelAnswer.Visible = false;
+            flowPanelSurveys.Visible = true;
+            labelFinish.Visible = false;
+            labelSurveyTitle.Text = "Ankiety diagnostyczne";
+            Center(labelSurveyTitle);
+            labelSurveyQuestion.Visible = false;
+            labelSurveyQuestionNumber.Visible = false;
             ChangePanel(5);
         }
 
@@ -556,7 +563,7 @@ namespace app
         {
             SetEditInfoVisibility(true);
         }
-
+        
         private void TextBoxCurrentName_TextChanged(object sender, EventArgs e)
         {
             if (textBoxCurrentName.Text != Program.users[Program.currentUserIndex].name)
@@ -639,7 +646,7 @@ namespace app
 
             labelNumber.Text = (Quiz.questionNumber + 1) + "/5";
             labelQuestion.Text = Quiz.drawnQuestions[Quiz.questionNumber].ask;
-            Center(labelQuestion, 110);
+            Center(labelQuestion);
 
             foreach(Button button in answerButtons)
             {
@@ -693,7 +700,7 @@ namespace app
         private void FinishQuiz()
         {
             labelQuizResult.Text = "Wynik: " + Quiz.score + "/5";
-            Center(labelQuizResult, 200);
+            Center(labelQuizResult);
             labelQuestion.Visible = false;
             tableLayoutPanelAnswers.Visible = false;
             ButtonAnswerA.Visible = false;
@@ -773,6 +780,166 @@ namespace app
             UpdateMacro();
         }
 
+        private void SetupSurvey()
+        {
+            flowPanelSurveys.Visible = false;
+            tablePanelAnswer.Visible = true;
+            labelSurveyTitle.Text = survey.title;
+
+            Center(labelSurveyTitle);
+        }
+
+        private void SetupSurveyQuestion()
+        {
+            labelSurveyQuestion.Visible = true;
+            labelSurveyQuestionNumber.Visible = true;
+            NextSurveyQuestion();
+        }
+
+        private void NextSurveyQuestion()
+        {
+            int currentSurverQuestionCount = survey.currentQuestionIndex + 1;
+            labelSurveyQuestionNumber.Text = "Pytanie " + currentSurverQuestionCount.ToString() + "/" + survey.questions.Count.ToString();
+            switch(survey.questions[survey.currentQuestionIndex].questionType)
+            {
+                case Survey.QuestionType.YES_OR_NO:
+                    {
+                        buttonSurveyA.Visible = false;
+                        buttonSurveyB.Visible = false;
+                        buttonSurveyYes.Visible = true;
+                        buttonSurveyNo.Visible = true;
+                        textBoxSurveyText.Visible = false;
+                        buttonSurveyConfirm.Visible = false;
+
+                        buttonSurveyYes.Text = "Tak";
+                        buttonSurveyNo.Text = "Nie";
+                        break;
+                    }
+                case Survey.QuestionType.ABCD:
+                    {
+                        buttonSurveyA.Visible = true;
+                        buttonSurveyB.Visible = true;
+                        buttonSurveyYes.Visible = true;
+                        buttonSurveyNo.Visible = true;
+                        textBoxSurveyText.Visible = false;
+                        buttonSurveyConfirm.Visible = false;
+
+                        buttonSurveyA.Text = survey.questions[survey.currentQuestionIndex].answersValues[0].Key;
+                        buttonSurveyB.Text = survey.questions[survey.currentQuestionIndex].answersValues[1].Key;
+                        buttonSurveyYes.Text = survey.questions[survey.currentQuestionIndex].answersValues[2].Key;
+                        buttonSurveyNo.Text = survey.questions[survey.currentQuestionIndex].answersValues[3].Key;
+                        break;
+                    } 
+                case Survey.QuestionType.INPUT:
+                    {
+                        buttonSurveyA.Visible = false;
+                        buttonSurveyB.Visible = false;
+                        buttonSurveyYes.Visible = false;
+                        buttonSurveyNo.Visible = false;
+                        textBoxSurveyText.Visible = true;
+                        buttonSurveyConfirm.Visible = true;
+                        break;
+                    }
+                default:
+                    {
+                        buttonSurveyA.Visible = false;
+                        buttonSurveyB.Visible = false;
+                        buttonSurveyYes.Visible = true;
+                        buttonSurveyNo.Visible = true;
+                        textBoxSurveyText.Visible = false;
+                        buttonSurveyConfirm.Visible = false;
+
+                        buttonSurveyYes.Text = "Tak";
+                        buttonSurveyNo.Text = "Nie";
+                        break;
+                    }   
+            }
+            labelSurveyQuestion.Text = survey.questions[survey.currentQuestionIndex].questionTitle;
+            Center(labelSurveyQuestionNumber);
+            Center(labelSurveyQuestion);
+        }
+
+        private void ButtonActivityLevelSurvey_Click(object sender, EventArgs e)
+        {
+            survey = new Survey("Poziom aktywności fizycznej");
+            SetupSurvey();
+            survey.AddQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
+            survey.AddQuestion("Ile razy trenujesz w tygodniu?", Survey.QuestionType.INPUT);
+            survey.questions[1].maxInputValue = 7;
+            survey.AddQuestion("Oceń swoją aktynowść fizyczną? (0 - 10)", Survey.QuestionType.INPUT);
+            survey.questions[2].maxInputValue = 10;
+            SetupSurveyQuestion();
+        }
+
+        private void SurveyAnswerButtonClicked(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            bool correctValue = true;
+            if(clickedButton.Text == "Potwierdź")
+            {
+                try
+                {          
+                    if (Convert.ToInt32(textBoxSurveyText.Text) >= 0 && Convert.ToInt32(textBoxSurveyText.Text) <= survey.questions[survey.currentQuestionIndex].maxInputValue)
+                    {
+                        survey.surveyAnswersInt.Add(Convert.ToUInt32(textBoxSurveyText.Text));
+                        correctValue = true;
+                    }
+                    else
+                    {
+                        correctValue = false;
+                    }
+                }
+                catch(FormatException)
+                {
+                    correctValue = false;
+                }   
+            }
+            else
+            {
+                foreach (KeyValuePair<string, uint> answer in survey.questions[survey.currentQuestionIndex].answersValues)
+                {
+                    if (clickedButton.Text == answer.Key)
+                    {
+                        survey.surveyAnswersInt.Add(answer.Value);
+                    }
+                }
+            }
+            if(correctValue)
+            {
+                if (survey.currentQuestionIndex + 1 < survey.questions.Count)
+                {
+                    ++survey.currentQuestionIndex;
+                    NextSurveyQuestion();
+                }
+                else
+                {
+                    FinishSurvey();
+                }
+            }  
+        }
+
+        private void FinishSurvey()
+        {
+            labelFinish.Visible = true;
+            flowPanelSurveys.Visible = false;
+            tablePanelAnswer.Visible = false;
+            buttonSurveyConfirm.Visible = false;
+            textBoxSurveyText.Visible = false;
+            labelSurveyQuestion.Visible = false;
+            labelSurveyQuestionNumber.Visible = false;
+            if (survey.title == "Poziom aktywności fizycznej")
+            {
+                Program.users[Program.currentUserIndex].physicalJob = survey.surveyAnswersInt[0] == 1;
+
+                Program.users[Program.currentUserIndex].trainingsInWeek = survey.surveyAnswersInt[1];
+                Program.users[Program.currentUserIndex].dailyMovementLevel = survey.surveyAnswersInt[2];
+
+                Calculator.CalculateActivityLevel(Program.users[Program.currentUserIndex]);
+                labelFinish.Text = "Poziom aktywności wynosi " + Program.users[Program.currentUserIndex].activityLevel.ToString();
+            }       
+            
+            Center(labelFinish);
+        }
         private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
         {
             UpdateActivityLevel();
