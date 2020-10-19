@@ -647,6 +647,8 @@ namespace app
                 SurveyBButton.Visible = false;
                 SurveyYesButton.Visible = true;
                 SurveyNoButton.Visible = true;
+                SurveyTextInputField.Visible = false;
+                SurveyConfirmButton.Visible = false;
 
                 SurveyYesButton.Text = "Tak";
                 SurveyNoButton.Text = "Nie";
@@ -657,11 +659,22 @@ namespace app
                 SurveyBButton.Visible = true;
                 SurveyYesButton.Visible = true;
                 SurveyNoButton.Visible = true;
+                SurveyTextInputField.Visible = false;
+                SurveyConfirmButton.Visible = false;
 
                 SurveyAButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[0].Key;
                 SurveyBButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[1].Key;
                 SurveyYesButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[2].Key;
                 SurveyNoButton.Text = survey.questions[survey.currentQuestionIndex].answersValues[3].Key;
+            }
+            else if(survey.questions[survey.currentQuestionIndex].questionType == Survey.QuestionType.INPUT)
+            {
+                SurveyAButton.Visible = false;
+                SurveyBButton.Visible = false;
+                SurveyYesButton.Visible = false;
+                SurveyNoButton.Visible = false;
+                SurveyTextInputField.Visible = true;
+                SurveyConfirmButton.Visible = true;
             }
             SurveyQuestion.Text = survey.questions[survey.currentQuestionIndex].questionTitle;
             Center(SurveyQuestion);
@@ -677,24 +690,32 @@ namespace app
             survey.questions[1].AddAnswer("3", 3);
             survey.questions[1].AddAnswer("5", 5);
             survey.questions[1].AddAnswer("7", 7);
+            AddSurveyQuestion("Oceń swoją aktynowść fizyczną? (0 - 10)", Survey.QuestionType.INPUT);
             SetupSurveyQuestion();
         }
 
         private void SurveyAnswerButtonClicked(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
-            foreach(KeyValuePair<string, uint> answer in survey.questions[survey.currentQuestionIndex].answersValues)
+            if(clickedButton.Text == "Potwierdź")
             {
-                if(clickedButton.Text == answer.Key)
+                Program.users[Program.currentUserIndex].dailyMovementLevel = Convert.ToInt32(SurveyTextInputField.Text);
+            }
+            else
+            {
+                foreach (KeyValuePair<string, uint> answer in survey.questions[survey.currentQuestionIndex].answersValues)
                 {
-                    survey.surveyAnswersInt.Add(answer.Value);
+                    if (clickedButton.Text == answer.Key)
+                    {
+                        survey.surveyAnswersInt.Add(answer.Value);
+                    }
                 }
             }
-            if(survey.currentQuestionIndex + 1 < survey.questions.Count)
+            if (survey.currentQuestionIndex + 1 < survey.questions.Count)
             {
                 ++survey.currentQuestionIndex;
                 NextSurveyQuestion();
-            }   
+            }
             else
             {
                 FinishSurvey();
@@ -706,6 +727,8 @@ namespace app
             FinishLabel.Visible = true;
             FlowSurveysPanel.Visible = false;
             AnswerTablePanel.Visible = false;
+            SurveyConfirmButton.Visible = false;
+            SurveyTextInputField.Visible = false;
             if (survey.title == "Poziom aktywności fizycznej")
             {
                 if (survey.surveyAnswersInt[0] == 0)

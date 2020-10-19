@@ -28,7 +28,8 @@ namespace app
         public enum QuestionType
         {
             YES_OR_NO,
-            ABCD
+            ABCD,
+            INPUT
         }
 
         public void AddQuestion(string title, QuestionType type)
@@ -41,7 +42,6 @@ namespace app
             public string questionTitle;
             public QuestionType questionType;
             public List<KeyValuePair<string, uint>> answersValues;
-            public Dictionary<string, uint> testAnswersValues;
 
             public Question(string _questionTitle, QuestionType _questionType)
             {     
