@@ -36,6 +36,26 @@
             this.buttonCalculator = new System.Windows.Forms.Button();
             this.buttonSurvey = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.labelBMIInterpretation = new System.Windows.Forms.Label();
@@ -43,25 +63,25 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonAnyWeather = new System.Windows.Forms.Button();
+            this.labelWeatherInfo = new System.Windows.Forms.Label();
             this.textBoxCity = new System.Windows.Forms.TextBox();
-            this.labelAutoWeather = new System.Windows.Forms.Label();
-            this.groupBoxEffortLevel = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.trackBarEffortLevel = new System.Windows.Forms.TrackBar();
-            this.radioButtonAllEffortLevels = new System.Windows.Forms.RadioButton();
-            this.groupBoxWeather = new System.Windows.Forms.GroupBox();
-            this.radioButtonAutoWeather = new System.Windows.Forms.RadioButton();
-            this.radioButtonGoodWeather = new System.Windows.Forms.RadioButton();
-            this.radioButtonBadWeather = new System.Windows.Forms.RadioButton();
-            this.radioButtonAllWeatherConditions = new System.Windows.Forms.RadioButton();
-            this.groupBoxParticipants = new System.Windows.Forms.GroupBox();
-            this.radioButtonPair = new System.Windows.Forms.RadioButton();
-            this.radioButtonIndividual = new System.Windows.Forms.RadioButton();
-            this.radioButtonTeam = new System.Windows.Forms.RadioButton();
-            this.radioButtonAllParticipants = new System.Windows.Forms.RadioButton();
-            this.labelActivityResult = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonMediumEffort = new System.Windows.Forms.Button();
+            this.buttonHighEffort = new System.Windows.Forms.Button();
+            this.buttonAnyEffort = new System.Windows.Forms.Button();
+            this.buttonLowEffort = new System.Windows.Forms.Button();
+            this.buttonBadWeather = new System.Windows.Forms.Button();
+            this.buttonCheckWeather = new System.Windows.Forms.Button();
+            this.buttonGoodWeather = new System.Windows.Forms.Button();
+            this.buttonPair = new System.Windows.Forms.Button();
+            this.buttonTeam = new System.Windows.Forms.Button();
+            this.buttonAnyParticipants = new System.Windows.Forms.Button();
+            this.buttonIndividual = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBoxTime = new System.Windows.Forms.PictureBox();
             this.pictureBoxTimeBorder = new System.Windows.Forms.PictureBox();
@@ -138,8 +158,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonReturn = new System.Windows.Forms.Button();
-            this.buttonMinimize = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.flowPanelSurveys = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonActivityLevelSurvey = new System.Windows.Forms.Button();
             this.labelSurveyTitle = new System.Windows.Forms.Label();
@@ -154,16 +172,21 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.labelSurveyQuestionNumber = new System.Windows.Forms.Label();
             this.buttonSurveyConfirm = new System.Windows.Forms.Button();
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.groupBoxEffortLevel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).BeginInit();
-            this.groupBoxWeather.SuspendLayout();
-            this.groupBoxParticipants.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
@@ -199,6 +222,7 @@
             this.flowLayoutPanel1.Controls.Add(this.buttonCalculator);
             this.flowLayoutPanel1.Controls.Add(this.buttonSurvey);
             this.flowLayoutPanel1.Controls.Add(this.buttonProfile);
+            this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1000, 500);
@@ -303,6 +327,260 @@
             this.buttonProfile.UseVisualStyleBackColor = false;
             this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.button2);
+            this.panel7.Controls.Add(this.button3);
+            this.panel7.Controls.Add(this.button4);
+            this.panel7.Controls.Add(this.button5);
+            this.panel7.Controls.Add(this.button6);
+            this.panel7.Controls.Add(this.button7);
+            this.panel7.Controls.Add(this.button8);
+            this.panel7.Controls.Add(this.button9);
+            this.panel7.Controls.Add(this.button10);
+            this.panel7.Controls.Add(this.button11);
+            this.panel7.Controls.Add(this.button12);
+            this.panel7.Controls.Add(this.button13);
+            this.panel7.Controls.Add(this.pictureBox5);
+            this.panel7.Controls.Add(this.pictureBox6);
+            this.panel7.Controls.Add(this.pictureBox7);
+            this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.panel7.Location = new System.Drawing.Point(3, 503);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1000, 500);
+            this.panel7.TabIndex = 15;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(370, 377);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(258, 49);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Nie uwzględniaj warunków pogodowych";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(464, 342);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 15);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "<weather info>";
+            this.label4.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(385, 304);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 21);
+            this.textBox1.TabIndex = 17;
+            this.textBox1.Text = "Warszawa";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(454, 287);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Sprawdź pogodę";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(439, 460);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 37);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Szukaj";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(695, 225);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(258, 49);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Średni wysiłek";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(695, 285);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(258, 49);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Intensywny wysiłek";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(695, 377);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(258, 49);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "Nie uwzględniaj stopnia wysiłku";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(695, 166);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(258, 49);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "Niski wysiłek";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(370, 225);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(258, 49);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "Nieodpowiednia dla sportu na zewnątrz";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(539, 304);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(66, 25);
+            this.button8.TabIndex = 8;
+            this.button8.Text = "Sprawdź";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(370, 166);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(258, 49);
+            this.button9.TabIndex = 7;
+            this.button9.Text = "Odpowiednia dla sportu na zewnątrz";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(50, 225);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(258, 49);
+            this.button10.TabIndex = 6;
+            this.button10.Text = "Sport dla dwóch osób";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(50, 285);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(258, 49);
+            this.button11.TabIndex = 5;
+            this.button11.Text = "Sport dla grupy powyżej dwóch osób";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(50, 377);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(258, 49);
+            this.button12.TabIndex = 4;
+            this.button12.Text = "Nie uwzględniaj liczby uczestników";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Location = new System.Drawing.Point(50, 166);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(258, 49);
+            this.button13.TabIndex = 3;
+            this.button13.Text = "Sport indywidualny";
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::app.Properties.Resources.clouds;
+            this.pictureBox5.Location = new System.Drawing.Point(348, 42);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(307, 88);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::app.Properties.Resources.training;
+            this.pictureBox6.Location = new System.Drawing.Point(669, 42);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(307, 88);
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::app.Properties.Resources.team;
+            this.pictureBox7.Location = new System.Drawing.Point(23, 42);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(307, 88);
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBoxArrow);
@@ -372,232 +650,268 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonAnyWeather);
+            this.panel2.Controls.Add(this.labelWeatherInfo);
             this.panel2.Controls.Add(this.textBoxCity);
-            this.panel2.Controls.Add(this.labelAutoWeather);
-            this.panel2.Controls.Add(this.groupBoxEffortLevel);
-            this.panel2.Controls.Add(this.groupBoxWeather);
-            this.panel2.Controls.Add(this.groupBoxParticipants);
-            this.panel2.Controls.Add(this.labelActivityResult);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.buttonSearch);
+            this.panel2.Controls.Add(this.buttonMediumEffort);
+            this.panel2.Controls.Add(this.buttonHighEffort);
+            this.panel2.Controls.Add(this.buttonAnyEffort);
+            this.panel2.Controls.Add(this.buttonLowEffort);
+            this.panel2.Controls.Add(this.buttonBadWeather);
+            this.panel2.Controls.Add(this.buttonCheckWeather);
+            this.panel2.Controls.Add(this.buttonGoodWeather);
+            this.panel2.Controls.Add(this.buttonPair);
+            this.panel2.Controls.Add(this.buttonTeam);
+            this.panel2.Controls.Add(this.buttonAnyParticipants);
+            this.panel2.Controls.Add(this.buttonIndividual);
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.panel2.Location = new System.Drawing.Point(100, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 500);
             this.panel2.TabIndex = 15;
             // 
+            // buttonAnyWeather
+            // 
+            this.buttonAnyWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonAnyWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnyWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnyWeather.ForeColor = System.Drawing.Color.White;
+            this.buttonAnyWeather.Location = new System.Drawing.Point(370, 377);
+            this.buttonAnyWeather.Name = "buttonAnyWeather";
+            this.buttonAnyWeather.Size = new System.Drawing.Size(258, 49);
+            this.buttonAnyWeather.TabIndex = 19;
+            this.buttonAnyWeather.Text = "Nie uwzględniaj warunków pogodowych";
+            this.buttonAnyWeather.UseVisualStyleBackColor = false;
+            this.buttonAnyWeather.Click += new System.EventHandler(this.ButtonWeather_Click);
+            // 
+            // labelWeatherInfo
+            // 
+            this.labelWeatherInfo.AutoSize = true;
+            this.labelWeatherInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelWeatherInfo.Location = new System.Drawing.Point(464, 342);
+            this.labelWeatherInfo.Name = "labelWeatherInfo";
+            this.labelWeatherInfo.Size = new System.Drawing.Size(88, 15);
+            this.labelWeatherInfo.TabIndex = 18;
+            this.labelWeatherInfo.Text = "<weather info>";
+            this.labelWeatherInfo.Visible = false;
+            // 
             // textBoxCity
             // 
-            this.textBoxCity.Location = new System.Drawing.Point(653, 166);
+            this.textBoxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxCity.Location = new System.Drawing.Point(385, 304);
             this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCity.TabIndex = 21;
-            this.textBoxCity.Text = "Oława";
+            this.textBoxCity.Size = new System.Drawing.Size(132, 21);
+            this.textBoxCity.TabIndex = 17;
+            this.textBoxCity.Text = "Warszawa";
+            this.textBoxCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // labelAutoWeather
+            // label2
             // 
-            this.labelAutoWeather.AutoSize = true;
-            this.labelAutoWeather.Location = new System.Drawing.Point(318, 202);
-            this.labelAutoWeather.Name = "labelAutoWeather";
-            this.labelAutoWeather.Size = new System.Drawing.Size(420, 13);
-            this.labelAutoWeather.TabIndex = 20;
-            this.labelAutoWeather.Text = "Temperatura powietrza w MIASTO wynosi TEMPERATURA, więc uznano ją za WYNIK";
-            this.labelAutoWeather.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(454, 287);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 15);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Sprawdź pogodę";
             // 
-            // groupBoxEffortLevel
+            // buttonSearch
             // 
-            this.groupBoxEffortLevel.Controls.Add(this.label4);
-            this.groupBoxEffortLevel.Controls.Add(this.trackBarEffortLevel);
-            this.groupBoxEffortLevel.Controls.Add(this.radioButtonAllEffortLevels);
-            this.groupBoxEffortLevel.Location = new System.Drawing.Point(385, 222);
-            this.groupBoxEffortLevel.Name = "groupBoxEffortLevel";
-            this.groupBoxEffortLevel.Size = new System.Drawing.Size(262, 70);
-            this.groupBoxEffortLevel.TabIndex = 19;
-            this.groupBoxEffortLevel.TabStop = false;
-            this.groupBoxEffortLevel.Text = "Stopień wysiłku";
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(439, 460);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(126, 37);
+            this.buttonSearch.TabIndex = 15;
+            this.buttonSearch.Text = "Szukaj";
+            this.buttonSearch.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // buttonMediumEffort
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "niski    średni  wysoki";
+            this.buttonMediumEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonMediumEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMediumEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonMediumEffort.ForeColor = System.Drawing.Color.White;
+            this.buttonMediumEffort.Location = new System.Drawing.Point(695, 225);
+            this.buttonMediumEffort.Name = "buttonMediumEffort";
+            this.buttonMediumEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonMediumEffort.TabIndex = 14;
+            this.buttonMediumEffort.Text = "Średni wysiłek";
+            this.buttonMediumEffort.UseVisualStyleBackColor = false;
+            this.buttonMediumEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
             // 
-            // trackBarEffortLevel
+            // buttonHighEffort
             // 
-            this.trackBarEffortLevel.LargeChange = 1;
-            this.trackBarEffortLevel.Location = new System.Drawing.Point(17, 19);
-            this.trackBarEffortLevel.Maximum = 2;
-            this.trackBarEffortLevel.Name = "trackBarEffortLevel";
-            this.trackBarEffortLevel.Size = new System.Drawing.Size(104, 45);
-            this.trackBarEffortLevel.TabIndex = 8;
-            this.trackBarEffortLevel.Value = 1;
-            this.trackBarEffortLevel.Click += new System.EventHandler(this.TrackBarEffortLevel_Click);
-            this.trackBarEffortLevel.Scroll += new System.EventHandler(this.TrackBarEffortLevel_Scroll);
+            this.buttonHighEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonHighEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHighEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonHighEffort.ForeColor = System.Drawing.Color.White;
+            this.buttonHighEffort.Location = new System.Drawing.Point(695, 285);
+            this.buttonHighEffort.Name = "buttonHighEffort";
+            this.buttonHighEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonHighEffort.TabIndex = 13;
+            this.buttonHighEffort.Text = "Intensywny wysiłek";
+            this.buttonHighEffort.UseVisualStyleBackColor = false;
+            this.buttonHighEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
             // 
-            // radioButtonAllEffortLevels
+            // buttonAnyEffort
             // 
-            this.radioButtonAllEffortLevels.AutoSize = true;
-            this.radioButtonAllEffortLevels.Checked = true;
-            this.radioButtonAllEffortLevels.Location = new System.Drawing.Point(172, 33);
-            this.radioButtonAllEffortLevels.Name = "radioButtonAllEffortLevels";
-            this.radioButtonAllEffortLevels.Size = new System.Drawing.Size(64, 17);
-            this.radioButtonAllEffortLevels.TabIndex = 16;
-            this.radioButtonAllEffortLevels.TabStop = true;
-            this.radioButtonAllEffortLevels.Text = "dowolny";
-            this.radioButtonAllEffortLevels.UseVisualStyleBackColor = true;
-            this.radioButtonAllEffortLevels.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            this.buttonAnyEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonAnyEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnyEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnyEffort.ForeColor = System.Drawing.Color.White;
+            this.buttonAnyEffort.Location = new System.Drawing.Point(695, 377);
+            this.buttonAnyEffort.Name = "buttonAnyEffort";
+            this.buttonAnyEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonAnyEffort.TabIndex = 12;
+            this.buttonAnyEffort.Text = "Nie uwzględniaj stopnia wysiłku";
+            this.buttonAnyEffort.UseVisualStyleBackColor = false;
+            this.buttonAnyEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
             // 
-            // groupBoxWeather
+            // buttonLowEffort
             // 
-            this.groupBoxWeather.Controls.Add(this.radioButtonAutoWeather);
-            this.groupBoxWeather.Controls.Add(this.radioButtonGoodWeather);
-            this.groupBoxWeather.Controls.Add(this.radioButtonBadWeather);
-            this.groupBoxWeather.Controls.Add(this.radioButtonAllWeatherConditions);
-            this.groupBoxWeather.Location = new System.Drawing.Point(385, 149);
-            this.groupBoxWeather.Name = "groupBoxWeather";
-            this.groupBoxWeather.Size = new System.Drawing.Size(262, 45);
-            this.groupBoxWeather.TabIndex = 18;
-            this.groupBoxWeather.TabStop = false;
-            this.groupBoxWeather.Text = "Pogoda";
+            this.buttonLowEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonLowEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLowEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLowEffort.ForeColor = System.Drawing.Color.White;
+            this.buttonLowEffort.Location = new System.Drawing.Point(695, 166);
+            this.buttonLowEffort.Name = "buttonLowEffort";
+            this.buttonLowEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonLowEffort.TabIndex = 11;
+            this.buttonLowEffort.Text = "Niski wysiłek";
+            this.buttonLowEffort.UseVisualStyleBackColor = false;
+            this.buttonLowEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
             // 
-            // radioButtonAutoWeather
+            // buttonBadWeather
             // 
-            this.radioButtonAutoWeather.AutoSize = true;
-            this.radioButtonAutoWeather.Location = new System.Drawing.Point(115, 19);
-            this.radioButtonAutoWeather.Name = "radioButtonAutoWeather";
-            this.radioButtonAutoWeather.Size = new System.Drawing.Size(66, 17);
-            this.radioButtonAutoWeather.TabIndex = 20;
-            this.radioButtonAutoWeather.TabStop = true;
-            this.radioButtonAutoWeather.Text = "aktualna";
-            this.radioButtonAutoWeather.UseVisualStyleBackColor = true;
-            this.radioButtonAutoWeather.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            this.buttonBadWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonBadWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBadWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBadWeather.ForeColor = System.Drawing.Color.White;
+            this.buttonBadWeather.Location = new System.Drawing.Point(370, 225);
+            this.buttonBadWeather.Name = "buttonBadWeather";
+            this.buttonBadWeather.Size = new System.Drawing.Size(258, 49);
+            this.buttonBadWeather.TabIndex = 10;
+            this.buttonBadWeather.Text = "Nieodpowiednia dla sportu na zewnątrz";
+            this.buttonBadWeather.UseVisualStyleBackColor = false;
+            this.buttonBadWeather.Click += new System.EventHandler(this.ButtonWeather_Click);
             // 
-            // radioButtonGoodWeather
+            // buttonCheckWeather
             // 
-            this.radioButtonGoodWeather.AutoSize = true;
-            this.radioButtonGoodWeather.Location = new System.Drawing.Point(17, 19);
-            this.radioButtonGoodWeather.Name = "radioButtonGoodWeather";
-            this.radioButtonGoodWeather.Size = new System.Drawing.Size(52, 17);
-            this.radioButtonGoodWeather.TabIndex = 13;
-            this.radioButtonGoodWeather.Text = "dobra";
-            this.radioButtonGoodWeather.UseVisualStyleBackColor = true;
-            this.radioButtonGoodWeather.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            this.buttonCheckWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonCheckWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCheckWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCheckWeather.ForeColor = System.Drawing.Color.White;
+            this.buttonCheckWeather.Location = new System.Drawing.Point(539, 304);
+            this.buttonCheckWeather.Name = "buttonCheckWeather";
+            this.buttonCheckWeather.Size = new System.Drawing.Size(66, 25);
+            this.buttonCheckWeather.TabIndex = 8;
+            this.buttonCheckWeather.Text = "Sprawdź";
+            this.buttonCheckWeather.UseVisualStyleBackColor = false;
             // 
-            // radioButtonBadWeather
+            // buttonGoodWeather
             // 
-            this.radioButtonBadWeather.AutoSize = true;
-            this.radioButtonBadWeather.Location = new System.Drawing.Point(69, 19);
-            this.radioButtonBadWeather.Name = "radioButtonBadWeather";
-            this.radioButtonBadWeather.Size = new System.Drawing.Size(40, 17);
-            this.radioButtonBadWeather.TabIndex = 15;
-            this.radioButtonBadWeather.Text = "zła";
-            this.radioButtonBadWeather.UseVisualStyleBackColor = true;
-            this.radioButtonBadWeather.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            this.buttonGoodWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonGoodWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGoodWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonGoodWeather.ForeColor = System.Drawing.Color.White;
+            this.buttonGoodWeather.Location = new System.Drawing.Point(370, 166);
+            this.buttonGoodWeather.Name = "buttonGoodWeather";
+            this.buttonGoodWeather.Size = new System.Drawing.Size(258, 49);
+            this.buttonGoodWeather.TabIndex = 7;
+            this.buttonGoodWeather.Text = "Odpowiednia dla sportu na zewnątrz";
+            this.buttonGoodWeather.UseVisualStyleBackColor = false;
+            this.buttonGoodWeather.Click += new System.EventHandler(this.ButtonWeather_Click);
             // 
-            // radioButtonAllWeatherConditions
+            // buttonPair
             // 
-            this.radioButtonAllWeatherConditions.AutoSize = true;
-            this.radioButtonAllWeatherConditions.Checked = true;
-            this.radioButtonAllWeatherConditions.Location = new System.Drawing.Point(185, 19);
-            this.radioButtonAllWeatherConditions.Name = "radioButtonAllWeatherConditions";
-            this.radioButtonAllWeatherConditions.Size = new System.Drawing.Size(65, 17);
-            this.radioButtonAllWeatherConditions.TabIndex = 14;
-            this.radioButtonAllWeatherConditions.TabStop = true;
-            this.radioButtonAllWeatherConditions.Text = "dowolna";
-            this.radioButtonAllWeatherConditions.UseVisualStyleBackColor = true;
-            this.radioButtonAllWeatherConditions.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            this.buttonPair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonPair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPair.ForeColor = System.Drawing.Color.White;
+            this.buttonPair.Location = new System.Drawing.Point(50, 225);
+            this.buttonPair.Name = "buttonPair";
+            this.buttonPair.Size = new System.Drawing.Size(258, 49);
+            this.buttonPair.TabIndex = 6;
+            this.buttonPair.Text = "Sport dla dwóch osób";
+            this.buttonPair.UseVisualStyleBackColor = false;
+            this.buttonPair.Click += new System.EventHandler(this.ButtonParticipants_Click);
             // 
-            // groupBoxParticipants
+            // buttonTeam
             // 
-            this.groupBoxParticipants.Controls.Add(this.radioButtonPair);
-            this.groupBoxParticipants.Controls.Add(this.radioButtonIndividual);
-            this.groupBoxParticipants.Controls.Add(this.radioButtonTeam);
-            this.groupBoxParticipants.Controls.Add(this.radioButtonAllParticipants);
-            this.groupBoxParticipants.Location = new System.Drawing.Point(385, 101);
-            this.groupBoxParticipants.Name = "groupBoxParticipants";
-            this.groupBoxParticipants.Size = new System.Drawing.Size(262, 42);
-            this.groupBoxParticipants.TabIndex = 17;
-            this.groupBoxParticipants.TabStop = false;
-            this.groupBoxParticipants.Text = "Liczba uczestników";
+            this.buttonTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonTeam.ForeColor = System.Drawing.Color.White;
+            this.buttonTeam.Location = new System.Drawing.Point(50, 285);
+            this.buttonTeam.Name = "buttonTeam";
+            this.buttonTeam.Size = new System.Drawing.Size(258, 49);
+            this.buttonTeam.TabIndex = 5;
+            this.buttonTeam.Text = "Sport dla grupy powyżej dwóch osób";
+            this.buttonTeam.UseVisualStyleBackColor = false;
+            this.buttonTeam.Click += new System.EventHandler(this.ButtonParticipants_Click);
             // 
-            // radioButtonPair
+            // buttonAnyParticipants
             // 
-            this.radioButtonPair.AutoSize = true;
-            this.radioButtonPair.Location = new System.Drawing.Point(54, 19);
-            this.radioButtonPair.Name = "radioButtonPair";
-            this.radioButtonPair.Size = new System.Drawing.Size(31, 17);
-            this.radioButtonPair.TabIndex = 20;
-            this.radioButtonPair.TabStop = true;
-            this.radioButtonPair.Text = "2";
-            this.radioButtonPair.UseVisualStyleBackColor = true;
-            this.radioButtonPair.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            this.buttonAnyParticipants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonAnyParticipants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnyParticipants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnyParticipants.ForeColor = System.Drawing.Color.White;
+            this.buttonAnyParticipants.Location = new System.Drawing.Point(50, 377);
+            this.buttonAnyParticipants.Name = "buttonAnyParticipants";
+            this.buttonAnyParticipants.Size = new System.Drawing.Size(258, 49);
+            this.buttonAnyParticipants.TabIndex = 4;
+            this.buttonAnyParticipants.Text = "Nie uwzględniaj liczby uczestników";
+            this.buttonAnyParticipants.UseVisualStyleBackColor = false;
+            this.buttonAnyParticipants.Click += new System.EventHandler(this.ButtonParticipants_Click);
             // 
-            // radioButtonIndividual
+            // buttonIndividual
             // 
-            this.radioButtonIndividual.AutoSize = true;
-            this.radioButtonIndividual.Location = new System.Drawing.Point(17, 19);
-            this.radioButtonIndividual.Name = "radioButtonIndividual";
-            this.radioButtonIndividual.Size = new System.Drawing.Size(31, 17);
-            this.radioButtonIndividual.TabIndex = 10;
-            this.radioButtonIndividual.Text = "1";
-            this.radioButtonIndividual.UseVisualStyleBackColor = true;
-            this.radioButtonIndividual.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            this.buttonIndividual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonIndividual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIndividual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonIndividual.ForeColor = System.Drawing.Color.White;
+            this.buttonIndividual.Location = new System.Drawing.Point(50, 166);
+            this.buttonIndividual.Name = "buttonIndividual";
+            this.buttonIndividual.Size = new System.Drawing.Size(258, 49);
+            this.buttonIndividual.TabIndex = 3;
+            this.buttonIndividual.Text = "Sport indywidualny";
+            this.buttonIndividual.UseVisualStyleBackColor = false;
+            this.buttonIndividual.Click += new System.EventHandler(this.ButtonParticipants_Click);
             // 
-            // radioButtonTeam
+            // pictureBox4
             // 
-            this.radioButtonTeam.AutoSize = true;
-            this.radioButtonTeam.Location = new System.Drawing.Point(96, 19);
-            this.radioButtonTeam.Name = "radioButtonTeam";
-            this.radioButtonTeam.Size = new System.Drawing.Size(58, 17);
-            this.radioButtonTeam.TabIndex = 12;
-            this.radioButtonTeam.Text = "Więcej";
-            this.radioButtonTeam.UseVisualStyleBackColor = true;
-            this.radioButtonTeam.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            this.pictureBox4.Image = global::app.Properties.Resources.clouds;
+            this.pictureBox4.Location = new System.Drawing.Point(348, 42);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(307, 88);
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
             // 
-            // radioButtonAllParticipants
+            // pictureBox3
             // 
-            this.radioButtonAllParticipants.AutoSize = true;
-            this.radioButtonAllParticipants.Checked = true;
-            this.radioButtonAllParticipants.Location = new System.Drawing.Point(185, 19);
-            this.radioButtonAllParticipants.Name = "radioButtonAllParticipants";
-            this.radioButtonAllParticipants.Size = new System.Drawing.Size(65, 17);
-            this.radioButtonAllParticipants.TabIndex = 11;
-            this.radioButtonAllParticipants.TabStop = true;
-            this.radioButtonAllParticipants.Text = "dowolna";
-            this.radioButtonAllParticipants.UseVisualStyleBackColor = true;
-            this.radioButtonAllParticipants.Click += new System.EventHandler(this.AllRadioButtonsInActivitySuggest_Click);
+            this.pictureBox3.Image = global::app.Properties.Resources.training;
+            this.pictureBox3.Location = new System.Drawing.Point(669, 42);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(307, 88);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
-            // labelActivityResult
+            // pictureBox2
             // 
-            this.labelActivityResult.AutoSize = true;
-            this.labelActivityResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelActivityResult.Location = new System.Drawing.Point(444, 376);
-            this.labelActivityResult.Name = "labelActivityResult";
-            this.labelActivityResult.Size = new System.Drawing.Size(108, 29);
-            this.labelActivityResult.TabIndex = 7;
-            this.labelActivityResult.Text = "<result>";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(418, 474);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Następna propozycja";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ButtonSearch_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(336, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(327, 42);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Aktywność na dziś";
+            this.pictureBox2.Image = global::app.Properties.Resources.team;
+            this.pictureBox2.Location = new System.Drawing.Point(23, 42);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(307, 88);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // panel3
             // 
@@ -1613,38 +1927,6 @@
             this.buttonReturn.Visible = false;
             this.buttonReturn.Click += new System.EventHandler(this.ButtonReturn_Click);
             // 
-            // buttonMinimize
-            // 
-            this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.buttonMinimize.BackgroundImage = global::app.Properties.Resources.minimizeIcon;
-            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMinimize.FlatAppearance.BorderSize = 0;
-            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Location = new System.Drawing.Point(1120, 0);
-            this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonMinimize.Name = "buttonMinimize";
-            this.buttonMinimize.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonMinimize.Size = new System.Drawing.Size(40, 40);
-            this.buttonMinimize.TabIndex = 11;
-            this.buttonMinimize.UseVisualStyleBackColor = false;
-            this.buttonMinimize.Click += new System.EventHandler(this.ButtonMinimizeClick);
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
-            this.buttonClose.BackgroundImage = global::app.Properties.Resources.closeIcon;
-            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonClose.FlatAppearance.BorderSize = 0;
-            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Location = new System.Drawing.Point(1160, 0);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonClose.Size = new System.Drawing.Size(40, 40);
-            this.buttonClose.TabIndex = 10;
-            this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
-            // 
             // flowPanelSurveys
             // 
             this.flowPanelSurveys.Controls.Add(this.buttonActivityLevelSurvey);
@@ -1810,6 +2092,38 @@
             this.buttonSurveyConfirm.Visible = false;
             this.buttonSurveyConfirm.Click += new System.EventHandler(this.SurveyAnswerButtonClicked);
             // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.buttonMinimize.BackgroundImage = global::app.Properties.Resources.minimizeIcon;
+            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.Location = new System.Drawing.Point(1120, 0);
+            this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonMinimize.Size = new System.Drawing.Size(40, 40);
+            this.buttonMinimize.TabIndex = 11;
+            this.buttonMinimize.UseVisualStyleBackColor = false;
+            this.buttonMinimize.Click += new System.EventHandler(this.ButtonMinimizeClick);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.BackgroundImage = global::app.Properties.Resources.closeIcon;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Location = new System.Drawing.Point(1160, 0);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonClose.Size = new System.Drawing.Size(40, 40);
+            this.buttonClose.TabIndex = 10;
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1832,21 +2146,23 @@
             this.Text = "Hackheroes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hackheroes_FormClosing);
             this.Load += new System.EventHandler(this.Hackheroes_Load);
+            this.Click += new System.EventHandler(this.ButtonEffort_Click);
             this.panel0.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBoxEffortLevel.ResumeLayout(false);
-            this.groupBoxEffortLevel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).EndInit();
-            this.groupBoxWeather.ResumeLayout(false);
-            this.groupBoxWeather.PerformLayout();
-            this.groupBoxParticipants.ResumeLayout(false);
-            this.groupBoxParticipants.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
@@ -1891,7 +2207,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelQuiz;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -1982,24 +2297,45 @@
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.PictureBox pictureBoxTime;
         private System.Windows.Forms.PictureBox pictureBoxTimeBorder;
-        private System.Windows.Forms.Label labelActivityResult;
+        private System.Windows.Forms.Label labelSurveyQuestionNumber;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelWeatherInfo;
+        private System.Windows.Forms.TextBox textBoxCity;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonMediumEffort;
+        private System.Windows.Forms.Button buttonHighEffort;
+        private System.Windows.Forms.Button buttonAnyEffort;
+        private System.Windows.Forms.Button buttonLowEffort;
+        private System.Windows.Forms.Button buttonBadWeather;
+        private System.Windows.Forms.Button buttonCheckWeather;
+        private System.Windows.Forms.Button buttonGoodWeather;
+        private System.Windows.Forms.Button buttonPair;
+        private System.Windows.Forms.Button buttonTeam;
+        private System.Windows.Forms.Button buttonAnyParticipants;
+        private System.Windows.Forms.Button buttonIndividual;
+        private System.Windows.Forms.Button buttonAnyWeather;
+        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TrackBar trackBarEffortLevel;
-        private System.Windows.Forms.RadioButton radioButtonAllEffortLevels;
-        private System.Windows.Forms.RadioButton radioButtonBadWeather;
-        private System.Windows.Forms.RadioButton radioButtonGoodWeather;
-        private System.Windows.Forms.RadioButton radioButtonTeam;
-        private System.Windows.Forms.RadioButton radioButtonAllParticipants;
-        private System.Windows.Forms.RadioButton radioButtonIndividual;
-        private System.Windows.Forms.GroupBox groupBoxParticipants;
-        private System.Windows.Forms.GroupBox groupBoxEffortLevel;
-        private System.Windows.Forms.GroupBox groupBoxWeather;
-        private System.Windows.Forms.RadioButton radioButtonPair;
-        private System.Windows.Forms.RadioButton radioButtonAllWeatherConditions;
-        private System.Windows.Forms.Label labelSurveyQuestionNumber;
-        private System.Windows.Forms.RadioButton radioButtonAutoWeather;
-        private System.Windows.Forms.Label labelAutoWeather;
-        private System.Windows.Forms.TextBox textBoxCity;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

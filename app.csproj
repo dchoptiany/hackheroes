@@ -168,5 +168,14 @@
   <ItemGroup>
     <None Include="Resources\Images\timeScale.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\team.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\clouds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\training.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

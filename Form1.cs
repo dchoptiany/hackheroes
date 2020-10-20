@@ -103,11 +103,7 @@ namespace app
             }
         }
 
-        private void UpdateLabelAutoWeatherVisibility()
-        {
-            labelAutoWeather.Visible = radioButtonAutoWeather.Checked;
-        }
-
+        /*
         private void UpdateResultOfMatching()
         {
             Participants participants = Participants.Any;
@@ -194,6 +190,7 @@ namespace app
                 }
             }
         }
+        */
 
         private void UpdateMacro()
         {
@@ -283,11 +280,6 @@ namespace app
         {
             ChangePanel(2);
             ActivityMatcher.LoadSports();
-
-            radioButtonAllParticipants.Checked = true;
-            radioButtonAllWeatherConditions.Checked = true;
-            radioButtonAllEffortLevels.Checked = true;
-            UpdateResultOfMatching();
         }
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
@@ -979,29 +971,67 @@ namespace app
             File.WriteAllLines("..\\..\\users.json", JSON);
         }
 
-        private void ButtonSearch_Click(object sender, EventArgs e)
+        private void ButtonParticipants_Click(object sender, EventArgs e)
         {
-            UpdateResultOfMatching();
+            buttonIndividual.BackColor = Color.FromArgb(39, 60, 117);
+            buttonIndividual.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonPair.BackColor = Color.FromArgb(39, 60, 117);
+            buttonPair.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonTeam.BackColor = Color.FromArgb(39, 60, 117);
+            buttonTeam.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonAnyParticipants.BackColor = Color.FromArgb(39, 60, 117);
+            buttonAnyParticipants.ForeColor = Color.FromArgb(255, 255, 255);
+
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(251, 197, 3);
+            button.ForeColor = Color.FromArgb(0, 0, 0);
         }
 
-        private void TrackBarEffortLevel_Scroll(object sender, EventArgs e)
+        private void ButtonWeather_Click(object sender, EventArgs e)
         {
-            radioButtonAllEffortLevels.Checked = false;
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-        private void TrackBarEffortLevel_Click(object sender, EventArgs e)
-        {
-            radioButtonAllEffortLevels.Checked = false;
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
+            buttonGoodWeather.BackColor = Color.FromArgb(39, 60, 117);
+            buttonGoodWeather.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonBadWeather.BackColor = Color.FromArgb(39, 60, 117);
+            buttonBadWeather.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonAnyWeather.BackColor = Color.FromArgb(39, 60, 117);
+            buttonAnyWeather.ForeColor = Color.FromArgb(255, 255, 255);
+
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(251, 197, 3);
+            button.ForeColor = Color.FromArgb(0, 0, 0);
         }
 
-        private void AllRadioButtonsInActivitySuggest_Click(object sender, EventArgs e)
+        private void ButtonEffort_Click(object sender, EventArgs e)
         {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-            UpdateLabelAutoWeatherVisibility();
+            buttonLowEffort.BackColor = Color.FromArgb(39, 60, 117);
+            buttonLowEffort.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonMediumEffort.BackColor = Color.FromArgb(39, 60, 117);
+            buttonMediumEffort.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonHighEffort.BackColor = Color.FromArgb(39, 60, 117);
+            buttonHighEffort.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonAnyEffort.BackColor = Color.FromArgb(39, 60, 117);
+            buttonAnyEffort.ForeColor = Color.FromArgb(255, 255, 255);
+
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(251, 197, 3);
+            button.ForeColor = Color.FromArgb(0, 0, 0);
         }
+        /*
+* 
+* private void ButtonInMatcher_Click(object sender, EventArgs e)
+{
+Button button = (Button)sender;
+button.BackColor = Color.FromArgb(251, 197, 3);
+button.ForeColor = Color.FromArgb(0, 0, 0);
+}
+*/
     }
 }
