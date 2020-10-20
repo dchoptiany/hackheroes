@@ -13,18 +13,21 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
+        private List<Button> panelButtons = new List<Button>();
         private readonly Color blue1 = Color.FromArgb(0, 168, 255);
         private readonly Color purple1 = Color.FromArgb(156, 136, 255);
         private readonly Color darkblue1 = Color.FromArgb(72, 126, 176);
         private readonly Color red1 = Color.FromArgb(232, 65, 24);
         private readonly Color red2 = Color.FromArgb(194, 54, 22);
         private readonly Color green1 = Color.FromArgb(76, 209, 55);
+        private readonly Color green2 = Color.FromArgb(68, 189, 50);
         private readonly Color yellow1 = Color.FromArgb(251, 197, 49);
         private readonly Color white1 = Color.FromArgb(220, 221, 225);
 
         public Hackheroes()
         {
             InitializeComponent();
+            InitializeButtons();
             InitializeColors();
         }
 
@@ -32,17 +35,53 @@ namespace app
         {
             BackColor = white1;
 
-            Color leftPanelBackColor = red1;
+            Color leftPanelBackColor = green1;
             flowLayoutPanel1.BackColor = leftPanelBackColor;
             panelProfileSetup.BackColor = leftPanelBackColor;
 
-            Color leftPanelButtonsColor = red2;
+            Color leftPanelButtonsColor = green2;
             buttonBMI.BackColor = leftPanelButtonsColor;
             buttonActivity.BackColor = leftPanelButtonsColor;
             buttonQuiz.BackColor = leftPanelButtonsColor;
             buttonCalculator.BackColor = leftPanelButtonsColor;
             buttonSurvey.BackColor = leftPanelButtonsColor;
             buttonProfile.BackColor = leftPanelButtonsColor;
+        }
+
+        private enum ButtonsIndex
+        {
+            buttonBMI,
+            buttonActivity,
+            buttonQuiz,
+            buttonCalculator,
+            buttonSurvey,
+            buttonProfile
+        }
+
+
+        private void InitializeButtons()
+        {
+            panelButtons.Add(buttonBMI);
+            panelButtons.Add(buttonActivity); 
+            panelButtons.Add(buttonQuiz); 
+            panelButtons.Add(buttonCalculator); 
+            panelButtons.Add(buttonSurvey); 
+            panelButtons.Add(buttonProfile); 
+        }
+
+        private void DisableButton(ButtonsIndex buttonIndex)
+        {
+            for (int index = 0; index < panelButtons.Count; ++index)
+            {
+                if (index == (int)buttonIndex)
+                {
+                    panelButtons[index].Enabled = false;
+                }
+                else
+                {
+                    panelButtons[index].Enabled = true;
+                }
+            }
         }
 
         private void DisableQuiz()
@@ -268,6 +307,7 @@ namespace app
 
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
+            DisableButton(ButtonsIndex.buttonBMI);
             int userIndex = Program.currentUserIndex;
 
             if(!Calculator.CalculateBMI(Program.users[userIndex]))
@@ -289,6 +329,7 @@ namespace app
 
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
+            DisableButton(ButtonsIndex.buttonActivity);
             ChangePanel(2);
             ActivityMatcher.LoadSports();
 
@@ -301,22 +342,26 @@ namespace app
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
+            DisableButton(ButtonsIndex.buttonQuiz);
             ChangePanel(3);
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
+            DisableButton(ButtonsIndex.buttonCalculator);
             ChangePanel(4);
             UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
+            DisableButton(ButtonsIndex.buttonSurvey);
             ChangePanel(5);
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
+            DisableButton(ButtonsIndex.buttonProfile);
             ChangePanel(6);
 
             UpdateButtonDeleteEnabledStatus();
