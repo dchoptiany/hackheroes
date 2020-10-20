@@ -33,7 +33,6 @@
             this.buttonBMI = new System.Windows.Forms.Button();
             this.buttonActivity = new System.Windows.Forms.Button();
             this.buttonQuiz = new System.Windows.Forms.Button();
-            this.buttonCalculator = new System.Windows.Forms.Button();
             this.buttonSurvey = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -140,7 +139,7 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.panel0.SuspendLayout();
+            this.buttonCalculator = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -169,23 +168,23 @@
             // 
             // panel0
             // 
-            this.panel0.Controls.Add(this.flowLayoutPanel1);
-            this.panel0.Location = new System.Drawing.Point(100, 100);
+            this.panel0.Location = new System.Drawing.Point(260, 50);
             this.panel0.Name = "panel0";
-            this.panel0.Size = new System.Drawing.Size(1000, 500);
+            this.panel0.Size = new System.Drawing.Size(940, 650);
             this.panel0.TabIndex = 13;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.buttonProfile);
             this.flowLayoutPanel1.Controls.Add(this.buttonBMI);
             this.flowLayoutPanel1.Controls.Add(this.buttonActivity);
             this.flowLayoutPanel1.Controls.Add(this.buttonQuiz);
             this.flowLayoutPanel1.Controls.Add(this.buttonCalculator);
             this.flowLayoutPanel1.Controls.Add(this.buttonSurvey);
-            this.flowLayoutPanel1.Controls.Add(this.buttonProfile);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 175);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1000, 500);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(260, 525);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // buttonBMI
@@ -194,10 +193,10 @@
             this.buttonBMI.FlatAppearance.BorderSize = 0;
             this.buttonBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonBMI.Location = new System.Drawing.Point(0, 0);
-            this.buttonBMI.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonBMI.Location = new System.Drawing.Point(5, 70);
+            this.buttonBMI.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonBMI.Name = "buttonBMI";
-            this.buttonBMI.Size = new System.Drawing.Size(333, 250);
+            this.buttonBMI.Size = new System.Drawing.Size(250, 60);
             this.buttonBMI.TabIndex = 0;
             this.buttonBMI.Text = "BMI";
             this.buttonBMI.UseVisualStyleBackColor = false;
@@ -211,10 +210,10 @@
             this.buttonActivity.FlatAppearance.BorderSize = 0;
             this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonActivity.Location = new System.Drawing.Point(333, 0);
-            this.buttonActivity.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonActivity.Location = new System.Drawing.Point(5, 135);
+            this.buttonActivity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonActivity.Name = "buttonActivity";
-            this.buttonActivity.Size = new System.Drawing.Size(333, 250);
+            this.buttonActivity.Size = new System.Drawing.Size(250, 60);
             this.buttonActivity.TabIndex = 1;
             this.buttonActivity.Text = "Aktywność";
             this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -227,32 +226,14 @@
             this.buttonQuiz.FlatAppearance.BorderSize = 0;
             this.buttonQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F);
-            this.buttonQuiz.Location = new System.Drawing.Point(666, 0);
-            this.buttonQuiz.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonQuiz.Location = new System.Drawing.Point(5, 200);
+            this.buttonQuiz.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonQuiz.Name = "buttonQuiz";
-            this.buttonQuiz.Size = new System.Drawing.Size(333, 250);
+            this.buttonQuiz.Size = new System.Drawing.Size(250, 60);
             this.buttonQuiz.TabIndex = 2;
             this.buttonQuiz.Text = "Quizy";
             this.buttonQuiz.UseVisualStyleBackColor = false;
             this.buttonQuiz.Click += new System.EventHandler(this.ButtonQuiz_Click);
-            // 
-            // buttonCalculator
-            // 
-            this.buttonCalculator.BackColor = System.Drawing.Color.Lime;
-            this.buttonCalculator.BackgroundImage = global::app.Properties.Resources.Calculator;
-            this.buttonCalculator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCalculator.FlatAppearance.BorderSize = 0;
-            this.buttonCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonCalculator.Location = new System.Drawing.Point(0, 250);
-            this.buttonCalculator.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonCalculator.Name = "buttonCalculator";
-            this.buttonCalculator.Size = new System.Drawing.Size(333, 250);
-            this.buttonCalculator.TabIndex = 3;
-            this.buttonCalculator.Text = "Kalkulator kalorii";
-            this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonCalculator.UseVisualStyleBackColor = false;
-            this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
             // 
             // buttonSurvey
             // 
@@ -260,10 +241,10 @@
             this.buttonSurvey.FlatAppearance.BorderSize = 0;
             this.buttonSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey.Location = new System.Drawing.Point(333, 250);
-            this.buttonSurvey.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonSurvey.Location = new System.Drawing.Point(5, 330);
+            this.buttonSurvey.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonSurvey.Name = "buttonSurvey";
-            this.buttonSurvey.Size = new System.Drawing.Size(333, 250);
+            this.buttonSurvey.Size = new System.Drawing.Size(250, 60);
             this.buttonSurvey.TabIndex = 4;
             this.buttonSurvey.Text = "Ankiety diagnostyczne";
             this.buttonSurvey.UseVisualStyleBackColor = false;
@@ -277,10 +258,10 @@
             this.buttonProfile.FlatAppearance.BorderSize = 0;
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.buttonProfile.Location = new System.Drawing.Point(666, 250);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonProfile.Location = new System.Drawing.Point(5, 5);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(333, 250);
+            this.buttonProfile.Size = new System.Drawing.Size(250, 60);
             this.buttonProfile.TabIndex = 5;
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -294,9 +275,9 @@
             this.panel1.Controls.Add(this.labelBMI);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(100, 100);
+            this.panel1.Location = new System.Drawing.Point(260, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 500);
+            this.panel1.Size = new System.Drawing.Size(940, 650);
             this.panel1.TabIndex = 14;
             // 
             // pictureBoxArrow
@@ -363,9 +344,9 @@
             this.panel2.Controls.Add(this.labelActivityResult);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(100, 100);
+            this.panel2.Location = new System.Drawing.Point(260, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 500);
+            this.panel2.Size = new System.Drawing.Size(940, 650);
             this.panel2.TabIndex = 15;
             // 
             // checkBoxChooseAutomatically
@@ -572,9 +553,9 @@
             this.panel3.Controls.Add(this.tableLayoutPanelAnswers);
             this.panel3.Controls.Add(this.ButtonStartQuiz);
             this.panel3.Controls.Add(this.labelQuiz);
-            this.panel3.Location = new System.Drawing.Point(100, 100);
+            this.panel3.Location = new System.Drawing.Point(260, 50);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 500);
+            this.panel3.Size = new System.Drawing.Size(940, 650);
             this.panel3.TabIndex = 16;
             // 
             // pictureBoxTime
@@ -772,9 +753,9 @@
             this.panel4.Controls.Add(this.label25);
             this.panel4.Controls.Add(this.trackBarActivityLevel);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(100, 100);
+            this.panel4.Location = new System.Drawing.Point(260, 50);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1000, 500);
+            this.panel4.Size = new System.Drawing.Size(940, 650);
             this.panel4.TabIndex = 17;
             // 
             // tableLayoutPanel1
@@ -1036,9 +1017,9 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Location = new System.Drawing.Point(100, 100);
+            this.panel5.Location = new System.Drawing.Point(260, 50);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1000, 500);
+            this.panel5.Size = new System.Drawing.Size(940, 650);
             this.panel5.TabIndex = 18;
             // 
             // label2
@@ -1091,9 +1072,9 @@
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label1);
-            this.panel6.Location = new System.Drawing.Point(100, 100);
+            this.panel6.Location = new System.Drawing.Point(260, 50);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1000, 500);
+            this.panel6.Size = new System.Drawing.Size(940, 650);
             this.panel6.TabIndex = 19;
             // 
             // buttonEdit
@@ -1625,12 +1606,31 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
+            // buttonCalculator
+            // 
+            this.buttonCalculator.BackColor = System.Drawing.Color.Lime;
+            this.buttonCalculator.BackgroundImage = global::app.Properties.Resources.Calculator;
+            this.buttonCalculator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCalculator.FlatAppearance.BorderSize = 0;
+            this.buttonCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCalculator.Location = new System.Drawing.Point(5, 265);
+            this.buttonCalculator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.buttonCalculator.Name = "buttonCalculator";
+            this.buttonCalculator.Size = new System.Drawing.Size(250, 60);
+            this.buttonCalculator.TabIndex = 3;
+            this.buttonCalculator.Text = "Kalkulator kalorii";
+            this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonCalculator.UseVisualStyleBackColor = false;
+            this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
             this.ControlBox = false;
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -1647,7 +1647,6 @@
             this.Text = "Hackheroes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hackheroes_FormClosing);
             this.Load += new System.EventHandler(this.Hackheroes_Load);
-            this.panel0.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1695,7 +1694,6 @@
         private System.Windows.Forms.Button buttonBMI;
         private System.Windows.Forms.Button buttonActivity;
         private System.Windows.Forms.Button buttonQuiz;
-        private System.Windows.Forms.Button buttonCalculator;
         private System.Windows.Forms.Button buttonSurvey;
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Panel panel1;
@@ -1800,5 +1798,6 @@
         private System.Windows.Forms.CheckBox checkBoxChooseAutomatically;
         private System.Windows.Forms.RadioButton radioButtonPair;
         private System.Windows.Forms.RadioButton radioButtonAllWeatherConditions;
+        private System.Windows.Forms.Button buttonCalculator;
     }
 }
