@@ -968,7 +968,7 @@ namespace app
                 Center(labelWeatherInfo);
                 labelWeatherInfo.Visible = true;
             }
-            catch(WebException excpt)
+            catch(WebException excep)
             {
                 string message = "Upewnij się, że masz sprawne połączenie internetowe, a podane miasto jest prawidłowe.";
                 string caption = "Nie można sprawdzić pogody";
