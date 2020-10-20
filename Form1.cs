@@ -13,6 +13,7 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
+        private List<Button> surveyButtons = new List<Button>();
         private Survey survey;
 
         public Hackheroes()
@@ -20,64 +21,26 @@ namespace app
             InitializeComponent(); 
         }
 
-        private void DisableQuiz()
-        {
-            buttonQuiz.Enabled = false;
-            buttonQuiz.BackColor = Color.FromArgb(127, 143, 166);
-        }
-
-        private void DisableActivityMatcher()
-        {
-            buttonActivity.Enabled = false;
-            buttonActivity.BackColor = Color.FromArgb(127, 143, 166);
-        }
-
-        private void ChangePanel(int index)
-        {
-            panels[index].BringToFront();
-            buttonReturn.Visible = index != 0;
-        }
-
-        private void ButtonClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void ButtonMinimizeClick(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            if(!Quiz.LoadQuestions())
-            {
-                DisableQuiz();
-            }
-
-            if(!ActivityMatcher.LoadSports())
-            {
-                DisableActivityMatcher();
-            }
-
             try
             {
                 string[] JSON = File.ReadAllLines("..\\..\\users.json");
                 List<string> usersJSON = new List<string>();
 
-                for(int i = 0; i < JSON.Length; i += 7)
+                for (int i = 0; i < JSON.Length; i += 7)
                 {
                     usersJSON.Add(JSON[i] + JSON[i + 1] + JSON[i + 2] + JSON[i + 3] + JSON[i + 4] + JSON[i + 5] + JSON[i + 6]);
                 }
 
-	            foreach(string line in usersJSON)
-	            {
-	                User newUser = JsonSerializer.Deserialize<User>(line);
-	                Program.users.Add(newUser);
-	                listBoxUsers.Items.Add(newUser.name);
-	            }
+                foreach (string line in usersJSON)
+                {
+                    User newUser = JsonSerializer.Deserialize<User>(line);
+                    Program.users.Add(newUser);
+                    listBoxUsers.Items.Add(newUser.name);
+                }
             }
-            catch(FileNotFoundException exception)
+            catch (FileNotFoundException exception)
             {
                 MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Program.users.Add(new User("User", 18, 80f, 180, Gender.Male));
@@ -93,13 +56,83 @@ namespace app
                 panels.Add(panel5); //surveys
                 panels.Add(panel6); //profiles
 
-                answerButtons.Add(ButtonAnswerA);
-                answerButtons.Add(ButtonAnswerB);
-                answerButtons.Add(ButtonAnswerC);
-                answerButtons.Add(ButtonAnswerD);
+                answerButtons.Add(buttonAnswerA);
+                answerButtons.Add(buttonAnswerB);
+                answerButtons.Add(buttonAnswerC);
+                answerButtons.Add(buttonAnswerD);
+
+                surveyButtons.Add(buttonSurvey1);
+                surveyButtons.Add(buttonSurvey2);
+                surveyButtons.Add(buttonSurvey3);
+                surveyButtons.Add(buttonSurvey4);
+                surveyButtons.Add(buttonSurvey5);
+                surveyButtons.Add(buttonSurvey6);
+
+                if (!Quiz.LoadQuestions())
+                {
+                    Disable(buttonQuiz);
+                }
+
+                if (!ActivityMatcher.LoadSports())
+                {
+                    Disable(buttonActivity);
+                }
+
+                if (!Survey.LoadSurveys())
+                {
+                    Disable(buttonSurvey);
+                }
+                else
+                {
+                    for(int i = 0; i < Survey.surveys.Count; i++)
+                    {
+                        surveyButtons[i].Text = Survey.surveys[i].title;
+                        surveyButtons[i].Visible = true;
+                    }
+                }
 
                 ChangePanel(0);
             }
+        }
+
+        private void Disable(Button button)
+        {
+            button.Enabled = false;
+            button.BackColor = Color.FromArgb(127, 143, 166);
+        }
+
+        private void ChangePanel(int index)
+        {
+            panels[index].BringToFront();
+            buttonReturn.Visible = index != 0;
+        }
+
+        private void ChangePanel(Panel panel)
+        {
+            panel.BringToFront();
+            buttonReturn.Visible = !(panel == panel0);
+        }
+
+        private int GetSurveyID(Button button)
+        {
+            for(int i = 0; i < surveyButtons.Count; i++)
+            {
+                if(button == surveyButtons[i])
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ButtonMinimizeClick(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
 
         private void UpdateResultOfMatching()
@@ -286,13 +319,6 @@ namespace app
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            tablePanelAnswer.Visible = false;
-            flowPanelSurveys.Visible = true;
-            labelFinish.Visible = false;
-            labelSurveyTitle.Text = "Ankiety diagnostyczne";
-            Center(labelSurveyTitle);
-            labelSurveyQuestion.Visible = false;
-            labelSurveyQuestionNumber.Visible = false;
             ChangePanel(5);
         }
 
@@ -612,10 +638,10 @@ namespace app
             pictureBoxTimeBorder.Visible = true;
             labelQuestion.Visible = true;
             tableLayoutPanelAnswers.Visible = true;
-            ButtonAnswerA.Visible = true;
-            ButtonAnswerB.Visible = true;
-            ButtonAnswerC.Visible = true;
-            ButtonAnswerD.Visible = true;
+            buttonAnswerA.Visible = true;
+            buttonAnswerB.Visible = true;
+            buttonAnswerC.Visible = true;
+            buttonAnswerD.Visible = true;
 
             pictureBoxTime.Size = new Size(0, 30);
 
@@ -668,7 +694,7 @@ namespace app
                     answerButtons[buttonIndex].Text = Quiz.drawnQuestions[Quiz.questionNumber].incorrectAnswers[answerIndex++];
                     answerButtons[buttonIndex].Enabled = true;
                 }
-            } while(!(ButtonAnswerA.Enabled && ButtonAnswerB.Enabled && ButtonAnswerC.Enabled && ButtonAnswerD.Enabled));
+            } while(!(buttonAnswerA.Enabled && buttonAnswerB.Enabled && buttonAnswerC.Enabled && buttonAnswerD.Enabled));
 
             Quiz.isAnswerChosen = false;
 
@@ -703,12 +729,12 @@ namespace app
             Center(labelQuizResult);
             labelQuestion.Visible = false;
             tableLayoutPanelAnswers.Visible = false;
-            ButtonAnswerA.Visible = false;
-            ButtonAnswerB.Visible = false;
-            ButtonAnswerC.Visible = false;
-            ButtonAnswerD.Visible = false;
+            buttonAnswerA.Visible = false;
+            buttonAnswerB.Visible = false;
+            buttonAnswerC.Visible = false;
+            buttonAnswerD.Visible = false;
             labelQuizResult.Visible = true;
-            ButtonFinishQuiz.Visible = true;
+            buttonFinishQuiz.Visible = true;
             labelNumber.Visible = false;
             pictureBoxTime.Visible = false;
             pictureBoxTimeBorder.Visible = false;
@@ -762,16 +788,16 @@ namespace app
             MarkCorrectAnswer(clickedButton);
         }
 
-        private void Reset()
+        private void ResetQuiz()
         {
             labelQuizResult.Visible = false;
-            ButtonFinishQuiz.Visible = false;
+            buttonFinishQuiz.Visible = false;
             ButtonStartQuiz.Visible = true;
         }
 
         private void ButtonFinishQuiz_Click(object sender, EventArgs e)
         {
-            Reset();
+            ResetQuiz();
         }
 
         private void UpdateActivityLevel()
@@ -780,29 +806,20 @@ namespace app
             UpdateMacro();
         }
 
-        private void SetupSurvey()
+        private void ButtonSurveyTitle_Clicked(object sender, EventArgs e)
         {
-            flowPanelSurveys.Visible = false;
-            tablePanelAnswer.Visible = true;
-            labelSurveyTitle.Text = survey.title;
-
-            Center(labelSurveyTitle);
-        }
-
-        private void SetupSurveyQuestion()
-        {
-            labelSurveyQuestion.Visible = true;
-            labelSurveyQuestionNumber.Visible = true;
+            survey = Survey.surveys[GetSurveyID((Button)sender)];
+            Survey.currentQuestionIndex = 0;
+            ChangePanel(panelSurvey);
             NextSurveyQuestion();
         }
 
         private void NextSurveyQuestion()
         {
-            int currentSurverQuestionCount = survey.currentQuestionIndex + 1;
-            labelSurveyQuestionNumber.Text = "Pytanie " + currentSurverQuestionCount.ToString() + "/" + survey.questions.Count.ToString();
-            switch(survey.questions[survey.currentQuestionIndex].questionType)
+            labelSurveyQuestionNumber.Text = "Pytanie " + (Survey.currentQuestionIndex + 1) + "/" + survey.questions.Count.ToString();
+            switch(survey.questions[Survey.currentQuestionIndex].questionType)
             {
-                case Survey.QuestionType.YES_OR_NO:
+                case QuestionType.YES_OR_NO:
                     {
                         buttonSurveyA.Visible = false;
                         buttonSurveyB.Visible = false;
@@ -815,7 +832,7 @@ namespace app
                         buttonSurveyNo.Text = "Nie";
                         break;
                     }
-                case Survey.QuestionType.ABCD:
+                case QuestionType.ABCD:
                     {
                         buttonSurveyA.Visible = true;
                         buttonSurveyB.Visible = true;
@@ -824,13 +841,13 @@ namespace app
                         textBoxSurveyText.Visible = false;
                         buttonSurveyConfirm.Visible = false;
 
-                        buttonSurveyA.Text = survey.questions[survey.currentQuestionIndex].answersValues[0].Key;
-                        buttonSurveyB.Text = survey.questions[survey.currentQuestionIndex].answersValues[1].Key;
-                        buttonSurveyYes.Text = survey.questions[survey.currentQuestionIndex].answersValues[2].Key;
-                        buttonSurveyNo.Text = survey.questions[survey.currentQuestionIndex].answersValues[3].Key;
+                        buttonSurveyA.Text = survey.questions[Survey.currentQuestionIndex].answersValues[0].Key;
+                        buttonSurveyB.Text = survey.questions[Survey.currentQuestionIndex].answersValues[1].Key;
+                        buttonSurveyYes.Text = survey.questions[Survey.currentQuestionIndex].answersValues[2].Key;
+                        buttonSurveyNo.Text = survey.questions[Survey.currentQuestionIndex].answersValues[3].Key;
                         break;
                     } 
-                case Survey.QuestionType.INPUT:
+                case QuestionType.INPUT:
                     {
                         buttonSurveyA.Visible = false;
                         buttonSurveyB.Visible = false;
@@ -854,35 +871,24 @@ namespace app
                         break;
                     }   
             }
-            labelSurveyQuestion.Text = survey.questions[survey.currentQuestionIndex].questionTitle;
+            labelSurveyQuestion.Text = survey.questions[Survey.currentQuestionIndex].questionTitle;
             Center(labelSurveyQuestionNumber);
             Center(labelSurveyQuestion);
         }
 
-        private void ButtonActivityLevelSurvey_Click(object sender, EventArgs e)
-        {
-            survey = new Survey("Poziom aktywności fizycznej");
-            SetupSurvey();
-            survey.AddQuestion("Czy pracujesz fizycznie?", Survey.QuestionType.YES_OR_NO);
-            survey.AddQuestion("Ile razy trenujesz w tygodniu?", Survey.QuestionType.INPUT);
-            survey.questions[1].maxInputValue = 7;
-            survey.AddQuestion("Oceń swoją aktynowść fizyczną? (0 - 10)", Survey.QuestionType.INPUT);
-            survey.questions[2].maxInputValue = 10;
-            SetupSurveyQuestion();
-        }
 
-        private void SurveyAnswerButtonClicked(object sender, EventArgs e)
+        private void ButtonSurveyAnswer_Clicked(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
             bool correctValue = true;
-            if(clickedButton.Text == "Potwierdź")
+
+            if(clickedButton == buttonSurveyConfirm)
             {
                 try
-                {          
-                    if (Convert.ToInt32(textBoxSurveyText.Text) >= 0 && Convert.ToInt32(textBoxSurveyText.Text) <= survey.questions[survey.currentQuestionIndex].maxInputValue)
+                {
+                    if(Convert.ToInt32(textBoxSurveyText.Text) >= 0 && Convert.ToInt32(textBoxSurveyText.Text) <= survey.questions[Survey.currentQuestionIndex].maxInputValue)
                     {
                         survey.surveyAnswersInt.Add(Convert.ToUInt32(textBoxSurveyText.Text));
-                        correctValue = true;
                     }
                     else
                     {
@@ -892,11 +898,11 @@ namespace app
                 catch(FormatException)
                 {
                     correctValue = false;
-                }   
+                }
             }
             else
             {
-                foreach (KeyValuePair<string, uint> answer in survey.questions[survey.currentQuestionIndex].answersValues)
+                foreach (KeyValuePair<string, uint> answer in survey.questions[Survey.currentQuestionIndex].answersValues)
                 {
                     if (clickedButton.Text == answer.Key)
                     {
@@ -906,60 +912,39 @@ namespace app
             }
             if(correctValue)
             {
-                if (survey.currentQuestionIndex + 1 < survey.questions.Count)
+                Console.WriteLine("index = " + Survey.currentQuestionIndex);
+                if(Survey.currentQuestionIndex + 1 < survey.questions.Count)
                 {
-                    ++survey.currentQuestionIndex;
+                    ++Survey.currentQuestionIndex;
                     NextSurveyQuestion();
                 }
                 else
                 {
                     FinishSurvey();
                 }
-            }  
+            }
         }
 
         private void FinishSurvey()
         {
-            labelFinish.Visible = true;
-            flowPanelSurveys.Visible = false;
-            tablePanelAnswer.Visible = false;
-            buttonSurveyConfirm.Visible = false;
-            textBoxSurveyText.Visible = false;
-            labelSurveyQuestion.Visible = false;
-            labelSurveyQuestionNumber.Visible = false;
-            if (survey.title == "Poziom aktywności fizycznej")
+            ChangePanel(panelSurveyFinished);
+
+            if(survey == Survey.surveys[0]) //Poziom aktywnosci fizycznej
             {
                 Program.users[Program.currentUserIndex].physicalJob = survey.surveyAnswersInt[0] == 1;
-
                 Program.users[Program.currentUserIndex].trainingsInWeek = survey.surveyAnswersInt[1];
                 Program.users[Program.currentUserIndex].dailyMovementLevel = survey.surveyAnswersInt[2];
 
                 Calculator.CalculateActivityLevel(Program.users[Program.currentUserIndex]);
-                labelFinish.Text = "Poziom aktywności wynosi " + Program.users[Program.currentUserIndex].activityLevel.ToString();
+                labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
             }       
             
             Center(labelFinish);
         }
+
         private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
         {
             UpdateActivityLevel();
-        }
-
-        private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-
-            List<string> JSON = new List<string>();
-
-            foreach(User user in Program.users)
-            {
-                JSON.Add(JsonSerializer.Serialize(user, options));
-            }
-
-            File.WriteAllLines("..\\..\\users.json", JSON);
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
@@ -1026,6 +1011,23 @@ namespace app
         {
             groupBoxWeather.Enabled = !checkBoxChooseAutomatically.Checked;
             UpdateResultOfMatching();
+        }
+
+        private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            List<string> JSON = new List<string>();
+
+            foreach (User user in Program.users)
+            {
+                JSON.Add(JsonSerializer.Serialize(user, options));
+            }
+
+            File.WriteAllLines("..\\..\\users.json", JSON);
         }
     }
 }
