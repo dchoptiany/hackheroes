@@ -693,11 +693,12 @@
             // 
             this.labelWeatherInfo.AutoSize = true;
             this.labelWeatherInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelWeatherInfo.Location = new System.Drawing.Point(464, 342);
+            this.labelWeatherInfo.Location = new System.Drawing.Point(461, 332);
             this.labelWeatherInfo.Name = "labelWeatherInfo";
             this.labelWeatherInfo.Size = new System.Drawing.Size(88, 15);
             this.labelWeatherInfo.TabIndex = 18;
             this.labelWeatherInfo.Text = "<weather info>";
+            this.labelWeatherInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelWeatherInfo.Visible = false;
             // 
             // textBoxCity
@@ -722,16 +723,17 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(2)))));
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(439, 460);
+            this.buttonSearch.Location = new System.Drawing.Point(430, 451);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(126, 37);
+            this.buttonSearch.Size = new System.Drawing.Size(140, 46);
             this.buttonSearch.TabIndex = 15;
             this.buttonSearch.Text = "Szukaj";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // buttonMediumEffort
             // 
@@ -815,6 +817,7 @@
             this.buttonCheckWeather.TabIndex = 8;
             this.buttonCheckWeather.Text = "Sprawdź";
             this.buttonCheckWeather.UseVisualStyleBackColor = false;
+            this.buttonCheckWeather.Click += new System.EventHandler(this.ButtonCheckWeather_Click);
             // 
             // buttonGoodWeather
             // 

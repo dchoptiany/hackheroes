@@ -280,6 +280,39 @@ namespace app
         {
             ChangePanel(2);
             ActivityMatcher.LoadSports();
+
+            buttonIndividual.BackColor = Color.FromArgb(39, 60, 117);
+            buttonIndividual.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonPair.BackColor = Color.FromArgb(39, 60, 117);
+            buttonPair.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonTeam.BackColor = Color.FromArgb(39, 60, 117);
+            buttonTeam.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonAnyParticipants.BackColor = Color.FromArgb(39, 60, 117);
+            buttonAnyParticipants.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonGoodWeather.BackColor = Color.FromArgb(39, 60, 117);
+            buttonGoodWeather.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonBadWeather.BackColor = Color.FromArgb(39, 60, 117);
+            buttonBadWeather.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonAnyWeather.BackColor = Color.FromArgb(39, 60, 117);
+            buttonAnyWeather.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonLowEffort.BackColor = Color.FromArgb(39, 60, 117);
+            buttonLowEffort.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonMediumEffort.BackColor = Color.FromArgb(39, 60, 117);
+            buttonMediumEffort.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonHighEffort.BackColor = Color.FromArgb(39, 60, 117);
+            buttonHighEffort.ForeColor = Color.FromArgb(255, 255, 255);
+
+            buttonAnyEffort.BackColor = Color.FromArgb(39, 60, 117);
+            buttonAnyEffort.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
@@ -987,7 +1020,7 @@ namespace app
 
             Button button = (Button)sender;
             button.BackColor = Color.FromArgb(251, 197, 3);
-            button.ForeColor = Color.FromArgb(0, 0, 0);
+            button.ForeColor = Color.FromArgb(47, 54, 64);
         }
 
         private void ButtonWeather_Click(object sender, EventArgs e)
@@ -1003,7 +1036,7 @@ namespace app
 
             Button button = (Button)sender;
             button.BackColor = Color.FromArgb(251, 197, 3);
-            button.ForeColor = Color.FromArgb(0, 0, 0);
+            button.ForeColor = Color.FromArgb(47, 54, 64);
         }
 
         private void ButtonEffort_Click(object sender, EventArgs e)
@@ -1022,16 +1055,97 @@ namespace app
 
             Button button = (Button)sender;
             button.BackColor = Color.FromArgb(251, 197, 3);
-            button.ForeColor = Color.FromArgb(0, 0, 0);
+            button.ForeColor = Color.FromArgb(47, 54, 64);
         }
-        /*
-* 
-* private void ButtonInMatcher_Click(object sender, EventArgs e)
-{
-Button button = (Button)sender;
-button.BackColor = Color.FromArgb(251, 197, 3);
-button.ForeColor = Color.FromArgb(0, 0, 0);
-}
-*/
+
+        private void ButtonCheckWeather_Click(object sender, EventArgs e)
+        {
+            float temperature = currentWeather.GetTemperature(textBoxCity.Text);
+
+            if(temperature > 12 && temperature < 30)
+            {
+                labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", temperature);
+            }
+            else
+            {
+                labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", temperature);
+            }
+            Center(labelWeatherInfo);
+            labelWeatherInfo.Visible = true;
+        }
+
+        private void ButtonSearch_Click(object sender, EventArgs e)
+        {
+            Participants participants = 0;
+            Weather weather = 0;
+            EffortLevel effortLevel = 0;
+
+            if((buttonIndividual.BackColor == buttonPair.BackColor && buttonTeam.BackColor == buttonAnyParticipants.BackColor && buttonIndividual.BackColor == buttonAnyParticipants.BackColor)
+                || (buttonLowEffort.BackColor == buttonMediumEffort.BackColor && buttonHighEffort.BackColor == buttonAnyEffort.BackColor && buttonLowEffort.BackColor == buttonAnyEffort.BackColor)
+                || (buttonGoodWeather.BackColor == buttonBadWeather.BackColor && buttonGoodWeather.BackColor == buttonAnyWeather.BackColor))
+            {
+                string message = "Aby wyszukać aktywność należy zaznaczyć jedną cechę z każdej kategori. Jeśli nie wiesz na co się zdecydować, zaznacz ostanią opcję.";
+                string caption = "Nie można wyszukać aktywności";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                if (buttonIndividual.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    participants = Participants.One;
+                }
+                else if (buttonPair.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    participants = Participants.Two;
+                }
+                else if (buttonTeam.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    participants = Participants.More;
+                }
+                else if (buttonAnyParticipants.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    participants = Participants.Any;
+                }
+
+               
+                if (buttonGoodWeather.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    weather = Weather.Good;
+                }
+                else if (buttonBadWeather.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    weather = Weather.Bad;
+                }
+                else if (buttonAnyWeather.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    weather = Weather.Any;
+                }
+
+                
+                if (buttonLowEffort.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    effortLevel = EffortLevel.Low;
+                }
+                else if (buttonMediumEffort.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    effortLevel = EffortLevel.Medium;
+                }
+                else if (buttonHighEffort.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    effortLevel = EffortLevel.High;
+                }
+                else if (buttonAnyEffort.BackColor == Color.FromArgb(251, 197, 3))
+                {
+                    effortLevel = EffortLevel.Any;
+                }
+            }
+        }
     }
 }
