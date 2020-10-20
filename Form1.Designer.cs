@@ -1889,6 +1889,7 @@
             this.labelActivityResult.Size = new System.Drawing.Size(100, 29);
             this.labelActivityResult.TabIndex = 17;
             this.labelActivityResult.Text = "<result>";
+            this.labelActivityResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 

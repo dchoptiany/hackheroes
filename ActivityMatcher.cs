@@ -53,6 +53,7 @@ namespace app
     {
         public static List<Sport> sports;
         public static List<Sport> approvedSports;
+        public static CurrentWeather currentWeather = new CurrentWeather();
 
         private static Participants latestParticipants;
         private static Weather latestWeather;

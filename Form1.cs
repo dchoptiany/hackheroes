@@ -13,8 +13,10 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
+        private List<Button> acitivtyMatcherParticipantsButtons = new List<Button>();
+        private List<Button> acitivtyMatcherWeatherButtons = new List<Button>();
+        private List<Button> acitivtyMatcherEffortButtons = new List<Button>();
         private Survey survey;
-        private CurrentWeather currentWeather = new CurrentWeather();
 
         public Hackheroes()
         {
@@ -100,6 +102,21 @@ namespace app
                 answerButtons.Add(ButtonAnswerB);
                 answerButtons.Add(ButtonAnswerC);
                 answerButtons.Add(ButtonAnswerD);
+
+                acitivtyMatcherParticipantsButtons.Add(buttonIndividual);
+                acitivtyMatcherParticipantsButtons.Add(buttonPair);
+                acitivtyMatcherParticipantsButtons.Add(buttonTeam);
+                acitivtyMatcherParticipantsButtons.Add(buttonAnyParticipants);
+
+                acitivtyMatcherWeatherButtons.Add(buttonGoodWeather);
+                acitivtyMatcherWeatherButtons.Add(buttonBadWeather);
+                acitivtyMatcherWeatherButtons.Add(buttonAnyWeather);
+
+                acitivtyMatcherEffortButtons.Add(buttonLowEffort);
+                acitivtyMatcherEffortButtons.Add(buttonMediumEffort);
+                acitivtyMatcherEffortButtons.Add(buttonHighEffort);
+                acitivtyMatcherEffortButtons.Add(buttonAnyEffort);
+
 
                 ChangePanel(0);
             }
@@ -207,6 +224,8 @@ namespace app
             SetButtonAsUnclicked(buttonMediumEffort);
             SetButtonAsUnclicked(buttonHighEffort);
             SetButtonAsUnclicked(buttonAnyEffort);
+
+            labelWeatherInfo.Visible = false;
         }
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
@@ -910,6 +929,7 @@ namespace app
             Button button = (Button)sender;
             button.BackColor = Color.FromArgb(251, 197, 3);
             button.ForeColor = Color.FromArgb(47, 54, 64);
+            button.Enabled = false;
         }
 
         private void ButtonEffort_Click(object sender, EventArgs e)
@@ -922,11 +942,12 @@ namespace app
             Button button = (Button)sender;
             button.BackColor = Color.FromArgb(251, 197, 3);
             button.ForeColor = Color.FromArgb(47, 54, 64);
+            button.Enabled = false;
         }
 
         private void ButtonCheckWeather_Click(object sender, EventArgs e)
         {
-            float temperature = currentWeather.GetTemperature(textBoxCity.Text);
+            float temperature = ActivityMatcher.currentWeather.GetTemperature(textBoxCity.Text);
 
             if (temperature > 12 && temperature < 30)
             {
@@ -940,15 +961,123 @@ namespace app
             labelWeatherInfo.Visible = true;
         }
 
+        private bool OneOfParticipantsButtonsDisabled()
+        {
+            bool oneDisabled = false;
+            foreach(Button button in acitivtyMatcherParticipantsButtons)
+            {
+                if (!oneDisabled && !button.Enabled)
+                {
+                    oneDisabled = true;
+                }
+                if (!oneDisabled && !button.Enabled)
+                {
+                    return false;
+                }
+            }
+            return oneDisabled;
+        }
+
+        private bool OneOfWeatherButtonsDisabled()
+        {
+            bool oneDisabled = false;
+            foreach (Button button in acitivtyMatcherWeatherButtons)
+            {
+                if (!oneDisabled && !button.Enabled)
+                {
+                    oneDisabled = true;
+                }
+                if (!oneDisabled && !button.Enabled)
+                {
+                    return false;
+                }
+            }
+            return oneDisabled;
+        }
+
+        private bool OneOfEffortButtonsDisabled()
+        {
+            bool oneDisabled = false;
+            foreach(Button button in acitivtyMatcherEffortButtons)
+            {
+                if(!oneDisabled && !button.Enabled)
+                {
+                    oneDisabled = true;
+                }
+                if(!oneDisabled && !button.Enabled)
+                {
+                    return false;
+                }
+            }
+            return oneDisabled;
+        }
+
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
             Participants participants = 0;
             Weather weather = 0;
             EffortLevel effortLevel = 0;
 
-            if ((buttonIndividual.BackColor == buttonPair.BackColor && buttonTeam.BackColor == buttonAnyParticipants.BackColor && buttonIndividual.BackColor == buttonAnyParticipants.BackColor)
-                || (buttonLowEffort.BackColor == buttonMediumEffort.BackColor && buttonHighEffort.BackColor == buttonAnyEffort.BackColor && buttonLowEffort.BackColor == buttonAnyEffort.BackColor)
-                || (buttonGoodWeather.BackColor == buttonBadWeather.BackColor && buttonGoodWeather.BackColor == buttonAnyWeather.BackColor))
+            if (OneOfParticipantsButtonsDisabled() && OneOfWeatherButtonsDisabled() && OneOfEffortButtonsDisabled())
+            {
+                if (!buttonIndividual.Enabled)
+                {
+                    participants = Participants.One;
+                }
+                else if (!buttonPair.Enabled)
+                {
+                    participants = Participants.Two;
+                }
+                else if (!buttonTeam.Enabled)
+                {
+                    participants = Participants.More;
+                }
+                else if (!buttonAnyParticipants.Enabled)
+                {
+                    participants = Participants.Any;
+                }
+
+                if (!buttonGoodWeather.Enabled)
+                {
+                    weather = Weather.Good;
+                }
+                else if (!buttonBadWeather.Enabled)
+                {
+                    weather = Weather.Bad;
+                }
+                else if (!buttonAnyWeather.Enabled)
+                {
+                    weather = Weather.Any;
+                }
+
+                if (!buttonLowEffort.Enabled)
+                {
+                    effortLevel = EffortLevel.Low;
+                }
+                else if (!buttonMediumEffort.Enabled)
+                {
+                    effortLevel = EffortLevel.Medium;
+                }
+                else if (!buttonHighEffort.Enabled)
+                {
+                    effortLevel = EffortLevel.High;
+                }
+                else if (!buttonAnyEffort.Enabled)
+                {
+                    effortLevel = EffortLevel.Any;
+                }
+
+                labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
+                Center(labelActivityResult);
+                if (labelActivityResult.Text == "")
+                {
+                    labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
+                    Center(labelActivityResult);
+                }
+
+                ChangePanel(7);
+            }
+            else
             {
                 string message = "Aby wyszukać aktywność należy zaznaczyć jedną cechę z każdej kategori. Jeśli nie wiesz na co się zdecydować, zaznacz ostanią opcję.";
                 string caption = "Nie można wyszukać aktywności";
@@ -960,65 +1089,6 @@ namespace app
                 {
                     Close();
                 }
-            }
-            else
-            {
-                if (buttonIndividual.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    participants = Participants.One;
-                }
-                else if (buttonPair.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    participants = Participants.Two;
-                }
-                else if (buttonTeam.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    participants = Participants.More;
-                }
-                else if (buttonAnyParticipants.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    participants = Participants.Any;
-                }
-
-                if (buttonGoodWeather.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    weather = Weather.Good;
-                }
-                else if (buttonBadWeather.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    weather = Weather.Bad;
-                }
-                else if (buttonAnyWeather.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    weather = Weather.Any;
-                }
-
-                if (buttonLowEffort.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    effortLevel = EffortLevel.Low;
-                }
-                else if (buttonMediumEffort.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    effortLevel = EffortLevel.Medium;
-                }
-                else if (buttonHighEffort.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    effortLevel = EffortLevel.High;
-                }
-                else if (buttonAnyEffort.BackColor == Color.FromArgb(251, 197, 3))
-                {
-                    effortLevel = EffortLevel.Any;
-                }
-
-                labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
-                Center(labelActivityResult);
-                if(labelActivityResult.Text == "")
-                {
-                    labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
-                    Center(labelActivityResult);
-                }
-
-                ChangePanel(7);
             }
         }
         private void ButtonShowNext_Click(object sender, EventArgs e)
