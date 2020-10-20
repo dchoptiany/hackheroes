@@ -63,15 +63,18 @@ namespace app
 
                 string[] JSON = File.ReadAllLines("..\\..\\Resources\\Sports.json");
                 List<string> sportsJSON = new List<string>();
+                string sportLine;
 
                 for (int i = 0; i < JSON.Length; i += 6)
                 {
-                    sportsJSON.Add(JSON[i] + JSON[i + 1] + JSON[i + 2] + JSON[i + 3] + JSON[i + 4] + JSON[i + 5]);
-                }
+                    sportLine = string.Empty;
 
-                foreach (string line in sportsJSON)
-                {
-                    sports.Add(JsonSerializer.Deserialize<Sport>(line));
+                    for (int line = 0; line < 6; line++)
+                    {
+                        sportLine += JSON[i + line];
+                    }
+
+                    sports.Add(JsonSerializer.Deserialize<Sport>(sportLine));
                 }
 
                 return true;
