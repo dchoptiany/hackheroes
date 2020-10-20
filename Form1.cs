@@ -1040,13 +1040,11 @@ namespace app
                 }
 
                 labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
-                Center(labelActivityResult);
                 if (labelActivityResult.Text == "")
                 {
                     labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
-                    Center(labelActivityResult);
                 }
-
+                Center(labelActivityResult);
                 ChangePanel(7);
             }
             else
