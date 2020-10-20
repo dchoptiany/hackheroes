@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.Net;
 
 namespace app
 {
@@ -947,24 +948,39 @@ namespace app
 
         private void ButtonCheckWeather_Click(object sender, EventArgs e)
         {
-            float temperature = ActivityMatcher.currentWeather.GetTemperature(textBoxCity.Text);
+            try
+            {
+                float temperature = ActivityMatcher.currentWeather.GetTemperature(textBoxCity.Text);
+                if (temperature > 12 && temperature < 30)
+                {
+                    labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", temperature);
+                    SetButtonAsUnclicked(buttonBadWeather);
+                    SetButtonAsUnclicked(buttonAnyWeather);
+                    SetButtonAsClicked(buttonGoodWeather);
+                }
+                else
+                {
+                    labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", temperature);
+                    SetButtonAsUnclicked(buttonGoodWeather);
+                    SetButtonAsUnclicked(buttonAnyWeather);
+                    SetButtonAsClicked(buttonBadWeather);
+                }
+                Center(labelWeatherInfo);
+                labelWeatherInfo.Visible = true;
+            }
+            catch(WebException excpt)
+            {
+                string message = "Upewnij się, że masz sprawne połączenie internetowe, a podane miasto jest prawidłowe.";
+                string caption = "Nie można sprawdzić pogody";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
 
-            if (temperature > 12 && temperature < 30)
-            {
-                labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", temperature);
-                SetButtonAsUnclicked(buttonBadWeather);
-                SetButtonAsUnclicked(buttonAnyWeather);
-                SetButtonAsClicked(buttonGoodWeather);
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Close();
+                }
             }
-            else
-            {
-                labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", temperature);
-                SetButtonAsUnclicked(buttonGoodWeather);
-                SetButtonAsUnclicked(buttonAnyWeather);
-                SetButtonAsClicked(buttonBadWeather);
-            }
-            Center(labelWeatherInfo);
-            labelWeatherInfo.Visible = true;
         }
 
         private bool OneOfButtonsDisabled(List<Button> list)

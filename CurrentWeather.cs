@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Text.Json;
 
@@ -67,9 +68,32 @@ namespace app
             public string name { get; set; }
             public int cod { get; set; }
         }
-    
+
+        public static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    using (client.OpenRead("http://google.com/generate_204"))
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public float GetTemperature(string city)
         {
+            if(!CheckForInternetConnection())
+            {
+                throw new WebException("No internet connection");
+            }
+
             float temp = 0f;
 
             using (WebClient web = new WebClient())
