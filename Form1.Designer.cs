@@ -141,7 +141,6 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonCalculator = new System.Windows.Forms.Button();
             this.panelProfileSetup = new System.Windows.Forms.Panel();
-            this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -170,10 +169,9 @@
             // 
             // panel0
             // 
-            this.panel0.Controls.Add(this.panel1);
             this.panel0.Location = new System.Drawing.Point(250, 50);
             this.panel0.Name = "panel0";
-            this.panel0.Size = new System.Drawing.Size(950, 650);
+            this.panel0.Size = new System.Drawing.Size(1000, 650);
             this.panel0.TabIndex = 13;
             // 
             // flowLayoutPanel1
@@ -280,9 +278,9 @@
             this.panel1.Controls.Add(this.labelBMI);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Location = new System.Drawing.Point(250, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 650);
+            this.panel1.Size = new System.Drawing.Size(1000, 650);
             this.panel1.TabIndex = 14;
             // 
             // pictureBoxArrow
@@ -351,7 +349,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(250, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(950, 650);
+            this.panel2.Size = new System.Drawing.Size(1000, 650);
             this.panel2.TabIndex = 15;
             // 
             // checkBoxChooseAutomatically
@@ -560,7 +558,7 @@
             this.panel3.Controls.Add(this.labelQuiz);
             this.panel3.Location = new System.Drawing.Point(250, 50);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(950, 650);
+            this.panel3.Size = new System.Drawing.Size(1000, 650);
             this.panel3.TabIndex = 16;
             // 
             // pictureBoxTime
@@ -760,7 +758,7 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(250, 50);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(950, 650);
+            this.panel4.Size = new System.Drawing.Size(1000, 650);
             this.panel4.TabIndex = 17;
             // 
             // tableLayoutPanel1
@@ -1024,7 +1022,7 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Location = new System.Drawing.Point(250, 50);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(950, 650);
+            this.panel5.Size = new System.Drawing.Size(1000, 650);
             this.panel5.TabIndex = 18;
             // 
             // label2
@@ -1079,7 +1077,7 @@
             this.panel6.Controls.Add(this.label1);
             this.panel6.Location = new System.Drawing.Point(250, 50);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(950, 650);
+            this.panel6.Size = new System.Drawing.Size(1000, 650);
             this.panel6.TabIndex = 19;
             // 
             // buttonEdit
@@ -1586,7 +1584,7 @@
             this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMinimize.FlatAppearance.BorderSize = 0;
             this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Location = new System.Drawing.Point(1120, 0);
+            this.buttonMinimize.Location = new System.Drawing.Point(1170, 0);
             this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMinimize.Name = "buttonMinimize";
             this.buttonMinimize.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1602,7 +1600,7 @@
             this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClose.FlatAppearance.BorderSize = 0;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Location = new System.Drawing.Point(1160, 0);
+            this.buttonClose.Location = new System.Drawing.Point(1210, 0);
             this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1640,11 +1638,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.ClientSize = new System.Drawing.Size(1250, 700);
             this.ControlBox = false;
             this.Controls.Add(this.panelProfileSetup);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel0);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -1659,7 +1658,6 @@
             this.Text = "Hackheroes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hackheroes_FormClosing);
             this.Load += new System.EventHandler(this.Hackheroes_Load);
-            this.panel0.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
