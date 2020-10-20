@@ -906,6 +906,12 @@ namespace app
             button.ForeColor = Color.FromArgb(255, 255, 255);
             button.Enabled = true;
         }
+        private void SetButtonAsClicked(Button button)
+        {
+            button.BackColor = Color.FromArgb(251, 197, 3);
+            button.ForeColor = Color.FromArgb(47, 54, 64);
+            button.Enabled = false;
+        }
 
         private void ButtonParticipants_Click(object sender, EventArgs e)
         {
@@ -915,9 +921,7 @@ namespace app
             SetButtonAsUnclicked(buttonAnyParticipants);
 
             Button button = (Button)sender;
-            button.BackColor = Color.FromArgb(251, 197, 3);
-            button.ForeColor = Color.FromArgb(47, 54, 64);
-            button.Enabled = false;
+            SetButtonAsClicked(button);
         }
 
         private void ButtonWeather_Click(object sender, EventArgs e)
@@ -927,9 +931,7 @@ namespace app
             SetButtonAsUnclicked(buttonAnyWeather);
 
             Button button = (Button)sender;
-            button.BackColor = Color.FromArgb(251, 197, 3);
-            button.ForeColor = Color.FromArgb(47, 54, 64);
-            button.Enabled = false;
+            SetButtonAsClicked(button);
         }
 
         private void ButtonEffort_Click(object sender, EventArgs e)
@@ -940,9 +942,7 @@ namespace app
             SetButtonAsUnclicked(buttonAnyEffort);
 
             Button button = (Button)sender;
-            button.BackColor = Color.FromArgb(251, 197, 3);
-            button.ForeColor = Color.FromArgb(47, 54, 64);
-            button.Enabled = false;
+            SetButtonAsClicked(button);
         }
 
         private void ButtonCheckWeather_Click(object sender, EventArgs e)
@@ -952,10 +952,16 @@ namespace app
             if (temperature > 12 && temperature < 30)
             {
                 labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", temperature);
+                SetButtonAsUnclicked(buttonBadWeather);
+                SetButtonAsUnclicked(buttonAnyWeather);
+                SetButtonAsClicked(buttonGoodWeather);
             }
             else
             {
                 labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", temperature);
+                SetButtonAsUnclicked(buttonGoodWeather);
+                SetButtonAsUnclicked(buttonAnyWeather);
+                SetButtonAsClicked(buttonBadWeather);
             }
             Center(labelWeatherInfo);
             labelWeatherInfo.Visible = true;
