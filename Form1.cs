@@ -217,7 +217,15 @@ namespace app
 
         private string GetInterpretation(float BMI)
         {
-            if(BMI < 18.5f)
+            if(BMI < 16f)
+            {
+                return "Wygłodzenie";
+            }
+            else if(BMI<17f)
+            {
+                return "Wychudzenie";
+            }
+            else if(BMI<18.5f)
             {
                 return "Niedowaga";
             }
@@ -229,9 +237,17 @@ namespace app
             {
                 return "Nadwaga";
             }
+            else if(BMI<35f)
+            {
+                return "I stopień otyłości";
+            }
+            else if(BMI<40f)
+            {
+                return "II stopień otyłości";
+            }
             else
             {
-                return "Otyłość";
+                return "Otyłość skrajna";
             }
         }
 
