@@ -41,16 +41,18 @@ namespace app
             {
                 string[] JSON = File.ReadAllLines("..\\..\\Resources\\Questions.json");
                 List<string> questionsJSON = new List<string>();
+                string questionLine;
 
                 for (int i = 0; i < JSON.Length; i += 9)
                 {
-                    questionsJSON.Add(JSON[i] + JSON[i + 1] + JSON[i + 2] + JSON[i + 3] + JSON[i + 4] + JSON[i + 5] + JSON[i + 6] + JSON[i + 7] + JSON[i + 8]);
-                }
+                    questionLine = string.Empty;
 
-                foreach (string line in questionsJSON)
-                {
-                    Question newQuestion = JsonSerializer.Deserialize<Question>(line);
-                    questions.Add(newQuestion);
+                    for(int line = 0; line < 9; line++)
+                    {
+                        questionLine += JSON[i + line];
+                    }
+
+                    questions.Add(JsonSerializer.Deserialize<Question>(questionLine));
                 }
 
                 return true;
