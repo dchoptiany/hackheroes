@@ -30,9 +30,19 @@ namespace app
 
         private void InitializeColors()
         {
-            flowLayoutPanel1.BackColor = white1;
+            BackColor = white1;
 
-            buttonBMI.BackColor = red2;
+            Color leftPanelBackColor = red1;
+            flowLayoutPanel1.BackColor = leftPanelBackColor;
+            panelProfileSetup.BackColor = leftPanelBackColor;
+
+            Color leftPanelButtonsColor = red2;
+            buttonBMI.BackColor = leftPanelButtonsColor;
+            buttonActivity.BackColor = leftPanelButtonsColor;
+            buttonQuiz.BackColor = leftPanelButtonsColor;
+            buttonCalculator.BackColor = leftPanelButtonsColor;
+            buttonSurvey.BackColor = leftPanelButtonsColor;
+            buttonProfile.BackColor = leftPanelButtonsColor;
         }
 
         private void DisableQuiz()

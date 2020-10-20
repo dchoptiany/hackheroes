@@ -140,6 +140,7 @@
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonCalculator = new System.Windows.Forms.Button();
+            this.panelProfileSetup = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -175,12 +176,12 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.buttonProfile);
             this.flowLayoutPanel1.Controls.Add(this.buttonBMI);
             this.flowLayoutPanel1.Controls.Add(this.buttonActivity);
             this.flowLayoutPanel1.Controls.Add(this.buttonQuiz);
             this.flowLayoutPanel1.Controls.Add(this.buttonCalculator);
             this.flowLayoutPanel1.Controls.Add(this.buttonSurvey);
+            this.flowLayoutPanel1.Controls.Add(this.buttonProfile);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 175);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
@@ -192,8 +193,9 @@
             this.buttonBMI.BackColor = System.Drawing.Color.Red;
             this.buttonBMI.FlatAppearance.BorderSize = 0;
             this.buttonBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonBMI.Location = new System.Drawing.Point(5, 70);
+            this.buttonBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBMI.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonBMI.Location = new System.Drawing.Point(5, 5);
             this.buttonBMI.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonBMI.Name = "buttonBMI";
             this.buttonBMI.Size = new System.Drawing.Size(250, 60);
@@ -205,18 +207,17 @@
             // buttonActivity
             // 
             this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonActivity.BackgroundImage = global::app.Properties.Resources.PhysicalActivity;
             this.buttonActivity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonActivity.FlatAppearance.BorderSize = 0;
             this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonActivity.Location = new System.Drawing.Point(5, 135);
+            this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonActivity.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonActivity.Location = new System.Drawing.Point(5, 70);
             this.buttonActivity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonActivity.Name = "buttonActivity";
             this.buttonActivity.Size = new System.Drawing.Size(250, 60);
             this.buttonActivity.TabIndex = 1;
             this.buttonActivity.Text = "Aktywność";
-            this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonActivity.UseVisualStyleBackColor = false;
             this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
             // 
@@ -225,8 +226,9 @@
             this.buttonQuiz.BackColor = System.Drawing.Color.Yellow;
             this.buttonQuiz.FlatAppearance.BorderSize = 0;
             this.buttonQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F);
-            this.buttonQuiz.Location = new System.Drawing.Point(5, 200);
+            this.buttonQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold);
+            this.buttonQuiz.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonQuiz.Location = new System.Drawing.Point(5, 135);
             this.buttonQuiz.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonQuiz.Name = "buttonQuiz";
             this.buttonQuiz.Size = new System.Drawing.Size(250, 60);
@@ -240,8 +242,9 @@
             this.buttonSurvey.BackColor = System.Drawing.Color.Aqua;
             this.buttonSurvey.FlatAppearance.BorderSize = 0;
             this.buttonSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey.Location = new System.Drawing.Point(5, 330);
+            this.buttonSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurvey.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonSurvey.Location = new System.Drawing.Point(5, 265);
             this.buttonSurvey.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonSurvey.Name = "buttonSurvey";
             this.buttonSurvey.Size = new System.Drawing.Size(250, 60);
@@ -253,12 +256,12 @@
             // buttonProfile
             // 
             this.buttonProfile.BackColor = System.Drawing.Color.Blue;
-            this.buttonProfile.BackgroundImage = global::app.Properties.Resources.Profile;
             this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonProfile.FlatAppearance.BorderSize = 0;
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.buttonProfile.Location = new System.Drawing.Point(5, 5);
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold);
+            this.buttonProfile.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonProfile.Location = new System.Drawing.Point(5, 330);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Size = new System.Drawing.Size(250, 60);
@@ -1609,12 +1612,12 @@
             // buttonCalculator
             // 
             this.buttonCalculator.BackColor = System.Drawing.Color.Lime;
-            this.buttonCalculator.BackgroundImage = global::app.Properties.Resources.Calculator;
             this.buttonCalculator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonCalculator.FlatAppearance.BorderSize = 0;
             this.buttonCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonCalculator.Location = new System.Drawing.Point(5, 265);
+            this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCalculator.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonCalculator.Location = new System.Drawing.Point(5, 200);
             this.buttonCalculator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.buttonCalculator.Name = "buttonCalculator";
             this.buttonCalculator.Size = new System.Drawing.Size(250, 60);
@@ -1624,12 +1627,20 @@
             this.buttonCalculator.UseVisualStyleBackColor = false;
             this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
             // 
+            // panelProfileSetup
+            // 
+            this.panelProfileSetup.Location = new System.Drawing.Point(0, 0);
+            this.panelProfileSetup.Name = "panelProfileSetup";
+            this.panelProfileSetup.Size = new System.Drawing.Size(260, 175);
+            this.panelProfileSetup.TabIndex = 21;
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
             this.ControlBox = false;
+            this.Controls.Add(this.panelProfileSetup);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panel1);
@@ -1799,5 +1810,6 @@
         private System.Windows.Forms.RadioButton radioButtonPair;
         private System.Windows.Forms.RadioButton radioButtonAllWeatherConditions;
         private System.Windows.Forms.Button buttonCalculator;
+        private System.Windows.Forms.Panel panelProfileSetup;
     }
 }
