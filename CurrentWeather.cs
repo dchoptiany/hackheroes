@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Net;
 using System.Text.Json;
@@ -87,7 +88,7 @@ namespace app
             }
         }
 
-        public float GetTemperature(string city)
+        public Tuple<float, bool> GetWeather(string city)
         {
             if(!CheckForInternetConnection())
             {
@@ -95,6 +96,8 @@ namespace app
             }
 
             float temp = 0f;
+            bool weatherOK = false;
+            string weath = "";
 
             using (WebClient web = new WebClient())
             {
@@ -102,8 +105,14 @@ namespace app
                 string json = web.DownloadString(url);
                 var w = JsonSerializer.Deserialize<Root>(json);
                 temp = Convert.ToSingle(w.main.temp);
+                weath = w.weather[0].main;
             }
-            return temp;
+            if (weath == "Clear" || weath == "Clouds")
+            {
+                weatherOK = true;
+            }
+
+            return new Tuple<float, bool>(temp, weatherOK);
         }
     }
 }

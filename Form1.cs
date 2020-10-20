@@ -950,17 +950,28 @@ namespace app
         {
             try
             {
-                float temperature = ActivityMatcher.currentWeather.GetTemperature(textBoxCity.Text);
-                if (temperature > 12 && temperature < 30)
+                Tuple<float, bool> weatherInfo = ActivityMatcher.currentWeather.GetWeather(textBoxCity.Text);
+
+                if (weatherInfo.Item1 > 12 && weatherInfo.Item1 < 30)
                 {
-                    labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", temperature);
-                    SetButtonAsUnclicked(buttonBadWeather);
-                    SetButtonAsUnclicked(buttonAnyWeather);
-                    SetButtonAsClicked(buttonGoodWeather);
+                    if(weatherInfo.Item2)
+                    {
+                        labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", weatherInfo.Item1);
+                        SetButtonAsUnclicked(buttonBadWeather);
+                        SetButtonAsUnclicked(buttonAnyWeather);
+                        SetButtonAsClicked(buttonGoodWeather);
+                    }
+                    else
+                    {
+                        labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną ze względu na inne warunki (np. opady).", weatherInfo.Item1);
+                        SetButtonAsUnclicked(buttonGoodWeather);
+                        SetButtonAsUnclicked(buttonAnyWeather);
+                        SetButtonAsClicked(buttonBadWeather);
+                    }
                 }
                 else
                 {
-                    labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", temperature);
+                    labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", weatherInfo.Item1);
                     SetButtonAsUnclicked(buttonGoodWeather);
                     SetButtonAsUnclicked(buttonAnyWeather);
                     SetButtonAsClicked(buttonBadWeather);
@@ -968,7 +979,7 @@ namespace app
                 Center(labelWeatherInfo);
                 labelWeatherInfo.Visible = true;
             }
-            catch(WebException excep)
+            catch(WebException excpt)
             {
                 string message = "Upewnij się, że masz sprawne połączenie internetowe, a podane miasto jest prawidłowe.";
                 string caption = "Nie można sprawdzić pogody";
