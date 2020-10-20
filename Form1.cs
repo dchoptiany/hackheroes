@@ -967,50 +967,16 @@ namespace app
             labelWeatherInfo.Visible = true;
         }
 
-        private bool OneOfParticipantsButtonsDisabled()
+        private bool OneOfButtonsDisabled(List<Button> list)
         {
             bool oneDisabled = false;
-            foreach(Button button in acitivtyMatcherParticipantsButtons)
+            foreach(Button button in list)
             {
                 if (!oneDisabled && !button.Enabled)
                 {
                     oneDisabled = true;
                 }
                 if (!oneDisabled && !button.Enabled)
-                {
-                    return false;
-                }
-            }
-            return oneDisabled;
-        }
-
-        private bool OneOfWeatherButtonsDisabled()
-        {
-            bool oneDisabled = false;
-            foreach (Button button in acitivtyMatcherWeatherButtons)
-            {
-                if (!oneDisabled && !button.Enabled)
-                {
-                    oneDisabled = true;
-                }
-                if (!oneDisabled && !button.Enabled)
-                {
-                    return false;
-                }
-            }
-            return oneDisabled;
-        }
-
-        private bool OneOfEffortButtonsDisabled()
-        {
-            bool oneDisabled = false;
-            foreach(Button button in acitivtyMatcherEffortButtons)
-            {
-                if(!oneDisabled && !button.Enabled)
-                {
-                    oneDisabled = true;
-                }
-                if(!oneDisabled && !button.Enabled)
                 {
                     return false;
                 }
@@ -1024,7 +990,7 @@ namespace app
             Weather weather = 0;
             EffortLevel effortLevel = 0;
 
-            if (OneOfParticipantsButtonsDisabled() && OneOfWeatherButtonsDisabled() && OneOfEffortButtonsDisabled())
+            if (OneOfButtonsDisabled(acitivtyMatcherParticipantsButtons) && OneOfButtonsDisabled(acitivtyMatcherWeatherButtons) && OneOfButtonsDisabled(acitivtyMatcherEffortButtons))
             {
                 if (!buttonIndividual.Enabled)
                 {
