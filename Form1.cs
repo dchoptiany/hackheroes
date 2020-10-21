@@ -16,6 +16,7 @@ namespace app
 
         private List<User> users;
         private int currentUserIndex;
+        private readonly List<Button> surveyButtons = new List<Button>();
 
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
@@ -89,20 +90,17 @@ namespace app
             panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
             panelPointer.Height = clickedButton.Height;
         }
-        private readonly List<Button> answerButtons = new List<Button>();
-        private readonly List<Button> surveyButtons = new List<Button>();
-
-        public Hackheroes()
-        {
-            InitializeComponent(); 
-        }
-
 
         private void ChangePanel(int index)
         {
             panels[index].BringToFront();
         }
-        
+
+        private void ChangePanel(Panel panel)
+        {
+            panel.BringToFront();
+        }
+
         private void LoadQuestions()
         {
             Quiz.questions = new List<Question>();
@@ -262,18 +260,6 @@ namespace app
         {
             button.Enabled = false;
             button.BackColor = Color.FromArgb(127, 143, 166);
-        }
-
-        private void ChangePanel(int index)
-        {
-            panels[index].BringToFront();
-            buttonReturn.Visible = index != 0;
-        }
-
-        private void ChangePanel(Panel panel)
-        {
-            panel.BringToFront();
-            buttonReturn.Visible = !(panel == panel0);
         }
 
         private int GetSurveyID(Button button)
