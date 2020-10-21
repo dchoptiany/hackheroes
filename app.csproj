@@ -97,6 +97,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Survey.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

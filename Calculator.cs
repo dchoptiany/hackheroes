@@ -39,5 +39,17 @@ namespace app
 
             user.carbohydrates = (int)(caloriesLeft / 4f);
         }
+
+        public static void CalculateActivityLevel(User user)
+        {
+            float activityLevel = 1.1f;
+            if (user.physicalJob)
+            {
+                activityLevel += 0.1f;
+            }
+            activityLevel += user.trainingsInWeek * 0.05f;
+            activityLevel += user.dailyMovementLevel * 0.025f;
+            user.activityLevel = activityLevel;
+        }
     }
 }

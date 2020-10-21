@@ -7,7 +7,7 @@
 	}
 
 	public class User
-	{
+	{		
 		///  Body section
 		public string name { get; set; }
 		public byte age { get; set; }
@@ -16,7 +16,11 @@
 		public Gender gender { get; set; }
 
 		public float BMI;
+
 		public float activityLevel;
+		public bool physicalJob;
+		public uint trainingsInWeek;
+		public uint dailyMovementLevel;
 
 		///  Macro Section
 		public int calories;
