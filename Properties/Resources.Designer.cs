@@ -73,6 +73,16 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avatar {
+            get {
+                object obj = ResourceManager.GetObject("avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BMIScale {
             get {
                 object obj = ResourceManager.GetObject("BMIScale", resourceCulture);
@@ -103,9 +113,19 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap comment_blog {
+        internal static System.Drawing.Bitmap gym_dumbbell {
             get {
-                object obj = ResourceManager.GetObject("comment-blog", resourceCulture);
+                object obj = ResourceManager.GetObject("gym-dumbbell", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap healthy_heart {
+            get {
+                object obj = ResourceManager.GetObject("healthy-heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +136,16 @@ namespace app.Properties {
         internal static System.Drawing.Bitmap minimizeIcon {
             get {
                 object obj = ResourceManager.GetObject("minimizeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap question_mark_line {
+            get {
+                object obj = ResourceManager.GetObject("question-mark-line", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
