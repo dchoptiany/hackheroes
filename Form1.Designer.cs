@@ -1482,7 +1482,7 @@
             this.buttonBMI.Location = new System.Drawing.Point(0, 5);
             this.buttonBMI.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonBMI.Name = "buttonBMI";
-            this.buttonBMI.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonBMI.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
             this.buttonBMI.Size = new System.Drawing.Size(280, 82);
             this.buttonBMI.TabIndex = 0;
             this.buttonBMI.Text = "BMI";
@@ -1524,7 +1524,7 @@
             this.buttonQuiz.Location = new System.Drawing.Point(0, 173);
             this.buttonQuiz.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonQuiz.Name = "buttonQuiz";
-            this.buttonQuiz.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.buttonQuiz.Padding = new System.Windows.Forms.Padding(10, 0, 16, 0);
             this.buttonQuiz.Size = new System.Drawing.Size(280, 82);
             this.buttonQuiz.TabIndex = 2;
             this.buttonQuiz.Text = "Quizy";
@@ -1546,7 +1546,7 @@
             this.buttonCalculator.Location = new System.Drawing.Point(0, 257);
             this.buttonCalculator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonCalculator.Name = "buttonCalculator";
-            this.buttonCalculator.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonCalculator.Padding = new System.Windows.Forms.Padding(10, 0, 6, 0);
             this.buttonCalculator.Size = new System.Drawing.Size(280, 82);
             this.buttonCalculator.TabIndex = 3;
             this.buttonCalculator.Text = "Kalkulator kalorii";
@@ -1589,7 +1589,7 @@
             this.buttonProfile.Location = new System.Drawing.Point(0, 425);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 7, 0);
+            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.buttonProfile.Size = new System.Drawing.Size(280, 82);
             this.buttonProfile.TabIndex = 5;
             this.buttonProfile.Text = "Profile";
