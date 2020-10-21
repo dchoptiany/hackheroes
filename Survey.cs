@@ -2,42 +2,30 @@
 
 namespace app
 {
+    public enum QuestionType
+    {
+        YES_OR_NO,
+        ABCD,
+        INPUT
+    }
+
     class Survey
     {
-        public int currentQuestionIndex;
-        public string title;
-        public List<Question> questions;
-        public List<uint> surveyAnswersInt;     
-
-        public Survey(string _title)
+        public class SurveyQuestion
         {
-            currentQuestionIndex = 0;
-            title = _title;
-            questions = new List<Question>();
-            surveyAnswersInt = new List<uint>();
-        }
+            public string questionTitle { get; set; }
+            public QuestionType questionType { get; set; }
+            public List<KeyValuePair<string, uint>> answersValues { get; set; }
+            public int maxInputValue { get; set; }
 
-        public enum QuestionType
-        {
-            YES_OR_NO,
-            ABCD,
-            INPUT
-        }
+            public void AddAnswer(string answerText, uint answerValue)
+            {
+                KeyValuePair<string, uint> newPair = new KeyValuePair<string, uint>(answerText, answerValue);
+                answersValues.Add(newPair);
+            }
 
-        public void AddQuestion(string title, QuestionType type)
-        {
-            questions.Add(new Question(title, type));
-        }
-
-        public class Question
-        {
-            public string questionTitle;
-            public QuestionType questionType;
-            public List<KeyValuePair<string, uint>> answersValues;
-            public int maxInputValue = 0;
-
-            public Question(string _questionTitle, QuestionType _questionType)
-            {     
+            public SurveyQuestion(string _questionTitle, QuestionType _questionType)
+            {
                 questionTitle = _questionTitle;
                 questionType = _questionType;
 
@@ -50,11 +38,32 @@ namespace app
                 maxInputValue = 0;
             }
 
-            public void AddAnswer(string answerText, uint answerValue)
+            public SurveyQuestion()
             {
-                KeyValuePair<string, uint> newPair = new KeyValuePair<string, uint>(answerText, answerValue);
-                answersValues.Add(newPair);
             }
-        }      
+        }
+
+        public static int currentQuestionIndex;
+
+        public string title { get; set; }
+        public List<SurveyQuestion> questions { get; set; }
+        public List<uint> surveyAnswersInt = new List<uint>();
+
+        public Survey(string _title)
+        {
+            currentQuestionIndex = 0;
+            title = _title;
+            questions = new List<SurveyQuestion>();
+            surveyAnswersInt = new List<uint>();
+        }
+        
+        public Survey()
+        {
+        }
+
+        public void AddQuestion(string title, QuestionType type)
+        {
+            questions.Add(new SurveyQuestion(title, type));
+        }
     }
 }
