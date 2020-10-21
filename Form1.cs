@@ -979,9 +979,13 @@ namespace app
                 Center(labelWeatherInfo);
                 labelWeatherInfo.Visible = true;
             }
-            catch(WebException excpt)
+            catch(WebException exception)
             {
-                string message = "Upewnij się, że masz sprawne połączenie internetowe, a podane miasto jest prawidłowe.";
+                string message = string.Format("Nie znaleziono takiego miejsca ({0}).\nUpewnij się czy nazwa jest wpisana poprawnie i spróbuj ponownie.", textBoxCity.Text);
+                if (exception.Message == "No internet connection")
+                {
+                    message = "Do sprawdzenia pogody konieczne jest połączenie internetowe.";
+                }
                 string caption = "Nie można sprawdzić pogody";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;

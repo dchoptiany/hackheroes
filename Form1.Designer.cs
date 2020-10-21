@@ -161,6 +161,7 @@
             this.buttonLowEffort = new System.Windows.Forms.Button();
             this.pictureBoxTraining = new System.Windows.Forms.PictureBox();
             this.buttonMediumEffort = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -190,6 +191,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTraining)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel0
@@ -381,12 +383,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.buttonAnyEffort);
-            this.panel2.Controls.Add(this.buttonHighEffort);
-            this.panel2.Controls.Add(this.buttonLowEffort);
-            this.panel2.Controls.Add(this.pictureBoxTraining);
+            this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.buttonSearch);
-            this.panel2.Controls.Add(this.buttonMediumEffort);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1878,7 +1876,7 @@
             this.buttonAnyEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnyEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAnyEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyEffort.Location = new System.Drawing.Point(695, 377);
+            this.buttonAnyEffort.Location = new System.Drawing.Point(29, 348);
             this.buttonAnyEffort.Name = "buttonAnyEffort";
             this.buttonAnyEffort.Size = new System.Drawing.Size(258, 49);
             this.buttonAnyEffort.TabIndex = 12;
@@ -1892,7 +1890,7 @@
             this.buttonHighEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHighEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonHighEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonHighEffort.Location = new System.Drawing.Point(695, 285);
+            this.buttonHighEffort.Location = new System.Drawing.Point(32, 263);
             this.buttonHighEffort.Name = "buttonHighEffort";
             this.buttonHighEffort.Size = new System.Drawing.Size(258, 49);
             this.buttonHighEffort.TabIndex = 13;
@@ -1906,7 +1904,7 @@
             this.buttonLowEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLowEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonLowEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonLowEffort.Location = new System.Drawing.Point(695, 166);
+            this.buttonLowEffort.Location = new System.Drawing.Point(32, 143);
             this.buttonLowEffort.Name = "buttonLowEffort";
             this.buttonLowEffort.Size = new System.Drawing.Size(258, 49);
             this.buttonLowEffort.TabIndex = 11;
@@ -1917,7 +1915,7 @@
             // pictureBoxTraining
             // 
             this.pictureBoxTraining.Image = global::app.Properties.Resources.training;
-            this.pictureBoxTraining.Location = new System.Drawing.Point(669, 48);
+            this.pictureBoxTraining.Location = new System.Drawing.Point(6, 27);
             this.pictureBoxTraining.Name = "pictureBoxTraining";
             this.pictureBoxTraining.Size = new System.Drawing.Size(307, 88);
             this.pictureBoxTraining.TabIndex = 1;
@@ -1929,13 +1927,26 @@
             this.buttonMediumEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMediumEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonMediumEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonMediumEffort.Location = new System.Drawing.Point(695, 225);
+            this.buttonMediumEffort.Location = new System.Drawing.Point(32, 203);
             this.buttonMediumEffort.Name = "buttonMediumEffort";
             this.buttonMediumEffort.Size = new System.Drawing.Size(258, 49);
             this.buttonMediumEffort.TabIndex = 14;
             this.buttonMediumEffort.Text = "Średni wysiłek";
             this.buttonMediumEffort.UseVisualStyleBackColor = false;
             this.buttonMediumEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.buttonAnyEffort);
+            this.groupBox3.Controls.Add(this.buttonLowEffort);
+            this.groupBox3.Controls.Add(this.buttonHighEffort);
+            this.groupBox3.Controls.Add(this.buttonMediumEffort);
+            this.groupBox3.Controls.Add(this.pictureBoxTraining);
+            this.groupBox3.Location = new System.Drawing.Point(666, 22);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(317, 426);
+            this.groupBox3.TabIndex = 22;
+            this.groupBox3.TabStop = false;
             // 
             // Hackheroes
             // 
@@ -1997,6 +2008,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTraining)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2136,5 +2148,6 @@
         private System.Windows.Forms.Button buttonLowEffort;
         private System.Windows.Forms.PictureBox pictureBoxTraining;
         private System.Windows.Forms.Button buttonMediumEffort;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
