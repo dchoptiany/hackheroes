@@ -18,8 +18,8 @@ namespace app
         private int currentUserIndex;
 
         private readonly List<Panel> panels = new List<Panel>();
-        private List<Button> answerButtons = new List<Button>();
-        private List<Button> surveyButtons = new List<Button>();
+        private readonly List<Button> answerButtons = new List<Button>();
+        private readonly List<Button> surveyButtons = new List<Button>();
 
         public Hackheroes()
         {
