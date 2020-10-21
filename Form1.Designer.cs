@@ -145,25 +145,27 @@
             this.buttonSurvey6 = new System.Windows.Forms.Button();
             this.labelSurveyTitle = new System.Windows.Forms.Label();
             this.panelSurveyMenu = new System.Windows.Forms.Panel();
-            this.panelSurvey = new System.Windows.Forms.Panel();
-            this.labelSurveyQuestionNumber = new System.Windows.Forms.Label();
-            this.buttonSurveyConfirm = new System.Windows.Forms.Button();
-            this.textBoxSurveyText = new System.Windows.Forms.TextBox();
-            this.tablePanelAnswer = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonSurveyYes = new System.Windows.Forms.Button();
-            this.buttonSurveyNo = new System.Windows.Forms.Button();
-            this.buttonSurveyA = new System.Windows.Forms.Button();
-            this.buttonSurveyB = new System.Windows.Forms.Button();
-            this.labelSurveyQuestion = new System.Windows.Forms.Label();
             this.panelSurveyFinished = new System.Windows.Forms.Panel();
+            this.buttonSurveyFinished = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
             this.labelFinish = new System.Windows.Forms.Label();
             this.panelQuizMenu = new System.Windows.Forms.Panel();
             this.labelQuiz = new System.Windows.Forms.Label();
             this.ButtonStartQuiz = new System.Windows.Forms.Button();
             this.panelQuizFinished = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.labelQuizResult = new System.Windows.Forms.Label();
             this.buttonFinishQuiz = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelSurveyQuestion = new System.Windows.Forms.Label();
+            this.tableLayoutPanelSurveyAnswers = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSurveyB = new System.Windows.Forms.Button();
+            this.buttonSurveyA = new System.Windows.Forms.Button();
+            this.textBoxSurveyText = new System.Windows.Forms.TextBox();
+            this.buttonSurveyConfirm = new System.Windows.Forms.Button();
+            this.labelSurveyQuestionNumber = new System.Windows.Forms.Label();
+            this.panelSurvey = new System.Windows.Forms.Panel();
+            this.buttonSurveyNo = new System.Windows.Forms.Button();
+            this.buttonSurveyYes = new System.Windows.Forms.Button();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -189,11 +191,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             this.flowPanelSurveys.SuspendLayout();
             this.panelSurveyMenu.SuspendLayout();
-            this.panelSurvey.SuspendLayout();
-            this.tablePanelAnswer.SuspendLayout();
             this.panelSurveyFinished.SuspendLayout();
             this.panelQuizMenu.SuspendLayout();
             this.panelQuizFinished.SuspendLayout();
+            this.tableLayoutPanelSurveyAnswers.SuspendLayout();
+            this.panelSurvey.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelSidebar
@@ -673,6 +675,7 @@
             this.tableLayoutPanelAnswers.Controls.Add(this.buttonAnswerD, 1, 1);
             this.tableLayoutPanelAnswers.Controls.Add(this.buttonAnswerC, 0, 1);
             this.tableLayoutPanelAnswers.Location = new System.Drawing.Point(50, 320);
+            this.tableLayoutPanelAnswers.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelAnswers.Name = "tableLayoutPanelAnswers";
             this.tableLayoutPanelAnswers.RowCount = 2;
             this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1616,17 +1619,17 @@
             this.flowPanelSurveys.Controls.Add(this.buttonSurvey6);
             this.flowPanelSurveys.Location = new System.Drawing.Point(100, 100);
             this.flowPanelSurveys.Name = "flowPanelSurveys";
-            this.flowPanelSurveys.Size = new System.Drawing.Size(800, 350);
+            this.flowPanelSurveys.Size = new System.Drawing.Size(800, 500);
             this.flowPanelSurveys.TabIndex = 2;
             // 
             // buttonSurvey1
             // 
             this.buttonSurvey1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurvey1.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSurvey1.Location = new System.Drawing.Point(0, 0);
             this.buttonSurvey1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.buttonSurvey1.Name = "buttonSurvey1";
-            this.buttonSurvey1.Size = new System.Drawing.Size(800, 50);
+            this.buttonSurvey1.Size = new System.Drawing.Size(800, 75);
             this.buttonSurvey1.TabIndex = 0;
             this.buttonSurvey1.Text = "<title>";
             this.buttonSurvey1.UseVisualStyleBackColor = true;
@@ -1636,11 +1639,11 @@
             // buttonSurvey2
             // 
             this.buttonSurvey2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey2.Location = new System.Drawing.Point(0, 60);
+            this.buttonSurvey2.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurvey2.Location = new System.Drawing.Point(0, 85);
             this.buttonSurvey2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.buttonSurvey2.Name = "buttonSurvey2";
-            this.buttonSurvey2.Size = new System.Drawing.Size(800, 50);
+            this.buttonSurvey2.Size = new System.Drawing.Size(800, 75);
             this.buttonSurvey2.TabIndex = 1;
             this.buttonSurvey2.Text = "<title>";
             this.buttonSurvey2.UseVisualStyleBackColor = true;
@@ -1650,11 +1653,11 @@
             // buttonSurvey3
             // 
             this.buttonSurvey3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey3.Location = new System.Drawing.Point(0, 120);
+            this.buttonSurvey3.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurvey3.Location = new System.Drawing.Point(0, 170);
             this.buttonSurvey3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.buttonSurvey3.Name = "buttonSurvey3";
-            this.buttonSurvey3.Size = new System.Drawing.Size(800, 50);
+            this.buttonSurvey3.Size = new System.Drawing.Size(800, 75);
             this.buttonSurvey3.TabIndex = 2;
             this.buttonSurvey3.Text = "<title>";
             this.buttonSurvey3.UseVisualStyleBackColor = true;
@@ -1664,11 +1667,11 @@
             // buttonSurvey4
             // 
             this.buttonSurvey4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey4.Location = new System.Drawing.Point(0, 180);
+            this.buttonSurvey4.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurvey4.Location = new System.Drawing.Point(0, 255);
             this.buttonSurvey4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.buttonSurvey4.Name = "buttonSurvey4";
-            this.buttonSurvey4.Size = new System.Drawing.Size(800, 50);
+            this.buttonSurvey4.Size = new System.Drawing.Size(800, 75);
             this.buttonSurvey4.TabIndex = 3;
             this.buttonSurvey4.Text = "<title>";
             this.buttonSurvey4.UseVisualStyleBackColor = true;
@@ -1678,11 +1681,11 @@
             // buttonSurvey5
             // 
             this.buttonSurvey5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey5.Location = new System.Drawing.Point(0, 240);
+            this.buttonSurvey5.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurvey5.Location = new System.Drawing.Point(0, 340);
             this.buttonSurvey5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.buttonSurvey5.Name = "buttonSurvey5";
-            this.buttonSurvey5.Size = new System.Drawing.Size(800, 50);
+            this.buttonSurvey5.Size = new System.Drawing.Size(800, 75);
             this.buttonSurvey5.TabIndex = 4;
             this.buttonSurvey5.Text = "<title>";
             this.buttonSurvey5.UseVisualStyleBackColor = true;
@@ -1692,11 +1695,11 @@
             // buttonSurvey6
             // 
             this.buttonSurvey6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey6.Location = new System.Drawing.Point(0, 300);
+            this.buttonSurvey6.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurvey6.Location = new System.Drawing.Point(0, 425);
             this.buttonSurvey6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.buttonSurvey6.Name = "buttonSurvey6";
-            this.buttonSurvey6.Size = new System.Drawing.Size(800, 50);
+            this.buttonSurvey6.Size = new System.Drawing.Size(800, 75);
             this.buttonSurvey6.TabIndex = 5;
             this.buttonSurvey6.Text = "<title>";
             this.buttonSurvey6.UseVisualStyleBackColor = true;
@@ -1706,10 +1709,10 @@
             // labelSurveyTitle
             // 
             this.labelSurveyTitle.AutoSize = true;
-            this.labelSurveyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSurveyTitle.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyTitle.Location = new System.Drawing.Point(396, 10);
             this.labelSurveyTitle.Name = "labelSurveyTitle";
-            this.labelSurveyTitle.Size = new System.Drawing.Size(181, 55);
+            this.labelSurveyTitle.Size = new System.Drawing.Size(208, 84);
             this.labelSurveyTitle.TabIndex = 3;
             this.labelSurveyTitle.Text = "Ankiety";
             this.labelSurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1723,148 +1726,45 @@
             this.panelSurveyMenu.Size = new System.Drawing.Size(1000, 650);
             this.panelSurveyMenu.TabIndex = 18;
             // 
-            // panelSurvey
-            // 
-            this.panelSurvey.Controls.Add(this.labelSurveyQuestionNumber);
-            this.panelSurvey.Controls.Add(this.buttonSurveyConfirm);
-            this.panelSurvey.Controls.Add(this.textBoxSurveyText);
-            this.panelSurvey.Controls.Add(this.tablePanelAnswer);
-            this.panelSurvey.Controls.Add(this.labelSurveyQuestion);
-            this.panelSurvey.Location = new System.Drawing.Point(280, 50);
-            this.panelSurvey.Name = "panelSurvey";
-            this.panelSurvey.Size = new System.Drawing.Size(1000, 650);
-            this.panelSurvey.TabIndex = 21;
-            // 
-            // labelSurveyQuestionNumber
-            // 
-            this.labelSurveyQuestionNumber.AutoSize = true;
-            this.labelSurveyQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSurveyQuestionNumber.Location = new System.Drawing.Point(360, 70);
-            this.labelSurveyQuestionNumber.Name = "labelSurveyQuestionNumber";
-            this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(263, 25);
-            this.labelSurveyQuestionNumber.TabIndex = 14;
-            this.labelSurveyQuestionNumber.Text = "Pytanie: <number>/<total>";
-            // 
-            // buttonSurveyConfirm
-            // 
-            this.buttonSurveyConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.buttonSurveyConfirm.Location = new System.Drawing.Point(305, 368);
-            this.buttonSurveyConfirm.Name = "buttonSurveyConfirm";
-            this.buttonSurveyConfirm.Size = new System.Drawing.Size(390, 80);
-            this.buttonSurveyConfirm.TabIndex = 12;
-            this.buttonSurveyConfirm.Text = "Potwierdź";
-            this.buttonSurveyConfirm.UseVisualStyleBackColor = true;
-            this.buttonSurveyConfirm.Visible = false;
-            this.buttonSurveyConfirm.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            // 
-            // textBoxSurveyText
-            // 
-            this.textBoxSurveyText.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F);
-            this.textBoxSurveyText.Location = new System.Drawing.Point(400, 168);
-            this.textBoxSurveyText.Name = "textBoxSurveyText";
-            this.textBoxSurveyText.Size = new System.Drawing.Size(200, 98);
-            this.textBoxSurveyText.TabIndex = 13;
-            this.textBoxSurveyText.Text = "0";
-            this.textBoxSurveyText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxSurveyText.Visible = false;
-            // 
-            // tablePanelAnswer
-            // 
-            this.tablePanelAnswer.ColumnCount = 2;
-            this.tablePanelAnswer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.5F));
-            this.tablePanelAnswer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.5F));
-            this.tablePanelAnswer.Controls.Add(this.buttonSurveyYes, 0, 1);
-            this.tablePanelAnswer.Controls.Add(this.buttonSurveyNo, 1, 1);
-            this.tablePanelAnswer.Controls.Add(this.buttonSurveyA, 0, 0);
-            this.tablePanelAnswer.Controls.Add(this.buttonSurveyB, 1, 0);
-            this.tablePanelAnswer.Location = new System.Drawing.Point(100, 118);
-            this.tablePanelAnswer.Name = "tablePanelAnswer";
-            this.tablePanelAnswer.RowCount = 3;
-            this.tablePanelAnswer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablePanelAnswer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablePanelAnswer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tablePanelAnswer.Size = new System.Drawing.Size(800, 350);
-            this.tablePanelAnswer.TabIndex = 11;
-            // 
-            // buttonSurveyYes
-            // 
-            this.buttonSurveyYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurveyYes.Location = new System.Drawing.Point(3, 168);
-            this.buttonSurveyYes.Name = "buttonSurveyYes";
-            this.buttonSurveyYes.Size = new System.Drawing.Size(390, 159);
-            this.buttonSurveyYes.TabIndex = 5;
-            this.buttonSurveyYes.Text = "Tak";
-            this.buttonSurveyYes.UseVisualStyleBackColor = true;
-            this.buttonSurveyYes.Visible = false;
-            this.buttonSurveyYes.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            // 
-            // buttonSurveyNo
-            // 
-            this.buttonSurveyNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurveyNo.Location = new System.Drawing.Point(399, 168);
-            this.buttonSurveyNo.Name = "buttonSurveyNo";
-            this.buttonSurveyNo.Size = new System.Drawing.Size(397, 159);
-            this.buttonSurveyNo.TabIndex = 6;
-            this.buttonSurveyNo.Text = "Nie";
-            this.buttonSurveyNo.UseVisualStyleBackColor = true;
-            this.buttonSurveyNo.Visible = false;
-            this.buttonSurveyNo.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            // 
-            // buttonSurveyA
-            // 
-            this.buttonSurveyA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyA.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurveyA.Location = new System.Drawing.Point(3, 3);
-            this.buttonSurveyA.Name = "buttonSurveyA";
-            this.buttonSurveyA.Size = new System.Drawing.Size(390, 159);
-            this.buttonSurveyA.TabIndex = 7;
-            this.buttonSurveyA.Text = "A";
-            this.buttonSurveyA.UseVisualStyleBackColor = true;
-            this.buttonSurveyA.Visible = false;
-            this.buttonSurveyA.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            // 
-            // buttonSurveyB
-            // 
-            this.buttonSurveyB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyB.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurveyB.Location = new System.Drawing.Point(399, 3);
-            this.buttonSurveyB.Name = "buttonSurveyB";
-            this.buttonSurveyB.Size = new System.Drawing.Size(397, 159);
-            this.buttonSurveyB.TabIndex = 8;
-            this.buttonSurveyB.Text = "B";
-            this.buttonSurveyB.UseVisualStyleBackColor = true;
-            this.buttonSurveyB.Visible = false;
-            this.buttonSurveyB.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            // 
-            // labelSurveyQuestion
-            // 
-            this.labelSurveyQuestion.AutoSize = true;
-            this.labelSurveyQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSurveyQuestion.Location = new System.Drawing.Point(340, 10);
-            this.labelSurveyQuestion.Name = "labelSurveyQuestion";
-            this.labelSurveyQuestion.Size = new System.Drawing.Size(279, 37);
-            this.labelSurveyQuestion.TabIndex = 10;
-            this.labelSurveyQuestion.Text = "Pytanie w ankiecie";
-            this.labelSurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panelSurveyFinished
             // 
+            this.panelSurveyFinished.Controls.Add(this.buttonSurveyFinished);
+            this.panelSurveyFinished.Controls.Add(this.label39);
             this.panelSurveyFinished.Controls.Add(this.labelFinish);
             this.panelSurveyFinished.Location = new System.Drawing.Point(280, 50);
             this.panelSurveyFinished.Name = "panelSurveyFinished";
             this.panelSurveyFinished.Size = new System.Drawing.Size(1000, 650);
             this.panelSurveyFinished.TabIndex = 22;
             // 
+            // buttonSurveyFinished
+            // 
+            this.buttonSurveyFinished.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSurveyFinished.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyFinished.Location = new System.Drawing.Point(400, 400);
+            this.buttonSurveyFinished.Name = "buttonSurveyFinished";
+            this.buttonSurveyFinished.Size = new System.Drawing.Size(200, 80);
+            this.buttonSurveyFinished.TabIndex = 10;
+            this.buttonSurveyFinished.Text = "Zakończ";
+            this.buttonSurveyFinished.UseVisualStyleBackColor = true;
+            this.buttonSurveyFinished.Click += new System.EventHandler(this.ButtonSurveyFinished_Clicked);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label39.Location = new System.Drawing.Point(245, 175);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(509, 84);
+            this.label39.TabIndex = 12;
+            this.label39.Text = "Ankieta zakończona";
+            // 
             // labelFinish
             // 
             this.labelFinish.AutoSize = true;
-            this.labelFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFinish.Location = new System.Drawing.Point(397, 220);
+            this.labelFinish.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFinish.Location = new System.Drawing.Point(402, 300);
             this.labelFinish.Name = "labelFinish";
-            this.labelFinish.Size = new System.Drawing.Size(191, 42);
+            this.labelFinish.Size = new System.Drawing.Size(195, 62);
             this.labelFinish.TabIndex = 11;
             this.labelFinish.Text = "<finished>";
             // 
@@ -1910,6 +1810,16 @@
             this.panelQuizFinished.Size = new System.Drawing.Size(1000, 650);
             this.panelQuizFinished.TabIndex = 17;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(287, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(426, 84);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Quiz zakończony";
+            // 
             // labelQuizResult
             // 
             this.labelQuizResult.AutoSize = true;
@@ -1932,15 +1842,151 @@
             this.buttonFinishQuiz.UseVisualStyleBackColor = true;
             this.buttonFinishQuiz.Click += new System.EventHandler(this.ButtonFinishQuiz_Click);
             // 
-            // label2
+            // labelSurveyQuestion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(287, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(426, 84);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Quiz zakończony";
+            this.labelSurveyQuestion.AutoSize = true;
+            this.labelSurveyQuestion.Font = new System.Drawing.Font("Poppins", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSurveyQuestion.Location = new System.Drawing.Point(301, 75);
+            this.labelSurveyQuestion.Name = "labelSurveyQuestion";
+            this.labelSurveyQuestion.Size = new System.Drawing.Size(398, 70);
+            this.labelSurveyQuestion.TabIndex = 10;
+            this.labelSurveyQuestion.Text = "Pytanie w ankiecie";
+            this.labelSurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanelSurveyAnswers
+            // 
+            this.tableLayoutPanelSurveyAnswers.ColumnCount = 2;
+            this.tableLayoutPanelSurveyAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSurveyAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSurveyAnswers.Controls.Add(this.buttonSurveyB, 1, 1);
+            this.tableLayoutPanelSurveyAnswers.Controls.Add(this.buttonSurveyNo, 1, 0);
+            this.tableLayoutPanelSurveyAnswers.Controls.Add(this.buttonSurveyA, 0, 1);
+            this.tableLayoutPanelSurveyAnswers.Controls.Add(this.buttonSurveyYes, 0, 0);
+            this.tableLayoutPanelSurveyAnswers.Location = new System.Drawing.Point(50, 320);
+            this.tableLayoutPanelSurveyAnswers.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelSurveyAnswers.Name = "tableLayoutPanelSurveyAnswers";
+            this.tableLayoutPanelSurveyAnswers.RowCount = 2;
+            this.tableLayoutPanelSurveyAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSurveyAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSurveyAnswers.Size = new System.Drawing.Size(900, 250);
+            this.tableLayoutPanelSurveyAnswers.TabIndex = 11;
+            // 
+            // buttonSurveyB
+            // 
+            this.buttonSurveyB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonSurveyB.FlatAppearance.BorderSize = 2;
+            this.buttonSurveyB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSurveyB.Font = new System.Drawing.Font("Poppins", 18F);
+            this.buttonSurveyB.Location = new System.Drawing.Point(450, 125);
+            this.buttonSurveyB.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonSurveyB.Name = "buttonSurveyB";
+            this.buttonSurveyB.Size = new System.Drawing.Size(449, 124);
+            this.buttonSurveyB.TabIndex = 8;
+            this.buttonSurveyB.Text = "B";
+            this.buttonSurveyB.UseVisualStyleBackColor = false;
+            this.buttonSurveyB.Visible = false;
+            this.buttonSurveyB.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
+            // 
+            // buttonSurveyA
+            // 
+            this.buttonSurveyA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonSurveyA.FlatAppearance.BorderSize = 2;
+            this.buttonSurveyA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSurveyA.Font = new System.Drawing.Font("Poppins", 18F);
+            this.buttonSurveyA.Location = new System.Drawing.Point(0, 125);
+            this.buttonSurveyA.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonSurveyA.Name = "buttonSurveyA";
+            this.buttonSurveyA.Size = new System.Drawing.Size(449, 124);
+            this.buttonSurveyA.TabIndex = 7;
+            this.buttonSurveyA.Text = "A";
+            this.buttonSurveyA.UseVisualStyleBackColor = false;
+            this.buttonSurveyA.Visible = false;
+            this.buttonSurveyA.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
+            // 
+            // textBoxSurveyText
+            // 
+            this.textBoxSurveyText.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxSurveyText.Location = new System.Drawing.Point(410, 250);
+            this.textBoxSurveyText.Name = "textBoxSurveyText";
+            this.textBoxSurveyText.Size = new System.Drawing.Size(180, 60);
+            this.textBoxSurveyText.TabIndex = 13;
+            this.textBoxSurveyText.Text = "0";
+            this.textBoxSurveyText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSurveyText.Visible = false;
+            // 
+            // buttonSurveyConfirm
+            // 
+            this.buttonSurveyConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyConfirm.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonSurveyConfirm.FlatAppearance.BorderSize = 2;
+            this.buttonSurveyConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSurveyConfirm.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyConfirm.Location = new System.Drawing.Point(325, 394);
+            this.buttonSurveyConfirm.Name = "buttonSurveyConfirm";
+            this.buttonSurveyConfirm.Size = new System.Drawing.Size(350, 100);
+            this.buttonSurveyConfirm.TabIndex = 12;
+            this.buttonSurveyConfirm.Text = "Potwierdź";
+            this.buttonSurveyConfirm.UseVisualStyleBackColor = false;
+            this.buttonSurveyConfirm.Visible = false;
+            this.buttonSurveyConfirm.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
+            // 
+            // labelSurveyQuestionNumber
+            // 
+            this.labelSurveyQuestionNumber.AutoSize = true;
+            this.labelSurveyQuestionNumber.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSurveyQuestionNumber.Location = new System.Drawing.Point(267, 175);
+            this.labelSurveyQuestionNumber.Name = "labelSurveyQuestionNumber";
+            this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(467, 62);
+            this.labelSurveyQuestionNumber.TabIndex = 14;
+            this.labelSurveyQuestionNumber.Text = "Pytanie: <number>/<total>";
+            // 
+            // panelSurvey
+            // 
+            this.panelSurvey.Controls.Add(this.labelSurveyQuestionNumber);
+            this.panelSurvey.Controls.Add(this.buttonSurveyConfirm);
+            this.panelSurvey.Controls.Add(this.textBoxSurveyText);
+            this.panelSurvey.Controls.Add(this.tableLayoutPanelSurveyAnswers);
+            this.panelSurvey.Controls.Add(this.labelSurveyQuestion);
+            this.panelSurvey.Location = new System.Drawing.Point(280, 50);
+            this.panelSurvey.Name = "panelSurvey";
+            this.panelSurvey.Size = new System.Drawing.Size(1000, 650);
+            this.panelSurvey.TabIndex = 21;
+            // 
+            // buttonSurveyNo
+            // 
+            this.buttonSurveyNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyNo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonSurveyNo.FlatAppearance.BorderSize = 2;
+            this.buttonSurveyNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSurveyNo.Font = new System.Drawing.Font("Poppins", 18F);
+            this.buttonSurveyNo.Location = new System.Drawing.Point(450, 0);
+            this.buttonSurveyNo.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonSurveyNo.Name = "buttonSurveyNo";
+            this.buttonSurveyNo.Size = new System.Drawing.Size(449, 124);
+            this.buttonSurveyNo.TabIndex = 6;
+            this.buttonSurveyNo.Text = "Nie";
+            this.buttonSurveyNo.UseVisualStyleBackColor = false;
+            this.buttonSurveyNo.Visible = false;
+            this.buttonSurveyNo.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
+            // 
+            // buttonSurveyYes
+            // 
+            this.buttonSurveyYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyYes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonSurveyYes.FlatAppearance.BorderSize = 2;
+            this.buttonSurveyYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSurveyYes.Font = new System.Drawing.Font("Poppins", 18F);
+            this.buttonSurveyYes.Location = new System.Drawing.Point(0, 0);
+            this.buttonSurveyYes.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonSurveyYes.Name = "buttonSurveyYes";
+            this.buttonSurveyYes.Size = new System.Drawing.Size(449, 124);
+            this.buttonSurveyYes.TabIndex = 5;
+            this.buttonSurveyYes.Text = "Tak";
+            this.buttonSurveyYes.UseVisualStyleBackColor = false;
+            this.buttonSurveyYes.Visible = false;
+            this.buttonSurveyYes.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
             // 
             // Hackheroes
             // 
@@ -1948,16 +1994,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelSurvey);
+            this.Controls.Add(this.panelQuiz);
+            this.Controls.Add(this.panelSurveyMenu);
+            this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelQuizFinished);
             this.Controls.Add(this.panelQuizMenu);
-            this.Controls.Add(this.panelQuiz);
             this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelMacro);
             this.Controls.Add(this.panelLandingPage);
-            this.Controls.Add(this.panelSurveyFinished);
-            this.Controls.Add(this.panelSurvey);
-            this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.panelProfileSetup);
             this.Controls.Add(this.flowLayoutPanelSidebar);
@@ -2005,15 +2051,15 @@
             this.flowPanelSurveys.ResumeLayout(false);
             this.panelSurveyMenu.ResumeLayout(false);
             this.panelSurveyMenu.PerformLayout();
-            this.panelSurvey.ResumeLayout(false);
-            this.panelSurvey.PerformLayout();
-            this.tablePanelAnswer.ResumeLayout(false);
             this.panelSurveyFinished.ResumeLayout(false);
             this.panelSurveyFinished.PerformLayout();
             this.panelQuizMenu.ResumeLayout(false);
             this.panelQuizMenu.PerformLayout();
             this.panelQuizFinished.ResumeLayout(false);
             this.panelQuizFinished.PerformLayout();
+            this.tableLayoutPanelSurveyAnswers.ResumeLayout(false);
+            this.panelSurvey.ResumeLayout(false);
+            this.panelSurvey.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2131,16 +2177,6 @@
         private System.Windows.Forms.Panel panelProfileSetup;
         private System.Windows.Forms.Panel panelPointer;
         private System.Windows.Forms.Panel panelLandingPage;
-        private System.Windows.Forms.Panel panelSurvey;
-        private System.Windows.Forms.Button buttonSurveyConfirm;
-        private System.Windows.Forms.TextBox textBoxSurveyText;
-        private System.Windows.Forms.TableLayoutPanel tablePanelAnswer;
-        private System.Windows.Forms.Button buttonSurveyYes;
-        private System.Windows.Forms.Button buttonSurveyNo;
-        private System.Windows.Forms.Button buttonSurveyA;
-        private System.Windows.Forms.Button buttonSurveyB;
-        private System.Windows.Forms.Label labelSurveyQuestion;
-        private System.Windows.Forms.Label labelSurveyQuestionNumber;
         private System.Windows.Forms.Panel panelSurveyFinished;
         private System.Windows.Forms.Button buttonSurvey2;
         private System.Windows.Forms.Button buttonSurvey3;
@@ -2155,5 +2191,17 @@
         private System.Windows.Forms.Button buttonFinishQuiz;
         private System.Windows.Forms.Label labelQuizResult;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Button buttonSurveyFinished;
+        private System.Windows.Forms.Label labelSurveyQuestion;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSurveyAnswers;
+        private System.Windows.Forms.Button buttonSurveyB;
+        private System.Windows.Forms.Button buttonSurveyNo;
+        private System.Windows.Forms.Button buttonSurveyA;
+        private System.Windows.Forms.Button buttonSurveyYes;
+        private System.Windows.Forms.TextBox textBoxSurveyText;
+        private System.Windows.Forms.Button buttonSurveyConfirm;
+        private System.Windows.Forms.Label labelSurveyQuestionNumber;
+        private System.Windows.Forms.Panel panelSurvey;
     }
 }

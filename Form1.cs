@@ -1139,5 +1139,10 @@ namespace app
 
             File.WriteAllLines("..\\..\\users.json", JSON);
         }
+
+        private void ButtonSurveyFinished_Clicked(object sender, EventArgs e)
+        {
+            panelSurveyMenu.BringToFront();
+        }
     }
 }
