@@ -163,6 +163,7 @@
             this.panelQuizFinished = new System.Windows.Forms.Panel();
             this.labelQuizResult = new System.Windows.Forms.Label();
             this.buttonFinishQuiz = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -1893,7 +1894,7 @@
             this.ButtonStartQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonStartQuiz.Location = new System.Drawing.Point(400, 300);
             this.ButtonStartQuiz.Name = "ButtonStartQuiz";
-            this.ButtonStartQuiz.Size = new System.Drawing.Size(200, 60);
+            this.ButtonStartQuiz.Size = new System.Drawing.Size(200, 80);
             this.ButtonStartQuiz.TabIndex = 3;
             this.ButtonStartQuiz.Text = "Start";
             this.ButtonStartQuiz.UseVisualStyleBackColor = true;
@@ -1901,6 +1902,7 @@
             // 
             // panelQuizFinished
             // 
+            this.panelQuizFinished.Controls.Add(this.label2);
             this.panelQuizFinished.Controls.Add(this.labelQuizResult);
             this.panelQuizFinished.Controls.Add(this.buttonFinishQuiz);
             this.panelQuizFinished.Location = new System.Drawing.Point(280, 50);
@@ -1912,7 +1914,7 @@
             // 
             this.labelQuizResult.AutoSize = true;
             this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuizResult.Location = new System.Drawing.Point(394, 200);
+            this.labelQuizResult.Location = new System.Drawing.Point(394, 220);
             this.labelQuizResult.Name = "labelQuizResult";
             this.labelQuizResult.Size = new System.Drawing.Size(212, 65);
             this.labelQuizResult.TabIndex = 8;
@@ -1928,6 +1930,17 @@
             this.buttonFinishQuiz.TabIndex = 7;
             this.buttonFinishQuiz.Text = "Zakończ";
             this.buttonFinishQuiz.UseVisualStyleBackColor = true;
+            this.buttonFinishQuiz.Click += new System.EventHandler(this.ButtonFinishQuiz_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(287, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(426, 84);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Quiz zakończony";
             // 
             // Hackheroes
             // 
@@ -1935,10 +1948,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
-            this.Controls.Add(this.panelBMI);
-            this.Controls.Add(this.panelQuiz);
             this.Controls.Add(this.panelQuizFinished);
             this.Controls.Add(this.panelQuizMenu);
+            this.Controls.Add(this.panelQuiz);
+            this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelMacro);
             this.Controls.Add(this.panelLandingPage);
@@ -2141,5 +2154,6 @@
         private System.Windows.Forms.Panel panelQuizFinished;
         private System.Windows.Forms.Button buttonFinishQuiz;
         private System.Windows.Forms.Label labelQuizResult;
+        private System.Windows.Forms.Label label2;
     }
 }

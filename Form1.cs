@@ -413,7 +413,7 @@ namespace app
 
         private void Center(Control control)
         {
-            control.Location = new Point(1000 / 2 - control.Size.Width / 2, control.Location.Y);
+            control.Location = new Point(control.Parent.Width / 2 - control.Size.Width / 2, control.Location.Y);
         }
 
         private void ButtonBMI_Click(object sender, EventArgs e)
@@ -905,16 +905,9 @@ namespace app
             MarkCorrectAnswer(clickedButton);
         }
 
-        private void ResetQuiz()
-        {
-            labelQuizResult.Visible = false;
-            buttonFinishQuiz.Visible = false;
-            ButtonStartQuiz.Visible = true;
-        }
-
         private void ButtonFinishQuiz_Click(object sender, EventArgs e)
         {
-            ResetQuiz();
+            panelQuizMenu.BringToFront();
         }
 
         private void UpdateActivityLevel()
