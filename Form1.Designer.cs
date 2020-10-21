@@ -202,6 +202,7 @@
             this.buttonBMI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBMI.UseVisualStyleBackColor = false;
             this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
+            this.buttonBMI.Click += new System.EventHandler(this.DisableButton);
             // 
             // buttonActivity
             // 
@@ -223,6 +224,8 @@
             this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonActivity.UseVisualStyleBackColor = false;
             this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
+            this.buttonActivity.Click += new System.EventHandler(this.DisableButton);
+
             // 
             // buttonQuiz
             // 
@@ -245,6 +248,8 @@
             this.buttonQuiz.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonQuiz.UseVisualStyleBackColor = false;
             this.buttonQuiz.Click += new System.EventHandler(this.ButtonQuiz_Click);
+            this.buttonQuiz.Click += new System.EventHandler(this.DisableButton);
+
             // 
             // buttonCalculator
             // 
@@ -267,6 +272,8 @@
             this.buttonCalculator.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonCalculator.UseVisualStyleBackColor = false;
             this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
+            this.buttonCalculator.Click += new System.EventHandler(this.DisableButton);
+
             // 
             // buttonSurvey
             // 
@@ -288,6 +295,8 @@
             this.buttonSurvey.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSurvey.UseVisualStyleBackColor = false;
             this.buttonSurvey.Click += new System.EventHandler(this.ButtonSurvey_Click);
+            this.buttonSurvey.Click += new System.EventHandler(this.DisableButton);
+
             // 
             // buttonProfile
             // 
@@ -309,6 +318,8 @@
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonProfile.UseVisualStyleBackColor = false;
             this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
+            this.buttonProfile.Click += new System.EventHandler(this.DisableButton);
+
             // 
             // panel1
             // 

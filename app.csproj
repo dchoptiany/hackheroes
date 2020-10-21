@@ -158,9 +158,6 @@
     <None Include="Resources\Images\timeScale.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\comment-blog.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Images\calculate-math.png" />
   </ItemGroup>
   <ItemGroup>
@@ -168,9 +165,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\gym-dumbbell.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\healthy-diet.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\avatar.png" />

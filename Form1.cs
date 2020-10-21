@@ -61,11 +61,12 @@ namespace app
             menuButtons.Add(buttonProfile); 
         }
 
-        private void DisableButton(Button button)
+        private void DisableButton(object sender, EventArgs e)
         {
+            var clickedButton = (Button)sender;
             foreach (Button _button in menuButtons)
             {
-                if (_button.Text == button.Text)
+                if (_button.Text == clickedButton.Text)
                 {
                     _button.Enabled = false;
                 }
@@ -75,11 +76,11 @@ namespace app
                     _button.BackColor = green2;
                 }
             }
-            button.BackColor = green1;
+            clickedButton.BackColor = green1;
 
             panelPointer.Visible = true;
-            panelPointer.Location = new Point(0, button.Location.Y + panelProfileSetup.Size.Height);
-            panelPointer.Height = button.Height;
+            panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
+            panelPointer.Height = clickedButton.Height;
         }
 
         private void DisableQuiz()
@@ -304,7 +305,6 @@ namespace app
 
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
-            DisableButton(buttonBMI);
             int userIndex = Program.currentUserIndex;
 
             if(!Calculator.CalculateBMI(Program.users[userIndex]))
@@ -326,7 +326,6 @@ namespace app
 
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
-            DisableButton(buttonActivity);
             ChangePanel(2);
             ActivityMatcher.LoadSports();
 
@@ -339,26 +338,22 @@ namespace app
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
-            DisableButton(buttonQuiz);
             ChangePanel(3);
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
-            DisableButton(buttonCalculator);
             ChangePanel(4);
             UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            DisableButton(buttonSurvey);
             ChangePanel(5);
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
-            DisableButton(buttonProfile);
             ChangePanel(6);
 
             UpdateButtonDeleteEnabledStatus();
