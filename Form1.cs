@@ -13,7 +13,7 @@ namespace app
     {
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
-        private List<Button> panelButtons = new List<Button>();
+        private List<Button> menuButtons = new List<Button>();
         private readonly Color blue1 = Color.FromArgb(0, 168, 255);
         private readonly Color purple1 = Color.FromArgb(156, 136, 255);
         private readonly Color darkblue1 = Color.FromArgb(39, 60, 117);
@@ -53,17 +53,17 @@ namespace app
 
         private void InitializeButtons()
         {
-            panelButtons.Add(buttonBMI);
-            panelButtons.Add(buttonActivity); 
-            panelButtons.Add(buttonQuiz); 
-            panelButtons.Add(buttonCalculator); 
-            panelButtons.Add(buttonSurvey); 
-            panelButtons.Add(buttonProfile); 
+            menuButtons.Add(buttonBMI);
+            menuButtons.Add(buttonActivity); 
+            menuButtons.Add(buttonQuiz); 
+            menuButtons.Add(buttonCalculator); 
+            menuButtons.Add(buttonSurvey); 
+            menuButtons.Add(buttonProfile); 
         }
 
         private void DisableButton(Button button)
         {
-            foreach (Button _button in panelButtons)
+            foreach (Button _button in menuButtons)
             {
                 if (_button.Text == button.Text)
                 {
