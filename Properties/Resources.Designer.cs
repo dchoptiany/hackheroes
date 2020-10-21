@@ -153,6 +153,16 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cloudsSized {
+            get {
+                object obj = ResourceManager.GetObject("cloudsSized", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimizeIcon {
             get {
                 object obj = ResourceManager.GetObject("minimizeIcon", resourceCulture);
@@ -163,9 +173,29 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap teamSized {
+            get {
+                object obj = ResourceManager.GetObject("teamSized", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap timeScale {
             get {
                 object obj = ResourceManager.GetObject("timeScale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trainingSized {
+            get {
+                object obj = ResourceManager.GetObject("trainingSized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
