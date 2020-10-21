@@ -48,10 +48,6 @@
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.buttonMediumEffort = new System.Windows.Forms.Button();
-            this.buttonHighEffort = new System.Windows.Forms.Button();
-            this.buttonAnyEffort = new System.Windows.Forms.Button();
-            this.buttonLowEffort = new System.Windows.Forms.Button();
             this.buttonBadWeather = new System.Windows.Forms.Button();
             this.buttonCheckWeather = new System.Windows.Forms.Button();
             this.buttonGoodWeather = new System.Windows.Forms.Button();
@@ -59,9 +55,8 @@
             this.buttonTeam = new System.Windows.Forms.Button();
             this.buttonAnyParticipants = new System.Windows.Forms.Button();
             this.buttonIndividual = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxClouds = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTeam = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBoxTime = new System.Windows.Forms.PictureBox();
             this.pictureBoxTimeBorder = new System.Windows.Forms.PictureBox();
@@ -159,15 +154,21 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonAnyEffort = new System.Windows.Forms.Button();
+            this.buttonHighEffort = new System.Windows.Forms.Button();
+            this.buttonLowEffort = new System.Windows.Forms.Button();
+            this.pictureBoxTraining = new System.Windows.Forms.PictureBox();
+            this.buttonMediumEffort = new System.Windows.Forms.Button();
             this.panel0.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClouds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTeam)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
@@ -186,6 +187,9 @@
             this.tablePanelAnswer.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTraining)).BeginInit();
             this.SuspendLayout();
             // 
             // panel0
@@ -377,25 +381,14 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.buttonAnyWeather);
-            this.panel2.Controls.Add(this.labelWeatherInfo);
-            this.panel2.Controls.Add(this.textBoxCity);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.buttonAnyEffort);
+            this.panel2.Controls.Add(this.buttonHighEffort);
+            this.panel2.Controls.Add(this.buttonLowEffort);
+            this.panel2.Controls.Add(this.pictureBoxTraining);
             this.panel2.Controls.Add(this.buttonSearch);
             this.panel2.Controls.Add(this.buttonMediumEffort);
-            this.panel2.Controls.Add(this.buttonHighEffort);
-            this.panel2.Controls.Add(this.buttonAnyEffort);
-            this.panel2.Controls.Add(this.buttonLowEffort);
-            this.panel2.Controls.Add(this.buttonBadWeather);
-            this.panel2.Controls.Add(this.buttonCheckWeather);
-            this.panel2.Controls.Add(this.buttonGoodWeather);
-            this.panel2.Controls.Add(this.buttonPair);
-            this.panel2.Controls.Add(this.buttonTeam);
-            this.panel2.Controls.Add(this.buttonAnyParticipants);
-            this.panel2.Controls.Add(this.buttonIndividual);
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.panel2.Location = new System.Drawing.Point(100, 100);
             this.panel2.Name = "panel2";
@@ -408,7 +401,7 @@
             this.buttonAnyWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnyWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAnyWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyWeather.Location = new System.Drawing.Point(370, 377);
+            this.buttonAnyWeather.Location = new System.Drawing.Point(32, 349);
             this.buttonAnyWeather.Name = "buttonAnyWeather";
             this.buttonAnyWeather.Size = new System.Drawing.Size(258, 49);
             this.buttonAnyWeather.TabIndex = 19;
@@ -420,7 +413,7 @@
             // 
             this.labelWeatherInfo.AutoSize = true;
             this.labelWeatherInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelWeatherInfo.Location = new System.Drawing.Point(461, 332);
+            this.labelWeatherInfo.Location = new System.Drawing.Point(118, 301);
             this.labelWeatherInfo.Name = "labelWeatherInfo";
             this.labelWeatherInfo.Size = new System.Drawing.Size(88, 15);
             this.labelWeatherInfo.TabIndex = 18;
@@ -431,7 +424,7 @@
             // textBoxCity
             // 
             this.textBoxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxCity.Location = new System.Drawing.Point(385, 304);
+            this.textBoxCity.Location = new System.Drawing.Point(52, 278);
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(132, 21);
             this.textBoxCity.TabIndex = 17;
@@ -442,7 +435,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(454, 287);
+            this.label2.Location = new System.Drawing.Point(109, 259);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 16;
@@ -462,69 +455,13 @@
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
-            // buttonMediumEffort
-            // 
-            this.buttonMediumEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.buttonMediumEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMediumEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonMediumEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonMediumEffort.Location = new System.Drawing.Point(695, 225);
-            this.buttonMediumEffort.Name = "buttonMediumEffort";
-            this.buttonMediumEffort.Size = new System.Drawing.Size(258, 49);
-            this.buttonMediumEffort.TabIndex = 14;
-            this.buttonMediumEffort.Text = "Średni wysiłek";
-            this.buttonMediumEffort.UseVisualStyleBackColor = false;
-            this.buttonMediumEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
-            // 
-            // buttonHighEffort
-            // 
-            this.buttonHighEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.buttonHighEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHighEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonHighEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonHighEffort.Location = new System.Drawing.Point(695, 285);
-            this.buttonHighEffort.Name = "buttonHighEffort";
-            this.buttonHighEffort.Size = new System.Drawing.Size(258, 49);
-            this.buttonHighEffort.TabIndex = 13;
-            this.buttonHighEffort.Text = "Intensywny wysiłek";
-            this.buttonHighEffort.UseVisualStyleBackColor = false;
-            this.buttonHighEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
-            // 
-            // buttonAnyEffort
-            // 
-            this.buttonAnyEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.buttonAnyEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnyEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAnyEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyEffort.Location = new System.Drawing.Point(695, 377);
-            this.buttonAnyEffort.Name = "buttonAnyEffort";
-            this.buttonAnyEffort.Size = new System.Drawing.Size(258, 49);
-            this.buttonAnyEffort.TabIndex = 12;
-            this.buttonAnyEffort.Text = "Nie uwzględniaj stopnia wysiłku";
-            this.buttonAnyEffort.UseVisualStyleBackColor = false;
-            this.buttonAnyEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
-            // 
-            // buttonLowEffort
-            // 
-            this.buttonLowEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.buttonLowEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLowEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonLowEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonLowEffort.Location = new System.Drawing.Point(695, 166);
-            this.buttonLowEffort.Name = "buttonLowEffort";
-            this.buttonLowEffort.Size = new System.Drawing.Size(258, 49);
-            this.buttonLowEffort.TabIndex = 11;
-            this.buttonLowEffort.Text = "Niski wysiłek";
-            this.buttonLowEffort.UseVisualStyleBackColor = false;
-            this.buttonLowEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
-            // 
             // buttonBadWeather
             // 
             this.buttonBadWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonBadWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBadWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBadWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonBadWeather.Location = new System.Drawing.Point(370, 225);
+            this.buttonBadWeather.Location = new System.Drawing.Point(32, 203);
             this.buttonBadWeather.Name = "buttonBadWeather";
             this.buttonBadWeather.Size = new System.Drawing.Size(258, 49);
             this.buttonBadWeather.TabIndex = 10;
@@ -538,7 +475,7 @@
             this.buttonCheckWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCheckWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonCheckWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonCheckWeather.Location = new System.Drawing.Point(539, 304);
+            this.buttonCheckWeather.Location = new System.Drawing.Point(206, 276);
             this.buttonCheckWeather.Name = "buttonCheckWeather";
             this.buttonCheckWeather.Size = new System.Drawing.Size(66, 25);
             this.buttonCheckWeather.TabIndex = 8;
@@ -552,7 +489,7 @@
             this.buttonGoodWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGoodWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonGoodWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonGoodWeather.Location = new System.Drawing.Point(370, 166);
+            this.buttonGoodWeather.Location = new System.Drawing.Point(32, 144);
             this.buttonGoodWeather.Name = "buttonGoodWeather";
             this.buttonGoodWeather.Size = new System.Drawing.Size(258, 49);
             this.buttonGoodWeather.TabIndex = 7;
@@ -566,7 +503,7 @@
             this.buttonPair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPair.ForeColor = System.Drawing.Color.White;
-            this.buttonPair.Location = new System.Drawing.Point(50, 225);
+            this.buttonPair.Location = new System.Drawing.Point(36, 203);
             this.buttonPair.Name = "buttonPair";
             this.buttonPair.Size = new System.Drawing.Size(258, 49);
             this.buttonPair.TabIndex = 6;
@@ -580,7 +517,7 @@
             this.buttonTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonTeam.ForeColor = System.Drawing.Color.White;
-            this.buttonTeam.Location = new System.Drawing.Point(50, 285);
+            this.buttonTeam.Location = new System.Drawing.Point(36, 263);
             this.buttonTeam.Name = "buttonTeam";
             this.buttonTeam.Size = new System.Drawing.Size(258, 49);
             this.buttonTeam.TabIndex = 5;
@@ -594,7 +531,7 @@
             this.buttonAnyParticipants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnyParticipants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAnyParticipants.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyParticipants.Location = new System.Drawing.Point(50, 377);
+            this.buttonAnyParticipants.Location = new System.Drawing.Point(36, 350);
             this.buttonAnyParticipants.Name = "buttonAnyParticipants";
             this.buttonAnyParticipants.Size = new System.Drawing.Size(258, 49);
             this.buttonAnyParticipants.TabIndex = 4;
@@ -608,7 +545,7 @@
             this.buttonIndividual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIndividual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonIndividual.ForeColor = System.Drawing.Color.White;
-            this.buttonIndividual.Location = new System.Drawing.Point(50, 166);
+            this.buttonIndividual.Location = new System.Drawing.Point(36, 144);
             this.buttonIndividual.Name = "buttonIndividual";
             this.buttonIndividual.Size = new System.Drawing.Size(258, 49);
             this.buttonIndividual.TabIndex = 3;
@@ -616,32 +553,23 @@
             this.buttonIndividual.UseVisualStyleBackColor = false;
             this.buttonIndividual.Click += new System.EventHandler(this.ButtonParticipants_Click);
             // 
-            // pictureBox4
+            // pictureBoxClouds
             // 
-            this.pictureBox4.Image = global::app.Properties.Resources.clouds;
-            this.pictureBox4.Location = new System.Drawing.Point(348, 42);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(307, 88);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
+            this.pictureBoxClouds.Image = global::app.Properties.Resources.clouds;
+            this.pictureBoxClouds.Location = new System.Drawing.Point(6, 26);
+            this.pictureBoxClouds.Name = "pictureBoxClouds";
+            this.pictureBoxClouds.Size = new System.Drawing.Size(307, 88);
+            this.pictureBoxClouds.TabIndex = 2;
+            this.pictureBoxClouds.TabStop = false;
             // 
-            // pictureBox3
+            // pictureBoxTeam
             // 
-            this.pictureBox3.Image = global::app.Properties.Resources.training;
-            this.pictureBox3.Location = new System.Drawing.Point(669, 42);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(307, 88);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::app.Properties.Resources.team;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 42);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(307, 88);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxTeam.Image = global::app.Properties.Resources.team;
+            this.pictureBoxTeam.Location = new System.Drawing.Point(10, 26);
+            this.pictureBoxTeam.Name = "pictureBoxTeam";
+            this.pictureBoxTeam.Size = new System.Drawing.Size(307, 88);
+            this.pictureBoxTeam.TabIndex = 0;
+            this.pictureBoxTeam.TabStop = false;
             // 
             // panel3
             // 
@@ -1915,6 +1843,100 @@
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonAnyParticipants);
+            this.groupBox1.Controls.Add(this.buttonTeam);
+            this.groupBox1.Controls.Add(this.buttonPair);
+            this.groupBox1.Controls.Add(this.buttonIndividual);
+            this.groupBox1.Controls.Add(this.pictureBoxTeam);
+            this.groupBox1.Location = new System.Drawing.Point(14, 22);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(323, 426);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.labelWeatherInfo);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.buttonCheckWeather);
+            this.groupBox2.Controls.Add(this.buttonGoodWeather);
+            this.groupBox2.Controls.Add(this.buttonBadWeather);
+            this.groupBox2.Controls.Add(this.textBoxCity);
+            this.groupBox2.Controls.Add(this.buttonAnyWeather);
+            this.groupBox2.Controls.Add(this.pictureBoxClouds);
+            this.groupBox2.Location = new System.Drawing.Point(343, 22);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(317, 426);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            // 
+            // buttonAnyEffort
+            // 
+            this.buttonAnyEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonAnyEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnyEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnyEffort.ForeColor = System.Drawing.Color.White;
+            this.buttonAnyEffort.Location = new System.Drawing.Point(695, 377);
+            this.buttonAnyEffort.Name = "buttonAnyEffort";
+            this.buttonAnyEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonAnyEffort.TabIndex = 12;
+            this.buttonAnyEffort.Text = "Nie uwzględniaj stopnia wysiłku";
+            this.buttonAnyEffort.UseVisualStyleBackColor = false;
+            this.buttonAnyEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
+            // 
+            // buttonHighEffort
+            // 
+            this.buttonHighEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonHighEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHighEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonHighEffort.ForeColor = System.Drawing.Color.White;
+            this.buttonHighEffort.Location = new System.Drawing.Point(695, 285);
+            this.buttonHighEffort.Name = "buttonHighEffort";
+            this.buttonHighEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonHighEffort.TabIndex = 13;
+            this.buttonHighEffort.Text = "Intensywny wysiłek";
+            this.buttonHighEffort.UseVisualStyleBackColor = false;
+            this.buttonHighEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
+            // 
+            // buttonLowEffort
+            // 
+            this.buttonLowEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonLowEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLowEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLowEffort.ForeColor = System.Drawing.Color.White;
+            this.buttonLowEffort.Location = new System.Drawing.Point(695, 166);
+            this.buttonLowEffort.Name = "buttonLowEffort";
+            this.buttonLowEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonLowEffort.TabIndex = 11;
+            this.buttonLowEffort.Text = "Niski wysiłek";
+            this.buttonLowEffort.UseVisualStyleBackColor = false;
+            this.buttonLowEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
+            // 
+            // pictureBoxTraining
+            // 
+            this.pictureBoxTraining.Image = global::app.Properties.Resources.training;
+            this.pictureBoxTraining.Location = new System.Drawing.Point(669, 48);
+            this.pictureBoxTraining.Name = "pictureBoxTraining";
+            this.pictureBoxTraining.Size = new System.Drawing.Size(307, 88);
+            this.pictureBoxTraining.TabIndex = 1;
+            this.pictureBoxTraining.TabStop = false;
+            // 
+            // buttonMediumEffort
+            // 
+            this.buttonMediumEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonMediumEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMediumEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonMediumEffort.ForeColor = System.Drawing.Color.White;
+            this.buttonMediumEffort.Location = new System.Drawing.Point(695, 225);
+            this.buttonMediumEffort.Name = "buttonMediumEffort";
+            this.buttonMediumEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonMediumEffort.TabIndex = 14;
+            this.buttonMediumEffort.Text = "Średni wysiłek";
+            this.buttonMediumEffort.UseVisualStyleBackColor = false;
+            this.buttonMediumEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1945,10 +1967,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClouds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTeam)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
@@ -1973,6 +1993,10 @@
             this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTraining)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2086,9 +2110,8 @@
         private System.Windows.Forms.PictureBox pictureBoxTime;
         private System.Windows.Forms.PictureBox pictureBoxTimeBorder;
         private System.Windows.Forms.Label labelSurveyQuestionNumber;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxClouds;
+        private System.Windows.Forms.PictureBox pictureBoxTeam;
         private System.Windows.Forms.Button buttonBadWeather;
         private System.Windows.Forms.Button buttonCheckWeather;
         private System.Windows.Forms.Button buttonGoodWeather;
@@ -2101,14 +2124,17 @@
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.Button buttonMediumEffort;
-        private System.Windows.Forms.Button buttonHighEffort;
-        private System.Windows.Forms.Button buttonAnyEffort;
-        private System.Windows.Forms.Button buttonLowEffort;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button buttonShowNext;
         private System.Windows.Forms.Label labelActivityResult;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonChangeSearchingData;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button buttonAnyEffort;
+        private System.Windows.Forms.Button buttonHighEffort;
+        private System.Windows.Forms.Button buttonLowEffort;
+        private System.Windows.Forms.PictureBox pictureBoxTraining;
+        private System.Windows.Forms.Button buttonMediumEffort;
     }
 }
