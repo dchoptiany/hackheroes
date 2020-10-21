@@ -956,14 +956,14 @@ namespace app
                 {
                     if(weatherInfo.Item2)
                     {
-                        weatherMessage = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", weatherInfo.Item1);
+                        weatherMessage = string.Format("Odczuwalna temperatura wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", weatherInfo.Item1);
                         SetButtonAsUnclicked(buttonBadWeather);
                         SetButtonAsUnclicked(buttonAnyWeather);
                         SetButtonAsClicked(buttonGoodWeather);
                     }
                     else
                     {
-                        weatherMessage = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną ze względu na inne warunki (np. opady).", weatherInfo.Item1);
+                        weatherMessage = string.Format("Odczuwalna temperatura wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną\nze względu na inne warunki (np. opady).", weatherInfo.Item1);
                         SetButtonAsUnclicked(buttonGoodWeather);
                         SetButtonAsUnclicked(buttonAnyWeather);
                         SetButtonAsClicked(buttonBadWeather);
@@ -971,14 +971,15 @@ namespace app
                 }
                 else
                 {
-                    weatherMessage = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", weatherInfo.Item1);
+                    weatherMessage = string.Format("Odczuwalna temperatura wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", weatherInfo.Item1);
                     SetButtonAsUnclicked(buttonGoodWeather);
                     SetButtonAsUnclicked(buttonAnyWeather);
                     SetButtonAsClicked(buttonBadWeather);
                 }
-                Center(labelWeatherInfo);
 
                 labelWeatherInfo.Text = weatherMessage;
+                Center(labelWeatherInfo);
+
                 labelWeatherInfo.Visible = true;
             }
             catch(WebException exception)
