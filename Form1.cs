@@ -26,7 +26,7 @@ namespace app
             InitializeComponent(); 
         }
 
-        private bool LoadSurveys()
+        private void LoadSurveys()
         {
             surveys = new List<Survey>();
             try
@@ -39,12 +39,16 @@ namespace app
                     surveys.Add(newSurvey);
                 }
 
-                return true;
+                for (int i = 0; i < surveys.Count; i++)
+                {
+                    surveyButtons[i].Text = surveys[i].title;
+                    surveyButtons[i].Visible = true;
+                }
             }
             catch (FileNotFoundException exception)
             {
                 MessageBox.Show("Wystąpił błąd podczas wczytywania ankiet. Ankiety nie będą dostępne.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                Disable(buttonSurvey);
             }
         }
 
@@ -119,19 +123,6 @@ namespace app
             if (!ActivityMatcher.LoadSports())
             {
                 Disable(buttonActivity);
-            }
-
-            if (!LoadSurveys())
-            {
-                Disable(buttonSurvey);
-            }
-            else
-            {
-                for (int i = 0; i < surveys.Count; i++)
-                {
-                    surveyButtons[i].Text = surveys[i].title;
-                    surveyButtons[i].Visible = true;
-                }
             }
 
             LoadUsers();
