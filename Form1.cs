@@ -24,6 +24,7 @@ namespace app
         private readonly Color green2 = Color.FromArgb(68, 189, 50);
         private readonly Color yellow1 = Color.FromArgb(251, 197, 49);
         private readonly Color white1 = Color.FromArgb(220, 221, 225);
+        private readonly Color white2 = Color.FromArgb(245, 246, 250);
 
         public Hackheroes()
         {
@@ -34,7 +35,7 @@ namespace app
 
         private void InitializeColors()
         {
-            BackColor = white1;
+            BackColor = white2;
 
             panelPointer.BackColor = blue1;
 

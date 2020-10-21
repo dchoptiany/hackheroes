@@ -220,7 +220,7 @@
             this.buttonActivity.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.buttonActivity.Size = new System.Drawing.Size(280, 82);
             this.buttonActivity.TabIndex = 1;
-            this.buttonActivity.Text = "Aktywność";
+            this.buttonActivity.Text = "Sport na dziś";
             this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonActivity.UseVisualStyleBackColor = false;
             this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
@@ -290,7 +290,7 @@
             this.buttonSurvey.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.buttonSurvey.Size = new System.Drawing.Size(280, 82);
             this.buttonSurvey.TabIndex = 4;
-            this.buttonSurvey.Text = "Ankiety diagnostyczne";
+            this.buttonSurvey.Text = "Ankiety";
             this.buttonSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSurvey.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSurvey.UseVisualStyleBackColor = false;
