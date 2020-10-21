@@ -16,7 +16,8 @@ namespace app
         private List<Button> panelButtons = new List<Button>();
         private readonly Color blue1 = Color.FromArgb(0, 168, 255);
         private readonly Color purple1 = Color.FromArgb(156, 136, 255);
-        private readonly Color darkblue1 = Color.FromArgb(72, 126, 176);
+        private readonly Color darkblue1 = Color.FromArgb(39, 60, 117);
+        private readonly Color darkblue2 = Color.FromArgb(25, 42, 86);
         private readonly Color red1 = Color.FromArgb(232, 65, 24);
         private readonly Color red2 = Color.FromArgb(194, 54, 22);
         private readonly Color green1 = Color.FromArgb(76, 209, 55);
@@ -35,7 +36,9 @@ namespace app
         {
             BackColor = white1;
 
-            Color leftPanelBackColor = green1;
+            panelPointer.BackColor = blue1;
+
+            Color leftPanelBackColor = green2;
             flowLayoutPanel1.BackColor = leftPanelBackColor;
             panelProfileSetup.BackColor = leftPanelBackColor;
 
@@ -69,8 +72,11 @@ namespace app
                 else
                 {
                     panelButtons[index].Enabled = true;
+                    panelButtons[index].BackColor = green2;
                 }
             }
+            button.BackColor = green1;
+
             panelPointer.Visible = true;
             panelPointer.Location = new Point(0, button.Location.Y + panelProfileSetup.Size.Height);
             panelPointer.Height = button.Height;

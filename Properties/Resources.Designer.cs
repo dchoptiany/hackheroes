@@ -83,9 +83,9 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Calculator {
+        internal static System.Drawing.Bitmap calculate_math {
             get {
-                object obj = ResourceManager.GetObject("Calculator", resourceCulture);
+                object obj = ResourceManager.GetObject("calculate-math", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +103,16 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap comment_blog {
+            get {
+                object obj = ResourceManager.GetObject("comment-blog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimizeIcon {
             get {
                 object obj = ResourceManager.GetObject("minimizeIcon", resourceCulture);
@@ -113,19 +123,9 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PhysicalActivity {
+        internal static System.Drawing.Bitmap surveys {
             get {
-                object obj = ResourceManager.GetObject("PhysicalActivity", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Profile {
-            get {
-                object obj = ResourceManager.GetObject("Profile", resourceCulture);
+                object obj = ResourceManager.GetObject("surveys", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -155,16 +155,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\PhysicalActivity.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\Profile.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\Calculator.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Images\timeScale.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\comment-blog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\calculate-math.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\surveys.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
