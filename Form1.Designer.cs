@@ -42,7 +42,7 @@
             this.labelBMI = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelActivity = new System.Windows.Forms.Panel();
             this.checkBoxChooseAutomatically = new System.Windows.Forms.CheckBox();
             this.groupBoxEffortLevel = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -165,7 +165,7 @@
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelActivity.SuspendLayout();
             this.groupBoxEffortLevel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).BeginInit();
             this.groupBoxWeather.SuspendLayout();
@@ -400,19 +400,19 @@
             this.label6.Text = "BMI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // panelActivity
             // 
-            this.panel2.Controls.Add(this.checkBoxChooseAutomatically);
-            this.panel2.Controls.Add(this.groupBoxEffortLevel);
-            this.panel2.Controls.Add(this.groupBoxWeather);
-            this.panel2.Controls.Add(this.groupBoxParticipants);
-            this.panel2.Controls.Add(this.labelActivityResult);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(280, 50);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 650);
-            this.panel2.TabIndex = 15;
+            this.panelActivity.Controls.Add(this.checkBoxChooseAutomatically);
+            this.panelActivity.Controls.Add(this.groupBoxEffortLevel);
+            this.panelActivity.Controls.Add(this.groupBoxWeather);
+            this.panelActivity.Controls.Add(this.groupBoxParticipants);
+            this.panelActivity.Controls.Add(this.labelActivityResult);
+            this.panelActivity.Controls.Add(this.button1);
+            this.panelActivity.Controls.Add(this.label5);
+            this.panelActivity.Location = new System.Drawing.Point(280, 50);
+            this.panelActivity.Name = "panelActivity";
+            this.panelActivity.Size = new System.Drawing.Size(1000, 650);
+            this.panelActivity.TabIndex = 15;
             // 
             // checkBoxChooseAutomatically
             // 
@@ -1940,7 +1940,7 @@
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.panelProfileSetup);
             this.Controls.Add(this.flowLayoutPanelSidebar);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelActivity);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1954,8 +1954,8 @@
             this.panelBMI.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelActivity.ResumeLayout(false);
+            this.panelActivity.PerformLayout();
             this.groupBoxEffortLevel.ResumeLayout(false);
             this.groupBoxEffortLevel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).EndInit();
@@ -2004,7 +2004,7 @@
         private System.Windows.Forms.Button buttonSurvey;
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Panel panelBMI;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelActivity;
         private System.Windows.Forms.Panel panelQuiz;
         private System.Windows.Forms.Panel panelMacro;
         private System.Windows.Forms.Panel panelProfiles;

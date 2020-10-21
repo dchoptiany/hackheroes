@@ -91,16 +91,6 @@ namespace app
             panelPointer.Height = clickedButton.Height;
         }
 
-        private void ChangePanel(int index)
-        {
-            panels[index].BringToFront();
-        }
-
-        private void ChangePanel(Panel panel)
-        {
-            panel.BringToFront();
-        }
-
         private void LoadQuestions()
         {
             Quiz.questions = new List<Question>();
@@ -230,7 +220,7 @@ namespace app
         {
             panels.Add(panelLandingPage); //buttons
             panels.Add(panelBMI); //BMI
-            panels.Add(panel2); //sport activity
+            panels.Add(panelActivity); //sport activity
             panels.Add(panelQuiz); //quiz
             panels.Add(panelMacro); //calculator
             panels.Add(panelSurveyMenu); //surveys
@@ -253,7 +243,7 @@ namespace app
             LoadSurveys();
             LoadUsers();
 
-            ChangePanel(0);
+            panelLandingPage.BringToFront();
         }
 
         private void Disable(Button button)
@@ -444,7 +434,7 @@ namespace app
 
             if(!Calculator.CalculateBMI(users[userIndex]))
             {
-                ChangePanel(6);
+                panelProfiles.BringToFront();
                 return;
             }
 
@@ -456,12 +446,12 @@ namespace app
             Center(labelBMI);
             Center(labelBMIInterpretation);
 
-            ChangePanel(1);
+            panelBMI.BringToFront();
         }
 
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
-            ChangePanel(2);
+            panelActivity.BringToFront();
 
             radioButtonAllParticipants.Checked = true;
             radioButtonAllWeatherConditions.Checked = true;
@@ -472,23 +462,23 @@ namespace app
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
-            ChangePanel(3);
+            panelQuiz.BringToFront();
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
-            ChangePanel(4);
+            panelMacro.BringToFront();
             UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            ChangePanel(5);
+            panelSurveyMenu.BringToFront();
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
-            ChangePanel(6);
+            panelProfiles.BringToFront();
 
             UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
@@ -511,11 +501,6 @@ namespace app
 
             UpdateArrowButtons();
             SetEditInfoVisibility(false);
-        }
-
-        private void ButtonReturn_Click(object sender, EventArgs e)
-        {
-            ChangePanel(0);
         }
 
         private void SetEditInfoVisibility(bool visibility)
@@ -974,7 +959,7 @@ namespace app
         {
             currentSurveyIndex = GetSurveyID((Button)sender);
             Survey.currentQuestionIndex = 0;
-            ChangePanel(panelSurvey);
+            panelSurvey.BringToFront();
             NextSurveyQuestion();
         }
 
@@ -1091,7 +1076,7 @@ namespace app
 
         private void FinishSurvey()
         {
-            ChangePanel(panelSurveyFinished);
+            panelSurveyFinished.BringToFront();
 
             if(currentSurveyIndex == 0) //Poziom aktywnosci fizycznej
             {
