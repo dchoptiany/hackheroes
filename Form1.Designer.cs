@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hackheroes));
             this.panel0 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonBMI = new System.Windows.Forms.Button();
@@ -170,7 +171,7 @@
             // 
             // panel0
             // 
-            this.panel0.Location = new System.Drawing.Point(250, 50);
+            this.panel0.Location = new System.Drawing.Point(280, 50);
             this.panel0.Name = "panel0";
             this.panel0.Size = new System.Drawing.Size(1000, 650);
             this.panel0.TabIndex = 13;
@@ -186,7 +187,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 175);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 525);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(280, 545);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // buttonBMI
@@ -200,7 +201,7 @@
             this.buttonBMI.Location = new System.Drawing.Point(0, 5);
             this.buttonBMI.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonBMI.Name = "buttonBMI";
-            this.buttonBMI.Size = new System.Drawing.Size(250, 60);
+            this.buttonBMI.Size = new System.Drawing.Size(280, 72);
             this.buttonBMI.TabIndex = 0;
             this.buttonBMI.Text = "BMI";
             this.buttonBMI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,10 +216,10 @@
             this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonActivity.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonActivity.Location = new System.Drawing.Point(0, 67);
+            this.buttonActivity.Location = new System.Drawing.Point(0, 79);
             this.buttonActivity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonActivity.Name = "buttonActivity";
-            this.buttonActivity.Size = new System.Drawing.Size(250, 60);
+            this.buttonActivity.Size = new System.Drawing.Size(280, 72);
             this.buttonActivity.TabIndex = 1;
             this.buttonActivity.Text = "Aktywność";
             this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -233,10 +234,10 @@
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.buttonProfile.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonProfile.Location = new System.Drawing.Point(0, 315);
+            this.buttonProfile.Location = new System.Drawing.Point(0, 375);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(250, 60);
+            this.buttonProfile.Size = new System.Drawing.Size(280, 72);
             this.buttonProfile.TabIndex = 5;
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,7 +251,7 @@
             this.panel1.Controls.Add(this.labelBMI);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(250, 50);
+            this.panel1.Location = new System.Drawing.Point(280, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 650);
             this.panel1.TabIndex = 14;
@@ -297,7 +298,7 @@
             this.panel2.Controls.Add(this.labelActivityResult);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(250, 50);
+            this.panel2.Location = new System.Drawing.Point(280, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 650);
             this.panel2.TabIndex = 15;
@@ -506,7 +507,7 @@
             this.panel3.Controls.Add(this.tableLayoutPanelAnswers);
             this.panel3.Controls.Add(this.ButtonStartQuiz);
             this.panel3.Controls.Add(this.labelQuiz);
-            this.panel3.Location = new System.Drawing.Point(250, 50);
+            this.panel3.Location = new System.Drawing.Point(280, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 650);
             this.panel3.TabIndex = 16;
@@ -686,7 +687,7 @@
             this.panel4.Controls.Add(this.label25);
             this.panel4.Controls.Add(this.trackBarActivityLevel);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(250, 50);
+            this.panel4.Location = new System.Drawing.Point(280, 50);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1000, 650);
             this.panel4.TabIndex = 17;
@@ -950,7 +951,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Location = new System.Drawing.Point(250, 50);
+            this.panel5.Location = new System.Drawing.Point(280, 50);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1000, 650);
             this.panel5.TabIndex = 18;
@@ -1005,7 +1006,7 @@
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label1);
-            this.panel6.Location = new System.Drawing.Point(250, 50);
+            this.panel6.Location = new System.Drawing.Point(280, 50);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1000, 650);
             this.panel6.TabIndex = 19;
@@ -1511,7 +1512,7 @@
             // 
             this.panelProfileSetup.Location = new System.Drawing.Point(0, 0);
             this.panelProfileSetup.Name = "panelProfileSetup";
-            this.panelProfileSetup.Size = new System.Drawing.Size(250, 175);
+            this.panelProfileSetup.Size = new System.Drawing.Size(280, 175);
             this.panelProfileSetup.TabIndex = 21;
             // 
             // panelPointer
@@ -1530,10 +1531,12 @@
             this.buttonQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.buttonQuiz.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonQuiz.Location = new System.Drawing.Point(0, 129);
+            this.buttonQuiz.Image = ((System.Drawing.Image)(resources.GetObject("buttonQuiz.Image")));
+            this.buttonQuiz.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonQuiz.Location = new System.Drawing.Point(0, 153);
             this.buttonQuiz.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonQuiz.Name = "buttonQuiz";
-            this.buttonQuiz.Size = new System.Drawing.Size(250, 60);
+            this.buttonQuiz.Size = new System.Drawing.Size(280, 72);
             this.buttonQuiz.TabIndex = 2;
             this.buttonQuiz.Text = "Quizy";
             this.buttonQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1550,10 +1553,11 @@
             this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonCalculator.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonCalculator.Image = global::app.Properties.Resources.calculate_math;
-            this.buttonCalculator.Location = new System.Drawing.Point(0, 191);
+            this.buttonCalculator.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonCalculator.Location = new System.Drawing.Point(0, 227);
             this.buttonCalculator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonCalculator.Name = "buttonCalculator";
-            this.buttonCalculator.Size = new System.Drawing.Size(250, 60);
+            this.buttonCalculator.Size = new System.Drawing.Size(280, 72);
             this.buttonCalculator.TabIndex = 3;
             this.buttonCalculator.Text = "Kalkulator kalorii";
             this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1569,10 +1573,11 @@
             this.buttonSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSurvey.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonSurvey.Image = global::app.Properties.Resources.surveys;
-            this.buttonSurvey.Location = new System.Drawing.Point(0, 253);
+            this.buttonSurvey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonSurvey.Location = new System.Drawing.Point(0, 301);
             this.buttonSurvey.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonSurvey.Name = "buttonSurvey";
-            this.buttonSurvey.Size = new System.Drawing.Size(250, 60);
+            this.buttonSurvey.Size = new System.Drawing.Size(280, 72);
             this.buttonSurvey.TabIndex = 4;
             this.buttonSurvey.Text = "Ankiety diagnostyczne";
             this.buttonSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1658,7 +1663,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 700);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.panelProfileSetup);

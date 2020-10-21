@@ -130,8 +130,8 @@
   <data name="calculate-math" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\calculate-math.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="comment-blog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\comment-blog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="surveys" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\surveys.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="timeScale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\timeScale.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,7 +139,7 @@
   <data name="closeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\closeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="surveys" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\surveys.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="comment-blog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\comment-blog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
