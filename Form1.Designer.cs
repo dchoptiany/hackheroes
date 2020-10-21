@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hackheroes));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelSideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonBMI = new System.Windows.Forms.Button();
             this.buttonActivity = new System.Windows.Forms.Button();
             this.buttonQuiz = new System.Windows.Forms.Button();
@@ -142,7 +142,7 @@
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.panel0 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanelSideBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -168,19 +168,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelSideBar
             // 
-            this.flowLayoutPanel1.Controls.Add(this.buttonBMI);
-            this.flowLayoutPanel1.Controls.Add(this.buttonActivity);
-            this.flowLayoutPanel1.Controls.Add(this.buttonQuiz);
-            this.flowLayoutPanel1.Controls.Add(this.buttonCalculator);
-            this.flowLayoutPanel1.Controls.Add(this.buttonSurvey);
-            this.flowLayoutPanel1.Controls.Add(this.buttonProfile);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 175);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(280, 545);
-            this.flowLayoutPanel1.TabIndex = 13;
+            this.flowLayoutPanelSideBar.Controls.Add(this.buttonBMI);
+            this.flowLayoutPanelSideBar.Controls.Add(this.buttonActivity);
+            this.flowLayoutPanelSideBar.Controls.Add(this.buttonQuiz);
+            this.flowLayoutPanelSideBar.Controls.Add(this.buttonCalculator);
+            this.flowLayoutPanelSideBar.Controls.Add(this.buttonSurvey);
+            this.flowLayoutPanelSideBar.Controls.Add(this.buttonProfile);
+            this.flowLayoutPanelSideBar.Location = new System.Drawing.Point(0, 175);
+            this.flowLayoutPanelSideBar.Name = "flowLayoutPanelSideBar";
+            this.flowLayoutPanelSideBar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.flowLayoutPanelSideBar.Size = new System.Drawing.Size(280, 545);
+            this.flowLayoutPanelSideBar.TabIndex = 13;
             // 
             // buttonBMI
             // 
@@ -201,7 +201,6 @@
             this.buttonBMI.Text = "BMI";
             this.buttonBMI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBMI.UseVisualStyleBackColor = false;
-            this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
             this.buttonBMI.Click += new System.EventHandler(this.DisableButton);
             // 
             // buttonActivity
@@ -223,9 +222,7 @@
             this.buttonActivity.Text = "Aktywność";
             this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonActivity.UseVisualStyleBackColor = false;
-            this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
             this.buttonActivity.Click += new System.EventHandler(this.DisableButton);
-
             // 
             // buttonQuiz
             // 
@@ -247,9 +244,7 @@
             this.buttonQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonQuiz.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonQuiz.UseVisualStyleBackColor = false;
-            this.buttonQuiz.Click += new System.EventHandler(this.ButtonQuiz_Click);
             this.buttonQuiz.Click += new System.EventHandler(this.DisableButton);
-
             // 
             // buttonCalculator
             // 
@@ -271,9 +266,7 @@
             this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCalculator.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonCalculator.UseVisualStyleBackColor = false;
-            this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
             this.buttonCalculator.Click += new System.EventHandler(this.DisableButton);
-
             // 
             // buttonSurvey
             // 
@@ -294,9 +287,7 @@
             this.buttonSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSurvey.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSurvey.UseVisualStyleBackColor = false;
-            this.buttonSurvey.Click += new System.EventHandler(this.ButtonSurvey_Click);
             this.buttonSurvey.Click += new System.EventHandler(this.DisableButton);
-
             // 
             // buttonProfile
             // 
@@ -317,9 +308,7 @@
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonProfile.UseVisualStyleBackColor = false;
-            this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
             this.buttonProfile.Click += new System.EventHandler(this.DisableButton);
-
             // 
             // panel1
             // 
@@ -1676,7 +1665,7 @@
             this.Controls.Add(this.panel0);
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.panelProfileSetup);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLayoutPanelSideBar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -1691,7 +1680,7 @@
             this.Text = "Hackheroes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hackheroes_FormClosing);
             this.Load += new System.EventHandler(this.Hackheroes_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanelSideBar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
@@ -1733,7 +1722,7 @@
 
         private System.Windows.Forms.Button buttonMinimize;
         private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelSideBar;
         private System.Windows.Forms.Button buttonBMI;
         private System.Windows.Forms.Button buttonActivity;
         private System.Windows.Forms.Button buttonQuiz;
