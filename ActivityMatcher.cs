@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 
 namespace app
 {
@@ -53,38 +49,6 @@ namespace app
     {
         public static List<Sport> sports;
         public static List<Sport> approvedSports;
-
-        public static bool LoadSports()
-        {
-            try
-            {
-                sports = new List<Sport>();
-                approvedSports = new List<Sport>();
-
-                string[] JSON = File.ReadAllLines("..\\..\\Resources\\Sports.json");
-                List<string> sportsJSON = new List<string>();
-                string sportLine;
-
-                for (int i = 0; i < JSON.Length; i += 6)
-                {
-                    sportLine = string.Empty;
-
-                    for (int line = 0; line < 6; line++)
-                    {
-                        sportLine += JSON[i + line];
-                    }
-
-                    sports.Add(JsonSerializer.Deserialize<Sport>(sportLine));
-                }
-
-                return true;
-            }
-            catch(FileNotFoundException exception)
-            {
-                MessageBox.Show("Wystąpił błąd podczas wczytywania aktywności. Wyszukiwarka aktywności nie będzie dostępna.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-        }
 
         public static string Search(Participants participants, Weather weather, EffortLevel effortLevel)
         {

@@ -26,6 +26,36 @@ namespace app
             InitializeComponent(); 
         }
 
+        private void LoadSports()
+        {
+            try
+            {
+                ActivityMatcher.sports = new List<Sport>();
+                ActivityMatcher.approvedSports = new List<Sport>();
+
+                string[] JSON = File.ReadAllLines("..\\..\\Resources\\Sports.json");
+                List<string> sportsJSON = new List<string>();
+                string sportLine;
+
+                for (int i = 0; i < JSON.Length; i += 6)
+                {
+                    sportLine = string.Empty;
+
+                    for (int line = 0; line < 6; line++)
+                    {
+                        sportLine += JSON[i + line];
+                    }
+
+                    ActivityMatcher.sports.Add(JsonSerializer.Deserialize<Sport>(sportLine));
+                }
+            }
+            catch (FileNotFoundException exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas wczytywania aktywności. Wyszukiwarka aktywności nie będzie dostępna.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Disable(buttonActivity);
+            }
+        }
+
         private void LoadSurveys()
         {
             surveys = new List<Survey>();
@@ -120,11 +150,8 @@ namespace app
                 Disable(buttonQuiz);
             }
 
-            if (!ActivityMatcher.LoadSports())
-            {
-                Disable(buttonActivity);
-            }
-
+            LoadSports();
+            LoadSurveys();
             LoadUsers();
 
             ChangePanel(0);
@@ -332,7 +359,6 @@ namespace app
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
             ChangePanel(2);
-            ActivityMatcher.LoadSports();
 
             radioButtonAllParticipants.Checked = true;
             radioButtonAllWeatherConditions.Checked = true;
