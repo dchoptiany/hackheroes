@@ -183,7 +183,7 @@ namespace app
 
         private void Center(Control control)
         {
-            control.Location = new Point(1000 / 2 - control.Size.Width / 2, control.Location.Y);
+            control.Location = new Point(control.Parent.Size.Width / 2 - control.Size.Width / 2, control.Location.Y);
         }
 
         private void ButtonBMI_Click(object sender, EventArgs e)
@@ -951,19 +951,19 @@ namespace app
             try
             {
                 Tuple<float, bool> weatherInfo = ActivityMatcher.currentWeather.GetWeather(textBoxCity.Text);
-
+                string weatherMessage = "";
                 if (weatherInfo.Item1 > 12 && weatherInfo.Item1 < 30)
                 {
                     if(weatherInfo.Item2)
                     {
-                        labelWeatherInfo.Text = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", weatherInfo.Item1);
+                        weatherMessage = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", weatherInfo.Item1);
                         SetButtonAsUnclicked(buttonBadWeather);
                         SetButtonAsUnclicked(buttonAnyWeather);
                         SetButtonAsClicked(buttonGoodWeather);
                     }
                     else
                     {
-                        labelWeatherInfo.Text = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną ze względu na inne warunki (np. opady).", weatherInfo.Item1);
+                        weatherMessage = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną ze względu na inne warunki (np. opady).", weatherInfo.Item1);
                         SetButtonAsUnclicked(buttonGoodWeather);
                         SetButtonAsUnclicked(buttonAnyWeather);
                         SetButtonAsClicked(buttonBadWeather);
@@ -971,20 +971,22 @@ namespace app
                 }
                 else
                 {
-                    labelWeatherInfo.Text = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", weatherInfo.Item1);
+                    weatherMessage = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", weatherInfo.Item1);
                     SetButtonAsUnclicked(buttonGoodWeather);
                     SetButtonAsUnclicked(buttonAnyWeather);
                     SetButtonAsClicked(buttonBadWeather);
                 }
                 Center(labelWeatherInfo);
+
+                labelWeatherInfo.Text = weatherMessage;
                 labelWeatherInfo.Visible = true;
             }
             catch(WebException exception)
             {
-                string message = string.Format("Nie znaleziono takiego miejsca ({0}).\nUpewnij się czy nazwa jest wpisana poprawnie i spróbuj ponownie.", textBoxCity.Text);
+                string message = string.Format("Nie znaleziono takiego miejsca ({0}.\nUpewnij się czy nazwa jest wpisana poprawnie i spróbuj ponownie.", textBoxCity.Text);
                 if (exception.Message == "No internet connection")
                 {
-                    message = "Do sprawdzenia pogody konieczne jest połączenie internetowe.";
+                    message = "Do sprawdzenia pogody konieczne jest połączenie z internetem.";
                 }
                 string caption = "Nie można sprawdzić pogody";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
