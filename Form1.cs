@@ -185,10 +185,10 @@ namespace app
                 List<string> usersJSON = new List<string>();
                 string userLine;
 
-                for (int i = 0; i < JSON.Length; i += 7)
+                for (int i = 0; i < JSON.Length; i += 8)
                 {
                     userLine = string.Empty;
-                    for (int line = 0; line < 7; line++)
+                    for (int line = 0; line < 8; line++)
                     {
                         userLine += JSON[i + line];
                     }
@@ -198,6 +198,7 @@ namespace app
                 foreach (string line in usersJSON)
                 {
                     User newUser = JsonSerializer.Deserialize<User>(line);
+                    Console.WriteLine(newUser.activityLevel);
                     users.Add(newUser);
                 }
             }
@@ -1052,6 +1053,11 @@ namespace app
             Center(labelFinish);
         }
 
+        private void ButtonSurveyFinished_Clicked(object sender, EventArgs e)
+        {
+            panelSurveyMenu.BringToFront();
+        }
+
         private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
         {
             UpdateActivityLevel();
@@ -1138,11 +1144,6 @@ namespace app
             }
 
             File.WriteAllLines("..\\..\\users.json", JSON);
-        }
-
-        private void ButtonSurveyFinished_Clicked(object sender, EventArgs e)
-        {
-            panelSurveyMenu.BringToFront();
         }
     }
 }
