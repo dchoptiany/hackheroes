@@ -63,16 +63,16 @@ namespace app
 
         private void DisableButton(Button button)
         {
-            for (int index = 0; index < panelButtons.Count; ++index)
+            foreach (Button _button in panelButtons)
             {
-                if (panelButtons[index].Text == button.Text)
+                if (_button.Text == button.Text)
                 {
-                    panelButtons[index].Enabled = false;
+                    _button.Enabled = false;
                 }
                 else
                 {
-                    panelButtons[index].Enabled = true;
-                    panelButtons[index].BackColor = green2;
+                    _button.Enabled = true;
+                    _button.BackColor = green2;
                 }
             }
             button.BackColor = green1;
