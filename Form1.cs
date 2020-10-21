@@ -384,34 +384,31 @@ namespace app
             {
                 return "Wygłodzenie";
             }
-            else if(BMI<17f)
+            if(BMI < 17f)
             {
                 return "Wychudzenie";
             }
-            else if(BMI<18.5f)
+            if(BMI < 18.5f)
             {
                 return "Niedowaga";
             }
-            else if(BMI < 25f)
+            if(BMI < 25f)
             {
                 return "Norma";
             }
-            else if(BMI < 30f)
+            if(BMI < 30f)
             {
                 return "Nadwaga";
             }
-            else if(BMI<35f)
+            if(BMI < 35f)
             {
                 return "I stopień otyłości";
             }
-            else if(BMI<40f)
+            if(BMI < 40f)
             {
                 return "II stopień otyłości";
             }
-            else
-            {
-                return "Otyłość skrajna";
-            }
+            return "Otyłość skrajna";
         }
 
         private void Center(Control control)
