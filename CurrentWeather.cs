@@ -104,7 +104,7 @@ namespace app
                 string url = string.Format("http://api.openweathermap.org/data/2.5/weather?q={0}&units=metric&appid=aa768c8b184a85a2e18c5b8fa9736598", city);
                 string json = web.DownloadString(url);
                 var w = JsonSerializer.Deserialize<Root>(json);
-                temp = Convert.ToSingle(w.main.temp);
+                temp = Convert.ToSingle(w.main.feels_like);
                 weath = w.weather[0].main;
             }
             if (weath == "Clear" || weath == "Clouds")

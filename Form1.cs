@@ -956,14 +956,14 @@ namespace app
                 {
                     if(weatherInfo.Item2)
                     {
-                        labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", weatherInfo.Item1);
+                        labelWeatherInfo.Text = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", weatherInfo.Item1);
                         SetButtonAsUnclicked(buttonBadWeather);
                         SetButtonAsUnclicked(buttonAnyWeather);
                         SetButtonAsClicked(buttonGoodWeather);
                     }
                     else
                     {
-                        labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną ze względu na inne warunki (np. opady).", weatherInfo.Item1);
+                        labelWeatherInfo.Text = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną ze względu na inne warunki (np. opady).", weatherInfo.Item1);
                         SetButtonAsUnclicked(buttonGoodWeather);
                         SetButtonAsUnclicked(buttonAnyWeather);
                         SetButtonAsClicked(buttonBadWeather);
@@ -971,7 +971,7 @@ namespace app
                 }
                 else
                 {
-                    labelWeatherInfo.Text = string.Format("Temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", weatherInfo.Item1);
+                    labelWeatherInfo.Text = string.Format("Odczuwalna temperatura w Twojej okolicy wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", weatherInfo.Item1);
                     SetButtonAsUnclicked(buttonGoodWeather);
                     SetButtonAsUnclicked(buttonAnyWeather);
                     SetButtonAsClicked(buttonBadWeather);
