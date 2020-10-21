@@ -140,6 +140,7 @@
             this.buttonSurveyB = new System.Windows.Forms.Button();
             this.labelSurveyQuestion = new System.Windows.Forms.Label();
             this.panelSurveyFinished = new System.Windows.Forms.Panel();
+            this.labelFinish = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonAnyEffort = new System.Windows.Forms.Button();
@@ -163,11 +164,13 @@
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.buttonAnyWeather = new System.Windows.Forms.Button();
             this.pictureBoxClouds = new System.Windows.Forms.PictureBox();
-            this.labelFinish = new System.Windows.Forms.Label();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.buttonChangeSearchingData = new System.Windows.Forms.Button();
             this.labelActivityResult = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonShowNext = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -1684,6 +1687,16 @@
             this.panelSurveyFinished.Size = new System.Drawing.Size(1000, 650);
             this.panelSurveyFinished.TabIndex = 22;
             // 
+            // labelFinish
+            // 
+            this.labelFinish.AutoSize = true;
+            this.labelFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFinish.Location = new System.Drawing.Point(397, 220);
+            this.labelFinish.Name = "labelFinish";
+            this.labelFinish.Size = new System.Drawing.Size(191, 42);
+            this.labelFinish.TabIndex = 11;
+            this.labelFinish.Text = "<finished>";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox3);
@@ -1979,16 +1992,6 @@
             this.pictureBoxClouds.TabIndex = 2;
             this.pictureBoxClouds.TabStop = false;
             // 
-            // labelFinish
-            // 
-            this.labelFinish.AutoSize = true;
-            this.labelFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFinish.Location = new System.Drawing.Point(397, 220);
-            this.labelFinish.Name = "labelFinish";
-            this.labelFinish.Size = new System.Drawing.Size(191, 42);
-            this.labelFinish.TabIndex = 11;
-            this.labelFinish.Text = "<finished>";
-            // 
             // buttonMinimize
             // 
             this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
@@ -2023,21 +2026,63 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.buttonChangeSearchingData);
             this.panel7.Controls.Add(this.labelActivityResult);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.buttonShowNext);
             this.panel7.Location = new System.Drawing.Point(280, 50);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1000, 650);
             this.panel7.TabIndex = 23;
             // 
+            // buttonChangeSearchingData
+            // 
+            this.buttonChangeSearchingData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(2)))));
+            this.buttonChangeSearchingData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChangeSearchingData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonChangeSearchingData.ForeColor = System.Drawing.Color.White;
+            this.buttonChangeSearchingData.Location = new System.Drawing.Point(623, 550);
+            this.buttonChangeSearchingData.Name = "buttonChangeSearchingData";
+            this.buttonChangeSearchingData.Size = new System.Drawing.Size(229, 46);
+            this.buttonChangeSearchingData.TabIndex = 22;
+            this.buttonChangeSearchingData.Text = "Zmień kryteria wyszukiwania";
+            this.buttonChangeSearchingData.UseVisualStyleBackColor = false;
+            this.buttonChangeSearchingData.Click += new System.EventHandler(this.ButtonChangeSearchingData_Click);
+            // 
             // labelActivityResult
             // 
             this.labelActivityResult.AutoSize = true;
-            this.labelActivityResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelActivityResult.Location = new System.Drawing.Point(417, 448);
+            this.labelActivityResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelActivityResult.Location = new System.Drawing.Point(425, 423);
             this.labelActivityResult.Name = "labelActivityResult";
-            this.labelActivityResult.Size = new System.Drawing.Size(153, 42);
-            this.labelActivityResult.TabIndex = 11;
+            this.labelActivityResult.Size = new System.Drawing.Size(100, 29);
+            this.labelActivityResult.TabIndex = 21;
             this.labelActivityResult.Text = "<result>";
+            this.labelActivityResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(371, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(248, 29);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Propozycja dla Ciebie";
+            // 
+            // buttonShowNext
+            // 
+            this.buttonShowNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(2)))));
+            this.buttonShowNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShowNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonShowNext.ForeColor = System.Drawing.Color.White;
+            this.buttonShowNext.Location = new System.Drawing.Point(361, 550);
+            this.buttonShowNext.Name = "buttonShowNext";
+            this.buttonShowNext.Size = new System.Drawing.Size(229, 46);
+            this.buttonShowNext.TabIndex = 19;
+            this.buttonShowNext.Text = "Pokaż następną propozycję";
+            this.buttonShowNext.UseVisualStyleBackColor = false;
+            this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
             // Hackheroes
             // 
@@ -2251,6 +2296,9 @@
         private System.Windows.Forms.Button buttonAnyWeather;
         private System.Windows.Forms.PictureBox pictureBoxClouds;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button buttonChangeSearchingData;
         private System.Windows.Forms.Label labelActivityResult;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonShowNext;
     }
 }
