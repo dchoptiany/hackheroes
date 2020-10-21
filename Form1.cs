@@ -16,14 +16,89 @@ namespace app
 
         private List<User> users;
         private int currentUserIndex;
+        private readonly List<Button> surveyButtons = new List<Button>();
 
         private readonly List<Panel> panels = new List<Panel>();
-        private readonly List<Button> answerButtons = new List<Button>();
-        private readonly List<Button> surveyButtons = new List<Button>();
+        private List<Button> answerButtons = new List<Button>();
+        private List<Button> menuButtons = new List<Button>();
+        private readonly Color blue1 = Color.FromArgb(0, 168, 255);
+        private readonly Color purple1 = Color.FromArgb(156, 136, 255);
+        private readonly Color darkblue1 = Color.FromArgb(39, 60, 117);
+        private readonly Color darkblue2 = Color.FromArgb(25, 42, 86);
+        private readonly Color red1 = Color.FromArgb(232, 65, 24);
+        private readonly Color red2 = Color.FromArgb(194, 54, 22);
+        private readonly Color green1 = Color.FromArgb(76, 209, 55);
+        private readonly Color green2 = Color.FromArgb(68, 189, 50);
+        private readonly Color yellow1 = Color.FromArgb(251, 197, 49);
+        private readonly Color white1 = Color.FromArgb(220, 221, 225);
+        private readonly Color white2 = Color.FromArgb(245, 246, 250);
 
         public Hackheroes()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            InitializeButtons();
+            InitializeColors();
+        }
+
+        private void InitializeColors()
+        {
+            BackColor = white2;
+
+            panelPointer.BackColor = blue1;
+
+            Color leftPanelBackColor = green2;
+            flowLayoutPanel1.BackColor = leftPanelBackColor;
+            panelProfileSetup.BackColor = leftPanelBackColor;
+
+            Color leftPanelButtonsColor = green2;
+            buttonBMI.BackColor = leftPanelButtonsColor;
+            buttonActivity.BackColor = leftPanelButtonsColor;
+            buttonQuiz.BackColor = leftPanelButtonsColor;
+            buttonCalculator.BackColor = leftPanelButtonsColor;
+            buttonSurvey.BackColor = leftPanelButtonsColor;
+            buttonProfile.BackColor = leftPanelButtonsColor;
+        }
+
+        private void InitializeButtons()
+        {
+            menuButtons.Add(buttonBMI);
+            menuButtons.Add(buttonActivity); 
+            menuButtons.Add(buttonQuiz); 
+            menuButtons.Add(buttonCalculator); 
+            menuButtons.Add(buttonSurvey); 
+            menuButtons.Add(buttonProfile); 
+        }
+
+        private void DisableButton(object sender, EventArgs e)
+        {
+            var clickedButton = (Button)sender;
+            foreach (Button _button in menuButtons)
+            {
+                if (_button.Text == clickedButton.Text)
+                {
+                    _button.Enabled = false;
+                }
+                else
+                {
+                    _button.Enabled = true;
+                    _button.BackColor = green2;
+                }
+            }
+            clickedButton.BackColor = green1;
+
+            panelPointer.Visible = true;
+            panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
+            panelPointer.Height = clickedButton.Height;
+        }
+
+        private void ChangePanel(int index)
+        {
+            panels[index].BringToFront();
+        }
+
+        private void ChangePanel(Panel panel)
+        {
+            panel.BringToFront();
         }
 
         private void LoadQuestions()
@@ -185,18 +260,6 @@ namespace app
         {
             button.Enabled = false;
             button.BackColor = Color.FromArgb(127, 143, 166);
-        }
-
-        private void ChangePanel(int index)
-        {
-            panels[index].BringToFront();
-            buttonReturn.Visible = index != 0;
-        }
-
-        private void ChangePanel(Panel panel)
-        {
-            panel.BringToFront();
-            buttonReturn.Visible = !(panel == panel0);
         }
 
         private int GetSurveyID(Button button)
