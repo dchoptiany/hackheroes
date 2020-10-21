@@ -34,36 +34,6 @@ namespace app
         public static int questionNumber;
         public static bool isAnswerChosen;
 
-        public static bool LoadQuestions()
-        {
-            questions = new List<Question>();
-            try
-            {
-                string[] JSON = File.ReadAllLines("..\\..\\Resources\\Questions.json");
-                List<string> questionsJSON = new List<string>();
-                string questionLine;
-
-                for (int i = 0; i < JSON.Length; i += 9)
-                {
-                    questionLine = string.Empty;
-
-                    for(int line = 0; line < 9; line++)
-                    {
-                        questionLine += JSON[i + line];
-                    }
-
-                    questions.Add(JsonSerializer.Deserialize<Question>(questionLine));
-                }
-
-                return true;
-            }
-            catch(FileNotFoundException exception)
-            {
-                MessageBox.Show("Wystąpił błąd podczas wczytywania pytań. Quizy nie będą dostępne.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-        }
-
         public static void DrawQuestion()
         {
             int index;

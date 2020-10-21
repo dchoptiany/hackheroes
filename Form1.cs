@@ -26,6 +26,34 @@ namespace app
             InitializeComponent(); 
         }
 
+        private void LoadQuestions()
+        {
+            Quiz.questions = new List<Question>();
+            try
+            {
+                string[] JSON = File.ReadAllLines("..\\..\\Resources\\Questions.json");
+                List<string> questionsJSON = new List<string>();
+                string questionLine;
+
+                for (int i = 0; i < JSON.Length; i += 9)
+                {
+                    questionLine = string.Empty;
+
+                    for (int line = 0; line < 9; line++)
+                    {
+                        questionLine += JSON[i + line];
+                    }
+
+                    Quiz.questions.Add(JsonSerializer.Deserialize<Question>(questionLine));
+                }
+            }
+            catch (FileNotFoundException exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas wczytywania pytań. Quizy nie będą dostępne.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Disable(buttonQuiz);
+            }
+        }
+
         private void LoadSports()
         {
             try
@@ -145,11 +173,7 @@ namespace app
             surveyButtons.Add(buttonSurvey5);
             surveyButtons.Add(buttonSurvey6);
 
-            if (!Quiz.LoadQuestions())
-            {
-                Disable(buttonQuiz);
-            }
-
+            LoadQuestions();
             LoadSports();
             LoadSurveys();
             LoadUsers();
