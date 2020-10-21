@@ -2076,7 +2076,7 @@
             this.buttonShowNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonShowNext.ForeColor = System.Drawing.Color.White;
-            this.buttonShowNext.Location = new System.Drawing.Point(361, 550);
+            this.buttonShowNext.Location = new System.Drawing.Point(365, 550);
             this.buttonShowNext.Name = "buttonShowNext";
             this.buttonShowNext.Size = new System.Drawing.Size(229, 46);
             this.buttonShowNext.TabIndex = 19;
@@ -2091,8 +2091,8 @@
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
