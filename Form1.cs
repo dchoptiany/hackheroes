@@ -14,6 +14,9 @@ namespace app
         private List<Survey> surveys;
         private int currentSurveyIndex;
 
+        private List<User> users;
+        private int currentUserIndex;
+
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
         private List<Button> surveyButtons = new List<Button>();
@@ -42,6 +45,47 @@ namespace app
             {
                 MessageBox.Show("Wystąpił błąd podczas wczytywania ankiet. Ankiety nie będą dostępne.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
+            }
+        }
+
+        private void LoadUsers()
+        {
+            users = new List<User>();
+            currentUserIndex = 0;
+
+            try
+            {
+                string[] JSON = File.ReadAllLines("..\\..\\users.json");
+                List<string> usersJSON = new List<string>();
+                string userLine;
+
+                for (int i = 0; i < JSON.Length; i += 7)
+                {
+                    userLine = string.Empty;
+                    for (int line = 0; line < 7; line++)
+                    {
+                        userLine += JSON[i + line];
+                    }
+                    usersJSON.Add(userLine);
+                }
+
+                foreach (string line in usersJSON)
+                {
+                    User newUser = JsonSerializer.Deserialize<User>(line);
+                    users.Add(newUser);
+                }
+            }
+            catch (FileNotFoundException exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                users.Add(new User("User", 18, 80f, 180, Gender.Male));
+            }
+            finally
+            {
+                foreach (User user in users)
+                {
+                    listBoxUsers.Items.Add(user.name);
+                }
             }
         }
 
@@ -90,12 +134,7 @@ namespace app
                 }
             }
 
-            User.LoadUsers();
-
-            foreach (User user in User.users)
-            {
-                listBoxUsers.Items.Add(user.name);
-            }
+            LoadUsers();
 
             ChangePanel(0);
         }
@@ -217,11 +256,11 @@ namespace app
 
         private void UpdateMacro()
         {
-            Calculator.CalculateMacro(User.users[User.currentUserIndex]);
-            labelKcal.Text = (User.users[User.currentUserIndex].calories).ToString();
-            labelFats.Text = (User.users[User.currentUserIndex].fat).ToString();
-            labelCarbohydrates.Text = (User.users[User.currentUserIndex].carbohydrates).ToString();
-            labelProtein.Text = (User.users[User.currentUserIndex].protein).ToString();
+            Calculator.CalculateMacro(users[currentUserIndex]);
+            labelKcal.Text = (users[currentUserIndex].calories).ToString();
+            labelFats.Text = (users[currentUserIndex].fat).ToString();
+            labelCarbohydrates.Text = (users[currentUserIndex].carbohydrates).ToString();
+            labelProtein.Text = (users[currentUserIndex].protein).ToString();
         }
 
         private void UpdateButtonDeleteEnabledStatus()
@@ -238,7 +277,7 @@ namespace app
 
         private void UpdateArrow()
         {
-            float BMI = User.users[User.currentUserIndex].BMI;
+            float BMI = users[currentUserIndex].BMI;
             float value = BMI * 2.5f - 10f;
 
             if (value < 0f)
@@ -280,9 +319,9 @@ namespace app
 
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
-            int userIndex = User.currentUserIndex;
+            int userIndex = currentUserIndex;
 
-            if(!Calculator.CalculateBMI(User.users[userIndex]))
+            if(!Calculator.CalculateBMI(users[userIndex]))
             {
                 ChangePanel(6);
                 return;
@@ -290,8 +329,8 @@ namespace app
 
             UpdateArrow();
 
-            labelBMI.Text = "Twoje BMI wynosi: " + User.users[userIndex].BMI.ToString("0.##");
-            labelBMIInterpretation.Text = GetInterpretation(User.users[userIndex].BMI);
+            labelBMI.Text = "Twoje BMI wynosi: " + users[userIndex].BMI.ToString("0.##");
+            labelBMIInterpretation.Text = GetInterpretation(users[userIndex].BMI);
 
             Center(labelBMI);
             Center(labelBMIInterpretation);
@@ -334,14 +373,14 @@ namespace app
             UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
 
-            int userIndex = listBoxUsers.SelectedIndex = User.currentUserIndex;
+            int userIndex = listBoxUsers.SelectedIndex = currentUserIndex;
 
-            textBoxCurrentName.Text = User.users[userIndex].name;
-            numericUpDownCurrentAge.Value = User.users[userIndex].age;
-            numericUpDownCurrentHeight.Value = User.users[userIndex].height;
-            numericUpDownCurrentWeight.Value = Convert.ToDecimal(User.users[userIndex].weight);
+            textBoxCurrentName.Text = users[userIndex].name;
+            numericUpDownCurrentAge.Value = users[userIndex].age;
+            numericUpDownCurrentHeight.Value = users[userIndex].height;
+            numericUpDownCurrentWeight.Value = Convert.ToDecimal(users[userIndex].weight);
             
-            if (User.users[userIndex].gender == Gender.Male)
+            if(users[userIndex].gender == Gender.Male)
             {
                 radioButtonCurrentMale.Checked = true;
             }
@@ -423,7 +462,7 @@ namespace app
         {
             UpdateAgeForm(label17, numericUpDownCurrentAge);
 
-            if(numericUpDownCurrentAge.Value != User.users[User.currentUserIndex].age)
+            if(numericUpDownCurrentAge.Value != users[currentUserIndex].age)
             {
                 buttonSaveChanges.Enabled = true;
             }
@@ -459,7 +498,7 @@ namespace app
                     Close();
                 }
 
-                User.currentUserIndex = listBoxUsers.SelectedIndex = listBoxUsers.Items.Count - 1;
+                currentUserIndex = listBoxUsers.SelectedIndex = listBoxUsers.Items.Count - 1;
             }
             else
             {
@@ -467,12 +506,12 @@ namespace app
 
                 User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gender);
 
-                User.users.Add(newUser);
+                users.Add(newUser);
                 listBoxUsers.Items.Add(newUser.name);
 
                 textBoxName.Text = "";
 
-                User.currentUserIndex = listBoxUsers.SelectedIndex = User.users.Count - 1; 
+                currentUserIndex = listBoxUsers.SelectedIndex = users.Count - 1; 
             }
 
             UpdateButtonDeleteEnabledStatus();
@@ -487,14 +526,14 @@ namespace app
 
             if (listBoxUsers.SelectedIndex != -1)
             {
-                int userIndex = User.currentUserIndex = listBoxUsers.SelectedIndex;
+                int userIndex = currentUserIndex = listBoxUsers.SelectedIndex;
 
-                textBoxCurrentName.Text = User.users[userIndex].name;
-                numericUpDownCurrentAge.Value = User.users[userIndex].age;
-                numericUpDownCurrentWeight.Value = Convert.ToDecimal(User.users[userIndex].weight);
-                numericUpDownCurrentHeight.Value = Convert.ToUInt16(User.users[userIndex].height);
-                radioButtonCurrentMale.Checked = User.users[userIndex].gender == Gender.Male;
-                radioButtonCurrentFemale.Checked = User.users[userIndex].gender == Gender.Female;
+                textBoxCurrentName.Text = users[userIndex].name;
+                numericUpDownCurrentAge.Value = users[userIndex].age;
+                numericUpDownCurrentWeight.Value = Convert.ToDecimal(users[userIndex].weight);
+                numericUpDownCurrentHeight.Value = Convert.ToUInt16(users[userIndex].height);
+                radioButtonCurrentMale.Checked = users[userIndex].gender == Gender.Male;
+                radioButtonCurrentFemale.Checked = users[userIndex].gender == Gender.Female;
             }
         }
 
@@ -524,10 +563,10 @@ namespace app
                 {
                     ++listBoxUsers.SelectedIndex;
                 }
-                User.users.RemoveAt(indexToRemove);
+                users.RemoveAt(indexToRemove);
                 listBoxUsers.Items.RemoveAt(indexToRemove);
 
-                listBoxUsers.SelectedIndex = User.currentUserIndex = 0;
+                listBoxUsers.SelectedIndex = currentUserIndex = 0;
 
                 UpdateButtonDeleteEnabledStatus();
                 UpdateArrowButtons();
@@ -542,20 +581,20 @@ namespace app
             {
                 int userIndex = listBoxUsers.SelectedIndex;
 
-                User.users[userIndex].name = textBoxCurrentName.Text;
-                User.users[userIndex].age = Convert.ToByte(numericUpDownCurrentAge.Value);
-                User.users[userIndex].weight = Convert.ToSingle(numericUpDownCurrentWeight.Value);
-                User.users[userIndex].height = Convert.ToUInt16(numericUpDownCurrentHeight.Value);
+                users[userIndex].name = textBoxCurrentName.Text;
+                users[userIndex].age = Convert.ToByte(numericUpDownCurrentAge.Value);
+                users[userIndex].weight = Convert.ToSingle(numericUpDownCurrentWeight.Value);
+                users[userIndex].height = Convert.ToUInt16(numericUpDownCurrentHeight.Value);
 
                 if (radioButtonCurrentMale.Checked)
                 {
-                    User.users[userIndex].gender = Gender.Male;
+                    users[userIndex].gender = Gender.Male;
                 }
                 else
                 {
-                    User.users[userIndex].gender = Gender.Female;
+                    users[userIndex].gender = Gender.Female;
                 }
-                listBoxUsers.Items[userIndex] = User.users[userIndex].name;
+                listBoxUsers.Items[userIndex] = users[userIndex].name;
                 SetEditInfoVisibility(false);
                 buttonSaveChanges.Enabled = false;
             }
@@ -597,7 +636,7 @@ namespace app
         
         private void TextBoxCurrentName_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxCurrentName.Text != User.users[User.currentUserIndex].name)
+            if (textBoxCurrentName.Text != users[currentUserIndex].name)
             {
                 buttonSaveChanges.Enabled = true;
             }
@@ -605,7 +644,7 @@ namespace app
 
         private void NumericUpDownCurrentWeight_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDownCurrentWeight.Value != Convert.ToDecimal(User.users[User.currentUserIndex].weight))
+            if (numericUpDownCurrentWeight.Value != Convert.ToDecimal(users[currentUserIndex].weight))
             {
                 buttonSaveChanges.Enabled = true;
             }
@@ -613,7 +652,7 @@ namespace app
 
         private void NumericUpDownCurrentHeight_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDownCurrentHeight.Value != User.users[User.currentUserIndex].height)
+            if (numericUpDownCurrentHeight.Value != users[currentUserIndex].height)
             {
                 buttonSaveChanges.Enabled = true;
             }
@@ -621,7 +660,7 @@ namespace app
 
         private void RadioButtonCurrentMale_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButtonCurrentMale.Checked && User.users[User.currentUserIndex].gender != Gender.Male)
+            if (radioButtonCurrentMale.Checked && users[currentUserIndex].gender != Gender.Male)
             {
                 buttonSaveChanges.Enabled = true;
             }
@@ -629,7 +668,7 @@ namespace app
 
         private void RadioButtonCurrentFemale_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButtonCurrentFemale.Checked && User.users[User.currentUserIndex].gender != Gender.Female)
+            if (radioButtonCurrentFemale.Checked && users[currentUserIndex].gender != Gender.Female)
             {
                 buttonSaveChanges.Enabled = true;
             }
@@ -807,7 +846,7 @@ namespace app
 
         private void UpdateActivityLevel()
         {
-            User.users[User.currentUserIndex].activityLevel = 1.1f + 0.1625f * trackBarActivityLevel.Value;
+            users[currentUserIndex].activityLevel = 1.1f + 0.1625f * trackBarActivityLevel.Value;
             UpdateMacro();
         }
 
@@ -936,11 +975,11 @@ namespace app
 
             if(currentSurveyIndex == 0) //Poziom aktywnosci fizycznej
             {
-                User.users[User.currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
-                User.users[User.currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
-                User.users[User.currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
+                users[currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
+                users[currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
+                users[currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
 
-                Calculator.CalculateActivityLevel(User.users[User.currentUserIndex]);
+                Calculator.CalculateActivityLevel(users[currentUserIndex]);
                 labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
             }       
             
@@ -1027,7 +1066,7 @@ namespace app
 
             List<string> JSON = new List<string>();
 
-            foreach (User user in User.users)
+            foreach (User user in users)
             {
                 JSON.Add(JsonSerializer.Serialize(user, options));
             }

@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
-using System.Windows.Forms;
-
-namespace app
+﻿namespace app
 {
 	public enum Gender
 	{
@@ -12,10 +7,7 @@ namespace app
 	}
 
 	public class User
-	{
-		public static List<User> users;
-		public static int currentUserIndex;
-		
+	{		
 		///  Body section
 		public string name { get; set; }
 		public byte age { get; set; }
@@ -47,40 +39,6 @@ namespace app
 
 		public User()
 		{
-		}
-
-		public static void LoadUsers()
-		{
-			users = new List<User>();
-			currentUserIndex = 0;
-
-			try
-			{
-				string[] JSON = File.ReadAllLines("..\\..\\users.json");
-				List<string> usersJSON = new List<string>();
-				string userLine;
-
-				for (int i = 0; i < JSON.Length; i += 7)
-				{
-					userLine = string.Empty;
-					for (int line = 0; line < 7; line++)
-                    {
-						userLine += JSON[i + line];
-					}
-					usersJSON.Add(userLine);
-				}
-
-				foreach (string line in usersJSON)
-				{
-					User newUser = JsonSerializer.Deserialize<User>(line);
-					User.users.Add(newUser);
-				}
-			}
-			catch (FileNotFoundException exception)
-			{
-				MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				User.users.Add(new User("User", 18, 80f, 180, Gender.Male));
-			}
 		}
 	}
 }
