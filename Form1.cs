@@ -11,14 +11,38 @@ namespace app
 {
     public partial class Hackheroes : Form
     {
+        private List<Survey> surveys;
+        private int currentSurveyIndex;
+
         private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
         private List<Button> surveyButtons = new List<Button>();
-        private Survey survey;
 
         public Hackheroes()
         {
             InitializeComponent(); 
+        }
+
+        private bool LoadSurveys()
+        {
+            surveys = new List<Survey>();
+            try
+            {
+                string[] surveysJSON = File.ReadAllLines("..\\..\\Resources\\Surveys.json");
+
+                foreach (string line in surveysJSON)
+                {
+                    Survey newSurvey = JsonSerializer.Deserialize<Survey>(line);
+                    surveys.Add(newSurvey);
+                }
+
+                return true;
+            }
+            catch (FileNotFoundException exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas wczytywania ankiet. Ankiety nie będą dostępne.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
         }
 
         private void Hackheroes_Load(object sender, EventArgs e)
@@ -53,15 +77,15 @@ namespace app
                 Disable(buttonActivity);
             }
 
-            if (!Survey.LoadSurveys())
+            if (!LoadSurveys())
             {
                 Disable(buttonSurvey);
             }
             else
             {
-                for (int i = 0; i < Survey.surveys.Count; i++)
+                for (int i = 0; i < surveys.Count; i++)
                 {
-                    surveyButtons[i].Text = Survey.surveys[i].title;
+                    surveyButtons[i].Text = surveys[i].title;
                     surveyButtons[i].Visible = true;
                 }
             }
@@ -789,7 +813,7 @@ namespace app
 
         private void ButtonSurveyTitle_Clicked(object sender, EventArgs e)
         {
-            survey = Survey.surveys[GetSurveyID((Button)sender)];
+            currentSurveyIndex = GetSurveyID((Button)sender);
             Survey.currentQuestionIndex = 0;
             ChangePanel(panelSurvey);
             NextSurveyQuestion();
@@ -797,8 +821,8 @@ namespace app
 
         private void NextSurveyQuestion()
         {
-            labelSurveyQuestionNumber.Text = "Pytanie " + (Survey.currentQuestionIndex + 1) + "/" + survey.questions.Count.ToString();
-            switch(survey.questions[Survey.currentQuestionIndex].questionType)
+            labelSurveyQuestionNumber.Text = "Pytanie " + (Survey.currentQuestionIndex + 1) + "/" + surveys[currentSurveyIndex].questions.Count.ToString();
+            switch(surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].questionType)
             {
                 case QuestionType.YES_OR_NO:
                     {
@@ -822,10 +846,10 @@ namespace app
                         textBoxSurveyText.Visible = false;
                         buttonSurveyConfirm.Visible = false;
 
-                        buttonSurveyA.Text = survey.questions[Survey.currentQuestionIndex].answersValues[0].Key;
-                        buttonSurveyB.Text = survey.questions[Survey.currentQuestionIndex].answersValues[1].Key;
-                        buttonSurveyYes.Text = survey.questions[Survey.currentQuestionIndex].answersValues[2].Key;
-                        buttonSurveyNo.Text = survey.questions[Survey.currentQuestionIndex].answersValues[3].Key;
+                        buttonSurveyA.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[0].Key;
+                        buttonSurveyB.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[1].Key;
+                        buttonSurveyYes.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[2].Key;
+                        buttonSurveyNo.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[3].Key;
                         break;
                     } 
                 case QuestionType.INPUT:
@@ -852,7 +876,7 @@ namespace app
                         break;
                     }   
             }
-            labelSurveyQuestion.Text = survey.questions[Survey.currentQuestionIndex].questionTitle;
+            labelSurveyQuestion.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].questionTitle;
             Center(labelSurveyQuestionNumber);
             Center(labelSurveyQuestion);
         }
@@ -867,9 +891,9 @@ namespace app
             {
                 try
                 {
-                    if(Convert.ToInt32(textBoxSurveyText.Text) >= 0 && Convert.ToInt32(textBoxSurveyText.Text) <= survey.questions[Survey.currentQuestionIndex].maxInputValue)
+                    if(Convert.ToInt32(textBoxSurveyText.Text) >= 0 && Convert.ToInt32(textBoxSurveyText.Text) <= surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].maxInputValue)
                     {
-                        survey.surveyAnswersInt.Add(Convert.ToUInt32(textBoxSurveyText.Text));
+                        surveys[currentSurveyIndex].surveyAnswersInt.Add(Convert.ToUInt32(textBoxSurveyText.Text));
                     }
                     else
                     {
@@ -883,18 +907,18 @@ namespace app
             }
             else
             {
-                foreach (KeyValuePair<string, uint> answer in survey.questions[Survey.currentQuestionIndex].answersValues)
+                foreach (KeyValuePair<string, uint> answer in surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues)
                 {
                     if (clickedButton.Text == answer.Key)
                     {
-                        survey.surveyAnswersInt.Add(answer.Value);
+                        surveys[currentSurveyIndex].surveyAnswersInt.Add(answer.Value);
                     }
                 }
             }
             if(correctValue)
             {
                 Console.WriteLine("index = " + Survey.currentQuestionIndex);
-                if(Survey.currentQuestionIndex + 1 < survey.questions.Count)
+                if(Survey.currentQuestionIndex + 1 < surveys[currentSurveyIndex].questions.Count)
                 {
                     ++Survey.currentQuestionIndex;
                     NextSurveyQuestion();
@@ -910,11 +934,11 @@ namespace app
         {
             ChangePanel(panelSurveyFinished);
 
-            if(survey == Survey.surveys[0]) //Poziom aktywnosci fizycznej
+            if(currentSurveyIndex == 0) //Poziom aktywnosci fizycznej
             {
-                User.users[User.currentUserIndex].physicalJob = survey.surveyAnswersInt[0] == 1;
-                User.users[User.currentUserIndex].trainingsInWeek = survey.surveyAnswersInt[1];
-                User.users[User.currentUserIndex].dailyMovementLevel = survey.surveyAnswersInt[2];
+                User.users[User.currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
+                User.users[User.currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
+                User.users[User.currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
 
                 Calculator.CalculateActivityLevel(User.users[User.currentUserIndex]);
                 labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";

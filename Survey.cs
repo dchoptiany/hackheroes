@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
-using System.Windows.Forms;
 
 namespace app
 {
@@ -46,7 +43,6 @@ namespace app
             }
         }
 
-        public static List<Survey> surveys;
         public static int currentQuestionIndex;
 
         public string title { get; set; }
@@ -63,28 +59,6 @@ namespace app
         
         public Survey()
         {
-        }
-
-        public static bool LoadSurveys()
-        {
-            surveys = new List<Survey>();
-            try
-            {
-                string[] surveysJSON = File.ReadAllLines("..\\..\\Resources\\Surveys.json");
-
-                foreach(string line in surveysJSON)
-                {
-                    Survey newSurvey = JsonSerializer.Deserialize<Survey>(line);
-                    surveys.Add(newSurvey);
-                }
-
-                return true;
-            }
-            catch (FileNotFoundException exception)
-            {
-                MessageBox.Show("Wystąpił błąd podczas wczytywania ankiet. Ankiety nie będą dostępne.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
         }
 
         public void AddQuestion(string title, QuestionType type)
