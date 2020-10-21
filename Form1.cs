@@ -18,7 +18,6 @@ namespace app
         private int currentUserIndex;
         private readonly List<Button> surveyButtons = new List<Button>();
 
-        private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
         private List<Button> menuButtons = new List<Button>();
         private readonly Color blue1 = Color.FromArgb(0, 168, 255);
@@ -218,14 +217,6 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            panels.Add(panelLandingPage); //buttons
-            panels.Add(panelBMI); //BMI
-            panels.Add(panelActivity); //sport activity
-            panels.Add(panelQuiz); //quiz
-            panels.Add(panelMacro); //calculator
-            panels.Add(panelSurveyMenu); //surveys
-            panels.Add(panelProfiles); //profiles
-
             answerButtons.Add(buttonAnswerA);
             answerButtons.Add(buttonAnswerB);
             answerButtons.Add(buttonAnswerC);
