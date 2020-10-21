@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="healthy-heart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonBMI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\healthy-heart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -130,16 +130,16 @@
   <data name="BMIScale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\BMIScale.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calculate-math" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonCalculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\calculate-math.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="surveys" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonSurvey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\surveys.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gym-dumbbell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonActivity" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\gym-dumbbell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="closeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -148,7 +148,7 @@
   <data name="timeScale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\timeScale.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="question-mark-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonQuiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\question-mark-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

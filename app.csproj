@@ -173,9 +173,6 @@
     <None Include="Resources\Images\healthy-diet.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\myspace.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Images\avatar.png" />
   </ItemGroup>
   <ItemGroup>

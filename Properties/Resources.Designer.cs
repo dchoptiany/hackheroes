@@ -73,16 +73,6 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap avatar {
-            get {
-                object obj = ResourceManager.GetObject("avatar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BMIScale {
             get {
                 object obj = ResourceManager.GetObject("BMIScale", resourceCulture);
@@ -93,9 +83,59 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap calculate_math {
+        internal static System.Drawing.Bitmap buttonActivity {
             get {
-                object obj = ResourceManager.GetObject("calculate-math", resourceCulture);
+                object obj = ResourceManager.GetObject("buttonActivity", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonBMI {
+            get {
+                object obj = ResourceManager.GetObject("buttonBMI", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonCalculator {
+            get {
+                object obj = ResourceManager.GetObject("buttonCalculator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonProfile {
+            get {
+                object obj = ResourceManager.GetObject("buttonProfile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonQuiz {
+            get {
+                object obj = ResourceManager.GetObject("buttonQuiz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonSurvey {
+            get {
+                object obj = ResourceManager.GetObject("buttonSurvey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,49 +153,9 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gym_dumbbell {
-            get {
-                object obj = ResourceManager.GetObject("gym-dumbbell", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap healthy_heart {
-            get {
-                object obj = ResourceManager.GetObject("healthy-heart", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap minimizeIcon {
             get {
                 object obj = ResourceManager.GetObject("minimizeIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap question_mark_line {
-            get {
-                object obj = ResourceManager.GetObject("question-mark-line", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap surveys {
-            get {
-                object obj = ResourceManager.GetObject("surveys", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

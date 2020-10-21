@@ -141,6 +141,7 @@
             this.panelPointer = new System.Windows.Forms.Panel();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.panel0 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -189,7 +190,7 @@
             this.buttonBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBMI.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonBMI.Image = global::app.Properties.Resources.healthy_heart;
+            this.buttonBMI.Image = global::app.Properties.Resources.buttonBMI;
             this.buttonBMI.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBMI.Location = new System.Drawing.Point(0, 5);
             this.buttonBMI.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -210,7 +211,7 @@
             this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonActivity.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonActivity.Image = global::app.Properties.Resources.gym_dumbbell;
+            this.buttonActivity.Image = global::app.Properties.Resources.buttonActivity;
             this.buttonActivity.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonActivity.Location = new System.Drawing.Point(0, 89);
             this.buttonActivity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -231,7 +232,7 @@
             this.buttonQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.buttonQuiz.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonQuiz.Image = global::app.Properties.Resources.question_mark_line;
+            this.buttonQuiz.Image = global::app.Properties.Resources.buttonQuiz;
             this.buttonQuiz.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonQuiz.Location = new System.Drawing.Point(0, 173);
             this.buttonQuiz.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -296,7 +297,7 @@
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.buttonProfile.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonProfile.Image = global::app.Properties.Resources.avatar;
+            this.buttonProfile.Image = global::app.Properties.Resources.buttonProfile;
             this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonProfile.Location = new System.Drawing.Point(0, 425);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -1648,12 +1649,20 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
+            // panel0
+            // 
+            this.panel0.Location = new System.Drawing.Point(280, 50);
+            this.panel0.Name = "panel0";
+            this.panel0.Size = new System.Drawing.Size(1000, 650);
+            this.panel0.TabIndex = 23;
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panel0);
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.panelProfileSetup);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -1823,5 +1832,6 @@
         private System.Windows.Forms.Button buttonCalculator;
         private System.Windows.Forms.Panel panelProfileSetup;
         private System.Windows.Forms.Panel panelPointer;
+        private System.Windows.Forms.Panel panel0;
     }
 }

@@ -97,7 +97,6 @@ namespace app
         private void ChangePanel(int index)
         {
             panels[index].BringToFront();
-            buttonReturn.Visible = index != 0;
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
