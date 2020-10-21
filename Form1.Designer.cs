@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hackheroes));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelSidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonBMI = new System.Windows.Forms.Button();
             this.buttonActivity = new System.Windows.Forms.Button();
             this.buttonQuiz = new System.Windows.Forms.Button();
             this.buttonCalculator = new System.Windows.Forms.Button();
             this.buttonSurvey = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelBMI = new System.Windows.Forms.Panel();
             this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.labelBMIInterpretation = new System.Windows.Forms.Label();
             this.labelBMI = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelQuiz = new System.Windows.Forms.Panel();
             this.pictureBoxTime = new System.Windows.Forms.PictureBox();
             this.pictureBoxTimeBorder = new System.Windows.Forms.PictureBox();
             this.labelNumber = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             this.buttonAnswerC = new System.Windows.Forms.Button();
             this.ButtonStartQuiz = new System.Windows.Forms.Button();
             this.labelQuiz = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelMacro = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelKcal = new System.Windows.Forms.Label();
             this.labelFats = new System.Windows.Forms.Label();
@@ -96,7 +96,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelProfiles = new System.Windows.Forms.Panel();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
             this.buttonArrowUp = new System.Windows.Forms.Button();
@@ -139,7 +139,7 @@
             this.panelPointer = new System.Windows.Forms.Panel();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.panel0 = new System.Windows.Forms.Panel();
+            this.panelLandingPage = new System.Windows.Forms.Panel();
             this.flowPanelSurveys = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonSurvey1 = new System.Windows.Forms.Button();
             this.buttonSurvey2 = new System.Windows.Forms.Button();
@@ -148,7 +148,7 @@
             this.buttonSurvey5 = new System.Windows.Forms.Button();
             this.buttonSurvey6 = new System.Windows.Forms.Button();
             this.labelSurveyTitle = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelSurveyMenu = new System.Windows.Forms.Panel();
             this.panelSurvey = new System.Windows.Forms.Panel();
             this.labelSurveyQuestionNumber = new System.Windows.Forms.Label();
             this.buttonSurveyConfirm = new System.Windows.Forms.Button();
@@ -161,8 +161,8 @@
             this.labelSurveyQuestion = new System.Windows.Forms.Label();
             this.panelSurveyFinished = new System.Windows.Forms.Panel();
             this.labelFinish = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.flowLayoutPanelSidebar.SuspendLayout();
+            this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -170,14 +170,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarEffortLevel)).BeginInit();
             this.groupBoxWeather.SuspendLayout();
             this.groupBoxParticipants.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelQuiz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
             this.tableLayoutPanelAnswers.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panelMacro.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).BeginInit();
-            this.panel6.SuspendLayout();
+            this.panelProfiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentWeight)).BeginInit();
@@ -185,25 +185,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             this.flowPanelSurveys.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panelSurveyMenu.SuspendLayout();
             this.panelSurvey.SuspendLayout();
             this.tablePanelAnswer.SuspendLayout();
             this.panelSurveyFinished.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelSidebar
             // 
-            this.flowLayoutPanel1.Controls.Add(this.buttonBMI);
-            this.flowLayoutPanel1.Controls.Add(this.buttonActivity);
-            this.flowLayoutPanel1.Controls.Add(this.buttonQuiz);
-            this.flowLayoutPanel1.Controls.Add(this.buttonCalculator);
-            this.flowLayoutPanel1.Controls.Add(this.buttonSurvey);
-            this.flowLayoutPanel1.Controls.Add(this.buttonProfile);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 175);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(280, 545);
-            this.flowLayoutPanel1.TabIndex = 13;
+            this.flowLayoutPanelSidebar.Controls.Add(this.buttonBMI);
+            this.flowLayoutPanelSidebar.Controls.Add(this.buttonActivity);
+            this.flowLayoutPanelSidebar.Controls.Add(this.buttonQuiz);
+            this.flowLayoutPanelSidebar.Controls.Add(this.buttonCalculator);
+            this.flowLayoutPanelSidebar.Controls.Add(this.buttonSurvey);
+            this.flowLayoutPanelSidebar.Controls.Add(this.buttonProfile);
+            this.flowLayoutPanelSidebar.Location = new System.Drawing.Point(0, 175);
+            this.flowLayoutPanelSidebar.Name = "flowLayoutPanelSidebar";
+            this.flowLayoutPanelSidebar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.flowLayoutPanelSidebar.Size = new System.Drawing.Size(280, 545);
+            this.flowLayoutPanelSidebar.TabIndex = 13;
             // 
             // buttonBMI
             // 
@@ -224,7 +224,6 @@
             this.buttonBMI.Text = "BMI";
             this.buttonBMI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBMI.UseVisualStyleBackColor = false;
-            this.buttonBMI.Click += new System.EventHandler(this.DisableButton);
             this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
             // 
             // buttonActivity
@@ -246,7 +245,6 @@
             this.buttonActivity.Text = "Sport na dziś";
             this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonActivity.UseVisualStyleBackColor = false;
-            this.buttonActivity.Click += new System.EventHandler(this.DisableButton);
             this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
             // 
             // buttonQuiz
@@ -269,7 +267,6 @@
             this.buttonQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonQuiz.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonQuiz.UseVisualStyleBackColor = false;
-            this.buttonQuiz.Click += new System.EventHandler(this.DisableButton);
             this.buttonQuiz.Click += new System.EventHandler(this.ButtonQuiz_Click);
             // 
             // buttonCalculator
@@ -292,7 +289,6 @@
             this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCalculator.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonCalculator.UseVisualStyleBackColor = false;
-            this.buttonCalculator.Click += new System.EventHandler(this.DisableButton);
             this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
             // 
             // buttonSurvey
@@ -314,7 +310,6 @@
             this.buttonSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSurvey.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSurvey.UseVisualStyleBackColor = false;
-            this.buttonSurvey.Click += new System.EventHandler(this.DisableButton);
             this.buttonSurvey.Click += new System.EventHandler(this.ButtonSurvey_Click);
             // 
             // buttonProfile
@@ -336,20 +331,19 @@
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonProfile.UseVisualStyleBackColor = false;
-            this.buttonProfile.Click += new System.EventHandler(this.DisableButton);
             this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
             // 
-            // panel1
+            // panelBMI
             // 
-            this.panel1.Controls.Add(this.pictureBoxArrow);
-            this.panel1.Controls.Add(this.labelBMIInterpretation);
-            this.panel1.Controls.Add(this.labelBMI);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(280, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 650);
-            this.panel1.TabIndex = 14;
+            this.panelBMI.Controls.Add(this.pictureBoxArrow);
+            this.panelBMI.Controls.Add(this.labelBMIInterpretation);
+            this.panelBMI.Controls.Add(this.labelBMI);
+            this.panelBMI.Controls.Add(this.pictureBox1);
+            this.panelBMI.Controls.Add(this.label6);
+            this.panelBMI.Location = new System.Drawing.Point(280, 50);
+            this.panelBMI.Name = "panelBMI";
+            this.panelBMI.Size = new System.Drawing.Size(1000, 650);
+            this.panelBMI.TabIndex = 14;
             // 
             // pictureBoxArrow
             // 
@@ -613,21 +607,21 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Aktywność na dziś";
             // 
-            // panel3
+            // panelQuiz
             // 
-            this.panel3.Controls.Add(this.pictureBoxTime);
-            this.panel3.Controls.Add(this.pictureBoxTimeBorder);
-            this.panel3.Controls.Add(this.labelNumber);
-            this.panel3.Controls.Add(this.buttonFinishQuiz);
-            this.panel3.Controls.Add(this.labelQuizResult);
-            this.panel3.Controls.Add(this.labelQuestion);
-            this.panel3.Controls.Add(this.tableLayoutPanelAnswers);
-            this.panel3.Controls.Add(this.ButtonStartQuiz);
-            this.panel3.Controls.Add(this.labelQuiz);
-            this.panel3.Location = new System.Drawing.Point(280, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 650);
-            this.panel3.TabIndex = 16;
+            this.panelQuiz.Controls.Add(this.pictureBoxTime);
+            this.panelQuiz.Controls.Add(this.pictureBoxTimeBorder);
+            this.panelQuiz.Controls.Add(this.labelNumber);
+            this.panelQuiz.Controls.Add(this.buttonFinishQuiz);
+            this.panelQuiz.Controls.Add(this.labelQuizResult);
+            this.panelQuiz.Controls.Add(this.labelQuestion);
+            this.panelQuiz.Controls.Add(this.tableLayoutPanelAnswers);
+            this.panelQuiz.Controls.Add(this.ButtonStartQuiz);
+            this.panelQuiz.Controls.Add(this.labelQuiz);
+            this.panelQuiz.Location = new System.Drawing.Point(280, 50);
+            this.panelQuiz.Name = "panelQuiz";
+            this.panelQuiz.Size = new System.Drawing.Size(1000, 650);
+            this.panelQuiz.TabIndex = 16;
             // 
             // pictureBoxTime
             // 
@@ -813,21 +807,21 @@
             this.labelQuiz.Text = "Quiz";
             this.labelQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
+            // panelMacro
             // 
-            this.panel4.Controls.Add(this.tableLayoutPanel1);
-            this.panel4.Controls.Add(this.label38);
-            this.panel4.Controls.Add(this.label37);
-            this.panel4.Controls.Add(this.label36);
-            this.panel4.Controls.Add(this.label35);
-            this.panel4.Controls.Add(this.label34);
-            this.panel4.Controls.Add(this.label25);
-            this.panel4.Controls.Add(this.trackBarActivityLevel);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(280, 50);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1000, 650);
-            this.panel4.TabIndex = 17;
+            this.panelMacro.Controls.Add(this.tableLayoutPanel1);
+            this.panelMacro.Controls.Add(this.label38);
+            this.panelMacro.Controls.Add(this.label37);
+            this.panelMacro.Controls.Add(this.label36);
+            this.panelMacro.Controls.Add(this.label35);
+            this.panelMacro.Controls.Add(this.label34);
+            this.panelMacro.Controls.Add(this.label25);
+            this.panelMacro.Controls.Add(this.trackBarActivityLevel);
+            this.panelMacro.Controls.Add(this.label3);
+            this.panelMacro.Location = new System.Drawing.Point(280, 50);
+            this.panelMacro.Name = "panelMacro";
+            this.panelMacro.Size = new System.Drawing.Size(1000, 650);
+            this.panelMacro.TabIndex = 17;
             // 
             // tableLayoutPanel1
             // 
@@ -1085,50 +1079,50 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Makro";
             // 
-            // panel6
+            // panelProfiles
             // 
-            this.panel6.Controls.Add(this.buttonEdit);
-            this.panel6.Controls.Add(this.buttonArrowDown);
-            this.panel6.Controls.Add(this.buttonArrowUp);
-            this.panel6.Controls.Add(this.buttonSaveChanges);
-            this.panel6.Controls.Add(this.label17);
-            this.panel6.Controls.Add(this.label18);
-            this.panel6.Controls.Add(this.numericUpDownCurrentAge);
-            this.panel6.Controls.Add(this.numericUpDownCurrentHeight);
-            this.panel6.Controls.Add(this.numericUpDownCurrentWeight);
-            this.panel6.Controls.Add(this.textBoxCurrentName);
-            this.panel6.Controls.Add(this.radioButtonCurrentMale);
-            this.panel6.Controls.Add(this.radioButtonCurrentFemale);
-            this.panel6.Controls.Add(this.label19);
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Controls.Add(this.label22);
-            this.panel6.Controls.Add(this.label23);
-            this.panel6.Controls.Add(this.label24);
-            this.panel6.Controls.Add(this.buttonDelete);
-            this.panel6.Controls.Add(this.listBoxUsers);
-            this.panel6.Controls.Add(this.label16);
-            this.panel6.Controls.Add(this.label15);
-            this.panel6.Controls.Add(this.label14);
-            this.panel6.Controls.Add(this.numericUpDownAge);
-            this.panel6.Controls.Add(this.numericUpDownHeight);
-            this.panel6.Controls.Add(this.numericUpDownWeight);
-            this.panel6.Controls.Add(this.textBoxName);
-            this.panel6.Controls.Add(this.radioButtonMale);
-            this.panel6.Controls.Add(this.radioButtonFemale);
-            this.panel6.Controls.Add(this.label13);
-            this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.buttonCreate);
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Controls.Add(this.label9);
-            this.panel6.Controls.Add(this.label8);
-            this.panel6.Controls.Add(this.label7);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Location = new System.Drawing.Point(280, 50);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1000, 650);
-            this.panel6.TabIndex = 19;
+            this.panelProfiles.Controls.Add(this.buttonEdit);
+            this.panelProfiles.Controls.Add(this.buttonArrowDown);
+            this.panelProfiles.Controls.Add(this.buttonArrowUp);
+            this.panelProfiles.Controls.Add(this.buttonSaveChanges);
+            this.panelProfiles.Controls.Add(this.label17);
+            this.panelProfiles.Controls.Add(this.label18);
+            this.panelProfiles.Controls.Add(this.numericUpDownCurrentAge);
+            this.panelProfiles.Controls.Add(this.numericUpDownCurrentHeight);
+            this.panelProfiles.Controls.Add(this.numericUpDownCurrentWeight);
+            this.panelProfiles.Controls.Add(this.textBoxCurrentName);
+            this.panelProfiles.Controls.Add(this.radioButtonCurrentMale);
+            this.panelProfiles.Controls.Add(this.radioButtonCurrentFemale);
+            this.panelProfiles.Controls.Add(this.label19);
+            this.panelProfiles.Controls.Add(this.label20);
+            this.panelProfiles.Controls.Add(this.label21);
+            this.panelProfiles.Controls.Add(this.label22);
+            this.panelProfiles.Controls.Add(this.label23);
+            this.panelProfiles.Controls.Add(this.label24);
+            this.panelProfiles.Controls.Add(this.buttonDelete);
+            this.panelProfiles.Controls.Add(this.listBoxUsers);
+            this.panelProfiles.Controls.Add(this.label16);
+            this.panelProfiles.Controls.Add(this.label15);
+            this.panelProfiles.Controls.Add(this.label14);
+            this.panelProfiles.Controls.Add(this.numericUpDownAge);
+            this.panelProfiles.Controls.Add(this.numericUpDownHeight);
+            this.panelProfiles.Controls.Add(this.numericUpDownWeight);
+            this.panelProfiles.Controls.Add(this.textBoxName);
+            this.panelProfiles.Controls.Add(this.radioButtonMale);
+            this.panelProfiles.Controls.Add(this.radioButtonFemale);
+            this.panelProfiles.Controls.Add(this.label13);
+            this.panelProfiles.Controls.Add(this.label12);
+            this.panelProfiles.Controls.Add(this.buttonCreate);
+            this.panelProfiles.Controls.Add(this.label11);
+            this.panelProfiles.Controls.Add(this.label10);
+            this.panelProfiles.Controls.Add(this.label9);
+            this.panelProfiles.Controls.Add(this.label8);
+            this.panelProfiles.Controls.Add(this.label7);
+            this.panelProfiles.Controls.Add(this.label1);
+            this.panelProfiles.Location = new System.Drawing.Point(280, 50);
+            this.panelProfiles.Name = "panelProfiles";
+            this.panelProfiles.Size = new System.Drawing.Size(1000, 650);
+            this.panelProfiles.TabIndex = 19;
             // 
             // buttonEdit
             // 
@@ -1660,12 +1654,12 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // panel0
+            // panelLandingPage
             // 
-            this.panel0.Location = new System.Drawing.Point(280, 50);
-            this.panel0.Name = "panel0";
-            this.panel0.Size = new System.Drawing.Size(1000, 650);
-            this.panel0.TabIndex = 23;
+            this.panelLandingPage.Location = new System.Drawing.Point(280, 50);
+            this.panelLandingPage.Name = "panelLandingPage";
+            this.panelLandingPage.Size = new System.Drawing.Size(1000, 650);
+            this.panelLandingPage.TabIndex = 23;
             // 
             // flowPanelSurveys
             // 
@@ -1775,14 +1769,14 @@
             this.labelSurveyTitle.Text = "Ankiety";
             this.labelSurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel5
+            // panelSurveyMenu
             // 
-            this.panel5.Controls.Add(this.labelSurveyTitle);
-            this.panel5.Controls.Add(this.flowPanelSurveys);
-            this.panel5.Location = new System.Drawing.Point(280, 50);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1000, 650);
-            this.panel5.TabIndex = 18;
+            this.panelSurveyMenu.Controls.Add(this.labelSurveyTitle);
+            this.panelSurveyMenu.Controls.Add(this.flowPanelSurveys);
+            this.panelSurveyMenu.Location = new System.Drawing.Point(280, 50);
+            this.panelSurveyMenu.Name = "panelSurveyMenu";
+            this.panelSurveyMenu.Size = new System.Drawing.Size(1000, 650);
+            this.panelSurveyMenu.TabIndex = 18;
             // 
             // panelSurvey
             // 
@@ -1935,18 +1929,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelProfiles);
+            this.Controls.Add(this.panelMacro);
+            this.Controls.Add(this.panelBMI);
+            this.Controls.Add(this.panelLandingPage);
+            this.Controls.Add(this.panelQuiz);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurvey);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel0);
+            this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.panelProfileSetup);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flowLayoutPanelSidebar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1955,9 +1949,9 @@
             this.Text = "Hackheroes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hackheroes_FormClosing);
             this.Load += new System.EventHandler(this.Hackheroes_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.flowLayoutPanelSidebar.ResumeLayout(false);
+            this.panelBMI.ResumeLayout(false);
+            this.panelBMI.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -1969,18 +1963,18 @@
             this.groupBoxWeather.PerformLayout();
             this.groupBoxParticipants.ResumeLayout(false);
             this.groupBoxParticipants.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelQuiz.ResumeLayout(false);
+            this.panelQuiz.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).EndInit();
             this.tableLayoutPanelAnswers.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panelMacro.ResumeLayout(false);
+            this.panelMacro.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panelProfiles.ResumeLayout(false);
+            this.panelProfiles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentWeight)).EndInit();
@@ -1988,8 +1982,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
             this.flowPanelSurveys.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelSurveyMenu.ResumeLayout(false);
+            this.panelSurveyMenu.PerformLayout();
             this.panelSurvey.ResumeLayout(false);
             this.panelSurvey.PerformLayout();
             this.tablePanelAnswer.ResumeLayout(false);
@@ -2003,17 +1997,17 @@
 
         private System.Windows.Forms.Button buttonMinimize;
         private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelSidebar;
         private System.Windows.Forms.Button buttonBMI;
         private System.Windows.Forms.Button buttonActivity;
         private System.Windows.Forms.Button buttonQuiz;
         private System.Windows.Forms.Button buttonSurvey;
         private System.Windows.Forms.Button buttonProfile;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelBMI;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelQuiz;
+        private System.Windows.Forms.Panel panelMacro;
+        private System.Windows.Forms.Panel panelProfiles;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelQuiz;
@@ -2092,7 +2086,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowPanelSurveys;
         private System.Windows.Forms.Button buttonSurvey1;
         private System.Windows.Forms.Label labelSurveyTitle;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelSurveyMenu;
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.PictureBox pictureBoxTime;
         private System.Windows.Forms.PictureBox pictureBoxTimeBorder;
@@ -2115,7 +2109,7 @@
         private System.Windows.Forms.Button buttonCalculator;
         private System.Windows.Forms.Panel panelProfileSetup;
         private System.Windows.Forms.Panel panelPointer;
-        private System.Windows.Forms.Panel panel0;
+        private System.Windows.Forms.Panel panelLandingPage;
         private System.Windows.Forms.Panel panelSurvey;
         private System.Windows.Forms.Button buttonSurveyConfirm;
         private System.Windows.Forms.TextBox textBoxSurveyText;

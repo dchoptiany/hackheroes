@@ -47,7 +47,7 @@ namespace app
             panelPointer.BackColor = blue1;
 
             Color leftPanelBackColor = green2;
-            flowLayoutPanel1.BackColor = leftPanelBackColor;
+            flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
             panelProfileSetup.BackColor = leftPanelBackColor;
 
             Color leftPanelButtonsColor = green2;
@@ -228,13 +228,13 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            panels.Add(panel0); //buttons
-            panels.Add(panel1); //BMI
+            panels.Add(panelLandingPage); //buttons
+            panels.Add(panelBMI); //BMI
             panels.Add(panel2); //sport activity
-            panels.Add(panel3); //quiz
-            panels.Add(panel4); //calculator
-            panels.Add(panel5); //surveys
-            panels.Add(panel6); //profiles
+            panels.Add(panelQuiz); //quiz
+            panels.Add(panelMacro); //calculator
+            panels.Add(panelSurveyMenu); //surveys
+            panels.Add(panelProfiles); //profiles
 
             answerButtons.Add(buttonAnswerA);
             answerButtons.Add(buttonAnswerB);
