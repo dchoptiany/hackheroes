@@ -24,7 +24,6 @@ namespace app
         private readonly Color green2 = Color.FromArgb(68, 189, 50);
         private readonly Color yellow1 = Color.FromArgb(251, 197, 49);
         private readonly Color white1 = Color.FromArgb(220, 221, 225);
-        private readonly Color white2 = Color.FromArgb(245, 246, 250);
 
         public Hackheroes()
         {
@@ -35,12 +34,12 @@ namespace app
 
         private void InitializeColors()
         {
-            BackColor = white2;
+            BackColor = white1;
 
             panelPointer.BackColor = blue1;
 
             Color leftPanelBackColor = green2;
-            flowLayoutPanelSideBar.BackColor = leftPanelBackColor;
+            flowLayoutPanel1.BackColor = leftPanelBackColor;
             panelProfileSetup.BackColor = leftPanelBackColor;
 
             Color leftPanelButtonsColor = green2;
