@@ -453,7 +453,7 @@ namespace app
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
-            panelQuiz.BringToFront();
+            panelQuizMenu.BringToFront();
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
@@ -772,17 +772,6 @@ namespace app
 
         private void SetupQuiz()
         {
-            ButtonStartQuiz.Visible = false;
-            labelNumber.Visible = true;
-            pictureBoxTime.Visible = true;
-            pictureBoxTimeBorder.Visible = true;
-            labelQuestion.Visible = true;
-            tableLayoutPanelAnswers.Visible = true;
-            buttonAnswerA.Visible = true;
-            buttonAnswerB.Visible = true;
-            buttonAnswerC.Visible = true;
-            buttonAnswerD.Visible = true;
-
             pictureBoxTime.Size = new Size(0, 30);
 
             Quiz.GetQuestions();
@@ -865,23 +854,14 @@ namespace app
 
         private void FinishQuiz()
         {
+            panelQuizFinished.BringToFront();
             labelQuizResult.Text = "Wynik: " + Quiz.score + "/5";
             Center(labelQuizResult);
-            labelQuestion.Visible = false;
-            tableLayoutPanelAnswers.Visible = false;
-            buttonAnswerA.Visible = false;
-            buttonAnswerB.Visible = false;
-            buttonAnswerC.Visible = false;
-            buttonAnswerD.Visible = false;
-            labelQuizResult.Visible = true;
-            buttonFinishQuiz.Visible = true;
-            labelNumber.Visible = false;
-            pictureBoxTime.Visible = false;
-            pictureBoxTimeBorder.Visible = false;
         }
 
         private void ButtonStartQuiz_Click(object sender, EventArgs e)
         {
+            panelQuiz.BringToFront();
             SetupQuiz();
         }
 
