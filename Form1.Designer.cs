@@ -161,8 +161,8 @@
             this.labelQuiz = new System.Windows.Forms.Label();
             this.ButtonStartQuiz = new System.Windows.Forms.Button();
             this.panelQuizFinished = new System.Windows.Forms.Panel();
-            this.buttonFinishQuiz = new System.Windows.Forms.Button();
             this.labelQuizResult = new System.Windows.Forms.Label();
+            this.buttonFinishQuiz = new System.Windows.Forms.Button();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -354,7 +354,7 @@
             this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
             this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 147);
+            this.pictureBoxArrow.Location = new System.Drawing.Point(75, 200);
             this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrow.Name = "pictureBoxArrow";
             this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
@@ -364,10 +364,10 @@
             // labelBMIInterpretation
             // 
             this.labelBMIInterpretation.AutoSize = true;
-            this.labelBMIInterpretation.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelBMIInterpretation.Location = new System.Drawing.Point(347, 360);
+            this.labelBMIInterpretation.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMIInterpretation.Location = new System.Drawing.Point(342, 450);
             this.labelBMIInterpretation.Name = "labelBMIInterpretation";
-            this.labelBMIInterpretation.Size = new System.Drawing.Size(279, 42);
+            this.labelBMIInterpretation.Size = new System.Drawing.Size(316, 65);
             this.labelBMIInterpretation.TabIndex = 5;
             this.labelBMIInterpretation.Text = "<interpretation>";
             this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -375,10 +375,10 @@
             // labelBMI
             // 
             this.labelBMI.AutoSize = true;
-            this.labelBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelBMI.Location = new System.Drawing.Point(273, 300);
+            this.labelBMI.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMI.Location = new System.Drawing.Point(273, 380);
             this.labelBMI.Name = "labelBMI";
-            this.labelBMI.Size = new System.Drawing.Size(447, 42);
+            this.labelBMI.Size = new System.Drawing.Size(454, 65);
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -387,7 +387,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::app.Properties.Resources.BMIScale;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 200);
+            this.pictureBox1.Location = new System.Drawing.Point(100, 250);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(800, 50);
             this.pictureBox1.TabIndex = 3;
@@ -396,10 +396,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(445, 30);
+            this.label6.Font = new System.Drawing.Font("Poppins", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(421, 80);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 55);
+            this.label6.Size = new System.Drawing.Size(157, 113);
             this.label6.TabIndex = 1;
             this.label6.Text = "BMI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1908,6 +1908,16 @@
             this.panelQuizFinished.Size = new System.Drawing.Size(1000, 650);
             this.panelQuizFinished.TabIndex = 17;
             // 
+            // labelQuizResult
+            // 
+            this.labelQuizResult.AutoSize = true;
+            this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuizResult.Location = new System.Drawing.Point(394, 200);
+            this.labelQuizResult.Name = "labelQuizResult";
+            this.labelQuizResult.Size = new System.Drawing.Size(212, 65);
+            this.labelQuizResult.TabIndex = 8;
+            this.labelQuizResult.Text = "Wynik: 5/5";
+            // 
             // buttonFinishQuiz
             // 
             this.buttonFinishQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1919,28 +1929,18 @@
             this.buttonFinishQuiz.Text = "Zakończ";
             this.buttonFinishQuiz.UseVisualStyleBackColor = true;
             // 
-            // labelQuizResult
-            // 
-            this.labelQuizResult.AutoSize = true;
-            this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuizResult.Location = new System.Drawing.Point(394, 200);
-            this.labelQuizResult.Name = "labelQuizResult";
-            this.labelQuizResult.Size = new System.Drawing.Size(212, 65);
-            this.labelQuizResult.TabIndex = 8;
-            this.labelQuizResult.Text = "Wynik: 5/5";
-            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelQuiz);
             this.Controls.Add(this.panelQuizFinished);
             this.Controls.Add(this.panelQuizMenu);
             this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelMacro);
-            this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelLandingPage);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurvey);

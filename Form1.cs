@@ -375,7 +375,7 @@ namespace app
                 value = 100f;
             }
 
-            pictureBoxArrow.Location = new Point(75 + (int)value * 8, 147);
+            pictureBoxArrow.Location = new Point(75 + (int)value * 8, pictureBoxArrow.Location.Y);
         }
 
         private string GetInterpretation(float BMI)
