@@ -7,7 +7,7 @@
 	}
 
 	public class User
-	{
+	{		
 		///  Body section
 		public string name { get; set; }
 		public byte age { get; set; }
