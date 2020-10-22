@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="ActivityMatcher.cs" />
+    <Compile Include="CurrentWeather.cs" />
     <Compile Include="Quiz.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -175,6 +176,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\question-mark-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\teamSized.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\cloudsSized.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\trainingSized.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

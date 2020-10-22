@@ -45,26 +45,60 @@ namespace app
         }
     }
 
-    static class ActivityMatcher
+    class ActivityMatcher
     {
         public static List<Sport> sports;
         public static List<Sport> approvedSports;
+        public static CurrentWeather currentWeather = new CurrentWeather();
+
+        private static Participants latestParticipants;
+        private static Weather latestWeather;
+        private static EffortLevel latestEffortLevel;
 
         public static string Search(Participants participants, Weather weather, EffortLevel effortLevel)
         {
+            latestParticipants = participants;
+            latestWeather = weather;
+            latestEffortLevel = effortLevel;
+
             if (approvedSports.Count < 1)
             {
                 foreach (Sport sport in sports)
                 {
                     if ((sport.participants == Participants.Any || participants == Participants.Any || participants == sport.participants)
-                        && (sport.weather == Weather.Any || weather == Weather.Any || weather == sport.weather) 
+                        && (sport.weather == Weather.Any || weather == Weather.Any || weather == sport.weather)
                         && (sport.effortLevel == EffortLevel.Any || effortLevel == EffortLevel.Any || effortLevel == sport.effortLevel))
                     {
                         approvedSports.Add(sport);
                     }
                 }
             }
-            if(approvedSports.Count >= 1)
+            if (approvedSports.Count >= 1)
+            {
+                string result = approvedSports[0].name;
+                approvedSports.RemoveAt(0);
+                return result;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public static string Search()
+        {
+            if (approvedSports.Count < 1)
+            {
+                foreach (Sport sport in sports)
+                {
+                    if ((sport.participants == Participants.Any || latestParticipants == Participants.Any || latestParticipants == sport.participants)
+                        && (sport.weather == Weather.Any || latestWeather == Weather.Any || latestWeather == sport.weather)
+                        && (sport.effortLevel == EffortLevel.Any || latestEffortLevel == EffortLevel.Any || latestEffortLevel == sport.effortLevel))
+                    {
+                        approvedSports.Add(sport);
+                    }
+                }
+            }
+            if (approvedSports.Count >= 1)
             {
                 string result = approvedSports[0].name;
                 approvedSports.RemoveAt(0);
