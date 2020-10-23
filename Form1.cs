@@ -660,8 +660,7 @@ namespace app
                 textBoxName.Text = "";
 
                 currentUserIndex = listBoxUsers.SelectedIndex = users.Count - 1; 
-            }
-
+            } 
             UpdateButtonDeleteEnabledStatus();
             SetEditInfoVisibility(false);
             UpdateArrowButtons();
@@ -683,6 +682,7 @@ namespace app
                 radioButtonCurrentMale.Checked = users[userIndex].gender == Gender.Male;
                 radioButtonCurrentFemale.Checked = users[userIndex].gender == Gender.Female;
             }
+            buttonProfile.Text = users[currentUserIndex].name;
         }
 
         private void ButtonDelete_Click_1(object sender, EventArgs e)
