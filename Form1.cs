@@ -1195,7 +1195,7 @@ namespace app
                     labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
                 }
                 Center(labelActivityResult);
-                ChangePanel(7);
+                panelActivityResults.BringToFront();
             }
             else
             {
@@ -1242,7 +1242,7 @@ namespace app
         private void ButtonChangeSearchingData_Click(object sender, EventArgs e)
         {
             LoadSports();
-            ChangePanel(2);
+            panelActivity.BringToFront();
         }
     }
 }
