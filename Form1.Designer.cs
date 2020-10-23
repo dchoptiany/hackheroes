@@ -55,7 +55,6 @@
             this.buttonAnswerD = new System.Windows.Forms.Button();
             this.buttonAnswerC = new System.Windows.Forms.Button();
             this.ButtonStartQuiz = new System.Windows.Forms.Button();
-            this.labelQuiz = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelKcal = new System.Windows.Forms.Label();
@@ -182,6 +181,7 @@
             this.buttonShowNext = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.labelQuiz = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -432,6 +432,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.labelQuiz);
             this.panel3.Controls.Add(this.pictureBoxTime);
             this.panel3.Controls.Add(this.pictureBoxTimeBorder);
             this.panel3.Controls.Add(this.labelNumber);
@@ -617,17 +618,6 @@
             this.ButtonStartQuiz.Text = "Start";
             this.ButtonStartQuiz.UseVisualStyleBackColor = true;
             this.ButtonStartQuiz.Click += new System.EventHandler(this.ButtonStartQuiz_Click);
-            // 
-            // labelQuiz
-            // 
-            this.labelQuiz.AutoSize = true;
-            this.labelQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuiz.Location = new System.Drawing.Point(0, 0);
-            this.labelQuiz.Name = "labelQuiz";
-            this.labelQuiz.Size = new System.Drawing.Size(122, 55);
-            this.labelQuiz.TabIndex = 1;
-            this.labelQuiz.Text = "Quiz";
-            this.labelQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -1738,7 +1728,6 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.labelQuiz);
             this.panel5.Controls.Add(this.labelSurveyTitle);
             this.panel5.Controls.Add(this.flowPanelSurveys);
             this.panel5.Location = new System.Drawing.Point(280, 50);
@@ -2200,7 +2189,7 @@
             // 
             // pictureBoxSportResult
             // 
-            this.pictureBoxSportResult.Location = new System.Drawing.Point(278, 172);
+            this.pictureBoxSportResult.Location = new System.Drawing.Point(275, 172);
             this.pictureBoxSportResult.Name = "pictureBoxSportResult";
             this.pictureBoxSportResult.Size = new System.Drawing.Size(450, 300);
             this.pictureBoxSportResult.TabIndex = 23;
@@ -2212,7 +2201,7 @@
             this.buttonChangeSearchingData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonChangeSearchingData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonChangeSearchingData.ForeColor = System.Drawing.Color.White;
-            this.buttonChangeSearchingData.Location = new System.Drawing.Point(754, 586);
+            this.buttonChangeSearchingData.Location = new System.Drawing.Point(503, 571);
             this.buttonChangeSearchingData.Name = "buttonChangeSearchingData";
             this.buttonChangeSearchingData.Size = new System.Drawing.Size(229, 46);
             this.buttonChangeSearchingData.TabIndex = 22;
@@ -2247,7 +2236,7 @@
             this.buttonShowNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonShowNext.ForeColor = System.Drawing.Color.White;
-            this.buttonShowNext.Location = new System.Drawing.Point(509, 586);
+            this.buttonShowNext.Location = new System.Drawing.Point(267, 571);
             this.buttonShowNext.Name = "buttonShowNext";
             this.buttonShowNext.Size = new System.Drawing.Size(229, 46);
             this.buttonShowNext.TabIndex = 19;
@@ -2287,17 +2276,28 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
+            // labelQuiz
+            // 
+            this.labelQuiz.AutoSize = true;
+            this.labelQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuiz.Location = new System.Drawing.Point(439, 298);
+            this.labelQuiz.Name = "labelQuiz";
+            this.labelQuiz.Size = new System.Drawing.Size(122, 55);
+            this.labelQuiz.TabIndex = 10;
+            this.labelQuiz.Text = "Quiz";
+            this.labelQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panelSurvey);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelSurvey);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
@@ -2379,7 +2379,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label labelQuiz;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -2521,5 +2520,6 @@
         private System.Windows.Forms.Button buttonMinimize;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label labelQuiz;
     }
 }

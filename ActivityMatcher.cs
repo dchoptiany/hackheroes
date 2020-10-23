@@ -9,7 +9,6 @@ namespace app
         Two,
         More
     }
-
     public enum Weather
     {
         Any,
