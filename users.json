@@ -1,32 +1,16 @@
 {
-  "avatar": 2,
-  "name": "Kuba",
-  "age": 35,
-  "weight": 71,
+  "avatar": 0,
+  "name": "Testowy M\u0119\u017Cczyzna",
+  "age": 18,
+  "weight": 60,
   "height": 170,
   "gender": 0
 }
 {
   "avatar": 1,
-  "name": "Basia",
-  "age": 35,
-  "weight": 60,
-  "height": 170,
+  "name": "Testowa Kobieta",
+  "age": 21,
+  "weight": 40,
+  "height": 150,
   "gender": 1
-}
-{
-  "avatar": 0,
-  "name": "Damian",
-  "age": 35,
-  "weight": 60,
-  "height": 170,
-  "gender": 0
-}
-{
-  "avatar": 0,
-  "name": "Kacper",
-  "age": 42,
-  "weight": 150,
-  "height": 200,
-  "gender": 0
 }
