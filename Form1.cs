@@ -81,21 +81,11 @@ namespace app
             var clickedButton = (Button)sender;    
             foreach (Button _button in menuButtons)
             {
+                _button.Enabled = true;
+                _button.BackColor = green2;
                 if (_button.Text == clickedButton.Text)
                 {
-                    if(!isProfile)
-                    {
-                        _button.Enabled = false;
-                    }
-                    else
-                    {
-                        buttonProfile.Enabled = false;
-                    }
-                }
-                else
-                {
-                    _button.Enabled = true;
-                    _button.BackColor = green2;
+                    _button.Enabled = false;
                 }
             }
          
@@ -107,6 +97,8 @@ namespace app
             }
             else
             {
+                buttonProfilePicture.Enabled = false;
+                buttonProfile.Enabled = false;
                 buttonProfile.BackColor = green1;
                 panelPointer.Location = new Point(0, buttonProfile.Location.Y);
                 panelPointer.Height = buttonProfile.Height;
