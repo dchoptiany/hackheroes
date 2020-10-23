@@ -68,11 +68,11 @@ namespace app
         private void InitializeButtons()
         {
             menuButtons.Add(buttonBMI);
-            menuButtons.Add(buttonActivity); 
-            menuButtons.Add(buttonQuiz); 
-            menuButtons.Add(buttonCalculator); 
-            menuButtons.Add(buttonSurvey); 
-            menuButtons.Add(buttonProfile); 
+            menuButtons.Add(buttonActivity);
+            menuButtons.Add(buttonQuiz);
+            menuButtons.Add(buttonCalculator);
+            menuButtons.Add(buttonSurvey);
+            menuButtons.Add(buttonProfile);
         }
 
         private void DisableButton(object sender, EventArgs e)
@@ -202,10 +202,10 @@ namespace app
                 List<string> usersJSON = new List<string>();
                 string userLine;
 
-                for (int i = 0; i < JSON.Length; i += 7)
+                for (int i = 0; i < JSON.Length; i += 8)
                 {
                     userLine = string.Empty;
-                    for (int line = 0; line < 7; line++)
+                    for (int line = 0; line < 8; line++)
                     {
                         userLine += JSON[i + line];
                     }
@@ -221,7 +221,7 @@ namespace app
             catch (FileNotFoundException exception)
             {
                 MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                users.Add(new User("User", 18, 80f, 180, Gender.Male));
+                users.Add(new User("User", 18, 80f, 180, Gender.Male, Avatar.Gray));
             }
         }
 
@@ -252,7 +252,7 @@ namespace app
             activtyMatcherParticipantsButtons.Add(buttonPair);
             activtyMatcherParticipantsButtons.Add(buttonTeam);
             activtyMatcherParticipantsButtons.Add(buttonAnyParticipants);
-            
+
             activtyMatcherWeatherButtons.Add(buttonGoodWeather);
             activtyMatcherWeatherButtons.Add(buttonBadWeather);
             activtyMatcherWeatherButtons.Add(buttonAnyWeather);
@@ -278,9 +278,9 @@ namespace app
 
         private int GetSurveyID(Button button)
         {
-            for(int i = 0; i < surveyButtons.Count; i++)
+            for (int i = 0; i < surveyButtons.Count; i++)
             {
-                if(button == surveyButtons[i])
+                if (button == surveyButtons[i])
                 {
                     return i;
                 }
@@ -307,18 +307,6 @@ namespace app
             labelProtein.Text = (users[currentUserIndex].protein).ToString();
         }
 
-        private void UpdateButtonDeleteEnabledStatus()
-        {
-            if (users.Count > 1)
-            {
-                buttonDelete.Enabled = true;
-            }
-            else
-            {
-                buttonDelete.Enabled = false;
-            }
-        }
-
         private void UpdateArrow()
         {
             float BMI = users[currentUserIndex].BMI;
@@ -328,7 +316,7 @@ namespace app
             {
                 value = 0f;
             }
-            else if(value > 100f)
+            else if (value > 100f)
             {
                 value = 100f;
             }
@@ -338,31 +326,31 @@ namespace app
 
         private string GetInterpretation(float BMI)
         {
-            if(BMI < 16f)
+            if (BMI < 16f)
             {
                 return "Wygłodzenie";
             }
-            else if(BMI<17f)
+            else if (BMI < 17f)
             {
                 return "Wychudzenie";
             }
-            else if(BMI<18.5f)
+            else if (BMI < 18.5f)
             {
                 return "Niedowaga";
             }
-            else if(BMI < 25f)
+            else if (BMI < 25f)
             {
                 return "Norma";
             }
-            else if(BMI < 30f)
+            else if (BMI < 30f)
             {
                 return "Nadwaga";
             }
-            else if(BMI<35f)
+            else if (BMI < 35f)
             {
                 return "I stopień otyłości";
             }
-            else if(BMI<40f)
+            else if (BMI < 40f)
             {
                 return "II stopień otyłości";
             }
@@ -379,7 +367,7 @@ namespace app
 
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
-            if(!Calculator.CalculateBMI(users[currentUserIndex]))
+            if (!Calculator.CalculateBMI(users[currentUserIndex]))
             {
                 ChangePanel(6);
                 return;
@@ -437,13 +425,17 @@ namespace app
         {
             ChangePanel(6);
 
-            UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
 
             UpdateUserItems();
 
             UpdateArrowButtons();
             groupBoxEdit.Visible = false;
+
+            if(users.Count == 0)
+            {
+                buttonEdit.Enabled = false;
+            }
         }
 
         private void ButtonReturn_Click(object sender, EventArgs e)
@@ -457,14 +449,30 @@ namespace app
             {
                 return 0;
             }
-            else if(currentUserIndex >= users.Count - 2)
+            else if (currentUserIndex >= users.Count - 2)
             {
                 return users.Count - 3;
             }
             else
             {
                 return currentUserIndex - 1;
-            }  
+            }
+        }
+
+        private Image SetAvatar(Avatar color)
+        {
+            if (color == Avatar.Blue)
+            {
+                return Resources.profileBlue;
+            }
+            else if (color == Avatar.Red)
+            {
+                return Resources.profileRed;
+            }
+            else
+            {
+                return Resources.profileGray;
+            }
         }
 
         private void UpdateUserItems()
@@ -473,42 +481,53 @@ namespace app
             userItemSecond.Visible = false;
             userItemThird.Visible = false;
 
-            int firstVisibleUserItemIndex = GetFirstVisibleUserItemIndex();
-
-            if (users.Count >= 1)
+            if (users.Count > 0)
             {
-                userItemFirst.Visible = true;
-                userItemFirst.UserName = users[firstVisibleUserItemIndex].name;
-                if (users.Count >= 2)
+                int firstVisibleUserItemIndex = GetFirstVisibleUserItemIndex();
+
+                if (users.Count >= 1)
                 {
-                    userItemSecond.Visible = true;
-                    userItemSecond.UserName = users[firstVisibleUserItemIndex + 1].name;
-                    if (users.Count >= 3)
+                    userItemFirst.Visible = true;
+                    userItemFirst.UserName = users[firstVisibleUserItemIndex].name;
+                    userItemFirst.Avatar = SetAvatar(users[firstVisibleUserItemIndex].avatar);
+                    if (users.Count >= 2)
                     {
-                        userItemThird.Visible = true;
-                        userItemThird.UserName = users[firstVisibleUserItemIndex + 2].name;
+                        userItemSecond.Visible = true;
+                        userItemSecond.UserName = users[firstVisibleUserItemIndex + 1].name;
+                        userItemSecond.Avatar = SetAvatar(users[firstVisibleUserItemIndex + 1].avatar);
+
+                        if (users.Count >= 3)
+                        {
+                            userItemThird.Visible = true;
+                            userItemThird.UserName = users[firstVisibleUserItemIndex + 2].name;
+                            userItemThird.Avatar = SetAvatar(users[firstVisibleUserItemIndex + 2].avatar);
+                        }
                     }
                 }
-            }
 
-            userItemFirst.BackColor = green1;
-            userItemSecond.BackColor = green1;
-            userItemThird.BackColor = green1;
+                userItemFirst.BackColor = purple1;
+                userItemSecond.BackColor = purple1;
+                userItemThird.BackColor = purple1;
 
-            if (currentUserIndex == firstVisibleUserItemIndex)
-            {
-                userItemFirst.BackColor = yellow2;
-            }
-            else if (currentUserIndex == firstVisibleUserItemIndex + 1)
-            {
-                userItemSecond.BackColor = yellow2;
+                if (currentUserIndex == firstVisibleUserItemIndex)
+                {
+                    userItemFirst.BackColor = yellow2;
+                }
+                else if (currentUserIndex == firstVisibleUserItemIndex + 1)
+                {
+                    userItemSecond.BackColor = yellow2;
+                }
+                else
+                {
+                    userItemThird.BackColor = yellow2;
+                }
+                string indexInfo = string.Format("{0}/{1}", currentUserIndex + 1, users.Count);
+                labelIndexInfo.Text = indexInfo;
             }
             else
             {
-                userItemThird.BackColor = yellow2;
+                labelIndexInfo.Text = "0/0";
             }
-            string indexInfo = string.Format("{0}/{1}", currentUserIndex + 1, users.Count);
-            labelIndexInfo.Text = indexInfo;
         }
 
         private void UpdateArrowButtons()
@@ -558,7 +577,7 @@ namespace app
         {
             UpdateAgeForm(label17, numericUpDownCurrentAge);
 
-            if(numericUpDownCurrentAge.Value != users[currentUserIndex].age)
+            if (numericUpDownCurrentAge.Value != users[currentUserIndex].age)
             {
                 buttonSaveChanges.Enabled = true;
             }
@@ -577,7 +596,7 @@ namespace app
                 {
                     missingInfo += "\n• płeć";
                 }
-                if(textBoxName.Text == "")
+                if (textBoxName.Text == "")
                 {
                     missingInfo += "\n• imię";
                 }
@@ -586,7 +605,7 @@ namespace app
                 string caption = "Niepoprawnie wypełniony formularz";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
-                
+
                 result = MessageBox.Show(message, caption, buttons);
                 if (result == DialogResult.Yes)
                 {
@@ -599,7 +618,17 @@ namespace app
             {
                 Gender gender = radioButtonMale.Checked == true ? Gender.Male : Gender.Female;
 
-                User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gender);
+                Avatar avatar = Avatar.Gray;
+                if (radioButtonAvatarBlue.Checked)
+                {
+                    avatar = Avatar.Blue;
+                }
+                else if (radioButtonAvatarRed.Checked)
+                {
+                    avatar = Avatar.Red;
+                }
+
+                User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gender, avatar);
 
                 users.Add(newUser);
 
@@ -607,9 +636,12 @@ namespace app
 
                 currentUserIndex = users.Count - 1;
 
+                if (users.Count > 0)
+                {
+                    buttonEdit.Enabled = true;
+                }
             }
 
-            UpdateButtonDeleteEnabledStatus();
             groupBoxEdit.Visible = false;
             UpdateUserItems();
             UpdateArrowButtons();
@@ -618,46 +650,34 @@ namespace app
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
             int indexToRemove = currentUserIndex;
-            if (users.Count <= 1)
-            {
-                string message = "Nie można usunąć jedynego istniejącego profilu!\nUtwórz nowy profil lub edytuj już istniejący.";
-                string caption = "Nie można usunąć profilu";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
 
-                result = MessageBox.Show(message, caption, buttons);
-                if (result == DialogResult.Yes)
+            string message = string.Format("Czy na pewno chcesz usunąć profil {0}?", users[indexToRemove].name);
+            string caption = "Potwierdzenie usunięcia profilu";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == DialogResult.Yes)
+            {
+                if (indexToRemove > 0)
                 {
-                    Close();
+                    --currentUserIndex;
                 }
-            }
-            else
-            {
-                string message = string.Format("Czy na pewno chcesz usunąć profil {0}?", users[indexToRemove].name);
-                string caption = "Potwierdzenie usunięcia profilu";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result;
-
-                result = MessageBox.Show(message, caption, buttons);
-                if (result == DialogResult.Yes)
+                else
                 {
-                    if (indexToRemove > 0)
-                    {
-                        --currentUserIndex;
-                    }
-                    else
-                    {
-                        ++currentUserIndex;
-                    }
-                    users.RemoveAt(indexToRemove);
+                    ++currentUserIndex;
+                }
+                users.RemoveAt(indexToRemove);
 
-                    currentUserIndex = 0;
+                currentUserIndex = 0;
 
-                    UpdateButtonDeleteEnabledStatus();
-                    UpdateArrowButtons();
-                    groupBoxEdit.Visible = false;
-                    UpdateUserItems();
-                    buttonSaveChanges.Enabled = false;
+                UpdateArrowButtons();
+                groupBoxEdit.Visible = false;
+                UpdateUserItems();
+                buttonSaveChanges.Enabled = false;
+                if (users.Count == 0)
+                {
+                    buttonEdit.Enabled = false;
                 }
             }
         }
