@@ -57,6 +57,21 @@ namespace app
         private static Weather latestWeather;
         private static EffortLevel latestEffortLevel;
 
+        private static bool ParticipantsCondition(Participants sportValue, Participants userPreference)
+        {
+            return (sportValue == Participants.Any || userPreference == Participants.Any || userPreference == sportValue);
+        }
+
+        private static bool WeatherCondition(Weather sportValue, Weather userPreference)
+        {
+            return (sportValue == Weather.Any || userPreference == Weather.Any || userPreference == sportValue);
+        }
+
+        private static bool EffortLevelCondition(EffortLevel sportValue, EffortLevel userPreference)
+        {
+            return (sportValue == EffortLevel.Any || userPreference == EffortLevel.Any || userPreference == sportValue);
+        }
+
         public static void Search(Participants participants, Weather weather, EffortLevel effortLevel)
         {
             latestParticipants = participants;
@@ -67,9 +82,7 @@ namespace app
             {
                 foreach (Sport sport in sports)
                 {
-                    if ((sport.participants == Participants.Any || participants == Participants.Any || participants == sport.participants)
-                        && (sport.weather == Weather.Any || weather == Weather.Any || weather == sport.weather)
-                        && (sport.effortLevel == EffortLevel.Any || effortLevel == EffortLevel.Any || effortLevel == sport.effortLevel))
+                    if (ParticipantsCondition(sport.participants, participants) && WeatherCondition(sport.weather, weather) && EffortLevelCondition(sport.effortLevel, effortLevel))
                     {
                         approvedSports.Add(sport);
                     }
@@ -91,9 +104,7 @@ namespace app
             {
                 foreach (Sport sport in sports)
                 {
-                    if ((sport.participants == Participants.Any || latestParticipants == Participants.Any || latestParticipants == sport.participants)
-                        && (sport.weather == Weather.Any || latestWeather == Weather.Any || latestWeather == sport.weather)
-                        && (sport.effortLevel == EffortLevel.Any || latestEffortLevel == EffortLevel.Any || latestEffortLevel == sport.effortLevel))
+                    if (ParticipantsCondition(sport.participants, latestParticipants) && WeatherCondition(sport.weather, latestWeather) && EffortLevelCondition(sport.effortLevel, latestEffortLevel))
                     {
                         approvedSports.Add(sport);
                     }
