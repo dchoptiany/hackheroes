@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Text.Json;
 using System.Net;
+using app.Properties;
 
 namespace app
 {
@@ -34,6 +35,7 @@ namespace app
         private readonly Color green1 = Color.FromArgb(76, 209, 55);
         private readonly Color green2 = Color.FromArgb(68, 189, 50);
         private readonly Color yellow1 = Color.FromArgb(251, 197, 49);
+        private readonly Color yellow2 = Color.FromArgb(225, 177, 44);
         private readonly Color white1 = Color.FromArgb(220, 221, 225);
         private readonly Color white2 = Color.FromArgb(245, 246, 250);
 
@@ -221,13 +223,6 @@ namespace app
                 MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 users.Add(new User("User", 18, 80f, 180, Gender.Male));
             }
-            finally
-            {
-                foreach (User user in users)
-                {
-                    listBoxUsers.Items.Add(user.name);
-                }
-            }
         }
 
         private void Hackheroes_Load(object sender, EventArgs e)
@@ -257,7 +252,7 @@ namespace app
             activtyMatcherParticipantsButtons.Add(buttonPair);
             activtyMatcherParticipantsButtons.Add(buttonTeam);
             activtyMatcherParticipantsButtons.Add(buttonAnyParticipants);
-
+            
             activtyMatcherWeatherButtons.Add(buttonGoodWeather);
             activtyMatcherWeatherButtons.Add(buttonBadWeather);
             activtyMatcherWeatherButtons.Add(buttonAnyWeather);
@@ -314,7 +309,7 @@ namespace app
 
         private void UpdateButtonDeleteEnabledStatus()
         {
-            if (listBoxUsers.Items.Count > 1)
+            if (users.Count > 1)
             {
                 buttonDelete.Enabled = true;
             }
@@ -384,9 +379,7 @@ namespace app
 
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
-            int userIndex = currentUserIndex;
-
-            if(!Calculator.CalculateBMI(users[userIndex]))
+            if(!Calculator.CalculateBMI(users[currentUserIndex]))
             {
                 ChangePanel(6);
                 return;
@@ -394,8 +387,8 @@ namespace app
 
             UpdateArrow();
 
-            labelBMI.Text = "Twoje BMI wynosi: " + users[userIndex].BMI.ToString("0.##");
-            labelBMIInterpretation.Text = GetInterpretation(users[userIndex].BMI);
+            labelBMI.Text = "Twoje BMI wynosi: " + users[currentUserIndex].BMI.ToString("0.##");
+            labelBMIInterpretation.Text = GetInterpretation(users[currentUserIndex].BMI);
 
             Center(labelBMI);
             Center(labelBMIInterpretation);
@@ -447,24 +440,10 @@ namespace app
             UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
 
-            int userIndex = listBoxUsers.SelectedIndex = currentUserIndex;
-
-            textBoxCurrentName.Text = users[userIndex].name;
-            numericUpDownCurrentAge.Value = users[userIndex].age;
-            numericUpDownCurrentHeight.Value = users[userIndex].height;
-            numericUpDownCurrentWeight.Value = Convert.ToDecimal(users[userIndex].weight);
-            
-            if(users[userIndex].gender == Gender.Male)
-            {
-                radioButtonCurrentMale.Checked = true;
-            }
-            else
-            {
-                radioButtonCurrentFemale.Checked = true;
-            }
+            UpdateUserItems();
 
             UpdateArrowButtons();
-            SetEditInfoVisibility(false);
+            groupBoxEdit.Visible = false;
         }
 
         private void ButtonReturn_Click(object sender, EventArgs e)
@@ -472,27 +451,70 @@ namespace app
             ChangePanel(0);
         }
 
-        private void SetEditInfoVisibility(bool visibility)
+        private int GetFirstVisibleUserItemIndex()
         {
-            textBoxCurrentName.Visible = visibility;
-            numericUpDownCurrentAge.Visible = visibility;
-            numericUpDownCurrentHeight.Visible = visibility;
-            numericUpDownCurrentWeight.Visible = visibility;
-            radioButtonCurrentFemale.Visible = visibility;
-            radioButtonCurrentMale.Visible = visibility;
-            label18.Visible = visibility;
-            label19.Visible = visibility;
-            label20.Visible = visibility;
-            label22.Visible = visibility;
-            label23.Visible = visibility;
-            buttonDelete.Visible = visibility;
-            buttonSaveChanges.Visible = visibility;
+            if (currentUserIndex <= 1)
+            {
+                return 0;
+            }
+            else if(currentUserIndex >= users.Count - 2)
+            {
+                return users.Count - 3;
+            }
+            else
+            {
+                return currentUserIndex - 1;
+            }  
+        }
+
+        private void UpdateUserItems()
+        {
+            userItemFirst.Visible = false;
+            userItemSecond.Visible = false;
+            userItemThird.Visible = false;
+
+            int firstVisibleUserItemIndex = GetFirstVisibleUserItemIndex();
+
+            if (users.Count >= 1)
+            {
+                userItemFirst.Visible = true;
+                userItemFirst.UserName = users[firstVisibleUserItemIndex].name;
+                if (users.Count >= 2)
+                {
+                    userItemSecond.Visible = true;
+                    userItemSecond.UserName = users[firstVisibleUserItemIndex + 1].name;
+                    if (users.Count >= 3)
+                    {
+                        userItemThird.Visible = true;
+                        userItemThird.UserName = users[firstVisibleUserItemIndex + 2].name;
+                    }
+                }
+            }
+
+            userItemFirst.BackColor = green1;
+            userItemSecond.BackColor = green1;
+            userItemThird.BackColor = green1;
+
+            if (currentUserIndex == firstVisibleUserItemIndex)
+            {
+                userItemFirst.BackColor = yellow2;
+            }
+            else if (currentUserIndex == firstVisibleUserItemIndex + 1)
+            {
+                userItemSecond.BackColor = yellow2;
+            }
+            else
+            {
+                userItemThird.BackColor = yellow2;
+            }
+            string indexInfo = string.Format("{0}/{1}", currentUserIndex + 1, users.Count);
+            labelIndexInfo.Text = indexInfo;
         }
 
         private void UpdateArrowButtons()
         {
-            buttonArrowUp.Enabled = (listBoxUsers.SelectedIndex > 0);
-            buttonArrowDown.Enabled = (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1);
+            buttonArrowUp.Enabled = (currentUserIndex > 0);
+            buttonArrowDown.Enabled = (currentUserIndex < users.Count - 1);
         }
 
         private void UpdateAgeForm(Label lbl, NumericUpDown numericUD)
@@ -544,24 +566,23 @@ namespace app
 
         private void ButtonCreate_Click(object sender, EventArgs e)
         {
-            if (textBoxName.Text == "" || (radioButtonFemale.Checked == false && radioButtonMale.Checked == false))
+            if (textBoxName.Text == "" || (radioButtonFemale.Checked == false && radioButtonMale.Checked == false) || (radioButtonAvatarBlue.Checked == false && radioButtonAvatarRed.Checked == false && radioButtonAvatarGray.Checked == false))
             {
                 string missingInfo = "";
-                
-                if (textBoxName.Text == "" && radioButtonFemale.Checked == false && radioButtonMale.Checked == false)
+                if (radioButtonAvatarBlue.Checked == false && radioButtonAvatarRed.Checked == false && radioButtonAvatarGray.Checked == false)
                 {
-                    missingInfo = "imię, płeć";
+                    missingInfo += "\n• zdjęcie";
                 }
-                else if (radioButtonFemale.Checked == false && radioButtonMale.Checked == false)
+                if (radioButtonFemale.Checked == false && radioButtonMale.Checked == false)
                 {
-                    missingInfo = "płeć";
+                    missingInfo += "\n• płeć";
                 }
-                else if(textBoxName.Text == "")
+                if(textBoxName.Text == "")
                 {
-                    missingInfo = "imię";
+                    missingInfo += "\n• imię";
                 }
 
-                string message = "Aby utworzyć profil musisz podać wszystkie dane!\nBrakujące dane: " + missingInfo + ".";
+                string message = string.Format("Aby utworzyć profil musisz podać wszystkie dane!\nBrakujące dane: {0}", missingInfo);
                 string caption = "Niepoprawnie wypełniony formularz";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
@@ -572,7 +593,7 @@ namespace app
                     Close();
                 }
 
-                currentUserIndex = listBoxUsers.SelectedIndex = listBoxUsers.Items.Count - 1;
+                currentUserIndex = users.Count - 1;
             }
             else
             {
@@ -581,40 +602,23 @@ namespace app
                 User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gender);
 
                 users.Add(newUser);
-                listBoxUsers.Items.Add(newUser.name);
 
                 textBoxName.Text = "";
 
-                currentUserIndex = listBoxUsers.SelectedIndex = users.Count - 1; 
+                currentUserIndex = users.Count - 1;
+
             }
 
             UpdateButtonDeleteEnabledStatus();
-            SetEditInfoVisibility(false);
+            groupBoxEdit.Visible = false;
+            UpdateUserItems();
             UpdateArrowButtons();
         }
 
-        private void ListBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            UpdateArrowButtons();
-            SetEditInfoVisibility(false);
-
-            if (listBoxUsers.SelectedIndex != -1)
-            {
-                int userIndex = currentUserIndex = listBoxUsers.SelectedIndex;
-
-                textBoxCurrentName.Text = users[userIndex].name;
-                numericUpDownCurrentAge.Value = users[userIndex].age;
-                numericUpDownCurrentWeight.Value = Convert.ToDecimal(users[userIndex].weight);
-                numericUpDownCurrentHeight.Value = Convert.ToUInt16(users[userIndex].height);
-                radioButtonCurrentMale.Checked = users[userIndex].gender == Gender.Male;
-                radioButtonCurrentFemale.Checked = users[userIndex].gender == Gender.Female;
-            }
-        }
-
-        private void ButtonDelete_Click_1(object sender, EventArgs e)
-        {
-            int indexToRemove = listBoxUsers.SelectedIndex;
-            if (listBoxUsers.Items.Count <= 1)
+            int indexToRemove = currentUserIndex;
+            if (users.Count <= 1)
             {
                 string message = "Nie można usunąć jedynego istniejącego profilu!\nUtwórz nowy profil lub edytuj już istniejący.";
                 string caption = "Nie można usunąć profilu";
@@ -629,48 +633,55 @@ namespace app
             }
             else
             {
-                if (indexToRemove > 0)
-                {
-                    --listBoxUsers.SelectedIndex;
-                }
-                else
-                {
-                    ++listBoxUsers.SelectedIndex;
-                }
-                users.RemoveAt(indexToRemove);
-                listBoxUsers.Items.RemoveAt(indexToRemove);
+                string message = string.Format("Czy na pewno chcesz usunąć profil {0}?", users[indexToRemove].name);
+                string caption = "Potwierdzenie usunięcia profilu";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
 
-                listBoxUsers.SelectedIndex = currentUserIndex = 0;
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    if (indexToRemove > 0)
+                    {
+                        --currentUserIndex;
+                    }
+                    else
+                    {
+                        ++currentUserIndex;
+                    }
+                    users.RemoveAt(indexToRemove);
 
-                UpdateButtonDeleteEnabledStatus();
-                UpdateArrowButtons();
-                SetEditInfoVisibility(false);
-                buttonSaveChanges.Enabled = false;
+                    currentUserIndex = 0;
+
+                    UpdateButtonDeleteEnabledStatus();
+                    UpdateArrowButtons();
+                    groupBoxEdit.Visible = false;
+                    UpdateUserItems();
+                    buttonSaveChanges.Enabled = false;
+                }
             }
         }
 
         private void ButtonSaveChanges_Click(object sender, EventArgs e)
         {
-            if (listBoxUsers.SelectedIndex != -1)
+            if (currentUserIndex != -1)
             {
-                int userIndex = listBoxUsers.SelectedIndex;
-
-                users[userIndex].name = textBoxCurrentName.Text;
-                users[userIndex].age = Convert.ToByte(numericUpDownCurrentAge.Value);
-                users[userIndex].weight = Convert.ToSingle(numericUpDownCurrentWeight.Value);
-                users[userIndex].height = Convert.ToUInt16(numericUpDownCurrentHeight.Value);
+                users[currentUserIndex].name = textBoxCurrentName.Text;
+                users[currentUserIndex].age = Convert.ToByte(numericUpDownCurrentAge.Value);
+                users[currentUserIndex].weight = Convert.ToSingle(numericUpDownCurrentWeight.Value);
+                users[currentUserIndex].height = Convert.ToUInt16(numericUpDownCurrentHeight.Value);
 
                 if (radioButtonCurrentMale.Checked)
                 {
-                    users[userIndex].gender = Gender.Male;
+                    users[currentUserIndex].gender = Gender.Male;
                 }
                 else
                 {
-                    users[userIndex].gender = Gender.Female;
+                    users[currentUserIndex].gender = Gender.Female;
                 }
-                listBoxUsers.Items[userIndex] = users[userIndex].name;
-                SetEditInfoVisibility(false);
+                groupBoxEdit.Visible = false;
                 buttonSaveChanges.Enabled = false;
+                UpdateUserItems();
             }
             else
             {
@@ -689,25 +700,39 @@ namespace app
 
         private void ButtonArrowUp_Click(object sender, EventArgs e)
         {
-            if (listBoxUsers.SelectedIndex > 0)
+            if (currentUserIndex > 0)
             {
-                --listBoxUsers.SelectedIndex;
+                --currentUserIndex;
             }
+            buttonSaveChanges.Enabled = false;
+            groupBoxEdit.Visible = false;
+            UpdateUserItems();
+            UpdateArrowButtons();
         }
 
         private void ButtonArrowDown_Click(object sender, EventArgs e)
         {
-            if (listBoxUsers.SelectedIndex < listBoxUsers.Items.Count - 1)
+            if (currentUserIndex < users.Count - 1)
             {
-                ++listBoxUsers.SelectedIndex;
+                ++currentUserIndex;
             }
+            buttonSaveChanges.Enabled = false;
+            groupBoxEdit.Visible = false;
+            UpdateUserItems();
+            UpdateArrowButtons();
         }
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            SetEditInfoVisibility(true);
+            groupBoxEdit.Visible = true;
+            textBoxCurrentName.Text = users[currentUserIndex].name;
+            numericUpDownCurrentAge.Value = users[currentUserIndex].age;
+            numericUpDownCurrentWeight.Value = Convert.ToDecimal(users[currentUserIndex].weight);
+            numericUpDownCurrentHeight.Value = Convert.ToUInt16(users[currentUserIndex].height);
+            radioButtonCurrentMale.Checked = users[currentUserIndex].gender == Gender.Male;
+            radioButtonCurrentFemale.Checked = users[currentUserIndex].gender == Gender.Female;
         }
-        
+
         private void TextBoxCurrentName_TextChanged(object sender, EventArgs e)
         {
             if (textBoxCurrentName.Text != users[currentUserIndex].name)
@@ -1067,14 +1092,14 @@ namespace app
 
         private void SetButtonAsUnclicked(Button button)
         {
-            button.BackColor = Color.FromArgb(39, 60, 117);
+            button.BackColor = darkblue1;
             button.ForeColor = Color.FromArgb(255, 255, 255);
             button.Enabled = true;
         }
 
         private void SetButtonAsClicked(Button button)
         {
-            button.BackColor = Color.FromArgb(251, 197, 3);
+            button.BackColor = Color.FromArgb(225, 177, 44);
             button.ForeColor = Color.FromArgb(47, 54, 64);
             button.Enabled = false;
         }

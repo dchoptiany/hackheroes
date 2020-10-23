@@ -1,14 +1,35 @@
 {
-  "name": "Testowy m\u0119\u017Cczyzna",
+  "name": "Testowy M\u0119\u017Cczyzna",
   "age": 18,
   "weight": 60,
   "height": 170,
   "gender": 0
 }
 {
-  "name": "Testowa kobieta",
+  "name": "Testowa Kobieta",
   "age": 21,
   "weight": 40,
   "height": 150,
   "gender": 1
+}
+{
+  "name": "Damian",
+  "age": 35,
+  "weight": 60,
+  "height": 170,
+  "gender": 0
+}
+{
+  "name": "Basia",
+  "age": 18,
+  "weight": 50,
+  "height": 174,
+  "gender": 1
+}
+{
+  "name": "Kacper",
+  "age": 35,
+  "weight": 60,
+  "height": 170,
+  "gender": 0
 }
