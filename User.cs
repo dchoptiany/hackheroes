@@ -7,7 +7,7 @@
 	}
 
 	public class User
-	{		
+	{
 		///  Body section
 		public string name { get; set; }
 		public byte age { get; set; }
@@ -17,7 +17,7 @@
 
 		public float BMI;
 
-		public float activityLevel;
+		public float activityLevel { get; set; }
 		public bool physicalJob;
 		public uint trainingsInWeek;
 		public uint dailyMovementLevel;

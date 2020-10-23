@@ -3,12 +3,14 @@
   "age": 18,
   "weight": 60,
   "height": 170,
-  "gender": 0
+  "gender": 0,
+  "activityLevel": 1.47500002
 }
 {
   "name": "Testowa kobieta",
   "age": 21,
   "weight": 40,
   "height": 150,
-  "gender": 1
+  "gender": 1,
+  "activityLevel": 0
 }
