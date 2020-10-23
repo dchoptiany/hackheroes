@@ -937,6 +937,7 @@
             // 
             // buttonSaveChanges
             // 
+            this.buttonSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSaveChanges.FlatAppearance.BorderSize = 0;
             this.buttonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveChanges.Image = global::app.Properties.Resources.save;
@@ -962,6 +963,7 @@
             // 
             // buttonDelete
             // 
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Image = global::app.Properties.Resources.delete;
@@ -1256,6 +1258,7 @@
             // 
             // buttonEdit
             // 
+            this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEdit.FlatAppearance.BorderSize = 0;
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEdit.Image = global::app.Properties.Resources.edit;
@@ -2290,6 +2293,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panel4);
@@ -2297,7 +2301,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.panelSurveyFinished);

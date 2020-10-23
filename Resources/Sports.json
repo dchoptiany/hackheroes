@@ -6,7 +6,7 @@
   "imagePath": "football.jpg"
 }
 {
-  "name": "Pi\u0142ka no\u017Cna halowa",
+  "name": "Futsal",
   "participants": 3,
   "weather": 0,
   "effortLevel": 2,
@@ -158,4 +158,11 @@
   "weather": 0,
   "effortLevel": 3,
   "imagePath": "climbing.jpg"
+}
+{
+  "name": "Taniec",
+  "participants": 0,
+  "weather": 0,
+  "effortLevel": 2,
+  "imagePath": "dance.jpg"
 }
