@@ -31,13 +31,14 @@ namespace app
         public Participants participants { get; set; }
         public Weather weather { get; set; }
         public EffortLevel effortLevel { get; set; }
-
-        public Sport(string _name, Participants _participants, Weather _weather, EffortLevel _effortLevel)
+        public string imagePath { get; set; }
+        public Sport(string _name, Participants _participants, Weather _weather, EffortLevel _effortLevel, string _imagePath)
         {
             name = _name;
             participants = _participants;
             weather = _weather;
             effortLevel = _effortLevel;
+            imagePath = _imagePath;
         }
 
         public Sport()
@@ -51,11 +52,12 @@ namespace app
         public static List<Sport> approvedSports;
         public static CurrentWeather currentWeather = new CurrentWeather();
 
+        public static Sport currentSport;
         private static Participants latestParticipants;
         private static Weather latestWeather;
         private static EffortLevel latestEffortLevel;
 
-        public static string Search(Participants participants, Weather weather, EffortLevel effortLevel)
+        public static void Search(Participants participants, Weather weather, EffortLevel effortLevel)
         {
             latestParticipants = participants;
             latestWeather = weather;
@@ -75,16 +77,15 @@ namespace app
             }
             if (approvedSports.Count >= 1)
             {
-                string result = approvedSports[0].name;
+                currentSport = approvedSports[0];
                 approvedSports.RemoveAt(0);
-                return result;
             }
             else
             {
-                return "";
+                currentSport = null;
             }
         }
-        public static string Search()
+        public static void Search()
         {
             if (approvedSports.Count < 1)
             {
@@ -100,13 +101,12 @@ namespace app
             }
             if (approvedSports.Count >= 1)
             {
-                string result = approvedSports[0].name;
+                currentSport = approvedSports[0];
                 approvedSports.RemoveAt(0);
-                return result;
             }
             else
             {
-                return "";
+                currentSport = null;
             }
         }
     }

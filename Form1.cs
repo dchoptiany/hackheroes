@@ -52,11 +52,11 @@ namespace app
 
             panelPointer.BackColor = blue1;
 
-            Color leftPanelBackColor = green2;
+            Color leftPanelBackColor = darkblue1;
             flowLayoutPanel1.BackColor = leftPanelBackColor;
             panelProfileSetup.BackColor = leftPanelBackColor;
 
-            Color leftPanelButtonsColor = green2;
+            Color leftPanelButtonsColor = darkblue1;
             buttonBMI.BackColor = leftPanelButtonsColor;
             buttonActivity.BackColor = leftPanelButtonsColor;
             buttonQuiz.BackColor = leftPanelButtonsColor;
@@ -146,11 +146,11 @@ namespace app
                 List<string> sportsJSON = new List<string>();
                 string sportLine;
 
-                for (int i = 0; i < JSON.Length; i += 6)
+                for (int i = 0; i < JSON.Length; i += 7)
                 {
                     sportLine = string.Empty;
 
-                    for (int line = 0; line < 6; line++)
+                    for (int line = 0; line < 7; line++)
                     {
                         sportLine += JSON[i + line];
                     }
@@ -505,21 +505,21 @@ namespace app
                     }
                 }
 
-                userItemFirst.BackColor = purple1;
-                userItemSecond.BackColor = purple1;
-                userItemThird.BackColor = purple1;
+                userItemFirst.BackColor = darkblue1;
+                userItemSecond.BackColor = darkblue1;
+                userItemThird.BackColor = darkblue1;
 
                 if (currentUserIndex == firstVisibleUserItemIndex)
                 {
-                    userItemFirst.BackColor = yellow2;
+                    userItemFirst.BackColor = Color.FromArgb(127, 143, 166);
                 }
                 else if (currentUserIndex == firstVisibleUserItemIndex + 1)
                 {
-                    userItemSecond.BackColor = yellow2;
+                    userItemSecond.BackColor = Color.FromArgb(127, 143, 166);
                 }
                 else
                 {
-                    userItemThird.BackColor = yellow2;
+                    userItemThird.BackColor = Color.FromArgb(127, 143, 166);
                 }
                 string indexInfo = string.Format("{0}/{1}", currentUserIndex + 1, users.Count);
                 labelIndexInfo.Text = indexInfo;
@@ -1119,7 +1119,7 @@ namespace app
 
         private void SetButtonAsClicked(Button button)
         {
-            button.BackColor = Color.FromArgb(225, 177, 44);
+            button.BackColor = yellow2;
             button.ForeColor = Color.FromArgb(47, 54, 64);
             button.Enabled = false;
         }
@@ -1283,10 +1283,15 @@ namespace app
                     effortLevel = EffortLevel.Any;
                 }
 
-                labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
-                if (labelActivityResult.Text == "")
+                ActivityMatcher.Search(participants, weather, effortLevel);
+                if (ActivityMatcher.currentSport == null)
                 {
                     labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
+                }
+                else
+                {
+                    labelActivityResult.Text = ActivityMatcher.currentSport.name;
+                    pictureBoxSportResult.ImageLocation = string.Format("..\\..\\Resources\\Images\\{0}", ActivityMatcher.currentSport.imagePath);
                 }
                 Center(labelActivityResult);
                 ChangePanel(7);
@@ -1307,13 +1312,17 @@ namespace app
         }
         private void ButtonShowNext_Click(object sender, EventArgs e)
         {
-            labelActivityResult.Text = ActivityMatcher.Search();
-            Center(labelActivityResult);
-            if (labelActivityResult.Text == "")
+            ActivityMatcher.Search();
+            if (ActivityMatcher.currentSport == null)
             {
                 labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
-                Center(labelActivityResult);
+            }     
+            else
+            {
+                labelActivityResult.Text = ActivityMatcher.currentSport.name;
+                pictureBoxSportResult.ImageLocation = string.Format("..\\..\\Resources\\Images\\{0}", ActivityMatcher.currentSport.imagePath);
             }
+            Center(labelActivityResult);
         }
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
