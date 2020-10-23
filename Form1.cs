@@ -23,7 +23,6 @@ namespace app
         private List<Button> activtyMatcherWeatherButtons = new List<Button>();
         private List<Button> activtyMatcherEffortButtons = new List<Button>();
 
-        private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
         private List<Button> menuButtons = new List<Button>();
         private readonly Color blue1 = Color.FromArgb(0, 168, 255);
@@ -53,9 +52,8 @@ namespace app
             panelPointer.BackColor = blue1;
 
             Color leftPanelBackColor = darkblue1;
-            flowLayoutPanel1.BackColor = leftPanelBackColor;
+            flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
             panelProfileSetup.BackColor = leftPanelBackColor;
-
             Color leftPanelButtonsColor = darkblue1;
             buttonBMI.BackColor = leftPanelButtonsColor;
             buttonActivity.BackColor = leftPanelButtonsColor;
@@ -95,16 +93,6 @@ namespace app
             panelPointer.Visible = true;
             panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
             panelPointer.Height = clickedButton.Height;
-        }
-
-        private void ChangePanel(int index)
-        {
-            panels[index].BringToFront();
-        }
-
-        private void ChangePanel(Panel panel)
-        {
-            panel.BringToFront();
         }
 
         private void LoadQuestions()
@@ -215,6 +203,7 @@ namespace app
                 foreach (string line in usersJSON)
                 {
                     User newUser = JsonSerializer.Deserialize<User>(line);
+                    Console.WriteLine(newUser.activityLevel);
                     users.Add(newUser);
                 }
             }
@@ -227,15 +216,6 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            panels.Add(panel0); //buttons
-            panels.Add(panel1); //BMI
-            panels.Add(panel2); //sport activity
-            panels.Add(panel3); //quiz
-            panels.Add(panel4); //calculator
-            panels.Add(panel5); //surveys
-            panels.Add(panel6); //profiles
-            panels.Add(panel7); //activity result
-
             answerButtons.Add(buttonAnswerA);
             answerButtons.Add(buttonAnswerB);
             answerButtons.Add(buttonAnswerC);
@@ -267,7 +247,7 @@ namespace app
             LoadSurveys();
             LoadUsers();
 
-            ChangePanel(0);
+            panelLandingPage.BringToFront();
         }
 
         private void Disable(Button button)
@@ -321,7 +301,7 @@ namespace app
                 value = 100f;
             }
 
-            pictureBoxArrow.Location = new Point(75 + (int)value * 8, 147);
+            pictureBoxArrow.Location = new Point(75 + (int)value * 8, pictureBoxArrow.Location.Y);
         }
 
         private string GetInterpretation(float BMI)
@@ -330,34 +310,31 @@ namespace app
             {
                 return "Wygłodzenie";
             }
-            else if (BMI < 17f)
+            if(BMI < 17f)
             {
                 return "Wychudzenie";
             }
-            else if (BMI < 18.5f)
+            if(BMI < 18.5f)
             {
                 return "Niedowaga";
             }
-            else if (BMI < 25f)
+            if(BMI < 25f)
             {
                 return "Norma";
             }
-            else if (BMI < 30f)
+            if(BMI < 30f)
             {
                 return "Nadwaga";
             }
-            else if (BMI < 35f)
+            if(BMI < 35f)
             {
                 return "I stopień otyłości";
             }
-            else if (BMI < 40f)
+            if(BMI < 40f)
             {
                 return "II stopień otyłości";
             }
-            else
-            {
-                return "Otyłość skrajna";
-            }
+            return "Otyłość skrajna";
         }
 
         private void Center(Control control)
@@ -369,7 +346,7 @@ namespace app
         {
             if (!Calculator.CalculateBMI(users[currentUserIndex]))
             {
-                ChangePanel(6);
+                panelProfiles.BringToFront();
                 return;
             }
 
@@ -381,12 +358,12 @@ namespace app
             Center(labelBMI);
             Center(labelBMIInterpretation);
 
-            ChangePanel(1);
+            panelBMI.BringToFront();
         }
 
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
-            ChangePanel(2);
+            panelActivity.BringToFront();
 
             SetButtonAsUnclicked(buttonIndividual);
             SetButtonAsUnclicked(buttonPair);
@@ -407,23 +384,23 @@ namespace app
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
-            ChangePanel(3);
+            panelQuizMenu.BringToFront();
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
-            ChangePanel(4);
+            panelMacro.BringToFront();
             UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
-            ChangePanel(5);
+            panelSurveyMenu.BringToFront();
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
-            ChangePanel(6);
+            panelProfiles.BringToFront();
 
             buttonSaveChanges.Enabled = false;
 
@@ -795,17 +772,6 @@ namespace app
 
         private void SetupQuiz()
         {
-            ButtonStartQuiz.Visible = false;
-            labelNumber.Visible = true;
-            pictureBoxTime.Visible = true;
-            pictureBoxTimeBorder.Visible = true;
-            labelQuestion.Visible = true;
-            tableLayoutPanelAnswers.Visible = true;
-            buttonAnswerA.Visible = true;
-            buttonAnswerB.Visible = true;
-            buttonAnswerC.Visible = true;
-            buttonAnswerD.Visible = true;
-
             pictureBoxTime.Size = new Size(0, 30);
 
             Quiz.GetQuestions();
@@ -888,23 +854,14 @@ namespace app
 
         private void FinishQuiz()
         {
+            panelQuizFinished.BringToFront();
             labelQuizResult.Text = "Wynik: " + Quiz.score + "/5";
             Center(labelQuizResult);
-            labelQuestion.Visible = false;
-            tableLayoutPanelAnswers.Visible = false;
-            buttonAnswerA.Visible = false;
-            buttonAnswerB.Visible = false;
-            buttonAnswerC.Visible = false;
-            buttonAnswerD.Visible = false;
-            labelQuizResult.Visible = true;
-            buttonFinishQuiz.Visible = true;
-            labelNumber.Visible = false;
-            pictureBoxTime.Visible = false;
-            pictureBoxTimeBorder.Visible = false;
         }
 
         private void ButtonStartQuiz_Click(object sender, EventArgs e)
         {
+            panelQuiz.BringToFront();
             SetupQuiz();
         }
 
@@ -951,16 +908,9 @@ namespace app
             MarkCorrectAnswer(clickedButton);
         }
 
-        private void ResetQuiz()
-        {
-            labelQuizResult.Visible = false;
-            buttonFinishQuiz.Visible = false;
-            ButtonStartQuiz.Visible = true;
-        }
-
         private void ButtonFinishQuiz_Click(object sender, EventArgs e)
         {
-            ResetQuiz();
+            panelQuizMenu.BringToFront();
         }
 
         private void UpdateActivityLevel()
@@ -973,7 +923,7 @@ namespace app
         {
             currentSurveyIndex = GetSurveyID((Button)sender);
             Survey.currentQuestionIndex = 0;
-            ChangePanel(panelSurvey);
+            panelSurvey.BringToFront();
             NextSurveyQuestion();
         }
 
@@ -1090,7 +1040,7 @@ namespace app
 
         private void FinishSurvey()
         {
-            ChangePanel(panelSurveyFinished);
+            panelSurveyFinished.BringToFront();
 
             if(currentSurveyIndex == 0) //Poziom aktywnosci fizycznej
             {
@@ -1103,6 +1053,11 @@ namespace app
             }       
             
             Center(labelFinish);
+        }
+
+        private void ButtonSurveyFinished_Clicked(object sender, EventArgs e)
+        {
+            panelSurveyMenu.BringToFront();
         }
 
         private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
@@ -1294,7 +1249,7 @@ namespace app
                     pictureBoxSportResult.ImageLocation = string.Format("..\\..\\Resources\\Images\\{0}", ActivityMatcher.currentSport.imagePath);
                 }
                 Center(labelActivityResult);
-                ChangePanel(7);
+                panelActivityResults.BringToFront();
             }
             else
             {
@@ -1345,7 +1300,7 @@ namespace app
         private void ButtonChangeSearchingData_Click(object sender, EventArgs e)
         {
             LoadSports();
-            ChangePanel(2);
+            panelActivity.BringToFront();
         }
     }
 }
