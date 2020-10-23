@@ -73,6 +73,16 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avatar {
+            get {
+                object obj = ResourceManager.GetObject("avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BMIScale {
             get {
                 object obj = ResourceManager.GetObject("BMIScale", resourceCulture);
@@ -106,16 +116,6 @@ namespace app.Properties {
         internal static System.Drawing.Bitmap buttonCalculator {
             get {
                 object obj = ResourceManager.GetObject("buttonCalculator", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap buttonProfile {
-            get {
-                object obj = ResourceManager.GetObject("buttonProfile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -69,6 +69,12 @@ namespace app
             menuButtons.Add(buttonProfile); 
         }
 
+        private void InitializeProfile()
+        {
+            buttonProfile.BackColor = green2;
+            buttonProfile.Text = users[currentUserIndex].name;
+        }
+
         private void DisableButton(object sender, EventArgs e)
         {
             var clickedButton = (Button)sender;
@@ -253,6 +259,9 @@ namespace app
             LoadSurveys();
             LoadUsers();
 
+            InitializeProfile();
+            Center(buttonProfile);
+
             ChangePanel(0);
         }
 
@@ -435,7 +444,7 @@ namespace app
 
         private void Center(Control control)
         {
-            control.Location = new Point(1000 / 2 - control.Size.Width / 2, control.Location.Y);
+            control.Location = new Point(control.Parent.Size.Width / 2 - control.Size.Width / 2, control.Location.Y);
         }
 
         private void ButtonBMI_Click(object sender, EventArgs e)
