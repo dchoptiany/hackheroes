@@ -135,6 +135,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelProfileSetup = new System.Windows.Forms.Panel();
+            this.buttonProfilePicture = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.panelPointer = new System.Windows.Forms.Panel();
             this.panel0 = new System.Windows.Forms.Panel();
@@ -161,7 +162,6 @@
             this.labelFinish = new System.Windows.Forms.Label();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.buttonProfilePicture = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -1596,14 +1596,28 @@
             this.panelProfileSetup.Size = new System.Drawing.Size(280, 175);
             this.panelProfileSetup.TabIndex = 21;
             // 
+            // buttonProfilePicture
+            // 
+            this.buttonProfilePicture.BackgroundImage = global::app.Properties.Resources.avatar;
+            this.buttonProfilePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonProfilePicture.FlatAppearance.BorderSize = 0;
+            this.buttonProfilePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfilePicture.Location = new System.Drawing.Point(75, 3);
+            this.buttonProfilePicture.Name = "buttonProfilePicture";
+            this.buttonProfilePicture.Size = new System.Drawing.Size(128, 128);
+            this.buttonProfilePicture.TabIndex = 3;
+            this.buttonProfilePicture.UseVisualStyleBackColor = true;
+            this.buttonProfilePicture.Click += new System.EventHandler(this.ButtonProfile_Click);
+            // 
             // buttonProfile
             // 
             this.buttonProfile.FlatAppearance.BorderSize = 0;
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonProfile.Location = new System.Drawing.Point(50, 134);
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonProfile.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonProfile.Location = new System.Drawing.Point(0, 134);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(176, 38);
+            this.buttonProfile.Size = new System.Drawing.Size(280, 38);
             this.buttonProfile.TabIndex = 2;
             this.buttonProfile.Text = "<User name>";
             this.buttonProfile.UseVisualStyleBackColor = true;
@@ -1918,31 +1932,18 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // buttonProfilePicture
-            // 
-            this.buttonProfilePicture.BackgroundImage = global::app.Properties.Resources.avatar;
-            this.buttonProfilePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonProfilePicture.FlatAppearance.BorderSize = 0;
-            this.buttonProfilePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfilePicture.Location = new System.Drawing.Point(75, 3);
-            this.buttonProfilePicture.Name = "buttonProfilePicture";
-            this.buttonProfilePicture.Size = new System.Drawing.Size(128, 128);
-            this.buttonProfilePicture.TabIndex = 3;
-            this.buttonProfilePicture.UseVisualStyleBackColor = true;
-            this.buttonProfilePicture.Click += new System.EventHandler(this.ButtonProfile_Click);
-            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel0);
-            this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.panelProfileSetup);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);

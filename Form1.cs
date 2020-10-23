@@ -66,7 +66,8 @@ namespace app
             menuButtons.Add(buttonQuiz); 
             menuButtons.Add(buttonCalculator); 
             menuButtons.Add(buttonSurvey); 
-            menuButtons.Add(buttonProfile); 
+            menuButtons.Add(buttonProfile);
+            menuButtons.Add(buttonProfilePicture);
         }
 
         private void InitializeProfile()
@@ -75,14 +76,21 @@ namespace app
             buttonProfile.Text = users[currentUserIndex].name;
         }
 
-        private void DisableButton(object sender, EventArgs e)
+        private void DisableButton(object sender, EventArgs e, bool isProfile = false)
         {
-            var clickedButton = (Button)sender;
+            var clickedButton = (Button)sender;    
             foreach (Button _button in menuButtons)
             {
                 if (_button.Text == clickedButton.Text)
                 {
-                    _button.Enabled = false;
+                    if(!isProfile)
+                    {
+                        _button.Enabled = false;
+                    }
+                    else
+                    {
+                        buttonProfile.Enabled = false;
+                    }
                 }
                 else
                 {
@@ -90,11 +98,20 @@ namespace app
                     _button.BackColor = green2;
                 }
             }
-            clickedButton.BackColor = green1;
-
-            panelPointer.Visible = true;
-            panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
-            panelPointer.Height = clickedButton.Height;
+         
+            if (!isProfile)
+            {
+                clickedButton.BackColor = green1;
+                panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
+                panelPointer.Height = clickedButton.Height;
+            }
+            else
+            {
+                buttonProfile.BackColor = green1;
+                panelPointer.Location = new Point(0, buttonProfile.Location.Y);
+                panelPointer.Height = buttonProfile.Height;
+            }
+            panelPointer.Visible = true;   
         }
 
         private void ChangePanel(int index)
@@ -449,6 +466,7 @@ namespace app
 
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
             int userIndex = currentUserIndex;
 
             if(!Calculator.CalculateBMI(users[userIndex]))
@@ -470,6 +488,7 @@ namespace app
 
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
             ChangePanel(2);
 
             radioButtonAllParticipants.Checked = true;
@@ -481,22 +500,27 @@ namespace app
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
             ChangePanel(3);
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
             ChangePanel(4);
             UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
+
             ChangePanel(5);
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e, true);
             ChangePanel(6);
 
             UpdateButtonDeleteEnabledStatus();
