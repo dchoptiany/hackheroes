@@ -948,10 +948,11 @@ namespace app
                         textBoxSurveyText.Visible = false;
                         buttonSurveyConfirm.Visible = false;
 
-                        buttonSurveyA.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[0].Key;
-                        buttonSurveyB.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[1].Key;
-                        buttonSurveyYes.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[2].Key;
-                        buttonSurveyNo.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[3].Key;
+                        buttonSurveyNo.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[0].Key;
+                        buttonSurveyYes.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[1].Key;
+                        buttonSurveyA.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[2].Key;
+                        buttonSurveyB.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[3].Key;
+                        
                         break;
                     } 
                 case QuestionType.INPUT:
@@ -1043,7 +1044,7 @@ namespace app
 
                 Calculator.CalculateActivityLevel(users[currentUserIndex]);
                 labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
-            }       
+            }
             
             Center(labelFinish);
         }
