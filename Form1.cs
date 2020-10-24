@@ -76,9 +76,10 @@ namespace app
             buttonProfile.Text = users[currentUserIndex].name;
         }
 
-        private void DisableButton(object sender, EventArgs e, bool isProfile = false)
+        private void DisableButton(object sender, EventArgs e)
         {
             var clickedButton = (Button)sender;    
+
             foreach (Button _button in menuButtons)
             {
                 _button.Enabled = true;
@@ -90,13 +91,7 @@ namespace app
                 }
             }
          
-            if (!isProfile)
-            {
-                clickedButton.BackColor = green1;
-                panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
-                panelPointer.Height = clickedButton.Height;
-            }
-            else
+            if (sender == buttonProfile || sender == buttonProfilePicture)
             {
                 buttonProfilePicture.Enabled = false;
                 buttonProfile.Enabled = false;
@@ -105,6 +100,12 @@ namespace app
                 buttonProfilePicture.BackColor = green1;
                 panelPointer.Location = new Point(0, 0);
                 panelPointer.Height = panelProfileSetup.Height;
+            }
+            else
+            {
+                clickedButton.BackColor = green1;
+                panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
+                panelPointer.Height = clickedButton.Height;
             }
             panelPointer.Visible = true;   
         }
@@ -515,7 +516,7 @@ namespace app
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
-            DisableButton(sender, e, true);
+            DisableButton(sender, e);
             ChangePanel(6);
 
             UpdateButtonDeleteEnabledStatus();
