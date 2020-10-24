@@ -190,10 +190,10 @@ namespace app
                 List<string> usersJSON = new List<string>();
                 string userLine;
 
-                for (int i = 0; i < JSON.Length; i += 8)
+                for (int i = 0; i < JSON.Length; i += 9)
                 {
                     userLine = string.Empty;
-                    for (int line = 0; line < 8; line++)
+                    for (int line = 0; line < 9; line++)
                     {
                         userLine += JSON[i + line];
                     }
@@ -412,11 +412,6 @@ namespace app
             {
                 buttonEdit.Enabled = false;
             }
-        }
-
-        private void ButtonReturn_Click(object sender, EventArgs e)
-        {
-            ChangePanel(0);
         }
 
         private int GetFirstVisibleUserItemIndex()
