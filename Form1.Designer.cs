@@ -43,7 +43,7 @@
             this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.labelBMIInterpretation = new System.Windows.Forms.Label();
             this.labelBMI = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBMIScale = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panelQuiz = new System.Windows.Forms.Panel();
             this.pictureBoxTime = new System.Windows.Forms.PictureBox();
@@ -60,6 +60,7 @@
             this.ButtonStartQuiz = new System.Windows.Forms.Button();
             this.labelQuiz = new System.Windows.Forms.Label();
             this.panelQuizFinished = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelQuizMenu = new System.Windows.Forms.Panel();
             this.panelMacro = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -83,45 +84,55 @@
             this.label25 = new System.Windows.Forms.Label();
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
-            this.panelProfiles = new System.Windows.Forms.Panel();
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonArrowDown = new System.Windows.Forms.Button();
-            this.buttonArrowUp = new System.Windows.Forms.Button();
+            this.groupBoxEdit = new System.Windows.Forms.GroupBox();
             this.buttonSaveChanges = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.numericUpDownCurrentAge = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCurrentHeight = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCurrentWeight = new System.Windows.Forms.NumericUpDown();
             this.textBoxCurrentName = new System.Windows.Forms.TextBox();
-            this.radioButtonCurrentMale = new System.Windows.Forms.RadioButton();
-            this.radioButtonCurrentFemale = new System.Windows.Forms.RadioButton();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.listBoxUsers = new System.Windows.Forms.ListBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.labelCurrentName = new System.Windows.Forms.Label();
+            this.numericUpDownCurrentAge = new System.Windows.Forms.NumericUpDown();
+            this.label44 = new System.Windows.Forms.Label();
+            this.numericUpDownCurrentHeight = new System.Windows.Forms.NumericUpDown();
+            this.labelCurrentHeight = new System.Windows.Forms.Label();
+            this.numericUpDownCurrentWeight = new System.Windows.Forms.NumericUpDown();
+            this.labelCurrentWeight = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.radioButtonCurrentMale = new System.Windows.Forms.RadioButton();
+            this.labelCurrentAge = new System.Windows.Forms.Label();
+            this.radioButtonCurrentFemale = new System.Windows.Forms.RadioButton();
+            this.labelCurrentGender = new System.Windows.Forms.Label();
+            this.panelProfiles = new System.Windows.Forms.Panel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.labelIndexInfo = new System.Windows.Forms.Label();
+            this.userItemThird = new app.UserItem();
+            this.userItemFirst = new app.UserItem();
+            this.userItemSecond = new app.UserItem();
+            this.buttonArrowUp = new System.Windows.Forms.Button();
+            this.buttonArrowDown = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownHeight = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownWeight = new System.Windows.Forms.NumericUpDown();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.buttonCreate = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.radioButtonAvatarBlue = new System.Windows.Forms.RadioButton();
+            this.radioButtonAvatarGray = new System.Windows.Forms.RadioButton();
+            this.radioButtonAvatarRed = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonCreate = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.numericUpDownWeight = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownHeight = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
             this.panelProfileSetup = new System.Windows.Forms.Panel();
             this.panelPointer = new System.Windows.Forms.Panel();
             this.flowPanelSurveys = new System.Windows.Forms.FlowLayoutPanel();
@@ -170,16 +181,16 @@
             this.pictureBoxClouds = new System.Windows.Forms.PictureBox();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.pictureBoxSportResult = new System.Windows.Forms.PictureBox();
             this.panelActivityResults = new System.Windows.Forms.Panel();
             this.buttonChangeSearchingData = new System.Windows.Forms.Button();
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBMIScale)).BeginInit();
             this.panelQuiz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
@@ -189,13 +200,17 @@
             this.panelMacro.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).BeginInit();
-            this.panelProfiles.SuspendLayout();
+            this.groupBoxEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentWeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
+            this.panelProfiles.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.flowPanelSurveys.SuspendLayout();
             this.panelSurveyMenu.SuspendLayout();
             this.panelSurvey.SuspendLayout();
@@ -208,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTeam)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClouds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).BeginInit();
             this.panelActivityResults.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -233,7 +249,7 @@
             this.buttonBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBMI.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonBMI.Image = global::app.Properties.Resources.buttonBMI;
+            this.buttonBMI.Image = global::app.Properties.Resources.healthy_heart;
             this.buttonBMI.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBMI.Location = new System.Drawing.Point(0, 5);
             this.buttonBMI.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -254,7 +270,7 @@
             this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonActivity.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonActivity.Image = global::app.Properties.Resources.buttonActivity;
+            this.buttonActivity.Image = global::app.Properties.Resources.gym_dumbbell;
             this.buttonActivity.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonActivity.Location = new System.Drawing.Point(0, 89);
             this.buttonActivity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -275,7 +291,7 @@
             this.buttonQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.buttonQuiz.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonQuiz.Image = global::app.Properties.Resources.buttonQuiz;
+            this.buttonQuiz.Image = global::app.Properties.Resources.question_mark_line;
             this.buttonQuiz.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonQuiz.Location = new System.Drawing.Point(0, 173);
             this.buttonQuiz.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -340,7 +356,7 @@
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.buttonProfile.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonProfile.Image = global::app.Properties.Resources.buttonProfile;
+            this.buttonProfile.Image = global::app.Properties.Resources.avatar1;
             this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonProfile.Location = new System.Drawing.Point(0, 425);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -387,7 +403,7 @@
             this.panelBMI.Controls.Add(this.pictureBoxArrow);
             this.panelBMI.Controls.Add(this.labelBMIInterpretation);
             this.panelBMI.Controls.Add(this.labelBMI);
-            this.panelBMI.Controls.Add(this.pictureBox1);
+            this.panelBMI.Controls.Add(this.pictureBoxBMIScale);
             this.panelBMI.Controls.Add(this.label6);
             this.panelBMI.Location = new System.Drawing.Point(280, 50);
             this.panelBMI.Name = "panelBMI";
@@ -397,12 +413,13 @@
             // pictureBoxArrow
             // 
             this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
             this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxArrow.Image = global::app.Properties.Resources.arrow;
             this.pictureBoxArrow.Location = new System.Drawing.Point(75, 200);
             this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrow.Name = "pictureBoxArrow";
             this.pictureBoxArrow.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxArrow.TabIndex = 6;
             this.pictureBoxArrow.TabStop = false;
             // 
@@ -428,15 +445,15 @@
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // pictureBoxBMIScale
             // 
-            this.pictureBox1.BackgroundImage = global::app.Properties.Resources.BMIScale;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 250);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxBMIScale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxBMIScale.Image = global::app.Properties.Resources.BMIScale;
+            this.pictureBoxBMIScale.Location = new System.Drawing.Point(100, 250);
+            this.pictureBoxBMIScale.Name = "pictureBoxBMIScale";
+            this.pictureBoxBMIScale.Size = new System.Drawing.Size(800, 50);
+            this.pictureBoxBMIScale.TabIndex = 3;
+            this.pictureBoxBMIScale.TabStop = false;
             // 
             // label6
             // 
@@ -644,6 +661,16 @@
             this.panelQuizFinished.Name = "panelQuizFinished";
             this.panelQuizFinished.Size = new System.Drawing.Size(1000, 650);
             this.panelQuizFinished.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(287, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(432, 84);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Quiz zakończony";
             // 
             // panelQuizMenu
             // 
@@ -926,120 +953,95 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Makro";
             // 
-            // panelProfiles
+            // groupBoxEdit
             // 
-            this.panelProfiles.Controls.Add(this.buttonEdit);
-            this.panelProfiles.Controls.Add(this.buttonArrowDown);
-            this.panelProfiles.Controls.Add(this.buttonArrowUp);
-            this.panelProfiles.Controls.Add(this.buttonSaveChanges);
-            this.panelProfiles.Controls.Add(this.label17);
-            this.panelProfiles.Controls.Add(this.label18);
-            this.panelProfiles.Controls.Add(this.numericUpDownCurrentAge);
-            this.panelProfiles.Controls.Add(this.numericUpDownCurrentHeight);
-            this.panelProfiles.Controls.Add(this.numericUpDownCurrentWeight);
-            this.panelProfiles.Controls.Add(this.textBoxCurrentName);
-            this.panelProfiles.Controls.Add(this.radioButtonCurrentMale);
-            this.panelProfiles.Controls.Add(this.radioButtonCurrentFemale);
-            this.panelProfiles.Controls.Add(this.label19);
-            this.panelProfiles.Controls.Add(this.label20);
-            this.panelProfiles.Controls.Add(this.label21);
-            this.panelProfiles.Controls.Add(this.label22);
-            this.panelProfiles.Controls.Add(this.label23);
-            this.panelProfiles.Controls.Add(this.label24);
-            this.panelProfiles.Controls.Add(this.buttonDelete);
-            this.panelProfiles.Controls.Add(this.listBoxUsers);
-            this.panelProfiles.Controls.Add(this.label16);
-            this.panelProfiles.Controls.Add(this.label15);
-            this.panelProfiles.Controls.Add(this.label14);
-            this.panelProfiles.Controls.Add(this.numericUpDownAge);
-            this.panelProfiles.Controls.Add(this.numericUpDownHeight);
-            this.panelProfiles.Controls.Add(this.numericUpDownWeight);
-            this.panelProfiles.Controls.Add(this.textBoxName);
-            this.panelProfiles.Controls.Add(this.radioButtonMale);
-            this.panelProfiles.Controls.Add(this.radioButtonFemale);
-            this.panelProfiles.Controls.Add(this.label13);
-            this.panelProfiles.Controls.Add(this.label12);
-            this.panelProfiles.Controls.Add(this.buttonCreate);
-            this.panelProfiles.Controls.Add(this.label11);
-            this.panelProfiles.Controls.Add(this.label10);
-            this.panelProfiles.Controls.Add(this.label9);
-            this.panelProfiles.Controls.Add(this.label8);
-            this.panelProfiles.Controls.Add(this.label7);
-            this.panelProfiles.Controls.Add(this.label1);
-            this.panelProfiles.Location = new System.Drawing.Point(280, 50);
-            this.panelProfiles.Name = "panelProfiles";
-            this.panelProfiles.Size = new System.Drawing.Size(1000, 650);
-            this.panelProfiles.TabIndex = 19;
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(270, 277);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(63, 23);
-            this.buttonEdit.TabIndex = 38;
-            this.buttonEdit.Text = "Edytuj";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
-            // 
-            // buttonArrowDown
-            // 
-            this.buttonArrowDown.Enabled = false;
-            this.buttonArrowDown.Location = new System.Drawing.Point(267, 240);
-            this.buttonArrowDown.Name = "buttonArrowDown";
-            this.buttonArrowDown.Size = new System.Drawing.Size(23, 23);
-            this.buttonArrowDown.TabIndex = 37;
-            this.buttonArrowDown.Text = "▼";
-            this.buttonArrowDown.UseVisualStyleBackColor = true;
-            this.buttonArrowDown.Click += new System.EventHandler(this.ButtonArrowDown_Click);
-            // 
-            // buttonArrowUp
-            // 
-            this.buttonArrowUp.Enabled = false;
-            this.buttonArrowUp.Location = new System.Drawing.Point(267, 212);
-            this.buttonArrowUp.Name = "buttonArrowUp";
-            this.buttonArrowUp.Size = new System.Drawing.Size(23, 23);
-            this.buttonArrowUp.TabIndex = 36;
-            this.buttonArrowUp.Text = "▲";
-            this.buttonArrowUp.UseVisualStyleBackColor = true;
-            this.buttonArrowUp.Click += new System.EventHandler(this.ButtonArrowUp_Click);
+            this.groupBoxEdit.Controls.Add(this.buttonSaveChanges);
+            this.groupBoxEdit.Controls.Add(this.textBoxCurrentName);
+            this.groupBoxEdit.Controls.Add(this.buttonDelete);
+            this.groupBoxEdit.Controls.Add(this.label17);
+            this.groupBoxEdit.Controls.Add(this.labelCurrentName);
+            this.groupBoxEdit.Controls.Add(this.numericUpDownCurrentAge);
+            this.groupBoxEdit.Controls.Add(this.label44);
+            this.groupBoxEdit.Controls.Add(this.numericUpDownCurrentHeight);
+            this.groupBoxEdit.Controls.Add(this.labelCurrentHeight);
+            this.groupBoxEdit.Controls.Add(this.numericUpDownCurrentWeight);
+            this.groupBoxEdit.Controls.Add(this.labelCurrentWeight);
+            this.groupBoxEdit.Controls.Add(this.label41);
+            this.groupBoxEdit.Controls.Add(this.radioButtonCurrentMale);
+            this.groupBoxEdit.Controls.Add(this.labelCurrentAge);
+            this.groupBoxEdit.Controls.Add(this.radioButtonCurrentFemale);
+            this.groupBoxEdit.Controls.Add(this.labelCurrentGender);
+            this.groupBoxEdit.Location = new System.Drawing.Point(73, 360);
+            this.groupBoxEdit.Name = "groupBoxEdit";
+            this.groupBoxEdit.Size = new System.Drawing.Size(382, 282);
+            this.groupBoxEdit.TabIndex = 58;
+            this.groupBoxEdit.TabStop = false;
             // 
             // buttonSaveChanges
             // 
-            this.buttonSaveChanges.Location = new System.Drawing.Point(184, 464);
+            this.buttonSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSaveChanges.FlatAppearance.BorderSize = 0;
+            this.buttonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaveChanges.Image = global::app.Properties.Resources.save;
+            this.buttonSaveChanges.Location = new System.Drawing.Point(199, 216);
             this.buttonSaveChanges.Name = "buttonSaveChanges";
-            this.buttonSaveChanges.Size = new System.Drawing.Size(124, 23);
+            this.buttonSaveChanges.Size = new System.Drawing.Size(41, 44);
             this.buttonSaveChanges.TabIndex = 35;
             this.buttonSaveChanges.Tag = "";
-            this.buttonSaveChanges.Text = "Zapisz zmiany";
             this.buttonSaveChanges.UseVisualStyleBackColor = true;
-            this.buttonSaveChanges.Visible = false;
             this.buttonSaveChanges.Click += new System.EventHandler(this.ButtonSaveChanges_Click);
+            // 
+            // textBoxCurrentName
+            // 
+            this.textBoxCurrentName.AllowDrop = true;
+            this.textBoxCurrentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxCurrentName.Location = new System.Drawing.Point(96, 19);
+            this.textBoxCurrentName.Name = "textBoxCurrentName";
+            this.textBoxCurrentName.Size = new System.Drawing.Size(203, 29);
+            this.textBoxCurrentName.TabIndex = 47;
+            this.textBoxCurrentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxCurrentName.WordWrap = false;
+            this.textBoxCurrentName.TextChanged += new System.EventHandler(this.TextBoxCurrentName_TextChanged);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.FlatAppearance.BorderSize = 0;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Image = global::app.Properties.Resources.delete;
+            this.buttonDelete.Location = new System.Drawing.Point(128, 216);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(38, 44);
+            this.buttonDelete.TabIndex = 19;
+            this.buttonDelete.Tag = "";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(213, 408);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(172, 137);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(18, 13);
-            this.label17.TabIndex = 34;
-            this.label17.Tag = "";
+            this.label17.Size = new System.Drawing.Size(28, 24);
+            this.label17.TabIndex = 52;
             this.label17.Text = "lat";
-            this.label17.Visible = false;
             // 
-            // label18
+            // labelCurrentName
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(119, 330);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(26, 13);
-            this.label18.TabIndex = 33;
-            this.label18.Tag = "";
-            this.label18.Text = "Imię";
-            this.label18.Visible = false;
+            this.labelCurrentName.AutoSize = true;
+            this.labelCurrentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentName.Location = new System.Drawing.Point(38, 22);
+            this.labelCurrentName.Name = "labelCurrentName";
+            this.labelCurrentName.Size = new System.Drawing.Size(45, 24);
+            this.labelCurrentName.TabIndex = 51;
+            this.labelCurrentName.Text = "Imię";
+            this.labelCurrentName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // numericUpDownCurrentAge
             // 
-            this.numericUpDownCurrentAge.Location = new System.Drawing.Point(155, 406);
+            this.numericUpDownCurrentAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownCurrentAge.Location = new System.Drawing.Point(96, 134);
             this.numericUpDownCurrentAge.Maximum = new decimal(new int[] {
             200,
             0,
@@ -1051,21 +1053,31 @@
             0,
             0});
             this.numericUpDownCurrentAge.Name = "numericUpDownCurrentAge";
-            this.numericUpDownCurrentAge.Size = new System.Drawing.Size(49, 20);
-            this.numericUpDownCurrentAge.TabIndex = 32;
-            this.numericUpDownCurrentAge.Tag = "";
+            this.numericUpDownCurrentAge.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownCurrentAge.TabIndex = 50;
             this.numericUpDownCurrentAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentAge.Value = new decimal(new int[] {
             35,
             0,
             0,
             0});
-            this.numericUpDownCurrentAge.Visible = false;
             this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentAge_ValueChanged);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label44.Location = new System.Drawing.Point(172, 97);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(36, 24);
+            this.label44.TabIndex = 39;
+            this.label44.Text = "cm";
             // 
             // numericUpDownCurrentHeight
             // 
-            this.numericUpDownCurrentHeight.Location = new System.Drawing.Point(155, 380);
+            this.numericUpDownCurrentHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDownCurrentHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownCurrentHeight.Location = new System.Drawing.Point(96, 95);
             this.numericUpDownCurrentHeight.Maximum = new decimal(new int[] {
             300,
             0,
@@ -1077,22 +1089,32 @@
             0,
             0});
             this.numericUpDownCurrentHeight.Name = "numericUpDownCurrentHeight";
-            this.numericUpDownCurrentHeight.Size = new System.Drawing.Size(49, 20);
-            this.numericUpDownCurrentHeight.TabIndex = 31;
-            this.numericUpDownCurrentHeight.Tag = "";
+            this.numericUpDownCurrentHeight.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownCurrentHeight.TabIndex = 49;
             this.numericUpDownCurrentHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentHeight.Value = new decimal(new int[] {
             170,
             0,
             0,
             0});
-            this.numericUpDownCurrentHeight.Visible = false;
             this.numericUpDownCurrentHeight.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentHeight_ValueChanged);
+            // 
+            // labelCurrentHeight
+            // 
+            this.labelCurrentHeight.AutoSize = true;
+            this.labelCurrentHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentHeight.Location = new System.Drawing.Point(16, 98);
+            this.labelCurrentHeight.Name = "labelCurrentHeight";
+            this.labelCurrentHeight.Size = new System.Drawing.Size(67, 24);
+            this.labelCurrentHeight.TabIndex = 40;
+            this.labelCurrentHeight.Text = "Wzrost";
+            this.labelCurrentHeight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // numericUpDownCurrentWeight
             // 
             this.numericUpDownCurrentWeight.DecimalPlaces = 1;
-            this.numericUpDownCurrentWeight.Location = new System.Drawing.Point(155, 353);
+            this.numericUpDownCurrentWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownCurrentWeight.Location = new System.Drawing.Point(96, 56);
             this.numericUpDownCurrentWeight.Maximum = new decimal(new int[] {
             350,
             0,
@@ -1104,223 +1126,458 @@
             0,
             0});
             this.numericUpDownCurrentWeight.Name = "numericUpDownCurrentWeight";
-            this.numericUpDownCurrentWeight.Size = new System.Drawing.Size(49, 20);
-            this.numericUpDownCurrentWeight.TabIndex = 30;
-            this.numericUpDownCurrentWeight.Tag = "";
+            this.numericUpDownCurrentWeight.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownCurrentWeight.TabIndex = 48;
             this.numericUpDownCurrentWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentWeight.Value = new decimal(new int[] {
             60,
             0,
             0,
             0});
-            this.numericUpDownCurrentWeight.Visible = false;
             this.numericUpDownCurrentWeight.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentWeight_ValueChanged);
             // 
-            // textBoxCurrentName
+            // labelCurrentWeight
             // 
-            this.textBoxCurrentName.Location = new System.Drawing.Point(151, 327);
-            this.textBoxCurrentName.Name = "textBoxCurrentName";
-            this.textBoxCurrentName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCurrentName.TabIndex = 29;
-            this.textBoxCurrentName.Tag = "";
-            this.textBoxCurrentName.Visible = false;
-            this.textBoxCurrentName.TextChanged += new System.EventHandler(this.TextBoxCurrentName_TextChanged);
+            this.labelCurrentWeight.AutoSize = true;
+            this.labelCurrentWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentWeight.Location = new System.Drawing.Point(25, 58);
+            this.labelCurrentWeight.Name = "labelCurrentWeight";
+            this.labelCurrentWeight.Size = new System.Drawing.Size(59, 24);
+            this.labelCurrentWeight.TabIndex = 41;
+            this.labelCurrentWeight.Text = "Waga";
+            this.labelCurrentWeight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label41.Location = new System.Drawing.Point(172, 60);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(30, 24);
+            this.label41.TabIndex = 42;
+            this.label41.Text = "kg";
             // 
             // radioButtonCurrentMale
             // 
+            this.radioButtonCurrentMale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonCurrentMale.AutoSize = true;
-            this.radioButtonCurrentMale.Location = new System.Drawing.Point(151, 433);
+            this.radioButtonCurrentMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonCurrentMale.Location = new System.Drawing.Point(96, 171);
             this.radioButtonCurrentMale.Name = "radioButtonCurrentMale";
-            this.radioButtonCurrentMale.Size = new System.Drawing.Size(78, 17);
-            this.radioButtonCurrentMale.TabIndex = 28;
+            this.radioButtonCurrentMale.Size = new System.Drawing.Size(114, 34);
+            this.radioButtonCurrentMale.TabIndex = 46;
             this.radioButtonCurrentMale.TabStop = true;
-            this.radioButtonCurrentMale.Tag = "";
             this.radioButtonCurrentMale.Text = "Mężczyzna";
             this.radioButtonCurrentMale.UseVisualStyleBackColor = true;
-            this.radioButtonCurrentMale.Visible = false;
             this.radioButtonCurrentMale.CheckedChanged += new System.EventHandler(this.RadioButtonCurrentMale_CheckedChanged);
+            // 
+            // labelCurrentAge
+            // 
+            this.labelCurrentAge.AutoSize = true;
+            this.labelCurrentAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentAge.Location = new System.Drawing.Point(31, 138);
+            this.labelCurrentAge.Name = "labelCurrentAge";
+            this.labelCurrentAge.Size = new System.Drawing.Size(52, 24);
+            this.labelCurrentAge.TabIndex = 43;
+            this.labelCurrentAge.Text = "Wiek";
+            this.labelCurrentAge.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // radioButtonCurrentFemale
             // 
+            this.radioButtonCurrentFemale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonCurrentFemale.AutoSize = true;
-            this.radioButtonCurrentFemale.Location = new System.Drawing.Point(232, 433);
+            this.radioButtonCurrentFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonCurrentFemale.Location = new System.Drawing.Point(216, 171);
             this.radioButtonCurrentFemale.Name = "radioButtonCurrentFemale";
-            this.radioButtonCurrentFemale.Size = new System.Drawing.Size(61, 17);
-            this.radioButtonCurrentFemale.TabIndex = 27;
+            this.radioButtonCurrentFemale.Size = new System.Drawing.Size(83, 34);
+            this.radioButtonCurrentFemale.TabIndex = 45;
             this.radioButtonCurrentFemale.TabStop = true;
-            this.radioButtonCurrentFemale.Tag = "";
             this.radioButtonCurrentFemale.Text = "Kobieta";
             this.radioButtonCurrentFemale.UseVisualStyleBackColor = true;
-            this.radioButtonCurrentFemale.Visible = false;
             this.radioButtonCurrentFemale.CheckedChanged += new System.EventHandler(this.RadioButtonCurrentFemale_CheckedChanged);
             // 
-            // label19
+            // labelCurrentGender
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(115, 435);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(30, 13);
-            this.label19.TabIndex = 26;
-            this.label19.Tag = "";
-            this.label19.Text = "Płeć";
-            this.label19.Visible = false;
+            this.labelCurrentGender.AutoSize = true;
+            this.labelCurrentGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentGender.Location = new System.Drawing.Point(39, 176);
+            this.labelCurrentGender.Name = "labelCurrentGender";
+            this.labelCurrentGender.Size = new System.Drawing.Size(51, 24);
+            this.labelCurrentGender.TabIndex = 44;
+            this.labelCurrentGender.Text = "Płeć";
+            this.labelCurrentGender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label20
+            // panelProfiles
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(117, 408);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(32, 13);
-            this.label20.TabIndex = 25;
-            this.label20.Tag = "";
-            this.label20.Text = "Wiek";
-            this.label20.Visible = false;
+            this.panelProfiles.Controls.Add(this.groupBoxEdit);
+            this.panelProfiles.Controls.Add(this.groupBox5);
+            this.panelProfiles.Controls.Add(this.groupBox4);
+            this.panelProfiles.Location = new System.Drawing.Point(280, 50);
+            this.panelProfiles.Name = "panelProfiles";
+            this.panelProfiles.Size = new System.Drawing.Size(1000, 650);
+            this.panelProfiles.TabIndex = 19;
             // 
-            // label21
+            // groupBox5
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(212, 355);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(19, 13);
-            this.label21.TabIndex = 24;
-            this.label21.Tag = "";
-            this.label21.Text = "kg";
-            this.label21.Visible = false;
+            this.groupBox5.Controls.Add(this.labelIndexInfo);
+            this.groupBox5.Controls.Add(this.userItemThird);
+            this.groupBox5.Controls.Add(this.userItemFirst);
+            this.groupBox5.Controls.Add(this.userItemSecond);
+            this.groupBox5.Controls.Add(this.buttonArrowUp);
+            this.groupBox5.Controls.Add(this.buttonArrowDown);
+            this.groupBox5.Controls.Add(this.buttonEdit);
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Location = new System.Drawing.Point(73, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(382, 354);
+            this.groupBox5.TabIndex = 57;
+            this.groupBox5.TabStop = false;
             // 
-            // label22
+            // labelIndexInfo
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(109, 355);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(36, 13);
-            this.label22.TabIndex = 23;
-            this.label22.Tag = "";
-            this.label22.Text = "Waga";
-            this.label22.Visible = false;
+            this.labelIndexInfo.AutoSize = true;
+            this.labelIndexInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelIndexInfo.Location = new System.Drawing.Point(328, 248);
+            this.labelIndexInfo.Name = "labelIndexInfo";
+            this.labelIndexInfo.Size = new System.Drawing.Size(46, 29);
+            this.labelIndexInfo.TabIndex = 53;
+            this.labelIndexInfo.Text = "0/0";
+            this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label23
+            // userItemThird
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(109, 382);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(40, 13);
-            this.label23.TabIndex = 22;
-            this.label23.Tag = "";
-            this.label23.Text = "Wzrost";
-            this.label23.Visible = false;
+            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
+            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemThird.Location = new System.Drawing.Point(27, 260);
+            this.userItemThird.Name = "userItemThird";
+            this.userItemThird.Size = new System.Drawing.Size(291, 76);
+            this.userItemThird.TabIndex = 55;
+            this.userItemThird.UserName = null;
+            this.userItemThird.Visible = false;
             // 
-            // label24
+            // userItemFirst
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(210, 382);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(21, 13);
-            this.label24.TabIndex = 21;
-            this.label24.Tag = "";
-            this.label24.Text = "cm";
-            this.label24.Visible = false;
+            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
+            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
+            this.userItemFirst.Name = "userItemFirst";
+            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
+            this.userItemFirst.TabIndex = 53;
+            this.userItemFirst.UserName = null;
+            this.userItemFirst.Visible = false;
             // 
-            // buttonDelete
+            // userItemSecond
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(103, 464);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 19;
-            this.buttonDelete.Tag = "";
-            this.buttonDelete.Text = "Usuń";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Visible = false;
-            this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click_1);
+            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
+            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
+            this.userItemSecond.Name = "userItemSecond";
+            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
+            this.userItemSecond.TabIndex = 54;
+            this.userItemSecond.UserName = null;
+            this.userItemSecond.Visible = false;
             // 
-            // listBoxUsers
+            // buttonArrowUp
             // 
-            this.listBoxUsers.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.listBoxUsers.FormattingEnabled = true;
-            this.listBoxUsers.Location = new System.Drawing.Point(141, 212);
-            this.listBoxUsers.Name = "listBoxUsers";
-            this.listBoxUsers.Size = new System.Drawing.Size(120, 95);
-            this.listBoxUsers.TabIndex = 18;
-            this.listBoxUsers.SelectedIndexChanged += new System.EventHandler(this.ListBoxUsers_SelectedIndexChanged);
+            this.buttonArrowUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonArrowUp.Enabled = false;
+            this.buttonArrowUp.FlatAppearance.BorderSize = 0;
+            this.buttonArrowUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonArrowUp.Image = global::app.Properties.Resources.arrowUp;
+            this.buttonArrowUp.Location = new System.Drawing.Point(324, 93);
+            this.buttonArrowUp.Name = "buttonArrowUp";
+            this.buttonArrowUp.Size = new System.Drawing.Size(48, 49);
+            this.buttonArrowUp.TabIndex = 36;
+            this.buttonArrowUp.UseVisualStyleBackColor = true;
+            this.buttonArrowUp.Click += new System.EventHandler(this.ButtonArrowUp_Click);
+            // 
+            // buttonArrowDown
+            // 
+            this.buttonArrowDown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonArrowDown.Enabled = false;
+            this.buttonArrowDown.FlatAppearance.BorderSize = 0;
+            this.buttonArrowDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonArrowDown.Image = global::app.Properties.Resources.arrowDown;
+            this.buttonArrowDown.Location = new System.Drawing.Point(324, 148);
+            this.buttonArrowDown.Name = "buttonArrowDown";
+            this.buttonArrowDown.Size = new System.Drawing.Size(48, 49);
+            this.buttonArrowDown.TabIndex = 37;
+            this.buttonArrowDown.UseVisualStyleBackColor = true;
+            this.buttonArrowDown.Click += new System.EventHandler(this.ButtonArrowDown_Click);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEdit.FlatAppearance.BorderSize = 0;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Image = global::app.Properties.Resources.edit;
+            this.buttonEdit.Location = new System.Drawing.Point(324, 278);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(51, 49);
+            this.buttonEdit.TabIndex = 38;
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.Location = new System.Drawing.Point(136, 128);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(90, 24);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(157, 25);
+            this.label16.Size = new System.Drawing.Size(207, 33);
             this.label16.TabIndex = 17;
             this.label16.Text = "Wybierz profil";
             // 
-            // label15
+            // groupBox4
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(785, 303);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(18, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "lat";
+            this.groupBox4.Controls.Add(this.groupBox6);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.buttonCreate);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.radioButtonFemale);
+            this.groupBox4.Controls.Add(this.radioButtonMale);
+            this.groupBox4.Controls.Add(this.textBoxName);
+            this.groupBox4.Controls.Add(this.numericUpDownWeight);
+            this.groupBox4.Controls.Add(this.numericUpDownHeight);
+            this.groupBox4.Controls.Add(this.numericUpDownAge);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Location = new System.Drawing.Point(606, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(311, 508);
+            this.groupBox4.TabIndex = 56;
+            this.groupBox4.TabStop = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox6.Controls.Add(this.radioButtonAvatarBlue);
+            this.groupBox6.Controls.Add(this.radioButtonAvatarGray);
+            this.groupBox6.Controls.Add(this.radioButtonAvatarRed);
+            this.groupBox6.ForeColor = System.Drawing.Color.Transparent;
+            this.groupBox6.Location = new System.Drawing.Point(47, 337);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(228, 87);
+            this.groupBox6.TabIndex = 23;
+            this.groupBox6.TabStop = false;
+            // 
+            // radioButtonAvatarBlue
+            // 
+            this.radioButtonAvatarBlue.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonAvatarBlue.AutoSize = true;
+            this.radioButtonAvatarBlue.FlatAppearance.BorderSize = 0;
+            this.radioButtonAvatarBlue.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Control;
+            this.radioButtonAvatarBlue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButtonAvatarBlue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonAvatarBlue.Image = global::app.Properties.Resources.profileBlue1;
+            this.radioButtonAvatarBlue.Location = new System.Drawing.Point(3, 8);
+            this.radioButtonAvatarBlue.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButtonAvatarBlue.Name = "radioButtonAvatarBlue";
+            this.radioButtonAvatarBlue.Size = new System.Drawing.Size(76, 76);
+            this.radioButtonAvatarBlue.TabIndex = 21;
+            this.radioButtonAvatarBlue.TabStop = true;
+            this.radioButtonAvatarBlue.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonAvatarGray
+            // 
+            this.radioButtonAvatarGray.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonAvatarGray.AutoSize = true;
+            this.radioButtonAvatarGray.FlatAppearance.BorderSize = 0;
+            this.radioButtonAvatarGray.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Control;
+            this.radioButtonAvatarGray.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButtonAvatarGray.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonAvatarGray.Image = global::app.Properties.Resources.profileGray;
+            this.radioButtonAvatarGray.Location = new System.Drawing.Point(149, 8);
+            this.radioButtonAvatarGray.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButtonAvatarGray.Name = "radioButtonAvatarGray";
+            this.radioButtonAvatarGray.Size = new System.Drawing.Size(76, 76);
+            this.radioButtonAvatarGray.TabIndex = 22;
+            this.radioButtonAvatarGray.TabStop = true;
+            this.radioButtonAvatarGray.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonAvatarRed
+            // 
+            this.radioButtonAvatarRed.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonAvatarRed.AutoSize = true;
+            this.radioButtonAvatarRed.FlatAppearance.BorderSize = 0;
+            this.radioButtonAvatarRed.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Control;
+            this.radioButtonAvatarRed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButtonAvatarRed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonAvatarRed.Image = global::app.Properties.Resources.profileRed;
+            this.radioButtonAvatarRed.Location = new System.Drawing.Point(76, 8);
+            this.radioButtonAvatarRed.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButtonAvatarRed.Name = "radioButtonAvatarRed";
+            this.radioButtonAvatarRed.Size = new System.Drawing.Size(76, 76);
+            this.radioButtonAvatarRed.TabIndex = 20;
+            this.radioButtonAvatarRed.TabStop = true;
+            this.radioButtonAvatarRed.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(122, 309);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 24);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Zdjęcie";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // buttonCreate
+            // 
+            this.buttonCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonCreate.FlatAppearance.BorderSize = 0;
+            this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCreate.ForeColor = System.Drawing.Color.White;
+            this.buttonCreate.Location = new System.Drawing.Point(95, 439);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(151, 48);
+            this.buttonCreate.TabIndex = 6;
+            this.buttonCreate.Text = "Utwórz";
+            this.buttonCreate.UseVisualStyleBackColor = false;
+            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(75, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(171, 33);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Nowy profil";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(691, 225);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(29, 86);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(26, 13);
+            this.label14.Size = new System.Drawing.Size(45, 24);
             this.label14.TabIndex = 15;
             this.label14.Text = "Imię";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // numericUpDownAge
+            // label8
             // 
-            this.numericUpDownAge.Location = new System.Drawing.Point(727, 301);
-            this.numericUpDownAge.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.numericUpDownAge.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownAge.Name = "numericUpDownAge";
-            this.numericUpDownAge.Size = new System.Drawing.Size(49, 20);
-            this.numericUpDownAge.TabIndex = 14;
-            this.numericUpDownAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDownAge.Value = new decimal(new int[] {
-            35,
-            0,
-            0,
-            0});
-            this.numericUpDownAge.ValueChanged += new System.EventHandler(this.NumericUpDownAge_ValueChanged);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(157, 163);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 24);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "cm";
             // 
-            // numericUpDownHeight
+            // label9
             // 
-            this.numericUpDownHeight.Location = new System.Drawing.Point(727, 275);
-            this.numericUpDownHeight.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.numericUpDownHeight.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownHeight.Name = "numericUpDownHeight";
-            this.numericUpDownHeight.Size = new System.Drawing.Size(49, 20);
-            this.numericUpDownHeight.TabIndex = 13;
-            this.numericUpDownHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDownHeight.Value = new decimal(new int[] {
-            170,
-            0,
-            0,
-            0});
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(1, 163);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 24);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Wzrost";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(10, 123);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 24);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Waga";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(157, 126);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 24);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "kg";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(16, 205);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 24);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Wiek";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(20, 251);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 24);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Płeć";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // radioButtonFemale
+            // 
+            this.radioButtonFemale.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonFemale.Location = new System.Drawing.Point(201, 246);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(83, 34);
+            this.radioButtonFemale.TabIndex = 9;
+            this.radioButtonFemale.TabStop = true;
+            this.radioButtonFemale.Text = "Kobieta";
+            this.radioButtonFemale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonFemale.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMale
+            // 
+            this.radioButtonMale.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonMale.Location = new System.Drawing.Point(81, 246);
+            this.radioButtonMale.Name = "radioButtonMale";
+            this.radioButtonMale.Size = new System.Drawing.Size(114, 34);
+            this.radioButtonMale.TabIndex = 10;
+            this.radioButtonMale.TabStop = true;
+            this.radioButtonMale.Text = "Mężczyzna";
+            this.radioButtonMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonMale.UseVisualStyleBackColor = true;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.AllowDrop = true;
+            this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxName.Location = new System.Drawing.Point(81, 83);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(203, 29);
+            this.textBoxName.TabIndex = 11;
+            this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxName.WordWrap = false;
             // 
             // numericUpDownWeight
             // 
             this.numericUpDownWeight.DecimalPlaces = 1;
-            this.numericUpDownWeight.Location = new System.Drawing.Point(727, 248);
+            this.numericUpDownWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownWeight.Location = new System.Drawing.Point(81, 122);
             this.numericUpDownWeight.Maximum = new decimal(new int[] {
             350,
             0,
@@ -1332,7 +1589,7 @@
             0,
             0});
             this.numericUpDownWeight.Name = "numericUpDownWeight";
-            this.numericUpDownWeight.Size = new System.Drawing.Size(49, 20);
+            this.numericUpDownWeight.Size = new System.Drawing.Size(70, 29);
             this.numericUpDownWeight.TabIndex = 12;
             this.numericUpDownWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownWeight.Value = new decimal(new int[] {
@@ -1341,118 +1598,65 @@
             0,
             0});
             // 
-            // textBoxName
+            // numericUpDownHeight
             // 
-            this.textBoxName.Location = new System.Drawing.Point(723, 222);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxName.TabIndex = 11;
+            this.numericUpDownHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDownHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownHeight.Location = new System.Drawing.Point(81, 161);
+            this.numericUpDownHeight.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numericUpDownHeight.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownHeight.Name = "numericUpDownHeight";
+            this.numericUpDownHeight.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownHeight.TabIndex = 13;
+            this.numericUpDownHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownHeight.Value = new decimal(new int[] {
+            170,
+            0,
+            0,
+            0});
             // 
-            // radioButtonMale
+            // numericUpDownAge
             // 
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Location = new System.Drawing.Point(723, 328);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(78, 17);
-            this.radioButtonMale.TabIndex = 10;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.Text = "Mężczyzna";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
+            this.numericUpDownAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownAge.Location = new System.Drawing.Point(81, 202);
+            this.numericUpDownAge.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.numericUpDownAge.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownAge.Name = "numericUpDownAge";
+            this.numericUpDownAge.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownAge.TabIndex = 14;
+            this.numericUpDownAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownAge.Value = new decimal(new int[] {
+            35,
+            0,
+            0,
+            0});
+            this.numericUpDownAge.ValueChanged += new System.EventHandler(this.NumericUpDownAge_ValueChanged);
             // 
-            // radioButtonFemale
+            // label15
             // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Location = new System.Drawing.Point(804, 328);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(61, 17);
-            this.radioButtonFemale.TabIndex = 9;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.Text = "Kobieta";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(687, 330);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(30, 13);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Płeć";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(689, 303);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(32, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Wiek";
-            // 
-            // buttonCreate
-            // 
-            this.buttonCreate.Location = new System.Drawing.Point(695, 407);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(170, 48);
-            this.buttonCreate.TabIndex = 6;
-            this.buttonCreate.Text = "Utwórz";
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(784, 250);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 13);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "kg";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(681, 250);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 13);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Waga";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(681, 277);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Wzrost";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(782, 277);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "cm";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(712, 128);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 25);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Nowy profil";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(418, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Profile";
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(157, 205);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(28, 24);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "lat";
             // 
             // panelProfileSetup
             // 
@@ -1851,7 +2055,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(2)))));
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
@@ -2075,8 +2279,17 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
+            // pictureBoxSportResult
+            // 
+            this.pictureBoxSportResult.Location = new System.Drawing.Point(275, 172);
+            this.pictureBoxSportResult.Name = "pictureBoxSportResult";
+            this.pictureBoxSportResult.Size = new System.Drawing.Size(450, 300);
+            this.pictureBoxSportResult.TabIndex = 23;
+            this.pictureBoxSportResult.TabStop = false;
+            // 
             // panelActivityResults
             // 
+            this.panelActivityResults.Controls.Add(this.pictureBoxSportResult);
             this.panelActivityResults.Controls.Add(this.buttonChangeSearchingData);
             this.panelActivityResults.Controls.Add(this.labelActivityResult);
             this.panelActivityResults.Controls.Add(this.label4);
@@ -2088,11 +2301,11 @@
             // 
             // buttonChangeSearchingData
             // 
-            this.buttonChangeSearchingData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(2)))));
+            this.buttonChangeSearchingData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonChangeSearchingData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonChangeSearchingData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonChangeSearchingData.ForeColor = System.Drawing.Color.White;
-            this.buttonChangeSearchingData.Location = new System.Drawing.Point(623, 550);
+            this.buttonChangeSearchingData.Location = new System.Drawing.Point(503, 571);
             this.buttonChangeSearchingData.Name = "buttonChangeSearchingData";
             this.buttonChangeSearchingData.Size = new System.Drawing.Size(229, 46);
             this.buttonChangeSearchingData.TabIndex = 22;
@@ -2104,7 +2317,7 @@
             // 
             this.labelActivityResult.AutoSize = true;
             this.labelActivityResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelActivityResult.Location = new System.Drawing.Point(425, 423);
+            this.labelActivityResult.Location = new System.Drawing.Point(450, 486);
             this.labelActivityResult.Name = "labelActivityResult";
             this.labelActivityResult.Size = new System.Drawing.Size(100, 29);
             this.labelActivityResult.TabIndex = 21;
@@ -2115,7 +2328,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(371, 96);
+            this.label4.Location = new System.Drawing.Point(376, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(248, 29);
             this.label4.TabIndex = 20;
@@ -2123,11 +2336,11 @@
             // 
             // buttonShowNext
             // 
-            this.buttonShowNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(2)))));
+            this.buttonShowNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonShowNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonShowNext.ForeColor = System.Drawing.Color.White;
-            this.buttonShowNext.Location = new System.Drawing.Point(365, 550);
+            this.buttonShowNext.Location = new System.Drawing.Point(267, 571);
             this.buttonShowNext.Name = "buttonShowNext";
             this.buttonShowNext.Size = new System.Drawing.Size(229, 46);
             this.buttonShowNext.TabIndex = 19;
@@ -2135,26 +2348,18 @@
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(287, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(432, 84);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Quiz zakończony";
-            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelBMI);
+            this.Controls.Add(this.panelActivityResults);
+            this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelActivity);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelQuiz);
-            this.Controls.Add(this.panelActivityResults);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelQuizMenu);
@@ -2163,9 +2368,7 @@
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.panelProfileSetup);
             this.Controls.Add(this.flowLayoutPanelSidebar);
-            this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelMacro);
-            this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2178,7 +2381,7 @@
             this.panelBMI.ResumeLayout(false);
             this.panelBMI.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBMIScale)).EndInit();
             this.panelQuiz.ResumeLayout(false);
             this.panelQuiz.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
@@ -2193,14 +2396,21 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).EndInit();
-            this.panelProfiles.ResumeLayout(false);
-            this.panelProfiles.PerformLayout();
+            this.groupBoxEdit.ResumeLayout(false);
+            this.groupBoxEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentWeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
+            this.panelProfiles.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             this.flowPanelSurveys.ResumeLayout(false);
             this.panelSurveyMenu.ResumeLayout(false);
             this.panelSurveyMenu.PerformLayout();
@@ -2217,6 +2427,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClouds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).EndInit();
             this.panelActivityResults.ResumeLayout(false);
             this.panelActivityResults.PerformLayout();
             this.ResumeLayout(false);
@@ -2238,9 +2449,7 @@
         private System.Windows.Forms.Panel panelMacro;
         private System.Windows.Forms.Panel panelProfiles;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label labelQuiz;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown numericUpDownAge;
@@ -2257,25 +2466,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox listBoxUsers;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown numericUpDownCurrentAge;
-        private System.Windows.Forms.NumericUpDown numericUpDownCurrentHeight;
-        private System.Windows.Forms.NumericUpDown numericUpDownCurrentWeight;
-        private System.Windows.Forms.TextBox textBoxCurrentName;
-        private System.Windows.Forms.RadioButton radioButtonCurrentMale;
-        private System.Windows.Forms.RadioButton radioButtonCurrentFemale;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSaveChanges;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxBMIScale;
         private System.Windows.Forms.Label labelBMI;
         private System.Windows.Forms.Label labelBMIInterpretation;
         private System.Windows.Forms.Button buttonArrowDown;
@@ -2363,6 +2557,34 @@
         private System.Windows.Forms.Label labelActivityResult;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonShowNext;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label labelCurrentName;
+        private System.Windows.Forms.NumericUpDown numericUpDownCurrentAge;
+        private System.Windows.Forms.NumericUpDown numericUpDownCurrentHeight;
+        private System.Windows.Forms.NumericUpDown numericUpDownCurrentWeight;
+        private System.Windows.Forms.TextBox textBoxCurrentName;
+        private System.Windows.Forms.RadioButton radioButtonCurrentMale;
+        private System.Windows.Forms.RadioButton radioButtonCurrentFemale;
+        private System.Windows.Forms.Label labelCurrentGender;
+        private System.Windows.Forms.Label labelCurrentAge;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label labelCurrentWeight;
+        private System.Windows.Forms.Label labelCurrentHeight;
+        private System.Windows.Forms.Label label44;
+        private UserItem userItemFirst;
+        private UserItem userItemThird;
+        private UserItem userItemSecond;
+        private System.Windows.Forms.GroupBox groupBoxEdit;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label labelIndexInfo;
+        private System.Windows.Forms.RadioButton radioButtonAvatarRed;
+        private System.Windows.Forms.RadioButton radioButtonAvatarBlue;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButtonAvatarGray;
+        private System.Windows.Forms.PictureBox pictureBoxSportResult;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label labelQuiz;
         private System.Windows.Forms.Panel panelQuizFinished;
         private System.Windows.Forms.Panel panelQuizMenu;
         private System.Windows.Forms.Label label39;
@@ -2372,5 +2594,5 @@
         private System.Windows.Forms.Button buttonSurveyA;
         private System.Windows.Forms.Button buttonSurveyB;
         private System.Windows.Forms.Label label2;
-    }   
+    }
 }
