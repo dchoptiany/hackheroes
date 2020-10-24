@@ -104,6 +104,9 @@
             this.panelProfiles = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.labelIndexInfo = new System.Windows.Forms.Label();
+            this.userItemThird = new app.UserItem();
+            this.userItemFirst = new app.UserItem();
+            this.userItemSecond = new app.UserItem();
             this.buttonArrowUp = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -133,12 +136,6 @@
             this.panelProfileSetup = new System.Windows.Forms.Panel();
             this.panelPointer = new System.Windows.Forms.Panel();
             this.flowPanelSurveys = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonSurvey1 = new System.Windows.Forms.Button();
-            this.buttonSurvey2 = new System.Windows.Forms.Button();
-            this.buttonSurvey3 = new System.Windows.Forms.Button();
-            this.buttonSurvey4 = new System.Windows.Forms.Button();
-            this.buttonSurvey5 = new System.Windows.Forms.Button();
-            this.buttonSurvey6 = new System.Windows.Forms.Button();
             this.labelSurveyTitle = new System.Windows.Forms.Label();
             this.panelSurveyMenu = new System.Windows.Forms.Panel();
             this.panelSurvey = new System.Windows.Forms.Panel();
@@ -184,9 +181,6 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
-            this.userItemThird = new app.UserItem();
-            this.userItemFirst = new app.UserItem();
-            this.userItemSecond = new app.UserItem();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -211,7 +205,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
-            this.flowPanelSurveys.SuspendLayout();
             this.panelSurveyMenu.SuspendLayout();
             this.panelSurvey.SuspendLayout();
             this.tableLayoutPanelSurveyAnswers.SuspendLayout();
@@ -1244,6 +1237,42 @@
             this.labelIndexInfo.Text = "0/0";
             this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // userItemThird
+            // 
+            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
+            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemThird.Location = new System.Drawing.Point(27, 260);
+            this.userItemThird.Name = "userItemThird";
+            this.userItemThird.Size = new System.Drawing.Size(291, 76);
+            this.userItemThird.TabIndex = 55;
+            this.userItemThird.UserName = null;
+            this.userItemThird.Visible = false;
+            // 
+            // userItemFirst
+            // 
+            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
+            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
+            this.userItemFirst.Name = "userItemFirst";
+            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
+            this.userItemFirst.TabIndex = 53;
+            this.userItemFirst.UserName = null;
+            this.userItemFirst.Visible = false;
+            // 
+            // userItemSecond
+            // 
+            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
+            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
+            this.userItemSecond.Name = "userItemSecond";
+            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
+            this.userItemSecond.TabIndex = 54;
+            this.userItemSecond.UserName = null;
+            this.userItemSecond.Visible = false;
+            // 
             // buttonArrowUp
             // 
             this.buttonArrowUp.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1639,100 +1668,10 @@
             // 
             // flowPanelSurveys
             // 
-            this.flowPanelSurveys.Controls.Add(this.buttonSurvey1);
-            this.flowPanelSurveys.Controls.Add(this.buttonSurvey2);
-            this.flowPanelSurveys.Controls.Add(this.buttonSurvey3);
-            this.flowPanelSurveys.Controls.Add(this.buttonSurvey4);
-            this.flowPanelSurveys.Controls.Add(this.buttonSurvey5);
-            this.flowPanelSurveys.Controls.Add(this.buttonSurvey6);
             this.flowPanelSurveys.Location = new System.Drawing.Point(100, 100);
             this.flowPanelSurveys.Name = "flowPanelSurveys";
             this.flowPanelSurveys.Size = new System.Drawing.Size(800, 500);
             this.flowPanelSurveys.TabIndex = 2;
-            // 
-            // buttonSurvey1
-            // 
-            this.buttonSurvey1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey1.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey1.Location = new System.Drawing.Point(0, 0);
-            this.buttonSurvey1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.buttonSurvey1.Name = "buttonSurvey1";
-            this.buttonSurvey1.Size = new System.Drawing.Size(800, 75);
-            this.buttonSurvey1.TabIndex = 0;
-            this.buttonSurvey1.Text = "<title>";
-            this.buttonSurvey1.UseVisualStyleBackColor = true;
-            this.buttonSurvey1.Visible = false;
-            this.buttonSurvey1.Click += new System.EventHandler(this.ButtonSurveyTitle_Clicked);
-            // 
-            // buttonSurvey2
-            // 
-            this.buttonSurvey2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey2.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey2.Location = new System.Drawing.Point(0, 85);
-            this.buttonSurvey2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.buttonSurvey2.Name = "buttonSurvey2";
-            this.buttonSurvey2.Size = new System.Drawing.Size(800, 75);
-            this.buttonSurvey2.TabIndex = 1;
-            this.buttonSurvey2.Text = "<title>";
-            this.buttonSurvey2.UseVisualStyleBackColor = true;
-            this.buttonSurvey2.Visible = false;
-            this.buttonSurvey2.Click += new System.EventHandler(this.ButtonSurveyTitle_Clicked);
-            // 
-            // buttonSurvey3
-            // 
-            this.buttonSurvey3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey3.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey3.Location = new System.Drawing.Point(0, 170);
-            this.buttonSurvey3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.buttonSurvey3.Name = "buttonSurvey3";
-            this.buttonSurvey3.Size = new System.Drawing.Size(800, 75);
-            this.buttonSurvey3.TabIndex = 2;
-            this.buttonSurvey3.Text = "<title>";
-            this.buttonSurvey3.UseVisualStyleBackColor = true;
-            this.buttonSurvey3.Visible = false;
-            this.buttonSurvey3.Click += new System.EventHandler(this.ButtonSurveyTitle_Clicked);
-            // 
-            // buttonSurvey4
-            // 
-            this.buttonSurvey4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey4.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey4.Location = new System.Drawing.Point(0, 255);
-            this.buttonSurvey4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.buttonSurvey4.Name = "buttonSurvey4";
-            this.buttonSurvey4.Size = new System.Drawing.Size(800, 75);
-            this.buttonSurvey4.TabIndex = 3;
-            this.buttonSurvey4.Text = "<title>";
-            this.buttonSurvey4.UseVisualStyleBackColor = true;
-            this.buttonSurvey4.Visible = false;
-            this.buttonSurvey4.Click += new System.EventHandler(this.ButtonSurveyTitle_Clicked);
-            // 
-            // buttonSurvey5
-            // 
-            this.buttonSurvey5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey5.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey5.Location = new System.Drawing.Point(0, 340);
-            this.buttonSurvey5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.buttonSurvey5.Name = "buttonSurvey5";
-            this.buttonSurvey5.Size = new System.Drawing.Size(800, 75);
-            this.buttonSurvey5.TabIndex = 4;
-            this.buttonSurvey5.Text = "<title>";
-            this.buttonSurvey5.UseVisualStyleBackColor = true;
-            this.buttonSurvey5.Visible = false;
-            this.buttonSurvey5.Click += new System.EventHandler(this.ButtonSurveyTitle_Clicked);
-            // 
-            // buttonSurvey6
-            // 
-            this.buttonSurvey6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey6.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSurvey6.Location = new System.Drawing.Point(0, 425);
-            this.buttonSurvey6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.buttonSurvey6.Name = "buttonSurvey6";
-            this.buttonSurvey6.Size = new System.Drawing.Size(800, 75);
-            this.buttonSurvey6.TabIndex = 5;
-            this.buttonSurvey6.Text = "<title>";
-            this.buttonSurvey6.UseVisualStyleBackColor = true;
-            this.buttonSurvey6.Visible = false;
-            this.buttonSurvey6.Click += new System.EventHandler(this.ButtonSurveyTitle_Clicked);
             // 
             // labelSurveyTitle
             // 
@@ -2312,48 +2251,13 @@
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
-            // userItemThird
-            // 
-            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
-            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemThird.Location = new System.Drawing.Point(27, 260);
-            this.userItemThird.Name = "userItemThird";
-            this.userItemThird.Size = new System.Drawing.Size(291, 76);
-            this.userItemThird.TabIndex = 55;
-            this.userItemThird.UserName = null;
-            this.userItemThird.Visible = false;
-            // 
-            // userItemFirst
-            // 
-            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
-            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
-            this.userItemFirst.Name = "userItemFirst";
-            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
-            this.userItemFirst.TabIndex = 53;
-            this.userItemFirst.UserName = null;
-            this.userItemFirst.Visible = false;
-            // 
-            // userItemSecond
-            // 
-            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
-            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
-            this.userItemSecond.Name = "userItemSecond";
-            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
-            this.userItemSecond.TabIndex = 54;
-            this.userItemSecond.UserName = null;
-            this.userItemSecond.Visible = false;
-            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelActivityResults);
             this.Controls.Add(this.panelProfiles);
@@ -2361,7 +2265,6 @@
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelQuiz);
             this.Controls.Add(this.panelSurveyFinished);
-            this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelQuizMenu);
             this.Controls.Add(this.panelQuizFinished);
             this.Controls.Add(this.panelLandingPage);
@@ -2411,7 +2314,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
-            this.flowPanelSurveys.ResumeLayout(false);
             this.panelSurveyMenu.ResumeLayout(false);
             this.panelSurveyMenu.PerformLayout();
             this.panelSurvey.ResumeLayout(false);
@@ -2506,7 +2408,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.FlowLayoutPanel flowPanelSurveys;
-        private System.Windows.Forms.Button buttonSurvey1;
         private System.Windows.Forms.Label labelSurveyTitle;
         private System.Windows.Forms.Panel panelSurveyMenu;
         private System.Windows.Forms.Label labelNumber;
@@ -2524,11 +2425,6 @@
         private System.Windows.Forms.Label labelSurveyQuestion;
         private System.Windows.Forms.Label labelSurveyQuestionNumber;
         private System.Windows.Forms.Panel panelSurveyFinished;
-        private System.Windows.Forms.Button buttonSurvey2;
-        private System.Windows.Forms.Button buttonSurvey3;
-        private System.Windows.Forms.Button buttonSurvey4;
-        private System.Windows.Forms.Button buttonSurvey5;
-        private System.Windows.Forms.Button buttonSurvey6;
         private System.Windows.Forms.Label labelFinish;
         private System.Windows.Forms.Panel panelActivity;
         private System.Windows.Forms.GroupBox groupBox3;
