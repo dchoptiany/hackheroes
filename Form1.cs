@@ -80,14 +80,14 @@ namespace app
         {
             var clickedButton = (Button)sender;    
 
-            foreach (Button _button in menuButtons)
+            foreach (Button button in menuButtons)
             {
-                _button.Enabled = true;
-                _button.BackColor = green2;
+                button.Enabled = true;
+                button.BackColor = green2;
                 panelProfileSetup.BackColor = green2;
-                if (_button.Text == clickedButton.Text)
+                if (button.Text == clickedButton.Text)
                 {
-                    _button.Enabled = false;
+                    button.Enabled = false;
                 }
             }
          
