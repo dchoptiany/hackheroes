@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.Net;
 
 namespace app
 {
@@ -17,8 +18,10 @@ namespace app
         private List<User> users;
         private int currentUserIndex;
         private readonly List<Button> surveyButtons = new List<Button>();
+        private List<Button> activtyMatcherParticipantsButtons = new List<Button>();
+        private List<Button> activtyMatcherWeatherButtons = new List<Button>();
+        private List<Button> activtyMatcherEffortButtons = new List<Button>();
 
-        private readonly List<Panel> panels = new List<Panel>();
         private List<Button> answerButtons = new List<Button>();
         private List<Button> menuButtons = new List<Button>();
         private readonly Color blue1 = Color.FromArgb(0, 168, 255);
@@ -47,7 +50,7 @@ namespace app
             panelPointer.BackColor = blue1;
 
             Color leftPanelBackColor = green2;
-            flowLayoutPanel1.BackColor = leftPanelBackColor;
+            flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
             panelProfileSetup.BackColor = leftPanelBackColor;
 
             Color leftPanelButtonsColor = green2;
@@ -108,16 +111,6 @@ namespace app
                 panelPointer.Height = clickedButton.Height;
             }
             panelPointer.Visible = true;   
-        }
-
-        private void ChangePanel(int index)
-        {
-            panels[index].BringToFront();
-        }
-
-        private void ChangePanel(Panel panel)
-        {
-            panel.BringToFront();
         }
 
         private void LoadQuestions()
@@ -215,10 +208,10 @@ namespace app
                 List<string> usersJSON = new List<string>();
                 string userLine;
 
-                for (int i = 0; i < JSON.Length; i += 7)
+                for (int i = 0; i < JSON.Length; i += 8)
                 {
                     userLine = string.Empty;
-                    for (int line = 0; line < 7; line++)
+                    for (int line = 0; line < 8; line++)
                     {
                         userLine += JSON[i + line];
                     }
@@ -228,6 +221,7 @@ namespace app
                 foreach (string line in usersJSON)
                 {
                     User newUser = JsonSerializer.Deserialize<User>(line);
+                    Console.WriteLine(newUser.activityLevel);
                     users.Add(newUser);
                 }
             }
@@ -247,14 +241,6 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
-            panels.Add(panel0); //buttons
-            panels.Add(panel1); //BMI
-            panels.Add(panel2); //sport activity
-            panels.Add(panel3); //quiz
-            panels.Add(panel4); //calculator
-            panels.Add(panel5); //surveys
-            panels.Add(panel6); //profiles
-
             answerButtons.Add(buttonAnswerA);
             answerButtons.Add(buttonAnswerB);
             answerButtons.Add(buttonAnswerC);
@@ -267,6 +253,20 @@ namespace app
             surveyButtons.Add(buttonSurvey5);
             surveyButtons.Add(buttonSurvey6);
 
+            activtyMatcherParticipantsButtons.Add(buttonIndividual);
+            activtyMatcherParticipantsButtons.Add(buttonPair);
+            activtyMatcherParticipantsButtons.Add(buttonTeam);
+            activtyMatcherParticipantsButtons.Add(buttonAnyParticipants);
+
+            activtyMatcherWeatherButtons.Add(buttonGoodWeather);
+            activtyMatcherWeatherButtons.Add(buttonBadWeather);
+            activtyMatcherWeatherButtons.Add(buttonAnyWeather);
+
+            activtyMatcherEffortButtons.Add(buttonLowEffort);
+            activtyMatcherEffortButtons.Add(buttonMediumEffort);
+            activtyMatcherEffortButtons.Add(buttonHighEffort);
+            activtyMatcherEffortButtons.Add(buttonAnyEffort);
+
             LoadQuestions();
             LoadSports();
             LoadSurveys();
@@ -274,8 +274,7 @@ namespace app
 
             InitializeProfile();
             Center(buttonProfile);
-
-            ChangePanel(0);
+            panelLandingPage.BringToFront();
         }
 
         private void Disable(Button button)
@@ -304,81 +303,6 @@ namespace app
         private void ButtonMinimizeClick(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
-        }
-
-        private void UpdateResultOfMatching()
-        {
-            Participants participants = Participants.Any;
-            if (radioButtonIndividual.Checked)
-            {
-                participants = Participants.One;
-            }
-            else if (radioButtonPair.Checked)
-            {
-                participants = Participants.Two;
-            }
-            else if (radioButtonTeam.Checked)
-            {
-                participants = Participants.More;
-            }
-            // TO DO: getting weather from API and decide if good or bad
-            /*
-             * if(checkBoxChooseAutomatically.Checked)
-             * {
-             *      if(weather == rainy || weather == snowy || weather == windy || temperature < 15)
-             *      {
-             *          goodWeather = Weather.Bad;
-             *      }
-             *      else
-             *      {
-             *          goodWeather = Weather.Good;
-             *      }
-             * }
-             */
-
-            Weather weather = Weather.Any;
-            if (radioButtonGoodWeather.Checked)
-            {
-                weather = Weather.Good;
-            }
-            else if (radioButtonBadWeather.Checked)
-            {
-                weather = Weather.Bad;
-            }
-
-            EffortLevel effortLevel = EffortLevel.Any;
-            if (!radioButtonAllEffortLevels.Checked)
-            {
-                switch (trackBarEffortLevel.Value)
-                {
-                    case 0:
-                        effortLevel = EffortLevel.Low;
-                        break;
-                    case 1:
-                        effortLevel = EffortLevel.Medium;
-                        break;
-                    case 2:
-                        effortLevel = EffortLevel.High;
-                        break;
-                }
-            }
-            
-            labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
-            Center(labelActivityResult);
-
-            if (labelActivityResult.Text == "")
-            {
-                string message = "Nie udało się znaleźć aktywności o takich kryteriach. Wprowadź inne dane i spróbuj ponownie.";
-                string caption = "Nie znaleziono aktywności";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-
-                result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Close();
-                }
-            }
         }
 
         private void UpdateMacro()
@@ -416,7 +340,7 @@ namespace app
                 value = 100f;
             }
 
-            pictureBoxArrow.Location = new Point(75 + (int)value * 8, 147);
+            pictureBoxArrow.Location = new Point(75 + (int)value * 8, pictureBoxArrow.Location.Y);
         }
 
         private string GetInterpretation(float BMI)
@@ -425,39 +349,36 @@ namespace app
             {
                 return "Wygłodzenie";
             }
-            else if(BMI<17f)
+            if(BMI < 17f)
             {
                 return "Wychudzenie";
             }
-            else if(BMI<18.5f)
+            if(BMI < 18.5f)
             {
                 return "Niedowaga";
             }
-            else if(BMI < 25f)
+            if(BMI < 25f)
             {
                 return "Norma";
             }
-            else if(BMI < 30f)
+            if(BMI < 30f)
             {
                 return "Nadwaga";
             }
-            else if(BMI<35f)
+            if(BMI < 35f)
             {
                 return "I stopień otyłości";
             }
-            else if(BMI<40f)
+            if(BMI < 40f)
             {
                 return "II stopień otyłości";
             }
-            else
-            {
-                return "Otyłość skrajna";
-            }
+            return "Otyłość skrajna";
         }
 
         private void Center(Control control)
         {
-            control.Location = new Point(control.Parent.Size.Width / 2 - control.Size.Width / 2, control.Location.Y);
+            control.Location = new Point(control.Parent.Width / 2 - control.Size.Width / 2, control.Location.Y);
         }
 
         private void ButtonBMI_Click(object sender, EventArgs e)
@@ -467,7 +388,7 @@ namespace app
 
             if(!Calculator.CalculateBMI(users[userIndex]))
             {
-                ChangePanel(6);
+                panelProfiles.BringToFront();
                 return;
             }
 
@@ -479,45 +400,54 @@ namespace app
             Center(labelBMI);
             Center(labelBMIInterpretation);
 
-            ChangePanel(1);
+            panelBMI.BringToFront();
         }
 
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
-            ChangePanel(2);
+            panelActivity.BringToFront();
 
-            radioButtonAllParticipants.Checked = true;
-            radioButtonAllWeatherConditions.Checked = true;
-            radioButtonAllEffortLevels.Checked = true;
-            groupBoxWeather.Enabled = !checkBoxChooseAutomatically.Checked;
-            UpdateResultOfMatching();
+            SetButtonAsUnclicked(buttonIndividual);
+            SetButtonAsUnclicked(buttonPair);
+            SetButtonAsUnclicked(buttonTeam);
+            SetButtonAsUnclicked(buttonAnyParticipants);
+
+            SetButtonAsUnclicked(buttonGoodWeather);
+            SetButtonAsUnclicked(buttonBadWeather);
+            SetButtonAsUnclicked(buttonAnyWeather);
+
+            SetButtonAsUnclicked(buttonLowEffort);
+            SetButtonAsUnclicked(buttonMediumEffort);
+            SetButtonAsUnclicked(buttonHighEffort);
+            SetButtonAsUnclicked(buttonAnyEffort);
+
+            labelWeatherInfo.Visible = false;
         }
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
-            ChangePanel(3);
+            panelQuizMenu.BringToFront();
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
-            ChangePanel(4);
+            panelMacro.BringToFront();
             UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
-
-            ChangePanel(5);
+            panelSurveyMenu.BringToFront();
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
-            ChangePanel(6);
+            panelProfiles.BringToFront();
 
             UpdateButtonDeleteEnabledStatus();
             buttonSaveChanges.Enabled = false;
@@ -540,11 +470,6 @@ namespace app
 
             UpdateArrowButtons();
             SetEditInfoVisibility(false);
-        }
-
-        private void ButtonReturn_Click(object sender, EventArgs e)
-        {
-            ChangePanel(0);
         }
 
         private void SetEditInfoVisibility(bool visibility)
@@ -825,17 +750,6 @@ namespace app
 
         private void SetupQuiz()
         {
-            ButtonStartQuiz.Visible = false;
-            labelNumber.Visible = true;
-            pictureBoxTime.Visible = true;
-            pictureBoxTimeBorder.Visible = true;
-            labelQuestion.Visible = true;
-            tableLayoutPanelAnswers.Visible = true;
-            buttonAnswerA.Visible = true;
-            buttonAnswerB.Visible = true;
-            buttonAnswerC.Visible = true;
-            buttonAnswerD.Visible = true;
-
             pictureBoxTime.Size = new Size(0, 30);
 
             Quiz.GetQuestions();
@@ -918,23 +832,14 @@ namespace app
 
         private void FinishQuiz()
         {
+            panelQuizFinished.BringToFront();
             labelQuizResult.Text = "Wynik: " + Quiz.score + "/5";
             Center(labelQuizResult);
-            labelQuestion.Visible = false;
-            tableLayoutPanelAnswers.Visible = false;
-            buttonAnswerA.Visible = false;
-            buttonAnswerB.Visible = false;
-            buttonAnswerC.Visible = false;
-            buttonAnswerD.Visible = false;
-            labelQuizResult.Visible = true;
-            buttonFinishQuiz.Visible = true;
-            labelNumber.Visible = false;
-            pictureBoxTime.Visible = false;
-            pictureBoxTimeBorder.Visible = false;
         }
 
         private void ButtonStartQuiz_Click(object sender, EventArgs e)
         {
+            panelQuiz.BringToFront();
             SetupQuiz();
         }
 
@@ -981,16 +886,9 @@ namespace app
             MarkCorrectAnswer(clickedButton);
         }
 
-        private void ResetQuiz()
-        {
-            labelQuizResult.Visible = false;
-            buttonFinishQuiz.Visible = false;
-            ButtonStartQuiz.Visible = true;
-        }
-
         private void ButtonFinishQuiz_Click(object sender, EventArgs e)
         {
-            ResetQuiz();
+            panelQuizMenu.BringToFront();
         }
 
         private void UpdateActivityLevel()
@@ -1003,7 +901,7 @@ namespace app
         {
             currentSurveyIndex = GetSurveyID((Button)sender);
             Survey.currentQuestionIndex = 0;
-            ChangePanel(panelSurvey);
+            panelSurvey.BringToFront();
             NextSurveyQuestion();
         }
 
@@ -1120,7 +1018,7 @@ namespace app
 
         private void FinishSurvey()
         {
-            ChangePanel(panelSurveyFinished);
+            panelSurveyFinished.BringToFront();
 
             if(currentSurveyIndex == 0) //Poziom aktywnosci fizycznej
             {
@@ -1135,75 +1033,220 @@ namespace app
             Center(labelFinish);
         }
 
+        private void ButtonSurveyFinished_Clicked(object sender, EventArgs e)
+        {
+            panelSurveyMenu.BringToFront();
+        }
+
         private void TrackBarActivityLevel_Scroll(object sender, EventArgs e)
         {
             UpdateActivityLevel();
         }
 
+        private void SetButtonAsUnclicked(Button button)
+        {
+            button.BackColor = Color.FromArgb(39, 60, 117);
+            button.ForeColor = Color.FromArgb(255, 255, 255);
+            button.Enabled = true;
+        }
+
+        private void SetButtonAsClicked(Button button)
+        {
+            button.BackColor = Color.FromArgb(251, 197, 3);
+            button.ForeColor = Color.FromArgb(47, 54, 64);
+            button.Enabled = false;
+        }
+
+        private void ButtonParticipants_Click(object sender, EventArgs e)
+        {
+            SetButtonAsUnclicked(buttonIndividual);
+            SetButtonAsUnclicked(buttonPair);
+            SetButtonAsUnclicked(buttonTeam);
+            SetButtonAsUnclicked(buttonAnyParticipants);
+
+            Button button = (Button)sender;
+            SetButtonAsClicked(button);
+        }
+
+        private void ButtonWeather_Click(object sender, EventArgs e)
+        {
+            SetButtonAsUnclicked(buttonGoodWeather);
+            SetButtonAsUnclicked(buttonBadWeather);
+            SetButtonAsUnclicked(buttonAnyWeather);
+
+            Button button = (Button)sender;
+            SetButtonAsClicked(button);
+        }
+
+        private void ButtonEffort_Click(object sender, EventArgs e)
+        {
+            SetButtonAsUnclicked(buttonLowEffort);
+            SetButtonAsUnclicked(buttonMediumEffort);
+            SetButtonAsUnclicked(buttonHighEffort);
+            SetButtonAsUnclicked(buttonAnyEffort);
+
+            Button button = (Button)sender;
+            SetButtonAsClicked(button);
+        }
+
+        private void ButtonCheckWeather_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Tuple<float, bool> weatherInfo = ActivityMatcher.currentWeather.GetWeather(textBoxCity.Text);
+                string weatherMessage = "";
+                if (weatherInfo.Item1 > 12 && weatherInfo.Item1 < 30)
+                {
+                    if (weatherInfo.Item2)
+                    {
+                        weatherMessage = string.Format("Odczuwalna temperatura wynosi {0}°C.\nPogodę uznaliśmy za dobrą.", weatherInfo.Item1);
+                        SetButtonAsUnclicked(buttonBadWeather);
+                        SetButtonAsUnclicked(buttonAnyWeather);
+                        SetButtonAsClicked(buttonGoodWeather);
+                    }
+                    else
+                    { 
+                        weatherMessage = string.Format("Odczuwalna temperatura wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną\nze względu na inne warunki (np. opady).", weatherInfo.Item1);
+                        SetButtonAsUnclicked(buttonGoodWeather);
+                        SetButtonAsUnclicked(buttonAnyWeather);
+                        SetButtonAsClicked(buttonBadWeather);
+                    }
+                }
+                else
+                {
+                    weatherMessage = string.Format("Odczuwalna temperatura wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną.", weatherInfo.Item1);
+                    SetButtonAsUnclicked(buttonGoodWeather);
+                    SetButtonAsUnclicked(buttonAnyWeather);
+                    SetButtonAsClicked(buttonBadWeather);
+                }
+
+                labelWeatherInfo.Text = weatherMessage;
+                Center(labelWeatherInfo);
+
+                labelWeatherInfo.Visible = true;
+            }
+            catch (WebException exception)
+            {
+                string message = string.Format("Nie znaleziono takiego miejsca ({0}).\nUpewnij się czy nazwa jest wpisana poprawnie i spróbuj ponownie.", textBoxCity.Text);
+                if (exception.Message == "No internet connection")
+                {
+                    message = "Do sprawdzenia pogody konieczne jest połączenie z internetem.";
+                }
+                string caption = "Nie można sprawdzić pogody";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
+        }
+
+        private bool OneOfButtonsDisabled(List<Button> list)
+        {
+            bool oneDisabled = false;
+            foreach (Button button in list)
+            {
+                if (!oneDisabled && !button.Enabled)
+                {
+                    oneDisabled = true;
+                }
+                if (!oneDisabled && !button.Enabled)
+                {
+                    return false;
+                }
+            }
+            return oneDisabled;
+        }
+
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            UpdateResultOfMatching();
-        }
+            Participants participants = 0;
+            Weather weather = 0;
+            EffortLevel effortLevel = 0;
 
-        private void TrackBarEffortLevel_Scroll(object sender, EventArgs e)
-        {
-            radioButtonAllEffortLevels.Checked = false;
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-        private void TrackBarEffortLevel_Click(object sender, EventArgs e)
-        {
-            radioButtonAllEffortLevels.Checked = false;
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
+            if (OneOfButtonsDisabled(activtyMatcherParticipantsButtons) && OneOfButtonsDisabled(activtyMatcherWeatherButtons) && OneOfButtonsDisabled(activtyMatcherEffortButtons))
+            {
+                if (!buttonIndividual.Enabled)
+                {
+                    participants = Participants.One;
+                }
+                else if (!buttonPair.Enabled)
+                {
+                    participants = Participants.Two;
+                }
+                else if (!buttonTeam.Enabled)
+                {
+                    participants = Participants.More;
+                }
+                else if (!buttonAnyParticipants.Enabled)
+                {
+                    participants = Participants.Any;
+                }
 
-        private void RadioButtonTeam_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
+                if (!buttonGoodWeather.Enabled)
+                {
+                    weather = Weather.Good;
+                }
+                else if (!buttonBadWeather.Enabled)
+                {
+                    weather = Weather.Bad;
+                }
+                else if (!buttonAnyWeather.Enabled)
+                {
+                    weather = Weather.Any;
+                }
 
-        private void RadioButtonAllParticipants_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
+                if (!buttonLowEffort.Enabled)
+                {
+                    effortLevel = EffortLevel.Low;
+                }
+                else if (!buttonMediumEffort.Enabled)
+                {
+                    effortLevel = EffortLevel.Medium;
+                }
+                else if (!buttonHighEffort.Enabled)
+                {
+                    effortLevel = EffortLevel.High;
+                }
+                else if (!buttonAnyEffort.Enabled)
+                {
+                    effortLevel = EffortLevel.Any;
+                }
 
-        private void RadioButtonGoodWeather_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
+                labelActivityResult.Text = ActivityMatcher.Search(participants, weather, effortLevel);
+                if (labelActivityResult.Text == "")
+                {
+                    labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
+                }
+                Center(labelActivityResult);
+                panelActivityResults.BringToFront();
+            }
+            else
+            {
+                string message = "Aby wyszukać aktywność należy zaznaczyć jedną cechę z każdej kategori. Jeśli nie wiesz na co się zdecydować, zaznacz ostanią opcję.";
+                string caption = "Nie można wyszukać aktywności";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
 
-        private void RadioButtonBadWeather_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
         }
-
-        private void RadioButtonAllWeatherConditions_CheckedChanged(object sender, EventArgs e)
+        private void ButtonShowNext_Click(object sender, EventArgs e)
         {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void RadioButtonAllEffortLevels_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void RadioButtonIndividual_CheckedChanged(object sender, EventArgs e)
-        {
-            ActivityMatcher.approvedSports.Clear();
-            UpdateResultOfMatching();
-        }
-
-        private void CheckBoxChooseAutomatically_CheckedChanged(object sender, EventArgs e)
-        {
-            groupBoxWeather.Enabled = !checkBoxChooseAutomatically.Checked;
-            UpdateResultOfMatching();
+            labelActivityResult.Text = ActivityMatcher.Search();
+            Center(labelActivityResult);
+            if (labelActivityResult.Text == "")
+            {
+                labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
+                Center(labelActivityResult);
+            }
         }
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
@@ -1221,6 +1264,12 @@ namespace app
             }
 
             File.WriteAllLines("..\\..\\users.json", JSON);
+        }
+
+        private void ButtonChangeSearchingData_Click(object sender, EventArgs e)
+        {
+            LoadSports();
+            panelActivity.BringToFront();
         }
     }
 }
