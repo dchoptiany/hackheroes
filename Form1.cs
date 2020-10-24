@@ -892,8 +892,8 @@ namespace app
                         textBoxSurveyText.Visible = false;
                         buttonSurveyConfirm.Visible = false;
 
-                        buttonSurveyYes.Text = "Tak";
-                        buttonSurveyNo.Text = "Nie";
+                        buttonSurveyYes.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[0].Key;
+                        buttonSurveyNo.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[1].Key;
                         break;
                     }
                 case QuestionType.ABCD:
@@ -995,7 +995,7 @@ namespace app
 
             switch (currentSurveyIndex)
             {
-                case 0:
+                case 0: // Poziom aktywnosci fizycznej
                     {
                         users[currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
                         users[currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
@@ -1003,13 +1003,31 @@ namespace app
 
                         Calculator.CalculateActivityLevel(users[currentUserIndex]);
                         labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
-                        break;
+                        
                     }
+                    break;
+                case 1: // Nawyki żywieniowe
+                    {
+                        uint score = 0;
+                        string result = "";
+                        string description = "";
+                        score += surveys[currentSurveyIndex].surveyAnswersInt[0];
+
+
+                        if(score == 0)
+                        {
+                            result = "ekstremalnie złe!";
+                            description = "Popracuj nad swoim odżywianiem!";
+                        }
+                        labelFinish.Text = "Twoje nawyki żywieniowe są " + result + "\n" + description;
+                    }
+                    break;
                 default:
                     {
                         labelFinish.Text = "Nieprawidłowy indeks ankiety !";
-                        break;
+                        
                     }
+                    break;
             }    
             
             Center(labelFinish);
