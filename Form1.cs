@@ -202,7 +202,6 @@ namespace app
                 foreach (string line in usersJSON)
                 {
                     User newUser = JsonSerializer.Deserialize<User>(line);
-                    Console.WriteLine(newUser.activityLevel);
                     users.Add(newUser);
                 }
             }
@@ -976,7 +975,6 @@ namespace app
             }
             if(correctValue)
             {
-                Console.WriteLine("index = " + Survey.currentQuestionIndex);
                 if(Survey.currentQuestionIndex + 1 < surveys[currentSurveyIndex].questions.Count)
                 {
                     ++Survey.currentQuestionIndex;
