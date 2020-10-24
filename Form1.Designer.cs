@@ -104,9 +104,6 @@
             this.panelProfiles = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.labelIndexInfo = new System.Windows.Forms.Label();
-            this.userItemThird = new app.UserItem();
-            this.userItemFirst = new app.UserItem();
-            this.userItemSecond = new app.UserItem();
             this.buttonArrowUp = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -187,6 +184,9 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
+            this.userItemThird = new app.UserItem();
+            this.userItemFirst = new app.UserItem();
+            this.userItemSecond = new app.UserItem();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -387,7 +387,7 @@
             this.label39.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label39.Location = new System.Drawing.Point(245, 175);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(513, 84);
+            this.label39.Size = new System.Drawing.Size(509, 84);
             this.label39.TabIndex = 12;
             this.label39.Text = "Ankieta zakończona";
             // 
@@ -429,7 +429,7 @@
             this.labelBMIInterpretation.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMIInterpretation.Location = new System.Drawing.Point(342, 450);
             this.labelBMIInterpretation.Name = "labelBMIInterpretation";
-            this.labelBMIInterpretation.Size = new System.Drawing.Size(322, 65);
+            this.labelBMIInterpretation.Size = new System.Drawing.Size(316, 65);
             this.labelBMIInterpretation.TabIndex = 5;
             this.labelBMIInterpretation.Text = "<interpretation>";
             this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,7 +440,7 @@
             this.labelBMI.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMI.Location = new System.Drawing.Point(273, 380);
             this.labelBMI.Name = "labelBMI";
-            this.labelBMI.Size = new System.Drawing.Size(468, 65);
+            this.labelBMI.Size = new System.Drawing.Size(454, 65);
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -461,7 +461,7 @@
             this.label6.Font = new System.Drawing.Font("Poppins", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(421, 80);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(158, 113);
+            this.label6.Size = new System.Drawing.Size(157, 113);
             this.label6.TabIndex = 1;
             this.label6.Text = "BMI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -502,7 +502,7 @@
             this.labelNumber.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelNumber.Location = new System.Drawing.Point(65, 95);
             this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(59, 48);
+            this.labelNumber.Size = new System.Drawing.Size(55, 48);
             this.labelNumber.TabIndex = 7;
             this.labelNumber.Text = "1/5\r\n";
             // 
@@ -625,7 +625,7 @@
             this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuizResult.Location = new System.Drawing.Point(394, 220);
             this.labelQuizResult.Name = "labelQuizResult";
-            this.labelQuizResult.Size = new System.Drawing.Size(219, 65);
+            this.labelQuizResult.Size = new System.Drawing.Size(212, 65);
             this.labelQuizResult.TabIndex = 8;
             this.labelQuizResult.Text = "Wynik: 5/5";
             // 
@@ -668,7 +668,7 @@
             this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(287, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(432, 84);
+            this.label2.Size = new System.Drawing.Size(426, 84);
             this.label2.TabIndex = 9;
             this.label2.Text = "Quiz zakończony";
             // 
@@ -1244,42 +1244,6 @@
             this.labelIndexInfo.Text = "0/0";
             this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // userItemThird
-            // 
-            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
-            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemThird.Location = new System.Drawing.Point(27, 260);
-            this.userItemThird.Name = "userItemThird";
-            this.userItemThird.Size = new System.Drawing.Size(291, 76);
-            this.userItemThird.TabIndex = 55;
-            this.userItemThird.UserName = null;
-            this.userItemThird.Visible = false;
-            // 
-            // userItemFirst
-            // 
-            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
-            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
-            this.userItemFirst.Name = "userItemFirst";
-            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
-            this.userItemFirst.TabIndex = 53;
-            this.userItemFirst.UserName = null;
-            this.userItemFirst.Visible = false;
-            // 
-            // userItemSecond
-            // 
-            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
-            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
-            this.userItemSecond.Name = "userItemSecond";
-            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
-            this.userItemSecond.TabIndex = 54;
-            this.userItemSecond.UserName = null;
-            this.userItemSecond.Visible = false;
-            // 
             // buttonArrowUp
             // 
             this.buttonArrowUp.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1683,7 +1647,7 @@
             this.flowPanelSurveys.Controls.Add(this.buttonSurvey6);
             this.flowPanelSurveys.Location = new System.Drawing.Point(100, 100);
             this.flowPanelSurveys.Name = "flowPanelSurveys";
-            this.flowPanelSurveys.Size = new System.Drawing.Size(800, 350);
+            this.flowPanelSurveys.Size = new System.Drawing.Size(800, 500);
             this.flowPanelSurveys.TabIndex = 2;
             // 
             // buttonSurvey1
@@ -1776,7 +1740,7 @@
             this.labelSurveyTitle.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyTitle.Location = new System.Drawing.Point(396, 10);
             this.labelSurveyTitle.Name = "labelSurveyTitle";
-            this.labelSurveyTitle.Size = new System.Drawing.Size(209, 84);
+            this.labelSurveyTitle.Size = new System.Drawing.Size(208, 84);
             this.labelSurveyTitle.TabIndex = 3;
             this.labelSurveyTitle.Text = "Ankiety";
             this.labelSurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1808,7 +1772,7 @@
             this.labelSurveyQuestionNumber.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyQuestionNumber.Location = new System.Drawing.Point(267, 175);
             this.labelSurveyQuestionNumber.Name = "labelSurveyQuestionNumber";
-            this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(486, 62);
+            this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(467, 62);
             this.labelSurveyQuestionNumber.TabIndex = 14;
             this.labelSurveyQuestionNumber.Text = "Pytanie: <number>/<total>";
             // 
@@ -1931,7 +1895,7 @@
             this.labelSurveyQuestion.Font = new System.Drawing.Font("Poppins", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyQuestion.Location = new System.Drawing.Point(301, 75);
             this.labelSurveyQuestion.Name = "labelSurveyQuestion";
-            this.labelSurveyQuestion.Size = new System.Drawing.Size(402, 70);
+            this.labelSurveyQuestion.Size = new System.Drawing.Size(398, 70);
             this.labelSurveyQuestion.TabIndex = 10;
             this.labelSurveyQuestion.Text = "Pytanie w ankiecie";
             this.labelSurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1959,7 +1923,7 @@
             this.labelFinish.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelFinish.Location = new System.Drawing.Point(402, 300);
             this.labelFinish.Name = "labelFinish";
-            this.labelFinish.Size = new System.Drawing.Size(203, 62);
+            this.labelFinish.Size = new System.Drawing.Size(195, 62);
             this.labelFinish.TabIndex = 11;
             this.labelFinish.Text = "<finished>";
             // 
@@ -2347,6 +2311,42 @@
             this.buttonShowNext.Text = "Pokaż następną propozycję";
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
+            // 
+            // userItemThird
+            // 
+            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
+            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemThird.Location = new System.Drawing.Point(27, 260);
+            this.userItemThird.Name = "userItemThird";
+            this.userItemThird.Size = new System.Drawing.Size(291, 76);
+            this.userItemThird.TabIndex = 55;
+            this.userItemThird.UserName = null;
+            this.userItemThird.Visible = false;
+            // 
+            // userItemFirst
+            // 
+            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
+            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
+            this.userItemFirst.Name = "userItemFirst";
+            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
+            this.userItemFirst.TabIndex = 53;
+            this.userItemFirst.UserName = null;
+            this.userItemFirst.Visible = false;
+            // 
+            // userItemSecond
+            // 
+            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
+            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
+            this.userItemSecond.Name = "userItemSecond";
+            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
+            this.userItemSecond.TabIndex = 54;
+            this.userItemSecond.UserName = null;
+            this.userItemSecond.Visible = false;
             // 
             // Hackheroes
             // 
