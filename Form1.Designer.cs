@@ -60,7 +60,6 @@
             this.ButtonStartQuiz = new System.Windows.Forms.Button();
             this.labelQuiz = new System.Windows.Forms.Label();
             this.panelQuizFinished = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelQuizMenu = new System.Windows.Forms.Panel();
             this.panelMacro = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -176,6 +175,7 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -371,7 +371,7 @@
             this.label39.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label39.Location = new System.Drawing.Point(245, 175);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(509, 84);
+            this.label39.Size = new System.Drawing.Size(513, 84);
             this.label39.TabIndex = 12;
             this.label39.Text = "Ankieta zakończona";
             // 
@@ -412,7 +412,7 @@
             this.labelBMIInterpretation.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMIInterpretation.Location = new System.Drawing.Point(342, 450);
             this.labelBMIInterpretation.Name = "labelBMIInterpretation";
-            this.labelBMIInterpretation.Size = new System.Drawing.Size(316, 65);
+            this.labelBMIInterpretation.Size = new System.Drawing.Size(322, 65);
             this.labelBMIInterpretation.TabIndex = 5;
             this.labelBMIInterpretation.Text = "<interpretation>";
             this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -423,7 +423,7 @@
             this.labelBMI.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMI.Location = new System.Drawing.Point(273, 380);
             this.labelBMI.Name = "labelBMI";
-            this.labelBMI.Size = new System.Drawing.Size(454, 65);
+            this.labelBMI.Size = new System.Drawing.Size(468, 65);
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -444,7 +444,7 @@
             this.label6.Font = new System.Drawing.Font("Poppins", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(421, 80);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 113);
+            this.label6.Size = new System.Drawing.Size(158, 113);
             this.label6.TabIndex = 1;
             this.label6.Text = "BMI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -485,7 +485,7 @@
             this.labelNumber.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelNumber.Location = new System.Drawing.Point(65, 95);
             this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(55, 48);
+            this.labelNumber.Size = new System.Drawing.Size(59, 48);
             this.labelNumber.TabIndex = 7;
             this.labelNumber.Text = "1/5\r\n";
             // 
@@ -608,7 +608,7 @@
             this.labelQuizResult.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuizResult.Location = new System.Drawing.Point(394, 220);
             this.labelQuizResult.Name = "labelQuizResult";
-            this.labelQuizResult.Size = new System.Drawing.Size(212, 65);
+            this.labelQuizResult.Size = new System.Drawing.Size(219, 65);
             this.labelQuizResult.TabIndex = 8;
             this.labelQuizResult.Text = "Wynik: 5/5";
             // 
@@ -637,22 +637,13 @@
             // 
             // panelQuizFinished
             // 
+            this.panelQuizFinished.Controls.Add(this.label2);
             this.panelQuizFinished.Controls.Add(this.labelQuizResult);
             this.panelQuizFinished.Controls.Add(this.buttonFinishQuiz);
             this.panelQuizFinished.Location = new System.Drawing.Point(280, 50);
             this.panelQuizFinished.Name = "panelQuizFinished";
             this.panelQuizFinished.Size = new System.Drawing.Size(1000, 650);
             this.panelQuizFinished.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(287, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(426, 84);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Quiz zakończony";
             // 
             // panelQuizMenu
             // 
@@ -1581,7 +1572,7 @@
             this.labelSurveyTitle.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyTitle.Location = new System.Drawing.Point(396, 10);
             this.labelSurveyTitle.Name = "labelSurveyTitle";
-            this.labelSurveyTitle.Size = new System.Drawing.Size(208, 84);
+            this.labelSurveyTitle.Size = new System.Drawing.Size(209, 84);
             this.labelSurveyTitle.TabIndex = 3;
             this.labelSurveyTitle.Text = "Ankiety";
             this.labelSurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1613,7 +1604,7 @@
             this.labelSurveyQuestionNumber.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyQuestionNumber.Location = new System.Drawing.Point(267, 175);
             this.labelSurveyQuestionNumber.Name = "labelSurveyQuestionNumber";
-            this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(467, 62);
+            this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(486, 62);
             this.labelSurveyQuestionNumber.TabIndex = 14;
             this.labelSurveyQuestionNumber.Text = "Pytanie: <number>/<total>";
             // 
@@ -1686,7 +1677,7 @@
             this.buttonSurveyYes.FlatAppearance.BorderSize = 2;
             this.buttonSurveyYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurveyYes.Font = new System.Drawing.Font("Poppins", 18F);
-            this.buttonSurveyYes.Location = new System.Drawing.Point(0, 0);
+            this.buttonSurveyYes.Location = new System.Drawing.Point(450, 0);
             this.buttonSurveyYes.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSurveyYes.Name = "buttonSurveyYes";
             this.buttonSurveyYes.Size = new System.Drawing.Size(449, 124);
@@ -1736,7 +1727,7 @@
             this.labelSurveyQuestion.Font = new System.Drawing.Font("Poppins", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyQuestion.Location = new System.Drawing.Point(301, 75);
             this.labelSurveyQuestion.Name = "labelSurveyQuestion";
-            this.labelSurveyQuestion.Size = new System.Drawing.Size(398, 70);
+            this.labelSurveyQuestion.Size = new System.Drawing.Size(402, 70);
             this.labelSurveyQuestion.TabIndex = 10;
             this.labelSurveyQuestion.Text = "Pytanie w ankiecie";
             this.labelSurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1764,7 +1755,7 @@
             this.labelFinish.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelFinish.Location = new System.Drawing.Point(402, 300);
             this.labelFinish.Name = "labelFinish";
-            this.labelFinish.Size = new System.Drawing.Size(195, 62);
+            this.labelFinish.Size = new System.Drawing.Size(203, 62);
             this.labelFinish.TabIndex = 11;
             this.labelFinish.Text = "<finished>";
             // 
@@ -1953,7 +1944,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.labelWeatherInfo);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.buttonCheckWeather);
             this.groupBox2.Controls.Add(this.buttonGoodWeather);
             this.groupBox2.Controls.Add(this.buttonBadWeather);
@@ -2145,16 +2135,26 @@
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(287, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(432, 84);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Quiz zakończony";
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelActivity);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelQuiz);
             this.Controls.Add(this.panelActivityResults);
-            this.Controls.Add(this.panelActivity);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelQuizMenu);
@@ -2352,7 +2352,6 @@
         private System.Windows.Forms.PictureBox pictureBoxTeam;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label labelWeatherInfo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonCheckWeather;
         private System.Windows.Forms.Button buttonGoodWeather;
         private System.Windows.Forms.Button buttonBadWeather;
@@ -2372,5 +2371,6 @@
         private System.Windows.Forms.Button buttonSurveyYes;
         private System.Windows.Forms.Button buttonSurveyA;
         private System.Windows.Forms.Button buttonSurveyB;
+        private System.Windows.Forms.Label label2;
     }   
 }
