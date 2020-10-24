@@ -993,15 +993,24 @@ namespace app
         {
             panelSurveyFinished.BringToFront();
 
-            if(currentSurveyIndex == 0) //Poziom aktywnosci fizycznej
+            switch (currentSurveyIndex)
             {
-                users[currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
-                users[currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
-                users[currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
+                case 0:
+                    {
+                        users[currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
+                        users[currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
+                        users[currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
 
-                Calculator.CalculateActivityLevel(users[currentUserIndex]);
-                labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
-            }       
+                        Calculator.CalculateActivityLevel(users[currentUserIndex]);
+                        labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
+                        break;
+                    }
+                default:
+                    {
+                        labelFinish.Text = "Nieprawidłowy indeks ankiety !";
+                        break;
+                    }
+            }    
             
             Center(labelFinish);
         }
