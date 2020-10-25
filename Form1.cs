@@ -18,6 +18,7 @@ namespace app
         private bool goBackToMacroAfterSurvey;
 
         private List<User> users;
+        private bool noUserChosen;
         private int currentUserIndex;
         private readonly List<Button> surveyButtons = new List<Button>();
         private List<Button> activtyMatcherParticipantsButtons = new List<Button>();
@@ -61,6 +62,7 @@ namespace app
             buttonCalculator.BackColor = leftPanelButtonsColor;
             buttonSurvey.BackColor = leftPanelButtonsColor;
             buttonProfile.BackColor = leftPanelButtonsColor;
+            buttonProfile.BackColor = green2;
         }
 
         private void InitializeButtons()
@@ -70,17 +72,6 @@ namespace app
             menuButtons.Add(buttonQuiz); 
             menuButtons.Add(buttonCalculator); 
             menuButtons.Add(buttonSurvey); 
-            menuButtons.Add(buttonProfile);
-        }
-
-        private void InitializeProfile()
-        {
-            buttonProfile.BackColor = green2;
-            UpdateProfileButton();
-            menuButtons.Add(buttonActivity);
-            menuButtons.Add(buttonQuiz);
-            menuButtons.Add(buttonCalculator);
-            menuButtons.Add(buttonSurvey);
             menuButtons.Add(buttonProfile);
         }
 
@@ -232,7 +223,10 @@ namespace app
             catch (FileNotFoundException exception)
             {
                 MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                users.Add(new User("User", 18, 80f, 180, Gender.Male, Avatar.Gray));
+            }
+            finally 
+            {
+                noUserChosen = users.Count == 0;
             }
         }
 
@@ -262,8 +256,7 @@ namespace app
             LoadSurveys();
             LoadUsers();
 
-            InitializeProfile();
-            Center(buttonProfile);
+            UpdateProfileButton();
             panelLandingPage.BringToFront();
         }
 
@@ -362,7 +355,13 @@ namespace app
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
-            int userIndex = currentUserIndex;
+
+            if(noUserChosen)
+            {
+                panelUserNotLogged.BringToFront();
+                return;
+            }
+
             if (!Calculator.CalculateBMI(users[currentUserIndex]))
             {
                 panelProfiles.BringToFront();
@@ -414,6 +413,13 @@ namespace app
             groupBoxActivityLevel.Visible = false;
 
             DisableButton(sender, e);
+
+            if(noUserChosen)
+            {
+                panelUserNotLogged.BringToFront();
+                return;
+            }
+
             panelMacro.BringToFront();
 
             if (users[currentUserIndex].activityLevel == 0)
@@ -442,6 +448,13 @@ namespace app
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
+
+            if(noUserChosen)
+            {
+                panelUserNotLogged.BringToFront();
+                return;
+            }
+
             panelSurveyMenu.BringToFront();
         }
 
@@ -640,6 +653,7 @@ namespace app
                 User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gender, avatar);
 
                 users.Add(newUser);
+                noUserChosen = false;
 
                 textBoxName.Text = "";
 
@@ -667,14 +681,6 @@ namespace app
             result = MessageBox.Show(message, "Potwierdzenie usunięcia profilu", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                if (indexToRemove > 0)
-                {
-                    --currentUserIndex;
-                }
-                else
-                {
-                    ++currentUserIndex;
-                }
                 users.RemoveAt(indexToRemove);
 
                 currentUserIndex = 0;
@@ -686,6 +692,7 @@ namespace app
                 if (users.Count == 0)
                 {
                     buttonEdit.Enabled = false;
+                    noUserChosen = true;
                 }
             }
             UpdateProfileButton();
@@ -721,8 +728,16 @@ namespace app
 
         private void UpdateProfileButton()
         {
-            buttonProfile.Text = users[currentUserIndex].name;
-            buttonProfile.ImageIndex = (int)users[currentUserIndex].avatar;
+            if(noUserChosen)
+            {
+                buttonProfile.Text = "Nie wybrano profilu";
+                buttonProfile.ImageIndex = 2;
+            }
+            else
+            {
+                buttonProfile.Text = users[currentUserIndex].name;
+                buttonProfile.ImageIndex = (int)users[currentUserIndex].avatar;
+            }
         }
 
         private void ButtonArrowUp_Click(object sender, EventArgs e)
@@ -1411,6 +1426,17 @@ namespace app
             Center(labelActivityResult);
         }
 
+        private void ButtonChangeSearchingData_Click(object sender, EventArgs e)
+        {
+            LoadSports();
+            panelActivity.BringToFront();
+        }
+
+        private void ButtonGoToProfiles_Click(object sender, EventArgs e)
+        {
+            ButtonProfile_Click(buttonProfile, e);
+        }
+
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
         {
             var options = new JsonSerializerOptions
@@ -1427,7 +1453,7 @@ namespace app
 
             File.WriteAllLines("..\\..\\users.json", JSON);
         }
-
+        
         private void ButtonChangeSearchingData_Click(object sender, EventArgs e)
         {
             LoadSports();

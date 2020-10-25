@@ -184,6 +184,9 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
+            this.panelUserNotLogged = new System.Windows.Forms.Panel();
+            this.buttonGoToProfiles = new System.Windows.Forms.Button();
+            this.labelNoProfile = new System.Windows.Forms.Label();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -222,6 +225,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClouds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).BeginInit();
             this.panelActivityResults.SuspendLayout();
+            this.panelUserNotLogged.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelSidebar
@@ -1644,7 +1648,7 @@
             this.numericUpDownWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownWeight.Location = new System.Drawing.Point(81, 122);
             this.numericUpDownWeight.Maximum = new decimal(new int[] {
-            350,
+            600,
             0,
             0,
             0});
@@ -1669,12 +1673,12 @@
             this.numericUpDownHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownHeight.Location = new System.Drawing.Point(81, 161);
             this.numericUpDownHeight.Maximum = new decimal(new int[] {
-            300,
+            280,
             0,
             0,
             0});
             this.numericUpDownHeight.Minimum = new decimal(new int[] {
-            1,
+            40,
             0,
             0,
             0});
@@ -1693,7 +1697,7 @@
             this.numericUpDownAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownAge.Location = new System.Drawing.Point(81, 202);
             this.numericUpDownAge.Maximum = new decimal(new int[] {
-            200,
+            130,
             0,
             0,
             0});
@@ -2285,6 +2289,38 @@
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
+            // panelUserNotLogged
+            // 
+            this.panelUserNotLogged.Controls.Add(this.buttonGoToProfiles);
+            this.panelUserNotLogged.Controls.Add(this.labelNoProfile);
+            this.panelUserNotLogged.Location = new System.Drawing.Point(280, 50);
+            this.panelUserNotLogged.Name = "panelUserNotLogged";
+            this.panelUserNotLogged.Size = new System.Drawing.Size(1000, 650);
+            this.panelUserNotLogged.TabIndex = 23;
+            // 
+            // buttonGoToProfiles
+            // 
+            this.buttonGoToProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGoToProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonGoToProfiles.Location = new System.Drawing.Point(375, 350);
+            this.buttonGoToProfiles.Name = "buttonGoToProfiles";
+            this.buttonGoToProfiles.Size = new System.Drawing.Size(250, 80);
+            this.buttonGoToProfiles.TabIndex = 10;
+            this.buttonGoToProfiles.Text = "Przejdź do profili";
+            this.buttonGoToProfiles.UseVisualStyleBackColor = true;
+            this.buttonGoToProfiles.Click += new System.EventHandler(this.ButtonGoToProfiles_Click);
+            // 
+            // labelNoProfile
+            // 
+            this.labelNoProfile.AutoSize = true;
+            this.labelNoProfile.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNoProfile.Location = new System.Drawing.Point(83, 200);
+            this.labelNoProfile.Name = "labelNoProfile";
+            this.labelNoProfile.Size = new System.Drawing.Size(834, 62);
+            this.labelNoProfile.TabIndex = 12;
+            this.labelNoProfile.Text = "Aby korzystać z tej funkcji musisz wybrać profil";
+            this.labelNoProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2293,11 +2329,12 @@
             this.ControlBox = false;
             this.Controls.Add(this.panelMacro);
             this.Controls.Add(this.panelSurvey);
+            this.Controls.Add(this.panelProfiles);
+            this.Controls.Add(this.panelUserNotLogged);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelActivityResults);
-            this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelActivity);
             this.Controls.Add(this.panelQuiz);
             this.Controls.Add(this.panelQuizMenu);
@@ -2367,6 +2404,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).EndInit();
             this.panelActivityResults.ResumeLayout(false);
             this.panelActivityResults.PerformLayout();
+            this.panelUserNotLogged.ResumeLayout(false);
+            this.panelUserNotLogged.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2527,5 +2566,8 @@
         private System.Windows.Forms.ImageList imageListSidebar;
         private System.Windows.Forms.GroupBox groupBoxActivityLevel;
         private System.Windows.Forms.Button buttonUpdateActivityLevel;
+        private System.Windows.Forms.Panel panelUserNotLogged;
+        private System.Windows.Forms.Button buttonGoToProfiles;
+        private System.Windows.Forms.Label labelNoProfile;
     }   
 }
