@@ -44,12 +44,12 @@
   ]
 }
 {
-  "ask": "Która witamina jest wytwarzana przez skórę w czasie wystawienia jej na działanie promieni słonecznych?",
-  "correctAnswer": "D",
+  "ask": "Do chorób wirusowych zaliczamy:",
+  "correctAnswer": "Ospę",
   "incorrectAnswers": [
-    "K",
-    "C",
-    "B"
+    "Anginę",
+    "Zakrzepicę",
+    "Chorobę wieńcową"
   ]
 }
 {
