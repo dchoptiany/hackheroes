@@ -254,6 +254,7 @@
             this.buttonProfile.Text = "<User name>";
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonProfile.UseVisualStyleBackColor = false;
+            this.buttonProfile.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
             // 
             // imageListProfile
@@ -284,17 +285,23 @@
             this.buttonBMI.Text = "BMI";
             this.buttonBMI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBMI.UseVisualStyleBackColor = false;
+            this.buttonBMI.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
             // 
             // imageListSidebar
             // 
             this.imageListSidebar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListSidebar.ImageStream")));
             this.imageListSidebar.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListSidebar.Images.SetKeyName(0, "calculatorMathIcon.png");
-            this.imageListSidebar.Images.SetKeyName(1, "dumbbellIcon.png");
-            this.imageListSidebar.Images.SetKeyName(2, "healthyHeartIcon.png");
-            this.imageListSidebar.Images.SetKeyName(3, "questionMarkIcon.png");
-            this.imageListSidebar.Images.SetKeyName(4, "surveyIcon.png");
+            this.imageListSidebar.Images.SetKeyName(0, "calculatorMathIconWhite.png");
+            this.imageListSidebar.Images.SetKeyName(1, "dumbbellIconWhite.png");
+            this.imageListSidebar.Images.SetKeyName(2, "healthyHeartIconWhite.png");
+            this.imageListSidebar.Images.SetKeyName(3, "questionMarkIconWhite.png");
+            this.imageListSidebar.Images.SetKeyName(4, "surveyIconWhite.png");
+            this.imageListSidebar.Images.SetKeyName(5, "surveyIcon.png");
+            this.imageListSidebar.Images.SetKeyName(6, "calculatorMathIcon.png");
+            this.imageListSidebar.Images.SetKeyName(7, "dumbbellIcon.png");
+            this.imageListSidebar.Images.SetKeyName(8, "questionMarkIcon.png");
+            this.imageListSidebar.Images.SetKeyName(9, "healthyHeartIcon.png");
             // 
             // buttonActivity
             // 
@@ -316,6 +323,7 @@
             this.buttonActivity.Text = "Sport na dziś";
             this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonActivity.UseVisualStyleBackColor = false;
+            this.buttonActivity.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
             // 
             // buttonQuiz
@@ -339,6 +347,7 @@
             this.buttonQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonQuiz.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonQuiz.UseVisualStyleBackColor = false;
+            this.buttonQuiz.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonQuiz.Click += new System.EventHandler(this.ButtonQuiz_Click);
             // 
             // buttonCalculator
@@ -362,6 +371,7 @@
             this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCalculator.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonCalculator.UseVisualStyleBackColor = false;
+            this.buttonCalculator.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
             // 
             // buttonSurvey
@@ -384,6 +394,7 @@
             this.buttonSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSurvey.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSurvey.UseVisualStyleBackColor = false;
+            this.buttonSurvey.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonSurvey.Click += new System.EventHandler(this.ButtonSurvey_Click);
             // 
             // buttonMinimize

@@ -27,6 +27,7 @@ namespace app
         private List<Button> menuButtons = new List<Button>();
         private readonly Color blue1 = Color.FromArgb(0, 168, 255);
         private readonly Color purple1 = Color.FromArgb(156, 136, 255);
+        private readonly Color lightBlue1 = Color.FromArgb(64, 115, 158);
         private readonly Color darkblue1 = Color.FromArgb(39, 60, 117);
         private readonly Color darkblue2 = Color.FromArgb(25, 42, 86);
         private readonly Color red1 = Color.FromArgb(232, 65, 24);
@@ -1437,6 +1438,12 @@ namespace app
         {
             LoadSports();
             panelActivity.BringToFront();
+        }
+
+        private void ButtonInSideBarEnabledChanged(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(72, 126, 176);
         }
     }
 }
