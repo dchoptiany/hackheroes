@@ -67,6 +67,14 @@
             this.panelQuizFinished = new System.Windows.Forms.Panel();
             this.panelQuizMenu = new System.Windows.Forms.Panel();
             this.panelMacro = new System.Windows.Forms.Panel();
+            this.groupBoxActivityLevel = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelKcal = new System.Windows.Forms.Label();
             this.labelFats = new System.Windows.Forms.Label();
@@ -80,13 +88,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBoxEdit = new System.Windows.Forms.GroupBox();
             this.buttonSaveChanges = new System.Windows.Forms.Button();
@@ -108,6 +109,9 @@
             this.panelProfiles = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.labelIndexInfo = new System.Windows.Forms.Label();
+            this.userItemThird = new app.UserItem();
+            this.userItemFirst = new app.UserItem();
+            this.userItemSecond = new app.UserItem();
             this.buttonArrowUp = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -179,9 +183,7 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
-            this.userItemThird = new app.UserItem();
-            this.userItemFirst = new app.UserItem();
-            this.userItemSecond = new app.UserItem();
+            this.buttonUpdateActivityLevel = new System.Windows.Forms.Button();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -193,8 +195,9 @@
             this.panelQuizFinished.SuspendLayout();
             this.panelQuizMenu.SuspendLayout();
             this.panelMacro.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.groupBoxActivityLevel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.groupBoxEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentHeight)).BeginInit();
@@ -722,23 +725,104 @@
             // 
             // panelMacro
             // 
+            this.panelMacro.Controls.Add(this.buttonUpdateActivityLevel);
+            this.panelMacro.Controls.Add(this.groupBoxActivityLevel);
             this.panelMacro.Controls.Add(this.tableLayoutPanel1);
-            this.panelMacro.Controls.Add(this.label38);
-            this.panelMacro.Controls.Add(this.label37);
-            this.panelMacro.Controls.Add(this.label36);
-            this.panelMacro.Controls.Add(this.label35);
-            this.panelMacro.Controls.Add(this.label34);
-            this.panelMacro.Controls.Add(this.label25);
-            this.panelMacro.Controls.Add(this.trackBarActivityLevel);
             this.panelMacro.Controls.Add(this.label3);
             this.panelMacro.Location = new System.Drawing.Point(280, 50);
             this.panelMacro.Name = "panelMacro";
             this.panelMacro.Size = new System.Drawing.Size(1000, 650);
             this.panelMacro.TabIndex = 17;
             // 
+            // groupBoxActivityLevel
+            // 
+            this.groupBoxActivityLevel.Controls.Add(this.label25);
+            this.groupBoxActivityLevel.Controls.Add(this.trackBarActivityLevel);
+            this.groupBoxActivityLevel.Controls.Add(this.label38);
+            this.groupBoxActivityLevel.Controls.Add(this.label34);
+            this.groupBoxActivityLevel.Controls.Add(this.label37);
+            this.groupBoxActivityLevel.Controls.Add(this.label35);
+            this.groupBoxActivityLevel.Controls.Add(this.label36);
+            this.groupBoxActivityLevel.Location = new System.Drawing.Point(236, 106);
+            this.groupBoxActivityLevel.Name = "groupBoxActivityLevel";
+            this.groupBoxActivityLevel.Size = new System.Drawing.Size(528, 162);
+            this.groupBoxActivityLevel.TabIndex = 21;
+            this.groupBoxActivityLevel.TabStop = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label25.Location = new System.Drawing.Point(171, 18);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(186, 24);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "Poziom aktywności";
+            // 
+            // trackBarActivityLevel
+            // 
+            this.trackBarActivityLevel.LargeChange = 1;
+            this.trackBarActivityLevel.Location = new System.Drawing.Point(38, 79);
+            this.trackBarActivityLevel.Maximum = 4;
+            this.trackBarActivityLevel.Name = "trackBarActivityLevel";
+            this.trackBarActivityLevel.Size = new System.Drawing.Size(442, 45);
+            this.trackBarActivityLevel.TabIndex = 2;
+            this.trackBarActivityLevel.Value = 2;
+            this.trackBarActivityLevel.Scroll += new System.EventHandler(this.TrackBarActivityLevel_Scroll);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(15, 123);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(64, 13);
+            this.label38.TabIndex = 19;
+            this.label38.Text = "Bardzo niski";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(434, 123);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(75, 13);
+            this.label34.TabIndex = 15;
+            this.label34.Text = "Bardzo wysoki";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(138, 123);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(30, 13);
+            this.label37.TabIndex = 18;
+            this.label37.Text = "Niski";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(346, 123);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(42, 13);
+            this.label35.TabIndex = 16;
+            this.label35.Text = "Wysoki";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(232, 123);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(56, 13);
+            this.label36.TabIndex = 17;
+            this.label36.Text = "Przeciętny";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
@@ -770,9 +854,9 @@
             this.labelKcal.AutoSize = true;
             this.labelKcal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelKcal.Location = new System.Drawing.Point(162, 3);
+            this.labelKcal.Location = new System.Drawing.Point(160, 2);
             this.labelKcal.Name = "labelKcal";
-            this.labelKcal.Size = new System.Drawing.Size(64, 41);
+            this.labelKcal.Size = new System.Drawing.Size(64, 42);
             this.labelKcal.TabIndex = 8;
             this.labelKcal.Text = "0";
             this.labelKcal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -782,9 +866,9 @@
             this.labelFats.AutoSize = true;
             this.labelFats.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelFats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFats.Location = new System.Drawing.Point(162, 47);
+            this.labelFats.Location = new System.Drawing.Point(160, 46);
             this.labelFats.Name = "labelFats";
-            this.labelFats.Size = new System.Drawing.Size(64, 41);
+            this.labelFats.Size = new System.Drawing.Size(64, 42);
             this.labelFats.TabIndex = 10;
             this.labelFats.Text = "0";
             this.labelFats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -794,9 +878,9 @@
             this.labelProtein.AutoSize = true;
             this.labelProtein.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelProtein.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelProtein.Location = new System.Drawing.Point(162, 91);
+            this.labelProtein.Location = new System.Drawing.Point(160, 90);
             this.labelProtein.Name = "labelProtein";
-            this.labelProtein.Size = new System.Drawing.Size(64, 41);
+            this.labelProtein.Size = new System.Drawing.Size(64, 42);
             this.labelProtein.TabIndex = 12;
             this.labelProtein.Text = "0";
             this.labelProtein.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -806,9 +890,9 @@
             this.labelCarbohydrates.AutoSize = true;
             this.labelCarbohydrates.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCarbohydrates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCarbohydrates.Location = new System.Drawing.Point(162, 135);
+            this.labelCarbohydrates.Location = new System.Drawing.Point(160, 134);
             this.labelCarbohydrates.Name = "labelCarbohydrates";
-            this.labelCarbohydrates.Size = new System.Drawing.Size(64, 42);
+            this.labelCarbohydrates.Size = new System.Drawing.Size(64, 44);
             this.labelCarbohydrates.TabIndex = 14;
             this.labelCarbohydrates.Text = "0";
             this.labelCarbohydrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -818,9 +902,9 @@
             this.label28.AutoSize = true;
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label28.Location = new System.Drawing.Point(6, 47);
+            this.label28.Location = new System.Drawing.Point(5, 46);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(147, 41);
+            this.label28.Size = new System.Drawing.Size(147, 42);
             this.label28.TabIndex = 9;
             this.label28.Text = "Tłuszcze";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -830,9 +914,9 @@
             this.label30.AutoSize = true;
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label30.Location = new System.Drawing.Point(6, 135);
+            this.label30.Location = new System.Drawing.Point(5, 134);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(147, 42);
+            this.label30.Size = new System.Drawing.Size(147, 44);
             this.label30.TabIndex = 13;
             this.label30.Text = "Węglowodany";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -843,9 +927,9 @@
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label32.Location = new System.Drawing.Point(6, 91);
+            this.label32.Location = new System.Drawing.Point(5, 90);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(147, 41);
+            this.label32.Size = new System.Drawing.Size(147, 42);
             this.label32.TabIndex = 11;
             this.label32.Text = "Białko ";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -855,9 +939,9 @@
             this.label27.AutoSize = true;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label27.Location = new System.Drawing.Point(235, 3);
+            this.label27.Location = new System.Drawing.Point(232, 2);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(53, 41);
+            this.label27.Size = new System.Drawing.Size(57, 42);
             this.label27.TabIndex = 15;
             this.label27.Text = "kcal";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -867,9 +951,9 @@
             this.label29.AutoSize = true;
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label29.Location = new System.Drawing.Point(235, 47);
+            this.label29.Location = new System.Drawing.Point(232, 46);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(53, 41);
+            this.label29.Size = new System.Drawing.Size(57, 42);
             this.label29.TabIndex = 16;
             this.label29.Text = "g";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -879,9 +963,9 @@
             this.label31.AutoSize = true;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label31.Location = new System.Drawing.Point(235, 91);
+            this.label31.Location = new System.Drawing.Point(232, 90);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(53, 41);
+            this.label31.Size = new System.Drawing.Size(57, 42);
             this.label31.TabIndex = 17;
             this.label31.Text = "g";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -891,9 +975,9 @@
             this.label33.AutoSize = true;
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label33.Location = new System.Drawing.Point(235, 135);
+            this.label33.Location = new System.Drawing.Point(232, 134);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(53, 42);
+            this.label33.Size = new System.Drawing.Size(57, 44);
             this.label33.TabIndex = 18;
             this.label33.Text = "g";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -903,94 +987,24 @@
             this.label26.AutoSize = true;
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label26.Location = new System.Drawing.Point(6, 3);
+            this.label26.Location = new System.Drawing.Point(5, 2);
             this.label26.Name = "label26";
             this.label26.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label26.Size = new System.Drawing.Size(147, 41);
+            this.label26.Size = new System.Drawing.Size(147, 42);
             this.label26.TabIndex = 4;
             this.label26.Text = "Energia";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(244, 202);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(64, 13);
-            this.label38.TabIndex = 19;
-            this.label38.Text = "Bardzo niski";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(367, 202);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(30, 13);
-            this.label37.TabIndex = 18;
-            this.label37.Text = "Niski";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(461, 202);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(56, 13);
-            this.label36.TabIndex = 17;
-            this.label36.Text = "Przeciętny";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(575, 202);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(42, 13);
-            this.label35.TabIndex = 16;
-            this.label35.Text = "Wysoki";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(663, 202);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(75, 13);
-            this.label34.TabIndex = 15;
-            this.label34.Text = "Bardzo wysoki";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label25.Location = new System.Drawing.Point(403, 98);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(186, 24);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "Poziom aktywności";
-            // 
-            // trackBarActivityLevel
-            // 
-            this.trackBarActivityLevel.LargeChange = 1;
-            this.trackBarActivityLevel.Location = new System.Drawing.Point(267, 166);
-            this.trackBarActivityLevel.Maximum = 4;
-            this.trackBarActivityLevel.Name = "trackBarActivityLevel";
-            this.trackBarActivityLevel.Size = new System.Drawing.Size(442, 45);
-            this.trackBarActivityLevel.TabIndex = 2;
-            this.trackBarActivityLevel.Value = 2;
-            this.trackBarActivityLevel.Scroll += new System.EventHandler(this.TrackBarActivityLevel_Scroll);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(432, 30);
+            this.label3.Location = new System.Drawing.Point(156, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 42);
+            this.label3.Size = new System.Drawing.Size(688, 42);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Makro";
+            this.label3.Text = "Zapotrzebowanie na składniki odżywcze";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBoxEdit
             // 
@@ -1282,6 +1296,42 @@
             this.labelIndexInfo.TabIndex = 53;
             this.labelIndexInfo.Text = "0/0";
             this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // userItemThird
+            // 
+            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
+            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemThird.Location = new System.Drawing.Point(27, 260);
+            this.userItemThird.Name = "userItemThird";
+            this.userItemThird.Size = new System.Drawing.Size(291, 76);
+            this.userItemThird.TabIndex = 55;
+            this.userItemThird.UserName = null;
+            this.userItemThird.Visible = false;
+            // 
+            // userItemFirst
+            // 
+            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
+            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
+            this.userItemFirst.Name = "userItemFirst";
+            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
+            this.userItemFirst.TabIndex = 53;
+            this.userItemFirst.UserName = null;
+            this.userItemFirst.Visible = false;
+            // 
+            // userItemSecond
+            // 
+            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
+            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
+            this.userItemSecond.Name = "userItemSecond";
+            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
+            this.userItemSecond.TabIndex = 54;
+            this.userItemSecond.UserName = null;
+            this.userItemSecond.Visible = false;
             // 
             // buttonArrowUp
             // 
@@ -2223,41 +2273,17 @@
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
-            // userItemThird
+            // buttonUpdateActivityLevel
             // 
-            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
-            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemThird.Location = new System.Drawing.Point(27, 260);
-            this.userItemThird.Name = "userItemThird";
-            this.userItemThird.Size = new System.Drawing.Size(291, 76);
-            this.userItemThird.TabIndex = 55;
-            this.userItemThird.UserName = null;
-            this.userItemThird.Visible = false;
-            // 
-            // userItemFirst
-            // 
-            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
-            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
-            this.userItemFirst.Name = "userItemFirst";
-            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
-            this.userItemFirst.TabIndex = 53;
-            this.userItemFirst.UserName = null;
-            this.userItemFirst.Visible = false;
-            // 
-            // userItemSecond
-            // 
-            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
-            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
-            this.userItemSecond.Name = "userItemSecond";
-            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
-            this.userItemSecond.TabIndex = 54;
-            this.userItemSecond.UserName = null;
-            this.userItemSecond.Visible = false;
+            this.buttonUpdateActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUpdateActivityLevel.Location = new System.Drawing.Point(255, 155);
+            this.buttonUpdateActivityLevel.Name = "buttonUpdateActivityLevel";
+            this.buttonUpdateActivityLevel.Size = new System.Drawing.Size(490, 68);
+            this.buttonUpdateActivityLevel.TabIndex = 22;
+            this.buttonUpdateActivityLevel.Text = "Aktualizuj poziom aktywności";
+            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = true;
+            this.buttonUpdateActivityLevel.Click += new System.EventHandler(this.buttonUpdateActivityLevel_Click);
             // 
             // Hackheroes
             // 
@@ -2265,20 +2291,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelMacro);
+            this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelActivityResults);
             this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelActivity);
-            this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelQuiz);
             this.Controls.Add(this.panelQuizMenu);
             this.Controls.Add(this.panelQuizFinished);
             this.Controls.Add(this.panelLandingPage);
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.flowLayoutPanelSidebar);
-            this.Controls.Add(this.panelMacro);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2303,9 +2329,11 @@
             this.panelQuizMenu.PerformLayout();
             this.panelMacro.ResumeLayout(false);
             this.panelMacro.PerformLayout();
+            this.groupBoxActivityLevel.ResumeLayout(false);
+            this.groupBoxActivityLevel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarActivityLevel)).EndInit();
             this.groupBoxEdit.ResumeLayout(false);
             this.groupBoxEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCurrentAge)).EndInit();
@@ -2497,5 +2525,7 @@
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.ImageList imageListProfile;
         private System.Windows.Forms.ImageList imageListSidebar;
+        private System.Windows.Forms.GroupBox groupBoxActivityLevel;
+        private System.Windows.Forms.Button buttonUpdateActivityLevel;
     }   
 }
