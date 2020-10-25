@@ -27,19 +27,10 @@ namespace app
 
         private List<Button> answerButtons = new List<Button>();
         private List<Button> menuButtons = new List<Button>();
-        private readonly Color blue1 = Color.FromArgb(0, 168, 255);
-        private readonly Color purple1 = Color.FromArgb(156, 136, 255);
-        private readonly Color lightBlue1 = Color.FromArgb(64, 115, 158);
-        private readonly Color darkblue1 = Color.FromArgb(39, 60, 117);
-        private readonly Color darkblue2 = Color.FromArgb(25, 42, 86);
-        private readonly Color red1 = Color.FromArgb(232, 65, 24);
-        private readonly Color red2 = Color.FromArgb(194, 54, 22);
-        private readonly Color green1 = Color.FromArgb(76, 209, 55);
-        private readonly Color green2 = Color.FromArgb(68, 189, 50);
-        private readonly Color yellow1 = Color.FromArgb(251, 197, 49);
-        private readonly Color yellow2 = Color.FromArgb(225, 177, 44);
-        private readonly Color white1 = Color.FromArgb(220, 221, 225);
-        private readonly Color white2 = Color.FromArgb(245, 246, 250);
+        private readonly Color blue = Color.FromArgb(0, 168, 255);
+        private readonly Color darkblue = Color.FromArgb(39, 60, 117);
+        private readonly Color yellow = Color.FromArgb(225, 177, 44);
+        private readonly Color white = Color.FromArgb(245, 246, 250);
 
         public Hackheroes()
         {
@@ -48,8 +39,8 @@ namespace app
 
         private void InitializeColors()
         {
-            BackColor = white2;
-            panelPointer.BackColor = blue1;
+            BackColor = white;
+            panelPointer.BackColor = blue;
         }
 
         private void InitializeButtons()
@@ -68,7 +59,7 @@ namespace app
             Button buttonSurvey = new Button
             {
                 FlatStyle = FlatStyle.Flat,
-                BackColor = Color.FromArgb(225, 177, 44),
+                BackColor = yellow,
                 ForeColor = Color.White,
                 Font = new Font("Montserrat", 26f, FontStyle.Regular, GraphicsUnit.Point, 238),
                 Margin = new Padding(0, 0, 0, 10),
@@ -92,7 +83,7 @@ namespace app
             foreach (Button button in menuButtons)
             {
                 button.Enabled = true;
-                button.BackColor = darkblue1;
+                button.BackColor = darkblue;
                 if (button.Text == clickedButton.Text)
                 {
                     button.Enabled = false;
@@ -547,9 +538,9 @@ namespace app
                     }
                 }
 
-                userItemFirst.BackColor = darkblue1;
-                userItemSecond.BackColor = darkblue1;
-                userItemThird.BackColor = darkblue1;
+                userItemFirst.BackColor = darkblue;
+                userItemSecond.BackColor = darkblue;
+                userItemThird.BackColor = darkblue;
 
                 if (currentUserIndex == firstVisibleUserItemIndex)
                 {
@@ -864,7 +855,7 @@ namespace app
 
             foreach(Button button in answerButtons)
             {
-                button.BackColor = Color.FromArgb(225, 177, 44);
+                button.BackColor = yellow;
             }
 
             int correctIndex = Program.rnd.Next(4);
@@ -1242,14 +1233,14 @@ namespace app
 
         private void SetButtonAsUnclicked(Button button)
         {
-            button.BackColor = darkblue1;
+            button.BackColor = darkblue;
             button.ForeColor = Color.FromArgb(255, 255, 255);
             button.Enabled = true;
         }
 
         private void SetButtonAsClicked(Button button)
         {
-            button.BackColor = yellow2;
+            button.BackColor = yellow;
             button.ForeColor = Color.FromArgb(47, 54, 64);
             button.Enabled = false;
         }
