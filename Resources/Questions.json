@@ -134,7 +134,7 @@
   ]
 }
 {
-  "ask": "Co ile lat odbywają się igrzyska olimpijskie:",
+  "ask": "Igrzyska olimpijskie odbywają się co:",
   "correctAnswer": "4 lata",
   "incorrectAnswers": [
     "2 lata",
@@ -143,7 +143,7 @@
   ]
 }
 {
-  "ask": "Co ma bezpośredni wpływ na spalanie tkanki tłuszczowej:",
+  "ask": "Bezpośredni wpływ na spalanie tkanki tłuszczowej ma:",
   "correctAnswer": "Deficyt kaloryczny",
   "incorrectAnswers": [
     "Ilość białka",
@@ -152,7 +152,7 @@
   ]
 }
 {
-  "ask": "Co warto dodać do codziennej rutyny:",
+  "ask": "Do codziennej rytyny warto dodać:",
   "correctAnswer": "Trening",
   "incorrectAnswers": [
     "Palenie papierosów",
@@ -161,7 +161,7 @@
   ]
 }
 {
-  "ask": "Jaki sport jest najmniej kontuzjogenny:",
+  "ask": "Najmniej kontuzjogennym sportem jest (są):",
   "correctAnswer": "Sporty siłowe",
   "incorrectAnswers": [
     "Kolarstwo",
@@ -287,7 +287,7 @@
   ]
 }
 {
-  "ask": "Na których MŚ Adam Małysz po raz 1. zdobył złoty medal?",
+  "ask": "Adam Małysz po raz pierwszy zdobył złoty medal MŚ w:",
   "correctAnswer": "2001 w Lahti",
   "incorrectAnswers": [
     "2011 w Oslo",
@@ -296,7 +296,7 @@
   ]
 }
 {
-  "ask": "Jaki był pierwszy klub piłkarski Roberta Lewandowskiego?",
+  "ask": "Pierwszym klubem piłkarskim Roberta Lewandowskiego był:",
   "correctAnswer": "Varsovia Warszawa",
   "incorrectAnswers": [
     "Borussia Dortmund",
@@ -305,16 +305,16 @@
   ]
 }
 {
-  "ask": "W której z poniższych dyscyplin jest najwięcej zawodników na boisku?",
-  "correctAnswer": "Piłka nożna",
+  "ask": "Najwięcej zawodników na boisku jest w:",
+  "correctAnswer": "Piłce nożnej",
   "incorrectAnswers": [
-    "Piłka ręczna",
-    "Siatkówka",
-    "Koszykówka"
+    "Piłce ręcznej",
+    "Siatkówce",
+    "Koszykówce"
   ]
 }
 {
-  "ask": "Jaki był najlepszy wynik reprezentacji Polski w piłce nożnej?",
+  "ask": "Najlepszy wynik reprezentacji Polski w piłce nożnej to:",
   "correctAnswer": "10:0",
   "incorrectAnswers": [
     "8:0",
@@ -323,7 +323,7 @@
   ]
 }
 {
-  "ask": "Co nie jest dyscypliną olimpijską",
+  "ask": "Dyscypliną olimpijską nie jest:",
   "correctAnswer": "Baseball",
   "incorrectAnswers": [
     "Łucznictwo",
