@@ -194,10 +194,10 @@
             this.labelNoProfile = new System.Windows.Forms.Label();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.labelQuizIntro = new System.Windows.Forms.Label();
             this.userItemThird = new app.UserItem();
             this.userItemFirst = new app.UserItem();
             this.userItemSecond = new app.UserItem();
-            this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -685,7 +685,7 @@
             // 
             this.labelQuiz.AutoSize = true;
             this.labelQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuiz.Location = new System.Drawing.Point(408, 50);
+            this.labelQuiz.Location = new System.Drawing.Point(418, 50);
             this.labelQuiz.Name = "labelQuiz";
             this.labelQuiz.Size = new System.Drawing.Size(164, 73);
             this.labelQuiz.TabIndex = 4;
@@ -703,7 +703,7 @@
             // 
             // panelQuizMenu
             // 
-            this.panelQuizMenu.Controls.Add(this.label2);
+            this.panelQuizMenu.Controls.Add(this.labelQuizIntro);
             this.panelQuizMenu.Controls.Add(this.labelQuiz);
             this.panelQuizMenu.Controls.Add(this.ButtonStartQuiz);
             this.panelQuizMenu.Location = new System.Drawing.Point(280, 50);
@@ -2447,6 +2447,18 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
+            // labelQuizIntro
+            // 
+            this.labelQuizIntro.AutoSize = true;
+            this.labelQuizIntro.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuizIntro.Location = new System.Drawing.Point(38, 200);
+            this.labelQuizIntro.Name = "labelQuizIntro";
+            this.labelQuizIntro.Size = new System.Drawing.Size(923, 144);
+            this.labelQuizIntro.TabIndex = 5;
+            this.labelQuizIntro.Text = "Sprawdź się w quizie wiedzy o zdrowiu! \r\nPrzed tobą 5 pytań, w których tylko jedn" +
+    "a odpowiedź jest poprawna.\r\nNa każdą odpowiedź masz 10 sekund.\r\n";
+            this.labelQuizIntro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // userItemThird
             // 
             this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
@@ -2482,18 +2494,6 @@
             this.userItemSecond.TabIndex = 54;
             this.userItemSecond.UserName = null;
             this.userItemSecond.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(38, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(923, 144);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Sprawdź się w quizie wiedzy o zdrowiu! \r\nPrzed tobą 5 pytań, w których tylko jedn" +
-    "a odpowiedź jest poprawna.\r\nNa każdą odpowiedź masz 10 sekund.\r\n";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Hackheroes
             // 
@@ -2762,6 +2762,6 @@
         private System.Windows.Forms.Button buttonGoToProfiles;
         private System.Windows.Forms.Label labelNoProfile;
         private System.Windows.Forms.Button buttonUpdateActivityLevel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelQuizIntro;
     }
 }
