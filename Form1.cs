@@ -44,23 +44,12 @@ namespace app
         public Hackheroes()
         {
             InitializeComponent();
-            InitializeButtons();
-            InitializeColors();
         }
 
         private void InitializeColors()
         {
             BackColor = white2;
-
             panelPointer.BackColor = blue1;
-
-            Color leftPanelBackColor = darkblue1;
-            flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
-
-            foreach(Button button in menuButtons)
-            {
-                button.BackColor = leftPanelBackColor;
-            }
         }
 
         private void InitializeButtons()
@@ -79,7 +68,9 @@ namespace app
             Button buttonSurvey = new Button
             {
                 FlatStyle = FlatStyle.Flat,
-                Font = new Font("Poppins", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
+                BackColor = Color.FromArgb(225, 177, 44),
+                ForeColor = Color.White,
+                Font = new Font("Montserrat", 26f, FontStyle.Regular, GraphicsUnit.Point, 238),
                 Margin = new Padding(0, 0, 0, 10),
                 Name = "buttonSurvey" + surveys.Count,
                 Size = new Size(800, 75),
@@ -231,6 +222,9 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
+            InitializeButtons();
+            InitializeColors();
+
             answerButtons.Add(buttonAnswerA);
             answerButtons.Add(buttonAnswerB);
             answerButtons.Add(buttonAnswerC);
@@ -870,7 +864,7 @@ namespace app
 
             foreach(Button button in answerButtons)
             {
-                button.BackColor = Color.FromArgb(127, 143, 166);
+                button.BackColor = Color.FromArgb(225, 177, 44);
             }
 
             int correctIndex = Program.rnd.Next(4);

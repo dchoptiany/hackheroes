@@ -41,22 +41,23 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.labelUserName);
-            this.panel1.Location = new System.Drawing.Point(75, 0);
+            this.panel1.Location = new System.Drawing.Point(72, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 76);
+            this.panel1.Size = new System.Drawing.Size(219, 76);
             this.panel1.TabIndex = 1;
             // 
             // labelUserName
             // 
             this.labelUserName.AutoSize = true;
             this.labelUserName.BackColor = System.Drawing.Color.Transparent;
-            this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUserName.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelUserName.ForeColor = System.Drawing.Color.White;
-            this.labelUserName.Location = new System.Drawing.Point(7, 24);
+            this.labelUserName.Location = new System.Drawing.Point(0, 15);
             this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(154, 29);
+            this.labelUserName.Size = new System.Drawing.Size(172, 33);
             this.labelUserName.TabIndex = 0;
             this.labelUserName.Text = "<user name>";
+            this.labelUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 

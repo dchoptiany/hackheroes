@@ -61,6 +61,7 @@
             this.labelQuiz = new System.Windows.Forms.Label();
             this.panelQuizFinished = new System.Windows.Forms.Panel();
             this.panelQuizMenu = new System.Windows.Forms.Panel();
+            this.labelQuizIntro = new System.Windows.Forms.Label();
             this.panelMacro = new System.Windows.Forms.Panel();
             this.buttonUpdateActivityLevel = new System.Windows.Forms.Button();
             this.groupBoxActivityLevel = new System.Windows.Forms.GroupBox();
@@ -194,7 +195,6 @@
             this.labelNoProfile = new System.Windows.Forms.Label();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.labelQuizIntro = new System.Windows.Forms.Label();
             this.userItemThird = new app.UserItem();
             this.userItemFirst = new app.UserItem();
             this.userItemSecond = new app.UserItem();
@@ -248,6 +248,7 @@
             // 
             // flowLayoutPanelSidebar
             // 
+            this.flowLayoutPanelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonProfile);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonHome);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonBMI);
@@ -262,11 +263,11 @@
             // 
             // buttonProfile
             // 
-            this.buttonProfile.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.buttonProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonProfile.FlatAppearance.BorderSize = 0;
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonProfile.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonProfile.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonProfile.ImageIndex = 0;
@@ -284,11 +285,11 @@
             // 
             // buttonHome
             // 
-            this.buttonHome.BackColor = System.Drawing.Color.Fuchsia;
+            this.buttonHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonHome.FlatAppearance.BorderSize = 0;
             this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonHome.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonHome.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonHome.Image = global::app.Properties.Resources.home;
             this.buttonHome.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -305,11 +306,11 @@
             // 
             // buttonBMI
             // 
-            this.buttonBMI.BackColor = System.Drawing.Color.Red;
+            this.buttonBMI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonBMI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonBMI.FlatAppearance.BorderSize = 0;
             this.buttonBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBMI.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBMI.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonBMI.Image = ((System.Drawing.Image)(resources.GetObject("buttonBMI.Image")));
             this.buttonBMI.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -327,11 +328,11 @@
             // 
             // buttonActivity
             // 
-            this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonActivity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonActivity.FlatAppearance.BorderSize = 0;
             this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonActivity.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonActivity.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonActivity.Image = ((System.Drawing.Image)(resources.GetObject("buttonActivity.Image")));
             this.buttonActivity.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -349,11 +350,11 @@
             // 
             // buttonQuiz
             // 
-            this.buttonQuiz.BackColor = System.Drawing.Color.Yellow;
+            this.buttonQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonQuiz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonQuiz.FlatAppearance.BorderSize = 0;
             this.buttonQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.buttonQuiz.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonQuiz.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonQuiz.Image = ((System.Drawing.Image)(resources.GetObject("buttonQuiz.Image")));
             this.buttonQuiz.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -372,11 +373,11 @@
             // 
             // buttonCalculator
             // 
-            this.buttonCalculator.BackColor = System.Drawing.Color.Lime;
+            this.buttonCalculator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonCalculator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonCalculator.FlatAppearance.BorderSize = 0;
             this.buttonCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCalculator.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonCalculator.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonCalculator.Image = ((System.Drawing.Image)(resources.GetObject("buttonCalculator.Image")));
             this.buttonCalculator.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -395,10 +396,10 @@
             // 
             // buttonSurvey
             // 
-            this.buttonSurvey.BackColor = System.Drawing.Color.Aqua;
+            this.buttonSurvey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonSurvey.FlatAppearance.BorderSize = 0;
             this.buttonSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurvey.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSurvey.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonSurvey.Image = ((System.Drawing.Image)(resources.GetObject("buttonSurvey.Image")));
             this.buttonSurvey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -417,23 +418,25 @@
             // 
             // buttonSurveyFinished
             // 
+            this.buttonSurveyFinished.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyFinished.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyFinished.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyFinished.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyFinished.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyFinished.Location = new System.Drawing.Point(400, 400);
             this.buttonSurveyFinished.Name = "buttonSurveyFinished";
             this.buttonSurveyFinished.Size = new System.Drawing.Size(200, 80);
             this.buttonSurveyFinished.TabIndex = 10;
             this.buttonSurveyFinished.Text = "Zakończ";
-            this.buttonSurveyFinished.UseVisualStyleBackColor = true;
+            this.buttonSurveyFinished.UseVisualStyleBackColor = false;
             this.buttonSurveyFinished.Click += new System.EventHandler(this.ButtonSurveyFinished_Clicked);
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label39.Location = new System.Drawing.Point(273, 175);
+            this.label39.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label39.Location = new System.Drawing.Point(155, 150);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(455, 55);
+            this.label39.Size = new System.Drawing.Size(690, 88);
             this.label39.TabIndex = 12;
             this.label39.Text = "Ankieta zakończona";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -466,10 +469,10 @@
             // labelBMIInterpretation
             // 
             this.labelBMIInterpretation.AutoSize = true;
-            this.labelBMIInterpretation.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelBMIInterpretation.Location = new System.Drawing.Point(342, 450);
+            this.labelBMIInterpretation.Font = new System.Drawing.Font("Montserrat", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMIInterpretation.Location = new System.Drawing.Point(313, 460);
             this.labelBMIInterpretation.Name = "labelBMIInterpretation";
-            this.labelBMIInterpretation.Size = new System.Drawing.Size(279, 42);
+            this.labelBMIInterpretation.Size = new System.Drawing.Size(373, 60);
             this.labelBMIInterpretation.TabIndex = 5;
             this.labelBMIInterpretation.Text = "<interpretation>";
             this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -477,10 +480,10 @@
             // labelBMI
             // 
             this.labelBMI.AutoSize = true;
-            this.labelBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelBMI.Location = new System.Drawing.Point(273, 380);
+            this.labelBMI.Font = new System.Drawing.Font("Montserrat", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMI.Location = new System.Drawing.Point(218, 380);
             this.labelBMI.Name = "labelBMI";
-            this.labelBMI.Size = new System.Drawing.Size(447, 42);
+            this.labelBMI.Size = new System.Drawing.Size(565, 60);
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -498,10 +501,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(421, 80);
+            this.label6.Font = new System.Drawing.Font("Montserrat", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(395, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 73);
+            this.label6.Size = new System.Drawing.Size(209, 111);
             this.label6.TabIndex = 1;
             this.label6.Text = "BMI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -539,17 +542,17 @@
             // labelNumber
             // 
             this.labelNumber.AutoSize = true;
-            this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNumber.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelNumber.Location = new System.Drawing.Point(65, 95);
             this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(52, 31);
+            this.labelNumber.Size = new System.Drawing.Size(51, 37);
             this.labelNumber.TabIndex = 7;
             this.labelNumber.Text = "1/5\r\n";
             // 
             // labelQuestion
             // 
             this.labelQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuestion.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuestion.Location = new System.Drawing.Point(100, 150);
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(800, 150);
@@ -577,13 +580,13 @@
             // 
             // buttonAnswerA
             // 
-            this.buttonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonAnswerA.Enabled = false;
             this.buttonAnswerA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAnswerA.FlatAppearance.BorderSize = 2;
             this.buttonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnswerA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAnswerA.ForeColor = System.Drawing.Color.Black;
+            this.buttonAnswerA.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnswerA.ForeColor = System.Drawing.Color.White;
             this.buttonAnswerA.Location = new System.Drawing.Point(0, 0);
             this.buttonAnswerA.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnswerA.Name = "buttonAnswerA";
@@ -595,13 +598,13 @@
             // 
             // buttonAnswerB
             // 
-            this.buttonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonAnswerB.Enabled = false;
             this.buttonAnswerB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAnswerB.FlatAppearance.BorderSize = 2;
             this.buttonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnswerB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAnswerB.ForeColor = System.Drawing.Color.Black;
+            this.buttonAnswerB.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnswerB.ForeColor = System.Drawing.Color.White;
             this.buttonAnswerB.Location = new System.Drawing.Point(450, 0);
             this.buttonAnswerB.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnswerB.Name = "buttonAnswerB";
@@ -613,13 +616,13 @@
             // 
             // buttonAnswerD
             // 
-            this.buttonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonAnswerD.Enabled = false;
             this.buttonAnswerD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAnswerD.FlatAppearance.BorderSize = 2;
             this.buttonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnswerD.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAnswerD.ForeColor = System.Drawing.Color.Black;
+            this.buttonAnswerD.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnswerD.ForeColor = System.Drawing.Color.White;
             this.buttonAnswerD.Location = new System.Drawing.Point(450, 125);
             this.buttonAnswerD.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnswerD.Name = "buttonAnswerD";
@@ -631,13 +634,13 @@
             // 
             // buttonAnswerC
             // 
-            this.buttonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonAnswerC.Enabled = false;
             this.buttonAnswerC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAnswerC.FlatAppearance.BorderSize = 2;
             this.buttonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnswerC.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAnswerC.ForeColor = System.Drawing.Color.Black;
+            this.buttonAnswerC.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnswerC.ForeColor = System.Drawing.Color.White;
             this.buttonAnswerC.Location = new System.Drawing.Point(0, 125);
             this.buttonAnswerC.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnswerC.Name = "buttonAnswerC";
@@ -649,45 +652,49 @@
             // 
             // buttonFinishQuiz
             // 
+            this.buttonFinishQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonFinishQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFinishQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonFinishQuiz.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonFinishQuiz.ForeColor = System.Drawing.Color.White;
             this.buttonFinishQuiz.Location = new System.Drawing.Point(400, 300);
             this.buttonFinishQuiz.Name = "buttonFinishQuiz";
             this.buttonFinishQuiz.Size = new System.Drawing.Size(200, 80);
             this.buttonFinishQuiz.TabIndex = 7;
             this.buttonFinishQuiz.Text = "Zakończ";
-            this.buttonFinishQuiz.UseVisualStyleBackColor = true;
+            this.buttonFinishQuiz.UseVisualStyleBackColor = false;
             this.buttonFinishQuiz.Click += new System.EventHandler(this.ButtonFinishQuiz_Click);
             // 
             // labelQuizResult
             // 
             this.labelQuizResult.AutoSize = true;
-            this.labelQuizResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuizResult.Location = new System.Drawing.Point(394, 220);
+            this.labelQuizResult.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuizResult.Location = new System.Drawing.Point(317, 150);
             this.labelQuizResult.Name = "labelQuizResult";
-            this.labelQuizResult.Size = new System.Drawing.Size(192, 42);
+            this.labelQuizResult.Size = new System.Drawing.Size(365, 88);
             this.labelQuizResult.TabIndex = 8;
             this.labelQuizResult.Text = "Wynik: 5/5";
             // 
             // ButtonStartQuiz
             // 
+            this.ButtonStartQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.ButtonStartQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonStartQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonStartQuiz.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonStartQuiz.ForeColor = System.Drawing.Color.White;
             this.ButtonStartQuiz.Location = new System.Drawing.Point(400, 400);
             this.ButtonStartQuiz.Name = "ButtonStartQuiz";
             this.ButtonStartQuiz.Size = new System.Drawing.Size(200, 80);
             this.ButtonStartQuiz.TabIndex = 2;
             this.ButtonStartQuiz.Text = "Start";
-            this.ButtonStartQuiz.UseVisualStyleBackColor = true;
+            this.ButtonStartQuiz.UseVisualStyleBackColor = false;
             this.ButtonStartQuiz.Click += new System.EventHandler(this.ButtonStartQuiz_Click);
             // 
             // labelQuiz
             // 
             this.labelQuiz.AutoSize = true;
-            this.labelQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuiz.Location = new System.Drawing.Point(418, 50);
+            this.labelQuiz.Font = new System.Drawing.Font("Montserrat", 54F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuiz.Location = new System.Drawing.Point(395, 0);
             this.labelQuiz.Name = "labelQuiz";
-            this.labelQuiz.Size = new System.Drawing.Size(164, 73);
+            this.labelQuiz.Size = new System.Drawing.Size(209, 99);
             this.labelQuiz.TabIndex = 4;
             this.labelQuiz.Text = "Quiz";
             this.labelQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -711,6 +718,19 @@
             this.panelQuizMenu.Size = new System.Drawing.Size(1000, 650);
             this.panelQuizMenu.TabIndex = 17;
             // 
+            // labelQuizIntro
+            // 
+            this.labelQuizIntro.AutoSize = true;
+            this.labelQuizIntro.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuizIntro.Location = new System.Drawing.Point(104, 175);
+            this.labelQuizIntro.Name = "labelQuizIntro";
+            this.labelQuizIntro.Size = new System.Drawing.Size(792, 176);
+            this.labelQuizIntro.TabIndex = 5;
+            this.labelQuizIntro.Text = "Sprawdź się w quizie wiedzy o zdrowiu,\r\nsporcie i odżywianiu! Przed tobą 5 pytań," +
+    "\r\nw których tylko jedna odpowiedź jest poprawna.\r\nNa każdą odpowiedź masz 10 sek" +
+    "und.\r\n";
+            this.labelQuizIntro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelMacro
             // 
             this.panelMacro.Controls.Add(this.buttonUpdateActivityLevel);
@@ -724,14 +744,16 @@
             // 
             // buttonUpdateActivityLevel
             // 
+            this.buttonUpdateActivityLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonUpdateActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUpdateActivityLevel.ForeColor = System.Drawing.Color.White;
             this.buttonUpdateActivityLevel.Location = new System.Drawing.Point(255, 156);
             this.buttonUpdateActivityLevel.Name = "buttonUpdateActivityLevel";
             this.buttonUpdateActivityLevel.Size = new System.Drawing.Size(490, 68);
             this.buttonUpdateActivityLevel.TabIndex = 23;
             this.buttonUpdateActivityLevel.Text = "Aktualizuj poziom aktywności";
-            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = true;
+            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = false;
             this.buttonUpdateActivityLevel.Click += new System.EventHandler(this.ButtonUpdateActivityLevel_Click);
             // 
             // groupBoxActivityLevel
@@ -752,12 +774,13 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label25.Location = new System.Drawing.Point(171, 29);
+            this.label25.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label25.Location = new System.Drawing.Point(90, 30);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(186, 24);
+            this.label25.Size = new System.Drawing.Size(348, 44);
             this.label25.TabIndex = 3;
             this.label25.Text = "Poziom aktywności";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // trackBarActivityLevel
             // 
@@ -773,9 +796,10 @@
             // label38
             // 
             this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label38.Location = new System.Drawing.Point(18, 130);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(64, 13);
+            this.label38.Size = new System.Drawing.Size(89, 18);
             this.label38.TabIndex = 19;
             this.label38.Text = "Bardzo niski";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -783,9 +807,10 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(437, 130);
+            this.label34.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label34.Location = new System.Drawing.Point(422, 130);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(75, 13);
+            this.label34.Size = new System.Drawing.Size(102, 18);
             this.label34.TabIndex = 15;
             this.label34.Text = "Bardzo wysoki";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -793,9 +818,10 @@
             // label37
             // 
             this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label37.Location = new System.Drawing.Point(141, 130);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(30, 13);
+            this.label37.Size = new System.Drawing.Size(41, 18);
             this.label37.TabIndex = 18;
             this.label37.Text = "Niski";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -803,9 +829,10 @@
             // label35
             // 
             this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label35.Location = new System.Drawing.Point(349, 130);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(42, 13);
+            this.label35.Size = new System.Drawing.Size(55, 18);
             this.label35.TabIndex = 16;
             this.label35.Text = "Wysoki";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -813,9 +840,10 @@
             // label36
             // 
             this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label36.Location = new System.Drawing.Point(235, 130);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(56, 13);
+            this.label36.Size = new System.Drawing.Size(77, 18);
             this.label36.TabIndex = 17;
             this.label36.Text = "Przeciętny";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -825,7 +853,7 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.labelKcal, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelFats, 1, 1);
@@ -839,24 +867,25 @@
             this.tableLayoutPanel1.Controls.Add(this.label31, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label33, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label26, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(353, 280);
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(316, 350);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(294, 180);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(368, 180);
             this.tableLayoutPanel1.TabIndex = 20;
             // 
             // labelKcal
             // 
             this.labelKcal.AutoSize = true;
             this.labelKcal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelKcal.Location = new System.Drawing.Point(160, 2);
+            this.labelKcal.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKcal.Location = new System.Drawing.Point(201, 2);
             this.labelKcal.Name = "labelKcal";
-            this.labelKcal.Size = new System.Drawing.Size(64, 42);
+            this.labelKcal.Size = new System.Drawing.Size(94, 42);
             this.labelKcal.TabIndex = 8;
             this.labelKcal.Text = "0";
             this.labelKcal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -865,10 +894,10 @@
             // 
             this.labelFats.AutoSize = true;
             this.labelFats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFats.Location = new System.Drawing.Point(160, 46);
+            this.labelFats.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFats.Location = new System.Drawing.Point(201, 46);
             this.labelFats.Name = "labelFats";
-            this.labelFats.Size = new System.Drawing.Size(64, 42);
+            this.labelFats.Size = new System.Drawing.Size(94, 42);
             this.labelFats.TabIndex = 10;
             this.labelFats.Text = "0";
             this.labelFats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -877,10 +906,10 @@
             // 
             this.labelProtein.AutoSize = true;
             this.labelProtein.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelProtein.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelProtein.Location = new System.Drawing.Point(160, 90);
+            this.labelProtein.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelProtein.Location = new System.Drawing.Point(201, 90);
             this.labelProtein.Name = "labelProtein";
-            this.labelProtein.Size = new System.Drawing.Size(64, 42);
+            this.labelProtein.Size = new System.Drawing.Size(94, 42);
             this.labelProtein.TabIndex = 12;
             this.labelProtein.Text = "0";
             this.labelProtein.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -889,10 +918,10 @@
             // 
             this.labelCarbohydrates.AutoSize = true;
             this.labelCarbohydrates.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCarbohydrates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCarbohydrates.Location = new System.Drawing.Point(160, 134);
+            this.labelCarbohydrates.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCarbohydrates.Location = new System.Drawing.Point(201, 134);
             this.labelCarbohydrates.Name = "labelCarbohydrates";
-            this.labelCarbohydrates.Size = new System.Drawing.Size(64, 44);
+            this.labelCarbohydrates.Size = new System.Drawing.Size(94, 44);
             this.labelCarbohydrates.TabIndex = 14;
             this.labelCarbohydrates.Text = "0";
             this.labelCarbohydrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -901,10 +930,10 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label28.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label28.Location = new System.Drawing.Point(5, 46);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(147, 42);
+            this.label28.Size = new System.Drawing.Size(188, 42);
             this.label28.TabIndex = 9;
             this.label28.Text = "Tłuszcze";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -913,10 +942,10 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label30.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label30.Location = new System.Drawing.Point(5, 134);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(147, 44);
+            this.label30.Size = new System.Drawing.Size(188, 44);
             this.label30.TabIndex = 13;
             this.label30.Text = "Węglowodany";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -925,11 +954,11 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label32.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label32.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label32.Location = new System.Drawing.Point(5, 90);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(147, 42);
+            this.label32.Size = new System.Drawing.Size(188, 42);
             this.label32.TabIndex = 11;
             this.label32.Text = "Białko ";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -938,10 +967,10 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label27.Location = new System.Drawing.Point(232, 2);
+            this.label27.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label27.Location = new System.Drawing.Point(303, 2);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(57, 42);
+            this.label27.Size = new System.Drawing.Size(62, 42);
             this.label27.TabIndex = 15;
             this.label27.Text = "kcal";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -950,10 +979,10 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label29.Location = new System.Drawing.Point(232, 46);
+            this.label29.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label29.Location = new System.Drawing.Point(303, 46);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(57, 42);
+            this.label29.Size = new System.Drawing.Size(62, 42);
             this.label29.TabIndex = 16;
             this.label29.Text = "g";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -962,10 +991,10 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label31.Location = new System.Drawing.Point(232, 90);
+            this.label31.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label31.Location = new System.Drawing.Point(303, 90);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(57, 42);
+            this.label31.Size = new System.Drawing.Size(62, 42);
             this.label31.TabIndex = 17;
             this.label31.Text = "g";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -974,10 +1003,10 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label33.Location = new System.Drawing.Point(232, 134);
+            this.label33.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label33.Location = new System.Drawing.Point(303, 134);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(57, 44);
+            this.label33.Size = new System.Drawing.Size(62, 44);
             this.label33.TabIndex = 18;
             this.label33.Text = "g";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -986,11 +1015,11 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label26.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label26.Location = new System.Drawing.Point(5, 2);
             this.label26.Name = "label26";
             this.label26.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label26.Size = new System.Drawing.Size(147, 42);
+            this.label26.Size = new System.Drawing.Size(188, 42);
             this.label26.TabIndex = 4;
             this.label26.Text = "Energia";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -998,10 +1027,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(156, 38);
+            this.label3.Font = new System.Drawing.Font("Montserrat", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(37, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(688, 42);
+            this.label3.Size = new System.Drawing.Size(926, 60);
             this.label3.TabIndex = 1;
             this.label3.Text = "Zapotrzebowanie na składniki odżywcze";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1047,10 +1076,10 @@
             // textBoxCurrentName
             // 
             this.textBoxCurrentName.AllowDrop = true;
-            this.textBoxCurrentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxCurrentName.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxCurrentName.Location = new System.Drawing.Point(96, 19);
             this.textBoxCurrentName.Name = "textBoxCurrentName";
-            this.textBoxCurrentName.Size = new System.Drawing.Size(203, 29);
+            this.textBoxCurrentName.Size = new System.Drawing.Size(203, 33);
             this.textBoxCurrentName.TabIndex = 47;
             this.textBoxCurrentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxCurrentName.WordWrap = false;
@@ -1073,27 +1102,27 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(172, 137);
+            this.label17.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(172, 135);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(28, 24);
+            this.label17.Size = new System.Drawing.Size(40, 29);
             this.label17.TabIndex = 52;
             this.label17.Text = "lat";
             // 
             // labelCurrentName
             // 
             this.labelCurrentName.AutoSize = true;
-            this.labelCurrentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentName.Location = new System.Drawing.Point(39, 22);
+            this.labelCurrentName.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentName.Location = new System.Drawing.Point(31, 22);
             this.labelCurrentName.Name = "labelCurrentName";
-            this.labelCurrentName.Size = new System.Drawing.Size(45, 24);
+            this.labelCurrentName.Size = new System.Drawing.Size(60, 29);
             this.labelCurrentName.TabIndex = 51;
             this.labelCurrentName.Text = "Imię";
             this.labelCurrentName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // numericUpDownCurrentAge
             // 
-            this.numericUpDownCurrentAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownCurrentAge.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownCurrentAge.Location = new System.Drawing.Point(96, 134);
             this.numericUpDownCurrentAge.Maximum = new decimal(new int[] {
             200,
@@ -1106,7 +1135,7 @@
             0,
             0});
             this.numericUpDownCurrentAge.Name = "numericUpDownCurrentAge";
-            this.numericUpDownCurrentAge.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownCurrentAge.Size = new System.Drawing.Size(70, 33);
             this.numericUpDownCurrentAge.TabIndex = 50;
             this.numericUpDownCurrentAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentAge.Value = new decimal(new int[] {
@@ -1119,17 +1148,17 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label44.Location = new System.Drawing.Point(172, 97);
+            this.label44.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label44.Location = new System.Drawing.Point(172, 96);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(36, 24);
+            this.label44.Size = new System.Drawing.Size(47, 29);
             this.label44.TabIndex = 39;
             this.label44.Text = "cm";
             // 
             // numericUpDownCurrentHeight
             // 
             this.numericUpDownCurrentHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownCurrentHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownCurrentHeight.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownCurrentHeight.Location = new System.Drawing.Point(96, 95);
             this.numericUpDownCurrentHeight.Maximum = new decimal(new int[] {
             300,
@@ -1142,7 +1171,7 @@
             0,
             0});
             this.numericUpDownCurrentHeight.Name = "numericUpDownCurrentHeight";
-            this.numericUpDownCurrentHeight.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownCurrentHeight.Size = new System.Drawing.Size(70, 33);
             this.numericUpDownCurrentHeight.TabIndex = 49;
             this.numericUpDownCurrentHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentHeight.Value = new decimal(new int[] {
@@ -1155,10 +1184,10 @@
             // labelCurrentHeight
             // 
             this.labelCurrentHeight.AutoSize = true;
-            this.labelCurrentHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentHeight.Location = new System.Drawing.Point(17, 99);
+            this.labelCurrentHeight.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentHeight.Location = new System.Drawing.Point(7, 97);
             this.labelCurrentHeight.Name = "labelCurrentHeight";
-            this.labelCurrentHeight.Size = new System.Drawing.Size(67, 24);
+            this.labelCurrentHeight.Size = new System.Drawing.Size(86, 29);
             this.labelCurrentHeight.TabIndex = 40;
             this.labelCurrentHeight.Text = "Wzrost";
             this.labelCurrentHeight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1166,7 +1195,7 @@
             // numericUpDownCurrentWeight
             // 
             this.numericUpDownCurrentWeight.DecimalPlaces = 1;
-            this.numericUpDownCurrentWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownCurrentWeight.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownCurrentWeight.Location = new System.Drawing.Point(96, 56);
             this.numericUpDownCurrentWeight.Maximum = new decimal(new int[] {
             350,
@@ -1179,7 +1208,7 @@
             0,
             0});
             this.numericUpDownCurrentWeight.Name = "numericUpDownCurrentWeight";
-            this.numericUpDownCurrentWeight.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownCurrentWeight.Size = new System.Drawing.Size(70, 33);
             this.numericUpDownCurrentWeight.TabIndex = 48;
             this.numericUpDownCurrentWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownCurrentWeight.Value = new decimal(new int[] {
@@ -1192,10 +1221,10 @@
             // labelCurrentWeight
             // 
             this.labelCurrentWeight.AutoSize = true;
-            this.labelCurrentWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentWeight.Location = new System.Drawing.Point(25, 58);
+            this.labelCurrentWeight.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentWeight.Location = new System.Drawing.Point(18, 58);
             this.labelCurrentWeight.Name = "labelCurrentWeight";
-            this.labelCurrentWeight.Size = new System.Drawing.Size(59, 24);
+            this.labelCurrentWeight.Size = new System.Drawing.Size(73, 29);
             this.labelCurrentWeight.TabIndex = 41;
             this.labelCurrentWeight.Text = "Waga";
             this.labelCurrentWeight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1203,10 +1232,10 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label41.Location = new System.Drawing.Point(172, 60);
+            this.label41.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label41.Location = new System.Drawing.Point(172, 58);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(30, 24);
+            this.label41.Size = new System.Drawing.Size(40, 29);
             this.label41.TabIndex = 42;
             this.label41.Text = "kg";
             // 
@@ -1214,10 +1243,10 @@
             // 
             this.radioButtonCurrentMale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonCurrentMale.AutoSize = true;
-            this.radioButtonCurrentMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonCurrentMale.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.radioButtonCurrentMale.Location = new System.Drawing.Point(96, 171);
             this.radioButtonCurrentMale.Name = "radioButtonCurrentMale";
-            this.radioButtonCurrentMale.Size = new System.Drawing.Size(114, 34);
+            this.radioButtonCurrentMale.Size = new System.Drawing.Size(138, 39);
             this.radioButtonCurrentMale.TabIndex = 46;
             this.radioButtonCurrentMale.TabStop = true;
             this.radioButtonCurrentMale.Text = "Mężczyzna";
@@ -1227,10 +1256,10 @@
             // labelCurrentAge
             // 
             this.labelCurrentAge.AutoSize = true;
-            this.labelCurrentAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentAge.Location = new System.Drawing.Point(32, 137);
+            this.labelCurrentAge.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentAge.Location = new System.Drawing.Point(25, 137);
             this.labelCurrentAge.Name = "labelCurrentAge";
-            this.labelCurrentAge.Size = new System.Drawing.Size(52, 24);
+            this.labelCurrentAge.Size = new System.Drawing.Size(68, 29);
             this.labelCurrentAge.TabIndex = 43;
             this.labelCurrentAge.Text = "Wiek";
             this.labelCurrentAge.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1239,10 +1268,10 @@
             // 
             this.radioButtonCurrentFemale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonCurrentFemale.AutoSize = true;
-            this.radioButtonCurrentFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButtonCurrentFemale.Location = new System.Drawing.Point(216, 171);
+            this.radioButtonCurrentFemale.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonCurrentFemale.Location = new System.Drawing.Point(236, 171);
             this.radioButtonCurrentFemale.Name = "radioButtonCurrentFemale";
-            this.radioButtonCurrentFemale.Size = new System.Drawing.Size(83, 34);
+            this.radioButtonCurrentFemale.Size = new System.Drawing.Size(104, 39);
             this.radioButtonCurrentFemale.TabIndex = 45;
             this.radioButtonCurrentFemale.TabStop = true;
             this.radioButtonCurrentFemale.Text = "Kobieta";
@@ -1252,10 +1281,10 @@
             // labelCurrentGender
             // 
             this.labelCurrentGender.AutoSize = true;
-            this.labelCurrentGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentGender.Location = new System.Drawing.Point(33, 176);
+            this.labelCurrentGender.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCurrentGender.Location = new System.Drawing.Point(32, 175);
             this.labelCurrentGender.Name = "labelCurrentGender";
-            this.labelCurrentGender.Size = new System.Drawing.Size(51, 24);
+            this.labelCurrentGender.Size = new System.Drawing.Size(59, 29);
             this.labelCurrentGender.TabIndex = 44;
             this.labelCurrentGender.Text = "Płeć";
             this.labelCurrentGender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1289,10 +1318,10 @@
             // labelIndexInfo
             // 
             this.labelIndexInfo.AutoSize = true;
-            this.labelIndexInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelIndexInfo.Location = new System.Drawing.Point(328, 248);
+            this.labelIndexInfo.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelIndexInfo.Location = new System.Drawing.Point(323, 240);
             this.labelIndexInfo.Name = "labelIndexInfo";
-            this.labelIndexInfo.Size = new System.Drawing.Size(46, 29);
+            this.labelIndexInfo.Size = new System.Drawing.Size(55, 33);
             this.labelIndexInfo.TabIndex = 53;
             this.labelIndexInfo.Text = "0/0";
             this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1341,10 +1370,10 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.Location = new System.Drawing.Point(90, 24);
+            this.label16.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(62, 20);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(207, 33);
+            this.label16.Size = new System.Drawing.Size(258, 44);
             this.label16.TabIndex = 17;
             this.label16.Text = "Wybierz profil";
             // 
@@ -1370,7 +1399,7 @@
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Location = new System.Drawing.Point(606, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(311, 508);
+            this.groupBox4.Size = new System.Drawing.Size(343, 508);
             this.groupBox4.TabIndex = 56;
             this.groupBox4.TabStop = false;
             // 
@@ -1382,7 +1411,7 @@
             this.groupBox6.Controls.Add(this.radioButtonAvatarGray);
             this.groupBox6.Controls.Add(this.radioButtonAvatarRed);
             this.groupBox6.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBox6.Location = new System.Drawing.Point(47, 337);
+            this.groupBox6.Location = new System.Drawing.Point(57, 340);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(228, 87);
             this.groupBox6.TabIndex = 23;
@@ -1442,17 +1471,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(122, 309);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(125, 308);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 24);
+            this.label1.Size = new System.Drawing.Size(91, 29);
             this.label1.TabIndex = 17;
             this.label1.Text = "Zdjęcie";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonCreate
             // 
-            this.buttonCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonCreate.FlatAppearance.BorderSize = 0;
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1468,20 +1497,20 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(75, 24);
+            this.label7.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(63, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 33);
+            this.label7.Size = new System.Drawing.Size(215, 44);
             this.label7.TabIndex = 1;
             this.label7.Text = "Nowy profil";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(29, 86);
+            this.label14.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(36, 86);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 24);
+            this.label14.Size = new System.Drawing.Size(60, 29);
             this.label14.TabIndex = 15;
             this.label14.Text = "Imię";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1489,20 +1518,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(157, 163);
+            this.label8.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(178, 161);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 24);
+            this.label8.Size = new System.Drawing.Size(47, 29);
             this.label8.TabIndex = 2;
             this.label8.Text = "cm";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(7, 163);
+            this.label9.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(10, 161);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 24);
+            this.label9.Size = new System.Drawing.Size(86, 29);
             this.label9.TabIndex = 3;
             this.label9.Text = "Wzrost";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1510,10 +1539,10 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(15, 123);
+            this.label10.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(23, 123);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 24);
+            this.label10.Size = new System.Drawing.Size(73, 29);
             this.label10.TabIndex = 4;
             this.label10.Text = "Waga";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1521,20 +1550,20 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(157, 126);
+            this.label11.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(178, 123);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 24);
+            this.label11.Size = new System.Drawing.Size(40, 29);
             this.label11.TabIndex = 5;
             this.label11.Text = "kg";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(22, 205);
+            this.label12.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(28, 203);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 24);
+            this.label12.Size = new System.Drawing.Size(68, 29);
             this.label12.TabIndex = 7;
             this.label12.Text = "Wiek";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1542,10 +1571,10 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(23, 251);
+            this.label13.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(34, 248);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 24);
+            this.label13.Size = new System.Drawing.Size(59, 29);
             this.label13.TabIndex = 8;
             this.label13.Text = "Płeć";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1554,10 +1583,10 @@
             // 
             this.radioButtonFemale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButtonFemale.Location = new System.Drawing.Point(201, 246);
+            this.radioButtonFemale.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonFemale.Location = new System.Drawing.Point(239, 246);
             this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(83, 34);
+            this.radioButtonFemale.Size = new System.Drawing.Size(104, 39);
             this.radioButtonFemale.TabIndex = 9;
             this.radioButtonFemale.TabStop = true;
             this.radioButtonFemale.Text = "Kobieta";
@@ -1569,10 +1598,10 @@
             this.radioButtonMale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonMale.AutoSize = true;
             this.radioButtonMale.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButtonMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButtonMale.Location = new System.Drawing.Point(81, 246);
+            this.radioButtonMale.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonMale.Location = new System.Drawing.Point(99, 246);
             this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(114, 34);
+            this.radioButtonMale.Size = new System.Drawing.Size(138, 39);
             this.radioButtonMale.TabIndex = 10;
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Mężczyzna";
@@ -1582,10 +1611,10 @@
             // textBoxName
             // 
             this.textBoxName.AllowDrop = true;
-            this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxName.Location = new System.Drawing.Point(81, 83);
+            this.textBoxName.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxName.Location = new System.Drawing.Point(102, 83);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(203, 29);
+            this.textBoxName.Size = new System.Drawing.Size(203, 33);
             this.textBoxName.TabIndex = 11;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxName.WordWrap = false;
@@ -1593,8 +1622,8 @@
             // numericUpDownWeight
             // 
             this.numericUpDownWeight.DecimalPlaces = 1;
-            this.numericUpDownWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDownWeight.Location = new System.Drawing.Point(81, 122);
+            this.numericUpDownWeight.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownWeight.Location = new System.Drawing.Point(102, 122);
             this.numericUpDownWeight.Maximum = new decimal(new int[] {
             600,
             0,
@@ -1606,7 +1635,7 @@
             0,
             0});
             this.numericUpDownWeight.Name = "numericUpDownWeight";
-            this.numericUpDownWeight.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownWeight.Size = new System.Drawing.Size(70, 33);
             this.numericUpDownWeight.TabIndex = 12;
             this.numericUpDownWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownWeight.Value = new decimal(new int[] {
@@ -1618,8 +1647,8 @@
             // numericUpDownHeight
             // 
             this.numericUpDownHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDownHeight.Location = new System.Drawing.Point(81, 161);
+            this.numericUpDownHeight.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownHeight.Location = new System.Drawing.Point(102, 161);
             this.numericUpDownHeight.Maximum = new decimal(new int[] {
             280,
             0,
@@ -1631,7 +1660,7 @@
             0,
             0});
             this.numericUpDownHeight.Name = "numericUpDownHeight";
-            this.numericUpDownHeight.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownHeight.Size = new System.Drawing.Size(70, 33);
             this.numericUpDownHeight.TabIndex = 13;
             this.numericUpDownHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownHeight.Value = new decimal(new int[] {
@@ -1642,8 +1671,8 @@
             // 
             // numericUpDownAge
             // 
-            this.numericUpDownAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDownAge.Location = new System.Drawing.Point(81, 202);
+            this.numericUpDownAge.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownAge.Location = new System.Drawing.Point(102, 202);
             this.numericUpDownAge.Maximum = new decimal(new int[] {
             130,
             0,
@@ -1655,7 +1684,7 @@
             0,
             0});
             this.numericUpDownAge.Name = "numericUpDownAge";
-            this.numericUpDownAge.Size = new System.Drawing.Size(70, 29);
+            this.numericUpDownAge.Size = new System.Drawing.Size(70, 33);
             this.numericUpDownAge.TabIndex = 14;
             this.numericUpDownAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownAge.Value = new decimal(new int[] {
@@ -1668,10 +1697,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(157, 205);
+            this.label15.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(178, 203);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(28, 24);
+            this.label15.Size = new System.Drawing.Size(40, 29);
             this.label15.TabIndex = 16;
             this.label15.Text = "lat";
             // 
@@ -1693,10 +1722,10 @@
             // labelSurveyTitle
             // 
             this.labelSurveyTitle.AutoSize = true;
-            this.labelSurveyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSurveyTitle.Location = new System.Drawing.Point(396, 10);
+            this.labelSurveyTitle.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSurveyTitle.Location = new System.Drawing.Point(358, 0);
             this.labelSurveyTitle.Name = "labelSurveyTitle";
-            this.labelSurveyTitle.Size = new System.Drawing.Size(181, 55);
+            this.labelSurveyTitle.Size = new System.Drawing.Size(284, 88);
             this.labelSurveyTitle.TabIndex = 3;
             this.labelSurveyTitle.Text = "Ankiety";
             this.labelSurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1725,20 +1754,21 @@
             // labelSurveyQuestionNumber
             // 
             this.labelSurveyQuestionNumber.AutoSize = true;
-            this.labelSurveyQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSurveyQuestionNumber.Location = new System.Drawing.Point(267, 175);
+            this.labelSurveyQuestionNumber.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSurveyQuestionNumber.Location = new System.Drawing.Point(257, 180);
             this.labelSurveyQuestionNumber.Name = "labelSurveyQuestionNumber";
-            this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(426, 39);
+            this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(485, 48);
             this.labelSurveyQuestionNumber.TabIndex = 14;
             this.labelSurveyQuestionNumber.Text = "Pytanie: <number>/<total>";
             // 
             // buttonSurveyConfirm
             // 
-            this.buttonSurveyConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyConfirm.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyConfirm.FlatAppearance.BorderSize = 2;
             this.buttonSurveyConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyConfirm.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyConfirm.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyConfirm.Location = new System.Drawing.Point(325, 394);
             this.buttonSurveyConfirm.Name = "buttonSurveyConfirm";
             this.buttonSurveyConfirm.Size = new System.Drawing.Size(350, 100);
@@ -1750,10 +1780,10 @@
             // 
             // textBoxSurveyText
             // 
-            this.textBoxSurveyText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxSurveyText.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxSurveyText.Location = new System.Drawing.Point(410, 250);
             this.textBoxSurveyText.Name = "textBoxSurveyText";
-            this.textBoxSurveyText.Size = new System.Drawing.Size(180, 47);
+            this.textBoxSurveyText.Size = new System.Drawing.Size(180, 49);
             this.textBoxSurveyText.TabIndex = 13;
             this.textBoxSurveyText.Text = "0";
             this.textBoxSurveyText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1779,11 +1809,12 @@
             // 
             // buttonSurveyNo
             // 
-            this.buttonSurveyNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyNo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyNo.FlatAppearance.BorderSize = 2;
             this.buttonSurveyNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.buttonSurveyNo.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyNo.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyNo.Location = new System.Drawing.Point(0, 0);
             this.buttonSurveyNo.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSurveyNo.Name = "buttonSurveyNo";
@@ -1796,11 +1827,12 @@
             // 
             // buttonSurveyYes
             // 
-            this.buttonSurveyYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyYes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyYes.FlatAppearance.BorderSize = 2;
             this.buttonSurveyYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.buttonSurveyYes.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyYes.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyYes.Location = new System.Drawing.Point(450, 0);
             this.buttonSurveyYes.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSurveyYes.Name = "buttonSurveyYes";
@@ -1813,11 +1845,12 @@
             // 
             // buttonSurveyA
             // 
-            this.buttonSurveyA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyA.FlatAppearance.BorderSize = 2;
             this.buttonSurveyA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.buttonSurveyA.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyA.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyA.Location = new System.Drawing.Point(0, 125);
             this.buttonSurveyA.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSurveyA.Name = "buttonSurveyA";
@@ -1830,11 +1863,12 @@
             // 
             // buttonSurveyB
             // 
-            this.buttonSurveyB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyB.FlatAppearance.BorderSize = 2;
             this.buttonSurveyB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSurveyB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.buttonSurveyB.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyB.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyB.Location = new System.Drawing.Point(450, 125);
             this.buttonSurveyB.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSurveyB.Name = "buttonSurveyB";
@@ -1848,10 +1882,10 @@
             // labelSurveyQuestion
             // 
             this.labelSurveyQuestion.AutoSize = true;
-            this.labelSurveyQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSurveyQuestion.Location = new System.Drawing.Point(301, 75);
+            this.labelSurveyQuestion.Font = new System.Drawing.Font("Montserrat", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSurveyQuestion.Location = new System.Drawing.Point(300, 50);
             this.labelSurveyQuestion.Name = "labelSurveyQuestion";
-            this.labelSurveyQuestion.Size = new System.Drawing.Size(351, 46);
+            this.labelSurveyQuestion.Size = new System.Drawing.Size(401, 55);
             this.labelSurveyQuestion.TabIndex = 10;
             this.labelSurveyQuestion.Text = "Pytanie w ankiecie";
             this.labelSurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1876,10 +1910,10 @@
             // labelFinish
             // 
             this.labelFinish.AutoSize = true;
-            this.labelFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFinish.Location = new System.Drawing.Point(402, 300);
+            this.labelFinish.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFinish.Location = new System.Drawing.Point(406, 300);
             this.labelFinish.Name = "labelFinish";
-            this.labelFinish.Size = new System.Drawing.Size(177, 39);
+            this.labelFinish.Size = new System.Drawing.Size(188, 44);
             this.labelFinish.TabIndex = 11;
             this.labelFinish.Text = "<finished>";
             this.labelFinish.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1903,9 +1937,9 @@
             this.groupBox3.Controls.Add(this.buttonHighEffort);
             this.groupBox3.Controls.Add(this.buttonMediumEffort);
             this.groupBox3.Controls.Add(this.pictureBoxTraining);
-            this.groupBox3.Location = new System.Drawing.Point(667, 85);
+            this.groupBox3.Location = new System.Drawing.Point(667, 40);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(318, 426);
+            this.groupBox3.Size = new System.Drawing.Size(318, 475);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             // 
@@ -1913,11 +1947,12 @@
             // 
             this.buttonAnyEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonAnyEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnyEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnyEffort.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAnyEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyEffort.Location = new System.Drawing.Point(30, 349);
+            this.buttonAnyEffort.Location = new System.Drawing.Point(22, 400);
+            this.buttonAnyEffort.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnyEffort.Name = "buttonAnyEffort";
-            this.buttonAnyEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonAnyEffort.Size = new System.Drawing.Size(280, 60);
             this.buttonAnyEffort.TabIndex = 12;
             this.buttonAnyEffort.Text = "Nie uwzględniaj stopnia wysiłku";
             this.buttonAnyEffort.UseVisualStyleBackColor = false;
@@ -1927,11 +1962,12 @@
             // 
             this.buttonLowEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonLowEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLowEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLowEffort.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonLowEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonLowEffort.Location = new System.Drawing.Point(30, 144);
+            this.buttonLowEffort.Location = new System.Drawing.Point(19, 144);
+            this.buttonLowEffort.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLowEffort.Name = "buttonLowEffort";
-            this.buttonLowEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonLowEffort.Size = new System.Drawing.Size(280, 60);
             this.buttonLowEffort.TabIndex = 11;
             this.buttonLowEffort.Text = "Niski wysiłek";
             this.buttonLowEffort.UseVisualStyleBackColor = false;
@@ -1941,11 +1977,12 @@
             // 
             this.buttonHighEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonHighEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHighEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonHighEffort.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonHighEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonHighEffort.Location = new System.Drawing.Point(30, 263);
+            this.buttonHighEffort.Location = new System.Drawing.Point(19, 283);
+            this.buttonHighEffort.Margin = new System.Windows.Forms.Padding(0);
             this.buttonHighEffort.Name = "buttonHighEffort";
-            this.buttonHighEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonHighEffort.Size = new System.Drawing.Size(280, 60);
             this.buttonHighEffort.TabIndex = 13;
             this.buttonHighEffort.Text = "Intensywny wysiłek";
             this.buttonHighEffort.UseVisualStyleBackColor = false;
@@ -1955,11 +1992,12 @@
             // 
             this.buttonMediumEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonMediumEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMediumEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonMediumEffort.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonMediumEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonMediumEffort.Location = new System.Drawing.Point(30, 203);
+            this.buttonMediumEffort.Location = new System.Drawing.Point(19, 212);
+            this.buttonMediumEffort.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMediumEffort.Name = "buttonMediumEffort";
-            this.buttonMediumEffort.Size = new System.Drawing.Size(258, 49);
+            this.buttonMediumEffort.Size = new System.Drawing.Size(280, 60);
             this.buttonMediumEffort.TabIndex = 14;
             this.buttonMediumEffort.Text = "Średni wysiłek";
             this.buttonMediumEffort.UseVisualStyleBackColor = false;
@@ -1967,7 +2005,7 @@
             // 
             // pictureBoxTraining
             // 
-            this.pictureBoxTraining.Image = global::app.Properties.Resources.trainingSized;
+            this.pictureBoxTraining.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTraining.Image")));
             this.pictureBoxTraining.Location = new System.Drawing.Point(6, 26);
             this.pictureBoxTraining.Name = "pictureBoxTraining";
             this.pictureBoxTraining.Size = new System.Drawing.Size(307, 88);
@@ -1978,11 +2016,11 @@
             // 
             this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSearch.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(430, 550);
+            this.buttonSearch.Location = new System.Drawing.Point(410, 550);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(140, 46);
+            this.buttonSearch.Size = new System.Drawing.Size(180, 60);
             this.buttonSearch.TabIndex = 15;
             this.buttonSearch.Text = "Szukaj";
             this.buttonSearch.UseVisualStyleBackColor = false;
@@ -1995,9 +2033,9 @@
             this.groupBox1.Controls.Add(this.buttonPair);
             this.groupBox1.Controls.Add(this.buttonIndividual);
             this.groupBox1.Controls.Add(this.pictureBoxTeam);
-            this.groupBox1.Location = new System.Drawing.Point(15, 85);
+            this.groupBox1.Location = new System.Drawing.Point(15, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 426);
+            this.groupBox1.Size = new System.Drawing.Size(318, 475);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -2005,11 +2043,12 @@
             // 
             this.buttonAnyParticipants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonAnyParticipants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnyParticipants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnyParticipants.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAnyParticipants.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyParticipants.Location = new System.Drawing.Point(30, 349);
+            this.buttonAnyParticipants.Location = new System.Drawing.Point(19, 400);
+            this.buttonAnyParticipants.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnyParticipants.Name = "buttonAnyParticipants";
-            this.buttonAnyParticipants.Size = new System.Drawing.Size(258, 49);
+            this.buttonAnyParticipants.Size = new System.Drawing.Size(280, 60);
             this.buttonAnyParticipants.TabIndex = 4;
             this.buttonAnyParticipants.Text = "Nie uwzględniaj liczby uczestników";
             this.buttonAnyParticipants.UseVisualStyleBackColor = false;
@@ -2019,11 +2058,12 @@
             // 
             this.buttonTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonTeam.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonTeam.ForeColor = System.Drawing.Color.White;
-            this.buttonTeam.Location = new System.Drawing.Point(30, 263);
+            this.buttonTeam.Location = new System.Drawing.Point(19, 282);
+            this.buttonTeam.Margin = new System.Windows.Forms.Padding(0);
             this.buttonTeam.Name = "buttonTeam";
-            this.buttonTeam.Size = new System.Drawing.Size(258, 49);
+            this.buttonTeam.Size = new System.Drawing.Size(280, 60);
             this.buttonTeam.TabIndex = 5;
             this.buttonTeam.Text = "Sport dla grupy powyżej dwóch osób";
             this.buttonTeam.UseVisualStyleBackColor = false;
@@ -2033,11 +2073,12 @@
             // 
             this.buttonPair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonPair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPair.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPair.ForeColor = System.Drawing.Color.White;
-            this.buttonPair.Location = new System.Drawing.Point(30, 203);
+            this.buttonPair.Location = new System.Drawing.Point(19, 212);
+            this.buttonPair.Margin = new System.Windows.Forms.Padding(0);
             this.buttonPair.Name = "buttonPair";
-            this.buttonPair.Size = new System.Drawing.Size(258, 49);
+            this.buttonPair.Size = new System.Drawing.Size(280, 60);
             this.buttonPair.TabIndex = 6;
             this.buttonPair.Text = "Sport dla dwóch osób";
             this.buttonPair.UseVisualStyleBackColor = false;
@@ -2047,11 +2088,12 @@
             // 
             this.buttonIndividual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonIndividual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIndividual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonIndividual.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonIndividual.ForeColor = System.Drawing.Color.White;
-            this.buttonIndividual.Location = new System.Drawing.Point(30, 144);
+            this.buttonIndividual.Location = new System.Drawing.Point(19, 144);
+            this.buttonIndividual.Margin = new System.Windows.Forms.Padding(0);
             this.buttonIndividual.Name = "buttonIndividual";
-            this.buttonIndividual.Size = new System.Drawing.Size(258, 49);
+            this.buttonIndividual.Size = new System.Drawing.Size(280, 60);
             this.buttonIndividual.TabIndex = 3;
             this.buttonIndividual.Text = "Sport indywidualny";
             this.buttonIndividual.UseVisualStyleBackColor = false;
@@ -2059,7 +2101,7 @@
             // 
             // pictureBoxTeam
             // 
-            this.pictureBoxTeam.Image = global::app.Properties.Resources.teamSized;
+            this.pictureBoxTeam.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTeam.Image")));
             this.pictureBoxTeam.Location = new System.Drawing.Point(6, 26);
             this.pictureBoxTeam.Name = "pictureBoxTeam";
             this.pictureBoxTeam.Size = new System.Drawing.Size(307, 88);
@@ -2075,19 +2117,19 @@
             this.groupBox2.Controls.Add(this.textBoxCity);
             this.groupBox2.Controls.Add(this.buttonAnyWeather);
             this.groupBox2.Controls.Add(this.pictureBoxClouds);
-            this.groupBox2.Location = new System.Drawing.Point(341, 85);
+            this.groupBox2.Location = new System.Drawing.Point(341, 40);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 426);
+            this.groupBox2.Size = new System.Drawing.Size(318, 475);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             // 
             // labelWeatherInfo
             // 
             this.labelWeatherInfo.AutoSize = true;
-            this.labelWeatherInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelWeatherInfo.Location = new System.Drawing.Point(118, 301);
+            this.labelWeatherInfo.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelWeatherInfo.Location = new System.Drawing.Point(107, 330);
             this.labelWeatherInfo.Name = "labelWeatherInfo";
-            this.labelWeatherInfo.Size = new System.Drawing.Size(88, 15);
+            this.labelWeatherInfo.Size = new System.Drawing.Size(104, 18);
             this.labelWeatherInfo.TabIndex = 18;
             this.labelWeatherInfo.Text = "<weather info>";
             this.labelWeatherInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2097,11 +2139,12 @@
             // 
             this.buttonCheckWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonCheckWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCheckWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCheckWeather.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonCheckWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonCheckWeather.Location = new System.Drawing.Point(206, 276);
+            this.buttonCheckWeather.Location = new System.Drawing.Point(197, 282);
+            this.buttonCheckWeather.Margin = new System.Windows.Forms.Padding(0);
             this.buttonCheckWeather.Name = "buttonCheckWeather";
-            this.buttonCheckWeather.Size = new System.Drawing.Size(66, 25);
+            this.buttonCheckWeather.Size = new System.Drawing.Size(102, 33);
             this.buttonCheckWeather.TabIndex = 8;
             this.buttonCheckWeather.Text = "Sprawdź";
             this.buttonCheckWeather.UseVisualStyleBackColor = false;
@@ -2111,11 +2154,12 @@
             // 
             this.buttonGoodWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonGoodWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGoodWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonGoodWeather.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonGoodWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonGoodWeather.Location = new System.Drawing.Point(30, 144);
+            this.buttonGoodWeather.Location = new System.Drawing.Point(19, 144);
+            this.buttonGoodWeather.Margin = new System.Windows.Forms.Padding(0);
             this.buttonGoodWeather.Name = "buttonGoodWeather";
-            this.buttonGoodWeather.Size = new System.Drawing.Size(258, 49);
+            this.buttonGoodWeather.Size = new System.Drawing.Size(280, 60);
             this.buttonGoodWeather.TabIndex = 7;
             this.buttonGoodWeather.Text = "Odpowiednia dla sportu na zewnątrz";
             this.buttonGoodWeather.UseVisualStyleBackColor = false;
@@ -2125,11 +2169,12 @@
             // 
             this.buttonBadWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonBadWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBadWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBadWeather.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBadWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonBadWeather.Location = new System.Drawing.Point(30, 203);
+            this.buttonBadWeather.Location = new System.Drawing.Point(19, 212);
+            this.buttonBadWeather.Margin = new System.Windows.Forms.Padding(0);
             this.buttonBadWeather.Name = "buttonBadWeather";
-            this.buttonBadWeather.Size = new System.Drawing.Size(258, 49);
+            this.buttonBadWeather.Size = new System.Drawing.Size(280, 60);
             this.buttonBadWeather.TabIndex = 10;
             this.buttonBadWeather.Text = "Nieodpowiednia dla sportu na zewnątrz";
             this.buttonBadWeather.UseVisualStyleBackColor = false;
@@ -2137,10 +2182,10 @@
             // 
             // textBoxCity
             // 
-            this.textBoxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxCity.Location = new System.Drawing.Point(52, 278);
+            this.textBoxCity.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxCity.Location = new System.Drawing.Point(19, 282);
             this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(132, 21);
+            this.textBoxCity.Size = new System.Drawing.Size(175, 33);
             this.textBoxCity.TabIndex = 17;
             this.textBoxCity.Text = "Warszawa";
             this.textBoxCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2149,11 +2194,12 @@
             // 
             this.buttonAnyWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonAnyWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnyWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAnyWeather.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAnyWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyWeather.Location = new System.Drawing.Point(30, 349);
+            this.buttonAnyWeather.Location = new System.Drawing.Point(19, 400);
+            this.buttonAnyWeather.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnyWeather.Name = "buttonAnyWeather";
-            this.buttonAnyWeather.Size = new System.Drawing.Size(258, 49);
+            this.buttonAnyWeather.Size = new System.Drawing.Size(280, 60);
             this.buttonAnyWeather.TabIndex = 19;
             this.buttonAnyWeather.Text = "Nie uwzględniaj warunków pogodowych";
             this.buttonAnyWeather.UseVisualStyleBackColor = false;
@@ -2161,7 +2207,7 @@
             // 
             // pictureBoxClouds
             // 
-            this.pictureBoxClouds.Image = global::app.Properties.Resources.cloudsSized;
+            this.pictureBoxClouds.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClouds.Image")));
             this.pictureBoxClouds.Location = new System.Drawing.Point(6, 26);
             this.pictureBoxClouds.Name = "pictureBoxClouds";
             this.pictureBoxClouds.Size = new System.Drawing.Size(307, 88);
@@ -2182,7 +2228,7 @@
             // 
             // pictureBoxSportResult
             // 
-            this.pictureBoxSportResult.Location = new System.Drawing.Point(275, 172);
+            this.pictureBoxSportResult.Location = new System.Drawing.Point(272, 124);
             this.pictureBoxSportResult.Name = "pictureBoxSportResult";
             this.pictureBoxSportResult.Size = new System.Drawing.Size(450, 300);
             this.pictureBoxSportResult.TabIndex = 23;
@@ -2192,11 +2238,11 @@
             // 
             this.buttonChangeSearchingData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonChangeSearchingData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonChangeSearchingData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonChangeSearchingData.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonChangeSearchingData.ForeColor = System.Drawing.Color.White;
-            this.buttonChangeSearchingData.Location = new System.Drawing.Point(503, 571);
+            this.buttonChangeSearchingData.Location = new System.Drawing.Point(510, 525);
             this.buttonChangeSearchingData.Name = "buttonChangeSearchingData";
-            this.buttonChangeSearchingData.Size = new System.Drawing.Size(229, 46);
+            this.buttonChangeSearchingData.Size = new System.Drawing.Size(300, 50);
             this.buttonChangeSearchingData.TabIndex = 22;
             this.buttonChangeSearchingData.Text = "Zmień kryteria wyszukiwania";
             this.buttonChangeSearchingData.UseVisualStyleBackColor = false;
@@ -2205,10 +2251,10 @@
             // labelActivityResult
             // 
             this.labelActivityResult.AutoSize = true;
-            this.labelActivityResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelActivityResult.Location = new System.Drawing.Point(450, 486);
+            this.labelActivityResult.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActivityResult.Location = new System.Drawing.Point(432, 450);
             this.labelActivityResult.Name = "labelActivityResult";
-            this.labelActivityResult.Size = new System.Drawing.Size(100, 29);
+            this.labelActivityResult.Size = new System.Drawing.Size(135, 40);
             this.labelActivityResult.TabIndex = 21;
             this.labelActivityResult.Text = "<result>";
             this.labelActivityResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2216,10 +2262,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(376, 96);
+            this.label4.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(218, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(248, 29);
+            this.label4.Size = new System.Drawing.Size(563, 66);
             this.label4.TabIndex = 20;
             this.label4.Text = "Propozycja dla Ciebie";
             // 
@@ -2227,11 +2273,11 @@
             // 
             this.buttonShowNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonShowNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonShowNext.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonShowNext.ForeColor = System.Drawing.Color.White;
-            this.buttonShowNext.Location = new System.Drawing.Point(267, 571);
+            this.buttonShowNext.Location = new System.Drawing.Point(190, 525);
             this.buttonShowNext.Name = "buttonShowNext";
-            this.buttonShowNext.Size = new System.Drawing.Size(229, 46);
+            this.buttonShowNext.Size = new System.Drawing.Size(300, 50);
             this.buttonShowNext.TabIndex = 19;
             this.buttonShowNext.Text = "Pokaż następną propozycję";
             this.buttonShowNext.UseVisualStyleBackColor = false;
@@ -2268,12 +2314,12 @@
             // labelAbout
             // 
             this.labelAbout.AutoSize = true;
-            this.labelAbout.Font = new System.Drawing.Font("Poppins", 19F);
-            this.labelAbout.Location = new System.Drawing.Point(3, 100);
+            this.labelAbout.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelAbout.Location = new System.Drawing.Point(47, 100);
             this.labelAbout.Name = "labelAbout";
-            this.labelAbout.Size = new System.Drawing.Size(994, 92);
+            this.labelAbout.Size = new System.Drawing.Size(906, 74);
             this.labelAbout.TabIndex = 14;
-            this.labelAbout.Text = "Aplikacja Healthheroes jest odpowiedzią na potrzeby każdego, kto chciałby\r\nzadbać" +
+            this.labelAbout.Text = "Aplikacja Healthheroes jest odpowiedzią na potrzeby każdego, kto\r\nchciałby zadbać" +
     " o swoje zdrowie i formę. Pomożemy Ci:";
             this.labelAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2330,10 +2376,10 @@
             // labelBMIDescription
             // 
             this.labelBMIDescription.AutoSize = true;
-            this.labelBMIDescription.Font = new System.Drawing.Font("Poppins", 18F);
+            this.labelBMIDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMIDescription.Location = new System.Drawing.Point(60, 232);
             this.labelBMIDescription.Name = "labelBMIDescription";
-            this.labelBMIDescription.Size = new System.Drawing.Size(822, 42);
+            this.labelBMIDescription.Size = new System.Drawing.Size(880, 35);
             this.labelBMIDescription.TabIndex = 15;
             this.labelBMIDescription.Text = "Obliczyć Twój wskaźnik BMI wraz z odpowiadającą mu interpretacją,";
             this.labelBMIDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2341,10 +2387,10 @@
             // labelActivityDescription
             // 
             this.labelActivityDescription.AutoSize = true;
-            this.labelActivityDescription.Font = new System.Drawing.Font("Poppins", 18F);
+            this.labelActivityDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelActivityDescription.Location = new System.Drawing.Point(60, 295);
             this.labelActivityDescription.Name = "labelActivityDescription";
-            this.labelActivityDescription.Size = new System.Drawing.Size(803, 84);
+            this.labelActivityDescription.Size = new System.Drawing.Size(856, 70);
             this.labelActivityDescription.TabIndex = 16;
             this.labelActivityDescription.Text = "Znaleźć idealny rodzaj aktywności fizycznej na dzisiaj, w zależności\r\nod aktulane" +
     "j pogody i osobistych preferencji,\r\n";
@@ -2353,10 +2399,10 @@
             // labelQuizDescription
             // 
             this.labelQuizDescription.AutoSize = true;
-            this.labelQuizDescription.Font = new System.Drawing.Font("Poppins", 18F);
+            this.labelQuizDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuizDescription.Location = new System.Drawing.Point(60, 400);
             this.labelQuizDescription.Name = "labelQuizDescription";
-            this.labelQuizDescription.Size = new System.Drawing.Size(765, 42);
+            this.labelQuizDescription.Size = new System.Drawing.Size(814, 35);
             this.labelQuizDescription.TabIndex = 17;
             this.labelQuizDescription.Text = "Sprawdzić Twoją wiedzę na temat zdrowia, sportu i odżywiania,";
             this.labelQuizDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2364,10 +2410,10 @@
             // labelCalculatorDescription
             // 
             this.labelCalculatorDescription.AutoSize = true;
-            this.labelCalculatorDescription.Font = new System.Drawing.Font("Poppins", 18F);
+            this.labelCalculatorDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCalculatorDescription.Location = new System.Drawing.Point(60, 484);
             this.labelCalculatorDescription.Name = "labelCalculatorDescription";
-            this.labelCalculatorDescription.Size = new System.Drawing.Size(808, 42);
+            this.labelCalculatorDescription.Size = new System.Drawing.Size(859, 35);
             this.labelCalculatorDescription.TabIndex = 18;
             this.labelCalculatorDescription.Text = "Obliczyć twoje zapotrzebowanie kaloryczne oraz skład twojej diety,";
             this.labelCalculatorDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2375,12 +2421,12 @@
             // labelSurveyDescription
             // 
             this.labelSurveyDescription.AutoSize = true;
-            this.labelSurveyDescription.Font = new System.Drawing.Font("Poppins", 18F);
-            this.labelSurveyDescription.Location = new System.Drawing.Point(60, 567);
+            this.labelSurveyDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSurveyDescription.Location = new System.Drawing.Point(60, 554);
             this.labelSurveyDescription.Name = "labelSurveyDescription";
-            this.labelSurveyDescription.Size = new System.Drawing.Size(916, 42);
+            this.labelSurveyDescription.Size = new System.Drawing.Size(710, 70);
             this.labelSurveyDescription.TabIndex = 13;
-            this.labelSurveyDescription.Text = "Ocenić Twoje nawyki związane z aktywnością fizyczną, odżywianiem i snem.";
+            this.labelSurveyDescription.Text = "Ocenić Twoje nawyki związane z aktywnością fizyczną, \r\nodżywianiem i snem.";
             this.labelSurveyDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelUserNotLogged
@@ -2394,25 +2440,27 @@
             // 
             // buttonGoToProfiles
             // 
+            this.buttonGoToProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonGoToProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGoToProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonGoToProfiles.Location = new System.Drawing.Point(375, 350);
+            this.buttonGoToProfiles.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonGoToProfiles.ForeColor = System.Drawing.Color.White;
+            this.buttonGoToProfiles.Location = new System.Drawing.Point(325, 350);
             this.buttonGoToProfiles.Name = "buttonGoToProfiles";
-            this.buttonGoToProfiles.Size = new System.Drawing.Size(250, 80);
+            this.buttonGoToProfiles.Size = new System.Drawing.Size(350, 80);
             this.buttonGoToProfiles.TabIndex = 10;
             this.buttonGoToProfiles.Text = "Przejdź do profili";
-            this.buttonGoToProfiles.UseVisualStyleBackColor = true;
+            this.buttonGoToProfiles.UseVisualStyleBackColor = false;
             this.buttonGoToProfiles.Click += new System.EventHandler(this.ButtonGoToProfiles_Click);
             // 
             // labelNoProfile
             // 
             this.labelNoProfile.AutoSize = true;
-            this.labelNoProfile.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNoProfile.Location = new System.Drawing.Point(83, 200);
+            this.labelNoProfile.Font = new System.Drawing.Font("Montserrat", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNoProfile.Location = new System.Drawing.Point(138, 150);
             this.labelNoProfile.Name = "labelNoProfile";
-            this.labelNoProfile.Size = new System.Drawing.Size(834, 62);
+            this.labelNoProfile.Size = new System.Drawing.Size(725, 146);
             this.labelNoProfile.TabIndex = 12;
-            this.labelNoProfile.Text = "Aby korzystać z tej funkcji musisz wybrać profil";
+            this.labelNoProfile.Text = "Aby korzystać z tej funkcji\r\nmusisz wybrać profil";
             this.labelNoProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonMinimize
@@ -2447,25 +2495,14 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // labelQuizIntro
-            // 
-            this.labelQuizIntro.AutoSize = true;
-            this.labelQuizIntro.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelQuizIntro.Location = new System.Drawing.Point(38, 200);
-            this.labelQuizIntro.Name = "labelQuizIntro";
-            this.labelQuizIntro.Size = new System.Drawing.Size(923, 144);
-            this.labelQuizIntro.TabIndex = 5;
-            this.labelQuizIntro.Text = "Sprawdź się w quizie wiedzy o zdrowiu, sporcie i odżywianiu! \r\nPrzed tobą 5 pytań" +
-    ", w których tylko jedna odpowiedź jest poprawna.\r\nNa każdą odpowiedź masz 10 sek" +
-    "und.\r\n";
-            this.labelQuizIntro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // userItemThird
             // 
             this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
             this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemThird.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.userItemThird.Location = new System.Drawing.Point(27, 260);
+            this.userItemThird.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userItemThird.Name = "userItemThird";
             this.userItemThird.Size = new System.Drawing.Size(291, 76);
             this.userItemThird.TabIndex = 55;
@@ -2477,7 +2514,9 @@
             this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
             this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemFirst.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.userItemFirst.Location = new System.Drawing.Point(27, 83);
+            this.userItemFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userItemFirst.Name = "userItemFirst";
             this.userItemFirst.Size = new System.Drawing.Size(291, 76);
             this.userItemFirst.TabIndex = 53;
@@ -2489,7 +2528,9 @@
             this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
             this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemSecond.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.userItemSecond.Location = new System.Drawing.Point(27, 172);
+            this.userItemSecond.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userItemSecond.Name = "userItemSecond";
             this.userItemSecond.Size = new System.Drawing.Size(291, 76);
             this.userItemSecond.TabIndex = 54;
@@ -2502,21 +2543,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
-            this.Controls.Add(this.panelQuizMenu);
-            this.Controls.Add(this.panelLandingPage);
-            this.Controls.Add(this.panelActivity);
-            this.Controls.Add(this.panelActivityResults);
             this.Controls.Add(this.panelMacro);
-            this.Controls.Add(this.panelUserNotLogged);
-            this.Controls.Add(this.panelSurveyFinished);
-            this.Controls.Add(this.panelSurveyMenu);
-            this.Controls.Add(this.panelBMI);
-            this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelQuiz);
+            this.Controls.Add(this.panelLandingPage);
+            this.Controls.Add(this.panelProfiles);
+            this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelQuizFinished);
+            this.Controls.Add(this.panelActivityResults);
+            this.Controls.Add(this.panelUserNotLogged);
+            this.Controls.Add(this.panelBMI);
+            this.Controls.Add(this.panelActivity);
+            this.Controls.Add(this.panelQuizMenu);
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.flowLayoutPanelSidebar);
+            this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
