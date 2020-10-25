@@ -1453,12 +1453,6 @@ namespace app
 
             File.WriteAllLines("..\\..\\users.json", JSON);
         }
-        
-        private void ButtonChangeSearchingData_Click(object sender, EventArgs e)
-        {
-            LoadSports();
-            panelActivity.BringToFront();
-        }
 
         private void buttonUpdateActivityLevel_Click(object sender, EventArgs e)
         {
