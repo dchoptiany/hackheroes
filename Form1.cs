@@ -945,7 +945,6 @@ namespace app
         {
             Button clickedButton = (Button)sender;
             bool correctValue = true;
-
             if(clickedButton == buttonSurveyConfirm)
             {
                 try
@@ -1041,7 +1040,6 @@ namespace app
                                 score += surveys[currentSurveyIndex].surveyAnswersInt[index];
                             }
                         }
-                        Console.WriteLine(score);
                         if(score == 0)
                         {
                             result = "ekstremalnie złe!";
@@ -1079,13 +1077,39 @@ namespace app
                     {
                         uint score = 0;
                         string result = "";
-                        string description = "";
+
+                        for(int index = 0; index < surveys[currentSurveyIndex].surveyAnswersInt.Count; ++index)
+                        {
+                            score += surveys[currentSurveyIndex].surveyAnswersInt[index];
+                        }
+
+                        if (score == 0)
+                        {
+                            result = "bardzo zły!";
+                        }
+                        else if (score > 0 && score < 4)
+                        {
+                            result = "zły!";
+                        }
+                        else if (score >= 4 && score < 6)
+                        {
+                            result = "dobry!";
+                        }
+                        else if (score < 8)
+                        {
+                            result = "bardzo dobry!";
+                        }
+                        else
+                        {
+                            result = "idealny!";
+                        }
+                        labelFinish.Text = "Twój sen jest " + result;
+                        Console.WriteLine(score);
                     }
                     break;
                 default:
                     {
                         labelFinish.Text = "Nieprawidłowy indeks ankiety !";
-                        
                     }
                     break;
             }    
