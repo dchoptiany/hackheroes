@@ -505,6 +505,19 @@ namespace app
             }
         }
 
+        private Image SetLargeAvatar(Avatar color)
+        {
+            switch (color)
+            {
+                case Avatar.Blue:
+                    return Resources.profileBlueLarge;
+                case Avatar.Red:
+                    return Resources.profileRedLarge;
+                default:
+                    return Resources.profileGrayLarge;
+            }
+        }
+
         private void UpdateUserItems()
         {
             userItemFirst.Visible = false;
@@ -731,12 +744,12 @@ namespace app
             if(noUserChosen)
             {
                 buttonProfile.Text = "Nie wybrano profilu";
-                buttonProfile.ImageIndex = 2;
+                buttonProfile.Image = Resources.profileLarge;
             }
             else
             {
                 buttonProfile.Text = users[currentUserIndex].name;
-                buttonProfile.ImageIndex = (int)users[currentUserIndex].avatar;
+                buttonProfile.Image = SetLargeAvatar(users[currentUserIndex].avatar);
             }
         }
 
