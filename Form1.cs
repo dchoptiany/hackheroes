@@ -15,6 +15,7 @@ namespace app
     {
         private List<Survey> surveys;
         private int currentSurveyIndex;
+        private bool goBackToMacroAfterSurvey;
 
         private List<User> users;
         private bool noUserChosen;
@@ -173,6 +174,7 @@ namespace app
 
         private void LoadSurveys()
         {
+            goBackToMacroAfterSurvey = false;
             surveys = new List<Survey>();
             try
             {
@@ -408,6 +410,9 @@ namespace app
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
+            buttonUpdateActivityLevel.Visible = true;
+            groupBoxActivityLevel.Visible = false;
+
             DisableButton(sender, e);
 
             if(noUserChosen)
@@ -417,7 +422,28 @@ namespace app
             }
 
             panelMacro.BringToFront();
-            UpdateActivityLevel();
+
+            if (users[currentUserIndex].activityLevel == 0)
+            {
+                DialogResult result = MessageBox.Show("Do precyzyjnego obliczenia Twojego zapotrzebowania na składniki odżywcze potrzebujemy poznać Twój poziom aktywności fizycznej. Czy chcesz wypełnić ankietę dotyczącą Twojego stylu życia?", "Czy chcesz wypełnić ankietę?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    goBackToMacroAfterSurvey = true;
+                    DisableButton(buttonSurvey, null);
+                    currentSurveyIndex = 0;
+                    Survey.currentQuestionIndex = 0;
+                    surveys[currentSurveyIndex].surveyAnswersInt = new List<uint>();
+                    panelSurvey.BringToFront();
+                    NextSurveyQuestion();
+                }
+                else
+                {
+                    buttonUpdateActivityLevel.Visible = false;
+                    groupBoxActivityLevel.Visible = true;
+                    UpdateActivityLevel();
+                }
+            }
+            UpdateMacro();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
@@ -620,15 +646,7 @@ namespace app
                 }
 
                 string message = string.Format("Aby utworzyć profil musisz podać wszystkie dane!\nBrakujące dane: {0}", missingInfo);
-                string caption = "Niepoprawnie wypełniony formularz";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-
-                result = MessageBox.Show(message, caption, buttons);
-                if (result == DialogResult.Yes)
-                {
-                    Close();
-                }
+                MessageBox.Show(message, "Niepoprawnie wypełniony formularz", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 currentUserIndex = users.Count - 1;
             }
@@ -672,9 +690,10 @@ namespace app
             int indexToRemove = currentUserIndex;
 
             string message = string.Format("Czy na pewno chcesz usunąć profil {0}?", users[indexToRemove].name);
-            string caption = "Potwierdzenie usunięcia profilu";
+            DialogResult result;
 
-            if(MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            result = MessageBox.Show(message, "Potwierdzenie usunięcia profilu", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
                 users.RemoveAt(indexToRemove);
 
@@ -716,16 +735,7 @@ namespace app
             }
             else
             {
-                string message = "Aby edytować dane, musisz najpierw zaznaczyć profil!";
-                string caption = "Nie zaznaczono profilu";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-
-                result = MessageBox.Show(message, caption, buttons);
-                if (result == DialogResult.Yes)
-                {
-                    Close();
-                }
+                MessageBox.Show("Aby edytować dane, musisz najpierw zaznaczyć profil!", "Nie zaznaczono profilu", MessageBoxButtons.OK);
             }
             UpdateProfileButton();
         }
@@ -974,6 +984,7 @@ namespace app
         {
             currentSurveyIndex = GetSurveyID((Button)sender);
             Survey.currentQuestionIndex = 0;
+            surveys[currentSurveyIndex].surveyAnswersInt = new List<uint>();
             panelSurvey.BringToFront();
             NextSurveyQuestion();
         }
@@ -1097,13 +1108,17 @@ namespace app
                 {
                     case 0: // Poziom aktywnosci fizycznej
                         {
-                            users[currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
-                            users[currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
-                            users[currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
+                            users[currentUserIndex].physicalJob = surveys[0].surveyAnswersInt[0] == 1;
+                            users[currentUserIndex].trainingsInWeek = surveys[0].surveyAnswersInt[1];
+                            users[currentUserIndex].dailyMovementLevel = surveys[0].surveyAnswersInt[2];
 
                             Calculator.CalculateActivityLevel(users[currentUserIndex]);
                             labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
-
+                            if(goBackToMacroAfterSurvey)
+                            {
+                                goBackToMacroAfterSurvey = false;
+                                ButtonCalculator_Click(buttonCalculator, null);
+                            }
                         }
                         break;
                     case 1: // Nawyki żywieniowe
@@ -1316,15 +1331,7 @@ namespace app
                 {
                     message = "Do sprawdzenia pogody konieczne jest połączenie z internetem.";
                 }
-                string caption = "Nie można sprawdzić pogody";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-
-                result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Close();
-                }
+                MessageBox.Show(message, "Nie można sprawdzić pogody", MessageBoxButtons.OK);
             }
         }
 
@@ -1415,16 +1422,7 @@ namespace app
             }
             else
             {
-                string message = "Aby wyszukać aktywność należy zaznaczyć jedną cechę z każdej kategori. Jeśli nie wiesz na co się zdecydować, zaznacz ostanią opcję.";
-                string caption = "Nie można wyszukać aktywności";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-
-                result = MessageBox.Show(message, caption, buttons);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Close();
-                }
+                MessageBox.Show("Aby wyszukać aktywność należy zaznaczyć jedną cechę z każdej kategori. Jeśli nie wiesz na co się zdecydować, zaznacz ostanią opcję.", "Nie można wyszukać aktywności", MessageBoxButtons.OK);
             }
         }
         private void ButtonShowNext_Click(object sender, EventArgs e)
@@ -1469,11 +1467,21 @@ namespace app
 
             File.WriteAllLines("..\\..\\users.json", JSON);
         }
-
         private void ButtonInSideBarEnabledChanged(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             button.BackColor = Color.FromArgb(72, 126, 176);
+        }
+        
+        private void buttonUpdateActivityLevel_Click(object sender, EventArgs e)
+        {
+            goBackToMacroAfterSurvey = true;
+            DisableButton(buttonSurvey, null);
+            currentSurveyIndex = 0;
+            Survey.currentQuestionIndex = 0;
+            surveys[currentSurveyIndex].surveyAnswersInt = new List<uint>();
+            panelSurvey.BringToFront();
+            NextSurveyQuestion();
         }
     }
 }
