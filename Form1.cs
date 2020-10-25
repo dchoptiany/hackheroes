@@ -51,9 +51,9 @@ namespace app
 
             panelPointer.BackColor = blue1;
 
-            Color leftPanelBackColor = green2;
+            Color leftPanelBackColor = darkblue1;
             flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
-            Color leftPanelButtonsColor = green2;
+            Color leftPanelButtonsColor = darkblue1;
             buttonBMI.BackColor = leftPanelButtonsColor;
             buttonActivity.BackColor = leftPanelButtonsColor;
             buttonQuiz.BackColor = leftPanelButtonsColor;
@@ -74,7 +74,7 @@ namespace app
 
         private void InitializeProfile()
         {
-            buttonProfile.BackColor = green2;
+            buttonProfile.BackColor = darkblue1;
             UpdateProfileButton();
             menuButtons.Add(buttonActivity);
             menuButtons.Add(buttonQuiz);
@@ -110,7 +110,7 @@ namespace app
             foreach (Button button in menuButtons)
             {
                 button.Enabled = true;
-                button.BackColor = green2;
+                button.BackColor = darkblue1;
                 if (button.Text == clickedButton.Text)
                 {
                     button.Enabled = false;
