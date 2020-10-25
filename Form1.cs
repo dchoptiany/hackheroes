@@ -17,6 +17,7 @@ namespace app
         private int currentSurveyIndex;
 
         private List<User> users;
+        private bool noUserChosen;
         private int currentUserIndex;
         private readonly List<Button> surveyButtons = new List<Button>();
         private List<Button> activtyMatcherParticipantsButtons = new List<Button>();
@@ -61,22 +62,12 @@ namespace app
             buttonCalculator.BackColor = leftPanelButtonsColor;
             buttonSurvey.BackColor = leftPanelButtonsColor;
             buttonProfile.BackColor = leftPanelButtonsColor;
+            buttonProfile.BackColor = green2;
         }
 
         private void InitializeButtons()
         {
             menuButtons.Add(buttonBMI);
-            menuButtons.Add(buttonActivity); 
-            menuButtons.Add(buttonQuiz); 
-            menuButtons.Add(buttonCalculator); 
-            menuButtons.Add(buttonSurvey); 
-            menuButtons.Add(buttonProfile);
-        }
-
-        private void InitializeProfile()
-        {
-            buttonProfile.BackColor = darkblue1;
-            UpdateProfileButton();
             menuButtons.Add(buttonActivity);
             menuButtons.Add(buttonQuiz);
             menuButtons.Add(buttonCalculator);
@@ -106,7 +97,7 @@ namespace app
 
         private void DisableButton(object sender, EventArgs e)
         {
-            var clickedButton = (Button)sender;    
+            var clickedButton = (Button)sender;
 
             foreach (Button button in menuButtons)
             {
@@ -119,7 +110,7 @@ namespace app
             }
             panelPointer.Height = clickedButton.Height;
             panelPointer.Location = new Point(0, clickedButton.Location.Y);
-            panelPointer.Visible = true;   
+            panelPointer.Visible = true;
         }
 
         private void LoadQuestions()
@@ -231,7 +222,10 @@ namespace app
             catch (FileNotFoundException exception)
             {
                 MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                users.Add(new User("User", 18, 80f, 180, Gender.Male, Avatar.Gray));
+            }
+            finally
+            {
+                noUserChosen = users.Count == 0;
             }
         }
 
@@ -261,8 +255,7 @@ namespace app
             LoadSurveys();
             LoadUsers();
 
-            InitializeProfile();
-            Center(buttonProfile);
+            UpdateProfileButton();
             panelLandingPage.BringToFront();
         }
 
@@ -361,7 +354,13 @@ namespace app
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
-            int userIndex = currentUserIndex;
+
+            if(noUserChosen)
+            {
+                panelUserNotLogged.BringToFront();
+                return;
+            }
+
             if (!Calculator.CalculateBMI(users[currentUserIndex]))
             {
                 panelProfiles.BringToFront();
@@ -410,6 +409,13 @@ namespace app
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
+
+            if(noUserChosen)
+            {
+                panelUserNotLogged.BringToFront();
+                return;
+            }
+
             panelMacro.BringToFront();
             UpdateActivityLevel();
         }
@@ -417,6 +423,13 @@ namespace app
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
             DisableButton(sender, e);
+
+            if(noUserChosen)
+            {
+                panelUserNotLogged.BringToFront();
+                return;
+            }
+
             panelSurveyMenu.BringToFront();
         }
 
@@ -464,6 +477,19 @@ namespace app
                     return Resources.profileRed;
                 default:
                     return Resources.profileGray;
+            }
+        }
+
+        private Image SetLargeAvatar(Avatar color)
+        {
+            switch (color)
+            {
+                case Avatar.Blue:
+                    return Resources.profileBlueLarge;
+                case Avatar.Red:
+                    return Resources.profileRedLarge;
+                default:
+                    return Resources.profileGrayLarge;
             }
         }
 
@@ -623,6 +649,7 @@ namespace app
                 User newUser = new User(textBoxName.Text, Convert.ToByte(numericUpDownAge.Value), Convert.ToSingle(numericUpDownWeight.Value), Convert.ToUInt16(numericUpDownHeight.Value), gender, avatar);
 
                 users.Add(newUser);
+                noUserChosen = false;
 
                 textBoxName.Text = "";
 
@@ -646,20 +673,9 @@ namespace app
 
             string message = string.Format("Czy na pewno chcesz usunąć profil {0}?", users[indexToRemove].name);
             string caption = "Potwierdzenie usunięcia profilu";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
 
-            result = MessageBox.Show(message, caption, buttons);
-            if (result == DialogResult.Yes)
+            if(MessageBox.Show(message, caption, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (indexToRemove > 0)
-                {
-                    --currentUserIndex;
-                }
-                else
-                {
-                    ++currentUserIndex;
-                }
                 users.RemoveAt(indexToRemove);
 
                 currentUserIndex = 0;
@@ -671,6 +687,7 @@ namespace app
                 if (users.Count == 0)
                 {
                     buttonEdit.Enabled = false;
+                    noUserChosen = true;
                 }
             }
             UpdateProfileButton();
@@ -715,8 +732,16 @@ namespace app
 
         private void UpdateProfileButton()
         {
-            buttonProfile.Text = users[currentUserIndex].name;
-            buttonProfile.ImageIndex = (int)users[currentUserIndex].avatar;
+            if(noUserChosen)
+            {
+                buttonProfile.Text = "Nie wybrano profilu";
+                buttonProfile.Image = Resources.profileLarge;
+            }
+            else
+            {
+                buttonProfile.Text = users[currentUserIndex].name;
+                buttonProfile.Image = SetLargeAvatar(users[currentUserIndex].avatar);
+            }
         }
 
         private void ButtonArrowUp_Click(object sender, EventArgs e)
@@ -864,7 +889,7 @@ namespace app
                 if(Quiz.isAnswerChosen == true) break;
                 UpdateTimeLeft(timeCounter);
             }
-            
+
             timeCounter.Stop();
 
             if(Quiz.isAnswerChosen == false)
@@ -930,7 +955,7 @@ namespace app
             {
                 ++Quiz.score;
             }
-            Quiz.isAnswerChosen = true; 
+            Quiz.isAnswerChosen = true;
             MarkCorrectAnswer(clickedButton);
         }
 
@@ -985,7 +1010,7 @@ namespace app
                         buttonSurveyYes.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[2].Key;
                         buttonSurveyNo.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[3].Key;
                         break;
-                    } 
+                    }
                 case QuestionType.INPUT:
                     {
                         buttonSurveyA.Visible = false;
@@ -1008,7 +1033,7 @@ namespace app
                         buttonSurveyYes.Text = "Tak";
                         buttonSurveyNo.Text = "Nie";
                         break;
-                    }   
+                    }
             }
             labelSurveyQuestion.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].questionTitle;
             Center(labelSurveyQuestionNumber);
@@ -1066,7 +1091,7 @@ namespace app
         {
             panelSurveyFinished.BringToFront();
 
-            try 
+            try
             {
                 switch (currentSurveyIndex)
                 {
@@ -1188,7 +1213,7 @@ namespace app
                 MessageBox.Show("Wystąpił błąd podczas sprawdzania wyniku ankiety. Nastąpi zamknięcie proramu.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
-            
+
             Center(labelFinish);
         }
 
@@ -1264,7 +1289,7 @@ namespace app
                         SetButtonAsClicked(buttonGoodWeather);
                     }
                     else
-                    { 
+                    {
                         weatherMessage = string.Format("Odczuwalna temperatura wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną\nze względu na inne warunki (np. opady).", weatherInfo.Item1);
                         SetButtonAsUnclicked(buttonGoodWeather);
                         SetButtonAsUnclicked(buttonAnyWeather);
@@ -1408,13 +1433,24 @@ namespace app
             if (ActivityMatcher.currentSport == null)
             {
                 labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
-            }     
+            }
             else
             {
                 labelActivityResult.Text = ActivityMatcher.currentSport.name;
                 pictureBoxSportResult.ImageLocation = string.Format("..\\..\\Resources\\Images\\{0}", ActivityMatcher.currentSport.imagePath);
             }
             Center(labelActivityResult);
+        }
+
+        private void ButtonChangeSearchingData_Click(object sender, EventArgs e)
+        {
+            LoadSports();
+            panelActivity.BringToFront();
+        }
+
+        private void ButtonGoToProfiles_Click(object sender, EventArgs e)
+        {
+            ButtonProfile_Click(buttonProfile, e);
         }
 
         private void Hackheroes_FormClosing(object sender, FormClosingEventArgs e)
@@ -1432,12 +1468,6 @@ namespace app
             }
 
             File.WriteAllLines("..\\..\\users.json", JSON);
-        }
-
-        private void ButtonChangeSearchingData_Click(object sender, EventArgs e)
-        {
-            LoadSports();
-            panelActivity.BringToFront();
         }
 
         private void ButtonInSideBarEnabledChanged(object sender, EventArgs e)
