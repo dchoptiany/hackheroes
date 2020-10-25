@@ -51,10 +51,9 @@ namespace app
 
             panelPointer.BackColor = blue1;
 
-            Color leftPanelBackColor = darkblue1;
+            Color leftPanelBackColor = green2;
             flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
-            panelProfileSetup.BackColor = leftPanelBackColor;
-            Color leftPanelButtonsColor = darkblue1;
+            Color leftPanelButtonsColor = green2;
             buttonBMI.BackColor = leftPanelButtonsColor;
             buttonActivity.BackColor = leftPanelButtonsColor;
             buttonQuiz.BackColor = leftPanelButtonsColor;
@@ -66,6 +65,17 @@ namespace app
         private void InitializeButtons()
         {
             menuButtons.Add(buttonBMI);
+            menuButtons.Add(buttonActivity); 
+            menuButtons.Add(buttonQuiz); 
+            menuButtons.Add(buttonCalculator); 
+            menuButtons.Add(buttonSurvey); 
+            menuButtons.Add(buttonProfile);
+        }
+
+        private void InitializeProfile()
+        {
+            buttonProfile.BackColor = green2;
+            UpdateProfileButton();
             menuButtons.Add(buttonActivity);
             menuButtons.Add(buttonQuiz);
             menuButtons.Add(buttonCalculator);
@@ -75,24 +85,20 @@ namespace app
 
         private void DisableButton(object sender, EventArgs e)
         {
-            var clickedButton = (Button)sender;
-            foreach (Button _button in menuButtons)
+            var clickedButton = (Button)sender;    
+
+            foreach (Button button in menuButtons)
             {
-                if (_button.Text == clickedButton.Text)
+                button.Enabled = true;
+                button.BackColor = green2;
+                if (button.Text == clickedButton.Text)
                 {
-                    _button.Enabled = false;
-                }
-                else
-                {
-                    _button.Enabled = true;
-                    _button.BackColor = green2;
+                    button.Enabled = false;
                 }
             }
-            clickedButton.BackColor = green1;
-
-            panelPointer.Visible = true;
-            panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
             panelPointer.Height = clickedButton.Height;
+            panelPointer.Location = new Point(0, clickedButton.Location.Y);
+            panelPointer.Visible = true;   
         }
 
         private void LoadQuestions()
@@ -246,6 +252,8 @@ namespace app
             LoadSurveys();
             LoadUsers();
 
+            InitializeProfile();
+            Center(buttonProfile);
             panelLandingPage.BringToFront();
         }
 
@@ -343,6 +351,8 @@ namespace app
 
         private void ButtonBMI_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
+            int userIndex = currentUserIndex;
             if (!Calculator.CalculateBMI(users[currentUserIndex]))
             {
                 panelProfiles.BringToFront();
@@ -362,6 +372,7 @@ namespace app
 
         private void ButtonActivity_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
             panelActivity.BringToFront();
 
             SetButtonAsUnclicked(buttonIndividual);
@@ -383,22 +394,26 @@ namespace app
 
         private void ButtonQuiz_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
             panelQuizMenu.BringToFront();
         }
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
             panelMacro.BringToFront();
             UpdateActivityLevel();
         }
 
         private void ButtonSurvey_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
             panelSurveyMenu.BringToFront();
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)
         {
+            DisableButton(sender, e);
             panelProfiles.BringToFront();
 
             buttonSaveChanges.Enabled = false;
@@ -432,17 +447,14 @@ namespace app
 
         private Image SetAvatar(Avatar color)
         {
-            if (color == Avatar.Blue)
+            switch (color)
             {
-                return Resources.profileBlue;
-            }
-            else if (color == Avatar.Red)
-            {
-                return Resources.profileRed;
-            }
-            else
-            {
-                return Resources.profileGray;
+                case Avatar.Blue:
+                    return Resources.profileBlue;
+                case Avatar.Red:
+                    return Resources.profileRed;
+                default:
+                    return Resources.profileGray;
             }
         }
 
@@ -616,6 +628,7 @@ namespace app
             groupBoxEdit.Visible = false;
             UpdateUserItems();
             UpdateArrowButtons();
+            UpdateProfileButton();
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)
@@ -651,6 +664,7 @@ namespace app
                     buttonEdit.Enabled = false;
                 }
             }
+            UpdateProfileButton();
         }
 
         private void ButtonSaveChanges_Click(object sender, EventArgs e)
@@ -687,6 +701,13 @@ namespace app
                     Close();
                 }
             }
+            UpdateProfileButton();
+        }
+
+        private void UpdateProfileButton()
+        {
+            buttonProfile.Text = users[currentUserIndex].name;
+            buttonProfile.ImageIndex = (int)users[currentUserIndex].avatar;
         }
 
         private void ButtonArrowUp_Click(object sender, EventArgs e)
@@ -699,6 +720,7 @@ namespace app
             groupBoxEdit.Visible = false;
             UpdateUserItems();
             UpdateArrowButtons();
+            UpdateProfileButton();
         }
 
         private void ButtonArrowDown_Click(object sender, EventArgs e)
@@ -711,6 +733,7 @@ namespace app
             groupBoxEdit.Visible = false;
             UpdateUserItems();
             UpdateArrowButtons();
+            UpdateProfileButton();
         }
 
         private void ButtonEdit_Click(object sender, EventArgs e)

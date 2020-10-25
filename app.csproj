@@ -196,6 +196,7 @@
     <None Include="Resources\Images\trainingSized.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Images\avatarMale.png" />
     <None Include="Resources\Images\arrowUp.png" />
   </ItemGroup>
   <ItemGroup>
