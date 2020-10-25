@@ -267,5 +267,11 @@
   <ItemGroup>
     <None Include="Resources\Images\profileLarge.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\homeWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\home.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

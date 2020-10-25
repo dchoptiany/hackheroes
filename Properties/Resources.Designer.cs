@@ -133,16 +133,6 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap closeIcon1 {
-            get {
-                object obj = ResourceManager.GetObject("closeIcon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cloudsSized {
             get {
                 object obj = ResourceManager.GetObject("cloudsSized", resourceCulture);
@@ -183,16 +173,6 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit1 {
-            get {
-                object obj = ResourceManager.GetObject("edit1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap HealthHeroes {
             get {
                 object obj = ResourceManager.GetObject("HealthHeroes", resourceCulture);
@@ -203,19 +183,19 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap minimizeIcon {
-            get {
-                object obj = ResourceManager.GetObject("minimizeIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap healthyHeartIcon {
             get {
                 object obj = ResourceManager.GetObject("healthyHeartIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

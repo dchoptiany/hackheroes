@@ -59,7 +59,7 @@ namespace app
 
             foreach(Button button in menuButtons)
             {
-                button.BackColor = leftPanelButtonsColor;
+                button.BackColor = leftPanelBackColor;
             }
         }
 
