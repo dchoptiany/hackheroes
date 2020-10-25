@@ -1622,7 +1622,7 @@
             this.numericUpDownWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownWeight.Location = new System.Drawing.Point(81, 122);
             this.numericUpDownWeight.Maximum = new decimal(new int[] {
-            350,
+            600,
             0,
             0,
             0});
@@ -1647,7 +1647,7 @@
             this.numericUpDownHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownHeight.Location = new System.Drawing.Point(81, 161);
             this.numericUpDownHeight.Maximum = new decimal(new int[] {
-            300,
+            280,
             0,
             0,
             0});
@@ -1671,7 +1671,7 @@
             this.numericUpDownAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownAge.Location = new System.Drawing.Point(81, 202);
             this.numericUpDownAge.Maximum = new decimal(new int[] {
-            200,
+            130,
             0,
             0,
             0});
@@ -2301,12 +2301,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelUserNotLogged);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelActivityResults);
-            this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelActivity);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelQuiz);
