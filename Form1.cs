@@ -56,18 +56,16 @@ namespace app
 
             Color leftPanelBackColor = darkblue1;
             flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
-            Color leftPanelButtonsColor = darkblue1;
-            buttonBMI.BackColor = leftPanelButtonsColor;
-            buttonActivity.BackColor = leftPanelButtonsColor;
-            buttonQuiz.BackColor = leftPanelButtonsColor;
-            buttonCalculator.BackColor = leftPanelButtonsColor;
-            buttonSurvey.BackColor = leftPanelButtonsColor;
-            buttonProfile.BackColor = leftPanelButtonsColor;
-            buttonProfile.BackColor = darkblue1;
+
+            foreach(Button button in menuButtons)
+            {
+                button.BackColor = leftPanelBackColor;
+            }
         }
 
         private void InitializeButtons()
         {
+            menuButtons.Add(buttonHome);
             menuButtons.Add(buttonBMI);
             menuButtons.Add(buttonActivity);
             menuButtons.Add(buttonQuiz);
@@ -257,8 +255,8 @@ namespace app
             LoadSurveys();
             LoadUsers();
 
-            UpdateProfileButton();
-            panelLandingPage.BringToFront();
+           	UpdateProfileButton();
+            ButtonHome_Click(buttonHome, e);
         }
 
         private void Disable(Button button)
@@ -287,6 +285,12 @@ namespace app
         private void ButtonMinimizeClick(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void ButtonHome_Click(object sender, EventArgs e)
+        {
+            DisableButton(sender, e);
+            panelLandingPage.BringToFront();
         }
 
         private void UpdateMacro()

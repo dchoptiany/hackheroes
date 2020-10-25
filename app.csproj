@@ -197,6 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\avatarMale.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Images\arrowUp.png" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +232,15 @@
     <None Include="Resources\Images\profileGray.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Images\arrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowLeft.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\HealthHeroes.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Images\healthyHeartIcon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +266,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\profileLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\homeWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
