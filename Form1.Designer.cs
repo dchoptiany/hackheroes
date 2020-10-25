@@ -33,8 +33,9 @@
             this.flowLayoutPanelSidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.imageListProfile = new System.Windows.Forms.ImageList(this.components);
-            this.buttonBMI = new System.Windows.Forms.Button();
+            this.buttonHome = new System.Windows.Forms.Button();
             this.imageListSidebar = new System.Windows.Forms.ImageList(this.components);
+            this.buttonBMI = new System.Windows.Forms.Button();
             this.buttonActivity = new System.Windows.Forms.Button();
             this.buttonQuiz = new System.Windows.Forms.Button();
             this.buttonCalculator = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSurveyFinished = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
-            this.panelLandingPage = new System.Windows.Forms.Panel();
             this.panelBMI = new System.Windows.Forms.Panel();
             this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.labelBMIInterpretation = new System.Windows.Forms.Label();
@@ -179,6 +179,14 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
+            this.panelLandingPage = new System.Windows.Forms.Panel();
+            this.labelDescription = new System.Windows.Forms.Label();
+            this.labelProjectName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.userItemThird = new app.UserItem();
             this.userItemFirst = new app.UserItem();
             this.userItemSecond = new app.UserItem();
@@ -219,11 +227,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClouds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).BeginInit();
             this.panelActivityResults.SuspendLayout();
+            this.panelLandingPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelSidebar
             // 
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonProfile);
+            this.flowLayoutPanelSidebar.Controls.Add(this.buttonHome);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonBMI);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonActivity);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonQuiz);
@@ -264,6 +274,39 @@
             this.imageListProfile.Images.SetKeyName(1, "profileRedLarge.png");
             this.imageListProfile.Images.SetKeyName(2, "profileGrayLarge.png");
             // 
+            // buttonHome
+            // 
+            this.buttonHome.BackColor = System.Drawing.Color.Fuchsia;
+            this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonHome.FlatAppearance.BorderSize = 0;
+            this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonHome.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonHome.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonHome.ImageIndex = 0;
+            this.buttonHome.ImageList = this.imageListSidebar;
+            this.buttonHome.Location = new System.Drawing.Point(0, 177);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
+            this.buttonHome.Size = new System.Drawing.Size(280, 82);
+            this.buttonHome.TabIndex = 5;
+            this.buttonHome.Text = "Start";
+            this.buttonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.Click += new System.EventHandler(this.ButtonHome_Click);
+            // 
+            // imageListSidebar
+            // 
+            this.imageListSidebar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListSidebar.ImageStream")));
+            this.imageListSidebar.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListSidebar.Images.SetKeyName(0, "home.png");
+            this.imageListSidebar.Images.SetKeyName(1, "healthyHeartIcon.png");
+            this.imageListSidebar.Images.SetKeyName(2, "dumbbellIcon.png");
+            this.imageListSidebar.Images.SetKeyName(3, "questionMarkIcon.png");
+            this.imageListSidebar.Images.SetKeyName(4, "calculatorMathIcon.png");
+            this.imageListSidebar.Images.SetKeyName(5, "surveyIcon.png");
+            // 
             // buttonBMI
             // 
             this.buttonBMI.BackColor = System.Drawing.Color.Red;
@@ -273,9 +316,9 @@
             this.buttonBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBMI.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonBMI.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonBMI.ImageIndex = 2;
+            this.buttonBMI.ImageIndex = 1;
             this.buttonBMI.ImageList = this.imageListSidebar;
-            this.buttonBMI.Location = new System.Drawing.Point(0, 177);
+            this.buttonBMI.Location = new System.Drawing.Point(0, 261);
             this.buttonBMI.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonBMI.Name = "buttonBMI";
             this.buttonBMI.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -286,16 +329,6 @@
             this.buttonBMI.UseVisualStyleBackColor = false;
             this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
             // 
-            // imageListSidebar
-            // 
-            this.imageListSidebar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListSidebar.ImageStream")));
-            this.imageListSidebar.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListSidebar.Images.SetKeyName(0, "calculatorMathIcon.png");
-            this.imageListSidebar.Images.SetKeyName(1, "dumbbellIcon.png");
-            this.imageListSidebar.Images.SetKeyName(2, "healthyHeartIcon.png");
-            this.imageListSidebar.Images.SetKeyName(3, "questionMarkIcon.png");
-            this.imageListSidebar.Images.SetKeyName(4, "surveyIcon.png");
-            // 
             // buttonActivity
             // 
             this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -305,9 +338,9 @@
             this.buttonActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonActivity.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonActivity.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonActivity.ImageIndex = 1;
+            this.buttonActivity.ImageIndex = 2;
             this.buttonActivity.ImageList = this.imageListSidebar;
-            this.buttonActivity.Location = new System.Drawing.Point(0, 261);
+            this.buttonActivity.Location = new System.Drawing.Point(0, 345);
             this.buttonActivity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonActivity.Name = "buttonActivity";
             this.buttonActivity.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -329,7 +362,7 @@
             this.buttonQuiz.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonQuiz.ImageIndex = 3;
             this.buttonQuiz.ImageList = this.imageListSidebar;
-            this.buttonQuiz.Location = new System.Drawing.Point(0, 345);
+            this.buttonQuiz.Location = new System.Drawing.Point(0, 429);
             this.buttonQuiz.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonQuiz.Name = "buttonQuiz";
             this.buttonQuiz.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -350,9 +383,9 @@
             this.buttonCalculator.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonCalculator.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonCalculator.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCalculator.ImageIndex = 0;
+            this.buttonCalculator.ImageIndex = 4;
             this.buttonCalculator.ImageList = this.imageListSidebar;
-            this.buttonCalculator.Location = new System.Drawing.Point(0, 429);
+            this.buttonCalculator.Location = new System.Drawing.Point(0, 513);
             this.buttonCalculator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonCalculator.Name = "buttonCalculator";
             this.buttonCalculator.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -372,9 +405,9 @@
             this.buttonSurvey.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSurvey.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonSurvey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSurvey.ImageIndex = 4;
+            this.buttonSurvey.ImageIndex = 5;
             this.buttonSurvey.ImageList = this.imageListSidebar;
-            this.buttonSurvey.Location = new System.Drawing.Point(0, 513);
+            this.buttonSurvey.Location = new System.Drawing.Point(0, 597);
             this.buttonSurvey.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonSurvey.Name = "buttonSurvey";
             this.buttonSurvey.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -440,13 +473,6 @@
             this.label39.TabIndex = 12;
             this.label39.Text = "Ankieta zakończona";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelLandingPage
-            // 
-            this.panelLandingPage.Location = new System.Drawing.Point(280, 50);
-            this.panelLandingPage.Name = "panelLandingPage";
-            this.panelLandingPage.Size = new System.Drawing.Size(1000, 650);
-            this.panelLandingPage.TabIndex = 23;
             // 
             // panelBMI
             // 
@@ -2223,6 +2249,98 @@
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
+            // panelLandingPage
+            // 
+            this.panelLandingPage.Controls.Add(this.label20);
+            this.panelLandingPage.Controls.Add(this.label19);
+            this.panelLandingPage.Controls.Add(this.label18);
+            this.panelLandingPage.Controls.Add(this.label5);
+            this.panelLandingPage.Controls.Add(this.label2);
+            this.panelLandingPage.Controls.Add(this.labelDescription);
+            this.panelLandingPage.Controls.Add(this.labelProjectName);
+            this.panelLandingPage.Location = new System.Drawing.Point(280, 50);
+            this.panelLandingPage.Name = "panelLandingPage";
+            this.panelLandingPage.Size = new System.Drawing.Size(1000, 650);
+            this.panelLandingPage.TabIndex = 23;
+            // 
+            // labelDescription
+            // 
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelDescription.Location = new System.Drawing.Point(10, 567);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(916, 42);
+            this.labelDescription.TabIndex = 13;
+            this.labelDescription.Text = "Ocenić Twoje nawyki związane z aktywnością fizyczną, odżywianiem i snem.";
+            this.labelDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelProjectName
+            // 
+            this.labelProjectName.AutoSize = true;
+            this.labelProjectName.Font = new System.Drawing.Font("Poppins Medium", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelProjectName.Location = new System.Drawing.Point(303, 0);
+            this.labelProjectName.Name = "labelProjectName";
+            this.labelProjectName.Size = new System.Drawing.Size(410, 93);
+            this.labelProjectName.TabIndex = 12;
+            this.labelProjectName.Text = "Healthheroes";
+            this.labelProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 17F);
+            this.label2.Location = new System.Drawing.Point(56, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(887, 120);
+            this.label2.TabIndex = 14;
+            this.label2.Text = resources.GetString("label2.Text");
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(10, 232);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(822, 42);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Obliczyć Twój wskaźnik BMI wraz z odpowiadającą mu interpretacją,";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label18.Location = new System.Drawing.Point(10, 295);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(803, 84);
+            this.label18.TabIndex = 16;
+            this.label18.Text = "Znaleźć idealny rodzaj aktywności fizycznej na dzisiaj, w zależności\r\nod aktulane" +
+    "j pogody i osobistych preferencji,\r\n";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label19.Location = new System.Drawing.Point(10, 400);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(765, 42);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Sprawdzić Twoją wiedzę na temat zdrowia, sportu i odżywiania,";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label20.Location = new System.Drawing.Point(10, 484);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(808, 42);
+            this.label20.TabIndex = 18;
+            this.label20.Text = "Obliczyć twoje zapotrzebowanie kaloryczne oraz skład twojej diety,";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // userItemThird
             // 
             this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
@@ -2265,6 +2383,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelLandingPage);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelBMI);
@@ -2275,7 +2394,6 @@
             this.Controls.Add(this.panelQuiz);
             this.Controls.Add(this.panelQuizMenu);
             this.Controls.Add(this.panelQuizFinished);
-            this.Controls.Add(this.panelLandingPage);
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.flowLayoutPanelSidebar);
             this.Controls.Add(this.panelMacro);
@@ -2339,6 +2457,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).EndInit();
             this.panelActivityResults.ResumeLayout(false);
             this.panelActivityResults.PerformLayout();
+            this.panelLandingPage.ResumeLayout(false);
+            this.panelLandingPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2421,7 +2541,6 @@
         private System.Windows.Forms.PictureBox pictureBoxTimeBorder;
         private System.Windows.Forms.Button buttonCalculator;
         private System.Windows.Forms.Panel panelPointer;
-        private System.Windows.Forms.Panel panelLandingPage;
         private System.Windows.Forms.Panel panelSurvey;
         private System.Windows.Forms.Button buttonSurveyConfirm;
         private System.Windows.Forms.TextBox textBoxSurveyText;
@@ -2497,5 +2616,14 @@
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.ImageList imageListProfile;
         private System.Windows.Forms.ImageList imageListSidebar;
+        private System.Windows.Forms.Panel panelLandingPage;
+        private System.Windows.Forms.Label labelDescription;
+        private System.Windows.Forms.Label labelProjectName;
+        private System.Windows.Forms.Button buttonHome;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
     }   
 }
