@@ -1,13 +1,15 @@
 {
-  "name": "Testowy m\u0119\u017Cczyzna",
+  "avatar": 0,
+  "name": "Testowy M\u0119\u017Cczyzna",
   "age": 18,
   "weight": 60,
   "height": 170,
   "gender": 0,
-  "activityLevel": 1.20000005
+  "activityLevel": 1.42499995
 }
 {
-  "name": "Testowa kobieta",
+  "avatar": 1,
+  "name": "Testowa Kobieta",
   "age": 21,
   "weight": 40,
   "height": 150,
