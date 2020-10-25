@@ -1011,15 +1011,75 @@ namespace app
                         uint score = 0;
                         string result = "";
                         string description = "";
-                        score += surveys[currentSurveyIndex].surveyAnswersInt[0];
-
-
+                        for(int index = 0; index < surveys[currentSurveyIndex].surveyAnswersInt.Count; ++index)
+                        {
+                            if (index == 2)
+                            {
+                                if(surveys[currentSurveyIndex].surveyAnswersInt[index] < 6 && surveys[currentSurveyIndex].surveyAnswersInt[index] > 2)
+                                {
+                                    score += 1;
+                                }
+                                else if(surveys[currentSurveyIndex].surveyAnswersInt[index] >= 6)
+                                {
+                                    score += 0;
+                                }
+                                else
+                                {
+                                    score += 2;
+                                }
+                                
+                            }
+                            else if(index == 7)
+                            {
+                                if(surveys[currentSurveyIndex].surveyAnswersInt[index] > 0)
+                                {
+                                    score += 1;
+                                }
+                            }
+                            else
+                            {
+                                score += surveys[currentSurveyIndex].surveyAnswersInt[index];
+                            }
+                        }
+                        Console.WriteLine(score);
                         if(score == 0)
                         {
                             result = "ekstremalnie złe!";
                             description = "Popracuj nad swoim odżywianiem!";
                         }
+                        else if (score > 0 && score < 5)
+                        {
+                            result = "złe!";
+                            description = "Popracuj nad swoim odżywianiem!";
+                        }
+                        else if (score >= 5 && score < 7)
+                        {
+                            result = "do poprawy!";
+                            description = "Popracuj nad swoim odżywianiem!";
+                        }
+                        else if (score >= 7 && score < 10)
+                        {
+                            result = "dobre!";
+                            description = "Dobry wynik!";
+                        }
+                        else if (score >= 10 && score < 13)
+                        {
+                            result = "bardzo dobre!";
+                            description = "Bardzo dobry wynik!";
+                        }
+                        else
+                        {
+                            result = "ŚWIETNE!";
+                            description = "Świetny wynik!";
+                        }
                         labelFinish.Text = "Twoje nawyki żywieniowe są " + result + "\n" + description;
+                    }
+                    break;
+                case 2: // Jakość snu
+                    {
+                        uint score = 0;
+                        string result = "";
+                        string description = "";
                     }
                     break;
                 default:
