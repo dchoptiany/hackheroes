@@ -1,6 +1,6 @@
 {
-  "ask": "Kt\u00F3re z podanych produkt\u00F3w jest najlepszym \u017Ar\u00F3d\u0142em bia\u0142ka?",
-  "correctAnswer": "Wo\u0142owina",
+  "ask": "Które z podanych produktów jest najlepszym źródłem białka?",
+  "correctAnswer": "Wołowina",
   "incorrectAnswers": [
     "Banany",
     "Jajka",
@@ -8,30 +8,30 @@
   ]
 }
 {
-  "ask": "Kt\u00F3ra z podanych dolegliwo\u015Bci nie wskazuje na niedob\u00F3r witaminy C?",
-  "correctAnswer": "Obni\u017Cenie ci\u015Bnienia krwi t\u0119tniczego",
+  "ask": "Która z podanych dolegliwości nie wskazuje na niedobór witaminy C?",
+  "correctAnswer": "Obniżenie ciśnienia krwi tętniczego",
   "incorrectAnswers": [
-    "Senno\u015B\u0107",
-    "Spadek odporno\u015Bci",
-    "Krwawienie dzi\u0105se\u0142"
+    "Senność",
+    "Spadek odporności",
+    "Krwawienie dziąseł"
   ]
 }
 {
-  "ask": "W kt\u00F3rym z tych produkt\u00F3w nie wyst\u0119puje witamina D?",
+  "ask": "W którym z tych produktów nie występuje witamina D?",
   "correctAnswer": "Marchew",
   "incorrectAnswers": [
     "Ryby",
-    "W\u0105tr\u00F3bka",
+    "Wątróbka",
     "Mleko"
   ]
 }
 {
-  "ask": "Kt\u00F3ra z podanych aktywno\u015Bci najkorzystniej wp\u0142ywa na kr\u0119gos\u0142up?",
-  "correctAnswer": "P\u0142ywanie",
+  "ask": "Która z podanych aktywności najkorzystniej wpływa na kręgosłup?",
+  "correctAnswer": "Pływanie",
   "incorrectAnswers": [
     "Bieganie",
-    "Podnoszenie ci\u0119\u017Car\u00F3w",
-    "Wykonywanie przysiad\u00F3w"
+    "Podnoszenie ciężarów",
+    "Wykonywanie przysiadów"
   ]
 }
 {
@@ -44,17 +44,17 @@
   ]
 }
 {
-  "ask": "Jaki pierwiastek jest podstawowym budulcem ko\u015Bci?",
-  "correctAnswer": "Wap\u0144",
+  "ask": "Która witamina jest wytwarzana przez skórę w czasie wystawienia jej na działanie promieni słonecznych?",
+  "correctAnswer": "D",
   "incorrectAnswers": [
-    "Potas",
-    "Magnez",
-    "Siarka"
+    "K",
+    "C",
+    "B"
   ]
 }
 {
-  "ask": "Anemia to choroba wywo\u0142ana niedobrem:",
-  "correctAnswer": "\u017Belaza",
+  "ask": "Anemia to choroba wywołana niedobrem:",
+  "correctAnswer": "Żelaza",
   "incorrectAnswers": [
     "Cynku",
     "Witaminy B6",
@@ -62,25 +62,25 @@
   ]
 }
 {
-  "ask": "Kt\u00F3re z poni\u017Cszych nie wchodzi w sk\u0142ad uk\u0142adu oddechowego?",
-  "correctAnswer": "Okr\u0119\u017Cnica",
+  "ask": "Które z poniższych nie wchodzi w skład układu oddechowego?",
+  "correctAnswer": "Okrężnica",
   "incorrectAnswers": [
-    "P\u0142uca",
-    "Gard\u0142o",
+    "Płuca",
+    "Gardło",
     "Tchawica"
   ]
 }
 {
-  "ask": "Kt\u00F3re z podanych produkt\u00F3w powinny stanowi\u0107 podstaw\u0119 diety?",
-  "correctAnswer": "Produkty pe\u0142noziarniste",
+  "ask": "Które z podanych produktów powinny stanowić podstawę diety?",
+  "correctAnswer": "Produkty pełnoziarniste",
   "incorrectAnswers": [
-    "Nabia\u0142",
+    "Nabiał",
     "Warzywa i owoce",
-    "Mi\u0119so"
+    "Mięso"
   ]
 }
 {
-  "ask": "Kt\u00F3ra z podanych witamin nie rozpuszcza si\u0119 w t\u0142uszczach?",
+  "ask": "Która z podanych witamin nie rozpuszcza się w tłuszczach?",
   "correctAnswer": "Witamina B",
   "incorrectAnswers": [
     "Witamina A",
@@ -89,16 +89,16 @@
   ]
 }
 {
-  "ask": "Jakie t\u0119tno jest prawid\u0142owe?",
-  "correctAnswer": "60-80 uderze\u0144 na minut\u0119",
+  "ask": "Jakie tętno jest prawidłowe?",
+  "correctAnswer": "60-80 uderzeń na minutę",
   "incorrectAnswers": [
-    "Poni\u017Cej 40 uderze\u0144 na minut\u0119",
-    "Powy\u017Cej 100 uderze\u0144 na minut\u0119",
-    "80-100 uderze\u0144 na minut\u0119"
+    "Poniżej 40 uderzeń na minutę",
+    "Powyżej 100 uderzeń na minutę",
+    "80-100 uderzeń na minutę"
   ]
 }
 {
-  "ask": "Prawid\u0142owe ci\u015Bnienie krwi wynosi:",
+  "ask": "Prawidłowe ciśnienie krwi wynosi:",
   "correctAnswer": "120/80",
   "incorrectAnswers": [
     "165/95",
@@ -107,20 +107,20 @@
   ]
 }
 {
-  "ask": "W kt\u00F3rym z podanych produkt\u00F3w nie wyst\u0119puje b\u0142onnik?",
+  "ask": "W którym z podanych produktów nie występuje błonnik?",
   "correctAnswer": "W drobiu",
   "incorrectAnswers": [
-    "W p\u0142atkach owsianych",
-    "W warzywach str\u0105czkowych",
+    "W płatkach owsianych",
+    "W warzywach strączkowych",
     "W suszonych morelach"
   ]
 }
 {
-  "ask": "Do chor\u00F3b wirusowych zaliczamy:",
-  "correctAnswer": "Osp\u0119",
+  "ask": "Do chorób wirusowych zaliczamy:",
+  "correctAnswer": "Ospę",
   "incorrectAnswers": [
-    "Angin\u0119",
-    "Zakrzepic\u0119",
-    "Chorob\u0119 wie\u0144cow\u0105"
+    "Anginę",
+    "Zakrzepicę",
+    "Chorobę wieńcową"
   ]
 }
