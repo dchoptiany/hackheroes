@@ -31,14 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hackheroes));
             this.flowLayoutPanelSidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.imageListProfile = new System.Windows.Forms.ImageList(this.components);
             this.buttonBMI = new System.Windows.Forms.Button();
             this.imageListSidebar = new System.Windows.Forms.ImageList(this.components);
-            this.buttonMinimize = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.buttonActivity = new System.Windows.Forms.Button();
             this.buttonQuiz = new System.Windows.Forms.Button();
             this.buttonCalculator = new System.Windows.Forms.Button();
             this.buttonSurvey = new System.Windows.Forms.Button();
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.buttonSurveyFinished = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
             this.panelLandingPage = new System.Windows.Forms.Panel();
@@ -106,9 +108,6 @@
             this.panelProfiles = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.labelIndexInfo = new System.Windows.Forms.Label();
-            this.userItemThird = new app.UserItem();
-            this.userItemFirst = new app.UserItem();
-            this.userItemSecond = new app.UserItem();
             this.buttonArrowUp = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -135,8 +134,6 @@
             this.numericUpDownHeight = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
-            this.buttonProfile = new System.Windows.Forms.Button();
-            this.imageListProfile = new System.Windows.Forms.ImageList(this.components);
             this.panelPointer = new System.Windows.Forms.Panel();
             this.flowPanelSurveys = new System.Windows.Forms.FlowLayoutPanel();
             this.labelSurveyTitle = new System.Windows.Forms.Label();
@@ -182,6 +179,9 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
+            this.userItemThird = new app.UserItem();
+            this.userItemFirst = new app.UserItem();
+            this.userItemSecond = new app.UserItem();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -233,6 +233,36 @@
             this.flowLayoutPanelSidebar.Name = "flowLayoutPanelSidebar";
             this.flowLayoutPanelSidebar.Size = new System.Drawing.Size(280, 720);
             this.flowLayoutPanelSidebar.TabIndex = 13;
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProfile.FlatAppearance.BorderSize = 0;
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonProfile.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonProfile.ImageIndex = 0;
+            this.buttonProfile.ImageList = this.imageListProfile;
+            this.buttonProfile.Location = new System.Drawing.Point(0, 0);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 5, 4, 0);
+            this.buttonProfile.Size = new System.Drawing.Size(280, 175);
+            this.buttonProfile.TabIndex = 4;
+            this.buttonProfile.Text = "<User name>";
+            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonProfile.UseVisualStyleBackColor = false;
+            this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
+            // 
+            // imageListProfile
+            // 
+            this.imageListProfile.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListProfile.ImageStream")));
+            this.imageListProfile.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListProfile.Images.SetKeyName(0, "profileBlueLarge.png");
+            this.imageListProfile.Images.SetKeyName(1, "profileRedLarge.png");
+            this.imageListProfile.Images.SetKeyName(2, "profileGrayLarge.png");
             // 
             // buttonBMI
             // 
@@ -356,6 +386,38 @@
             this.buttonSurvey.UseVisualStyleBackColor = false;
             this.buttonSurvey.Click += new System.EventHandler(this.ButtonSurvey_Click);
             // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.buttonMinimize.BackgroundImage = global::app.Properties.Resources.minimizeIcon;
+            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.Location = new System.Drawing.Point(1200, 0);
+            this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonMinimize.Size = new System.Drawing.Size(40, 40);
+            this.buttonMinimize.TabIndex = 11;
+            this.buttonMinimize.UseVisualStyleBackColor = false;
+            this.buttonMinimize.Click += new System.EventHandler(this.ButtonMinimizeClick);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.BackgroundImage = global::app.Properties.Resources.closeIcon;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Location = new System.Drawing.Point(1240, 0);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonClose.Size = new System.Drawing.Size(40, 40);
+            this.buttonClose.TabIndex = 10;
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
             // buttonSurveyFinished
             // 
             this.buttonSurveyFinished.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -372,11 +434,12 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label39.Location = new System.Drawing.Point(245, 175);
+            this.label39.Location = new System.Drawing.Point(273, 175);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(455, 55);
             this.label39.TabIndex = 12;
             this.label39.Text = "Ankieta zakończona";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelLandingPage
             // 
@@ -1220,42 +1283,6 @@
             this.labelIndexInfo.Text = "0/0";
             this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // userItemThird
-            // 
-            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
-            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemThird.Location = new System.Drawing.Point(27, 260);
-            this.userItemThird.Name = "userItemThird";
-            this.userItemThird.Size = new System.Drawing.Size(291, 76);
-            this.userItemThird.TabIndex = 55;
-            this.userItemThird.UserName = null;
-            this.userItemThird.Visible = false;
-            // 
-            // userItemFirst
-            // 
-            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
-            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
-            this.userItemFirst.Name = "userItemFirst";
-            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
-            this.userItemFirst.TabIndex = 53;
-            this.userItemFirst.UserName = null;
-            this.userItemFirst.Visible = false;
-            // 
-            // userItemSecond
-            // 
-            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
-            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
-            this.userItemSecond.Name = "userItemSecond";
-            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
-            this.userItemSecond.TabIndex = 54;
-            this.userItemSecond.UserName = null;
-            this.userItemSecond.Visible = false;
-            // 
             // buttonArrowUp
             // 
             this.buttonArrowUp.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1634,36 +1661,6 @@
             this.label15.TabIndex = 16;
             this.label15.Text = "lat";
             // 
-            // buttonProfile
-            // 
-            this.buttonProfile.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProfile.FlatAppearance.BorderSize = 0;
-            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonProfile.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonProfile.ImageIndex = 0;
-            this.buttonProfile.ImageList = this.imageListProfile;
-            this.buttonProfile.Location = new System.Drawing.Point(0, 0);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 5, 4, 0);
-            this.buttonProfile.Size = new System.Drawing.Size(280, 175);
-            this.buttonProfile.TabIndex = 4;
-            this.buttonProfile.Text = "<User name>";
-            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonProfile.UseVisualStyleBackColor = false;
-            this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
-            // 
-            // imageListProfile
-            // 
-            this.imageListProfile.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListProfile.ImageStream")));
-            this.imageListProfile.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListProfile.Images.SetKeyName(0, "profileBlueLarge.png");
-            this.imageListProfile.Images.SetKeyName(1, "profileRedLarge.png");
-            this.imageListProfile.Images.SetKeyName(2, "profileGrayLarge.png");
-            // 
             // panelPointer
             // 
             this.panelPointer.Location = new System.Drawing.Point(0, 180);
@@ -1871,6 +1868,7 @@
             this.labelFinish.Size = new System.Drawing.Size(177, 39);
             this.labelFinish.TabIndex = 11;
             this.labelFinish.Text = "<finished>";
+            this.labelFinish.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelActivity
             // 
@@ -2225,38 +2223,6 @@
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
-            // buttonMinimize
-            // 
-            this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.buttonMinimize.BackgroundImage = global::app.Properties.Resources.minimizeIcon;
-            this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMinimize.FlatAppearance.BorderSize = 0;
-            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Location = new System.Drawing.Point(1200, 0);
-            this.buttonMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonMinimize.Name = "buttonMinimize";
-            this.buttonMinimize.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonMinimize.Size = new System.Drawing.Size(40, 40);
-            this.buttonMinimize.TabIndex = 11;
-            this.buttonMinimize.UseVisualStyleBackColor = false;
-            this.buttonMinimize.Click += new System.EventHandler(this.ButtonMinimizeClick);
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
-            this.buttonClose.BackgroundImage = global::app.Properties.Resources.closeIcon;
-            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonClose.FlatAppearance.BorderSize = 0;
-            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Location = new System.Drawing.Point(1240, 0);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonClose.Size = new System.Drawing.Size(40, 40);
-            this.buttonClose.TabIndex = 10;
-            this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
-            // 
             // userItemThird
             // 
             this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
@@ -2299,6 +2265,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelActivityResults);
@@ -2306,7 +2273,6 @@
             this.Controls.Add(this.panelActivity);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelQuiz);
-            this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelQuizMenu);
             this.Controls.Add(this.panelQuizFinished);
             this.Controls.Add(this.panelLandingPage);

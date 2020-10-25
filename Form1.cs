@@ -966,8 +966,8 @@ namespace app
                         textBoxSurveyText.Visible = false;
                         buttonSurveyConfirm.Visible = false;
 
-                        buttonSurveyYes.Text = "Tak";
-                        buttonSurveyNo.Text = "Nie";
+                        buttonSurveyYes.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[0].Key;
+                        buttonSurveyNo.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[1].Key;
                         break;
                     }
                 case QuestionType.ABCD:
@@ -1019,7 +1019,6 @@ namespace app
         {
             Button clickedButton = (Button)sender;
             bool correctValue = true;
-
             if(clickedButton == buttonSurveyConfirm)
             {
                 try
@@ -1066,15 +1065,128 @@ namespace app
         {
             panelSurveyFinished.BringToFront();
 
-            if(currentSurveyIndex == 0) //Poziom aktywnosci fizycznej
+            try 
             {
-                users[currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
-                users[currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
-                users[currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
+                switch (currentSurveyIndex)
+                {
+                    case 0: // Poziom aktywnosci fizycznej
+                        {
+                            users[currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
+                            users[currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
+                            users[currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
 
-                Calculator.CalculateActivityLevel(users[currentUserIndex]);
-                labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
-            }       
+                            Calculator.CalculateActivityLevel(users[currentUserIndex]);
+                            labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
+
+                        }
+                        break;
+                    case 1: // Nawyki żywieniowe
+                        {
+                            uint score = 0;
+                            string result = string.Empty;
+
+                            for (int index = 0; index < surveys[currentSurveyIndex].surveyAnswersInt.Count; ++index)
+                            {
+                                if (index == 2)
+                                {
+                                    if (surveys[currentSurveyIndex].surveyAnswersInt[index] < 6 && surveys[currentSurveyIndex].surveyAnswersInt[index] > 2)
+                                    {
+                                        score += 1;
+                                    }
+                                    else if (surveys[currentSurveyIndex].surveyAnswersInt[index] >= 6)
+                                    {
+                                        score += 0;
+                                    }
+                                    else
+                                    {
+                                        score += 2;
+                                    }
+                                }
+                                else if (index == 7)
+                                {
+                                    if (surveys[currentSurveyIndex].surveyAnswersInt[index] > 0)
+                                    {
+                                        score += 1;
+                                    }
+                                }
+                                else
+                                {
+                                    score += surveys[currentSurveyIndex].surveyAnswersInt[index];
+                                }
+                            }
+
+                            if (score == 0)
+                            {
+                                result = "ekstremalnie złe!";
+                            }
+                            else if (score < 5)
+                            {
+                                result = "złe!";
+                            }
+                            else if (score < 7)
+                            {
+                                result = "do poprawy!";
+                            }
+                            else if (score < 10)
+                            {
+                                result = "dobre!";
+                            }
+                            else if (score < 13)
+                            {
+                                result = "bardzo dobre!";
+                            }
+                            else if (score >= 13)
+                            {
+                                result = "świetne!";
+                            }
+                            labelFinish.Text = "Twoje nawyki żywieniowe są " + result;
+                        }
+                        break;
+                    case 2: // Jakość snu
+                        {
+                            uint score = 0;
+                            string result = string.Empty;
+
+                            foreach (uint answer in surveys[currentSurveyIndex].surveyAnswersInt)
+                            {
+                                score += answer;
+                            }
+
+                            if (score == 0)
+                            {
+                                result = "bardzo zły!";
+                            }
+                            else if (score < 3)
+                            {
+                                result = "zły!";
+                            }
+                            else if (score < 6)
+                            {
+                                result = "dobry!";
+                            }
+                            else if (score < 8)
+                            {
+                                result = "bardzo dobry!";
+                            }
+                            else if (score >= 8)
+                            {
+                                result = "idealny!";
+                            }
+
+                            labelFinish.Text = "Twój sen jest " + result;
+                        }
+                        break;
+                    default:
+                        {
+                            throw new IndexOutOfRangeException("Nieprawidłowy indeks ankiety.");
+                        }
+                }
+            }
+            catch(IndexOutOfRangeException exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas sprawdzania wyniku ankiety. Nastąpi zamknięcie proramu.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
             
             Center(labelFinish);
         }
