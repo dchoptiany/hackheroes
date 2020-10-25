@@ -76,7 +76,7 @@ namespace app
         private void InitializeProfile()
         {
             buttonProfile.BackColor = green2;
-            buttonProfile.Text = users[currentUserIndex].name;
+            UpdateProfileButton();
             menuButtons.Add(buttonActivity);
             menuButtons.Add(buttonQuiz);
             menuButtons.Add(buttonCalculator);
