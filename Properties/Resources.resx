@@ -124,9 +124,6 @@
   <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonQuiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\question-mark-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="closeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\closeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,5 +153,11 @@
   </data>
   <data name="buttonCalculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\calculate-math.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gym-dumbbell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\gym-dumbbell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question-mark-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\question-mark-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
