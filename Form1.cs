@@ -70,7 +70,6 @@ namespace app
             menuButtons.Add(buttonCalculator); 
             menuButtons.Add(buttonSurvey); 
             menuButtons.Add(buttonProfile);
-            menuButtons.Add(buttonProfilePicture);
         }
 
         private void InitializeProfile()
@@ -94,13 +93,11 @@ namespace app
                 }
             }
          
-            if (sender == buttonProfile || sender == buttonProfilePicture)
+            if (sender == buttonProfile)
             {
-                buttonProfilePicture.Enabled = false;
                 buttonProfile.Enabled = false;
                 buttonProfile.BackColor = green1;
                 panelProfileSetup.BackColor = green1;
-                buttonProfilePicture.BackColor = green1;
                 panelPointer.Location = new Point(0, 0);
                 panelPointer.Height = panelProfileSetup.Height;
             }
@@ -609,6 +606,19 @@ namespace app
                 radioButtonCurrentFemale.Checked = users[userIndex].gender == Gender.Female;
             }
             buttonProfile.Text = users[currentUserIndex].name;
+            switch (users[currentUserIndex].gender)
+            {
+                case Gender.Female:
+                    buttonProfile.ImageIndex = 1;
+                    break;
+                case Gender.Male:
+                    buttonProfile.ImageIndex = 0;
+                    break;
+                default:
+                    buttonProfile.ImageIndex = 0;
+                    break;
+            }
+
         }
 
         private void ButtonDelete_Click_1(object sender, EventArgs e)
