@@ -1065,120 +1065,128 @@ namespace app
         {
             panelSurveyFinished.BringToFront();
 
-            switch (currentSurveyIndex)
+            try 
             {
-                case 0: // Poziom aktywnosci fizycznej
-                    {
-                        users[currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
-                        users[currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
-                        users[currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
-
-                        Calculator.CalculateActivityLevel(users[currentUserIndex]);
-                        labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
-                        
-                    }
-                    break;
-                case 1: // Nawyki żywieniowe
-                    {
-                        uint score = 0;
-                        string result = String.Empty;
-                        for(int index = 0; index < surveys[currentSurveyIndex].surveyAnswersInt.Count; ++index)
+                switch (currentSurveyIndex)
+                {
+                    case 0: // Poziom aktywnosci fizycznej
                         {
-                            if (index == 2)
+                            users[currentUserIndex].physicalJob = surveys[currentSurveyIndex].surveyAnswersInt[0] == 1;
+                            users[currentUserIndex].trainingsInWeek = surveys[currentSurveyIndex].surveyAnswersInt[1];
+                            users[currentUserIndex].dailyMovementLevel = surveys[currentSurveyIndex].surveyAnswersInt[2];
+
+                            Calculator.CalculateActivityLevel(users[currentUserIndex]);
+                            labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
+
+                        }
+                        break;
+                    case 1: // Nawyki żywieniowe
+                        {
+                            uint score = 0;
+                            string result = string.Empty;
+
+                            for (int index = 0; index < surveys[currentSurveyIndex].surveyAnswersInt.Count; ++index)
                             {
-                                if(surveys[currentSurveyIndex].surveyAnswersInt[index] < 6 && surveys[currentSurveyIndex].surveyAnswersInt[index] > 2)
+                                if (index == 2)
                                 {
-                                    score += 1;
+                                    if (surveys[currentSurveyIndex].surveyAnswersInt[index] < 6 && surveys[currentSurveyIndex].surveyAnswersInt[index] > 2)
+                                    {
+                                        score += 1;
+                                    }
+                                    else if (surveys[currentSurveyIndex].surveyAnswersInt[index] >= 6)
+                                    {
+                                        score += 0;
+                                    }
+                                    else
+                                    {
+                                        score += 2;
+                                    }
                                 }
-                                else if(surveys[currentSurveyIndex].surveyAnswersInt[index] >= 6)
+                                else if (index == 7)
                                 {
-                                    score += 0;
+                                    if (surveys[currentSurveyIndex].surveyAnswersInt[index] > 0)
+                                    {
+                                        score += 1;
+                                    }
                                 }
                                 else
                                 {
-                                    score += 2;
-                                }
-                                
-                            }
-                            else if(index == 7)
-                            {
-                                if(surveys[currentSurveyIndex].surveyAnswersInt[index] > 0)
-                                {
-                                    score += 1;
+                                    score += surveys[currentSurveyIndex].surveyAnswersInt[index];
                                 }
                             }
-                            else
+
+                            if (score == 0)
                             {
-                                score += surveys[currentSurveyIndex].surveyAnswersInt[index];
+                                result = "ekstremalnie złe!";
                             }
+                            else if (score < 5)
+                            {
+                                result = "złe!";
+                            }
+                            else if (score < 7)
+                            {
+                                result = "do poprawy!";
+                            }
+                            else if (score < 10)
+                            {
+                                result = "dobre!";
+                            }
+                            else if (score < 13)
+                            {
+                                result = "bardzo dobre!";
+                            }
+                            else if (score >= 13)
+                            {
+                                result = "świetne!";
+                            }
+                            labelFinish.Text = "Twoje nawyki żywieniowe są " + result;
                         }
-                        if(score == 0)
+                        break;
+                    case 2: // Jakość snu
                         {
-                            result = "ekstremalnie złe!";
-                        }
-                        else if (score < 5)
-                        {
-                            result = "złe!";
-                        }
-                        else if (score < 7)
-                        {
-                            result = "do poprawy!";
-                        }
-                        else if (score < 10)
-                        {
-                            result = "dobre!";
-                        }
-                        else if (score < 13)
-                        {
-                            result = "bardzo dobre!";
-                        }
-                        else if (score >= 13)
-                        {
-                            result = "ŚWIETNE!";
-                        }
-                        labelFinish.Text = "Twoje nawyki żywieniowe są " + result;
-                    }
-                    break;
-                case 2: // Jakość snu
-                    {
-                        uint score = 0;
-                        string result = String.Empty;
+                            uint score = 0;
+                            string result = string.Empty;
 
-                        for(int index = 0; index < surveys[currentSurveyIndex].surveyAnswersInt.Count; ++index)
-                        {
-                            score += surveys[currentSurveyIndex].surveyAnswersInt[index];
-                        }
+                            foreach (uint answer in surveys[currentSurveyIndex].surveyAnswersInt)
+                            {
+                                score += answer;
+                            }
 
-                        if (score == 0)
-                        {
-                            result = "bardzo zły!";
+                            if (score == 0)
+                            {
+                                result = "bardzo zły!";
+                            }
+                            else if (score < 3)
+                            {
+                                result = "zły!";
+                            }
+                            else if (score < 6)
+                            {
+                                result = "dobry!";
+                            }
+                            else if (score < 8)
+                            {
+                                result = "bardzo dobry!";
+                            }
+                            else if (score >= 8)
+                            {
+                                result = "idealny!";
+                            }
+
+                            labelFinish.Text = "Twój sen jest " + result;
                         }
-                        else if (score > 0 && score < 4)
+                        break;
+                    default:
                         {
-                            result = "zły!";
+                            throw new IndexOutOfRangeException("Nieprawidłowy indeks ankiety.");
                         }
-                        else if (score >= 4 && score < 6)
-                        {
-                            result = "dobry!";
-                        }
-                        else if (score < 8)
-                        {
-                            result = "bardzo dobry!";
-                        }
-                        else if(score >= 8)
-                        {
-                            result = "idealny!";
-                        }
-                        labelFinish.Text = "Twój sen jest " + result;
-                        Console.WriteLine(score);
-                    }
-                    break;
-                default:
-                    {
-                        labelFinish.Text = "Nieprawidłowy indeks ankiety !";
-                    }
-                    break;
-            }    
+                }
+            }
+            catch(IndexOutOfRangeException exception)
+            {
+                MessageBox.Show("Wystąpił błąd podczas sprawdzania wyniku ankiety. Nastąpi zamknięcie proramu.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
             
             Center(labelFinish);
         }
