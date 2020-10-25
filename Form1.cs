@@ -63,7 +63,7 @@ namespace app
             buttonCalculator.BackColor = leftPanelButtonsColor;
             buttonSurvey.BackColor = leftPanelButtonsColor;
             buttonProfile.BackColor = leftPanelButtonsColor;
-            buttonProfile.BackColor = green2;
+            buttonProfile.BackColor = darkblue1;
         }
 
         private void InitializeButtons()
@@ -1473,7 +1473,7 @@ namespace app
             button.BackColor = Color.FromArgb(72, 126, 176);
         }
         
-        private void buttonUpdateActivityLevel_Click(object sender, EventArgs e)
+        private void ButtonUpdateActivityLevel_Click(object sender, EventArgs e)
         {
             goBackToMacroAfterSurvey = true;
             DisableButton(buttonSurvey, null);
