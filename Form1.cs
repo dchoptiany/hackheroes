@@ -1081,8 +1081,7 @@ namespace app
                 case 1: // Nawyki żywieniowe
                     {
                         uint score = 0;
-                        string result = "";
-                        string description = "";
+                        string result = String.Empty;
                         for(int index = 0; index < surveys[currentSurveyIndex].surveyAnswersInt.Count; ++index)
                         {
                             if (index == 2)
@@ -1116,40 +1115,34 @@ namespace app
                         if(score == 0)
                         {
                             result = "ekstremalnie złe!";
-                            description = "Popracuj nad swoim odżywianiem!";
                         }
-                        else if (score > 0 && score < 5)
+                        else if (score < 5)
                         {
                             result = "złe!";
-                            description = "Popracuj nad swoim odżywianiem!";
                         }
-                        else if (score >= 5 && score < 7)
+                        else if (score < 7)
                         {
                             result = "do poprawy!";
-                            description = "Popracuj nad swoim odżywianiem!";
                         }
-                        else if (score >= 7 && score < 10)
+                        else if (score < 10)
                         {
                             result = "dobre!";
-                            description = "Dobry wynik!";
                         }
-                        else if (score >= 10 && score < 13)
+                        else if (score < 13)
                         {
                             result = "bardzo dobre!";
-                            description = "Bardzo dobry wynik!";
                         }
                         else if (score >= 13)
                         {
                             result = "ŚWIETNE!";
-                            description = "Świetny wynik!";
                         }
-                        labelFinish.Text = "Twoje nawyki żywieniowe są " + result + "\n" + description;
+                        labelFinish.Text = "Twoje nawyki żywieniowe są " + result;
                     }
                     break;
                 case 2: // Jakość snu
                     {
                         uint score = 0;
-                        string result = "";
+                        string result = String.Empty;
 
                         for(int index = 0; index < surveys[currentSurveyIndex].surveyAnswersInt.Count; ++index)
                         {
