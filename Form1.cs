@@ -1107,7 +1107,7 @@ namespace app
                             result = "bardzo dobre!";
                             description = "Bardzo dobry wynik!";
                         }
-                        else
+                        else if (score >= 13)
                         {
                             result = "ŚWIETNE!";
                             description = "Świetny wynik!";
@@ -1141,7 +1141,7 @@ namespace app
                         {
                             result = "bardzo dobry!";
                         }
-                        else
+                        else if(score >= 8)
                         {
                             result = "idealny!";
                         }
