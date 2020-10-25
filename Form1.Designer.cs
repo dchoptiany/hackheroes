@@ -33,6 +33,8 @@
             this.flowLayoutPanelSidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonBMI = new System.Windows.Forms.Button();
             this.imageListSidebar = new System.Windows.Forms.ImageList(this.components);
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.buttonActivity = new System.Windows.Forms.Button();
             this.buttonQuiz = new System.Windows.Forms.Button();
             this.buttonCalculator = new System.Windows.Forms.Button();
