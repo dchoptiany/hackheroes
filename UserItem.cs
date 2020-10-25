@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace app
@@ -30,7 +24,7 @@ namespace app
         }
 
         [Category("Custom Props")]
-        public Image  Avatar
+        public Image Avatar
         {
             get { return _avatar; }
             set { _avatar = value; pictureBoxAvatar.Image = _avatar; }

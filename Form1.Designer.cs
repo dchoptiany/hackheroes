@@ -106,9 +106,6 @@
             this.panelProfiles = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.labelIndexInfo = new System.Windows.Forms.Label();
-            this.userItemThird = new app.UserItem();
-            this.userItemFirst = new app.UserItem();
-            this.userItemSecond = new app.UserItem();
             this.buttonArrowUp = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -198,6 +195,9 @@
             this.labelNoProfile = new System.Windows.Forms.Label();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.userItemThird = new app.UserItem();
+            this.userItemFirst = new app.UserItem();
+            this.userItemSecond = new app.UserItem();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -248,6 +248,7 @@
             // 
             // flowLayoutPanelSidebar
             // 
+            this.flowLayoutPanelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonProfile);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonHome);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonBMI);
@@ -262,7 +263,7 @@
             // 
             // buttonProfile
             // 
-            this.buttonProfile.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.buttonProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonProfile.FlatAppearance.BorderSize = 0;
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -284,7 +285,7 @@
             // 
             // buttonHome
             // 
-            this.buttonHome.BackColor = System.Drawing.Color.Fuchsia;
+            this.buttonHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonHome.FlatAppearance.BorderSize = 0;
             this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -305,7 +306,7 @@
             // 
             // buttonBMI
             // 
-            this.buttonBMI.BackColor = System.Drawing.Color.Red;
+            this.buttonBMI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonBMI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonBMI.FlatAppearance.BorderSize = 0;
             this.buttonBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -327,7 +328,7 @@
             // 
             // buttonActivity
             // 
-            this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonActivity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonActivity.FlatAppearance.BorderSize = 0;
             this.buttonActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -349,7 +350,7 @@
             // 
             // buttonQuiz
             // 
-            this.buttonQuiz.BackColor = System.Drawing.Color.Yellow;
+            this.buttonQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonQuiz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonQuiz.FlatAppearance.BorderSize = 0;
             this.buttonQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -372,7 +373,7 @@
             // 
             // buttonCalculator
             // 
-            this.buttonCalculator.BackColor = System.Drawing.Color.Lime;
+            this.buttonCalculator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonCalculator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonCalculator.FlatAppearance.BorderSize = 0;
             this.buttonCalculator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -395,7 +396,7 @@
             // 
             // buttonSurvey
             // 
-            this.buttonSurvey.BackColor = System.Drawing.Color.Aqua;
+            this.buttonSurvey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonSurvey.FlatAppearance.BorderSize = 0;
             this.buttonSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurvey.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -417,14 +418,16 @@
             // 
             // buttonSurveyFinished
             // 
+            this.buttonSurveyFinished.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyFinished.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurveyFinished.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyFinished.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyFinished.Location = new System.Drawing.Point(400, 400);
             this.buttonSurveyFinished.Name = "buttonSurveyFinished";
             this.buttonSurveyFinished.Size = new System.Drawing.Size(200, 80);
             this.buttonSurveyFinished.TabIndex = 10;
             this.buttonSurveyFinished.Text = "Zakończ";
-            this.buttonSurveyFinished.UseVisualStyleBackColor = true;
+            this.buttonSurveyFinished.UseVisualStyleBackColor = false;
             this.buttonSurveyFinished.Click += new System.EventHandler(this.ButtonSurveyFinished_Clicked);
             // 
             // label39
@@ -577,13 +580,13 @@
             // 
             // buttonAnswerA
             // 
-            this.buttonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonAnswerA.Enabled = false;
             this.buttonAnswerA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAnswerA.FlatAppearance.BorderSize = 2;
             this.buttonAnswerA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnswerA.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAnswerA.ForeColor = System.Drawing.Color.Black;
+            this.buttonAnswerA.ForeColor = System.Drawing.Color.White;
             this.buttonAnswerA.Location = new System.Drawing.Point(0, 0);
             this.buttonAnswerA.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnswerA.Name = "buttonAnswerA";
@@ -595,13 +598,13 @@
             // 
             // buttonAnswerB
             // 
-            this.buttonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonAnswerB.Enabled = false;
             this.buttonAnswerB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAnswerB.FlatAppearance.BorderSize = 2;
             this.buttonAnswerB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnswerB.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAnswerB.ForeColor = System.Drawing.Color.Black;
+            this.buttonAnswerB.ForeColor = System.Drawing.Color.White;
             this.buttonAnswerB.Location = new System.Drawing.Point(450, 0);
             this.buttonAnswerB.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnswerB.Name = "buttonAnswerB";
@@ -613,13 +616,13 @@
             // 
             // buttonAnswerD
             // 
-            this.buttonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonAnswerD.Enabled = false;
             this.buttonAnswerD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAnswerD.FlatAppearance.BorderSize = 2;
             this.buttonAnswerD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnswerD.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAnswerD.ForeColor = System.Drawing.Color.Black;
+            this.buttonAnswerD.ForeColor = System.Drawing.Color.White;
             this.buttonAnswerD.Location = new System.Drawing.Point(450, 125);
             this.buttonAnswerD.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnswerD.Name = "buttonAnswerD";
@@ -631,13 +634,13 @@
             // 
             // buttonAnswerC
             // 
-            this.buttonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonAnswerC.Enabled = false;
             this.buttonAnswerC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAnswerC.FlatAppearance.BorderSize = 2;
             this.buttonAnswerC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnswerC.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAnswerC.ForeColor = System.Drawing.Color.Black;
+            this.buttonAnswerC.ForeColor = System.Drawing.Color.White;
             this.buttonAnswerC.Location = new System.Drawing.Point(0, 125);
             this.buttonAnswerC.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnswerC.Name = "buttonAnswerC";
@@ -649,14 +652,16 @@
             // 
             // buttonFinishQuiz
             // 
+            this.buttonFinishQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonFinishQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFinishQuiz.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonFinishQuiz.ForeColor = System.Drawing.Color.White;
             this.buttonFinishQuiz.Location = new System.Drawing.Point(400, 300);
             this.buttonFinishQuiz.Name = "buttonFinishQuiz";
             this.buttonFinishQuiz.Size = new System.Drawing.Size(200, 80);
             this.buttonFinishQuiz.TabIndex = 7;
             this.buttonFinishQuiz.Text = "Zakończ";
-            this.buttonFinishQuiz.UseVisualStyleBackColor = true;
+            this.buttonFinishQuiz.UseVisualStyleBackColor = false;
             this.buttonFinishQuiz.Click += new System.EventHandler(this.ButtonFinishQuiz_Click);
             // 
             // labelQuizResult
@@ -671,14 +676,16 @@
             // 
             // ButtonStartQuiz
             // 
+            this.ButtonStartQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.ButtonStartQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonStartQuiz.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonStartQuiz.ForeColor = System.Drawing.Color.White;
             this.ButtonStartQuiz.Location = new System.Drawing.Point(400, 400);
             this.ButtonStartQuiz.Name = "ButtonStartQuiz";
             this.ButtonStartQuiz.Size = new System.Drawing.Size(200, 80);
             this.ButtonStartQuiz.TabIndex = 2;
             this.ButtonStartQuiz.Text = "Start";
-            this.ButtonStartQuiz.UseVisualStyleBackColor = true;
+            this.ButtonStartQuiz.UseVisualStyleBackColor = false;
             this.ButtonStartQuiz.Click += new System.EventHandler(this.ButtonStartQuiz_Click);
             // 
             // labelQuiz
@@ -737,14 +744,16 @@
             // 
             // buttonUpdateActivityLevel
             // 
+            this.buttonUpdateActivityLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonUpdateActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUpdateActivityLevel.ForeColor = System.Drawing.Color.White;
             this.buttonUpdateActivityLevel.Location = new System.Drawing.Point(255, 156);
             this.buttonUpdateActivityLevel.Name = "buttonUpdateActivityLevel";
             this.buttonUpdateActivityLevel.Size = new System.Drawing.Size(490, 68);
             this.buttonUpdateActivityLevel.TabIndex = 23;
             this.buttonUpdateActivityLevel.Text = "Aktualizuj poziom aktywności";
-            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = true;
+            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = false;
             this.buttonUpdateActivityLevel.Click += new System.EventHandler(this.ButtonUpdateActivityLevel_Click);
             // 
             // groupBoxActivityLevel
@@ -844,7 +853,7 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.labelKcal, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelFats, 1, 1);
@@ -859,14 +868,14 @@
             this.tableLayoutPanel1.Controls.Add(this.label33, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label26, 0, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(331, 350);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(316, 350);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 180);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(368, 180);
             this.tableLayoutPanel1.TabIndex = 20;
             // 
             // labelKcal
@@ -876,7 +885,7 @@
             this.labelKcal.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelKcal.Location = new System.Drawing.Point(201, 2);
             this.labelKcal.Name = "labelKcal";
-            this.labelKcal.Size = new System.Drawing.Size(64, 42);
+            this.labelKcal.Size = new System.Drawing.Size(94, 42);
             this.labelKcal.TabIndex = 8;
             this.labelKcal.Text = "0";
             this.labelKcal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -888,7 +897,7 @@
             this.labelFats.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelFats.Location = new System.Drawing.Point(201, 46);
             this.labelFats.Name = "labelFats";
-            this.labelFats.Size = new System.Drawing.Size(64, 42);
+            this.labelFats.Size = new System.Drawing.Size(94, 42);
             this.labelFats.TabIndex = 10;
             this.labelFats.Text = "0";
             this.labelFats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -900,7 +909,7 @@
             this.labelProtein.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelProtein.Location = new System.Drawing.Point(201, 90);
             this.labelProtein.Name = "labelProtein";
-            this.labelProtein.Size = new System.Drawing.Size(64, 42);
+            this.labelProtein.Size = new System.Drawing.Size(94, 42);
             this.labelProtein.TabIndex = 12;
             this.labelProtein.Text = "0";
             this.labelProtein.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -912,7 +921,7 @@
             this.labelCarbohydrates.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCarbohydrates.Location = new System.Drawing.Point(201, 134);
             this.labelCarbohydrates.Name = "labelCarbohydrates";
-            this.labelCarbohydrates.Size = new System.Drawing.Size(64, 44);
+            this.labelCarbohydrates.Size = new System.Drawing.Size(94, 44);
             this.labelCarbohydrates.TabIndex = 14;
             this.labelCarbohydrates.Text = "0";
             this.labelCarbohydrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -959,7 +968,7 @@
             this.label27.AutoSize = true;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label27.Location = new System.Drawing.Point(273, 2);
+            this.label27.Location = new System.Drawing.Point(303, 2);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(62, 42);
             this.label27.TabIndex = 15;
@@ -971,7 +980,7 @@
             this.label29.AutoSize = true;
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label29.Location = new System.Drawing.Point(273, 46);
+            this.label29.Location = new System.Drawing.Point(303, 46);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(62, 42);
             this.label29.TabIndex = 16;
@@ -983,7 +992,7 @@
             this.label31.AutoSize = true;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label31.Location = new System.Drawing.Point(273, 90);
+            this.label31.Location = new System.Drawing.Point(303, 90);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(62, 42);
             this.label31.TabIndex = 17;
@@ -995,7 +1004,7 @@
             this.label33.AutoSize = true;
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label33.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label33.Location = new System.Drawing.Point(273, 134);
+            this.label33.Location = new System.Drawing.Point(303, 134);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(62, 44);
             this.label33.TabIndex = 18;
@@ -1317,48 +1326,6 @@
             this.labelIndexInfo.Text = "0/0";
             this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // userItemThird
-            // 
-            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
-            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemThird.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.userItemThird.Location = new System.Drawing.Point(27, 260);
-            this.userItemThird.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.userItemThird.Name = "userItemThird";
-            this.userItemThird.Size = new System.Drawing.Size(291, 76);
-            this.userItemThird.TabIndex = 55;
-            this.userItemThird.UserName = null;
-            this.userItemThird.Visible = false;
-            // 
-            // userItemFirst
-            // 
-            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
-            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemFirst.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
-            this.userItemFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.userItemFirst.Name = "userItemFirst";
-            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
-            this.userItemFirst.TabIndex = 53;
-            this.userItemFirst.UserName = null;
-            this.userItemFirst.Visible = false;
-            // 
-            // userItemSecond
-            // 
-            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
-            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemSecond.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
-            this.userItemSecond.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.userItemSecond.Name = "userItemSecond";
-            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
-            this.userItemSecond.TabIndex = 54;
-            this.userItemSecond.UserName = null;
-            this.userItemSecond.Visible = false;
-            // 
             // buttonArrowUp
             // 
             this.buttonArrowUp.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1514,7 +1481,7 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.buttonCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonCreate.FlatAppearance.BorderSize = 0;
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1796,11 +1763,12 @@
             // 
             // buttonSurveyConfirm
             // 
-            this.buttonSurveyConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyConfirm.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyConfirm.FlatAppearance.BorderSize = 2;
             this.buttonSurveyConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurveyConfirm.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyConfirm.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyConfirm.Location = new System.Drawing.Point(325, 394);
             this.buttonSurveyConfirm.Name = "buttonSurveyConfirm";
             this.buttonSurveyConfirm.Size = new System.Drawing.Size(350, 100);
@@ -1841,11 +1809,12 @@
             // 
             // buttonSurveyNo
             // 
-            this.buttonSurveyNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyNo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyNo.FlatAppearance.BorderSize = 2;
             this.buttonSurveyNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurveyNo.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyNo.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyNo.Location = new System.Drawing.Point(0, 0);
             this.buttonSurveyNo.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSurveyNo.Name = "buttonSurveyNo";
@@ -1858,11 +1827,12 @@
             // 
             // buttonSurveyYes
             // 
-            this.buttonSurveyYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyYes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyYes.FlatAppearance.BorderSize = 2;
             this.buttonSurveyYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurveyYes.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyYes.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyYes.Location = new System.Drawing.Point(450, 0);
             this.buttonSurveyYes.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSurveyYes.Name = "buttonSurveyYes";
@@ -1875,11 +1845,12 @@
             // 
             // buttonSurveyA
             // 
-            this.buttonSurveyA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyA.FlatAppearance.BorderSize = 2;
             this.buttonSurveyA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurveyA.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyA.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyA.Location = new System.Drawing.Point(0, 125);
             this.buttonSurveyA.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSurveyA.Name = "buttonSurveyA";
@@ -1892,11 +1863,12 @@
             // 
             // buttonSurveyB
             // 
-            this.buttonSurveyB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
+            this.buttonSurveyB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSurveyB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyB.FlatAppearance.BorderSize = 2;
             this.buttonSurveyB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurveyB.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSurveyB.ForeColor = System.Drawing.Color.White;
             this.buttonSurveyB.Location = new System.Drawing.Point(450, 125);
             this.buttonSurveyB.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSurveyB.Name = "buttonSurveyB";
@@ -2404,10 +2376,10 @@
             // labelBMIDescription
             // 
             this.labelBMIDescription.AutoSize = true;
-            this.labelBMIDescription.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelBMIDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMIDescription.Location = new System.Drawing.Point(60, 232);
             this.labelBMIDescription.Name = "labelBMIDescription";
-            this.labelBMIDescription.Size = new System.Drawing.Size(937, 37);
+            this.labelBMIDescription.Size = new System.Drawing.Size(880, 35);
             this.labelBMIDescription.TabIndex = 15;
             this.labelBMIDescription.Text = "Obliczyć Twój wskaźnik BMI wraz z odpowiadającą mu interpretacją,";
             this.labelBMIDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2415,10 +2387,10 @@
             // labelActivityDescription
             // 
             this.labelActivityDescription.AutoSize = true;
-            this.labelActivityDescription.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelActivityDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelActivityDescription.Location = new System.Drawing.Point(60, 295);
             this.labelActivityDescription.Name = "labelActivityDescription";
-            this.labelActivityDescription.Size = new System.Drawing.Size(910, 74);
+            this.labelActivityDescription.Size = new System.Drawing.Size(856, 70);
             this.labelActivityDescription.TabIndex = 16;
             this.labelActivityDescription.Text = "Znaleźć idealny rodzaj aktywności fizycznej na dzisiaj, w zależności\r\nod aktulane" +
     "j pogody i osobistych preferencji,\r\n";
@@ -2427,10 +2399,10 @@
             // labelQuizDescription
             // 
             this.labelQuizDescription.AutoSize = true;
-            this.labelQuizDescription.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelQuizDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuizDescription.Location = new System.Drawing.Point(60, 400);
             this.labelQuizDescription.Name = "labelQuizDescription";
-            this.labelQuizDescription.Size = new System.Drawing.Size(869, 37);
+            this.labelQuizDescription.Size = new System.Drawing.Size(814, 35);
             this.labelQuizDescription.TabIndex = 17;
             this.labelQuizDescription.Text = "Sprawdzić Twoją wiedzę na temat zdrowia, sportu i odżywiania,";
             this.labelQuizDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2438,10 +2410,10 @@
             // labelCalculatorDescription
             // 
             this.labelCalculatorDescription.AutoSize = true;
-            this.labelCalculatorDescription.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCalculatorDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCalculatorDescription.Location = new System.Drawing.Point(60, 484);
             this.labelCalculatorDescription.Name = "labelCalculatorDescription";
-            this.labelCalculatorDescription.Size = new System.Drawing.Size(916, 37);
+            this.labelCalculatorDescription.Size = new System.Drawing.Size(859, 35);
             this.labelCalculatorDescription.TabIndex = 18;
             this.labelCalculatorDescription.Text = "Obliczyć twoje zapotrzebowanie kaloryczne oraz skład twojej diety,";
             this.labelCalculatorDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2449,12 +2421,12 @@
             // labelSurveyDescription
             // 
             this.labelSurveyDescription.AutoSize = true;
-            this.labelSurveyDescription.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSurveyDescription.Location = new System.Drawing.Point(60, 567);
+            this.labelSurveyDescription.Font = new System.Drawing.Font("Montserrat", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSurveyDescription.Location = new System.Drawing.Point(60, 554);
             this.labelSurveyDescription.Name = "labelSurveyDescription";
-            this.labelSurveyDescription.Size = new System.Drawing.Size(1043, 37);
+            this.labelSurveyDescription.Size = new System.Drawing.Size(710, 70);
             this.labelSurveyDescription.TabIndex = 13;
-            this.labelSurveyDescription.Text = "Ocenić Twoje nawyki związane z aktywnością fizyczną, odżywianiem i snem.";
+            this.labelSurveyDescription.Text = "Ocenić Twoje nawyki związane z aktywnością fizyczną, \r\nodżywianiem i snem.";
             this.labelSurveyDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelUserNotLogged
@@ -2468,14 +2440,16 @@
             // 
             // buttonGoToProfiles
             // 
+            this.buttonGoToProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonGoToProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGoToProfiles.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonGoToProfiles.ForeColor = System.Drawing.Color.White;
             this.buttonGoToProfiles.Location = new System.Drawing.Point(325, 350);
             this.buttonGoToProfiles.Name = "buttonGoToProfiles";
             this.buttonGoToProfiles.Size = new System.Drawing.Size(350, 80);
             this.buttonGoToProfiles.TabIndex = 10;
             this.buttonGoToProfiles.Text = "Przejdź do profili";
-            this.buttonGoToProfiles.UseVisualStyleBackColor = true;
+            this.buttonGoToProfiles.UseVisualStyleBackColor = false;
             this.buttonGoToProfiles.Click += new System.EventHandler(this.ButtonGoToProfiles_Click);
             // 
             // labelNoProfile
@@ -2521,29 +2495,71 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
+            // userItemThird
+            // 
+            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
+            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemThird.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.userItemThird.Location = new System.Drawing.Point(27, 260);
+            this.userItemThird.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userItemThird.Name = "userItemThird";
+            this.userItemThird.Size = new System.Drawing.Size(291, 76);
+            this.userItemThird.TabIndex = 55;
+            this.userItemThird.UserName = null;
+            this.userItemThird.Visible = false;
+            // 
+            // userItemFirst
+            // 
+            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
+            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemFirst.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
+            this.userItemFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userItemFirst.Name = "userItemFirst";
+            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
+            this.userItemFirst.TabIndex = 53;
+            this.userItemFirst.UserName = null;
+            this.userItemFirst.Visible = false;
+            // 
+            // userItemSecond
+            // 
+            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
+            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemSecond.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
+            this.userItemSecond.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userItemSecond.Name = "userItemSecond";
+            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
+            this.userItemSecond.TabIndex = 54;
+            this.userItemSecond.UserName = null;
+            this.userItemSecond.Visible = false;
+            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
-            this.Controls.Add(this.panelActivity);
-            this.Controls.Add(this.panelQuizMenu);
+            this.Controls.Add(this.panelMacro);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelQuiz);
-            this.Controls.Add(this.panelBMI);
-            this.Controls.Add(this.panelUserNotLogged);
             this.Controls.Add(this.panelLandingPage);
+            this.Controls.Add(this.panelProfiles);
+            this.Controls.Add(this.panelSurveyFinished);
+            this.Controls.Add(this.panelQuizFinished);
             this.Controls.Add(this.panelActivityResults);
+            this.Controls.Add(this.panelUserNotLogged);
+            this.Controls.Add(this.panelBMI);
+            this.Controls.Add(this.panelActivity);
+            this.Controls.Add(this.panelQuizMenu);
             this.Controls.Add(this.panelPointer);
             this.Controls.Add(this.flowLayoutPanelSidebar);
+            this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.buttonMinimize);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.panelQuizFinished);
-            this.Controls.Add(this.panelSurveyMenu);
-            this.Controls.Add(this.panelMacro);
-            this.Controls.Add(this.panelSurveyFinished);
-            this.Controls.Add(this.panelProfiles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Hackheroes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
