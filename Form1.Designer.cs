@@ -2455,8 +2455,9 @@
             this.labelQuizIntro.Name = "labelQuizIntro";
             this.labelQuizIntro.Size = new System.Drawing.Size(923, 144);
             this.labelQuizIntro.TabIndex = 5;
-            this.labelQuizIntro.Text = "Sprawdź się w quizie wiedzy o zdrowiu! \r\nPrzed tobą 5 pytań, w których tylko jedn" +
-    "a odpowiedź jest poprawna.\r\nNa każdą odpowiedź masz 10 sekund.\r\n";
+            this.labelQuizIntro.Text = "Sprawdź się w quizie wiedzy o zdrowiu, sporcie i odżywianiu! \r\nPrzed tobą 5 pytań" +
+    ", w których tylko jedna odpowiedź jest poprawna.\r\nNa każdą odpowiedź masz 10 sek" +
+    "und.\r\n";
             this.labelQuizIntro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // userItemThird
@@ -2502,9 +2503,9 @@
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
             this.Controls.Add(this.panelQuizMenu);
+            this.Controls.Add(this.panelLandingPage);
             this.Controls.Add(this.panelActivity);
             this.Controls.Add(this.panelActivityResults);
-            this.Controls.Add(this.panelLandingPage);
             this.Controls.Add(this.panelMacro);
             this.Controls.Add(this.panelUserNotLogged);
             this.Controls.Add(this.panelSurveyFinished);
