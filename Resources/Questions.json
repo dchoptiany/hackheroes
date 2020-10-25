@@ -124,3 +124,103 @@
     "Chorob\u0119 wie\u0144cow\u0105"
   ]
 }
+{
+  "ask": "Aby utrzymać odpowiednią wagę należy dbać w szczególności o:",
+  "correctAnswer": "Kalorie",
+  "incorrectAnswers": [
+    "Tłuszcze",
+    "Białko",
+    "Witaminy"
+  ]
+}
+{
+  "ask": "Co ile lat odbywają się igrzyska olimpijskie:",
+  "correctAnswer": "4 lata",
+  "incorrectAnswers": [
+    "2 lata",
+    "5 lat",
+    "Rok"
+  ]
+}
+{
+  "ask": "Co ma bezpośredni wpływ na spalanie tkanki tłuszczowej:",
+  "correctAnswer": "Deficyt kaloryczny",
+  "incorrectAnswers": [
+    "Ilość białka",
+    "Ilość tłuszczu",
+    "Ilość witamin"
+  ]
+}
+{
+  "ask": "Co warto dodać do codziennej rutyny:",
+  "correctAnswer": "Trening",
+  "incorrectAnswers": [
+    "Palenie papierosów",
+    "Picie alkoholu",
+    "Picie kawy przed snem"
+  ]
+}
+{
+  "ask": "Jaki sport jest najmniej kontuzjogenny:",
+  "correctAnswer": "Sporty siłowe",
+  "incorrectAnswers": [
+    "Kolarstwo",
+    "Piłka nożna",
+    "Boks"
+  ]
+}
+{
+  "ask": "Co spali więcej kalorii:",
+  "correctAnswer": "Trening interwałowy",
+  "incorrectAnswers": [
+    "Spokojna jazda rowerem",
+    "Spacer",
+    "Trening siłowy"
+  ]
+}
+{
+  "ask": "Ile kcal ma 1g białka:",
+  "correctAnswer": "4 kcal",
+  "incorrectAnswers": [
+    "9 kcal",
+    "0 kcal",
+    "4000 kcal"
+  ]
+}
+{
+  "ask": "Ile kcal ma 1g tłuszczu:",
+  "correctAnswer": "9 kcal",
+  "incorrectAnswers": [
+    "4000 kcal",
+    "8 kcal",
+    "4 kcal"
+  ]
+}
+{
+  "ask": "Które tłuszcze są uważane za złe:",
+  "correctAnswer": "Nasycone",
+  "incorrectAnswers": [
+    "Jednonienasycone",
+    "Wielonienasycone",
+    "Każde"
+  ]
+}
+{
+  "ask": "Co zawiera kreatynę:",
+  "correctAnswer": "Mięso",
+  "incorrectAnswers": [
+    "Owoce",
+    "Mleko",
+    "Grzyby"
+  ]
+}
+{
+  "ask": "Który z napojów jest najzdrowszy:",
+  "correctAnswer": "Woda",
+  "incorrectAnswers": [
+    "Herbata czarna",
+    "Napój energetyczny",
+    "Kawa"
+  ]
+}
+
