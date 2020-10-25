@@ -173,6 +173,16 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HealthHeroes {
+            get {
+                object obj = ResourceManager.GetObject("HealthHeroes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimizeIcon {
             get {
                 object obj = ResourceManager.GetObject("minimizeIcon", resourceCulture);

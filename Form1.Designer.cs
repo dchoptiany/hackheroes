@@ -155,19 +155,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
             this.panelLandingPage = new System.Windows.Forms.Panel();
-            this.labelCalculatorDescription = new System.Windows.Forms.Label();
-            this.labelQuizDescription = new System.Windows.Forms.Label();
-            this.labelActivityDescription = new System.Windows.Forms.Label();
-            this.labelBMIDescription = new System.Windows.Forms.Label();
             this.labelAbout = new System.Windows.Forms.Label();
+            this.labelBMIDescription = new System.Windows.Forms.Label();
+            this.labelActivityDescription = new System.Windows.Forms.Label();
+            this.labelQuizDescription = new System.Windows.Forms.Label();
+            this.labelCalculatorDescription = new System.Windows.Forms.Label();
             this.labelSurveyDescription = new System.Windows.Forms.Label();
-            this.labelProjectName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxArrowLeft1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxArrowLeft2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxArrowLeft3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxArrowLeft4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxArrowLeft5 = new System.Windows.Forms.PictureBox();
             this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
             this.pictureBoxBMIScale = new System.Windows.Forms.PictureBox();
             this.pictureBoxSportResult = new System.Windows.Forms.PictureBox();
             this.buttonSaveChanges = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.userItemThird = new app.UserItem();
+            this.userItemFirst = new app.UserItem();
+            this.userItemSecond = new app.UserItem();
             this.buttonArrowUp = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -188,13 +195,6 @@
             this.buttonSurvey = new System.Windows.Forms.Button();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.pictureBoxArrowLeft2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxArrowLeft3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxArrowLeft4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxArrowLeft5 = new System.Windows.Forms.PictureBox();
-            this.userItemThird = new app.UserItem();
-            this.userItemFirst = new app.UserItem();
-            this.userItemSecond = new app.UserItem();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             this.panelQuiz.SuspendLayout();
@@ -225,7 +225,12 @@
             this.groupBox2.SuspendLayout();
             this.panelActivityResults.SuspendLayout();
             this.panelLandingPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBMIScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).BeginInit();
@@ -234,10 +239,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClouds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft5)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanelSidebar
@@ -1877,7 +1878,7 @@
             // 
             // panelLandingPage
             // 
-            this.panelLandingPage.Controls.Add(this.labelProjectName);
+            this.panelLandingPage.Controls.Add(this.pictureBox1);
             this.panelLandingPage.Controls.Add(this.labelAbout);
             this.panelLandingPage.Controls.Add(this.pictureBoxArrowLeft1);
             this.panelLandingPage.Controls.Add(this.pictureBoxArrowLeft2);
@@ -1894,27 +1895,28 @@
             this.panelLandingPage.Size = new System.Drawing.Size(1000, 650);
             this.panelLandingPage.TabIndex = 23;
             // 
-            // labelCalculatorDescription
+            // labelAbout
             // 
-            this.labelCalculatorDescription.AutoSize = true;
-            this.labelCalculatorDescription.Font = new System.Drawing.Font("Poppins", 18F);
-            this.labelCalculatorDescription.Location = new System.Drawing.Point(60, 484);
-            this.labelCalculatorDescription.Name = "labelCalculatorDescription";
-            this.labelCalculatorDescription.Size = new System.Drawing.Size(808, 42);
-            this.labelCalculatorDescription.TabIndex = 18;
-            this.labelCalculatorDescription.Text = "Obliczyć twoje zapotrzebowanie kaloryczne oraz skład twojej diety,";
-            this.labelCalculatorDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelAbout.AutoSize = true;
+            this.labelAbout.Font = new System.Drawing.Font("Poppins", 19F);
+            this.labelAbout.Location = new System.Drawing.Point(3, 100);
+            this.labelAbout.Name = "labelAbout";
+            this.labelAbout.Size = new System.Drawing.Size(994, 92);
+            this.labelAbout.TabIndex = 14;
+            this.labelAbout.Text = "Aplikacja Healthheroes jest odpowiedzią na potrzeby każdego, kto chciałby\r\nzadbać" +
+    " o swoje zdrowie i formę. Pomożemy Ci:";
+            this.labelAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelQuizDescription
+            // labelBMIDescription
             // 
-            this.labelQuizDescription.AutoSize = true;
-            this.labelQuizDescription.Font = new System.Drawing.Font("Poppins", 18F);
-            this.labelQuizDescription.Location = new System.Drawing.Point(60, 400);
-            this.labelQuizDescription.Name = "labelQuizDescription";
-            this.labelQuizDescription.Size = new System.Drawing.Size(765, 42);
-            this.labelQuizDescription.TabIndex = 17;
-            this.labelQuizDescription.Text = "Sprawdzić Twoją wiedzę na temat zdrowia, sportu i odżywiania,";
-            this.labelQuizDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelBMIDescription.AutoSize = true;
+            this.labelBMIDescription.Font = new System.Drawing.Font("Poppins", 18F);
+            this.labelBMIDescription.Location = new System.Drawing.Point(60, 232);
+            this.labelBMIDescription.Name = "labelBMIDescription";
+            this.labelBMIDescription.Size = new System.Drawing.Size(822, 42);
+            this.labelBMIDescription.TabIndex = 15;
+            this.labelBMIDescription.Text = "Obliczyć Twój wskaźnik BMI wraz z odpowiadającą mu interpretacją,";
+            this.labelBMIDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelActivityDescription
             // 
@@ -1928,28 +1930,27 @@
     "j pogody i osobistych preferencji,\r\n";
             this.labelActivityDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelBMIDescription
+            // labelQuizDescription
             // 
-            this.labelBMIDescription.AutoSize = true;
-            this.labelBMIDescription.Font = new System.Drawing.Font("Poppins", 18F);
-            this.labelBMIDescription.Location = new System.Drawing.Point(60, 232);
-            this.labelBMIDescription.Name = "labelBMIDescription";
-            this.labelBMIDescription.Size = new System.Drawing.Size(822, 42);
-            this.labelBMIDescription.TabIndex = 15;
-            this.labelBMIDescription.Text = "Obliczyć Twój wskaźnik BMI wraz z odpowiadającą mu interpretacją,";
-            this.labelBMIDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelQuizDescription.AutoSize = true;
+            this.labelQuizDescription.Font = new System.Drawing.Font("Poppins", 18F);
+            this.labelQuizDescription.Location = new System.Drawing.Point(60, 400);
+            this.labelQuizDescription.Name = "labelQuizDescription";
+            this.labelQuizDescription.Size = new System.Drawing.Size(765, 42);
+            this.labelQuizDescription.TabIndex = 17;
+            this.labelQuizDescription.Text = "Sprawdzić Twoją wiedzę na temat zdrowia, sportu i odżywiania,";
+            this.labelQuizDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelAbout
+            // labelCalculatorDescription
             // 
-            this.labelAbout.AutoSize = true;
-            this.labelAbout.Font = new System.Drawing.Font("Poppins", 19F);
-            this.labelAbout.Location = new System.Drawing.Point(3, 100);
-            this.labelAbout.Name = "labelAbout";
-            this.labelAbout.Size = new System.Drawing.Size(994, 92);
-            this.labelAbout.TabIndex = 14;
-            this.labelAbout.Text = "Aplikacja Healthheroes jest odpowiedzią na potrzeby każdego, kto chciałby\r\nzadbać" +
-    " o swoje zdrowie i formę. Pomożemy Ci:";
-            this.labelAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCalculatorDescription.AutoSize = true;
+            this.labelCalculatorDescription.Font = new System.Drawing.Font("Poppins", 18F);
+            this.labelCalculatorDescription.Location = new System.Drawing.Point(60, 484);
+            this.labelCalculatorDescription.Name = "labelCalculatorDescription";
+            this.labelCalculatorDescription.Size = new System.Drawing.Size(808, 42);
+            this.labelCalculatorDescription.TabIndex = 18;
+            this.labelCalculatorDescription.Text = "Obliczyć twoje zapotrzebowanie kaloryczne oraz skład twojej diety,";
+            this.labelCalculatorDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelSurveyDescription
             // 
@@ -1962,16 +1963,14 @@
             this.labelSurveyDescription.Text = "Ocenić Twoje nawyki związane z aktywnością fizyczną, odżywianiem i snem.";
             this.labelSurveyDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelProjectName
+            // pictureBox1
             // 
-            this.labelProjectName.AutoSize = true;
-            this.labelProjectName.Font = new System.Drawing.Font("Poppins Medium", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelProjectName.Location = new System.Drawing.Point(303, 0);
-            this.labelProjectName.Name = "labelProjectName";
-            this.labelProjectName.Size = new System.Drawing.Size(410, 93);
-            this.labelProjectName.TabIndex = 12;
-            this.labelProjectName.Text = "Healthheroes";
-            this.labelProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox1.Image = global::app.Properties.Resources.HealthHeroes;
+            this.pictureBox1.Location = new System.Drawing.Point(290, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(410, 80);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBoxArrowLeft1
             // 
@@ -1982,6 +1981,46 @@
             this.pictureBoxArrowLeft1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxArrowLeft1.TabIndex = 19;
             this.pictureBoxArrowLeft1.TabStop = false;
+            // 
+            // pictureBoxArrowLeft2
+            // 
+            this.pictureBoxArrowLeft2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxArrowLeft2.Image")));
+            this.pictureBoxArrowLeft2.Location = new System.Drawing.Point(10, 307);
+            this.pictureBoxArrowLeft2.Name = "pictureBoxArrowLeft2";
+            this.pictureBoxArrowLeft2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrowLeft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxArrowLeft2.TabIndex = 20;
+            this.pictureBoxArrowLeft2.TabStop = false;
+            // 
+            // pictureBoxArrowLeft3
+            // 
+            this.pictureBoxArrowLeft3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxArrowLeft3.Image")));
+            this.pictureBoxArrowLeft3.Location = new System.Drawing.Point(10, 395);
+            this.pictureBoxArrowLeft3.Name = "pictureBoxArrowLeft3";
+            this.pictureBoxArrowLeft3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrowLeft3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxArrowLeft3.TabIndex = 21;
+            this.pictureBoxArrowLeft3.TabStop = false;
+            // 
+            // pictureBoxArrowLeft4
+            // 
+            this.pictureBoxArrowLeft4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxArrowLeft4.Image")));
+            this.pictureBoxArrowLeft4.Location = new System.Drawing.Point(10, 476);
+            this.pictureBoxArrowLeft4.Name = "pictureBoxArrowLeft4";
+            this.pictureBoxArrowLeft4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrowLeft4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxArrowLeft4.TabIndex = 22;
+            this.pictureBoxArrowLeft4.TabStop = false;
+            // 
+            // pictureBoxArrowLeft5
+            // 
+            this.pictureBoxArrowLeft5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxArrowLeft5.Image")));
+            this.pictureBoxArrowLeft5.Location = new System.Drawing.Point(10, 559);
+            this.pictureBoxArrowLeft5.Name = "pictureBoxArrowLeft5";
+            this.pictureBoxArrowLeft5.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxArrowLeft5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxArrowLeft5.TabIndex = 23;
+            this.pictureBoxArrowLeft5.TabStop = false;
             // 
             // pictureBoxArrow
             // 
@@ -2041,6 +2080,42 @@
             this.buttonDelete.Tag = "";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            // 
+            // userItemThird
+            // 
+            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
+            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemThird.Location = new System.Drawing.Point(27, 260);
+            this.userItemThird.Name = "userItemThird";
+            this.userItemThird.Size = new System.Drawing.Size(291, 76);
+            this.userItemThird.TabIndex = 55;
+            this.userItemThird.UserName = null;
+            this.userItemThird.Visible = false;
+            // 
+            // userItemFirst
+            // 
+            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
+            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
+            this.userItemFirst.Name = "userItemFirst";
+            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
+            this.userItemFirst.TabIndex = 53;
+            this.userItemFirst.UserName = null;
+            this.userItemFirst.Visible = false;
+            // 
+            // userItemSecond
+            // 
+            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
+            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
+            this.userItemSecond.Name = "userItemSecond";
+            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
+            this.userItemSecond.TabIndex = 54;
+            this.userItemSecond.UserName = null;
+            this.userItemSecond.Visible = false;
             // 
             // buttonArrowUp
             // 
@@ -2367,82 +2442,6 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // pictureBoxArrowLeft2
-            // 
-            this.pictureBoxArrowLeft2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxArrowLeft2.Image")));
-            this.pictureBoxArrowLeft2.Location = new System.Drawing.Point(10, 307);
-            this.pictureBoxArrowLeft2.Name = "pictureBoxArrowLeft2";
-            this.pictureBoxArrowLeft2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxArrowLeft2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxArrowLeft2.TabIndex = 20;
-            this.pictureBoxArrowLeft2.TabStop = false;
-            // 
-            // pictureBoxArrowLeft3
-            // 
-            this.pictureBoxArrowLeft3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxArrowLeft3.Image")));
-            this.pictureBoxArrowLeft3.Location = new System.Drawing.Point(10, 395);
-            this.pictureBoxArrowLeft3.Name = "pictureBoxArrowLeft3";
-            this.pictureBoxArrowLeft3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxArrowLeft3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxArrowLeft3.TabIndex = 21;
-            this.pictureBoxArrowLeft3.TabStop = false;
-            // 
-            // pictureBoxArrowLeft4
-            // 
-            this.pictureBoxArrowLeft4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxArrowLeft4.Image")));
-            this.pictureBoxArrowLeft4.Location = new System.Drawing.Point(10, 476);
-            this.pictureBoxArrowLeft4.Name = "pictureBoxArrowLeft4";
-            this.pictureBoxArrowLeft4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxArrowLeft4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxArrowLeft4.TabIndex = 22;
-            this.pictureBoxArrowLeft4.TabStop = false;
-            // 
-            // pictureBoxArrowLeft5
-            // 
-            this.pictureBoxArrowLeft5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxArrowLeft5.Image")));
-            this.pictureBoxArrowLeft5.Location = new System.Drawing.Point(10, 559);
-            this.pictureBoxArrowLeft5.Name = "pictureBoxArrowLeft5";
-            this.pictureBoxArrowLeft5.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxArrowLeft5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxArrowLeft5.TabIndex = 23;
-            this.pictureBoxArrowLeft5.TabStop = false;
-            // 
-            // userItemThird
-            // 
-            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
-            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemThird.Location = new System.Drawing.Point(27, 260);
-            this.userItemThird.Name = "userItemThird";
-            this.userItemThird.Size = new System.Drawing.Size(291, 76);
-            this.userItemThird.TabIndex = 55;
-            this.userItemThird.UserName = null;
-            this.userItemThird.Visible = false;
-            // 
-            // userItemFirst
-            // 
-            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
-            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
-            this.userItemFirst.Name = "userItemFirst";
-            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
-            this.userItemFirst.TabIndex = 53;
-            this.userItemFirst.UserName = null;
-            this.userItemFirst.Visible = false;
-            // 
-            // userItemSecond
-            // 
-            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
-            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
-            this.userItemSecond.Name = "userItemSecond";
-            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
-            this.userItemSecond.TabIndex = 54;
-            this.userItemSecond.UserName = null;
-            this.userItemSecond.Visible = false;
-            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2517,7 +2516,12 @@
             this.panelActivityResults.PerformLayout();
             this.panelLandingPage.ResumeLayout(false);
             this.panelLandingPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBMIScale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).EndInit();
@@ -2526,10 +2530,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClouds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTimeBorder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowLeft5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2689,7 +2689,6 @@
         private System.Windows.Forms.ImageList imageListSidebar;
         private System.Windows.Forms.Panel panelLandingPage;
         private System.Windows.Forms.Label labelSurveyDescription;
-        private System.Windows.Forms.Label labelProjectName;
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Label labelCalculatorDescription;
         private System.Windows.Forms.Label labelQuizDescription;
@@ -2701,5 +2700,6 @@
         private System.Windows.Forms.PictureBox pictureBoxArrowLeft4;
         private System.Windows.Forms.PictureBox pictureBoxArrowLeft3;
         private System.Windows.Forms.PictureBox pictureBoxArrowLeft2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }   
 }
