@@ -1652,7 +1652,7 @@
             0,
             0});
             this.numericUpDownHeight.Minimum = new decimal(new int[] {
-            1,
+            40,
             0,
             0,
             0});
