@@ -244,5 +244,17 @@
   <ItemGroup>
     <None Include="Resources\Images\surveyIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\profileBlueLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\profileGrayLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\profileRedLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\profileLarge.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

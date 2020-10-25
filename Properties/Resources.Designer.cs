@@ -213,16 +213,6 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap profile1 {
-            get {
-                object obj = ResourceManager.GetObject("profile1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap profileBlue {
             get {
                 object obj = ResourceManager.GetObject("profileBlue", resourceCulture);
@@ -233,9 +223,9 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap profileBlue1 {
+        internal static System.Drawing.Bitmap profileBlueLarge {
             get {
-                object obj = ResourceManager.GetObject("profileBlue1", resourceCulture);
+                object obj = ResourceManager.GetObject("profileBlueLarge", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +243,39 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap profileGrayLarge {
+            get {
+                object obj = ResourceManager.GetObject("profileGrayLarge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profileLarge {
+            get {
+                object obj = ResourceManager.GetObject("profileLarge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap profileRed {
             get {
                 object obj = ResourceManager.GetObject("profileRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profileRedLarge {
+            get {
+                object obj = ResourceManager.GetObject("profileRedLarge", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
