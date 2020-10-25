@@ -434,6 +434,7 @@ namespace app
                 {
                     buttonUpdateActivityLevel.Visible = false;
                     groupBoxActivityLevel.Visible = true;
+                    UpdateActivityLevel();
                 }
             }
             UpdateMacro();
