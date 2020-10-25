@@ -62,7 +62,6 @@
             this.panelQuizFinished = new System.Windows.Forms.Panel();
             this.panelQuizMenu = new System.Windows.Forms.Panel();
             this.panelMacro = new System.Windows.Forms.Panel();
-            this.buttonUpdateActivityLevel = new System.Windows.Forms.Button();
             this.groupBoxActivityLevel = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
@@ -184,6 +183,7 @@
             this.labelNoProfile = new System.Windows.Forms.Label();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonUpdateActivityLevel = new System.Windows.Forms.Button();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -224,9 +224,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).BeginInit();
             this.panelUserNotLogged.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // flowLayoutPanelSidebar
-            //
+            // 
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonProfile);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonBMI);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonActivity);
@@ -237,9 +237,9 @@
             this.flowLayoutPanelSidebar.Name = "flowLayoutPanelSidebar";
             this.flowLayoutPanelSidebar.Size = new System.Drawing.Size(280, 720);
             this.flowLayoutPanelSidebar.TabIndex = 13;
-            //
+            // 
             // buttonProfile
-            //
+            // 
             this.buttonProfile.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonProfile.FlatAppearance.BorderSize = 0;
@@ -257,10 +257,11 @@
             this.buttonProfile.Text = "<User name>";
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonProfile.UseVisualStyleBackColor = false;
+            this.buttonProfile.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
-            //
+            // 
             // buttonBMI
-            //
+            // 
             this.buttonBMI.BackColor = System.Drawing.Color.Red;
             this.buttonBMI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonBMI.FlatAppearance.BorderSize = 0;
@@ -278,10 +279,11 @@
             this.buttonBMI.Text = "BMI";
             this.buttonBMI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBMI.UseVisualStyleBackColor = false;
+            this.buttonBMI.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonBMI.Click += new System.EventHandler(this.ButtonBMI_Click);
-            //
+            // 
             // buttonActivity
-            //
+            // 
             this.buttonActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.buttonActivity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonActivity.FlatAppearance.BorderSize = 0;
@@ -299,10 +301,11 @@
             this.buttonActivity.Text = "Sport na dziś";
             this.buttonActivity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonActivity.UseVisualStyleBackColor = false;
+            this.buttonActivity.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonActivity.Click += new System.EventHandler(this.ButtonActivity_Click);
-            //
+            // 
             // buttonQuiz
-            //
+            // 
             this.buttonQuiz.BackColor = System.Drawing.Color.Yellow;
             this.buttonQuiz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonQuiz.FlatAppearance.BorderSize = 0;
@@ -321,10 +324,11 @@
             this.buttonQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonQuiz.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonQuiz.UseVisualStyleBackColor = false;
+            this.buttonQuiz.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonQuiz.Click += new System.EventHandler(this.ButtonQuiz_Click);
-            //
+            // 
             // buttonCalculator
-            //
+            // 
             this.buttonCalculator.BackColor = System.Drawing.Color.Lime;
             this.buttonCalculator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonCalculator.FlatAppearance.BorderSize = 0;
@@ -343,10 +347,11 @@
             this.buttonCalculator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCalculator.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonCalculator.UseVisualStyleBackColor = false;
+            this.buttonCalculator.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonCalculator.Click += new System.EventHandler(this.ButtonCalculator_Click);
-            //
+            // 
             // buttonSurvey
-            //
+            // 
             this.buttonSurvey.BackColor = System.Drawing.Color.Aqua;
             this.buttonSurvey.FlatAppearance.BorderSize = 0;
             this.buttonSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -364,10 +369,11 @@
             this.buttonSurvey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSurvey.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonSurvey.UseVisualStyleBackColor = false;
+            this.buttonSurvey.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonSurvey.Click += new System.EventHandler(this.ButtonSurvey_Click);
-            //
+            // 
             // buttonSurveyFinished
-            //
+            // 
             this.buttonSurveyFinished.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSurveyFinished.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSurveyFinished.Location = new System.Drawing.Point(400, 400);
@@ -377,9 +383,9 @@
             this.buttonSurveyFinished.Text = "Zakończ";
             this.buttonSurveyFinished.UseVisualStyleBackColor = true;
             this.buttonSurveyFinished.Click += new System.EventHandler(this.ButtonSurveyFinished_Clicked);
-            //
+            // 
             // label39
-            //
+            // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label39.Location = new System.Drawing.Point(273, 175);
@@ -388,16 +394,16 @@
             this.label39.TabIndex = 12;
             this.label39.Text = "Ankieta zakończona";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // panelLandingPage
-            //
+            // 
             this.panelLandingPage.Location = new System.Drawing.Point(280, 50);
             this.panelLandingPage.Name = "panelLandingPage";
             this.panelLandingPage.Size = new System.Drawing.Size(1000, 650);
             this.panelLandingPage.TabIndex = 23;
-            //
+            // 
             // panelBMI
-            //
+            // 
             this.panelBMI.Controls.Add(this.pictureBoxArrow);
             this.panelBMI.Controls.Add(this.labelBMIInterpretation);
             this.panelBMI.Controls.Add(this.labelBMI);
@@ -407,9 +413,9 @@
             this.panelBMI.Name = "panelBMI";
             this.panelBMI.Size = new System.Drawing.Size(1000, 650);
             this.panelBMI.TabIndex = 14;
-            //
+            // 
             // pictureBoxArrow
-            //
+            // 
             this.pictureBoxArrow.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxArrow.BackgroundImage = global::app.Properties.Resources.arrow;
             this.pictureBoxArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -420,9 +426,9 @@
             this.pictureBoxArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxArrow.TabIndex = 6;
             this.pictureBoxArrow.TabStop = false;
-            //
+            // 
             // labelBMIInterpretation
-            //
+            // 
             this.labelBMIInterpretation.AutoSize = true;
             this.labelBMIInterpretation.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMIInterpretation.Location = new System.Drawing.Point(342, 450);
@@ -431,9 +437,9 @@
             this.labelBMIInterpretation.TabIndex = 5;
             this.labelBMIInterpretation.Text = "<interpretation>";
             this.labelBMIInterpretation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // labelBMI
-            //
+            // 
             this.labelBMI.AutoSize = true;
             this.labelBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelBMI.Location = new System.Drawing.Point(273, 380);
@@ -442,9 +448,9 @@
             this.labelBMI.TabIndex = 4;
             this.labelBMI.Text = "Twoje BMI wynosi: <BMI>";
             this.labelBMI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // pictureBoxBMIScale
-            //
+            // 
             this.pictureBoxBMIScale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxBMIScale.Image = global::app.Properties.Resources.BMIScale;
             this.pictureBoxBMIScale.Location = new System.Drawing.Point(100, 250);
@@ -452,9 +458,9 @@
             this.pictureBoxBMIScale.Size = new System.Drawing.Size(800, 50);
             this.pictureBoxBMIScale.TabIndex = 3;
             this.pictureBoxBMIScale.TabStop = false;
-            //
+            // 
             // label6
-            //
+            // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(421, 80);
@@ -463,9 +469,9 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "BMI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // panelQuiz
-            //
+            // 
             this.panelQuiz.Controls.Add(this.pictureBoxTime);
             this.panelQuiz.Controls.Add(this.pictureBoxTimeBorder);
             this.panelQuiz.Controls.Add(this.labelNumber);
@@ -475,27 +481,27 @@
             this.panelQuiz.Name = "panelQuiz";
             this.panelQuiz.Size = new System.Drawing.Size(1000, 650);
             this.panelQuiz.TabIndex = 16;
-            //
+            // 
             // pictureBoxTime
-            //
+            // 
             this.pictureBoxTime.Image = global::app.Properties.Resources.timeScale;
             this.pictureBoxTime.Location = new System.Drawing.Point(251, 100);
             this.pictureBoxTime.Name = "pictureBoxTime";
             this.pictureBoxTime.Size = new System.Drawing.Size(498, 30);
             this.pictureBoxTime.TabIndex = 8;
             this.pictureBoxTime.TabStop = false;
-            //
+            // 
             // pictureBoxTimeBorder
-            //
+            // 
             this.pictureBoxTimeBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
             this.pictureBoxTimeBorder.Location = new System.Drawing.Point(248, 98);
             this.pictureBoxTimeBorder.Name = "pictureBoxTimeBorder";
             this.pictureBoxTimeBorder.Size = new System.Drawing.Size(502, 34);
             this.pictureBoxTimeBorder.TabIndex = 9;
             this.pictureBoxTimeBorder.TabStop = false;
-            //
+            // 
             // labelNumber
-            //
+            // 
             this.labelNumber.AutoSize = true;
             this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelNumber.Location = new System.Drawing.Point(65, 95);
@@ -503,9 +509,9 @@
             this.labelNumber.Size = new System.Drawing.Size(52, 31);
             this.labelNumber.TabIndex = 7;
             this.labelNumber.Text = "1/5\r\n";
-            //
+            // 
             // labelQuestion
-            //
+            // 
             this.labelQuestion.BackColor = System.Drawing.Color.Transparent;
             this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelQuestion.Location = new System.Drawing.Point(100, 150);
@@ -514,9 +520,9 @@
             this.labelQuestion.TabIndex = 4;
             this.labelQuestion.Text = "Treść pytania";
             this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // tableLayoutPanelAnswers
-            //
+            // 
             this.tableLayoutPanelAnswers.ColumnCount = 2;
             this.tableLayoutPanelAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -532,9 +538,9 @@
             this.tableLayoutPanelAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelAnswers.Size = new System.Drawing.Size(900, 250);
             this.tableLayoutPanelAnswers.TabIndex = 3;
-            //
+            // 
             // buttonAnswerA
-            //
+            // 
             this.buttonAnswerA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
             this.buttonAnswerA.Enabled = false;
             this.buttonAnswerA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -550,9 +556,9 @@
             this.buttonAnswerA.Text = "A";
             this.buttonAnswerA.UseVisualStyleBackColor = false;
             this.buttonAnswerA.Click += new System.EventHandler(this.AnswerClicked);
-            //
+            // 
             // buttonAnswerB
-            //
+            // 
             this.buttonAnswerB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
             this.buttonAnswerB.Enabled = false;
             this.buttonAnswerB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -568,9 +574,9 @@
             this.buttonAnswerB.Text = "B";
             this.buttonAnswerB.UseVisualStyleBackColor = false;
             this.buttonAnswerB.Click += new System.EventHandler(this.AnswerClicked);
-            //
+            // 
             // buttonAnswerD
-            //
+            // 
             this.buttonAnswerD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
             this.buttonAnswerD.Enabled = false;
             this.buttonAnswerD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -586,9 +592,9 @@
             this.buttonAnswerD.Text = "D";
             this.buttonAnswerD.UseVisualStyleBackColor = false;
             this.buttonAnswerD.Click += new System.EventHandler(this.AnswerClicked);
-            //
+            // 
             // buttonAnswerC
-            //
+            // 
             this.buttonAnswerC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
             this.buttonAnswerC.Enabled = false;
             this.buttonAnswerC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -604,9 +610,9 @@
             this.buttonAnswerC.Text = "C";
             this.buttonAnswerC.UseVisualStyleBackColor = false;
             this.buttonAnswerC.Click += new System.EventHandler(this.AnswerClicked);
-            //
+            // 
             // buttonFinishQuiz
-            //
+            // 
             this.buttonFinishQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFinishQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonFinishQuiz.Location = new System.Drawing.Point(400, 300);
@@ -616,9 +622,9 @@
             this.buttonFinishQuiz.Text = "Zakończ";
             this.buttonFinishQuiz.UseVisualStyleBackColor = true;
             this.buttonFinishQuiz.Click += new System.EventHandler(this.ButtonFinishQuiz_Click);
-            //
+            // 
             // labelQuizResult
-            //
+            // 
             this.labelQuizResult.AutoSize = true;
             this.labelQuizResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuizResult.Location = new System.Drawing.Point(394, 220);
@@ -626,9 +632,9 @@
             this.labelQuizResult.Size = new System.Drawing.Size(192, 42);
             this.labelQuizResult.TabIndex = 8;
             this.labelQuizResult.Text = "Wynik: 5/5";
-            //
+            // 
             // ButtonStartQuiz
-            //
+            // 
             this.ButtonStartQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonStartQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ButtonStartQuiz.Location = new System.Drawing.Point(400, 300);
@@ -638,9 +644,9 @@
             this.ButtonStartQuiz.Text = "Start";
             this.ButtonStartQuiz.UseVisualStyleBackColor = true;
             this.ButtonStartQuiz.Click += new System.EventHandler(this.ButtonStartQuiz_Click);
-            //
+            // 
             // labelQuiz
-            //
+            // 
             this.labelQuiz.AutoSize = true;
             this.labelQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuiz.Location = new System.Drawing.Point(408, 50);
@@ -649,27 +655,27 @@
             this.labelQuiz.TabIndex = 4;
             this.labelQuiz.Text = "Quiz";
             this.labelQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // panelQuizFinished
-            //
+            // 
             this.panelQuizFinished.Controls.Add(this.labelQuizResult);
             this.panelQuizFinished.Controls.Add(this.buttonFinishQuiz);
             this.panelQuizFinished.Location = new System.Drawing.Point(280, 50);
             this.panelQuizFinished.Name = "panelQuizFinished";
             this.panelQuizFinished.Size = new System.Drawing.Size(1000, 650);
             this.panelQuizFinished.TabIndex = 0;
-            //
+            // 
             // panelQuizMenu
-            //
+            // 
             this.panelQuizMenu.Controls.Add(this.labelQuiz);
             this.panelQuizMenu.Controls.Add(this.ButtonStartQuiz);
             this.panelQuizMenu.Location = new System.Drawing.Point(280, 50);
             this.panelQuizMenu.Name = "panelQuizMenu";
             this.panelQuizMenu.Size = new System.Drawing.Size(1000, 650);
             this.panelQuizMenu.TabIndex = 17;
-            //
+            // 
             // panelMacro
-            //
+            // 
             this.panelMacro.Controls.Add(this.buttonUpdateActivityLevel);
             this.panelMacro.Controls.Add(this.groupBoxActivityLevel);
             this.panelMacro.Controls.Add(this.tableLayoutPanel1);
@@ -678,21 +684,9 @@
             this.panelMacro.Name = "panelMacro";
             this.panelMacro.Size = new System.Drawing.Size(1000, 650);
             this.panelMacro.TabIndex = 17;
-            //
-            // buttonUpdateActivityLevel
-            //
-            this.buttonUpdateActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUpdateActivityLevel.Location = new System.Drawing.Point(255, 155);
-            this.buttonUpdateActivityLevel.Name = "buttonUpdateActivityLevel";
-            this.buttonUpdateActivityLevel.Size = new System.Drawing.Size(490, 68);
-            this.buttonUpdateActivityLevel.TabIndex = 22;
-            this.buttonUpdateActivityLevel.Text = "Aktualizuj poziom aktywności";
-            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = true;
-            this.buttonUpdateActivityLevel.Click += new System.EventHandler(this.buttonUpdateActivityLevel_Click);
-            //
+            // 
             // groupBoxActivityLevel
-            //
+            // 
             this.groupBoxActivityLevel.Controls.Add(this.label25);
             this.groupBoxActivityLevel.Controls.Add(this.trackBarActivityLevel);
             this.groupBoxActivityLevel.Controls.Add(this.label38);
@@ -705,80 +699,80 @@
             this.groupBoxActivityLevel.Size = new System.Drawing.Size(528, 162);
             this.groupBoxActivityLevel.TabIndex = 21;
             this.groupBoxActivityLevel.TabStop = false;
-            //
+            // 
             // label25
-            //
+            // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label25.Location = new System.Drawing.Point(171, 18);
+            this.label25.Location = new System.Drawing.Point(171, 29);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(186, 24);
             this.label25.TabIndex = 3;
             this.label25.Text = "Poziom aktywności";
-            //
+            // 
             // trackBarActivityLevel
-            //
+            // 
             this.trackBarActivityLevel.LargeChange = 1;
-            this.trackBarActivityLevel.Location = new System.Drawing.Point(38, 79);
+            this.trackBarActivityLevel.Location = new System.Drawing.Point(44, 87);
             this.trackBarActivityLevel.Maximum = 4;
             this.trackBarActivityLevel.Name = "trackBarActivityLevel";
             this.trackBarActivityLevel.Size = new System.Drawing.Size(442, 45);
             this.trackBarActivityLevel.TabIndex = 2;
             this.trackBarActivityLevel.Value = 2;
             this.trackBarActivityLevel.Scroll += new System.EventHandler(this.TrackBarActivityLevel_Scroll);
-            //
+            // 
             // label38
-            //
+            // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(15, 123);
+            this.label38.Location = new System.Drawing.Point(18, 130);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(64, 13);
             this.label38.TabIndex = 19;
             this.label38.Text = "Bardzo niski";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label34
-            //
+            // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(434, 123);
+            this.label34.Location = new System.Drawing.Point(437, 130);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(75, 13);
             this.label34.TabIndex = 15;
             this.label34.Text = "Bardzo wysoki";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label37
-            //
+            // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(138, 123);
+            this.label37.Location = new System.Drawing.Point(141, 130);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(30, 13);
             this.label37.TabIndex = 18;
             this.label37.Text = "Niski";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label35
-            //
+            // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(346, 123);
+            this.label35.Location = new System.Drawing.Point(349, 130);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(42, 13);
             this.label35.TabIndex = 16;
             this.label35.Text = "Wysoki";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label36
-            //
+            // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(232, 123);
+            this.label36.Location = new System.Drawing.Point(235, 130);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(56, 13);
             this.label36.TabIndex = 17;
             this.label36.Text = "Przeciętny";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // tableLayoutPanel1
-            //
+            // 
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -805,9 +799,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(294, 180);
             this.tableLayoutPanel1.TabIndex = 20;
-            //
+            // 
             // labelKcal
-            //
+            // 
             this.labelKcal.AutoSize = true;
             this.labelKcal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -817,9 +811,9 @@
             this.labelKcal.TabIndex = 8;
             this.labelKcal.Text = "0";
             this.labelKcal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // labelFats
-            //
+            // 
             this.labelFats.AutoSize = true;
             this.labelFats.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelFats.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -829,9 +823,9 @@
             this.labelFats.TabIndex = 10;
             this.labelFats.Text = "0";
             this.labelFats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // labelProtein
-            //
+            // 
             this.labelProtein.AutoSize = true;
             this.labelProtein.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelProtein.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -841,9 +835,9 @@
             this.labelProtein.TabIndex = 12;
             this.labelProtein.Text = "0";
             this.labelProtein.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // labelCarbohydrates
-            //
+            // 
             this.labelCarbohydrates.AutoSize = true;
             this.labelCarbohydrates.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCarbohydrates.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -853,9 +847,9 @@
             this.labelCarbohydrates.TabIndex = 14;
             this.labelCarbohydrates.Text = "0";
             this.labelCarbohydrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label28
-            //
+            // 
             this.label28.AutoSize = true;
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -865,9 +859,9 @@
             this.label28.TabIndex = 9;
             this.label28.Text = "Tłuszcze";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label30
-            //
+            // 
             this.label30.AutoSize = true;
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -877,9 +871,9 @@
             this.label30.TabIndex = 13;
             this.label30.Text = "Węglowodany";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label32
-            //
+            // 
             this.label32.AutoSize = true;
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -890,9 +884,9 @@
             this.label32.TabIndex = 11;
             this.label32.Text = "Białko ";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label27
-            //
+            // 
             this.label27.AutoSize = true;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -902,9 +896,9 @@
             this.label27.TabIndex = 15;
             this.label27.Text = "kcal";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label29
-            //
+            // 
             this.label29.AutoSize = true;
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -914,9 +908,9 @@
             this.label29.TabIndex = 16;
             this.label29.Text = "g";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label31
-            //
+            // 
             this.label31.AutoSize = true;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -926,9 +920,9 @@
             this.label31.TabIndex = 17;
             this.label31.Text = "g";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label33
-            //
+            // 
             this.label33.AutoSize = true;
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -938,9 +932,9 @@
             this.label33.TabIndex = 18;
             this.label33.Text = "g";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label26
-            //
+            // 
             this.label26.AutoSize = true;
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -951,9 +945,9 @@
             this.label26.TabIndex = 4;
             this.label26.Text = "Energia";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label3
-            //
+            // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(156, 38);
@@ -962,9 +956,9 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Zapotrzebowanie na składniki odżywcze";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // groupBoxEdit
-            //
+            // 
             this.groupBoxEdit.Controls.Add(this.buttonSaveChanges);
             this.groupBoxEdit.Controls.Add(this.textBoxCurrentName);
             this.groupBoxEdit.Controls.Add(this.buttonDelete);
@@ -986,9 +980,9 @@
             this.groupBoxEdit.Size = new System.Drawing.Size(382, 282);
             this.groupBoxEdit.TabIndex = 58;
             this.groupBoxEdit.TabStop = false;
-            //
+            // 
             // buttonSaveChanges
-            //
+            // 
             this.buttonSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSaveChanges.FlatAppearance.BorderSize = 0;
             this.buttonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1000,9 +994,9 @@
             this.buttonSaveChanges.Tag = "";
             this.buttonSaveChanges.UseVisualStyleBackColor = true;
             this.buttonSaveChanges.Click += new System.EventHandler(this.ButtonSaveChanges_Click);
-            //
+            // 
             // textBoxCurrentName
-            //
+            // 
             this.textBoxCurrentName.AllowDrop = true;
             this.textBoxCurrentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxCurrentName.Location = new System.Drawing.Point(96, 19);
@@ -1012,9 +1006,9 @@
             this.textBoxCurrentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxCurrentName.WordWrap = false;
             this.textBoxCurrentName.TextChanged += new System.EventHandler(this.TextBoxCurrentName_TextChanged);
-            //
+            // 
             // buttonDelete
-            //
+            // 
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1026,9 +1020,9 @@
             this.buttonDelete.Tag = "";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
-            //
+            // 
             // label17
-            //
+            // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label17.Location = new System.Drawing.Point(172, 137);
@@ -1036,9 +1030,9 @@
             this.label17.Size = new System.Drawing.Size(28, 24);
             this.label17.TabIndex = 52;
             this.label17.Text = "lat";
-            //
+            // 
             // labelCurrentName
-            //
+            // 
             this.labelCurrentName.AutoSize = true;
             this.labelCurrentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentName.Location = new System.Drawing.Point(38, 22);
@@ -1047,9 +1041,9 @@
             this.labelCurrentName.TabIndex = 51;
             this.labelCurrentName.Text = "Imię";
             this.labelCurrentName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // numericUpDownCurrentAge
-            //
+            // 
             this.numericUpDownCurrentAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownCurrentAge.Location = new System.Drawing.Point(96, 134);
             this.numericUpDownCurrentAge.Maximum = new decimal(new int[] {
@@ -1072,9 +1066,9 @@
             0,
             0});
             this.numericUpDownCurrentAge.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentAge_ValueChanged);
-            //
+            // 
             // label44
-            //
+            // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label44.Location = new System.Drawing.Point(172, 97);
@@ -1082,9 +1076,9 @@
             this.label44.Size = new System.Drawing.Size(36, 24);
             this.label44.TabIndex = 39;
             this.label44.Text = "cm";
-            //
+            // 
             // numericUpDownCurrentHeight
-            //
+            // 
             this.numericUpDownCurrentHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownCurrentHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownCurrentHeight.Location = new System.Drawing.Point(96, 95);
@@ -1108,9 +1102,9 @@
             0,
             0});
             this.numericUpDownCurrentHeight.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentHeight_ValueChanged);
-            //
+            // 
             // labelCurrentHeight
-            //
+            // 
             this.labelCurrentHeight.AutoSize = true;
             this.labelCurrentHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentHeight.Location = new System.Drawing.Point(16, 98);
@@ -1119,9 +1113,9 @@
             this.labelCurrentHeight.TabIndex = 40;
             this.labelCurrentHeight.Text = "Wzrost";
             this.labelCurrentHeight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // numericUpDownCurrentWeight
-            //
+            // 
             this.numericUpDownCurrentWeight.DecimalPlaces = 1;
             this.numericUpDownCurrentWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownCurrentWeight.Location = new System.Drawing.Point(96, 56);
@@ -1145,9 +1139,9 @@
             0,
             0});
             this.numericUpDownCurrentWeight.ValueChanged += new System.EventHandler(this.NumericUpDownCurrentWeight_ValueChanged);
-            //
+            // 
             // labelCurrentWeight
-            //
+            // 
             this.labelCurrentWeight.AutoSize = true;
             this.labelCurrentWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentWeight.Location = new System.Drawing.Point(25, 58);
@@ -1156,9 +1150,9 @@
             this.labelCurrentWeight.TabIndex = 41;
             this.labelCurrentWeight.Text = "Waga";
             this.labelCurrentWeight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // label41
-            //
+            // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label41.Location = new System.Drawing.Point(172, 60);
@@ -1166,9 +1160,9 @@
             this.label41.Size = new System.Drawing.Size(30, 24);
             this.label41.TabIndex = 42;
             this.label41.Text = "kg";
-            //
+            // 
             // radioButtonCurrentMale
-            //
+            // 
             this.radioButtonCurrentMale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonCurrentMale.AutoSize = true;
             this.radioButtonCurrentMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1180,9 +1174,9 @@
             this.radioButtonCurrentMale.Text = "Mężczyzna";
             this.radioButtonCurrentMale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentMale.CheckedChanged += new System.EventHandler(this.RadioButtonCurrentMale_CheckedChanged);
-            //
+            // 
             // labelCurrentAge
-            //
+            // 
             this.labelCurrentAge.AutoSize = true;
             this.labelCurrentAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentAge.Location = new System.Drawing.Point(31, 138);
@@ -1191,9 +1185,9 @@
             this.labelCurrentAge.TabIndex = 43;
             this.labelCurrentAge.Text = "Wiek";
             this.labelCurrentAge.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // radioButtonCurrentFemale
-            //
+            // 
             this.radioButtonCurrentFemale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonCurrentFemale.AutoSize = true;
             this.radioButtonCurrentFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1205,9 +1199,9 @@
             this.radioButtonCurrentFemale.Text = "Kobieta";
             this.radioButtonCurrentFemale.UseVisualStyleBackColor = true;
             this.radioButtonCurrentFemale.CheckedChanged += new System.EventHandler(this.RadioButtonCurrentFemale_CheckedChanged);
-            //
+            // 
             // labelCurrentGender
-            //
+            // 
             this.labelCurrentGender.AutoSize = true;
             this.labelCurrentGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentGender.Location = new System.Drawing.Point(39, 176);
@@ -1216,9 +1210,9 @@
             this.labelCurrentGender.TabIndex = 44;
             this.labelCurrentGender.Text = "Płeć";
             this.labelCurrentGender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // panelProfiles
-            //
+            // 
             this.panelProfiles.Controls.Add(this.groupBoxEdit);
             this.panelProfiles.Controls.Add(this.groupBox5);
             this.panelProfiles.Controls.Add(this.groupBox4);
@@ -1226,9 +1220,9 @@
             this.panelProfiles.Name = "panelProfiles";
             this.panelProfiles.Size = new System.Drawing.Size(1000, 650);
             this.panelProfiles.TabIndex = 19;
-            //
+            // 
             // groupBox5
-            //
+            // 
             this.groupBox5.Controls.Add(this.labelIndexInfo);
             this.groupBox5.Controls.Add(this.userItemThird);
             this.groupBox5.Controls.Add(this.userItemFirst);
@@ -1242,9 +1236,9 @@
             this.groupBox5.Size = new System.Drawing.Size(382, 354);
             this.groupBox5.TabIndex = 57;
             this.groupBox5.TabStop = false;
-            //
+            // 
             // labelIndexInfo
-            //
+            // 
             this.labelIndexInfo.AutoSize = true;
             this.labelIndexInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelIndexInfo.Location = new System.Drawing.Point(328, 248);
@@ -1253,9 +1247,9 @@
             this.labelIndexInfo.TabIndex = 53;
             this.labelIndexInfo.Text = "0/0";
             this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // userItemThird
-            //
+            // 
             this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
             this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1265,9 +1259,9 @@
             this.userItemThird.TabIndex = 55;
             this.userItemThird.UserName = null;
             this.userItemThird.Visible = false;
-            //
+            // 
             // userItemFirst
-            //
+            // 
             this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
             this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1277,9 +1271,9 @@
             this.userItemFirst.TabIndex = 53;
             this.userItemFirst.UserName = null;
             this.userItemFirst.Visible = false;
-            //
+            // 
             // userItemSecond
-            //
+            // 
             this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
             this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1289,9 +1283,9 @@
             this.userItemSecond.TabIndex = 54;
             this.userItemSecond.UserName = null;
             this.userItemSecond.Visible = false;
-            //
+            // 
             // buttonArrowUp
-            //
+            // 
             this.buttonArrowUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonArrowUp.Enabled = false;
             this.buttonArrowUp.FlatAppearance.BorderSize = 0;
@@ -1303,9 +1297,9 @@
             this.buttonArrowUp.TabIndex = 36;
             this.buttonArrowUp.UseVisualStyleBackColor = true;
             this.buttonArrowUp.Click += new System.EventHandler(this.ButtonArrowUp_Click);
-            //
+            // 
             // buttonArrowDown
-            //
+            // 
             this.buttonArrowDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonArrowDown.Enabled = false;
             this.buttonArrowDown.FlatAppearance.BorderSize = 0;
@@ -1317,9 +1311,9 @@
             this.buttonArrowDown.TabIndex = 37;
             this.buttonArrowDown.UseVisualStyleBackColor = true;
             this.buttonArrowDown.Click += new System.EventHandler(this.ButtonArrowDown_Click);
-            //
+            // 
             // buttonEdit
-            //
+            // 
             this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEdit.FlatAppearance.BorderSize = 0;
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1330,9 +1324,9 @@
             this.buttonEdit.TabIndex = 38;
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
-            //
+            // 
             // label16
-            //
+            // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label16.Location = new System.Drawing.Point(90, 24);
@@ -1340,9 +1334,9 @@
             this.label16.Size = new System.Drawing.Size(207, 33);
             this.label16.TabIndex = 17;
             this.label16.Text = "Wybierz profil";
-            //
+            // 
             // groupBox4
-            //
+            // 
             this.groupBox4.Controls.Add(this.groupBox6);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.buttonCreate);
@@ -1366,9 +1360,9 @@
             this.groupBox4.Size = new System.Drawing.Size(311, 508);
             this.groupBox4.TabIndex = 56;
             this.groupBox4.TabStop = false;
-            //
+            // 
             // groupBox6
-            //
+            // 
             this.groupBox6.BackColor = System.Drawing.Color.Transparent;
             this.groupBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox6.Controls.Add(this.radioButtonAvatarBlue);
@@ -1380,9 +1374,9 @@
             this.groupBox6.Size = new System.Drawing.Size(228, 87);
             this.groupBox6.TabIndex = 23;
             this.groupBox6.TabStop = false;
-            //
+            // 
             // radioButtonAvatarBlue
-            //
+            // 
             this.radioButtonAvatarBlue.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonAvatarBlue.AutoSize = true;
             this.radioButtonAvatarBlue.FlatAppearance.BorderSize = 0;
@@ -1397,9 +1391,9 @@
             this.radioButtonAvatarBlue.TabIndex = 21;
             this.radioButtonAvatarBlue.TabStop = true;
             this.radioButtonAvatarBlue.UseVisualStyleBackColor = true;
-            //
+            // 
             // radioButtonAvatarGray
-            //
+            // 
             this.radioButtonAvatarGray.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonAvatarGray.AutoSize = true;
             this.radioButtonAvatarGray.FlatAppearance.BorderSize = 0;
@@ -1414,9 +1408,9 @@
             this.radioButtonAvatarGray.TabIndex = 22;
             this.radioButtonAvatarGray.TabStop = true;
             this.radioButtonAvatarGray.UseVisualStyleBackColor = true;
-            //
+            // 
             // radioButtonAvatarRed
-            //
+            // 
             this.radioButtonAvatarRed.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonAvatarRed.AutoSize = true;
             this.radioButtonAvatarRed.FlatAppearance.BorderSize = 0;
@@ -1431,9 +1425,9 @@
             this.radioButtonAvatarRed.TabIndex = 20;
             this.radioButtonAvatarRed.TabStop = true;
             this.radioButtonAvatarRed.UseVisualStyleBackColor = true;
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(122, 309);
@@ -1442,9 +1436,9 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Zdjęcie";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // buttonCreate
-            //
+            // 
             this.buttonCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonCreate.FlatAppearance.BorderSize = 0;
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1457,9 +1451,9 @@
             this.buttonCreate.Text = "Utwórz";
             this.buttonCreate.UseVisualStyleBackColor = false;
             this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
-            //
+            // 
             // label7
-            //
+            // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.Location = new System.Drawing.Point(75, 24);
@@ -1467,9 +1461,9 @@
             this.label7.Size = new System.Drawing.Size(171, 33);
             this.label7.TabIndex = 1;
             this.label7.Text = "Nowy profil";
-            //
+            // 
             // label14
-            //
+            // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label14.Location = new System.Drawing.Point(29, 86);
@@ -1478,9 +1472,9 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "Imię";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // label8
-            //
+            // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.Location = new System.Drawing.Point(157, 163);
@@ -1488,9 +1482,9 @@
             this.label8.Size = new System.Drawing.Size(36, 24);
             this.label8.TabIndex = 2;
             this.label8.Text = "cm";
-            //
+            // 
             // label9
-            //
+            // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(1, 163);
@@ -1499,9 +1493,9 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Wzrost";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // label10
-            //
+            // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label10.Location = new System.Drawing.Point(10, 123);
@@ -1510,9 +1504,9 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Waga";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // label11
-            //
+            // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label11.Location = new System.Drawing.Point(157, 126);
@@ -1520,9 +1514,9 @@
             this.label11.Size = new System.Drawing.Size(30, 24);
             this.label11.TabIndex = 5;
             this.label11.Text = "kg";
-            //
+            // 
             // label12
-            //
+            // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.Location = new System.Drawing.Point(16, 205);
@@ -1531,9 +1525,9 @@
             this.label12.TabIndex = 7;
             this.label12.Text = "Wiek";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // label13
-            //
+            // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label13.Location = new System.Drawing.Point(20, 251);
@@ -1542,9 +1536,9 @@
             this.label13.TabIndex = 8;
             this.label13.Text = "Płeć";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //
+            // 
             // radioButtonFemale
-            //
+            // 
             this.radioButtonFemale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonFemale.AutoSize = true;
             this.radioButtonFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1556,9 +1550,9 @@
             this.radioButtonFemale.Text = "Kobieta";
             this.radioButtonFemale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButtonFemale.UseVisualStyleBackColor = true;
-            //
+            // 
             // radioButtonMale
-            //
+            // 
             this.radioButtonMale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonMale.AutoSize = true;
             this.radioButtonMale.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1571,9 +1565,9 @@
             this.radioButtonMale.Text = "Mężczyzna";
             this.radioButtonMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButtonMale.UseVisualStyleBackColor = true;
-            //
+            // 
             // textBoxName
-            //
+            // 
             this.textBoxName.AllowDrop = true;
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxName.Location = new System.Drawing.Point(81, 83);
@@ -1582,9 +1576,9 @@
             this.textBoxName.TabIndex = 11;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxName.WordWrap = false;
-            //
+            // 
             // numericUpDownWeight
-            //
+            // 
             this.numericUpDownWeight.DecimalPlaces = 1;
             this.numericUpDownWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownWeight.Location = new System.Drawing.Point(81, 122);
@@ -1607,9 +1601,9 @@
             0,
             0,
             0});
-            //
+            // 
             // numericUpDownHeight
-            //
+            // 
             this.numericUpDownHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownHeight.Location = new System.Drawing.Point(81, 161);
@@ -1632,9 +1626,9 @@
             0,
             0,
             0});
-            //
+            // 
             // numericUpDownAge
-            //
+            // 
             this.numericUpDownAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownAge.Location = new System.Drawing.Point(81, 202);
             this.numericUpDownAge.Maximum = new decimal(new int[] {
@@ -1657,9 +1651,9 @@
             0,
             0});
             this.numericUpDownAge.ValueChanged += new System.EventHandler(this.NumericUpDownAge_ValueChanged);
-            //
+            // 
             // label15
-            //
+            // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label15.Location = new System.Drawing.Point(157, 205);
@@ -1667,24 +1661,24 @@
             this.label15.Size = new System.Drawing.Size(28, 24);
             this.label15.TabIndex = 16;
             this.label15.Text = "lat";
-            //
+            // 
             // panelPointer
-            //
+            // 
             this.panelPointer.Location = new System.Drawing.Point(0, 180);
             this.panelPointer.Name = "panelPointer";
             this.panelPointer.Size = new System.Drawing.Size(8, 60);
             this.panelPointer.TabIndex = 22;
             this.panelPointer.Visible = false;
-            //
+            // 
             // flowPanelSurveys
-            //
+            // 
             this.flowPanelSurveys.Location = new System.Drawing.Point(100, 100);
             this.flowPanelSurveys.Name = "flowPanelSurveys";
             this.flowPanelSurveys.Size = new System.Drawing.Size(800, 500);
             this.flowPanelSurveys.TabIndex = 2;
-            //
+            // 
             // labelSurveyTitle
-            //
+            // 
             this.labelSurveyTitle.AutoSize = true;
             this.labelSurveyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyTitle.Location = new System.Drawing.Point(396, 10);
@@ -1693,18 +1687,18 @@
             this.labelSurveyTitle.TabIndex = 3;
             this.labelSurveyTitle.Text = "Ankiety";
             this.labelSurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // panelSurveyMenu
-            //
+            // 
             this.panelSurveyMenu.Controls.Add(this.labelSurveyTitle);
             this.panelSurveyMenu.Controls.Add(this.flowPanelSurveys);
             this.panelSurveyMenu.Location = new System.Drawing.Point(280, 50);
             this.panelSurveyMenu.Name = "panelSurveyMenu";
             this.panelSurveyMenu.Size = new System.Drawing.Size(1000, 650);
             this.panelSurveyMenu.TabIndex = 18;
-            //
+            // 
             // panelSurvey
-            //
+            // 
             this.panelSurvey.Controls.Add(this.labelSurveyQuestionNumber);
             this.panelSurvey.Controls.Add(this.buttonSurveyConfirm);
             this.panelSurvey.Controls.Add(this.textBoxSurveyText);
@@ -1714,9 +1708,9 @@
             this.panelSurvey.Name = "panelSurvey";
             this.panelSurvey.Size = new System.Drawing.Size(1000, 650);
             this.panelSurvey.TabIndex = 21;
-            //
+            // 
             // labelSurveyQuestionNumber
-            //
+            // 
             this.labelSurveyQuestionNumber.AutoSize = true;
             this.labelSurveyQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyQuestionNumber.Location = new System.Drawing.Point(267, 175);
@@ -1724,9 +1718,9 @@
             this.labelSurveyQuestionNumber.Size = new System.Drawing.Size(426, 39);
             this.labelSurveyQuestionNumber.TabIndex = 14;
             this.labelSurveyQuestionNumber.Text = "Pytanie: <number>/<total>";
-            //
+            // 
             // buttonSurveyConfirm
-            //
+            // 
             this.buttonSurveyConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
             this.buttonSurveyConfirm.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyConfirm.FlatAppearance.BorderSize = 2;
@@ -1740,9 +1734,9 @@
             this.buttonSurveyConfirm.UseVisualStyleBackColor = false;
             this.buttonSurveyConfirm.Visible = false;
             this.buttonSurveyConfirm.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            //
+            // 
             // textBoxSurveyText
-            //
+            // 
             this.textBoxSurveyText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxSurveyText.Location = new System.Drawing.Point(410, 250);
             this.textBoxSurveyText.Name = "textBoxSurveyText";
@@ -1751,9 +1745,9 @@
             this.textBoxSurveyText.Text = "0";
             this.textBoxSurveyText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxSurveyText.Visible = false;
-            //
+            // 
             // tableLayoutPanelSurveyAnswers
-            //
+            // 
             this.tableLayoutPanelSurveyAnswers.ColumnCount = 2;
             this.tableLayoutPanelSurveyAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSurveyAnswers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1769,9 +1763,9 @@
             this.tableLayoutPanelSurveyAnswers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSurveyAnswers.Size = new System.Drawing.Size(900, 250);
             this.tableLayoutPanelSurveyAnswers.TabIndex = 11;
-            //
+            // 
             // buttonSurveyNo
-            //
+            // 
             this.buttonSurveyNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
             this.buttonSurveyNo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyNo.FlatAppearance.BorderSize = 2;
@@ -1786,9 +1780,9 @@
             this.buttonSurveyNo.UseVisualStyleBackColor = false;
             this.buttonSurveyNo.Visible = false;
             this.buttonSurveyNo.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            //
+            // 
             // buttonSurveyYes
-            //
+            // 
             this.buttonSurveyYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
             this.buttonSurveyYes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyYes.FlatAppearance.BorderSize = 2;
@@ -1803,9 +1797,9 @@
             this.buttonSurveyYes.UseVisualStyleBackColor = false;
             this.buttonSurveyYes.Visible = false;
             this.buttonSurveyYes.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            //
+            // 
             // buttonSurveyA
-            //
+            // 
             this.buttonSurveyA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
             this.buttonSurveyA.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyA.FlatAppearance.BorderSize = 2;
@@ -1820,9 +1814,9 @@
             this.buttonSurveyA.UseVisualStyleBackColor = false;
             this.buttonSurveyA.Visible = false;
             this.buttonSurveyA.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            //
+            // 
             // buttonSurveyB
-            //
+            // 
             this.buttonSurveyB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(143)))), ((int)(((byte)(166)))));
             this.buttonSurveyB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSurveyB.FlatAppearance.BorderSize = 2;
@@ -1837,9 +1831,9 @@
             this.buttonSurveyB.UseVisualStyleBackColor = false;
             this.buttonSurveyB.Visible = false;
             this.buttonSurveyB.Click += new System.EventHandler(this.ButtonSurveyAnswer_Clicked);
-            //
+            // 
             // labelSurveyQuestion
-            //
+            // 
             this.labelSurveyQuestion.AutoSize = true;
             this.labelSurveyQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyQuestion.Location = new System.Drawing.Point(301, 75);
@@ -1848,16 +1842,16 @@
             this.labelSurveyQuestion.TabIndex = 10;
             this.labelSurveyQuestion.Text = "Pytanie w ankiecie";
             this.labelSurveyQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // tablePanelAnswer
-            //
+            // 
             this.tablePanelAnswer.Location = new System.Drawing.Point(0, 0);
             this.tablePanelAnswer.Name = "tablePanelAnswer";
             this.tablePanelAnswer.Size = new System.Drawing.Size(200, 100);
             this.tablePanelAnswer.TabIndex = 0;
-            //
+            // 
             // panelSurveyFinished
-            //
+            // 
             this.panelSurveyFinished.Controls.Add(this.buttonSurveyFinished);
             this.panelSurveyFinished.Controls.Add(this.label39);
             this.panelSurveyFinished.Controls.Add(this.labelFinish);
@@ -1865,9 +1859,9 @@
             this.panelSurveyFinished.Name = "panelSurveyFinished";
             this.panelSurveyFinished.Size = new System.Drawing.Size(1000, 650);
             this.panelSurveyFinished.TabIndex = 22;
-            //
+            // 
             // labelFinish
-            //
+            // 
             this.labelFinish.AutoSize = true;
             this.labelFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelFinish.Location = new System.Drawing.Point(402, 300);
@@ -1876,9 +1870,9 @@
             this.labelFinish.TabIndex = 11;
             this.labelFinish.Text = "<finished>";
             this.labelFinish.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            //
+            // 
             // panelActivity
-            //
+            // 
             this.panelActivity.Controls.Add(this.groupBox3);
             this.panelActivity.Controls.Add(this.buttonSearch);
             this.panelActivity.Controls.Add(this.groupBox1);
@@ -1888,87 +1882,87 @@
             this.panelActivity.Name = "panelActivity";
             this.panelActivity.Size = new System.Drawing.Size(1000, 650);
             this.panelActivity.TabIndex = 16;
-            //
+            // 
             // groupBox3
-            //
+            // 
             this.groupBox3.Controls.Add(this.buttonAnyEffort);
             this.groupBox3.Controls.Add(this.buttonLowEffort);
             this.groupBox3.Controls.Add(this.buttonHighEffort);
             this.groupBox3.Controls.Add(this.buttonMediumEffort);
             this.groupBox3.Controls.Add(this.pictureBoxTraining);
-            this.groupBox3.Location = new System.Drawing.Point(670, 85);
+            this.groupBox3.Location = new System.Drawing.Point(667, 85);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(317, 426);
+            this.groupBox3.Size = new System.Drawing.Size(318, 426);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
-            //
+            // 
             // buttonAnyEffort
-            //
+            // 
             this.buttonAnyEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonAnyEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnyEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAnyEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyEffort.Location = new System.Drawing.Point(29, 348);
+            this.buttonAnyEffort.Location = new System.Drawing.Point(30, 348);
             this.buttonAnyEffort.Name = "buttonAnyEffort";
             this.buttonAnyEffort.Size = new System.Drawing.Size(258, 49);
             this.buttonAnyEffort.TabIndex = 12;
             this.buttonAnyEffort.Text = "Nie uwzględniaj stopnia wysiłku";
             this.buttonAnyEffort.UseVisualStyleBackColor = false;
             this.buttonAnyEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
-            //
+            // 
             // buttonLowEffort
-            //
+            // 
             this.buttonLowEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonLowEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLowEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonLowEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonLowEffort.Location = new System.Drawing.Point(32, 143);
+            this.buttonLowEffort.Location = new System.Drawing.Point(30, 143);
             this.buttonLowEffort.Name = "buttonLowEffort";
             this.buttonLowEffort.Size = new System.Drawing.Size(258, 49);
             this.buttonLowEffort.TabIndex = 11;
             this.buttonLowEffort.Text = "Niski wysiłek";
             this.buttonLowEffort.UseVisualStyleBackColor = false;
             this.buttonLowEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
-            //
+            // 
             // buttonHighEffort
-            //
+            // 
             this.buttonHighEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonHighEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHighEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonHighEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonHighEffort.Location = new System.Drawing.Point(32, 263);
+            this.buttonHighEffort.Location = new System.Drawing.Point(30, 263);
             this.buttonHighEffort.Name = "buttonHighEffort";
             this.buttonHighEffort.Size = new System.Drawing.Size(258, 49);
             this.buttonHighEffort.TabIndex = 13;
             this.buttonHighEffort.Text = "Intensywny wysiłek";
             this.buttonHighEffort.UseVisualStyleBackColor = false;
             this.buttonHighEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
-            //
+            // 
             // buttonMediumEffort
-            //
+            // 
             this.buttonMediumEffort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonMediumEffort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMediumEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonMediumEffort.ForeColor = System.Drawing.Color.White;
-            this.buttonMediumEffort.Location = new System.Drawing.Point(32, 203);
+            this.buttonMediumEffort.Location = new System.Drawing.Point(30, 203);
             this.buttonMediumEffort.Name = "buttonMediumEffort";
             this.buttonMediumEffort.Size = new System.Drawing.Size(258, 49);
             this.buttonMediumEffort.TabIndex = 14;
             this.buttonMediumEffort.Text = "Średni wysiłek";
             this.buttonMediumEffort.UseVisualStyleBackColor = false;
             this.buttonMediumEffort.Click += new System.EventHandler(this.ButtonEffort_Click);
-            //
+            // 
             // pictureBoxTraining
-            //
+            // 
             this.pictureBoxTraining.Image = global::app.Properties.Resources.trainingSized;
-            this.pictureBoxTraining.Location = new System.Drawing.Point(6, 27);
+            this.pictureBoxTraining.Location = new System.Drawing.Point(6, 26);
             this.pictureBoxTraining.Name = "pictureBoxTraining";
             this.pictureBoxTraining.Size = new System.Drawing.Size(307, 88);
             this.pictureBoxTraining.TabIndex = 1;
             this.pictureBoxTraining.TabStop = false;
-            //
+            // 
             // buttonSearch
-            //
+            // 
             this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1980,87 +1974,87 @@
             this.buttonSearch.Text = "Szukaj";
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
-            //
+            // 
             // groupBox1
-            //
+            // 
             this.groupBox1.Controls.Add(this.buttonAnyParticipants);
             this.groupBox1.Controls.Add(this.buttonTeam);
             this.groupBox1.Controls.Add(this.buttonPair);
             this.groupBox1.Controls.Add(this.buttonIndividual);
             this.groupBox1.Controls.Add(this.pictureBoxTeam);
-            this.groupBox1.Location = new System.Drawing.Point(18, 85);
+            this.groupBox1.Location = new System.Drawing.Point(15, 85);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 426);
+            this.groupBox1.Size = new System.Drawing.Size(318, 426);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
-            //
+            // 
             // buttonAnyParticipants
-            //
+            // 
             this.buttonAnyParticipants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonAnyParticipants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnyParticipants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAnyParticipants.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyParticipants.Location = new System.Drawing.Point(36, 350);
+            this.buttonAnyParticipants.Location = new System.Drawing.Point(30, 350);
             this.buttonAnyParticipants.Name = "buttonAnyParticipants";
             this.buttonAnyParticipants.Size = new System.Drawing.Size(258, 49);
             this.buttonAnyParticipants.TabIndex = 4;
             this.buttonAnyParticipants.Text = "Nie uwzględniaj liczby uczestników";
             this.buttonAnyParticipants.UseVisualStyleBackColor = false;
             this.buttonAnyParticipants.Click += new System.EventHandler(this.ButtonParticipants_Click);
-            //
+            // 
             // buttonTeam
-            //
+            // 
             this.buttonTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonTeam.ForeColor = System.Drawing.Color.White;
-            this.buttonTeam.Location = new System.Drawing.Point(36, 263);
+            this.buttonTeam.Location = new System.Drawing.Point(30, 263);
             this.buttonTeam.Name = "buttonTeam";
             this.buttonTeam.Size = new System.Drawing.Size(258, 49);
             this.buttonTeam.TabIndex = 5;
             this.buttonTeam.Text = "Sport dla grupy powyżej dwóch osób";
             this.buttonTeam.UseVisualStyleBackColor = false;
             this.buttonTeam.Click += new System.EventHandler(this.ButtonParticipants_Click);
-            //
+            // 
             // buttonPair
-            //
+            // 
             this.buttonPair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonPair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPair.ForeColor = System.Drawing.Color.White;
-            this.buttonPair.Location = new System.Drawing.Point(36, 203);
+            this.buttonPair.Location = new System.Drawing.Point(30, 203);
             this.buttonPair.Name = "buttonPair";
             this.buttonPair.Size = new System.Drawing.Size(258, 49);
             this.buttonPair.TabIndex = 6;
             this.buttonPair.Text = "Sport dla dwóch osób";
             this.buttonPair.UseVisualStyleBackColor = false;
             this.buttonPair.Click += new System.EventHandler(this.ButtonParticipants_Click);
-            //
+            // 
             // buttonIndividual
-            //
+            // 
             this.buttonIndividual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonIndividual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIndividual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonIndividual.ForeColor = System.Drawing.Color.White;
-            this.buttonIndividual.Location = new System.Drawing.Point(36, 144);
+            this.buttonIndividual.Location = new System.Drawing.Point(30, 144);
             this.buttonIndividual.Name = "buttonIndividual";
             this.buttonIndividual.Size = new System.Drawing.Size(258, 49);
             this.buttonIndividual.TabIndex = 3;
             this.buttonIndividual.Text = "Sport indywidualny";
             this.buttonIndividual.UseVisualStyleBackColor = false;
             this.buttonIndividual.Click += new System.EventHandler(this.ButtonParticipants_Click);
-            //
+            // 
             // pictureBoxTeam
-            //
+            // 
             this.pictureBoxTeam.Image = global::app.Properties.Resources.teamSized;
-            this.pictureBoxTeam.Location = new System.Drawing.Point(10, 26);
+            this.pictureBoxTeam.Location = new System.Drawing.Point(6, 26);
             this.pictureBoxTeam.Name = "pictureBoxTeam";
-            this.pictureBoxTeam.Size = new System.Drawing.Size(307, 88);
+            this.pictureBoxTeam.Size = new System.Drawing.Size(306, 88);
             this.pictureBoxTeam.TabIndex = 0;
             this.pictureBoxTeam.TabStop = false;
-            //
+            // 
             // groupBox2
-            //
+            // 
             this.groupBox2.Controls.Add(this.labelWeatherInfo);
             this.groupBox2.Controls.Add(this.buttonCheckWeather);
             this.groupBox2.Controls.Add(this.buttonGoodWeather);
@@ -2068,14 +2062,14 @@
             this.groupBox2.Controls.Add(this.textBoxCity);
             this.groupBox2.Controls.Add(this.buttonAnyWeather);
             this.groupBox2.Controls.Add(this.pictureBoxClouds);
-            this.groupBox2.Location = new System.Drawing.Point(347, 85);
+            this.groupBox2.Location = new System.Drawing.Point(341, 85);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(317, 426);
+            this.groupBox2.Size = new System.Drawing.Size(318, 426);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
-            //
+            // 
             // labelWeatherInfo
-            //
+            // 
             this.labelWeatherInfo.AutoSize = true;
             this.labelWeatherInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelWeatherInfo.Location = new System.Drawing.Point(118, 301);
@@ -2085,9 +2079,9 @@
             this.labelWeatherInfo.Text = "<weather info>";
             this.labelWeatherInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelWeatherInfo.Visible = false;
-            //
+            // 
             // buttonCheckWeather
-            //
+            // 
             this.buttonCheckWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonCheckWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCheckWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -2099,37 +2093,37 @@
             this.buttonCheckWeather.Text = "Sprawdź";
             this.buttonCheckWeather.UseVisualStyleBackColor = false;
             this.buttonCheckWeather.Click += new System.EventHandler(this.ButtonCheckWeather_Click);
-            //
+            // 
             // buttonGoodWeather
-            //
+            // 
             this.buttonGoodWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonGoodWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGoodWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonGoodWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonGoodWeather.Location = new System.Drawing.Point(32, 144);
+            this.buttonGoodWeather.Location = new System.Drawing.Point(30, 144);
             this.buttonGoodWeather.Name = "buttonGoodWeather";
             this.buttonGoodWeather.Size = new System.Drawing.Size(258, 49);
             this.buttonGoodWeather.TabIndex = 7;
             this.buttonGoodWeather.Text = "Odpowiednia dla sportu na zewnątrz";
             this.buttonGoodWeather.UseVisualStyleBackColor = false;
             this.buttonGoodWeather.Click += new System.EventHandler(this.ButtonWeather_Click);
-            //
+            // 
             // buttonBadWeather
-            //
+            // 
             this.buttonBadWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonBadWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBadWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBadWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonBadWeather.Location = new System.Drawing.Point(32, 203);
+            this.buttonBadWeather.Location = new System.Drawing.Point(30, 203);
             this.buttonBadWeather.Name = "buttonBadWeather";
             this.buttonBadWeather.Size = new System.Drawing.Size(258, 49);
             this.buttonBadWeather.TabIndex = 10;
             this.buttonBadWeather.Text = "Nieodpowiednia dla sportu na zewnątrz";
             this.buttonBadWeather.UseVisualStyleBackColor = false;
             this.buttonBadWeather.Click += new System.EventHandler(this.ButtonWeather_Click);
-            //
+            // 
             // textBoxCity
-            //
+            // 
             this.textBoxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxCity.Location = new System.Drawing.Point(52, 278);
             this.textBoxCity.Name = "textBoxCity";
@@ -2137,32 +2131,32 @@
             this.textBoxCity.TabIndex = 17;
             this.textBoxCity.Text = "Warszawa";
             this.textBoxCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //
+            // 
             // buttonAnyWeather
-            //
+            // 
             this.buttonAnyWeather.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
             this.buttonAnyWeather.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnyWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAnyWeather.ForeColor = System.Drawing.Color.White;
-            this.buttonAnyWeather.Location = new System.Drawing.Point(32, 349);
+            this.buttonAnyWeather.Location = new System.Drawing.Point(30, 349);
             this.buttonAnyWeather.Name = "buttonAnyWeather";
             this.buttonAnyWeather.Size = new System.Drawing.Size(258, 49);
             this.buttonAnyWeather.TabIndex = 19;
             this.buttonAnyWeather.Text = "Nie uwzględniaj warunków pogodowych";
             this.buttonAnyWeather.UseVisualStyleBackColor = false;
             this.buttonAnyWeather.Click += new System.EventHandler(this.ButtonWeather_Click);
-            //
+            // 
             // pictureBoxClouds
-            //
+            // 
             this.pictureBoxClouds.Image = global::app.Properties.Resources.cloudsSized;
             this.pictureBoxClouds.Location = new System.Drawing.Point(6, 26);
             this.pictureBoxClouds.Name = "pictureBoxClouds";
             this.pictureBoxClouds.Size = new System.Drawing.Size(307, 88);
             this.pictureBoxClouds.TabIndex = 2;
             this.pictureBoxClouds.TabStop = false;
-            //
+            // 
             // panelActivityResults
-            //
+            // 
             this.panelActivityResults.Controls.Add(this.pictureBoxSportResult);
             this.panelActivityResults.Controls.Add(this.buttonChangeSearchingData);
             this.panelActivityResults.Controls.Add(this.labelActivityResult);
@@ -2172,17 +2166,17 @@
             this.panelActivityResults.Name = "panelActivityResults";
             this.panelActivityResults.Size = new System.Drawing.Size(1000, 650);
             this.panelActivityResults.TabIndex = 23;
-            //
+            // 
             // pictureBoxSportResult
-            //
+            // 
             this.pictureBoxSportResult.Location = new System.Drawing.Point(275, 172);
             this.pictureBoxSportResult.Name = "pictureBoxSportResult";
             this.pictureBoxSportResult.Size = new System.Drawing.Size(450, 300);
             this.pictureBoxSportResult.TabIndex = 23;
             this.pictureBoxSportResult.TabStop = false;
-            //
+            // 
             // buttonChangeSearchingData
-            //
+            // 
             this.buttonChangeSearchingData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonChangeSearchingData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonChangeSearchingData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -2194,9 +2188,9 @@
             this.buttonChangeSearchingData.Text = "Zmień kryteria wyszukiwania";
             this.buttonChangeSearchingData.UseVisualStyleBackColor = false;
             this.buttonChangeSearchingData.Click += new System.EventHandler(this.ButtonChangeSearchingData_Click);
-            //
+            // 
             // labelActivityResult
-            //
+            // 
             this.labelActivityResult.AutoSize = true;
             this.labelActivityResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelActivityResult.Location = new System.Drawing.Point(450, 486);
@@ -2205,9 +2199,9 @@
             this.labelActivityResult.TabIndex = 21;
             this.labelActivityResult.Text = "<result>";
             this.labelActivityResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // label4
-            //
+            // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(376, 96);
@@ -2215,9 +2209,9 @@
             this.label4.Size = new System.Drawing.Size(248, 29);
             this.label4.TabIndex = 20;
             this.label4.Text = "Propozycja dla Ciebie";
-            //
+            // 
             // buttonShowNext
-            //
+            // 
             this.buttonShowNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(177)))), ((int)(((byte)(44)))));
             this.buttonShowNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -2229,18 +2223,18 @@
             this.buttonShowNext.Text = "Pokaż następną propozycję";
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
-            //
+            // 
             // panelUserNotLogged
-            //
+            // 
             this.panelUserNotLogged.Controls.Add(this.buttonGoToProfiles);
             this.panelUserNotLogged.Controls.Add(this.labelNoProfile);
             this.panelUserNotLogged.Location = new System.Drawing.Point(280, 50);
             this.panelUserNotLogged.Name = "panelUserNotLogged";
             this.panelUserNotLogged.Size = new System.Drawing.Size(1000, 650);
             this.panelUserNotLogged.TabIndex = 23;
-            //
+            // 
             // buttonGoToProfiles
-            //
+            // 
             this.buttonGoToProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGoToProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonGoToProfiles.Location = new System.Drawing.Point(375, 350);
@@ -2250,20 +2244,20 @@
             this.buttonGoToProfiles.Text = "Przejdź do profili";
             this.buttonGoToProfiles.UseVisualStyleBackColor = true;
             this.buttonGoToProfiles.Click += new System.EventHandler(this.ButtonGoToProfiles_Click);
-            //
+            // 
             // labelNoProfile
-            //
+            // 
             this.labelNoProfile.AutoSize = true;
             this.labelNoProfile.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelNoProfile.Location = new System.Drawing.Point(83, 200);
             this.labelNoProfile.Name = "labelNoProfile";
-            this.labelNoProfile.Size = new System.Drawing.Size(834, 62);
+            this.labelNoProfile.Size = new System.Drawing.Size(835, 62);
             this.labelNoProfile.TabIndex = 12;
             this.labelNoProfile.Text = "Aby korzystać z tej funkcji musisz wybrać profil";
             this.labelNoProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // buttonMinimize
-            //
+            // 
             this.buttonMinimize.BackColor = System.Drawing.Color.Transparent;
             this.buttonMinimize.BackgroundImage = global::app.Properties.Resources.minimizeIcon;
             this.buttonMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -2277,9 +2271,9 @@
             this.buttonMinimize.TabIndex = 11;
             this.buttonMinimize.UseVisualStyleBackColor = false;
             this.buttonMinimize.Click += new System.EventHandler(this.ButtonMinimizeClick);
-            //
+            // 
             // buttonClose
-            //
+            // 
             this.buttonClose.BackColor = System.Drawing.Color.Transparent;
             this.buttonClose.BackgroundImage = global::app.Properties.Resources.closeIcon;
             this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -2293,9 +2287,21 @@
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
-            //
+            // 
+            // buttonUpdateActivityLevel
+            // 
+            this.buttonUpdateActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUpdateActivityLevel.Location = new System.Drawing.Point(255, 156);
+            this.buttonUpdateActivityLevel.Name = "buttonUpdateActivityLevel";
+            this.buttonUpdateActivityLevel.Size = new System.Drawing.Size(490, 68);
+            this.buttonUpdateActivityLevel.TabIndex = 23;
+            this.buttonUpdateActivityLevel.Text = "Aktualizuj poziom aktywności";
+            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = true;
+            this.buttonUpdateActivityLevel.Click += new System.EventHandler(this.ButtonUpdateActivityLevel_Click);
+            // 
             // Hackheroes
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
@@ -2536,9 +2542,9 @@
         private System.Windows.Forms.Button buttonSurveyB;
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.GroupBox groupBoxActivityLevel;
-        private System.Windows.Forms.Button buttonUpdateActivityLevel;
         private System.Windows.Forms.Panel panelUserNotLogged;
         private System.Windows.Forms.Button buttonGoToProfiles;
         private System.Windows.Forms.Label labelNoProfile;
+        private System.Windows.Forms.Button buttonUpdateActivityLevel;
     }
 }

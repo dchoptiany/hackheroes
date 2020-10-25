@@ -29,6 +29,7 @@ namespace app
         private List<Button> menuButtons = new List<Button>();
         private readonly Color blue1 = Color.FromArgb(0, 168, 255);
         private readonly Color purple1 = Color.FromArgb(156, 136, 255);
+        private readonly Color lightBlue1 = Color.FromArgb(64, 115, 158);
         private readonly Color darkblue1 = Color.FromArgb(39, 60, 117);
         private readonly Color darkblue2 = Color.FromArgb(25, 42, 86);
         private readonly Color red1 = Color.FromArgb(232, 65, 24);
@@ -53,25 +54,25 @@ namespace app
 
             panelPointer.BackColor = blue1;
 
-            Color leftPanelBackColor = green2;
+            Color leftPanelBackColor = darkblue1;
             flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
-            Color leftPanelButtonsColor = green2;
+            Color leftPanelButtonsColor = darkblue1;
             buttonBMI.BackColor = leftPanelButtonsColor;
             buttonActivity.BackColor = leftPanelButtonsColor;
             buttonQuiz.BackColor = leftPanelButtonsColor;
             buttonCalculator.BackColor = leftPanelButtonsColor;
             buttonSurvey.BackColor = leftPanelButtonsColor;
             buttonProfile.BackColor = leftPanelButtonsColor;
-            buttonProfile.BackColor = green2;
+            buttonProfile.BackColor = darkblue1;
         }
 
         private void InitializeButtons()
         {
             menuButtons.Add(buttonBMI);
-            menuButtons.Add(buttonActivity); 
-            menuButtons.Add(buttonQuiz); 
-            menuButtons.Add(buttonCalculator); 
-            menuButtons.Add(buttonSurvey); 
+            menuButtons.Add(buttonActivity);
+            menuButtons.Add(buttonQuiz);
+            menuButtons.Add(buttonCalculator);
+            menuButtons.Add(buttonSurvey);
             menuButtons.Add(buttonProfile);
         }
 
@@ -97,12 +98,12 @@ namespace app
 
         private void DisableButton(object sender, EventArgs e)
         {
-            var clickedButton = (Button)sender;    
+            var clickedButton = (Button)sender;
 
             foreach (Button button in menuButtons)
             {
                 button.Enabled = true;
-                button.BackColor = green2;
+                button.BackColor = darkblue1;
                 if (button.Text == clickedButton.Text)
                 {
                     button.Enabled = false;
@@ -110,7 +111,7 @@ namespace app
             }
             panelPointer.Height = clickedButton.Height;
             panelPointer.Location = new Point(0, clickedButton.Location.Y);
-            panelPointer.Visible = true;   
+            panelPointer.Visible = true;
         }
 
         private void LoadQuestions()
@@ -224,7 +225,7 @@ namespace app
             {
                 MessageBox.Show("Wystąpił błąd podczas wczytywania profili.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            finally 
+            finally
             {
                 noUserChosen = users.Count == 0;
             }
@@ -898,7 +899,7 @@ namespace app
                 if(Quiz.isAnswerChosen == true) break;
                 UpdateTimeLeft(timeCounter);
             }
-            
+
             timeCounter.Stop();
 
             if(Quiz.isAnswerChosen == false)
@@ -964,7 +965,7 @@ namespace app
             {
                 ++Quiz.score;
             }
-            Quiz.isAnswerChosen = true; 
+            Quiz.isAnswerChosen = true;
             MarkCorrectAnswer(clickedButton);
         }
 
@@ -1020,7 +1021,7 @@ namespace app
                         buttonSurveyYes.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[2].Key;
                         buttonSurveyNo.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].answersValues[3].Key;
                         break;
-                    } 
+                    }
                 case QuestionType.INPUT:
                     {
                         buttonSurveyA.Visible = false;
@@ -1043,7 +1044,7 @@ namespace app
                         buttonSurveyYes.Text = "Tak";
                         buttonSurveyNo.Text = "Nie";
                         break;
-                    }   
+                    }
             }
             labelSurveyQuestion.Text = surveys[currentSurveyIndex].questions[Survey.currentQuestionIndex].questionTitle;
             Center(labelSurveyQuestionNumber);
@@ -1101,7 +1102,7 @@ namespace app
         {
             panelSurveyFinished.BringToFront();
 
-            try 
+            try
             {
                 switch (currentSurveyIndex)
                 {
@@ -1227,7 +1228,7 @@ namespace app
                 MessageBox.Show("Wystąpił błąd podczas sprawdzania wyniku ankiety. Nastąpi zamknięcie proramu.", exception.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
-            
+
             Center(labelFinish);
         }
 
@@ -1303,7 +1304,7 @@ namespace app
                         SetButtonAsClicked(buttonGoodWeather);
                     }
                     else
-                    { 
+                    {
                         weatherMessage = string.Format("Odczuwalna temperatura wynosi {0}°C.\nPogodę uznaliśmy za niekorzystną\nze względu na inne warunki (np. opady).", weatherInfo.Item1);
                         SetButtonAsUnclicked(buttonGoodWeather);
                         SetButtonAsUnclicked(buttonAnyWeather);
@@ -1430,7 +1431,7 @@ namespace app
             if (ActivityMatcher.currentSport == null)
             {
                 labelActivityResult.Text = "Nie znaleziono aktywności o podanych cechach.\nSpróbuj ponownie z innymi kryteriami.";
-            }     
+            }
             else
             {
                 labelActivityResult.Text = ActivityMatcher.currentSport.name;
@@ -1466,8 +1467,13 @@ namespace app
 
             File.WriteAllLines("..\\..\\users.json", JSON);
         }
-
-        private void buttonUpdateActivityLevel_Click(object sender, EventArgs e)
+        private void ButtonInSideBarEnabledChanged(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(72, 126, 176);
+        }
+        
+        private void ButtonUpdateActivityLevel_Click(object sender, EventArgs e)
         {
             goBackToMacroAfterSurvey = true;
             DisableButton(buttonSurvey, null);
