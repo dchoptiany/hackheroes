@@ -51,10 +51,10 @@ namespace app
 
             panelPointer.BackColor = blue1;
 
-            Color leftPanelBackColor = darkblue1;
+            Color leftPanelBackColor = green2;
             flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
             panelProfileSetup.BackColor = leftPanelBackColor;
-            Color leftPanelButtonsColor = darkblue1;
+            Color leftPanelButtonsColor = green2;
             buttonBMI.BackColor = leftPanelButtonsColor;
             buttonActivity.BackColor = leftPanelButtonsColor;
             buttonQuiz.BackColor = leftPanelButtonsColor;
@@ -719,6 +719,19 @@ namespace app
             }
         }
 
+        private void UpdateProfileButton()
+        {
+            buttonProfile.Text = users[currentUserIndex].name;
+            if(users[currentUserIndex].gender == Gender.Female)
+            {
+                buttonProfile.ImageIndex = 1;
+            }
+            else
+            {
+                buttonProfile.ImageIndex = 0;
+            }
+        }
+
         private void ButtonArrowUp_Click(object sender, EventArgs e)
         {
             if (currentUserIndex > 0)
@@ -729,6 +742,7 @@ namespace app
             groupBoxEdit.Visible = false;
             UpdateUserItems();
             UpdateArrowButtons();
+            UpdateProfileButton();
         }
 
         private void ButtonArrowDown_Click(object sender, EventArgs e)
@@ -741,6 +755,7 @@ namespace app
             groupBoxEdit.Visible = false;
             UpdateUserItems();
             UpdateArrowButtons();
+            UpdateProfileButton();
         }
 
         private void ButtonEdit_Click(object sender, EventArgs e)
