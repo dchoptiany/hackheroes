@@ -44,8 +44,6 @@ namespace app
         public Hackheroes()
         {
             InitializeComponent();
-            InitializeButtons();
-            InitializeColors();
         }
 
         private void InitializeColors()
@@ -79,7 +77,7 @@ namespace app
             Button buttonSurvey = new Button
             {
                 FlatStyle = FlatStyle.Flat,
-                Font = new Font("Poppins", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
+                Font = new Font("Montserrat", 26f, FontStyle.Regular, GraphicsUnit.Point, 238),
                 Margin = new Padding(0, 0, 0, 10),
                 Name = "buttonSurvey" + surveys.Count,
                 Size = new Size(800, 75),
@@ -231,6 +229,9 @@ namespace app
 
         private void Hackheroes_Load(object sender, EventArgs e)
         {
+            InitializeButtons();
+            InitializeColors();
+
             answerButtons.Add(buttonAnswerA);
             answerButtons.Add(buttonAnswerB);
             answerButtons.Add(buttonAnswerC);
