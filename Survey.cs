@@ -47,7 +47,7 @@ namespace app
 
         public string title { get; set; }
         public List<SurveyQuestion> questions { get; set; }
-        public List<uint> surveyAnswersInt = new List<uint>();
+        public List<uint> surveyAnswersInt;
 
         public Survey(string _title)
         {
