@@ -103,6 +103,16 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calculatorMathIcon {
+            get {
+                object obj = ResourceManager.GetObject("calculatorMathIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap closeIcon {
             get {
                 object obj = ResourceManager.GetObject("closeIcon", resourceCulture);
@@ -143,6 +153,16 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dumbbellIcon {
+            get {
+                object obj = ResourceManager.GetObject("dumbbellIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
@@ -156,6 +176,16 @@ namespace app.Properties {
         internal static System.Drawing.Bitmap edit1 {
             get {
                 object obj = ResourceManager.GetObject("edit1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap healthyHeartIcon {
+            get {
+                object obj = ResourceManager.GetObject("healthyHeartIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +263,29 @@ namespace app.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap questionMarkIcon {
+            get {
+                object obj = ResourceManager.GetObject("questionMarkIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save {
             get {
                 object obj = ResourceManager.GetObject("save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap surveyIcon {
+            get {
+                object obj = ResourceManager.GetObject("surveyIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
