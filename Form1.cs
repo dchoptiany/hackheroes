@@ -295,9 +295,6 @@ namespace app
 
         private void UpdateMacro()
         {
-            Console.WriteLine("UpdateMacro");
-            Console.WriteLine(users[currentUserIndex].activityLevel);
-
             Calculator.CalculateMacro(users[currentUserIndex]);
             labelKcal.Text = (users[currentUserIndex].calories).ToString();
             labelFats.Text = (users[currentUserIndex].fat).ToString();
@@ -411,9 +408,6 @@ namespace app
 
         private void ButtonCalculator_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Macro Click");
-            Console.WriteLine(users[currentUserIndex].activityLevel);
-
             buttonUpdateActivityLevel.Visible = true;
             groupBoxActivityLevel.Visible = false;
             DisableButton(sender, e);
