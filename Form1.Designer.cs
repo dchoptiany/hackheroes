@@ -67,6 +67,7 @@
             this.panelQuizFinished = new System.Windows.Forms.Panel();
             this.panelQuizMenu = new System.Windows.Forms.Panel();
             this.panelMacro = new System.Windows.Forms.Panel();
+            this.buttonUpdateActivityLevel = new System.Windows.Forms.Button();
             this.groupBoxActivityLevel = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
@@ -183,7 +184,6 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
-            this.buttonUpdateActivityLevel = new System.Windows.Forms.Button();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -733,6 +733,18 @@
             this.panelMacro.Name = "panelMacro";
             this.panelMacro.Size = new System.Drawing.Size(1000, 650);
             this.panelMacro.TabIndex = 17;
+            // 
+            // buttonUpdateActivityLevel
+            // 
+            this.buttonUpdateActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUpdateActivityLevel.Location = new System.Drawing.Point(255, 155);
+            this.buttonUpdateActivityLevel.Name = "buttonUpdateActivityLevel";
+            this.buttonUpdateActivityLevel.Size = new System.Drawing.Size(490, 68);
+            this.buttonUpdateActivityLevel.TabIndex = 22;
+            this.buttonUpdateActivityLevel.Text = "Aktualizuj poziom aktywności";
+            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = true;
+            this.buttonUpdateActivityLevel.Click += new System.EventHandler(this.buttonUpdateActivityLevel_Click);
             // 
             // groupBoxActivityLevel
             // 
@@ -2272,18 +2284,6 @@
             this.buttonShowNext.Text = "Pokaż następną propozycję";
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
-            // 
-            // buttonUpdateActivityLevel
-            // 
-            this.buttonUpdateActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUpdateActivityLevel.Location = new System.Drawing.Point(255, 155);
-            this.buttonUpdateActivityLevel.Name = "buttonUpdateActivityLevel";
-            this.buttonUpdateActivityLevel.Size = new System.Drawing.Size(490, 68);
-            this.buttonUpdateActivityLevel.TabIndex = 22;
-            this.buttonUpdateActivityLevel.Text = "Aktualizuj poziom aktywności";
-            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = true;
-            this.buttonUpdateActivityLevel.Click += new System.EventHandler(this.buttonUpdateActivityLevel_Click);
             // 
             // Hackheroes
             // 

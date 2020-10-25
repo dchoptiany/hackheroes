@@ -15,6 +15,7 @@ namespace app
     {
         private List<Survey> surveys;
         private int currentSurveyIndex;
+        private bool goBackToMacroAfterSurvey;
 
         private List<User> users;
         private int currentUserIndex;
@@ -181,6 +182,7 @@ namespace app
 
         private void LoadSurveys()
         {
+            goBackToMacroAfterSurvey = false;
             surveys = new List<Survey>();
             try
             {
@@ -410,13 +412,16 @@ namespace app
         {
             buttonUpdateActivityLevel.Visible = true;
             groupBoxActivityLevel.Visible = false;
+
             DisableButton(sender, e);
             panelMacro.BringToFront();
+
             if (users[currentUserIndex].activityLevel == 0)
             {
                 DialogResult result = MessageBox.Show("Do precyzyjnego obliczenia Twojego zapotrzebowania na składniki odżywcze potrzebujemy poznać Twój poziom aktywności fizycznej. Czy chcesz wypełnić ankietę dotyczącą Twojego stylu życia?", "Czy chcesz wypełnić ankietę?", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
+                    goBackToMacroAfterSurvey = true;
                     DisableButton(buttonSurvey, null);
                     currentSurveyIndex = 0;
                     Survey.currentQuestionIndex = 0;
@@ -1080,6 +1085,11 @@ namespace app
 
                             Calculator.CalculateActivityLevel(users[currentUserIndex]);
                             labelFinish.Text = "Poziom aktywności użytkownika został zaktualizowany.";
+                            if(goBackToMacroAfterSurvey)
+                            {
+                                goBackToMacroAfterSurvey = false;
+                                ButtonCalculator_Click(buttonCalculator, null);
+                            }
                         }
                         break;
                     case 1: // Nawyki żywieniowe
@@ -1426,6 +1436,7 @@ namespace app
 
         private void buttonUpdateActivityLevel_Click(object sender, EventArgs e)
         {
+            goBackToMacroAfterSurvey = true;
             DisableButton(buttonSurvey, null);
             currentSurveyIndex = 0;
             Survey.currentQuestionIndex = 0;
