@@ -685,6 +685,7 @@ namespace app
 
         private void ButtonSaveChanges_Click(object sender, EventArgs e)
         {
+
             if (currentUserIndex != -1)
             {
                 users[currentUserIndex].name = textBoxCurrentName.Text;
@@ -717,6 +718,7 @@ namespace app
                     Close();
                 }
             }
+            UpdateProfileButton();
         }
 
         private void UpdateProfileButton()
