@@ -83,6 +83,26 @@ namespace app
             menuButtons.Add(buttonProfile);
         }
 
+        private Button AddNewSurveyButton(string surveyTitle)
+        {
+            Button buttonSurvey = new Button
+            {
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Poppins", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
+                Margin = new Padding(0, 0, 0, 10),
+                Name = "buttonSurvey" + surveys.Count,
+                Size = new Size(800, 75),
+                TabIndex = 0,
+                Text = surveyTitle,
+                UseVisualStyleBackColor = true,
+                Visible = true
+            };
+            buttonSurvey.Click += new EventHandler(ButtonSurveyTitle_Clicked);
+
+            flowPanelSurveys.Controls.Add(buttonSurvey);
+            return buttonSurvey;
+        }
+
         private void DisableButton(object sender, EventArgs e)
         {
             var clickedButton = (Button)sender;    
@@ -170,12 +190,7 @@ namespace app
                 {
                     Survey newSurvey = JsonSerializer.Deserialize<Survey>(line);
                     surveys.Add(newSurvey);
-                }
-
-                for (int i = 0; i < surveys.Count; i++)
-                {
-                    surveyButtons[i].Text = surveys[i].title;
-                    surveyButtons[i].Visible = true;
+                    surveyButtons.Add(AddNewSurveyButton(newSurvey.title));
                 }
             }
             catch (FileNotFoundException exception)
@@ -225,13 +240,6 @@ namespace app
             answerButtons.Add(buttonAnswerB);
             answerButtons.Add(buttonAnswerC);
             answerButtons.Add(buttonAnswerD);
-
-            surveyButtons.Add(buttonSurvey1);
-            surveyButtons.Add(buttonSurvey2);
-            surveyButtons.Add(buttonSurvey3);
-            surveyButtons.Add(buttonSurvey4);
-            surveyButtons.Add(buttonSurvey5);
-            surveyButtons.Add(buttonSurvey6);
 
             activtyMatcherParticipantsButtons.Add(buttonIndividual);
             activtyMatcherParticipantsButtons.Add(buttonPair);
