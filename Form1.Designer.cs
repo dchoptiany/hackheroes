@@ -108,6 +108,9 @@
             this.panelProfiles = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.labelIndexInfo = new System.Windows.Forms.Label();
+            this.userItemThird = new app.UserItem();
+            this.userItemFirst = new app.UserItem();
+            this.userItemSecond = new app.UserItem();
             this.buttonArrowUp = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -179,9 +182,9 @@
             this.labelActivityResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonShowNext = new System.Windows.Forms.Button();
-            this.userItemThird = new app.UserItem();
-            this.userItemFirst = new app.UserItem();
-            this.userItemSecond = new app.UserItem();
+            this.panelUserNotLogged = new System.Windows.Forms.Panel();
+            this.buttonGoToProfiles = new System.Windows.Forms.Button();
+            this.labelNoProfile = new System.Windows.Forms.Label();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -219,6 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClouds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).BeginInit();
             this.panelActivityResults.SuspendLayout();
+            this.panelUserNotLogged.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelSidebar
@@ -1283,6 +1287,42 @@
             this.labelIndexInfo.Text = "0/0";
             this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // userItemThird
+            // 
+            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
+            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemThird.Location = new System.Drawing.Point(27, 260);
+            this.userItemThird.Name = "userItemThird";
+            this.userItemThird.Size = new System.Drawing.Size(291, 76);
+            this.userItemThird.TabIndex = 55;
+            this.userItemThird.UserName = null;
+            this.userItemThird.Visible = false;
+            // 
+            // userItemFirst
+            // 
+            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
+            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
+            this.userItemFirst.Name = "userItemFirst";
+            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
+            this.userItemFirst.TabIndex = 53;
+            this.userItemFirst.UserName = null;
+            this.userItemFirst.Visible = false;
+            // 
+            // userItemSecond
+            // 
+            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
+            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
+            this.userItemSecond.Name = "userItemSecond";
+            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
+            this.userItemSecond.TabIndex = 54;
+            this.userItemSecond.UserName = null;
+            this.userItemSecond.Visible = false;
+            // 
             // buttonArrowUp
             // 
             this.buttonArrowUp.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1582,7 +1622,7 @@
             this.numericUpDownWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownWeight.Location = new System.Drawing.Point(81, 122);
             this.numericUpDownWeight.Maximum = new decimal(new int[] {
-            350,
+            600,
             0,
             0,
             0});
@@ -1607,12 +1647,12 @@
             this.numericUpDownHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownHeight.Location = new System.Drawing.Point(81, 161);
             this.numericUpDownHeight.Maximum = new decimal(new int[] {
-            300,
+            280,
             0,
             0,
             0});
             this.numericUpDownHeight.Minimum = new decimal(new int[] {
-            1,
+            40,
             0,
             0,
             0});
@@ -1631,7 +1671,7 @@
             this.numericUpDownAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownAge.Location = new System.Drawing.Point(81, 202);
             this.numericUpDownAge.Maximum = new decimal(new int[] {
-            200,
+            130,
             0,
             0,
             0});
@@ -2223,41 +2263,37 @@
             this.buttonShowNext.UseVisualStyleBackColor = false;
             this.buttonShowNext.Click += new System.EventHandler(this.ButtonShowNext_Click);
             // 
-            // userItemThird
+            // panelUserNotLogged
             // 
-            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
-            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemThird.Location = new System.Drawing.Point(27, 260);
-            this.userItemThird.Name = "userItemThird";
-            this.userItemThird.Size = new System.Drawing.Size(291, 76);
-            this.userItemThird.TabIndex = 55;
-            this.userItemThird.UserName = null;
-            this.userItemThird.Visible = false;
+            this.panelUserNotLogged.Controls.Add(this.buttonGoToProfiles);
+            this.panelUserNotLogged.Controls.Add(this.labelNoProfile);
+            this.panelUserNotLogged.Location = new System.Drawing.Point(280, 50);
+            this.panelUserNotLogged.Name = "panelUserNotLogged";
+            this.panelUserNotLogged.Size = new System.Drawing.Size(1000, 650);
+            this.panelUserNotLogged.TabIndex = 23;
             // 
-            // userItemFirst
+            // buttonGoToProfiles
             // 
-            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
-            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
-            this.userItemFirst.Name = "userItemFirst";
-            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
-            this.userItemFirst.TabIndex = 53;
-            this.userItemFirst.UserName = null;
-            this.userItemFirst.Visible = false;
+            this.buttonGoToProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGoToProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonGoToProfiles.Location = new System.Drawing.Point(375, 350);
+            this.buttonGoToProfiles.Name = "buttonGoToProfiles";
+            this.buttonGoToProfiles.Size = new System.Drawing.Size(250, 80);
+            this.buttonGoToProfiles.TabIndex = 10;
+            this.buttonGoToProfiles.Text = "Przejdź do profili";
+            this.buttonGoToProfiles.UseVisualStyleBackColor = true;
+            this.buttonGoToProfiles.Click += new System.EventHandler(this.ButtonGoToProfiles_Click);
             // 
-            // userItemSecond
+            // labelNoProfile
             // 
-            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
-            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
-            this.userItemSecond.Name = "userItemSecond";
-            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
-            this.userItemSecond.TabIndex = 54;
-            this.userItemSecond.UserName = null;
-            this.userItemSecond.Visible = false;
+            this.labelNoProfile.AutoSize = true;
+            this.labelNoProfile.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNoProfile.Location = new System.Drawing.Point(83, 200);
+            this.labelNoProfile.Name = "labelNoProfile";
+            this.labelNoProfile.Size = new System.Drawing.Size(834, 62);
+            this.labelNoProfile.TabIndex = 12;
+            this.labelNoProfile.Text = "Aby korzystać z tej funkcji musisz wybrać profil";
+            this.labelNoProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Hackheroes
             // 
@@ -2265,11 +2301,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelProfiles);
+            this.Controls.Add(this.panelUserNotLogged);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurveyMenu);
             this.Controls.Add(this.panelBMI);
             this.Controls.Add(this.panelActivityResults);
-            this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelActivity);
             this.Controls.Add(this.panelSurvey);
             this.Controls.Add(this.panelQuiz);
@@ -2339,6 +2376,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSportResult)).EndInit();
             this.panelActivityResults.ResumeLayout(false);
             this.panelActivityResults.PerformLayout();
+            this.panelUserNotLogged.ResumeLayout(false);
+            this.panelUserNotLogged.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2497,5 +2536,8 @@
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.ImageList imageListProfile;
         private System.Windows.Forms.ImageList imageListSidebar;
+        private System.Windows.Forms.Panel panelUserNotLogged;
+        private System.Windows.Forms.Button buttonGoToProfiles;
+        private System.Windows.Forms.Label labelNoProfile;
     }   
 }
