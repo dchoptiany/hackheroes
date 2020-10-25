@@ -130,7 +130,6 @@
             this.numericUpDownHeight = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
-            this.panelProfileSetup = new System.Windows.Forms.Panel();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.imageListProfile = new System.Windows.Forms.ImageList(this.components);
             this.panelPointer = new System.Windows.Forms.Panel();
@@ -213,7 +212,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
-            this.panelProfileSetup.SuspendLayout();
             this.flowPanelSurveys.SuspendLayout();
             this.panelSurveyMenu.SuspendLayout();
             this.panelSurvey.SuspendLayout();
@@ -232,15 +230,15 @@
             // 
             // flowLayoutPanelSidebar
             // 
+            this.flowLayoutPanelSidebar.Controls.Add(this.buttonProfile);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonBMI);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonActivity);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonQuiz);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonCalculator);
             this.flowLayoutPanelSidebar.Controls.Add(this.buttonSurvey);
-            this.flowLayoutPanelSidebar.Location = new System.Drawing.Point(0, 175);
+            this.flowLayoutPanelSidebar.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelSidebar.Name = "flowLayoutPanelSidebar";
-            this.flowLayoutPanelSidebar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.flowLayoutPanelSidebar.Size = new System.Drawing.Size(280, 545);
+            this.flowLayoutPanelSidebar.Size = new System.Drawing.Size(280, 720);
             this.flowLayoutPanelSidebar.TabIndex = 13;
             // 
             // buttonBMI
@@ -254,7 +252,7 @@
             this.buttonBMI.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBMI.ImageIndex = 2;
             this.buttonBMI.ImageList = this.imageListSidebar;
-            this.buttonBMI.Location = new System.Drawing.Point(0, 5);
+            this.buttonBMI.Location = new System.Drawing.Point(0, 177);
             this.buttonBMI.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonBMI.Name = "buttonBMI";
             this.buttonBMI.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -286,7 +284,7 @@
             this.buttonActivity.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonActivity.ImageIndex = 1;
             this.buttonActivity.ImageList = this.imageListSidebar;
-            this.buttonActivity.Location = new System.Drawing.Point(0, 89);
+            this.buttonActivity.Location = new System.Drawing.Point(0, 261);
             this.buttonActivity.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonActivity.Name = "buttonActivity";
             this.buttonActivity.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -308,7 +306,7 @@
             this.buttonQuiz.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonQuiz.ImageIndex = 3;
             this.buttonQuiz.ImageList = this.imageListSidebar;
-            this.buttonQuiz.Location = new System.Drawing.Point(0, 173);
+            this.buttonQuiz.Location = new System.Drawing.Point(0, 345);
             this.buttonQuiz.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonQuiz.Name = "buttonQuiz";
             this.buttonQuiz.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -331,7 +329,7 @@
             this.buttonCalculator.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCalculator.ImageIndex = 0;
             this.buttonCalculator.ImageList = this.imageListSidebar;
-            this.buttonCalculator.Location = new System.Drawing.Point(0, 257);
+            this.buttonCalculator.Location = new System.Drawing.Point(0, 429);
             this.buttonCalculator.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonCalculator.Name = "buttonCalculator";
             this.buttonCalculator.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -353,7 +351,7 @@
             this.buttonSurvey.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSurvey.ImageIndex = 4;
             this.buttonSurvey.ImageList = this.imageListSidebar;
-            this.buttonSurvey.Location = new System.Drawing.Point(0, 341);
+            this.buttonSurvey.Location = new System.Drawing.Point(0, 513);
             this.buttonSurvey.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonSurvey.Name = "buttonSurvey";
             this.buttonSurvey.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
@@ -1607,14 +1605,6 @@
             this.label15.TabIndex = 16;
             this.label15.Text = "lat";
             // 
-            // panelProfileSetup
-            // 
-            this.panelProfileSetup.Controls.Add(this.buttonProfile);
-            this.panelProfileSetup.Location = new System.Drawing.Point(0, 0);
-            this.panelProfileSetup.Name = "panelProfileSetup";
-            this.panelProfileSetup.Size = new System.Drawing.Size(280, 175);
-            this.panelProfileSetup.TabIndex = 21;
-            // 
             // buttonProfile
             // 
             this.buttonProfile.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -2381,7 +2371,6 @@
             this.Controls.Add(this.panelQuizFinished);
             this.Controls.Add(this.panelLandingPage);
             this.Controls.Add(this.panelPointer);
-            this.Controls.Add(this.panelProfileSetup);
             this.Controls.Add(this.flowLayoutPanelSidebar);
             this.Controls.Add(this.panelMacro);
             this.Controls.Add(this.buttonMinimize);
@@ -2426,7 +2415,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
-            this.panelProfileSetup.ResumeLayout(false);
             this.flowPanelSurveys.ResumeLayout(false);
             this.panelSurveyMenu.ResumeLayout(false);
             this.panelSurveyMenu.PerformLayout();
@@ -2528,7 +2516,6 @@
         private System.Windows.Forms.PictureBox pictureBoxTime;
         private System.Windows.Forms.PictureBox pictureBoxTimeBorder;
         private System.Windows.Forms.Button buttonCalculator;
-        private System.Windows.Forms.Panel panelProfileSetup;
         private System.Windows.Forms.Panel panelPointer;
         private System.Windows.Forms.Panel panelLandingPage;
         private System.Windows.Forms.Panel panelSurvey;

@@ -53,7 +53,6 @@ namespace app
 
             Color leftPanelBackColor = green2;
             flowLayoutPanelSidebar.BackColor = leftPanelBackColor;
-            panelProfileSetup.BackColor = leftPanelBackColor;
             Color leftPanelButtonsColor = green2;
             buttonBMI.BackColor = leftPanelButtonsColor;
             buttonActivity.BackColor = leftPanelButtonsColor;
@@ -92,7 +91,6 @@ namespace app
             {
                 button.Enabled = true;
                 button.BackColor = green2;
-                panelProfileSetup.BackColor = green2;
                 if (button.Text == clickedButton.Text)
                 {
                     button.Enabled = false;
@@ -103,16 +101,13 @@ namespace app
             {
                 buttonProfile.Enabled = false;
                 buttonProfile.BackColor = green1;
-                panelProfileSetup.BackColor = green1;
-                panelPointer.Location = new Point(0, 0);
-                panelPointer.Height = panelProfileSetup.Height;
             }
             else
             {
                 clickedButton.BackColor = green1;
-                panelPointer.Location = new Point(0, clickedButton.Location.Y + panelProfileSetup.Size.Height);
-                panelPointer.Height = clickedButton.Height;
             }
+            panelPointer.Height = clickedButton.Height;
+            panelPointer.Location = new Point(0, clickedButton.Location.Y);
             panelPointer.Visible = true;   
         }
 
@@ -681,6 +676,7 @@ namespace app
                     buttonEdit.Enabled = false;
                 }
             }
+            UpdateProfileButton();
         }
 
         private void ButtonSaveChanges_Click(object sender, EventArgs e)
