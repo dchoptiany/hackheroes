@@ -62,6 +62,7 @@
             this.panelQuizFinished = new System.Windows.Forms.Panel();
             this.panelQuizMenu = new System.Windows.Forms.Panel();
             this.panelMacro = new System.Windows.Forms.Panel();
+            this.buttonUpdateActivityLevel = new System.Windows.Forms.Button();
             this.groupBoxActivityLevel = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
             this.trackBarActivityLevel = new System.Windows.Forms.TrackBar();
@@ -183,7 +184,6 @@
             this.labelNoProfile = new System.Windows.Forms.Label();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.buttonUpdateActivityLevel = new System.Windows.Forms.Button();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -685,6 +685,18 @@
             this.panelMacro.Size = new System.Drawing.Size(1000, 650);
             this.panelMacro.TabIndex = 17;
             // 
+            // buttonUpdateActivityLevel
+            // 
+            this.buttonUpdateActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUpdateActivityLevel.Location = new System.Drawing.Point(255, 156);
+            this.buttonUpdateActivityLevel.Name = "buttonUpdateActivityLevel";
+            this.buttonUpdateActivityLevel.Size = new System.Drawing.Size(490, 68);
+            this.buttonUpdateActivityLevel.TabIndex = 23;
+            this.buttonUpdateActivityLevel.Text = "Aktualizuj poziom aktywności";
+            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = true;
+            this.buttonUpdateActivityLevel.Click += new System.EventHandler(this.ButtonUpdateActivityLevel_Click);
+            // 
             // groupBoxActivityLevel
             // 
             this.groupBoxActivityLevel.Controls.Add(this.label25);
@@ -1035,7 +1047,7 @@
             // 
             this.labelCurrentName.AutoSize = true;
             this.labelCurrentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentName.Location = new System.Drawing.Point(38, 22);
+            this.labelCurrentName.Location = new System.Drawing.Point(39, 22);
             this.labelCurrentName.Name = "labelCurrentName";
             this.labelCurrentName.Size = new System.Drawing.Size(45, 24);
             this.labelCurrentName.TabIndex = 51;
@@ -1107,7 +1119,7 @@
             // 
             this.labelCurrentHeight.AutoSize = true;
             this.labelCurrentHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentHeight.Location = new System.Drawing.Point(16, 98);
+            this.labelCurrentHeight.Location = new System.Drawing.Point(17, 99);
             this.labelCurrentHeight.Name = "labelCurrentHeight";
             this.labelCurrentHeight.Size = new System.Drawing.Size(67, 24);
             this.labelCurrentHeight.TabIndex = 40;
@@ -1179,7 +1191,7 @@
             // 
             this.labelCurrentAge.AutoSize = true;
             this.labelCurrentAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentAge.Location = new System.Drawing.Point(31, 138);
+            this.labelCurrentAge.Location = new System.Drawing.Point(32, 137);
             this.labelCurrentAge.Name = "labelCurrentAge";
             this.labelCurrentAge.Size = new System.Drawing.Size(52, 24);
             this.labelCurrentAge.TabIndex = 43;
@@ -1204,7 +1216,7 @@
             // 
             this.labelCurrentGender.AutoSize = true;
             this.labelCurrentGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentGender.Location = new System.Drawing.Point(39, 176);
+            this.labelCurrentGender.Location = new System.Drawing.Point(33, 176);
             this.labelCurrentGender.Name = "labelCurrentGender";
             this.labelCurrentGender.Size = new System.Drawing.Size(51, 24);
             this.labelCurrentGender.TabIndex = 44;
@@ -1487,7 +1499,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(1, 163);
+            this.label9.Location = new System.Drawing.Point(7, 163);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 24);
             this.label9.TabIndex = 3;
@@ -1498,7 +1510,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(10, 123);
+            this.label10.Location = new System.Drawing.Point(15, 123);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(59, 24);
             this.label10.TabIndex = 4;
@@ -1519,7 +1531,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(16, 205);
+            this.label12.Location = new System.Drawing.Point(22, 205);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 24);
             this.label12.TabIndex = 7;
@@ -1530,7 +1542,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(20, 251);
+            this.label13.Location = new System.Drawing.Point(23, 251);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(51, 24);
             this.label13.TabIndex = 8;
@@ -2288,27 +2300,15 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // buttonUpdateActivityLevel
-            // 
-            this.buttonUpdateActivityLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdateActivityLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUpdateActivityLevel.Location = new System.Drawing.Point(255, 156);
-            this.buttonUpdateActivityLevel.Name = "buttonUpdateActivityLevel";
-            this.buttonUpdateActivityLevel.Size = new System.Drawing.Size(490, 68);
-            this.buttonUpdateActivityLevel.TabIndex = 23;
-            this.buttonUpdateActivityLevel.Text = "Aktualizuj poziom aktywności";
-            this.buttonUpdateActivityLevel.UseVisualStyleBackColor = true;
-            this.buttonUpdateActivityLevel.Click += new System.EventHandler(this.ButtonUpdateActivityLevel_Click);
-            // 
             // Hackheroes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelMacro);
             this.Controls.Add(this.panelSurvey);
-            this.Controls.Add(this.panelProfiles);
             this.Controls.Add(this.panelUserNotLogged);
             this.Controls.Add(this.panelSurveyFinished);
             this.Controls.Add(this.panelSurveyMenu);
