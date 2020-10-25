@@ -124,3 +124,210 @@
     "Chorobę wieńcową"
   ]
 }
+{
+  "ask": "Aby utrzymać odpowiednią wagę należy dbać w szczególności o:",
+  "correctAnswer": "Kalorie",
+  "incorrectAnswers": [
+    "Tłuszcze",
+    "Białko",
+    "Witaminy"
+  ]
+}
+{
+  "ask": "Igrzyska olimpijskie odbywają się co:",
+  "correctAnswer": "4 lata",
+  "incorrectAnswers": [
+    "2 lata",
+    "5 lat",
+    "Rok"
+  ]
+}
+{
+  "ask": "Bezpośredni wpływ na spalanie tkanki tłuszczowej ma:",
+  "correctAnswer": "Deficyt kaloryczny",
+  "incorrectAnswers": [
+    "Ilość białka",
+    "Ilość tłuszczu",
+    "Ilość witamin"
+  ]
+}
+{
+  "ask": "Do codziennej rutyny warto dodać:",
+  "correctAnswer": "Trening",
+  "incorrectAnswers": [
+    "Palenie papierosów",
+    "Picie alkoholu",
+    "Picie kawy przed snem"
+  ]
+}
+{
+  "ask": "Najmniej kontuzjogennym sportem jest (są):",
+  "correctAnswer": "Sporty siłowe",
+  "incorrectAnswers": [
+    "Kolarstwo",
+    "Piłka nożna",
+    "Boks"
+  ]
+}
+{
+  "ask": "Co spali więcej kalorii:",
+  "correctAnswer": "Trening interwałowy",
+  "incorrectAnswers": [
+    "Spokojna jazda rowerem",
+    "Spacer",
+    "Trening siłowy"
+  ]
+}
+{
+  "ask": "Ile kcal ma 1g białka:",
+  "correctAnswer": "4 kcal",
+  "incorrectAnswers": [
+    "9 kcal",
+    "0 kcal",
+    "4000 kcal"
+  ]
+}
+{
+  "ask": "Ile kcal ma 1g tłuszczu:",
+  "correctAnswer": "9 kcal",
+  "incorrectAnswers": [
+    "4000 kcal",
+    "8 kcal",
+    "4 kcal"
+  ]
+}
+{
+  "ask": "Które tłuszcze są uważane za złe:",
+  "correctAnswer": "Nasycone",
+  "incorrectAnswers": [
+    "Jednonienasycone",
+    "Wielonienasycone",
+    "Każde"
+  ]
+}
+{
+  "ask": "Co zawiera kreatynę:",
+  "correctAnswer": "Mięso",
+  "incorrectAnswers": [
+    "Owoce",
+    "Mleko",
+    "Grzyby"
+  ]
+}
+{
+  "ask": "Który z napojów jest najzdrowszy:",
+  "correctAnswer": "Woda",
+  "incorrectAnswers": [
+    "Herbata czarna",
+    "Napój energetyczny",
+    "Kawa"
+  ]
+}
+{
+  "ask": "Kiedy najlepiej spożywać białko:",
+  "correctAnswer": "Nie ma to znaczenia",
+  "incorrectAnswers": [
+    "Po wysiłku",
+    "Rano",
+    "Wieczorem"
+  ]
+}
+{
+  "ask": "Ile posiłków należy spożywać w zdrowej diecie:",
+  "correctAnswer": "Nie ma to znaczenia",
+  "incorrectAnswers": [
+    "8 posiłków",
+    "3 posiłki",
+    "5 posiłków"
+  ]
+}
+{
+  "ask": "Jak często warto używać spalaczy tłuszczu:",
+  "correctAnswer": "Nigdy",
+  "incorrectAnswers": [
+    "2 razy dziennie",
+    "raz dziennie",
+    "raz w tygodniu"
+  ]
+}
+{
+  "ask": "W jakim wieku możesz uprawiać sport:",
+  "correctAnswer": "W każdym",
+  "incorrectAnswers": [
+    "Powyżej 14 roku życia",
+    "Powyżej 18 roku życia",
+    "powżej 7 roku życia"
+  ]
+}
+{
+  "ask": "Współczynnik BMI dotyczy:",
+  "correctAnswer": "Wagi ciała",
+  "incorrectAnswers": [
+    "Poziomu testosteronu",
+    "Poziomu estrogenu",
+    "Szybkości metabolizmu"
+  ]
+}
+{
+  "ask": "Co może regulować odpowiednią ilość hormonów:",
+  "correctAnswer": "Prawidłowa dieta i sen",
+  "incorrectAnswers": [
+    "Witamina C",
+    "Tytoń",
+    "Alkohol"
+  ]
+}
+{
+  "ask": "Co oznacza skrót FBW:",
+  "correctAnswer": "Full body workout",
+  "incorrectAnswers": [
+    "Fix biceps workout",
+    "Fast body workout",
+    "Fast biceps workout"
+  ]
+}
+{
+  "ask": "Adam Małysz po raz pierwszy zdobył złoty medal MŚ w:",
+  "correctAnswer": "2001 w Lahti",
+  "incorrectAnswers": [
+    "2011 w Oslo",
+    "2007 w Sapporo",
+    "2003 w Val di Fiemme"
+  ]
+}
+{
+  "ask": "Pierwszym klubem piłkarskim Roberta Lewandowskiego był:",
+  "correctAnswer": "Varsovia Warszawa",
+  "incorrectAnswers": [
+    "Borussia Dortmund",
+    "Bayern Monachium",
+    "Lech Poznań"
+  ]
+}
+{
+  "ask": "Najwięcej zawodników na boisku jest w:",
+  "correctAnswer": "Piłce nożnej",
+  "incorrectAnswers": [
+    "Piłce ręcznej",
+    "Siatkówce",
+    "Koszykówce"
+  ]
+}
+{
+  "ask": "Najlepszy wynik reprezentacji Polski w piłce nożnej to:",
+  "correctAnswer": "10:0",
+  "incorrectAnswers": [
+    "8:0",
+    "12:0",
+    "7:0"
+  ]
+}
+{
+  "ask": "Dyscypliną olimpijską nie jest:",
+  "correctAnswer": "Baseball",
+  "incorrectAnswers": [
+    "Łucznictwo",
+    "Jeździectwo",
+    "Hokej na trawie"
+  ]
+}
