@@ -96,16 +96,6 @@ namespace app
                     button.Enabled = false;
                 }
             }
-         
-            if (sender == buttonProfile)
-            {
-                buttonProfile.Enabled = false;
-                buttonProfile.BackColor = green1;
-            }
-            else
-            {
-                clickedButton.BackColor = green1;
-            }
             panelPointer.Height = clickedButton.Height;
             panelPointer.Location = new Point(0, clickedButton.Location.Y);
             panelPointer.Visible = true;   
@@ -457,17 +447,14 @@ namespace app
 
         private Image SetAvatar(Avatar color)
         {
-            if (color == Avatar.Blue)
+            switch (color)
             {
-                return Resources.profileBlue;
-            }
-            else if (color == Avatar.Red)
-            {
-                return Resources.profileRed;
-            }
-            else
-            {
-                return Resources.profileGray;
+                case Avatar.Blue:
+                    return Resources.profileBlue;
+                case Avatar.Red:
+                    return Resources.profileRed;
+                default:
+                    return Resources.profileGray;
             }
         }
 
@@ -641,6 +628,7 @@ namespace app
             groupBoxEdit.Visible = false;
             UpdateUserItems();
             UpdateArrowButtons();
+            UpdateProfileButton();
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)
@@ -681,7 +669,6 @@ namespace app
 
         private void ButtonSaveChanges_Click(object sender, EventArgs e)
         {
-
             if (currentUserIndex != -1)
             {
                 users[currentUserIndex].name = textBoxCurrentName.Text;
@@ -720,14 +707,7 @@ namespace app
         private void UpdateProfileButton()
         {
             buttonProfile.Text = users[currentUserIndex].name;
-            if(users[currentUserIndex].gender == Gender.Female)
-            {
-                buttonProfile.ImageIndex = 1;
-            }
-            else
-            {
-                buttonProfile.ImageIndex = 0;
-            }
+            buttonProfile.ImageIndex = (int)users[currentUserIndex].avatar;
         }
 
         private void ButtonArrowUp_Click(object sender, EventArgs e)

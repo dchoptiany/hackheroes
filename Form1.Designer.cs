@@ -1619,7 +1619,7 @@
             this.buttonProfile.Location = new System.Drawing.Point(0, 0);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 5, 4, 0);
             this.buttonProfile.Size = new System.Drawing.Size(280, 175);
             this.buttonProfile.TabIndex = 4;
             this.buttonProfile.Text = "<User name>";
@@ -1631,8 +1631,9 @@
             // 
             this.imageListProfile.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListProfile.ImageStream")));
             this.imageListProfile.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListProfile.Images.SetKeyName(0, "avatarMan.png");
-            this.imageListProfile.Images.SetKeyName(1, "avatarWoman.png");
+            this.imageListProfile.Images.SetKeyName(0, "profileBlueLarge.png");
+            this.imageListProfile.Images.SetKeyName(1, "profileRedLarge.png");
+            this.imageListProfile.Images.SetKeyName(2, "profileGrayLarge.png");
             // 
             // panelPointer
             // 
