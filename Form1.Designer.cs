@@ -106,6 +106,9 @@
             this.panelProfiles = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.labelIndexInfo = new System.Windows.Forms.Label();
+            this.userItemThird = new app.UserItem();
+            this.userItemFirst = new app.UserItem();
+            this.userItemSecond = new app.UserItem();
             this.buttonArrowUp = new System.Windows.Forms.Button();
             this.buttonArrowDown = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -195,9 +198,6 @@
             this.labelNoProfile = new System.Windows.Forms.Label();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.userItemThird = new app.UserItem();
-            this.userItemFirst = new app.UserItem();
-            this.userItemSecond = new app.UserItem();
             this.flowLayoutPanelSidebar.SuspendLayout();
             this.panelBMI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
@@ -302,6 +302,7 @@
             this.buttonHome.Text = "Start";
             this.buttonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.EnabledChanged += new System.EventHandler(this.ButtonInSideBarEnabledChanged);
             this.buttonHome.Click += new System.EventHandler(this.ButtonHome_Click);
             // 
             // buttonBMI
@@ -436,7 +437,7 @@
             this.label39.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label39.Location = new System.Drawing.Point(155, 150);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(690, 88);
+            this.label39.Size = new System.Drawing.Size(716, 88);
             this.label39.TabIndex = 12;
             this.label39.Text = "Ankieta zakończona";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -504,7 +505,7 @@
             this.label6.Font = new System.Drawing.Font("Montserrat", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(395, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(209, 111);
+            this.label6.Size = new System.Drawing.Size(210, 111);
             this.label6.TabIndex = 1;
             this.label6.Text = "BMI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -694,7 +695,7 @@
             this.labelQuiz.Font = new System.Drawing.Font("Montserrat", 54F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelQuiz.Location = new System.Drawing.Point(395, 0);
             this.labelQuiz.Name = "labelQuiz";
-            this.labelQuiz.Size = new System.Drawing.Size(209, 99);
+            this.labelQuiz.Size = new System.Drawing.Size(213, 99);
             this.labelQuiz.TabIndex = 4;
             this.labelQuiz.Text = "Quiz";
             this.labelQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1030,7 +1031,7 @@
             this.label3.Font = new System.Drawing.Font("Montserrat", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(37, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(926, 60);
+            this.label3.Size = new System.Drawing.Size(939, 60);
             this.label3.TabIndex = 1;
             this.label3.Text = "Zapotrzebowanie na składniki odżywcze";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1326,6 +1327,48 @@
             this.labelIndexInfo.Text = "0/0";
             this.labelIndexInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // userItemThird
+            // 
+            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
+            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemThird.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.userItemThird.Location = new System.Drawing.Point(27, 260);
+            this.userItemThird.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userItemThird.Name = "userItemThird";
+            this.userItemThird.Size = new System.Drawing.Size(291, 76);
+            this.userItemThird.TabIndex = 55;
+            this.userItemThird.UserName = null;
+            this.userItemThird.Visible = false;
+            // 
+            // userItemFirst
+            // 
+            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
+            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemFirst.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
+            this.userItemFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userItemFirst.Name = "userItemFirst";
+            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
+            this.userItemFirst.TabIndex = 53;
+            this.userItemFirst.UserName = null;
+            this.userItemFirst.Visible = false;
+            // 
+            // userItemSecond
+            // 
+            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
+            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
+            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.userItemSecond.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
+            this.userItemSecond.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userItemSecond.Name = "userItemSecond";
+            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
+            this.userItemSecond.TabIndex = 54;
+            this.userItemSecond.UserName = null;
+            this.userItemSecond.Visible = false;
+            // 
             // buttonArrowUp
             // 
             this.buttonArrowUp.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1373,7 +1416,7 @@
             this.label16.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label16.Location = new System.Drawing.Point(62, 20);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(258, 44);
+            this.label16.Size = new System.Drawing.Size(259, 44);
             this.label16.TabIndex = 17;
             this.label16.Text = "Wybierz profil";
             // 
@@ -1500,7 +1543,7 @@
             this.label7.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.Location = new System.Drawing.Point(63, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(215, 44);
+            this.label7.Size = new System.Drawing.Size(217, 44);
             this.label7.TabIndex = 1;
             this.label7.Text = "Nowy profil";
             // 
@@ -1725,7 +1768,7 @@
             this.labelSurveyTitle.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSurveyTitle.Location = new System.Drawing.Point(358, 0);
             this.labelSurveyTitle.Name = "labelSurveyTitle";
-            this.labelSurveyTitle.Size = new System.Drawing.Size(284, 88);
+            this.labelSurveyTitle.Size = new System.Drawing.Size(297, 88);
             this.labelSurveyTitle.TabIndex = 3;
             this.labelSurveyTitle.Text = "Ankiety";
             this.labelSurveyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1783,7 +1826,7 @@
             this.textBoxSurveyText.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxSurveyText.Location = new System.Drawing.Point(410, 250);
             this.textBoxSurveyText.Name = "textBoxSurveyText";
-            this.textBoxSurveyText.Size = new System.Drawing.Size(180, 49);
+            this.textBoxSurveyText.Size = new System.Drawing.Size(180, 50);
             this.textBoxSurveyText.TabIndex = 13;
             this.textBoxSurveyText.Text = "0";
             this.textBoxSurveyText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2265,7 +2308,7 @@
             this.label4.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(218, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(563, 66);
+            this.label4.Size = new System.Drawing.Size(567, 66);
             this.label4.TabIndex = 20;
             this.label4.Text = "Propozycja dla Ciebie";
             // 
@@ -2458,7 +2501,7 @@
             this.labelNoProfile.Font = new System.Drawing.Font("Montserrat", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelNoProfile.Location = new System.Drawing.Point(138, 150);
             this.labelNoProfile.Name = "labelNoProfile";
-            this.labelNoProfile.Size = new System.Drawing.Size(725, 146);
+            this.labelNoProfile.Size = new System.Drawing.Size(759, 146);
             this.labelNoProfile.TabIndex = 12;
             this.labelNoProfile.Text = "Aby korzystać z tej funkcji\r\nmusisz wybrać profil";
             this.labelNoProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2494,48 +2537,6 @@
             this.buttonClose.TabIndex = 10;
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
-            // 
-            // userItemThird
-            // 
-            this.userItemThird.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemThird.Avatar")));
-            this.userItemThird.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemThird.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemThird.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.userItemThird.Location = new System.Drawing.Point(27, 260);
-            this.userItemThird.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.userItemThird.Name = "userItemThird";
-            this.userItemThird.Size = new System.Drawing.Size(291, 76);
-            this.userItemThird.TabIndex = 55;
-            this.userItemThird.UserName = null;
-            this.userItemThird.Visible = false;
-            // 
-            // userItemFirst
-            // 
-            this.userItemFirst.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemFirst.Avatar")));
-            this.userItemFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemFirst.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.userItemFirst.Location = new System.Drawing.Point(27, 83);
-            this.userItemFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.userItemFirst.Name = "userItemFirst";
-            this.userItemFirst.Size = new System.Drawing.Size(291, 76);
-            this.userItemFirst.TabIndex = 53;
-            this.userItemFirst.UserName = null;
-            this.userItemFirst.Visible = false;
-            // 
-            // userItemSecond
-            // 
-            this.userItemSecond.Avatar = ((System.Drawing.Image)(resources.GetObject("userItemSecond.Avatar")));
-            this.userItemSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(60)))), ((int)(((byte)(117)))));
-            this.userItemSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userItemSecond.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.userItemSecond.Location = new System.Drawing.Point(27, 172);
-            this.userItemSecond.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.userItemSecond.Name = "userItemSecond";
-            this.userItemSecond.Size = new System.Drawing.Size(291, 76);
-            this.userItemSecond.TabIndex = 54;
-            this.userItemSecond.UserName = null;
-            this.userItemSecond.Visible = false;
             // 
             // Hackheroes
             // 
