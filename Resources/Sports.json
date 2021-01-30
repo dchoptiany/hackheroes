@@ -1,168 +1,170 @@
-{
-  "name": "Pi\u0142ka no\u017Cna",
-  "participants": 3,
-  "weather": 1,
-  "effortLevel": 2,
-  "imagePath": "football.jpg"
-}
-{
-  "name": "Futsal",
-  "participants": 3,
-  "weather": 0,
-  "effortLevel": 2,
-  "imagePath": "futsal.jpg"
-}
-{
-  "name": "Pi\u0142ka r\u0119czna",
-  "participants": 3,
-  "weather": 0,
-  "effortLevel": 2,
-  "imagePath": "handball.jpg"
-}
-{
-  "name": "Siatk\u00F3wka",
-  "participants": 3,
-  "weather": 0,
-  "effortLevel": 2,
-  "imagePath": "volleyball.jpg"
-}
-{
-  "name": "Spacer",
-  "participants": 0,
-  "weather": 1,
-  "effortLevel": 1,
-  "imagePath": "walk.jpg"
-}
-{
-  "name": "Bieganie",
-  "participants": 0,
-  "weather": 1,
-  "effortLevel": 2,
-  "imagePath": "run.jpg"
-}
-{
-  "name": "Trening si\u0142owy",
-  "participants": 0,
-  "weather": 0,
-  "effortLevel": 3,
-  "imagePath": "weightLifting.jpg"
-}
-{
-  "name": "Street workout",
-  "participants": 0,
-  "weather": 1,
-  "effortLevel": 3,
-  "imagePath": "streetworkout.jpg"
-}
-{
-  "name": "Koszyk\u00F3wka",
-  "participants": 3,
-  "weather": 0,
-  "effortLevel": 2,
-  "imagePath": "basketball.jpg"
-}
-{
-  "name": "P\u0142ywanie",
-  "participants": 0,
-  "weather": 0,
-  "effortLevel": 2,
-  "imagePath": "swimming.jpg"
-}
-{
-  "name": "Szachy",
-  "participants": 2,
-  "weather": 0,
-  "effortLevel": 1,
-  "imagePath": "chess.jpg"
-}
-{
-  "name": "Warcaby",
-  "participants": 2,
-  "weather": 0,
-  "effortLevel": 1,
-  "imagePath": "checkers.jpg"
-}
-{
-  "name": "Jazda na rowerze",
-  "participants": 0,
-  "weather": 1,
-  "effortLevel": 2,
-  "imagePath": "bike.jpg"
-}
-{
-  "name": "Jazda na rolkach",
-  "participants": 2,
-  "weather": 1,
-  "effortLevel": 2,
-  "imagePath": "rollers.jpg"
-}
-{
-  "name": "Lekkoatletyka",
-  "participants": 0,
-  "weather": 1,
-  "effortLevel": 2,
-  "imagePath": "athletics.jpg"
-}
-{
-  "name": "Sporty walki",
-  "participants": 2,
-  "weather": 0,
-  "effortLevel": 3,
-  "imagePath": "fightSports.jpg"
-}
-{
-  "name": "Trening w domu bez sprz\u0119tu",
-  "participants": 0,
-  "weather": 0,
-  "effortLevel": 3,
-  "imagePath": "homeWorkout.jpg"
-}
-{
-  "name": "Jazda na deskorolce",
-  "participants": 0,
-  "weather": 1,
-  "effortLevel": 2,
-  "imagePath": "skateboard.jpg"
-}
-{
-  "name": "Jazda na hulajnodze",
-  "participants": 0,
-  "weather": 1,
-  "effortLevel": 2,
-  "imagePath": "scooter.jpg"
-}
-{
-  "name": "Tenis",
-  "participants": 0,
-  "weather": 1,
-  "effortLevel": 2,
-  "imagePath": "tennis.jpg"
-}
-{
-  "name": "Tenis stołowy",
-  "participants": 0,
-  "weather": 0,
-  "effortLevel": 2,
-  "imagePath": "tableTennis.jpg"
-}
-{
-  "name": "Joga",
-  "participants": 0,
-  "weather": 0,
-  "effortLevel": 1,
-  "imagePath": "joga.jpg"
-}
-{
-  "name": "Wspinaczka",
-  "participants": 0,
-  "weather": 0,
-  "effortLevel": 3,
-  "imagePath": "climbing.jpg"
-}
-{
-  "name": "Taniec",
-  "participants": 0,
-  "weather": 0,
-  "effortLevel": 2,
-  "imagePath": "dance.jpg"
-}
+[
+  {
+    "name": "Pi\u0142ka no\u017Cna",
+    "participants": 3,
+    "weather": 1,
+    "effortLevel": 2,
+    "imagePath": "football.jpg"
+  },
+  {
+    "name": "Futsal",
+    "participants": 3,
+    "weather": 0,
+    "effortLevel": 2,
+    "imagePath": "futsal.jpg"
+  },
+  {
+    "name": "Pi\u0142ka r\u0119czna",
+    "participants": 3,
+    "weather": 0,
+    "effortLevel": 2,
+    "imagePath": "handball.jpg"
+  },
+  {
+    "name": "Siatk\u00F3wka",
+    "participants": 3,
+    "weather": 0,
+    "effortLevel": 2,
+    "imagePath": "volleyball.jpg"
+  },
+  {
+    "name": "Spacer",
+    "participants": 0,
+    "weather": 1,
+    "effortLevel": 1,
+    "imagePath": "walk.jpg"
+  },
+  {
+    "name": "Bieganie",
+    "participants": 0,
+    "weather": 1,
+    "effortLevel": 2,
+    "imagePath": "run.jpg"
+  },
+  {
+    "name": "Trening si\u0142owy",
+    "participants": 0,
+    "weather": 0,
+    "effortLevel": 3,
+    "imagePath": "weightLifting.jpg"
+  },
+  {
+    "name": "Street workout",
+    "participants": 0,
+    "weather": 1,
+    "effortLevel": 3,
+    "imagePath": "streetworkout.jpg"
+  },
+  {
+    "name": "Koszyk\u00F3wka",
+    "participants": 3,
+    "weather": 0,
+    "effortLevel": 2,
+    "imagePath": "basketball.jpg"
+  },
+  {
+    "name": "P\u0142ywanie",
+    "participants": 0,
+    "weather": 0,
+    "effortLevel": 2,
+    "imagePath": "swimming.jpg"
+  },
+  {
+    "name": "Szachy",
+    "participants": 2,
+    "weather": 0,
+    "effortLevel": 1,
+    "imagePath": "chess.jpg"
+  },
+  {
+    "name": "Warcaby",
+    "participants": 2,
+    "weather": 0,
+    "effortLevel": 1,
+    "imagePath": "checkers.jpg"
+  },
+  {
+    "name": "Jazda na rowerze",
+    "participants": 0,
+    "weather": 1,
+    "effortLevel": 2,
+    "imagePath": "bike.jpg"
+  },
+  {
+    "name": "Jazda na rolkach",
+    "participants": 2,
+    "weather": 1,
+    "effortLevel": 2,
+    "imagePath": "rollers.jpg"
+  },
+  {
+    "name": "Lekkoatletyka",
+    "participants": 0,
+    "weather": 1,
+    "effortLevel": 2,
+    "imagePath": "athletics.jpg"
+  },
+  {
+    "name": "Sporty walki",
+    "participants": 2,
+    "weather": 0,
+    "effortLevel": 3,
+    "imagePath": "fightSports.jpg"
+  },
+  {
+    "name": "Trening w domu bez sprz\u0119tu",
+    "participants": 0,
+    "weather": 0,
+    "effortLevel": 3,
+    "imagePath": "homeWorkout.jpg"
+  },
+  {
+    "name": "Jazda na deskorolce",
+    "participants": 0,
+    "weather": 1,
+    "effortLevel": 2,
+    "imagePath": "skateboard.jpg"
+  },
+  {
+    "name": "Jazda na hulajnodze",
+    "participants": 0,
+    "weather": 1,
+    "effortLevel": 2,
+    "imagePath": "scooter.jpg"
+  },
+  {
+    "name": "Tenis",
+    "participants": 0,
+    "weather": 1,
+    "effortLevel": 2,
+    "imagePath": "tennis.jpg"
+  },
+  {
+    "name": "Tenis sto\u0142owy",
+    "participants": 0,
+    "weather": 0,
+    "effortLevel": 2,
+    "imagePath": "tableTennis.jpg"
+  },
+  {
+    "name": "Joga",
+    "participants": 0,
+    "weather": 0,
+    "effortLevel": 1,
+    "imagePath": "joga.jpg"
+  },
+  {
+    "name": "Wspinaczka",
+    "participants": 0,
+    "weather": 0,
+    "effortLevel": 3,
+    "imagePath": "climbing.jpg"
+  },
+  {
+    "name": "Taniec",
+    "participants": 0,
+    "weather": 0,
+    "effortLevel": 2,
+    "imagePath": "dance.jpg"
+  }
+]

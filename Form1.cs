@@ -112,24 +112,9 @@ namespace app
         {
             try
             {
-                ActivityMatcher.sports = new List<Sport>();
+                string sportsJSON = File.ReadAllText("..\\..\\Resources\\Sports.json");
+                ActivityMatcher.sports = JsonSerializer.Deserialize<List<Sport>>(sportsJSON);
                 ActivityMatcher.approvedSports = new List<Sport>();
-
-                string[] JSON = File.ReadAllLines("..\\..\\Resources\\Sports.json");
-                List<string> sportsJSON = new List<string>();
-                string sportLine;
-
-                for (int i = 0; i < JSON.Length; i += 7)
-                {
-                    sportLine = string.Empty;
-
-                    for (int line = 0; line < 7; line++)
-                    {
-                        sportLine += JSON[i + line];
-                    }
-
-                    ActivityMatcher.sports.Add(JsonSerializer.Deserialize<Sport>(sportLine));
-                }
             }
             catch (FileNotFoundException exception)
             {
