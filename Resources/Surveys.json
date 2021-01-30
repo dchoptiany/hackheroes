@@ -1,3 +1,313 @@
-{"title":"Poziom aktywności fizycznej","questions":[{"questionTitle":"Czy pracujesz fizycznie?","questionType":0,"answersValues":[{"Key":"Nie","Value":0},{"Key":"Tak","Value":1}],"maxInputValue":0},{"questionTitle":"Ile razy trenujesz w tygodniu?","questionType":2,"answersValues":[],"maxInputValue":7},{"questionTitle":"Jak oceniasz swoją aktynowść fizyczną? (0 - 10)","questionType":2,"answersValues":[],"maxInputValue":10}]}
-{"title":"Nawyki żywieniowe","questions":[{"questionTitle":"Czy sprawdzasz skład produktów?","questionType":0,"answersValues":[{"Key":"Nie","Value":0},{"Key":"Tak","Value":1}],"maxInputValue":0},{"questionTitle":"Jak często jesz owoce lub warzywa?","questionType":1,"answersValues":[{"Key":"Więcej niż raz dziennie","Value":3},{"Key":"Raz dziennie","Value":2},{"Key":"Kilka razy w tygodniu","Value":1},{"Key":"Rzadziej niż kilka razy w tygodniu","Value":0}],"maxInputValue":0},{"questionTitle":"Ile razy w tygodniu pijesz słodzone napoje? (0 - 7)","questionType":2,"answersValues":[],"maxInputValue":7},{"questionTitle":"Czy często się przejadasz?","questionType":0,"answersValues":[{"Key":"Nie","Value":1},{"Key":"Tak","Value":0}],"maxInputValue":0},{"questionTitle":"Ile średnio litrów wody wypijasz w ciągu dnia?","questionType":1,"answersValues":[{"Key":"Mniej niż 1.5 litra","Value":0},{"Key":"Pomiędzy 3.5 i 5 litra","Value":1},{"Key":"Więcej niż 5 litrów","Value":0},{"Key":"Pomiędzy 1.5 i 3.5 litra","Value":2}],"maxInputValue":0},{"questionTitle":"Jak często jesz śniadanie?","questionType":1,"answersValues":[{"Key":"Często","Value":2},{"Key":"Nigdy","Value":0},{"Key":"Codziennie","Value":3},{"Key":"Rzadko","Value":1}],"maxInputValue":0},{"questionTitle":"Ile używasz soli do jedzonych potraw?","questionType":0,"answersValues":[{"Key":"Dużo","Value":0},{"Key":"Mało","Value":1}],"maxInputValue":0},{"questionTitle":"Ile razy w tygodniu uprawiasz sport? (0 - 7)","questionType":2,"answersValues":[],"maxInputValue":7},{"questionTitle":"Czy starasz się jeść często jajka?","questionType":0,"answersValues":[{"Key":"Nie","Value":0},{"Key":"Tak","Value":1}],"maxInputValue":0}]}
-{"title":"Nawyki związane ze snem i jego jakością","questions":[{"questionTitle":"Ile godzin dziennie średnio śpisz? ","questionType":1,"answersValues":[{"Key":"7-9","Value":2},{"Key":"10-12","Value":1},{"Key":"4-6","Value":1},{"Key":"0-3","Value":0}],"maxInputValue":0},{"questionTitle":"Czy często zdarza ci się zarwać nockę?","questionType":0,"answersValues":[{"Key":"Nie","Value":1},{"Key":"Tak","Value":0}],"maxInputValue":0},{"questionTitle":"Czy codziennie kładziesz się spać i wstajesz\no tych samych porach?","questionType":0,"answersValues":[{"Key":"Nie","Value":1},{"Key":"Tak","Value":0}],"maxInputValue":0},{"questionTitle":"Czy często zdarza ci się pić\nkawę/napój energetyczny po godzinie 16?","questionType":0,"answersValues":[{"Key":"Nie","Value":1},{"Key":"Tak","Value":0}],"maxInputValue":0},{"questionTitle":"Czy korzystasz z urządzeń elektronicznych\n(telefon/komputer) na godzinę przed snem?","questionType":0,"answersValues":[{"Key":"Nie","Value":1},{"Key":"Tak","Value":0}],"maxInputValue":0},{"questionTitle":"Czy regularnie zdarza ci się robić drzemki\npo godzinie 17?","questionType":0,"answersValues":[{"Key":"Nie","Value":1},{"Key":"Tak","Value":0}],"maxInputValue":0},{"questionTitle":"Czy dbasz o odpowiednie\nzaciemnienie i wyciszenie sypialni?","questionType":0,"answersValues":[{"Key":"Nie","Value":0},{"Key":"Tak","Value":1}],"maxInputValue":0},{"questionTitle":"Czy liczba godzin twojego snu jest\nwielokrotnością 90 minut (np. 6h, 7.5h)?","questionType":0,"answersValues":[{"Key":"Nie","Value":0},{"Key":"Tak","Value":1}],"maxInputValue":0}]}
+[
+  {
+    "title": "Poziom aktywno\u015Bci fizycznej",
+    "questions": [
+      {
+        "questionTitle": "Czy pracujesz fizycznie?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 0
+          },
+          {
+            "Key": "Tak",
+            "Value": 1
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Ile razy trenujesz w tygodniu?",
+        "questionType": 2,
+        "answersValues": [],
+        "maxInputValue": 7
+      },
+      {
+        "questionTitle": "Jak oceniasz swoj\u0105 aktynow\u015B\u0107 fizyczn\u0105? (0 - 10)",
+        "questionType": 2,
+        "answersValues": [],
+        "maxInputValue": 10
+      }
+    ]
+  },
+  {
+    "title": "Nawyki \u017Cywieniowe",
+    "questions": [
+      {
+        "questionTitle": "Czy sprawdzasz sk\u0142ad produkt\u00F3w?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 0
+          },
+          {
+            "Key": "Tak",
+            "Value": 1
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Jak cz\u0119sto jesz owoce lub warzywa?",
+        "questionType": 1,
+        "answersValues": [
+          {
+            "Key": "Wi\u0119cej ni\u017C raz dziennie",
+            "Value": 3
+          },
+          {
+            "Key": "Raz dziennie",
+            "Value": 2
+          },
+          {
+            "Key": "Kilka razy w tygodniu",
+            "Value": 1
+          },
+          {
+            "Key": "Rzadziej ni\u017C kilka razy w tygodniu",
+            "Value": 0
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Ile razy w tygodniu pijesz s\u0142odzone napoje? (0 - 7)",
+        "questionType": 2,
+        "answersValues": [],
+        "maxInputValue": 7
+      },
+      {
+        "questionTitle": "Czy cz\u0119sto si\u0119 przejadasz?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 1
+          },
+          {
+            "Key": "Tak",
+            "Value": 0
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Ile \u015Brednio litr\u00F3w wody wypijasz w ci\u0105gu dnia?",
+        "questionType": 1,
+        "answersValues": [
+          {
+            "Key": "Mniej ni\u017C 1.5 litra",
+            "Value": 0
+          },
+          {
+            "Key": "Pomi\u0119dzy 3.5 i 5 litra",
+            "Value": 1
+          },
+          {
+            "Key": "Wi\u0119cej ni\u017C 5 litr\u00F3w",
+            "Value": 0
+          },
+          {
+            "Key": "Pomi\u0119dzy 1.5 i 3.5 litra",
+            "Value": 2
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Jak cz\u0119sto jesz \u015Bniadanie?",
+        "questionType": 1,
+        "answersValues": [
+          {
+            "Key": "Cz\u0119sto",
+            "Value": 2
+          },
+          {
+            "Key": "Nigdy",
+            "Value": 0
+          },
+          {
+            "Key": "Codziennie",
+            "Value": 3
+          },
+          {
+            "Key": "Rzadko",
+            "Value": 1
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Ile u\u017Cywasz soli do jedzonych potraw?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Du\u017Co",
+            "Value": 0
+          },
+          {
+            "Key": "Ma\u0142o",
+            "Value": 1
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Ile razy w tygodniu uprawiasz sport? (0 - 7)",
+        "questionType": 2,
+        "answersValues": [],
+        "maxInputValue": 7
+      },
+      {
+        "questionTitle": "Czy starasz si\u0119 je\u015B\u0107 cz\u0119sto jajka?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 0
+          },
+          {
+            "Key": "Tak",
+            "Value": 1
+          }
+        ],
+        "maxInputValue": 0
+      }
+    ]
+  },
+  {
+    "title": "Nawyki zwi\u0105zane ze snem i jego jako\u015Bci\u0105",
+    "questions": [
+      {
+        "questionTitle": "Ile godzin dziennie \u015Brednio \u015Bpisz? ",
+        "questionType": 1,
+        "answersValues": [
+          {
+            "Key": "7-9",
+            "Value": 2
+          },
+          {
+            "Key": "10-12",
+            "Value": 1
+          },
+          {
+            "Key": "4-6",
+            "Value": 1
+          },
+          {
+            "Key": "0-3",
+            "Value": 0
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Czy cz\u0119sto zdarza ci si\u0119 zarwa\u0107 nock\u0119?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 1
+          },
+          {
+            "Key": "Tak",
+            "Value": 0
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Czy codziennie k\u0142adziesz si\u0119 spa\u0107 i wstajesz\no tych samych porach?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 1
+          },
+          {
+            "Key": "Tak",
+            "Value": 0
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Czy cz\u0119sto zdarza ci si\u0119 pi\u0107\nkaw\u0119/nap\u00F3j energetyczny po godzinie 16?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 1
+          },
+          {
+            "Key": "Tak",
+            "Value": 0
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Czy korzystasz z urz\u0105dze\u0144 elektronicznych\n(telefon/komputer) na godzin\u0119 przed snem?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 1
+          },
+          {
+            "Key": "Tak",
+            "Value": 0
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Czy regularnie zdarza ci si\u0119 robi\u0107 drzemki\npo godzinie 17?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 1
+          },
+          {
+            "Key": "Tak",
+            "Value": 0
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Czy dbasz o odpowiednie\nzaciemnienie i wyciszenie sypialni?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 0
+          },
+          {
+            "Key": "Tak",
+            "Value": 1
+          }
+        ],
+        "maxInputValue": 0
+      },
+      {
+        "questionTitle": "Czy liczba godzin twojego snu jest\nwielokrotno\u015Bci\u0105 90 minut (np. 6h, 7.5h)?",
+        "questionType": 0,
+        "answersValues": [
+          {
+            "Key": "Nie",
+            "Value": 0
+          },
+          {
+            "Key": "Tak",
+            "Value": 1
+          }
+        ],
+        "maxInputValue": 0
+      }
+    ]
+  }
+]

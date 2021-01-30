@@ -125,18 +125,17 @@ namespace app
 
         private void LoadSurveys()
         {
-            goBackToMacroAfterSurvey = false;
-            surveys = new List<Survey>();
             try
             {
-                string[] surveysJSON = File.ReadAllLines("..\\..\\Resources\\Surveys.json");
+                string surveysJSON = File.ReadAllText("..\\..\\Resources\\Surveys.json");
+                surveys = JsonSerializer.Deserialize<List<Survey>>(surveysJSON);
 
-                foreach (string line in surveysJSON)
+                foreach(Survey survey in surveys)
                 {
-                    Survey newSurvey = JsonSerializer.Deserialize<Survey>(line);
-                    surveys.Add(newSurvey);
-                    surveyButtons.Add(AddNewSurveyButton(newSurvey.title));
+                    surveyButtons.Add(AddNewSurveyButton(survey.title));
                 }
+
+                goBackToMacroAfterSurvey = false;
             }
             catch (FileNotFoundException exception)
             {
