@@ -146,30 +146,11 @@ namespace app
 
         private void LoadUsers()
         {
-            users = new List<User>();
-            currentUserIndex = 0;
-
             try
             {
-                string[] JSON = File.ReadAllLines("..\\..\\users.json");
-                List<string> usersJSON = new List<string>();
-                string userLine;
-
-                for (int i = 0; i < JSON.Length; i += 9)
-                {
-                    userLine = string.Empty;
-                    for (int line = 0; line < 9; line++)
-                    {
-                        userLine += JSON[i + line];
-                    }
-                    usersJSON.Add(userLine);
-                }
-
-                foreach (string line in usersJSON)
-                {
-                    User newUser = JsonSerializer.Deserialize<User>(line);
-                    users.Add(newUser);
-                }
+                string usersJSON = File.ReadAllText("..\\..\\Users.json");
+                users = JsonSerializer.Deserialize<List<User>>(usersJSON);
+                currentUserIndex = 0;
             }
             catch (FileNotFoundException exception)
             {
@@ -1417,14 +1398,8 @@ namespace app
                 WriteIndented = true
             };
 
-            List<string> JSON = new List<string>();
-
-            foreach (User user in users)
-            {
-                JSON.Add(JsonSerializer.Serialize(user, options));
-            }
-
-            File.WriteAllLines("..\\..\\users.json", JSON);
+            string usersJSON = JsonSerializer.Serialize(users, options);
+            File.WriteAllText("..\\..\\Users.json", usersJSON);
         }
 
         private void ButtonInSideBarEnabledChanged(object sender, EventArgs e)
