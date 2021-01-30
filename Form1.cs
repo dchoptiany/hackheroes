@@ -96,24 +96,10 @@ namespace app
 
         private void LoadQuestions()
         {
-            Quiz.questions = new List<Question>();
             try
             {
-                string[] JSON = File.ReadAllLines("..\\..\\Resources\\Questions.json");
-                List<string> questionsJSON = new List<string>();
-                string questionLine;
-
-                for (int i = 0; i < JSON.Length; i += 9)
-                {
-                    questionLine = string.Empty;
-
-                    for (int line = 0; line < 9; line++)
-                    {
-                        questionLine += JSON[i + line];
-                    }
-
-                    Quiz.questions.Add(JsonSerializer.Deserialize<Question>(questionLine));
-                }
+                string questionsJSON = File.ReadAllText("..\\..\\Resources\\Questions.json");
+                Quiz.questions = JsonSerializer.Deserialize<List<Question>>(questionsJSON);
             }
             catch (FileNotFoundException exception)
             {
@@ -1456,6 +1442,7 @@ namespace app
 
             File.WriteAllLines("..\\..\\users.json", JSON);
         }
+
         private void ButtonInSideBarEnabledChanged(object sender, EventArgs e)
         {
             Button button = (Button)sender;

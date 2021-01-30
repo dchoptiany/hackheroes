@@ -1,333 +1,335 @@
-{
-  "ask": "Które z podanych produktów jest najlepszym źródłem białka?",
-  "correctAnswer": "Wołowina",
-  "incorrectAnswers": [
-    "Banany",
-    "Jajka",
-    "Mleko"
-  ]
-}
-{
-  "ask": "Która z podanych dolegliwości nie wskazuje na niedobór witaminy C?",
-  "correctAnswer": "Obniżenie ciśnienia krwi tętniczego",
-  "incorrectAnswers": [
-    "Senność",
-    "Spadek odporności",
-    "Krwawienie dziąseł"
-  ]
-}
-{
-  "ask": "W którym z tych produktów nie występuje witamina D?",
-  "correctAnswer": "Marchew",
-  "incorrectAnswers": [
-    "Ryby",
-    "Wątróbka",
-    "Mleko"
-  ]
-}
-{
-  "ask": "Która z podanych aktywności najkorzystniej wpływa na kręgosłup?",
-  "correctAnswer": "Pływanie",
-  "incorrectAnswers": [
-    "Bieganie",
-    "Podnoszenie ciężarów",
-    "Wykonywanie przysiadów"
-  ]
-}
-{
-  "ask": "Kt\u00F3ra witamina jest wytwarzana przez sk\u00F3r\u0119 w czasie wystawienia jej na dzia\u0142anie promieni s\u0142onecznych?",
-  "correctAnswer": "D",
-  "incorrectAnswers": [
-    "K",
-    "C",
-    "B"
-  ]
-}
-{
-  "ask": "Do chorób wirusowych zaliczamy:",
-  "correctAnswer": "Ospę",
-  "incorrectAnswers": [
-    "Anginę",
-    "Zakrzepicę",
-    "Chorobę wieńcową"
-  ]
-}
-{
-  "ask": "Anemia to choroba wywołana niedobrem:",
-  "correctAnswer": "Żelaza",
-  "incorrectAnswers": [
-    "Cynku",
-    "Witaminy B6",
-    "Chromu"
-  ]
-}
-{
-  "ask": "Które z poniższych nie wchodzi w skład układu oddechowego?",
-  "correctAnswer": "Okrężnica",
-  "incorrectAnswers": [
-    "Płuca",
-    "Gardło",
-    "Tchawica"
-  ]
-}
-{
-  "ask": "Które z podanych produktów powinny stanowić podstawę diety?",
-  "correctAnswer": "Produkty pełnoziarniste",
-  "incorrectAnswers": [
-    "Nabiał",
-    "Warzywa i owoce",
-    "Mięso"
-  ]
-}
-{
-  "ask": "Która z podanych witamin nie rozpuszcza się w tłuszczach?",
-  "correctAnswer": "Witamina B",
-  "incorrectAnswers": [
-    "Witamina A",
-    "Witamina D",
-    "Witamina K"
-  ]
-}
-{
-  "ask": "Jakie tętno jest prawidłowe?",
-  "correctAnswer": "60-80 uderzeń na minutę",
-  "incorrectAnswers": [
-    "Poniżej 40 uderzeń na minutę",
-    "Powyżej 100 uderzeń na minutę",
-    "80-100 uderzeń na minutę"
-  ]
-}
-{
-  "ask": "Prawidłowe ciśnienie krwi wynosi:",
-  "correctAnswer": "120/80",
-  "incorrectAnswers": [
-    "165/95",
-    "100/55",
-    "135/90"
-  ]
-}
-{
-  "ask": "W którym z podanych produktów nie występuje błonnik?",
-  "correctAnswer": "W drobiu",
-  "incorrectAnswers": [
-    "W płatkach owsianych",
-    "W warzywach strączkowych",
-    "W suszonych morelach"
-  ]
-}
-{
-  "ask": "Do chorób wirusowych zaliczamy:",
-  "correctAnswer": "Ospę",
-  "incorrectAnswers": [
-    "Anginę",
-    "Zakrzepicę",
-    "Chorobę wieńcową"
-  ]
-}
-{
-  "ask": "Aby utrzymać odpowiednią wagę należy dbać w szczególności o:",
-  "correctAnswer": "Kalorie",
-  "incorrectAnswers": [
-    "Tłuszcze",
-    "Białko",
-    "Witaminy"
-  ]
-}
-{
-  "ask": "Igrzyska olimpijskie odbywają się co:",
-  "correctAnswer": "4 lata",
-  "incorrectAnswers": [
-    "2 lata",
-    "5 lat",
-    "Rok"
-  ]
-}
-{
-  "ask": "Bezpośredni wpływ na spalanie tkanki tłuszczowej ma:",
-  "correctAnswer": "Deficyt kaloryczny",
-  "incorrectAnswers": [
-    "Ilość białka",
-    "Ilość tłuszczu",
-    "Ilość witamin"
-  ]
-}
-{
-  "ask": "Do codziennej rutyny warto dodać:",
-  "correctAnswer": "Trening",
-  "incorrectAnswers": [
-    "Palenie papierosów",
-    "Picie alkoholu",
-    "Picie kawy przed snem"
-  ]
-}
-{
-  "ask": "Najmniej kontuzjogennym sportem jest (są):",
-  "correctAnswer": "Sporty siłowe",
-  "incorrectAnswers": [
-    "Kolarstwo",
-    "Piłka nożna",
-    "Boks"
-  ]
-}
-{
-  "ask": "Co spali więcej kalorii:",
-  "correctAnswer": "Trening interwałowy",
-  "incorrectAnswers": [
-    "Spokojna jazda rowerem",
-    "Spacer",
-    "Trening siłowy"
-  ]
-}
-{
-  "ask": "Ile kcal ma 1g białka:",
-  "correctAnswer": "4 kcal",
-  "incorrectAnswers": [
-    "9 kcal",
-    "0 kcal",
-    "4000 kcal"
-  ]
-}
-{
-  "ask": "Ile kcal ma 1g tłuszczu:",
-  "correctAnswer": "9 kcal",
-  "incorrectAnswers": [
-    "4000 kcal",
-    "8 kcal",
-    "4 kcal"
-  ]
-}
-{
-  "ask": "Które tłuszcze są uważane za złe:",
-  "correctAnswer": "Nasycone",
-  "incorrectAnswers": [
-    "Jednonienasycone",
-    "Wielonienasycone",
-    "Każde"
-  ]
-}
-{
-  "ask": "Co zawiera kreatynę:",
-  "correctAnswer": "Mięso",
-  "incorrectAnswers": [
-    "Owoce",
-    "Mleko",
-    "Grzyby"
-  ]
-}
-{
-  "ask": "Który z napojów jest najzdrowszy:",
-  "correctAnswer": "Woda",
-  "incorrectAnswers": [
-    "Herbata czarna",
-    "Napój energetyczny",
-    "Kawa"
-  ]
-}
-{
-  "ask": "Kiedy najlepiej spożywać białko:",
-  "correctAnswer": "Nie ma to znaczenia",
-  "incorrectAnswers": [
-    "Po wysiłku",
-    "Rano",
-    "Wieczorem"
-  ]
-}
-{
-  "ask": "Ile posiłków należy spożywać w zdrowej diecie:",
-  "correctAnswer": "Nie ma to znaczenia",
-  "incorrectAnswers": [
-    "8 posiłków",
-    "3 posiłki",
-    "5 posiłków"
-  ]
-}
-{
-  "ask": "Jak często warto używać spalaczy tłuszczu:",
-  "correctAnswer": "Nigdy",
-  "incorrectAnswers": [
-    "2 razy dziennie",
-    "raz dziennie",
-    "raz w tygodniu"
-  ]
-}
-{
-  "ask": "W jakim wieku możesz uprawiać sport:",
-  "correctAnswer": "W każdym",
-  "incorrectAnswers": [
-    "Powyżej 14 roku życia",
-    "Powyżej 18 roku życia",
-    "powżej 7 roku życia"
-  ]
-}
-{
-  "ask": "Współczynnik BMI dotyczy:",
-  "correctAnswer": "Wagi ciała",
-  "incorrectAnswers": [
-    "Poziomu testosteronu",
-    "Poziomu estrogenu",
-    "Szybkości metabolizmu"
-  ]
-}
-{
-  "ask": "Co może regulować odpowiednią ilość hormonów:",
-  "correctAnswer": "Prawidłowa dieta i sen",
-  "incorrectAnswers": [
-    "Witamina C",
-    "Tytoń",
-    "Alkohol"
-  ]
-}
-{
-  "ask": "Co oznacza skrót FBW:",
-  "correctAnswer": "Full body workout",
-  "incorrectAnswers": [
-    "Fix biceps workout",
-    "Fast body workout",
-    "Fast biceps workout"
-  ]
-}
-{
-  "ask": "Adam Małysz po raz pierwszy zdobył złoty medal MŚ w:",
-  "correctAnswer": "2001 w Lahti",
-  "incorrectAnswers": [
-    "2011 w Oslo",
-    "2007 w Sapporo",
-    "2003 w Val di Fiemme"
-  ]
-}
-{
-  "ask": "Pierwszym klubem piłkarskim Roberta Lewandowskiego był:",
-  "correctAnswer": "Varsovia Warszawa",
-  "incorrectAnswers": [
-    "Borussia Dortmund",
-    "Bayern Monachium",
-    "Lech Poznań"
-  ]
-}
-{
-  "ask": "Najwięcej zawodników na boisku jest w:",
-  "correctAnswer": "Piłce nożnej",
-  "incorrectAnswers": [
-    "Piłce ręcznej",
-    "Siatkówce",
-    "Koszykówce"
-  ]
-}
-{
-  "ask": "Najlepszy wynik reprezentacji Polski w piłce nożnej to:",
-  "correctAnswer": "10:0",
-  "incorrectAnswers": [
-    "8:0",
-    "12:0",
-    "7:0"
-  ]
-}
-{
-  "ask": "Dyscypliną olimpijską nie jest:",
-  "correctAnswer": "Baseball",
-  "incorrectAnswers": [
-    "Łucznictwo",
-    "Jeździectwo",
-    "Hokej na trawie"
-  ]
-}
+[
+  {
+    "ask": "Kt\u00F3re z podanych produkt\u00F3w jest najlepszym \u017Ar\u00F3d\u0142em bia\u0142ka?",
+    "correctAnswer": "Wo\u0142owina",
+    "incorrectAnswers": [
+      "Banany",
+      "Jajka",
+      "Mleko"
+    ]
+  },
+  {
+    "ask": "Kt\u00F3ra z podanych dolegliwo\u015Bci nie wskazuje na niedob\u00F3r witaminy C?",
+    "correctAnswer": "Obni\u017Cenie ci\u015Bnienia krwi t\u0119tniczego",
+    "incorrectAnswers": [
+      "Senno\u015B\u0107",
+      "Spadek odporno\u015Bci",
+      "Krwawienie dzi\u0105se\u0142"
+    ]
+  },
+  {
+    "ask": "W kt\u00F3rym z tych produkt\u00F3w nie wyst\u0119puje witamina D?",
+    "correctAnswer": "Marchew",
+    "incorrectAnswers": [
+      "Ryby",
+      "W\u0105tr\u00F3bka",
+      "Mleko"
+    ]
+  },
+  {
+    "ask": "Kt\u00F3ra z podanych aktywno\u015Bci najkorzystniej wp\u0142ywa na kr\u0119gos\u0142up?",
+    "correctAnswer": "P\u0142ywanie",
+    "incorrectAnswers": [
+      "Bieganie",
+      "Podnoszenie ci\u0119\u017Car\u00F3w",
+      "Wykonywanie przysiad\u00F3w"
+    ]
+  },
+  {
+    "ask": "Kt\u00F3ra witamina jest wytwarzana przez sk\u00F3r\u0119 w czasie wystawienia jej na dzia\u0142anie promieni s\u0142onecznych?",
+    "correctAnswer": "D",
+    "incorrectAnswers": [
+      "K",
+      "C",
+      "B"
+    ]
+  },
+  {
+    "ask": "Do chor\u00F3b wirusowych zaliczamy:",
+    "correctAnswer": "Osp\u0119",
+    "incorrectAnswers": [
+      "Angin\u0119",
+      "Zakrzepic\u0119",
+      "Chorob\u0119 wie\u0144cow\u0105"
+    ]
+  },
+  {
+    "ask": "Anemia to choroba wywo\u0142ana niedobrem:",
+    "correctAnswer": "\u017Belaza",
+    "incorrectAnswers": [
+      "Cynku",
+      "Witaminy B6",
+      "Chromu"
+    ]
+  },
+  {
+    "ask": "Kt\u00F3re z poni\u017Cszych nie wchodzi w sk\u0142ad uk\u0142adu oddechowego?",
+    "correctAnswer": "Okr\u0119\u017Cnica",
+    "incorrectAnswers": [
+      "P\u0142uca",
+      "Gard\u0142o",
+      "Tchawica"
+    ]
+  },
+  {
+    "ask": "Kt\u00F3re z podanych produkt\u00F3w powinny stanowi\u0107 podstaw\u0119 diety?",
+    "correctAnswer": "Produkty pe\u0142noziarniste",
+    "incorrectAnswers": [
+      "Nabia\u0142",
+      "Warzywa i owoce",
+      "Mi\u0119so"
+    ]
+  },
+  {
+    "ask": "Kt\u00F3ra z podanych witamin nie rozpuszcza si\u0119 w t\u0142uszczach?",
+    "correctAnswer": "Witamina B",
+    "incorrectAnswers": [
+      "Witamina A",
+      "Witamina D",
+      "Witamina K"
+    ]
+  },
+  {
+    "ask": "Jakie t\u0119tno jest prawid\u0142owe?",
+    "correctAnswer": "60-80 uderze\u0144 na minut\u0119",
+    "incorrectAnswers": [
+      "Poni\u017Cej 40 uderze\u0144 na minut\u0119",
+      "Powy\u017Cej 100 uderze\u0144 na minut\u0119",
+      "80-100 uderze\u0144 na minut\u0119"
+    ]
+  },
+  {
+    "ask": "Prawid\u0142owe ci\u015Bnienie krwi wynosi:",
+    "correctAnswer": "120/80",
+    "incorrectAnswers": [
+      "165/95",
+      "100/55",
+      "135/90"
+    ]
+  },
+  {
+    "ask": "W kt\u00F3rym z podanych produkt\u00F3w nie wyst\u0119puje b\u0142onnik?",
+    "correctAnswer": "W drobiu",
+    "incorrectAnswers": [
+      "W p\u0142atkach owsianych",
+      "W warzywach str\u0105czkowych",
+      "W suszonych morelach"
+    ]
+  },
+  {
+    "ask": "Do chor\u00F3b wirusowych zaliczamy:",
+    "correctAnswer": "Osp\u0119",
+    "incorrectAnswers": [
+      "Angin\u0119",
+      "Zakrzepic\u0119",
+      "Chorob\u0119 wie\u0144cow\u0105"
+    ]
+  },
+  {
+    "ask": "Aby utrzyma\u0107 odpowiedni\u0105 wag\u0119 nale\u017Cy dba\u0107 w szczeg\u00F3lno\u015Bci o:",
+    "correctAnswer": "Kalorie",
+    "incorrectAnswers": [
+      "T\u0142uszcze",
+      "Bia\u0142ko",
+      "Witaminy"
+    ]
+  },
+  {
+    "ask": "Igrzyska olimpijskie odbywaj\u0105 si\u0119 co:",
+    "correctAnswer": "4 lata",
+    "incorrectAnswers": [
+      "2 lata",
+      "5 lat",
+      "Rok"
+    ]
+  },
+  {
+    "ask": "Bezpo\u015Bredni wp\u0142yw na spalanie tkanki t\u0142uszczowej ma:",
+    "correctAnswer": "Deficyt kaloryczny",
+    "incorrectAnswers": [
+      "Ilo\u015B\u0107 bia\u0142ka",
+      "Ilo\u015B\u0107 t\u0142uszczu",
+      "Ilo\u015B\u0107 witamin"
+    ]
+  },
+  {
+    "ask": "Do codziennej rutyny warto doda\u0107:",
+    "correctAnswer": "Trening",
+    "incorrectAnswers": [
+      "Palenie papieros\u00F3w",
+      "Picie alkoholu",
+      "Picie kawy przed snem"
+    ]
+  },
+  {
+    "ask": "Najmniej kontuzjogennym sportem jest (s\u0105):",
+    "correctAnswer": "Sporty si\u0142owe",
+    "incorrectAnswers": [
+      "Kolarstwo",
+      "Pi\u0142ka no\u017Cna",
+      "Boks"
+    ]
+  },
+  {
+    "ask": "Co spali wi\u0119cej kalorii:",
+    "correctAnswer": "Trening interwa\u0142owy",
+    "incorrectAnswers": [
+      "Spokojna jazda rowerem",
+      "Spacer",
+      "Trening si\u0142owy"
+    ]
+  },
+  {
+    "ask": "Ile kcal ma 1g bia\u0142ka:",
+    "correctAnswer": "4 kcal",
+    "incorrectAnswers": [
+      "9 kcal",
+      "0 kcal",
+      "4000 kcal"
+    ]
+  },
+  {
+    "ask": "Ile kcal ma 1g t\u0142uszczu:",
+    "correctAnswer": "9 kcal",
+    "incorrectAnswers": [
+      "4000 kcal",
+      "8 kcal",
+      "4 kcal"
+    ]
+  },
+  {
+    "ask": "Kt\u00F3re t\u0142uszcze s\u0105 uwa\u017Cane za z\u0142e:",
+    "correctAnswer": "Nasycone",
+    "incorrectAnswers": [
+      "Jednonienasycone",
+      "Wielonienasycone",
+      "Ka\u017Cde"
+    ]
+  },
+  {
+    "ask": "Co zawiera kreatyn\u0119:",
+    "correctAnswer": "Mi\u0119so",
+    "incorrectAnswers": [
+      "Owoce",
+      "Mleko",
+      "Grzyby"
+    ]
+  },
+  {
+    "ask": "Kt\u00F3ry z napoj\u00F3w jest najzdrowszy:",
+    "correctAnswer": "Woda",
+    "incorrectAnswers": [
+      "Herbata czarna",
+      "Nap\u00F3j energetyczny",
+      "Kawa"
+    ]
+  },
+  {
+    "ask": "Kiedy najlepiej spo\u017Cywa\u0107 bia\u0142ko:",
+    "correctAnswer": "Nie ma to znaczenia",
+    "incorrectAnswers": [
+      "Po wysi\u0142ku",
+      "Rano",
+      "Wieczorem"
+    ]
+  },
+  {
+    "ask": "Ile posi\u0142k\u00F3w nale\u017Cy spo\u017Cywa\u0107 w zdrowej diecie:",
+    "correctAnswer": "Nie ma to znaczenia",
+    "incorrectAnswers": [
+      "8 posi\u0142k\u00F3w",
+      "3 posi\u0142ki",
+      "5 posi\u0142k\u00F3w"
+    ]
+  },
+  {
+    "ask": "Jak cz\u0119sto warto u\u017Cywa\u0107 spalaczy t\u0142uszczu:",
+    "correctAnswer": "Nigdy",
+    "incorrectAnswers": [
+      "2 razy dziennie",
+      "raz dziennie",
+      "raz w tygodniu"
+    ]
+  },
+  {
+    "ask": "W jakim wieku mo\u017Cesz uprawia\u0107 sport:",
+    "correctAnswer": "W ka\u017Cdym",
+    "incorrectAnswers": [
+      "Powy\u017Cej 14 roku \u017Cycia",
+      "Powy\u017Cej 18 roku \u017Cycia",
+      "pow\u017Cej 7 roku \u017Cycia"
+    ]
+  },
+  {
+    "ask": "Wsp\u00F3\u0142czynnik BMI dotyczy:",
+    "correctAnswer": "Wagi cia\u0142a",
+    "incorrectAnswers": [
+      "Poziomu testosteronu",
+      "Poziomu estrogenu",
+      "Szybko\u015Bci metabolizmu"
+    ]
+  },
+  {
+    "ask": "Co mo\u017Ce regulowa\u0107 odpowiedni\u0105 ilo\u015B\u0107 hormon\u00F3w:",
+    "correctAnswer": "Prawid\u0142owa dieta i sen",
+    "incorrectAnswers": [
+      "Witamina C",
+      "Tyto\u0144",
+      "Alkohol"
+    ]
+  },
+  {
+    "ask": "Co oznacza skr\u00F3t FBW:",
+    "correctAnswer": "Full body workout",
+    "incorrectAnswers": [
+      "Fix biceps workout",
+      "Fast body workout",
+      "Fast biceps workout"
+    ]
+  },
+  {
+    "ask": "Adam Ma\u0142ysz po raz pierwszy zdoby\u0142 z\u0142oty medal M\u015A w:",
+    "correctAnswer": "2001 w Lahti",
+    "incorrectAnswers": [
+      "2011 w Oslo",
+      "2007 w Sapporo",
+      "2003 w Val di Fiemme"
+    ]
+  },
+  {
+    "ask": "Pierwszym klubem pi\u0142karskim Roberta Lewandowskiego by\u0142:",
+    "correctAnswer": "Varsovia Warszawa",
+    "incorrectAnswers": [
+      "Borussia Dortmund",
+      "Bayern Monachium",
+      "Lech Pozna\u0144"
+    ]
+  },
+  {
+    "ask": "Najwi\u0119cej zawodnik\u00F3w na boisku jest w:",
+    "correctAnswer": "Pi\u0142ce no\u017Cnej",
+    "incorrectAnswers": [
+      "Pi\u0142ce r\u0119cznej",
+      "Siatk\u00F3wce",
+      "Koszyk\u00F3wce"
+    ]
+  },
+  {
+    "ask": "Najlepszy wynik reprezentacji Polski w pi\u0142ce no\u017Cnej to:",
+    "correctAnswer": "10:0",
+    "incorrectAnswers": [
+      "8:0",
+      "12:0",
+      "7:0"
+    ]
+  },
+  {
+    "ask": "Dyscyplin\u0105 olimpijsk\u0105 nie jest:",
+    "correctAnswer": "Baseball",
+    "incorrectAnswers": [
+      "\u0141ucznictwo",
+      "Je\u017Adziectwo",
+      "Hokej na trawie"
+    ]
+  }
+]
