@@ -96,24 +96,10 @@ namespace app
 
         private void LoadQuestions()
         {
-            Quiz.questions = new List<Question>();
             try
             {
-                string[] JSON = File.ReadAllLines("..\\..\\Resources\\Questions.json");
-                List<string> questionsJSON = new List<string>();
-                string questionLine;
-
-                for (int i = 0; i < JSON.Length; i += 9)
-                {
-                    questionLine = string.Empty;
-
-                    for (int line = 0; line < 9; line++)
-                    {
-                        questionLine += JSON[i + line];
-                    }
-
-                    Quiz.questions.Add(JsonSerializer.Deserialize<Question>(questionLine));
-                }
+                string questionsJSON = File.ReadAllText("..\\..\\Resources\\Questions.json");
+                Quiz.questions = JsonSerializer.Deserialize<List<Question>>(questionsJSON);
             }
             catch (FileNotFoundException exception)
             {
@@ -126,24 +112,9 @@ namespace app
         {
             try
             {
-                ActivityMatcher.sports = new List<Sport>();
+                string sportsJSON = File.ReadAllText("..\\..\\Resources\\Sports.json");
+                ActivityMatcher.sports = JsonSerializer.Deserialize<List<Sport>>(sportsJSON);
                 ActivityMatcher.approvedSports = new List<Sport>();
-
-                string[] JSON = File.ReadAllLines("..\\..\\Resources\\Sports.json");
-                List<string> sportsJSON = new List<string>();
-                string sportLine;
-
-                for (int i = 0; i < JSON.Length; i += 7)
-                {
-                    sportLine = string.Empty;
-
-                    for (int line = 0; line < 7; line++)
-                    {
-                        sportLine += JSON[i + line];
-                    }
-
-                    ActivityMatcher.sports.Add(JsonSerializer.Deserialize<Sport>(sportLine));
-                }
             }
             catch (FileNotFoundException exception)
             {
@@ -154,18 +125,17 @@ namespace app
 
         private void LoadSurveys()
         {
-            goBackToMacroAfterSurvey = false;
-            surveys = new List<Survey>();
             try
             {
-                string[] surveysJSON = File.ReadAllLines("..\\..\\Resources\\Surveys.json");
+                string surveysJSON = File.ReadAllText("..\\..\\Resources\\Surveys.json");
+                surveys = JsonSerializer.Deserialize<List<Survey>>(surveysJSON);
 
-                foreach (string line in surveysJSON)
+                foreach(Survey survey in surveys)
                 {
-                    Survey newSurvey = JsonSerializer.Deserialize<Survey>(line);
-                    surveys.Add(newSurvey);
-                    surveyButtons.Add(AddNewSurveyButton(newSurvey.title));
+                    surveyButtons.Add(AddNewSurveyButton(survey.title));
                 }
+
+                goBackToMacroAfterSurvey = false;
             }
             catch (FileNotFoundException exception)
             {
@@ -176,30 +146,11 @@ namespace app
 
         private void LoadUsers()
         {
-            users = new List<User>();
-            currentUserIndex = 0;
-
             try
             {
-                string[] JSON = File.ReadAllLines("..\\..\\users.json");
-                List<string> usersJSON = new List<string>();
-                string userLine;
-
-                for (int i = 0; i < JSON.Length; i += 9)
-                {
-                    userLine = string.Empty;
-                    for (int line = 0; line < 9; line++)
-                    {
-                        userLine += JSON[i + line];
-                    }
-                    usersJSON.Add(userLine);
-                }
-
-                foreach (string line in usersJSON)
-                {
-                    User newUser = JsonSerializer.Deserialize<User>(line);
-                    users.Add(newUser);
-                }
+                string usersJSON = File.ReadAllText("..\\..\\Users.json");
+                users = JsonSerializer.Deserialize<List<User>>(usersJSON);
+                currentUserIndex = 0;
             }
             catch (FileNotFoundException exception)
             {
@@ -1447,15 +1398,10 @@ namespace app
                 WriteIndented = true
             };
 
-            List<string> JSON = new List<string>();
-
-            foreach (User user in users)
-            {
-                JSON.Add(JsonSerializer.Serialize(user, options));
-            }
-
-            File.WriteAllLines("..\\..\\users.json", JSON);
+            string usersJSON = JsonSerializer.Serialize(users, options);
+            File.WriteAllText("..\\..\\Users.json", usersJSON);
         }
+
         private void ButtonInSideBarEnabledChanged(object sender, EventArgs e)
         {
             Button button = (Button)sender;
